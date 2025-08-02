@@ -1,5 +1,7 @@
 # UWIBKR WSL2 Setup Guide (No Docker)
 
+⚠️ **Important**: Always run commands inside WSL2, not Windows PowerShell/CMD. The project uses native modules that are Linux-specific.
+
 ## Quick Setup
 
 Since Docker Desktop integration isn't working, we'll use native PostgreSQL:
@@ -27,9 +29,15 @@ PORT="3000"
 
 ### 3. Start Development
 ```bash
-# Start the development server
+# ALWAYS run this in WSL2, not Windows PowerShell
 npm run dev
 ```
+
+## ⚠️ Important Notes
+
+- **Always use WSL2 terminal** for all commands
+- **Don't run from Windows PowerShell** - native modules are Linux-specific
+- Access your project at: `cd /mnt/c/Users/mjhen/UWIBKR/UWIBKR`
 
 ## Manual Installation Steps
 
