@@ -157,7 +157,13 @@ router.get('/earnings-screener', async (req, res) => {
       let atmIV = 0;
       let bestDiff = Infinity;
       for (const opt of options) {
-        if (opt.expiration !== formatDate(targetExp)) continue;
+        // Compare only the date parts to avoid format mismatches
+        const optExpDate = new Date(opt.expiration);
+        if (
+          optExpDate.getFullYear() !== targetExp.getFullYear() ||
+          optExpDate.getMonth() !== targetExp.getMonth() ||
+          optExpDate.getDate() !== targetExp.getDate()
+        ) continue;
         const diff = Math.abs(opt.strike - underlying);
         if (diff < bestDiff) {
           bestDiff = diff;
