@@ -197,7 +197,15 @@ router.get('/earnings-screener', async (req, res) => {
     res.json({ success: true, total: candidates.length, candidates });
   } catch (err) {
     console.error('earnings screener error', err);
-    res.status(500).json({ success: false, error: 'Failed to run earnings screener' });
+    // Provide a more specific error message and code, but avoid leaking sensitive details
+    const errorType = err && typeof err === 'object' && 'name' in err ? (err as Error).name : typeof err;
+    const errorMsg = err && typeof err === 'object' && 'message' in err ? (err as Error).message : String(err);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to run earnings screener',
+      errorType,
+      errorMessage: errorMsg,
+    });
   }
 });
 
