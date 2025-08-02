@@ -216,6 +216,45 @@ export class UnusualWhalesService {
     }
   }
 
+  async getNewsSentiment(ticker: string): Promise<any[]> {
+    try {
+      const data = await this.makeRequest<{ data: any[] }>(`/news-sentiment/${ticker}`);
+      return data.data || [];
+    } catch (error) {
+      console.error(`Failed to fetch news sentiment for ${ticker}:`, error);
+      return [];
+    }
+  }
+
+  async getAnalystRatings(ticker: string): Promise<any[]> {
+    try {
+      const data = await this.makeRequest<{ data: any[] }>(`/analysts/ratings/${ticker}`);
+      return data.data || [];
+    } catch (error) {
+      console.error(`Failed to fetch analyst ratings for ${ticker}:`, error);
+      return [];
+    }
+  }
+
+  async getOptionsFlow(ticker: string): Promise<any[]> {
+    try {
+      const data = await this.makeRequest<{ data: any[] }>(`/options/flow/${ticker}`);
+      return data.data || [];
+    } catch (error) {
+      console.error(`Failed to fetch options flow for ${ticker}:`, error);
+      return [];
+    }
+  }
+
+  async getMarketTide(): Promise<any | null> {
+    try {
+      return await this.makeRequest<any>(`/market-tide/`);
+    } catch (error) {
+      console.error('Failed to fetch market tide data:', error);
+      return null;
+    }
+  }
+
   async getCustomAlerts(): Promise<any[]> {
     try {
       const data = await this.makeRequest<{ data: any[] }>('/alerts');
@@ -237,12 +276,8 @@ export class UnusualWhalesService {
   async getGammaExposure(symbol: string): Promise<any> {
     try {
       console.log(`Fetching gamma exposure data for ${symbol}...`);
-      
-      const response = await this.makeRequest('/gamma-exposure', {
-        symbol: symbol.toUpperCase()
-      });
-
-      return (response as any).data || [];
+      const response = await this.makeRequest<{ data: any[] }>(`/gamma-exposure?symbol=${symbol.toUpperCase()}`);
+      return response.data || [];
     } catch (error) {
       console.error(`Failed to fetch gamma exposure for ${symbol}:`, error);
       throw error;
