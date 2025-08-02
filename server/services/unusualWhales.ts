@@ -242,7 +242,7 @@ export class UnusualWhalesService {
         symbol: symbol.toUpperCase()
       });
 
-      return response.data || [];
+      return (response as any).data || [];
     } catch (error) {
       console.error(`Failed to fetch gamma exposure for ${symbol}:`, error);
       throw error;

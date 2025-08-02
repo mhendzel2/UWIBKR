@@ -18,7 +18,7 @@ interface ClientConnection {
 export class WebSocketService {
   private wss: WebSocketServer;
   private clients: Map<string, ClientConnection> = new Map();
-  private pingInterval: NodeJS.Timeout;
+  private pingInterval!: NodeJS.Timeout;
 
   constructor(server: Server) {
     this.wss = new WebSocketServer({ 

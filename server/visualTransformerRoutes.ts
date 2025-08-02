@@ -61,6 +61,10 @@ class VisualTransformer {
     this.ensembleRecognizer.initializeModels().catch(console.error);
   }
 
+  public getEnsembleRecognizer(): EnsemblePatternRecognizer {
+    return this.ensembleRecognizer;
+  }
+
   private async initializeModel() {
     try {
       // Create Vision Transformer architecture
@@ -789,7 +793,9 @@ router.post('/ensemble-analyze', async (req, res) => {
     // Create mock image tensor for ensemble analysis
     const imageTensor = tf.zeros([1, 224, 224, 3]) as tf.Tensor4D;
     
-    const ensemblePrediction = await visualTransformer.ensembleRecognizer.predictPattern(imageTensor);
+      const ensemblePrediction = await visualTransformer
+        .getEnsembleRecognizer()
+        .predictPattern(imageTensor);
     
     let complexPatterns: ComplexPattern[] = [];
     if (includeComplexPatterns) {

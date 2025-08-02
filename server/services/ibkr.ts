@@ -229,28 +229,48 @@ export class IBKRService {
     }
   }
 
-  async getMarketData(symbols: string[]): Promise<any[]> {
+  private generateQuote(symbol: string) {
+    return {
+      symbol,
+      bid: 450.25 + Math.random() * 10,
+      ask: 450.75 + Math.random() * 10,
+      last: 450.5 + Math.random() * 10,
+      volume: Math.floor(Math.random() * 1_000_000 + 100_000),
+      change: (Math.random() - 0.5) * 20,
+      changePercent: (Math.random() - 0.5) * 4,
+      timestamp: new Date().toISOString(),
+    };
+  }
+
+  async getMarketData(symbol: string): Promise<any>;
+  async getMarketData(symbols: string[]): Promise<any[]>;
+  async getMarketData(contract: ContractDetails): Promise<any>;
+  async getMarketData(input: string | string[] | ContractDetails): Promise<any | any[]> {
     if (!this.connected) {
       throw new Error('Not connected to IBKR TWS');
     }
 
     try {
-      // In real implementation, this would use IB API reqMktData for live quotes
-      console.log(`Fetching TWS market data for symbols: ${symbols.join(', ')}`);
-      
-      return symbols.map(symbol => ({
-        symbol,
-        bid: 450.25 + Math.random() * 10,
-        ask: 450.75 + Math.random() * 10,
-        last: 450.50 + Math.random() * 10,
-        volume: Math.floor(Math.random() * 1000000 + 100000),
-        change: (Math.random() - 0.5) * 20,
-        changePercent: (Math.random() - 0.5) * 4,
-        timestamp: new Date().toISOString()
-      }));
+      if (typeof input === 'string') {
+        return this.generateQuote(input);
+      }
+
+      if (Array.isArray(input)) {
+        console.log(`Fetching TWS market data for symbols: ${input.join(', ')}`);
+        return input.map((s) => this.generateQuote(s));
+      }
+
+      // Contract market data
+      return {
+        bid: 2.85,
+        ask: 2.95,
+        last: 2.91,
+        volume: 1250,
+        timestamp: new Date(),
+      };
     } catch (error) {
       console.error('Failed to get TWS market data:', error);
-      return [];
+      return Array.isArray(input) ? [] : null;
     }
   }
 
@@ -353,26 +373,6 @@ export class IBKRService {
     }
   }
 
-  async getMarketData(contract: ContractDetails): Promise<any> {
-    if (!this.connected) {
-      throw new Error('Not connected to IBKR TWS');
-    }
-
-    try {
-      // Mock market data
-      return {
-        bid: 2.85,
-        ask: 2.95,
-        last: 2.91,
-        volume: 1250,
-        timestamp: new Date(),
-      };
-    } catch (error) {
-      console.error('Failed to get market data:', error);
-      return null;
-    }
-  }
-
   private validateOrder(contract: ContractDetails, order: OrderDetails): void {
     if (!contract.symbol || !contract.secType) {
       throw new Error('Invalid contract: symbol and secType are required');
@@ -389,20 +389,6 @@ export class IBKRService {
     if (order.orderType === 'LMT' && !order.lmtPrice) {
       throw new Error('Limit price required for limit orders');
     }
-  }
-
-  isConnected(): boolean {
-    return this.connected;
-  }
-
-  getConnectionStats() {
-    return {
-      connected: this.connected,
-      connectionAttempts: this.connectionAttempts,
-      host: this.config.host,
-      port: this.config.port,
-      clientId: this.config.clientId,
-    };
   }
 
   async getHistoricalData(symbol: string, timeframe: string): Promise<any[]> {
@@ -507,3 +493,5 @@ export class IBKRService {
     return technicalData;
   }
 }
+
+export const ibkrService = new IBKRService();
