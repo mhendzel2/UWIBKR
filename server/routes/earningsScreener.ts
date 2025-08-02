@@ -60,17 +60,22 @@ function formatDate(date: Date): string {
 }
 
 router.get('/earnings-screener', async (req, res) => {
-  const {
-    days = '5',
-    minVolume = '1000',
-    minLargeTrades = '5',
-    largeTradePremium = '50000',
-    volumeMultiplier = '3',
-    minIvPercent = '90',
-    bearishRatio = '2',
-    bullishRatio = '0.5',
-  } = req.query as Record<string, string>;
+  // Helper to safely extract a string parameter from req.query
+  function getQueryParam(key: string, defaultValue: string): string {
+    const value = req.query[key];
+    if (typeof value === 'string') return value;
+    if (Array.isArray(value)) return value[0] ?? defaultValue;
+    return defaultValue;
+  }
 
+  const days = getQueryParam('days', '5');
+  const minVolume = getQueryParam('minVolume', '1000');
+  const minLargeTrades = getQueryParam('minLargeTrades', '5');
+  const largeTradePremium = getQueryParam('largeTradePremium', '50000');
+  const volumeMultiplier = getQueryParam('volumeMultiplier', '3');
+  const minIvPercent = getQueryParam('minIvPercent', '90');
+  const bearishRatio = getQueryParam('bearishRatio', '2');
+  const bullishRatio = getQueryParam('bullishRatio', '0.5');
   const start = new Date();
   const end = new Date(start.getTime() + parseInt(days) * 24 * 60 * 60 * 1000);
 
