@@ -58,10 +58,28 @@ export default function AdvancedChartingPage() {
 
   const { data: chartData = [], isLoading: loadingChart } = useQuery<ChartData[]>({
     queryKey: ['/api/charts/data', selectedSymbol, timeframe],
+    queryFn: async () => {
+      const res = await fetch(
+        `/api/charts/data?symbol=${selectedSymbol}&timeframe=${timeframe}`
+      );
+      if (!res.ok) {
+        throw new Error('Failed to fetch chart data');
+      }
+      return res.json();
+    },
   });
 
   const { data: optionsData = [], isLoading: loadingOptions } = useQuery<OptionsData[]>({
     queryKey: ['/api/charts/options-chain', selectedSymbol],
+    queryFn: async () => {
+      const res = await fetch(
+        `/api/charts/options-chain?symbol=${selectedSymbol}`
+      );
+      if (!res.ok) {
+        throw new Error('Failed to fetch options chain');
+      }
+      return res.json();
+    },
   });
 
   const symbols = ['SPY', 'QQQ', 'NVDA', 'TSLA', 'AAPL', 'MSFT', 'AMZN', 'META'];
