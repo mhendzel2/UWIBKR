@@ -647,17 +647,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  // Development endpoint to generate sample data for analytics
-  app.post("/api/analytics/generate-sample-data", async (req, res) => {
-    try {
-      const { generateSampleTradingData } = await import('./utils/sampleData');
-      const result = await generateSampleTradingData();
-      res.json(result);
-    } catch (error) {
-      console.error("Failed to generate sample data:", error);
-      res.status(500).json({ message: "Failed to generate sample data" });
-    }
-  });
 
   // Portfolio Optimization Endpoints
   app.get("/api/portfolio/metrics", async (req, res) => {

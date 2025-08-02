@@ -1,3 +1,6 @@
+import axios, { AxiosInstance } from "axios";
+import https from "https";
+
 interface IBKRConfig {
   host: string;
   port: number;
@@ -51,6 +54,8 @@ export class IBKRService {
   private connectionAttempts = 0;
   private maxRetries = 5;
   private reconnectDelay = 5000;
+  private apiBaseUrl: string;
+  private http: AxiosInstance;
 
   constructor() {
     this.config = {
@@ -58,31 +63,25 @@ export class IBKRService {
       port: parseInt(process.env.IBKR_PORT || '7497'),
       clientId: parseInt(process.env.IBKR_CLIENT_ID || '1'),
     };
+    this.apiBaseUrl = process.env.IBKR_API_URL || 'https://localhost:5000/v1/api';
+    this.http = axios.create({
+      baseURL: this.apiBaseUrl,
+      httpsAgent: new https.Agent({ rejectUnauthorized: false })
+    });
   }
 
   async connect(): Promise<boolean> {
     try {
-      // Simulate connection to IBKR TWS
-      // In a real implementation, this would use the IB API
-      console.log(`Attempting to connect to IBKR TWS at ${this.config.host}:${this.config.port}`);
-      
-      // Mock connection logic
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+      await this.http.get('/iserver/auth/status');
       this.connected = true;
       this.connectionAttempts = 0;
-      console.log('Successfully connected to IBKR TWS');
-      
       return true;
     } catch (error) {
-      console.error('Failed to connect to IBKR TWS:', error);
+      console.error('Failed to connect to IBKR API:', error);
       this.connectionAttempts++;
-      
       if (this.connectionAttempts < this.maxRetries) {
-        console.log(`Retrying connection in ${this.reconnectDelay}ms (attempt ${this.connectionAttempts}/${this.maxRetries})`);
         setTimeout(() => this.connect(), this.reconnectDelay);
       }
-      
       return false;
     }
   }
@@ -392,65 +391,78 @@ export class IBKRService {
   }
 
   async getHistoricalData(symbol: string, timeframe: string): Promise<any[]> {
-    // Generate mock historical chart data
-    const dataPoints = 100;
-    const chartData = [];
-    let basePrice = 100 + Math.random() * 50;
-    
-    for (let i = 0; i < dataPoints; i++) {
-      const variation = (Math.random() - 0.5) * 4;
-      const open = basePrice;
-      const close = open + variation;
-      const high = Math.max(open, close) + Math.random() * 2;
-      const low = Math.min(open, close) - Math.random() * 2;
-      
-      chartData.push({
-        timestamp: new Date(Date.now() - (dataPoints - i) * 60000).toISOString(),
-        open,
-        high,
-        low,
-        close,
-        volume: Math.floor(Math.random() * 100000),
-        indicators: {
-          sma20: close + (Math.random() - 0.5) * 1,
-          sma50: close + (Math.random() - 0.5) * 2,
-          rsi: 30 + Math.random() * 40,
-          macd: (Math.random() - 0.5) * 0.5,
-          bollinger_upper: high + Math.random(),
-          bollinger_lower: low - Math.random()
-        }
-      });
-      
-      basePrice = close;
+    if (!this.connected) {
+      throw new Error('Not connected to IBKR TWS');
     }
 
-    return chartData;
+    try {
+      const symbolRes = await this.http.get(`/iserver/marketdata/symbols/${symbol}`);
+      const conid = symbolRes.data?.conid || symbolRes.data[0]?.conid;
+      if (!conid) return [];
+
+      const barMap: Record<string, string> = {
+        '1m': '1min',
+        '5m': '5min',
+        '15m': '15min',
+        '1H': '1hour',
+        '1D': '1day',
+        '1W': '1week',
+        '1M': '1month'
+      };
+
+      const { data } = await this.http.get('/iserver/marketdata/history', {
+        params: {
+          conid,
+          period: '1d',
+          bar: barMap[timeframe] || '1day'
+        }
+      });
+
+      return (data?.data || []).map((bar: any) => ({
+        timestamp: bar.t || bar.time,
+        open: bar.o,
+        high: bar.h,
+        low: bar.l,
+        close: bar.c,
+        volume: bar.v
+      }));
+    } catch (error) {
+      console.error('Failed to fetch historical data:', error);
+      return [];
+    }
   }
 
   async getOptionsChain(symbol: string): Promise<any[]> {
-    // Generate mock options chain data
-    const underlyingPrice = 100 + Math.random() * 50;
-    const optionsData = [];
-    
-    for (let i = -10; i <= 10; i++) {
-      const strike = Math.round((underlyingPrice + i * 5) * 100) / 100;
-      
-      optionsData.push({
-        strike,
-        callVolume: Math.floor(Math.random() * 1000),
-        putVolume: Math.floor(Math.random() * 1000),
-        callOI: Math.floor(Math.random() * 5000),
-        putOI: Math.floor(Math.random() * 5000),
-        callPrice: Math.max(0.01, underlyingPrice - strike + Math.random() * 10),
-        putPrice: Math.max(0.01, strike - underlyingPrice + Math.random() * 10),
-        gamma: Math.random() * 0.1,
-        delta: strike < underlyingPrice ? 0.1 + Math.random() * 0.8 : -0.8 + Math.random() * 0.8,
-        theta: -Math.random() * 0.1,
-        vega: Math.random() * 0.3
-      });
+    if (!this.connected) {
+      throw new Error('Not connected to IBKR TWS');
     }
 
-    return optionsData;
+    try {
+      const symbolRes = await this.http.get(`/iserver/marketdata/symbols/${symbol}`);
+      const conid = symbolRes.data?.conid || symbolRes.data[0]?.conid;
+      if (!conid) return [];
+
+      const { data } = await this.http.get('/iserver/marketdata/options', {
+        params: { conid }
+      });
+
+      return (data || []).map((opt: any) => ({
+        strike: opt.strike,
+        callVolume: opt.callVolume,
+        putVolume: opt.putVolume,
+        callOI: opt.callOpenInterest,
+        putOI: opt.putOpenInterest,
+        callPrice: opt.callPrice,
+        putPrice: opt.putPrice,
+        gamma: opt.gamma,
+        delta: opt.delta,
+        theta: opt.theta,
+        vega: opt.vega
+      }));
+    } catch (error) {
+      console.error('Failed to fetch options chain:', error);
+      return [];
+    }
   }
 
   async getTechnicalIndicators(symbol: string, indicators: string[]): Promise<any> {
