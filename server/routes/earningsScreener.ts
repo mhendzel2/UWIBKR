@@ -187,7 +187,11 @@ router.get('/earnings-screener', async (req, res) => {
     res.json({ success: true, total: candidates.length, candidates });
   } catch (err) {
     console.error('earnings screener error', err);
-    res.status(500).json({ success: false, error: 'Failed to run earnings screener' });
+    res.status(500).json({
+      success: false,
+      error: 'Failed to run earnings screener',
+      details: err instanceof Error ? { name: err.name, message: err.message } : String(err),
+    });
   }
 });
 
