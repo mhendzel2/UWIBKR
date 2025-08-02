@@ -72,7 +72,7 @@ router.get('/earnings-screener', async (req, res) => {
   } = req.query as Record<string, string>;
 
   const start = new Date();
-  const end = new Date(start.getTime() + parseInt(days) * 24 * 60 * 60 * 1000);
+  const end = new Date(start.getTime() + parseInt(days) * MILLISECONDS_PER_DAY);
 
   try {
     // Step 1: fetch upcoming earnings
