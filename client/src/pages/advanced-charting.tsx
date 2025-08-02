@@ -6,15 +6,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { 
-  TrendingUp, 
-  BarChart3, 
-  LineChart, 
+  BarChart3,
   Activity,
   Settings,
   Maximize2,
   Download,
   RefreshCw,
-  TrendingDown,
   Target
 } from "lucide-react";
 import { useState } from "react";
@@ -121,42 +118,10 @@ export default function AdvancedChartingPage() {
     );
   }
 
-  // Mock chart data for demonstration
-  const mockChartData: ChartData[] = Array.from({ length: 100 }, (_, i) => {
-    const basePrice = 450;
-    const volatility = 0.02;
-    const trend = 0.001;
-    const random = () => (Math.random() - 0.5) * volatility;
-    const price = basePrice * (1 + trend * i + random());
-    
-    return {
-      timestamp: new Date(Date.now() - (100 - i) * 24 * 60 * 60 * 1000).toISOString(),
-      open: price,
-      high: price * (1 + Math.random() * 0.02),
-      low: price * (1 - Math.random() * 0.02),
-      close: price * (1 + random()),
-      volume: Math.floor(Math.random() * 1000000 + 500000),
-      indicators: {
-        sma20: price * 0.998,
-        sma50: price * 0.995,
-        rsi: 30 + Math.random() * 40,
-        macd: random() * 10,
-        bollinger_upper: price * 1.02,
-        bollinger_lower: price * 0.98
-      }
-    };
-  });
-
-  const mockOptionsData: OptionsData[] = [
-    { strike: 440, callVolume: 1250, putVolume: 890, callOI: 5420, putOI: 3210, callPrice: 12.50, putPrice: 2.35, gamma: 0.025, delta: 0.75, theta: -0.12, vega: 0.18 },
-    { strike: 445, callVolume: 2100, putVolume: 1200, callOI: 7850, putOI: 4560, callPrice: 8.75, putPrice: 3.20, gamma: 0.028, delta: 0.68, theta: -0.15, vega: 0.22 },
-    { strike: 450, callVolume: 3500, putVolume: 3200, callOI: 12400, putOI: 11200, callPrice: 5.80, putPrice: 5.65, gamma: 0.032, delta: 0.52, theta: -0.18, vega: 0.25 },
-    { strike: 455, callVolume: 2800, putVolume: 4100, callOI: 9600, putOI: 15800, callPrice: 3.40, putPrice: 8.85, gamma: 0.028, delta: 0.35, theta: -0.15, vega: 0.22 },
-    { strike: 460, callVolume: 1800, putVolume: 2900, callOI: 6200, putOI: 9800, callPrice: 1.95, putPrice: 12.80, gamma: 0.022, delta: 0.22, theta: -0.11, vega: 0.16 }
-  ];
-
-  const displayData = chartData.length > 0 ? chartData : mockChartData;
-  const displayOptions = optionsData.length > 0 ? optionsData : mockOptionsData;
+  const hasChartData = chartData.length > 0;
+  const latestBar = hasChartData ? chartData[chartData.length - 1] : null;
+  const sessionHigh = hasChartData ? Math.max(...chartData.map(c => c.high)) : null;
+  const sessionLow = hasChartData ? Math.min(...chartData.map(c => c.low)) : null;
 
   return (
     <div className="container mx-auto py-8 space-y-6">
@@ -254,34 +219,26 @@ export default function AdvancedChartingPage() {
             <div className="flex items-center gap-4">
               <CardTitle className="text-xl">{selectedSymbol} - {timeframe}</CardTitle>
               <div className="flex items-center gap-2">
-                <Badge variant="outline">Last: $452.35</Badge>
-                <Badge variant="outline" className="text-green-600">
-                  <TrendingUp className="w-3 h-3 mr-1" />
-                  +2.45 (+0.54%)
-                </Badge>
+                <Badge variant="outline">Last: {latestBar ? formatPrice(latestBar.close) : 'N/A'}</Badge>
               </div>
             </div>
             <div className="text-sm text-muted-foreground">
-              Vol: 2.4M | High: $454.80 | Low: $448.20
+              {latestBar ? `Vol: ${formatVolume(latestBar.volume)} | High: ${formatPrice(sessionHigh!)} | Low: ${formatPrice(sessionLow!)}` : 'No chart data'}
             </div>
           </div>
         </CardHeader>
         <CardContent>
-          <div className="h-96 bg-gradient-to-br from-slate-50 to-slate-100 rounded-lg flex items-center justify-center border-2 border-dashed border-slate-300">
-            <div className="text-center">
-              <LineChart className="mx-auto h-16 w-16 text-slate-400 mb-4" />
-              <h3 className="text-lg font-semibold text-slate-600 mb-2">Interactive Trading Chart</h3>
-              <p className="text-slate-500 max-w-md">
-                Advanced TradingView-style chart with candlesticks, technical indicators, volume analysis, 
-                and real-time options flow visualization would be displayed here.
-              </p>
-              <div className="mt-4 flex gap-2 justify-center">
-                <Badge variant="secondary">Candlestick Chart</Badge>
-                <Badge variant="secondary">Volume Profile</Badge>
-                <Badge variant="secondary">Technical Indicators</Badge>
+          {hasChartData ? (
+            <pre className="h-96 overflow-auto bg-gray-100 rounded p-4 text-xs">
+{JSON.stringify(chartData.slice(-50), null, 2)}
+            </pre>
+          ) : (
+            <div className="h-96 bg-gradient-to-br from-slate-50 to-slate-100 rounded-lg flex items-center justify-center border-2 border-dashed border-slate-300">
+              <div className="text-center text-slate-500">
+                No chart data available
               </div>
             </div>
-          </div>
+          )}
         </CardContent>
       </Card>
 
@@ -302,19 +259,11 @@ export default function AdvancedChartingPage() {
               <CardContent className="space-y-3">
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Current Price</span>
-                  <span className="font-medium">$452.35</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Daily Change</span>
-                  <span className="font-medium text-green-600">+2.45 (+0.54%)</span>
+                  <span className="font-medium">{latestBar ? formatPrice(latestBar.close) : 'N/A'}</span>
                 </div>
                 <div className="flex justify-between">
                   <span className="text-muted-foreground">Volume</span>
-                  <span className="font-medium">2.4M</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">VWAP</span>
-                  <span className="font-medium">$451.22</span>
+                  <span className="font-medium">{latestBar ? formatVolume(latestBar.volume) : 'N/A'}</span>
                 </div>
               </CardContent>
             </Card>
@@ -323,23 +272,8 @@ export default function AdvancedChartingPage() {
               <CardHeader>
                 <CardTitle className="text-lg">Momentum Indicators</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">RSI (14)</span>
-                  <span className="font-medium text-yellow-600">65.4</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">MACD</span>
-                  <span className="font-medium text-green-600">+1.25</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Stochastic</span>
-                  <span className="font-medium">%K: 72.1, %D: 68.9</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">Williams %R</span>
-                  <span className="font-medium">-28.5</span>
-                </div>
+              <CardContent className="text-muted-foreground text-center">
+                Indicator data unavailable
               </CardContent>
             </Card>
 
@@ -347,23 +281,8 @@ export default function AdvancedChartingPage() {
               <CardHeader>
                 <CardTitle className="text-lg">Moving Averages</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-3">
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">SMA 20</span>
-                  <span className="font-medium">$450.85</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">SMA 50</span>
-                  <span className="font-medium">$448.22</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">EMA 12</span>
-                  <span className="font-medium">$451.75</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-muted-foreground">EMA 26</span>
-                  <span className="font-medium">$449.90</span>
-                </div>
+              <CardContent className="text-muted-foreground text-center">
+                Indicator data unavailable
               </CardContent>
             </Card>
           </div>
@@ -378,41 +297,47 @@ export default function AdvancedChartingPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="overflow-x-auto">
-                <table className="w-full text-sm">
-                  <thead>
-                    <tr className="border-b">
-                      <th className="text-left p-2">Strike</th>
-                      <th className="text-left p-2">Call Vol</th>
-                      <th className="text-left p-2">Call OI</th>
-                      <th className="text-left p-2">Call Price</th>
-                      <th className="text-left p-2">Put Price</th>
-                      <th className="text-left p-2">Put OI</th>
-                      <th className="text-left p-2">Put Vol</th>
-                      <th className="text-left p-2">Gamma</th>
-                      <th className="text-left p-2">Delta</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {displayOptions.map((option, index) => (
-                      <tr key={index} className={option.strike === 450 ? 'bg-blue-50' : ''}>
-                        <td className="p-2 font-medium">{option.strike}</td>
-                        <td className="p-2 text-green-600">{formatVolume(option.callVolume)}</td>
-                        <td className="p-2">{formatVolume(option.callOI)}</td>
-                        <td className="p-2 font-medium">{formatPrice(option.callPrice)}</td>
-                        <td className="p-2 font-medium">{formatPrice(option.putPrice)}</td>
-                        <td className="p-2">{formatVolume(option.putOI)}</td>
-                        <td className="p-2 text-red-600">{formatVolume(option.putVolume)}</td>
-                        <td className="p-2">{option.gamma.toFixed(3)}</td>
-                        <td className="p-2">{option.delta.toFixed(2)}</td>
+              {optionsData.length === 0 ? (
+                <div className="text-center py-8 text-muted-foreground">
+                  No options data available
+                </div>
+              ) : (
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b">
+                        <th className="text-left p-2">Strike</th>
+                        <th className="text-left p-2">Call Vol</th>
+                        <th className="text-left p-2">Call OI</th>
+                        <th className="text-left p-2">Call Price</th>
+                        <th className="text-left p-2">Put Price</th>
+                        <th className="text-left p-2">Put OI</th>
+                        <th className="text-left p-2">Put Vol</th>
+                        <th className="text-left p-2">Gamma</th>
+                        <th className="text-left p-2">Delta</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </CardContent>
-          </Card>
-        </TabsContent>
+                    </thead>
+                    <tbody>
+                      {optionsData.map((option, index) => (
+                        <tr key={index} className={option.strike === 450 ? 'bg-blue-50' : ''}>
+                          <td className="p-2 font-medium">{option.strike}</td>
+                          <td className="p-2 text-green-600">{formatVolume(option.callVolume)}</td>
+                          <td className="p-2">{formatVolume(option.callOI)}</td>
+                          <td className="p-2 font-medium">{formatPrice(option.callPrice)}</td>
+                          <td className="p-2 font-medium">{formatPrice(option.putPrice)}</td>
+                          <td className="p-2">{formatVolume(option.putOI)}</td>
+                          <td className="p-2 text-red-600">{formatVolume(option.putVolume)}</td>
+                          <td className="p-2">{option.gamma?.toFixed(3)}</td>
+                          <td className="p-2">{option.delta?.toFixed(2)}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              )}
+              </CardContent>
+            </Card>
+          </TabsContent>
 
         <TabsContent value="flow" className="space-y-4">
           <Card>

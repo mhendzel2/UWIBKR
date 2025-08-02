@@ -129,82 +129,9 @@ export default function NewsSentimentPage() {
     );
   }
 
-  // Mock data for demonstration
-  const mockNews: NewsItem[] = [
-    {
-      id: '1',
-      headline: 'NVIDIA Reports Record Q4 Earnings, Beats Estimates on AI Demand',
-      summary: 'NVIDIA exceeded earnings expectations with record revenue driven by strong AI chip demand from data centers and enterprise customers.',
-      source: 'Reuters',
-      timestamp: new Date().toISOString(),
-      sentiment: 'bullish',
-      sentimentScore: 0.85,
-      symbols: ['NVDA'],
-      impact: 'high',
-      category: 'Earnings',
-      url: '#'
-    },
-    {
-      id: '2', 
-      headline: 'Federal Reserve Signals Potential Rate Cuts in 2024',
-      summary: 'Fed Chair Jerome Powell indicates the central bank may consider rate cuts if inflation continues to moderate.',
-      source: 'Bloomberg',
-      timestamp: new Date(Date.now() - 3600000).toISOString(),
-      sentiment: 'bullish',
-      sentimentScore: 0.72,
-      symbols: ['SPY', 'QQQ'],
-      impact: 'high',
-      category: 'Monetary Policy',
-      url: '#'
-    },
-    {
-      id: '3',
-      headline: 'Tesla Faces Production Challenges at Shanghai Gigafactory',
-      summary: 'Tesla experiences temporary production slowdowns at its Shanghai facility due to supply chain disruptions.',
-      source: 'CNBC',
-      timestamp: new Date(Date.now() - 7200000).toISOString(),
-      sentiment: 'bearish',
-      sentimentScore: -0.45,
-      symbols: ['TSLA'],
-      impact: 'medium',
-      category: 'Manufacturing',
-      url: '#'
-    },
-    {
-      id: '4',
-      headline: 'Amazon Web Services Announces New AI Infrastructure Investments',
-      summary: 'AWS commits $15B investment in AI infrastructure expansion to meet growing enterprise demand for cloud AI services.',
-      source: 'TechCrunch',
-      timestamp: new Date(Date.now() - 10800000).toISOString(),
-      sentiment: 'bullish',
-      sentimentScore: 0.68,
-      symbols: ['AMZN'],
-      impact: 'medium',
-      category: 'Technology',
-      url: '#'
-    }
-  ];
-
-  const mockSentiment: SentimentAnalysis[] = [
-    { symbol: 'NVDA', overallSentiment: 'bullish', sentimentScore: 0.82, newsCount: 24, trending: true, momentum: 0.15, socialVolume: 89, institutionalSentiment: 0.76 },
-    { symbol: 'SPY', overallSentiment: 'bullish', sentimentScore: 0.58, newsCount: 18, trending: false, momentum: 0.08, socialVolume: 67, institutionalSentiment: 0.61 },
-    { symbol: 'TSLA', overallSentiment: 'bearish', sentimentScore: -0.34, newsCount: 15, trending: true, momentum: -0.22, socialVolume: 94, institutionalSentiment: -0.28 },
-    { symbol: 'QQQ', overallSentiment: 'neutral', sentimentScore: 0.12, newsCount: 12, trending: false, momentum: 0.03, socialVolume: 45, institutionalSentiment: 0.18 },
-    { symbol: 'AMZN', overallSentiment: 'bullish', sentimentScore: 0.45, newsCount: 9, trending: false, momentum: 0.06, socialVolume: 52, institutionalSentiment: 0.42 }
-  ];
-
-  const mockMood: MarketMood = {
-    overall: 'bullish',
-    score: 0.68,
-    fearGreedIndex: 72,
-    volatilityIndex: 18.5,
-    newsVolume: 156,
-    socialActivity: 89
-  };
-
-  const displayNews = news.length > 0 ? news : mockNews;
-  const displaySentiment = sentimentAnalysis.length > 0 ? sentimentAnalysis : mockSentiment;
-  const displayMood = marketMood || mockMood;
+  const displayNews = news;
+  const displaySentiment = sentimentAnalysis;
+  const displayMood = marketMood;
 
   return (
     <div className="container mx-auto py-8 space-y-6">
@@ -223,67 +150,73 @@ export default function NewsSentimentPage() {
       </div>
 
       {/* Market Mood Overview */}
-      <div className="grid gap-4 md:grid-cols-4">
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Market Sentiment</CardTitle>
-            <Zap className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className={`text-2xl font-bold ${getSentimentColor(displayMood.overall).split(' ')[0]}`}>
-              {displayMood.overall.toUpperCase()}
-            </div>
-            <p className="text-xs text-muted-foreground">
-              Score: {(displayMood.score * 100).toFixed(0)}/100
-            </p>
-          </CardContent>
-        </Card>
+      {displayMood ? (
+        <div className="grid gap-4 md:grid-cols-4">
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Market Sentiment</CardTitle>
+              <Zap className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className={`text-2xl font-bold ${getSentimentColor(displayMood.overall).split(' ')[0]}`}>
+                {displayMood.overall.toUpperCase()}
+              </div>
+              <p className="text-xs text-muted-foreground">
+                Score: {(displayMood.score * 100).toFixed(0)}/100
+              </p>
+            </CardContent>
+          </Card>
 
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Fear & Greed Index</CardTitle>
-            <BarChart3 className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold text-green-600">
-              {displayMood.fearGreedIndex}
-            </div>
-            <p className="text-xs text-muted-foreground">
-              Greed level indicator
-            </p>
-          </CardContent>
-        </Card>
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Fear & Greed Index</CardTitle>
+              <BarChart3 className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold text-green-600">
+                {displayMood.fearGreedIndex}
+              </div>
+              <p className="text-xs text-muted-foreground">
+                Greed level indicator
+              </p>
+            </CardContent>
+          </Card>
 
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">News Volume</CardTitle>
-            <Newspaper className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">
-              {displayMood.newsVolume}
-            </div>
-            <p className="text-xs text-muted-foreground">
-              articles in 24h
-            </p>
-          </CardContent>
-        </Card>
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">News Volume</CardTitle>
+              <Newspaper className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">
+                {displayMood.newsVolume}
+              </div>
+              <p className="text-xs text-muted-foreground">
+                articles in 24h
+              </p>
+            </CardContent>
+          </Card>
 
-        <Card>
-          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-            <CardTitle className="text-sm font-medium">Social Activity</CardTitle>
-            <TrendingUp className="h-4 w-4 text-muted-foreground" />
-          </CardHeader>
-          <CardContent>
-            <div className="text-2xl font-bold">
-              {displayMood.socialActivity}%
-            </div>
-            <p className="text-xs text-muted-foreground">
-              above average
-            </p>
-          </CardContent>
-        </Card>
-      </div>
+          <Card>
+            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+              <CardTitle className="text-sm font-medium">Social Activity</CardTitle>
+              <TrendingUp className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold">
+                {displayMood.socialActivity}%
+              </div>
+              <p className="text-xs text-muted-foreground">
+                above average
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+      ) : (
+        <div className="text-center text-muted-foreground">
+          Market mood data not available
+        </div>
+      )}
 
       {/* Filters */}
       <Card>
@@ -446,29 +379,8 @@ export default function NewsSentimentPage() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="space-y-4">
-                {[
-                  { topic: 'AI Infrastructure Spending', mentions: 247, sentiment: 'bullish', impact: 'high' },
-                  { topic: 'Federal Reserve Policy', mentions: 189, sentiment: 'neutral', impact: 'high' },
-                  { topic: 'Cryptocurrency Adoption', mentions: 156, sentiment: 'bullish', impact: 'medium' },
-                  { topic: 'Supply Chain Disruptions', mentions: 134, sentiment: 'bearish', impact: 'medium' },
-                  { topic: 'ESG Investments', mentions: 98, sentiment: 'neutral', impact: 'low' }
-                ].map((trend, index) => (
-                  <div key={index} className="flex items-center justify-between p-3 border rounded">
-                    <div className="flex items-center gap-3">
-                      <div className="font-medium">{trend.topic}</div>
-                      <Badge className={getSentimentColor(trend.sentiment)}>
-                        {trend.sentiment}
-                      </Badge>
-                    </div>
-                    <div className="flex items-center gap-4 text-sm">
-                      <span>{trend.mentions} mentions</span>
-                      <Badge variant="outline" className={getImpactColor(trend.impact)}>
-                        {trend.impact}
-                      </Badge>
-                    </div>
-                  </div>
-                ))}
+              <div className="text-center py-8 text-muted-foreground">
+                Trending topics data not available
               </div>
             </CardContent>
           </Card>

@@ -55,38 +55,7 @@ export default function OptionsFlowPanel() {
     );
   }
 
-  // Mock data for demonstration since we don't have live flow data
-  const mockFlow = [
-    {
-      id: '1',
-      symbol: 'NVDA 01/19 $480C',
-      type: 'C' as const,
-      volume: 1250,
-      price: '12.40',
-      premium: '1550000',
-      sentiment: 'BULLISH' as const,
-    },
-    {
-      id: '2',
-      symbol: 'SPY 01/19 $470P',
-      type: 'P' as const,
-      volume: 2800,
-      price: '3.20',
-      premium: '896000',
-      sentiment: 'BEARISH' as const,
-    },
-    {
-      id: '3',
-      symbol: 'QQQ 02/16 $390C',
-      type: 'C' as const,
-      volume: 950,
-      price: '8.75',
-      premium: '831250',
-      sentiment: 'NEUTRAL' as const,
-    },
-  ];
-
-  const flowData = optionsFlow.length > 0 ? optionsFlow : mockFlow;
+  const flowData = optionsFlow;
 
   return (
     <div className="bg-dark-800 border border-dark-700 rounded-xl">
