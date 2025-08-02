@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "AMZN",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Sell",
+    "previousTarget": 175.6468897528262,
+    "newTarget": 152.06699770135364,
+    "date": "2025-07-30T02:21:06.752Z",
+    "reasoning": "Strong earnings momentum"
+  }
+]

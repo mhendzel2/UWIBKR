@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "CVX",
+    "headline": "Regulatory approval granted for CVX new product",
+    "summary": "Recent developments suggest positive momentum for CVX with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.49505116318717235,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-01T22:25:26.917Z",
+    "url": "https://example.com/news/cvx-1754101860543"
+  },
+  {
+    "symbol": "CVX",
+    "headline": "Regulatory approval granted for CVX new product",
+    "summary": "Recent developments suggest positive momentum for CVX with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.4983065160888401,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-02T01:33:37.001Z",
+    "url": "https://example.com/news/cvx-1754101860543"
+  }
+]

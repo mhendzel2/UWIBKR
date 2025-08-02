@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "JPM",
+    "date": "2025-08-02",
+    "darkPoolVolume": 3370807,
+    "totalVolume": 15093209,
+    "darkPoolRatio": 0.22333269220614382,
+    "avgDarkPoolSize": 8419,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 87562,
+        "price": 194.33578490696215,
+        "timestamp": "2025-08-02T01:29:49.857Z"
+      },
+      {
+        "size": 106785,
+        "price": 175.09609394499594,
+        "timestamp": "2025-08-01T20:42:05.597Z"
+      }
+    ]
+  }
+]

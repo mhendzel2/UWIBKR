@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "CVX",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Outperform",
+    "previousTarget": 197.94498188628882,
+    "newTarget": 213.1796363415364,
+    "date": "2025-07-29T01:57:53.059Z",
+    "reasoning": "Strong earnings momentum"
+  }
+]

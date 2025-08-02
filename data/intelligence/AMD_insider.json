@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "AMD",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 26088,
+    "price": 210.07801587115318,
+    "value": 5480515.278046644,
+    "date": "2025-07-26T12:14:00.260Z",
+    "filingDate": "2025-07-30T10:41:27.905Z",
+    "ownershipPercent": 4.0177327493282595
+  }
+]

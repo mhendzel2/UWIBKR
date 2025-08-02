@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "AAPL",
+    "headline": "Regulatory approval granted for AAPL new product",
+    "summary": "Recent developments suggest positive momentum for AAPL with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.5323602517087295,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-01T23:14:18.621Z",
+    "url": "https://example.com/news/aapl-1754101860463"
+  },
+  {
+    "symbol": "AAPL",
+    "headline": "Regulatory approval granted for AAPL new product",
+    "summary": "Recent developments suggest positive momentum for AAPL with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.5268014462772014,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-01T23:07:20.913Z",
+    "url": "https://example.com/news/aapl-1754101860463"
+  },
+  {
+    "symbol": "AAPL",
+    "headline": "Analyst upgrades AAPL on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for AAPL with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.736182085847426,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-02T02:30:16.320Z",
+    "url": "https://example.com/news/aapl-1754101860463"
+  }
+]

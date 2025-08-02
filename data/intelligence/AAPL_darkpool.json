@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "AAPL",
+    "date": "2025-08-02",
+    "darkPoolVolume": 4370736,
+    "totalVolume": 10701282,
+    "darkPoolRatio": 0.40843106461450135,
+    "avgDarkPoolSize": 4225,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 105579,
+        "price": 213.26905964136938,
+        "timestamp": "2025-08-01T19:22:20.420Z"
+      },
+      {
+        "size": 61122,
+        "price": 245.4646712412478,
+        "timestamp": "2025-08-01T22:38:13.107Z"
+      },
+      {
+        "size": 115021,
+        "price": 172.42756947998407,
+        "timestamp": "2025-08-01T21:38:12.710Z"
+      }
+    ]
+  }
+]

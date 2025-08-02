@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "TSLA",
+    "date": "2025-08-02",
+    "darkPoolVolume": 4146882,
+    "totalVolume": 15357970,
+    "darkPoolRatio": 0.2700149824488523,
+    "avgDarkPoolSize": 5521,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 104687,
+        "price": 209.6119785681992,
+        "timestamp": "2025-08-01T19:11:17.925Z"
+      },
+      {
+        "size": 142580,
+        "price": 247.73546446537492,
+        "timestamp": "2025-08-01T20:01:27.895Z"
+      }
+    ]
+  }
+]

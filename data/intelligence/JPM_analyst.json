@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "JPM",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Hold",
+    "newRating": "Outperform",
+    "previousTarget": 235.4372981169912,
+    "newTarget": 223.65946659748687,
+    "date": "2025-08-01T18:23:31.397Z",
+    "reasoning": "Compelling growth story"
+  },
+  {
+    "symbol": "JPM",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Hold",
+    "newRating": "Outperform",
+    "previousTarget": 177.72957090497624,
+    "newTarget": 182.83961354133814,
+    "date": "2025-07-31T07:20:31.429Z",
+    "reasoning": "Strong earnings momentum"
+  }
+]

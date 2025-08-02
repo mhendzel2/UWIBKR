@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "CRM",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 29680,
+    "price": 248.38308754247433,
+    "value": 7372010.038260638,
+    "date": "2025-07-29T03:36:43.703Z",
+    "filingDate": "2025-08-01T12:33:04.440Z",
+    "ownershipPercent": 1.2468616768471263
+  }
+]

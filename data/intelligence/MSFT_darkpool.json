@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "MSFT",
+    "date": "2025-08-02",
+    "darkPoolVolume": 3369944,
+    "totalVolume": 19851027,
+    "darkPoolRatio": 0.16976169545283476,
+    "avgDarkPoolSize": 10577,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 56657,
+        "price": 162.93909864690767,
+        "timestamp": "2025-08-02T00:25:55.094Z"
+      },
+      {
+        "size": 138752,
+        "price": 204.54039769787562,
+        "timestamp": "2025-08-01T20:22:54.666Z"
+      },
+      {
+        "size": 109911,
+        "price": 184.466827157681,
+        "timestamp": "2025-08-02T01:03:04.242Z"
+      },
+      {
+        "size": 79744,
+        "price": 203.2169451470374,
+        "timestamp": "2025-08-02T01:07:24.481Z"
+      }
+    ]
+  }
+]

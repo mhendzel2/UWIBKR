@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "XLF",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Buy",
+    "newRating": "Sell",
+    "previousTarget": 187.6504969714275,
+    "newTarget": 172.7309815803218,
+    "date": "2025-07-30T17:53:35.122Z",
+    "reasoning": "Improved market position"
+  },
+  {
+    "symbol": "XLF",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 195.4141943775025,
+    "newTarget": 196.73462146428875,
+    "date": "2025-07-29T18:05:09.447Z",
+    "reasoning": "Compelling growth story"
+  }
+]

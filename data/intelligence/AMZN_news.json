@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "AMZN",
+    "headline": "AMZN reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for AMZN with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.6641395132163717,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-01T15:56:17.991Z",
+    "url": "https://example.com/news/amzn-1754101860481"
+  },
+  {
+    "symbol": "AMZN",
+    "headline": "AMZN reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for AMZN with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.8028757083160108,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-01T23:17:44.184Z",
+    "url": "https://example.com/news/amzn-1754101860482"
+  },
+  {
+    "symbol": "AMZN",
+    "headline": "AMZN raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for AMZN with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.644548246915928,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-02T01:35:01.982Z",
+    "url": "https://example.com/news/amzn-1754101860483"
+  }
+]

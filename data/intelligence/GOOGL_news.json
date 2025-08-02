@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "GOOGL",
+    "headline": "Regulatory approval granted for GOOGL new product",
+    "summary": "Recent developments suggest positive momentum for GOOGL with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.6997828573523539,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-01T16:00:32.936Z",
+    "url": "https://example.com/news/googl-1754101860476"
+  },
+  {
+    "symbol": "GOOGL",
+    "headline": "GOOGL reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for GOOGL with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.536965628604507,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-02T00:16:51.138Z",
+    "url": "https://example.com/news/googl-1754101860476"
+  }
+]

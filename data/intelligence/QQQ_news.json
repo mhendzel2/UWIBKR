@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "QQQ",
+    "headline": "QQQ raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for QQQ with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.6530354589264524,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-01T16:51:03.873Z",
+    "url": "https://example.com/news/qqq-1754101860376"
+  },
+  {
+    "symbol": "QQQ",
+    "headline": "Regulatory approval granted for QQQ new product",
+    "summary": "Recent developments suggest positive momentum for QQQ with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.692464406940857,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-02T01:02:11.983Z",
+    "url": "https://example.com/news/qqq-1754101860377"
+  },
+  {
+    "symbol": "QQQ",
+    "headline": "QQQ reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for QQQ with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.6337909782030388,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-01T20:09:57.951Z",
+    "url": "https://example.com/news/qqq-1754101860377"
+  }
+]

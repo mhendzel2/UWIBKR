@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "TSLA",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Sell",
+    "previousTarget": 200.28054408739064,
+    "newTarget": 216.61036108904392,
+    "date": "2025-07-28T05:55:00.181Z",
+    "reasoning": "Strong earnings momentum"
+  }
+]

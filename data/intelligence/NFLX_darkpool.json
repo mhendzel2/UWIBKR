@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "NFLX",
+    "date": "2025-08-02",
+    "darkPoolVolume": 3119930,
+    "totalVolume": 17444577,
+    "darkPoolRatio": 0.17884813142789305,
+    "avgDarkPoolSize": 6848,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 115314,
+        "price": 221.78772722774886,
+        "timestamp": "2025-08-02T02:05:05.959Z"
+      },
+      {
+        "size": 120480,
+        "price": 184.06054892351523,
+        "timestamp": "2025-08-02T00:51:03.535Z"
+      }
+    ]
+  }
+]

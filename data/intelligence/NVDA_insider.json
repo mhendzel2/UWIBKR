@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "NVDA",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 23324,
+    "price": 220.61724188148534,
+    "value": 5145676.549643764,
+    "date": "2025-07-27T07:11:07.158Z",
+    "filingDate": "2025-08-01T19:46:36.753Z",
+    "ownershipPercent": 1.1096740352289747
+  },
+  {
+    "symbol": "NVDA",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 14202,
+    "price": 157.91481985195452,
+    "value": 2242706.271537458,
+    "date": "2025-08-01T03:43:12.640Z",
+    "filingDate": "2025-08-01T01:16:10.590Z",
+    "ownershipPercent": 3.934140745954673
+  },
+  {
+    "symbol": "NVDA",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 9839,
+    "price": 219.2884382255753,
+    "value": 2157578.9437014353,
+    "date": "2025-07-30T12:50:56.384Z",
+    "filingDate": "2025-07-31T02:09:00.643Z",
+    "ownershipPercent": 4.95763672439412
+  }
+]

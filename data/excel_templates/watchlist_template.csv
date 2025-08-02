@@ -1,0 +1,21 @@
+Symbol,Sector,Market Cap,Avg Volume,Enabled,GEX Tracking,Notes
+AAPL,Technology,2900000000000,50000000,true,true,Mega cap tech with high options volume
+MSFT,Technology,2800000000000,25000000,true,true,Cloud leader with institutional interest
+GOOGL,Technology,1750000000000,28000000,true,true,Search and cloud dominance
+AMZN,Consumer Discretionary,1600000000000,40000000,true,true,E-commerce and AWS growth
+TSLA,Consumer Discretionary,790000000000,85000000,true,true,EV leader with high volatility
+NVDA,Technology,1220000000000,45000000,true,true,AI chip leader
+META,Technology,900000000000,20000000,true,true,Social media and VR pivot
+SPY,ETF,,60000000,true,true,S&P 500 ETF - market benchmark
+QQQ,ETF,,45000000,true,true,NASDAQ 100 ETF - tech heavy
+IWM,ETF,,35000000,true,true,Russell 2000 small caps
+JPM,Financials,580000000000,12000000,true,true,Banking sector leader
+BAC,Financials,350000000000,45000000,true,true,Major bank with retail focus
+XLF,ETF,,18000000,true,true,Financial sector ETF
+CVX,Energy,290000000000,15000000,true,true,Oil major with dividends
+XLE,ETF,,22000000,true,true,Energy sector ETF
+AMD,Technology,240000000000,65000000,true,true,CPU/GPU competitor to Intel/NVIDIA
+NFLX,Communication Services,190000000000,8000000,true,true,Streaming leader
+CRM,Technology,250000000000,7000000,true,true,Enterprise software leader
+VIX,Volatility,,0,true,false,Volatility index - no options
+UVXY,ETF,,25000000,true,true,VIX volatility ETF

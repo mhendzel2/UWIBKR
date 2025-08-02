@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "QQQ",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Outperform",
+    "newRating": "Hold",
+    "previousTarget": 223.9601792486344,
+    "newTarget": 244.15919299785332,
+    "date": "2025-07-29T21:09:35.338Z",
+    "reasoning": "Balanced risk/reward"
+  },
+  {
+    "symbol": "QQQ",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 179.78350591220712,
+    "newTarget": 187.5563377028006,
+    "date": "2025-07-30T11:27:02.076Z",
+    "reasoning": "Positive sector outlook"
+  }
+]

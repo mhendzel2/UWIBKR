@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "QQQ",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 1588,
+    "price": 175.69808393999517,
+    "value": 279008.55729671236,
+    "date": "2025-07-29T07:49:01.076Z",
+    "filingDate": "2025-07-30T21:56:03.079Z",
+    "ownershipPercent": 0.6595702966652061
+  },
+  {
+    "symbol": "QQQ",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 16113,
+    "price": 170.07452862471254,
+    "value": 2740410.879729993,
+    "date": "2025-08-01T17:01:29.228Z",
+    "filingDate": "2025-07-31T11:22:44.699Z",
+    "ownershipPercent": 0.7500396972959621
+  },
+  {
+    "symbol": "QQQ",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 2854,
+    "price": 158.634858719053,
+    "value": 452743.8867841773,
+    "date": "2025-07-30T12:58:21.794Z",
+    "filingDate": "2025-08-01T04:35:36.606Z",
+    "ownershipPercent": 1.5952786935272478
+  }
+]

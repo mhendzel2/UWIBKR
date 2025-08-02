@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "META",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Underperform",
+    "previousTarget": 232.79334677057523,
+    "newTarget": 230.29234231704052,
+    "date": "2025-07-30T04:11:47.111Z",
+    "reasoning": "Margin pressure concerns"
+  },
+  {
+    "symbol": "META",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Outperform",
+    "previousTarget": 221.67915119064787,
+    "newTarget": 237.08825901905823,
+    "date": "2025-07-29T04:18:43.123Z",
+    "reasoning": "Fair valuation"
+  }
+]

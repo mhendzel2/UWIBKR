@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "NFLX",
+    "headline": "NFLX announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for NFLX with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.4180761918726555,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-01T15:32:29.719Z",
+    "url": "https://example.com/news/nflx-1754101860508"
+  },
+  {
+    "symbol": "NFLX",
+    "headline": "NFLX announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for NFLX with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.3357199003577698,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-01T21:33:34.231Z",
+    "url": "https://example.com/news/nflx-1754101860508"
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "MSFT",
+    "headline": "MSFT reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for MSFT with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5013628395324904,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-02T01:08:11.167Z",
+    "url": "https://example.com/news/msft-1754101860465"
+  },
+  {
+    "symbol": "MSFT",
+    "headline": "MSFT announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for MSFT with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.4703688510560228,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-01T17:29:54.418Z",
+    "url": "https://example.com/news/msft-1754101860474"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "AMD",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Outperform",
+    "previousTarget": 177.04654557062506,
+    "newTarget": 160.95490299062962,
+    "date": "2025-08-01T02:46:33.771Z",
+    "reasoning": "Fair valuation"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "IWM",
+    "date": "2025-08-02",
+    "darkPoolVolume": 1424615,
+    "totalVolume": 7055267,
+    "darkPoolRatio": 0.20192219514867404,
+    "avgDarkPoolSize": 10558,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 55480,
+        "price": 191.4652003751683,
+        "timestamp": "2025-08-01T22:17:03.859Z"
+      },
+      {
+        "size": 115111,
+        "price": 216.76190547476506,
+        "timestamp": "2025-08-02T01:09:14.677Z"
+      },
+      {
+        "size": 82522,
+        "price": 224.32268590729768,
+        "timestamp": "2025-08-01T19:30:41.516Z"
+      },
+      {
+        "size": 69622,
+        "price": 208.8730448784398,
+        "timestamp": "2025-08-01T19:44:01.796Z"
+      }
+    ]
+  }
+]

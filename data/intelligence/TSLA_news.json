@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "TSLA",
+    "headline": "TSLA reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for TSLA with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.7971026206395692,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-01T22:46:09.913Z",
+    "url": "https://example.com/news/tsla-1754101860488"
+  },
+  {
+    "symbol": "TSLA",
+    "headline": "Regulatory approval granted for TSLA new product",
+    "summary": "Recent developments suggest positive momentum for TSLA with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.5611677538482173,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-02T00:21:41.938Z",
+    "url": "https://example.com/news/tsla-1754101860491"
+  },
+  {
+    "symbol": "TSLA",
+    "headline": "TSLA raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for TSLA with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.9576317555201305,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-02T01:32:37.683Z",
+    "url": "https://example.com/news/tsla-1754101860491"
+  }
+]

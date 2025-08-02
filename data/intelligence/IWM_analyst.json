@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "IWM",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Outperform",
+    "newRating": "Underperform",
+    "previousTarget": 170.42754625509002,
+    "newTarget": 150.56589313462607,
+    "date": "2025-07-28T23:13:16.541Z",
+    "reasoning": "Balanced risk/reward"
+  },
+  {
+    "symbol": "IWM",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Outperform",
+    "previousTarget": 154.3957099619776,
+    "newTarget": 137.84184972858827,
+    "date": "2025-07-30T22:27:28.844Z",
+    "reasoning": "Strong management team"
+  }
+]

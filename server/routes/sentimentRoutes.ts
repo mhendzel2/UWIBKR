@@ -1,0 +1,65 @@
+import { Router } from 'express';
+import { marketSentimentService } from '../services/marketSentimentService';
+
+const router = Router();
+
+// Get comprehensive market sentiment analysis
+router.get('/market', async (req, res) => {
+  try {
+    const sentiment = await marketSentimentService.getMarketSentiment();
+    res.json(sentiment);
+  } catch (error) {
+    console.error('Error fetching market sentiment:', error);
+    res.status(500).json({ 
+      error: 'Failed to fetch market sentiment',
+      message: error instanceof Error ? error.message : 'Unknown error'
+    });
+  }
+});
+
+// Get Trump communication alerts specifically
+router.get('/trump-alerts', async (req, res) => {
+  try {
+    const alerts = await marketSentimentService.getTrumpAlerts();
+    res.json(alerts);
+  } catch (error) {
+    console.error('Error fetching Trump alerts:', error);
+    res.status(500).json({ 
+      error: 'Failed to fetch Trump alerts',
+      message: error instanceof Error ? error.message : 'Unknown error'
+    });
+  }
+});
+
+// Get specific sentiment component
+router.get('/:component', async (req, res) => {
+  try {
+    const { component } = req.params;
+    const sentiment = await marketSentimentService.getMarketSentiment();
+    
+    switch (component) {
+      case 'crypto':
+        res.json(sentiment.crypto);
+        break;
+      case 'commodities':
+        res.json(sentiment.commodities);
+        break;
+      case 'trump':
+        res.json(sentiment.trumpCommunications);
+        break;
+      case 'overall':
+        res.json(sentiment.overallSentiment);
+        break;
+      default:
+        res.status(400).json({ error: 'Invalid component' });
+    }
+  } catch (error) {
+    console.error('Error fetching sentiment component:', error);
+    res.status(500).json({ 
+      error: 'Failed to fetch sentiment component',
+      message: error instanceof Error ? error.message : 'Unknown error'
+    });
+  }
+});
+
+export default router;

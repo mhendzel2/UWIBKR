@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "QQQ",
+    "date": "2025-08-02",
+    "darkPoolVolume": 4651178,
+    "totalVolume": 17725335,
+    "darkPoolRatio": 0.26240282623713457,
+    "avgDarkPoolSize": 1491,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 53521,
+        "price": 158.71881554794152,
+        "timestamp": "2025-08-02T01:58:36.761Z"
+      },
+      {
+        "size": 91288,
+        "price": 217.4677113194541,
+        "timestamp": "2025-08-01T18:45:28.532Z"
+      },
+      {
+        "size": 82275,
+        "price": 206.99048317956928,
+        "timestamp": "2025-08-01T20:54:31.411Z"
+      }
+    ]
+  }
+]

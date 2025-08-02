@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "XLE",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 22656,
+    "price": 175.20279460964986,
+    "value": 3969394.5146762272,
+    "date": "2025-07-27T22:58:36.260Z",
+    "filingDate": "2025-08-01T12:20:15.403Z",
+    "ownershipPercent": 2.545124953761928
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "GOOGL",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 19068,
+    "price": 204.12476821200647,
+    "value": 3892251.0802665395,
+    "date": "2025-07-29T02:13:58.346Z",
+    "filingDate": "2025-07-31T16:14:11.087Z",
+    "ownershipPercent": 0.17511908317433425
+  },
+  {
+    "symbol": "GOOGL",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 24945,
+    "price": 179.58459971509257,
+    "value": 4479737.839892984,
+    "date": "2025-07-27T08:52:14.474Z",
+    "filingDate": "2025-08-01T11:26:40.831Z",
+    "ownershipPercent": 0.821646996347367
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "META",
+    "headline": "META reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for META with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.7889808601943287,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-01T23:16:24.682Z",
+    "url": "https://example.com/news/meta-1754101860499"
+  },
+  {
+    "symbol": "META",
+    "headline": "META raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for META with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.7181368298382479,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-01T14:54:33.672Z",
+    "url": "https://example.com/news/meta-1754101860500"
+  },
+  {
+    "symbol": "META",
+    "headline": "Regulatory approval granted for META new product",
+    "summary": "Recent developments suggest positive momentum for META with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.4835035489496807,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-01T22:11:45.198Z",
+    "url": "https://example.com/news/meta-1754101860503"
+  }
+]

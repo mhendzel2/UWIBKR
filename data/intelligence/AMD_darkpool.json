@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "AMD",
+    "date": "2025-08-02",
+    "darkPoolVolume": 1335593,
+    "totalVolume": 6503457,
+    "darkPoolRatio": 0.2053666227054319,
+    "avgDarkPoolSize": 2003,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 85254,
+        "price": 218.33338463963105,
+        "timestamp": "2025-08-02T01:06:31.504Z"
+      },
+      {
+        "size": 75098,
+        "price": 232.0868223634221,
+        "timestamp": "2025-08-01T19:23:40.835Z"
+      }
+    ]
+  }
+]

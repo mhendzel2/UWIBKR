@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "MSFT",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 49244,
+    "price": 177.92945269751812,
+    "value": 8761957.968636582,
+    "date": "2025-07-27T02:04:05.618Z",
+    "filingDate": "2025-08-01T20:27:31.249Z",
+    "ownershipPercent": 0.8759081902539866
+  }
+]

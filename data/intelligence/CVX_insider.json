@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "CVX",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 1501,
+    "price": 183.6662446809359,
+    "value": 275683.0332660848,
+    "date": "2025-07-31T10:45:37.122Z",
+    "filingDate": "2025-08-01T02:41:48.446Z",
+    "ownershipPercent": 3.2127989088912945
+  }
+]

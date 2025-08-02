@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "JPM",
+    "headline": "JPM announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for JPM with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.5579709707018482,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-02T02:15:15.436Z",
+    "url": "https://example.com/news/jpm-1754101860518"
+  },
+  {
+    "symbol": "JPM",
+    "headline": "JPM reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for JPM with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.528352334554633,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-01T22:02:28.467Z",
+    "url": "https://example.com/news/jpm-1754101860518"
+  }
+]

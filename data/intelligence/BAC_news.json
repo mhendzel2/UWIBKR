@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "BAC",
+    "headline": "BAC announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for BAC with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.538199239880141,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-01T23:40:51.616Z",
+    "url": "https://example.com/news/bac-1754101860526"
+  },
+  {
+    "symbol": "BAC",
+    "headline": "BAC reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for BAC with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.8348586995009479,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-02T00:35:32.847Z",
+    "url": "https://example.com/news/bac-1754101860526"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "UVXY",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 34826,
+    "price": 151.1476247892696,
+    "value": 5263867.180911103,
+    "date": "2025-08-01T04:38:28.316Z",
+    "filingDate": "2025-07-30T03:50:29.600Z",
+    "ownershipPercent": 1.5186916191543987
+  },
+  {
+    "symbol": "UVXY",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 42645,
+    "price": 231.81460949890345,
+    "value": 9885734.022080738,
+    "date": "2025-07-27T09:18:53.964Z",
+    "filingDate": "2025-08-01T20:32:27.051Z",
+    "ownershipPercent": 3.6843488286817205
+  }
+]

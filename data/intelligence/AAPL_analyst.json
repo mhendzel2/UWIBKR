@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "AAPL",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Outperform",
+    "newRating": "Sell",
+    "previousTarget": 244.08314533871342,
+    "newTarget": 229.87835198016478,
+    "date": "2025-08-01T16:29:51.240Z",
+    "reasoning": "Attractive valuation"
+  }
+]

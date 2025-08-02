@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "MSFT",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 182.62324178780415,
+    "newTarget": 199.24439886462937,
+    "date": "2025-07-28T11:08:29.403Z",
+    "reasoning": "Stable fundamentals"
+  },
+  {
+    "symbol": "MSFT",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 157.98012012525496,
+    "newTarget": 164.7316672922075,
+    "date": "2025-08-01T19:16:11.434Z",
+    "reasoning": "Fair valuation"
+  }
+]

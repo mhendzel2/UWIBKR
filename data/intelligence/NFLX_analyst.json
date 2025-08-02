@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "NFLX",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Underperform",
+    "newRating": "Outperform",
+    "previousTarget": 185.2501454639039,
+    "newTarget": 164.8322595546049,
+    "date": "2025-07-29T11:53:50.408Z",
+    "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "NFLX",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Hold",
+    "previousTarget": 165.40975116267214,
+    "newTarget": 157.6183089312188,
+    "date": "2025-07-30T11:47:30.886Z",
+    "reasoning": "Strong management team"
+  }
+]

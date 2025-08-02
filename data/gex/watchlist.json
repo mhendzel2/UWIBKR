@@ -1,0 +1,142 @@
+[
+  {
+    "symbol": "SPY",
+    "sector": "ETF",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-02T02:31:00.337Z"
+  },
+  {
+    "symbol": "QQQ",
+    "sector": "ETF",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-02T02:31:00.337Z"
+  },
+  {
+    "symbol": "IWM",
+    "sector": "ETF",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-02T02:31:00.337Z"
+  },
+  {
+    "symbol": "AAPL",
+    "sector": "Technology",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-02T02:31:00.337Z"
+  },
+  {
+    "symbol": "MSFT",
+    "sector": "Technology",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-02T02:31:00.337Z"
+  },
+  {
+    "symbol": "GOOGL",
+    "sector": "Technology",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-02T02:31:00.337Z"
+  },
+  {
+    "symbol": "AMZN",
+    "sector": "Consumer Discretionary",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-02T02:31:00.337Z"
+  },
+  {
+    "symbol": "TSLA",
+    "sector": "Consumer Discretionary",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-02T02:31:00.337Z"
+  },
+  {
+    "symbol": "NVDA",
+    "sector": "Technology",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-02T02:31:00.337Z"
+  },
+  {
+    "symbol": "META",
+    "sector": "Technology",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-02T02:31:00.337Z"
+  },
+  {
+    "symbol": "AMD",
+    "sector": "Technology",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-02T02:31:00.337Z"
+  },
+  {
+    "symbol": "NFLX",
+    "sector": "Communication Services",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-02T02:31:00.337Z"
+  },
+  {
+    "symbol": "CRM",
+    "sector": "Technology",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-02T02:31:00.337Z"
+  },
+  {
+    "symbol": "JPM",
+    "sector": "Financials",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-02T02:31:00.337Z"
+  },
+  {
+    "symbol": "BAC",
+    "sector": "Financials",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-02T02:31:00.337Z"
+  },
+  {
+    "symbol": "XLF",
+    "sector": "ETF",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-02T02:31:00.337Z"
+  },
+  {
+    "symbol": "XLE",
+    "sector": "ETF",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-02T02:31:00.337Z"
+  },
+  {
+    "symbol": "CVX",
+    "sector": "Energy",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-02T02:31:00.337Z"
+  },
+  {
+    "symbol": "VIX",
+    "sector": "Volatility",
+    "enabled": true,
+    "gexTracking": false,
+    "lastUpdated": "2025-08-02T02:31:00.337Z"
+  },
+  {
+    "symbol": "UVXY",
+    "sector": "ETF",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-02T02:31:00.337Z"
+  }
+]

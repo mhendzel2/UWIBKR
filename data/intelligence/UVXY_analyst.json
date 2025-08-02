@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "UVXY",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Outperform",
+    "newRating": "Hold",
+    "previousTarget": 231.5380439955863,
+    "newTarget": 235.5189380051083,
+    "date": "2025-07-31T01:52:58.550Z",
+    "reasoning": "Positive sector outlook"
+  },
+  {
+    "symbol": "UVXY",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Underperform",
+    "previousTarget": 198.7450371363311,
+    "newTarget": 206.24334596281142,
+    "date": "2025-07-28T03:45:50.994Z",
+    "reasoning": "Strong earnings momentum"
+  }
+]

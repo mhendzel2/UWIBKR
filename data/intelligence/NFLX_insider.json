@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "NFLX",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 30851,
+    "price": 234.01882440275077,
+    "value": 7219714.751649264,
+    "date": "2025-07-27T06:59:02.838Z",
+    "filingDate": "2025-07-30T23:48:40.989Z",
+    "ownershipPercent": 2.4539668888031483
+  }
+]

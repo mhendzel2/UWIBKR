@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "NVDA",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Outperform",
+    "previousTarget": 215.64997598897367,
+    "newTarget": 193.8266327172741,
+    "date": "2025-07-28T06:54:53.354Z",
+    "reasoning": "Competitive headwinds"
+  },
+  {
+    "symbol": "NVDA",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Outperform",
+    "newRating": "Underperform",
+    "previousTarget": 200.1141594847067,
+    "newTarget": 198.5535392143485,
+    "date": "2025-07-30T13:02:33.280Z",
+    "reasoning": "Improved market position"
+  }
+]

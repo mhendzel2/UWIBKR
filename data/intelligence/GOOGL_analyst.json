@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "GOOGL",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 246.0829260131017,
+    "newTarget": 240.4590829685863,
+    "date": "2025-07-30T12:30:00.843Z",
+    "reasoning": "Strong management team"
+  },
+  {
+    "symbol": "GOOGL",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Buy",
+    "previousTarget": 216.61295400290453,
+    "newTarget": 192.22609861824728,
+    "date": "2025-07-31T21:29:17.136Z",
+    "reasoning": "Attractive valuation"
+  }
+]

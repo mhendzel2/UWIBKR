@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "CRM",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Underperform",
+    "previousTarget": 217.53687993900408,
+    "newTarget": 214.53848286242155,
+    "date": "2025-08-01T20:02:05.146Z",
+    "reasoning": "Competitive headwinds"
+  },
+  {
+    "symbol": "CRM",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Underperform",
+    "previousTarget": 212.52338813664258,
+    "newTarget": 206.2815143775177,
+    "date": "2025-08-01T23:34:36.054Z",
+    "reasoning": "Valuation concerns"
+  }
+]

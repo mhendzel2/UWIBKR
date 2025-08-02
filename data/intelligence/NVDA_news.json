@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "NVDA",
+    "headline": "Analyst upgrades NVDA on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for NVDA with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.7877316572624369,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-01T22:59:45.843Z",
+    "url": "https://example.com/news/nvda-1754101860492"
+  },
+  {
+    "symbol": "NVDA",
+    "headline": "Regulatory approval granted for NVDA new product",
+    "summary": "Recent developments suggest positive momentum for NVDA with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.646467607138102,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-02T00:12:23.576Z",
+    "url": "https://example.com/news/nvda-1754101860492"
+  }
+]

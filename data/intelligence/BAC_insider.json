@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "BAC",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 4972,
+    "price": 163.41912498693725,
+    "value": 812519.889435052,
+    "date": "2025-07-29T08:10:30.277Z",
+    "filingDate": "2025-08-01T21:01:10.188Z",
+    "ownershipPercent": 4.093067942388808
+  }
+]

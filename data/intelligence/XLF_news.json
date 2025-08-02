@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "XLF",
+    "headline": "XLF raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for XLF with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.8745245764460927,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-01T17:42:08.806Z",
+    "url": "https://example.com/news/xlf-1754101860528"
+  },
+  {
+    "symbol": "XLF",
+    "headline": "XLF reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for XLF with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.6704038947571989,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-01T21:37:56.830Z",
+    "url": "https://example.com/news/xlf-1754101860530"
+  },
+  {
+    "symbol": "XLF",
+    "headline": "XLF announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for XLF with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.6143896007590195,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-01T18:00:40.745Z",
+    "url": "https://example.com/news/xlf-1754101860532"
+  }
+]

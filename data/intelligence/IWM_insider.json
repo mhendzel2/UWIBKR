@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "IWM",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 23302,
+    "price": 227.7561471133767,
+    "value": 5307173.740035904,
+    "date": "2025-07-29T14:19:29.828Z",
+    "filingDate": "2025-07-30T03:08:47.282Z",
+    "ownershipPercent": 1.2813230858017
+  },
+  {
+    "symbol": "IWM",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 26180,
+    "price": 247.50771008948385,
+    "value": 6479751.850142688,
+    "date": "2025-07-31T11:44:12.363Z",
+    "filingDate": "2025-07-30T21:31:48.417Z",
+    "ownershipPercent": 0.8181904551495199
+  },
+  {
+    "symbol": "IWM",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 35240,
+    "price": 248.00736970845907,
+    "value": 8739779.708526097,
+    "date": "2025-07-30T03:42:07.296Z",
+    "filingDate": "2025-07-31T03:19:10.559Z",
+    "ownershipPercent": 0.4033749845001543
+  }
+]

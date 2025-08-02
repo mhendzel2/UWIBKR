@@ -1,0 +1,43 @@
+[
+  {
+    "symbol": "NVDA",
+    "date": "2025-08-02",
+    "darkPoolVolume": 5523200,
+    "totalVolume": 17981390,
+    "darkPoolRatio": 0.3071620158397098,
+    "avgDarkPoolSize": 5962,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 123015,
+        "price": 179.96990812148624,
+        "timestamp": "2025-08-01T19:50:17.553Z"
+      },
+      {
+        "size": 89351,
+        "price": 155.07003953407147,
+        "timestamp": "2025-08-01T20:46:16.061Z"
+      },
+      {
+        "size": 148522,
+        "price": 198.2323192326878,
+        "timestamp": "2025-08-01T20:26:16.314Z"
+      },
+      {
+        "size": 70738,
+        "price": 224.66622929595044,
+        "timestamp": "2025-08-01T19:59:11.364Z"
+      },
+      {
+        "size": 59008,
+        "price": 179.35954987791877,
+        "timestamp": "2025-08-01T22:16:30.281Z"
+      },
+      {
+        "size": 70086,
+        "price": 170.29920253566723,
+        "timestamp": "2025-08-01T21:28:31.751Z"
+      }
+    ]
+  }
+]

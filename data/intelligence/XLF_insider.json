@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "XLF",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 6084,
+    "price": 163.34762607221776,
+    "value": 993806.9570233729,
+    "date": "2025-07-29T21:10:27.392Z",
+    "filingDate": "2025-07-31T07:21:35.918Z",
+    "ownershipPercent": 2.3226021378160353
+  },
+  {
+    "symbol": "XLF",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 18513,
+    "price": 213.49351666366132,
+    "value": 3952405.473994362,
+    "date": "2025-07-31T02:46:55.710Z",
+    "filingDate": "2025-07-31T19:10:42.803Z",
+    "ownershipPercent": 0.9566248697224488
+  }
+]

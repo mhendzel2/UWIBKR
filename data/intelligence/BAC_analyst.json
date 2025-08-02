@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "BAC",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Outperform",
+    "newRating": "Outperform",
+    "previousTarget": 241.47965897734298,
+    "newTarget": 223.02388903313127,
+    "date": "2025-07-30T14:59:19.576Z",
+    "reasoning": "Fair valuation"
+  }
+]

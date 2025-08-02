@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "SPY",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Sell",
+    "newRating": "Sell",
+    "previousTarget": 190.34233587888787,
+    "newTarget": 184.0223238797599,
+    "date": "2025-07-28T11:55:09.710Z",
+    "reasoning": "Valuation concerns"
+  }
+]
