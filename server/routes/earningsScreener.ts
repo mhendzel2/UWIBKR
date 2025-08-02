@@ -86,6 +86,16 @@ router.get('/earnings-screener', async (req, res) => {
       },
     );
 
+    if (!earningsResp.ok) {
+      let errorText: string;
+      try {
+        const errorJson = await earningsResp.json();
+        errorText = errorJson?.error || JSON.stringify(errorJson);
+      } catch {
+        errorText = await earningsResp.text();
+      }
+      return res.status(502).json({ success: false, error: `Failed to fetch earnings data: ${earningsResp.status} ${earningsResp.statusText} - ${errorText}` });
+    }
     const earningsData = (await earningsResp.json()) as {
       data?: EarningsEvent[];
     };
