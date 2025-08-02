@@ -49,23 +49,23 @@ interface LEAPAnalysisData {
     highConviction?: number;
     avgProbabilityScore?: number;
     topSectors?: Array<{ sector: string; count: number }>;
-  const { data: leapData, isLoading, error, dataUpdatedAt: leapUpdatedAt } = useQuery<LEAPAnalysisData>({
-    queryKey: ['/api/leaps/analyze', stringencyLevel],
-    refetchInterval: 5 * 60 * 1000, // Refresh every 5 minutes
-  });
+  };
+}
+
+export default function LeapAnalysis() {
   const [selectedTrade, setSelectedTrade] = useState<LEAPTrade | null>(null);
   const [selectedLeapIds, setSelectedLeapIds] = useState<string[]>([]);
   const [stringencyLevel, setStringencyLevel] = useState(5);
   const [trainingMode, setTrainingMode] = useState(false);
   const queryClient = useQueryClient();
 
-  const { data: leapData, isLoading, error, dataUpdatedAt: leapUpdatedAt } = useQuery({
+  const { data: leapData, isLoading, error, dataUpdatedAt: leapUpdatedAt } = useQuery<LEAPAnalysisData>({
     queryKey: ['/api/leaps/analyze', stringencyLevel],
     refetchInterval: 5 * 60 * 1000, // Refresh every 5 minutes
   });
 
   // Fetch stringency metrics for training mode
-  const { data: stringencyMetrics } = useQuery({
+  const { data: stringencyMetrics } = useQuery<any>({
     queryKey: ['/api/options/stringency-metrics', stringencyLevel],
     enabled: trainingMode,
   });
@@ -73,7 +73,7 @@ interface LEAPAnalysisData {
   const trades = leapData?.trades || [];
   const summary = leapData?.summary || {};
 
-  const { data: tradeDetails, isLoading: loadingDetails, error: detailsError } = useQuery({
+  const { data: tradeDetails, isLoading: loadingDetails, error: detailsError } = useQuery<any>({
     queryKey: ['/api/leaps', selectedTrade?.id, 'details'],
     enabled: !!selectedTrade?.id,
     retry: 3,
@@ -530,12 +530,15 @@ interface LEAPAnalysisData {
                                           <div>
                                             <div className="text-sm font-medium mb-2">Factors</div>
                                             <div className="space-y-1 text-sm">
-                                              {tradeDetails.analysis.probabilityAssessment?.factors && Object.entries(tradeDetails.analysis.probabilityAssessment.factors).map(([key, value]) => (
-                                                <div key={key} className="flex justify-between">
-                                                  <span className="capitalize">{key.replace(/([A-Z])/g, ' $1')}:</span>
-                                                  <span className="font-medium">{value}</span>
-                                                </div>
-                                              ))}
+                                                {tradeDetails.analysis.probabilityAssessment?.factors &&
+                                                  Object.entries(tradeDetails.analysis.probabilityAssessment.factors).map(
+                                                    ([key, value]: [string, any]) => (
+                                                      <div key={key} className="flex justify-between">
+                                                        <span className="capitalize">{key.replace(/([A-Z])/g, ' $1')}:</span>
+                                                        <span className="font-medium">{value}</span>
+                                                      </div>
+                                                    )
+                                                  )}
                                             </div>
                                           </div>
                                         </div>
