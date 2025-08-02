@@ -1,4 +1,5 @@
 import { dataImporter, type WatchlistItem, type GEXData } from './dataImporter';
+import { sentimentAnalysisService, type TickerSentimentResult } from './sentimentAnalysis';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -99,6 +100,7 @@ export interface WatchlistConfig {
 export class GEXTracker {
   private watchlist: Map<string, WatchlistItem> = new Map();
   private gexData: Map<string, GEXData[]> = new Map();
+  private sentiments: Map<string, TickerSentimentResult> = new Map();
   private updateTimer?: NodeJS.Timeout;
   private readonly dataDir = path.join(process.cwd(), 'data', 'gex');
 
@@ -225,6 +227,18 @@ export class GEXTracker {
       .map(item => item.symbol);
   }
 
+  async refreshSentiments(): Promise<void> {
+    const symbols = this.getWatchlist().map(w => w.symbol);
+    const results = await Promise.all(
+      symbols.map(sym => sentimentAnalysisService.getTickerSentiment(sym))
+    );
+    results.forEach(r => this.sentiments.set(r.ticker, r));
+  }
+
+  getWatchlistSentiments(): TickerSentimentResult[] {
+    return Array.from(this.sentiments.values());
+  }
+
   scheduleUpdates(): void {
     // Schedule for 10:30 AM ET (after market open)
     const scheduleTime = this.getNextUpdateTime();
@@ -308,6 +322,7 @@ export class GEXTracker {
     }
 
     // Save update log
+    await this.refreshSentiments();
     await this.saveUpdateLog(results);
   }
 
