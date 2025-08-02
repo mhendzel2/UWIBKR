@@ -265,6 +265,60 @@ export class UnusualWhalesService {
     }
   }
 
+  // Additional data feed endpoints
+
+  async getWhaleRoster(): Promise<any[]> {
+    try {
+      const data = await this.makeRequest<{ data: any[] }>('/whales/roster');
+      return data.data || [];
+    } catch (error) {
+      console.error('Failed to fetch whale roster:', error);
+      return [];
+    }
+  }
+
+  async getOpenInterestDelta(ticker?: string): Promise<any[]> {
+    try {
+      const endpoint = ticker ? `/open-interest/delta/${ticker}` : '/open-interest/delta';
+      const data = await this.makeRequest<{ data: any[] }>(endpoint);
+      return data.data || [];
+    } catch (error) {
+      console.error('Failed to fetch open interest delta:', error);
+      return [];
+    }
+  }
+
+  async getDarkPoolScans(): Promise<any[]> {
+    try {
+      const data = await this.makeRequest<{ data: any[] }>('/dark-pool/alpha-scans');
+      return data.data || [];
+    } catch (error) {
+      console.error('Failed to fetch dark pool scans:', error);
+      return [];
+    }
+  }
+
+  async detectMultiLegStrategies(ticker?: string): Promise<any[]> {
+    try {
+      const endpoint = ticker ? `/option-trades/multileg/${ticker}` : '/option-trades/multileg';
+      const data = await this.makeRequest<{ data: any[] }>(endpoint);
+      return data.data || [];
+    } catch (error) {
+      console.error('Failed to detect multileg strategies:', error);
+      return [];
+    }
+  }
+
+  async getSectorRotation(): Promise<any[]> {
+    try {
+      const data = await this.makeRequest<{ data: any[] }>('/sector-rotation');
+      return data.data || [];
+    } catch (error) {
+      console.error('Failed to fetch sector rotation data:', error);
+      return [];
+    }
+  }
+
   getRequestStats() {
     return {
       requestCount: this.requestCount,

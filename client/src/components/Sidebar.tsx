@@ -28,6 +28,11 @@ const navigationItems = [
   { href: "/visual-transformer", label: "Visual Transformer", icon: "fas fa-eye" },
   { href: "/sentiment-heatmap", label: "Sentiment Heatmap", icon: "fas fa-fire" },
   { href: "/fundamentals", label: "Fundamentals Analysis", icon: "fas fa-building" },
+  { href: "/gamma-surface", label: "Gamma Surface", icon: "fas fa-mountain" },
+  { href: "/sweeps-timeline", label: "Timeline Sweeps", icon: "fas fa-stream" },
+  { href: "/flow-network", label: "Flow Network", icon: "fas fa-project-diagram" },
+  { href: "/whale-score-heatmap", label: "Whale Score Heatmap", icon: "fas fa-th" },
+  { href: "/sentiment-flow-overlay", label: "Sentiment vs Flow", icon: "fas fa-layer-group" },
   { href: "/settings", label: "Settings", icon: "fas fa-cog" },
 ];
 
