@@ -33,6 +33,11 @@ import OptionsScreenerPage from "@/pages/options-screener";
 import OptionsHeatMapPage from "@/pages/options-heatmap";
 import OptionsRadarPage from "@/pages/options-radar";
 import ShortExpiryDashboardPage from "@/pages/short-expiry-dashboard";
+import GammaSurfacePage from "@/pages/gamma-surface";
+import TimelineSweepsPage from "@/pages/timeline-sweeps";
+import FlowNetworkPage from "@/pages/flow-network";
+import WhaleScoreHeatMapPage from "@/pages/whale-score-heatmap";
+import SentimentFlowOverlayPage from "@/pages/sentiment-flow-overlay";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -66,6 +71,11 @@ function Router() {
       <Route path="/options-heatmap" component={OptionsHeatMapPage} />
       <Route path="/options-radar" component={OptionsRadarPage} />
       <Route path="/short-expiry" component={ShortExpiryDashboardPage} />
+      <Route path="/gamma-surface" component={GammaSurfacePage} />
+      <Route path="/sweeps-timeline" component={TimelineSweepsPage} />
+      <Route path="/flow-network" component={FlowNetworkPage} />
+      <Route path="/whale-score-heatmap" component={WhaleScoreHeatMapPage} />
+      <Route path="/sentiment-flow-overlay" component={SentimentFlowOverlayPage} />
       <Route component={NotFound} />
     </Switch>
   );

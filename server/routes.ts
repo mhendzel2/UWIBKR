@@ -462,6 +462,57 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Additional Unusual Whales data feed routes
+  app.get("/api/unusual-whales/whale-roster", async (_req, res) => {
+    try {
+      const data = await uwService.getWhaleRoster();
+      res.json(data);
+    } catch (error) {
+      console.error("Failed to fetch whale roster:", error);
+      res.status(500).json({ message: "Failed to fetch whale roster" });
+    }
+  });
+
+  app.get("/api/unusual-whales/open-interest-delta", async (req, res) => {
+    try {
+      const data = await uwService.getOpenInterestDelta(req.query.ticker as string | undefined);
+      res.json(data);
+    } catch (error) {
+      console.error("Failed to fetch open interest delta:", error);
+      res.status(500).json({ message: "Failed to fetch open interest delta" });
+    }
+  });
+
+  app.get("/api/unusual-whales/dark-pool-scans", async (_req, res) => {
+    try {
+      const data = await uwService.getDarkPoolScans();
+      res.json(data);
+    } catch (error) {
+      console.error("Failed to fetch dark pool scans:", error);
+      res.status(500).json({ message: "Failed to fetch dark pool scans" });
+    }
+  });
+
+  app.get("/api/unusual-whales/multileg", async (req, res) => {
+    try {
+      const data = await uwService.detectMultiLegStrategies(req.query.ticker as string | undefined);
+      res.json(data);
+    } catch (error) {
+      console.error("Failed to detect multileg strategies:", error);
+      res.status(500).json({ message: "Failed to detect multileg strategies" });
+    }
+  });
+
+  app.get("/api/unusual-whales/sector-rotation", async (_req, res) => {
+    try {
+      const data = await uwService.getSectorRotation();
+      res.json(data);
+    } catch (error) {
+      console.error("Failed to fetch sector rotation data:", error);
+      res.status(500).json({ message: "Failed to fetch sector rotation data" });
+    }
+  });
+
   // LEAP Analysis endpoints
   app.get("/api/leaps/analyze", async (req, res) => {
     try {
