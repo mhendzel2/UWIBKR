@@ -8,6 +8,7 @@ import shortExpiryRoutes from "./routes/shortExpiryRoutes";
 import ordersRoutes from "./routes/orders";
 import fdaRoutes from "./routes/fdaRoutes";
 import optionsScreenerRoutes from "./routes/optionsScreener";
+import earningsScreenerRoutes from "./routes/earningsScreener";
 import { 
   insertTradingSignalSchema, 
   insertPositionSchema,
@@ -2365,6 +2366,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Initialize routes last
   app.use('/api/options', optionsScreenerRoutes);
+  app.use('/api/options', earningsScreenerRoutes);
   
   // Options heatmap routes
   const { default: optionsHeatmapRoutes } = await import('./routes/optionsHeatmap');
