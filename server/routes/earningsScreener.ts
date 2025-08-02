@@ -143,11 +143,18 @@ router.get('/earnings-screener', async (req, res) => {
       if (!chainResp.ok) continue;
       const chain = (await chainResp.json()) as ChainResponse;
 
-      const earningsDate = new Date(event.report_date || event.earnings_date);
+      let earningsDate: Date | null = null;
+      if (event.report_date && !isNaN(new Date(event.report_date).getTime())) {
+        earningsDate = new Date(event.report_date);
+      } else if (event.earnings_date && !isNaN(new Date(event.earnings_date).getTime())) {
+        earningsDate = new Date(event.earnings_date);
+      } else {
+        continue; // Skip if no valid date
+      }
       const expirations = chain.expirations ?? [];
       const targetExp = expirations
         .map((e) => new Date(e))
-        .filter((d) => d >= earningsDate)
+        .filter((d) => d >= earningsDate!)
         .sort((a, b) => a.getTime() - b.getTime())[0];
       if (!targetExp) continue;
 
