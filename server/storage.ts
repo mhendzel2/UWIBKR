@@ -62,10 +62,10 @@ export interface IStorage {
   getOptionsFlow(limit?: number): Promise<OptionsFlow[]>;
   createOptionsFlow(flow: InsertOptionsFlow): Promise<OptionsFlow>;
 
-  // Risk Parameters
-  getRiskParameters(userId: string): Promise<RiskParameters | undefined>;
-  createRiskParameters(params: InsertRiskParameters): Promise<RiskParameters>;
-  updateRiskParameters(userId: string, updates: Partial<RiskParameters>): Promise<RiskParameters | undefined>;
+    // Risk Parameters
+    getRiskParameters(userId?: string): Promise<RiskParameters[]>;
+    createRiskParameters(params: InsertRiskParameters): Promise<RiskParameters>;
+    updateRiskParameters(id: string, updates: Partial<RiskParameters>): Promise<RiskParameters | undefined>;
 
   // System Health
   getSystemHealth(): Promise<SystemHealth[]>;
@@ -147,7 +147,7 @@ export interface IStorage {
   getRiskStatus(): Promise<any>;
 }
 
-export class MemStorage implements IStorage {
+/* export class MemStorage implements IStorage {
   private users: Map<string, User> = new Map();
   private tradingSignals: Map<string, TradingSignal> = new Map();
   private positions: Map<string, Position> = new Map();
@@ -336,16 +336,23 @@ export class MemStorage implements IStorage {
     return flows.slice(0, limit);
   }
 
-  async createOptionsFlow(flow: InsertOptionsFlow): Promise<OptionsFlow> {
-    const id = randomUUID();
-    const newFlow: OptionsFlow = {
-      ...flow,
-      id,
-      timestamp: new Date(),
-    };
-    this.optionsFlow.set(id, newFlow);
-    return newFlow;
-  }
+    async createOptionsFlow(flow: InsertOptionsFlow): Promise<OptionsFlow> {
+      const id = randomUUID();
+      const newFlow: OptionsFlow = {
+        id,
+        symbol: flow.symbol,
+        type: flow.type,
+        sentiment: flow.sentiment,
+        volume: flow.volume,
+        price: flow.price,
+        premium: flow.premium,
+        askSidePercentage: flow.askSidePercentage ?? null,
+        openInterest: flow.openInterest ?? null,
+        timestamp: new Date(),
+      };
+      this.optionsFlow.set(id, newFlow);
+      return newFlow;
+    }
 
   // Risk Parameters methods
   async getRiskParameters(userId?: string): Promise<RiskParameters[]> {
@@ -357,27 +364,31 @@ export class MemStorage implements IStorage {
     return Array.from(this.riskParameters.values());
   }
 
-  async createRiskParameters(params: InsertRiskParameters): Promise<RiskParameters> {
-    const id = randomUUID();
-    const newParams: RiskParameters = {
-      ...params,
-      id,
-      updatedAt: new Date(),
-    };
-    this.riskParameters.set(id, newParams);
-    return newParams;
-  }
+    async createRiskParameters(params: InsertRiskParameters): Promise<RiskParameters> {
+      const id = randomUUID();
+      const newParams: RiskParameters = {
+        id,
+        userId: params.userId ?? null,
+        maxDailyLoss: params.maxDailyLoss,
+        maxPositionSize: params.maxPositionSize,
+        maxDrawdown: params.maxDrawdown,
+        portfolioHeatLimit: params.portfolioHeatLimit,
+        isEnabled: params.isEnabled ?? null,
+        updatedAt: new Date(),
+      };
+      this.riskParameters.set(id, newParams);
+      return newParams;
+    }
 
-  async updateRiskParameters(userId: string, updates: Partial<RiskParameters>): Promise<RiskParameters | undefined> {
-    const params = Array.from(this.riskParameters.values())
-      .find(p => p.userId === userId);
-    
-    if (!params) return undefined;
+    async updateRiskParameters(id: string, updates: Partial<RiskParameters>): Promise<RiskParameters | undefined> {
+      const params = this.riskParameters.get(id);
 
-    const updatedParams = { ...params, ...updates, updatedAt: new Date() };
-    this.riskParameters.set(params.id, updatedParams);
-    return updatedParams;
-  }
+      if (!params) return undefined;
+
+      const updatedParams = { ...params, ...updates, updatedAt: new Date() };
+      this.riskParameters.set(id, updatedParams);
+      return updatedParams;
+    }
 
   // System Health methods
   async getSystemHealth(): Promise<SystemHealth[]> {
@@ -385,7 +396,7 @@ export class MemStorage implements IStorage {
       .sort((a, b) => (b.lastCheck?.getTime() || 0) - (a.lastCheck?.getTime() || 0));
   }
 
-  async updateSystemHealth(service: string, health: Partial<SystemHealth>): Promise<SystemHealth> {
+    async updateSystemHealth(service: string, health: Partial<SystemHealth>): Promise<SystemHealth> {
     const existing = Array.from(this.systemHealth.values())
       .find(h => h.service === service);
 
@@ -416,16 +427,20 @@ export class MemStorage implements IStorage {
       .find(data => data.symbol === symbol);
   }
 
-  async createMarketData(data: InsertMarketData): Promise<MarketData> {
-    const id = randomUUID();
-    const newData: MarketData = {
-      ...data,
-      id,
-      timestamp: new Date(),
-    };
-    this.marketData.set(id, newData);
-    return newData;
-  }
+    async createMarketData(data: InsertMarketData): Promise<MarketData> {
+      const id = randomUUID();
+      const newData: MarketData = {
+        id,
+        symbol: data.symbol,
+        price: data.price,
+        volume: data.volume ?? null,
+        timestamp: new Date(),
+        gammaExposure: data.gammaExposure ?? null,
+        deltaExposure: data.deltaExposure ?? null,
+      };
+      this.marketData.set(id, newData);
+      return newData;
+    }
 
   async updateMarketData(symbol: string, updates: Partial<MarketData>): Promise<MarketData | undefined> {
     const data = Array.from(this.marketData.values())
@@ -454,17 +469,27 @@ export class MemStorage implements IStorage {
       .sort((a, b) => (b.triggeredAt?.getTime() || 0) - (a.triggeredAt?.getTime() || 0));
   }
 
-  async createAlert(alert: InsertAlert): Promise<Alert> {
-    const id = randomUUID();
-    const newAlert: Alert = {
-      ...alert,
-      id,
-      triggeredAt: new Date(),
-      acknowledgedAt: null,
-    };
-    this.alerts.set(id, newAlert);
-    return newAlert;
-  }
+    async createAlert(alert: InsertAlert): Promise<Alert> {
+      const id = randomUUID();
+      const newAlert: Alert = {
+        id,
+        message: alert.message,
+        ticker: alert.ticker ?? null,
+        userId: alert.userId ?? null,
+        metadata: alert.metadata ?? null,
+        alertType: alert.alertType,
+        severity: alert.severity,
+        title: alert.title,
+        threshold: alert.threshold ?? null,
+        currentValue: alert.currentValue ?? null,
+        isRead: alert.isRead ?? null,
+        isActive: alert.isActive ?? null,
+        triggeredAt: new Date(),
+        acknowledgedAt: null,
+      };
+      this.alerts.set(id, newAlert);
+      return newAlert;
+    }
 
   async markAlertAsRead(alertId: string): Promise<Alert | undefined> {
     const alert = this.alerts.get(alertId);
@@ -511,15 +536,24 @@ export class MemStorage implements IStorage {
     return filtered;
   }
 
-  async createHistoricalData(data: InsertHistoricalData): Promise<HistoricalData> {
-    const id = randomUUID();
-    const newData: HistoricalData = {
-      ...data,
-      id,
-    };
-    this.historicalData.set(id, newData);
-    return newData;
-  }
+    async createHistoricalData(data: InsertHistoricalData): Promise<HistoricalData> {
+      const id = randomUUID();
+      const newData: HistoricalData = {
+        id,
+        dataType: data.dataType,
+        symbol: data.symbol ?? null,
+        timeframe: data.timeframe,
+        openPrice: data.openPrice ?? null,
+        highPrice: data.highPrice ?? null,
+        lowPrice: data.lowPrice ?? null,
+        closePrice: data.closePrice ?? null,
+        volume: data.volume ?? null,
+        timestamp: data.timestamp,
+        metadata: data.metadata ?? null,
+      };
+      this.historicalData.set(id, newData);
+      return newData;
+    }
 
   // Account Alert methods
   async getAccountAlerts(userId: string): Promise<AccountAlert[]> {
@@ -528,18 +562,24 @@ export class MemStorage implements IStorage {
       .sort((a, b) => (b.createdAt?.getTime() || 0) - (a.createdAt?.getTime() || 0));
   }
 
-  async createAccountAlert(alert: InsertAccountAlert): Promise<AccountAlert> {
-    const id = randomUUID();
-    const newAlert: AccountAlert = {
-      ...alert,
-      id,
-      lastTriggered: null,
-      createdAt: new Date(),
-      updatedAt: new Date(),
-    };
-    this.accountAlerts.set(id, newAlert);
-    return newAlert;
-  }
+    async createAccountAlert(alert: InsertAccountAlert): Promise<AccountAlert> {
+      const id = randomUUID();
+      const newAlert: AccountAlert = {
+        id,
+        userId: alert.userId ?? null,
+        alertName: alert.alertName,
+        condition: alert.condition,
+        threshold: alert.threshold,
+        ticker: alert.ticker ?? null,
+        isEnabled: alert.isEnabled ?? null,
+        notificationMethod: alert.notificationMethod,
+        lastTriggered: null,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      };
+      this.accountAlerts.set(id, newAlert);
+      return newAlert;
+    }
 
   async updateAccountAlert(alertId: string, updates: Partial<AccountAlert>): Promise<AccountAlert | undefined> {
     const alert = this.accountAlerts.get(alertId);
@@ -553,10 +593,12 @@ export class MemStorage implements IStorage {
   async deleteAccountAlert(alertId: string): Promise<boolean> {
     return this.accountAlerts.delete(alertId);
   }
-}
+  }
 
-// Database Storage Implementation
-export class DatabaseStorage implements IStorage {
+*/
+
+  // Database Storage Implementation
+  export class DatabaseStorage implements IStorage {
   // User methods
   async getUser(id: string): Promise<User | undefined> {
     const [user] = await db.select().from(schema.users).where(eq(schema.users.id, id));
@@ -605,7 +647,7 @@ export class DatabaseStorage implements IStorage {
 
   async deleteTradingSignal(id: string): Promise<boolean> {
     const result = await db.delete(schema.tradingSignals).where(eq(schema.tradingSignals.id, id));
-    return result.rowCount > 0;
+    return (result.rowCount ?? 0) > 0;
   }
 
   // Position methods
@@ -641,7 +683,7 @@ export class DatabaseStorage implements IStorage {
 
   async deletePosition(id: string): Promise<boolean> {
     const result = await db.delete(schema.positions).where(eq(schema.positions.id, id));
-    return result.rowCount > 0;
+    return (result.rowCount ?? 0) > 0;
   }
 
   // Trade methods - comprehensive trade tracking
@@ -681,7 +723,7 @@ export class DatabaseStorage implements IStorage {
 
   async deleteTrade(id: string): Promise<boolean> {
     const result = await db.delete(schema.trades).where(eq(schema.trades.id, id));
-    return result.rowCount > 0;
+    return (result.rowCount ?? 0) > 0;
   }
 
   // Trade Assessment methods
@@ -710,7 +752,7 @@ export class DatabaseStorage implements IStorage {
 
   async deleteTradeAssessment(id: string): Promise<boolean> {
     const result = await db.delete(schema.tradeAssessments).where(eq(schema.tradeAssessments.id, id));
-    return result.rowCount > 0;
+    return (result.rowCount ?? 0) > 0;
   }
 
   // Performance Metrics methods
@@ -719,23 +761,23 @@ export class DatabaseStorage implements IStorage {
     startDate?: Date;
     endDate?: Date;
   }): Promise<PerformanceMetrics[]> {
-    let query = db.select().from(schema.performanceMetrics);
-    
-    if (params.period) {
-      query = query.where(eq(schema.performanceMetrics.period, params.period));
+      const conditions = [] as any[];
+      if (params.period) {
+        conditions.push(eq(schema.performanceMetrics.period, params.period));
+      }
+      if (params.startDate && params.endDate) {
+        conditions.push(gte(schema.performanceMetrics.startDate, params.startDate));
+        conditions.push(lte(schema.performanceMetrics.endDate, params.endDate));
+      }
+
+        let query: any = db.select().from(schema.performanceMetrics);
+      if (conditions.length) {
+        query = query.where(and(...conditions));
+      }
+
+      query = query.orderBy(desc(schema.performanceMetrics.startDate));
+      return await query;
     }
-    
-    if (params.startDate && params.endDate) {
-      query = query.where(
-        and(
-          gte(schema.performanceMetrics.startDate, params.startDate),
-          lte(schema.performanceMetrics.endDate, params.endDate)
-        )
-      );
-    }
-    
-    return query.orderBy(desc(schema.performanceMetrics.startDate));
-  }
 
   async createPerformanceMetrics(metrics: InsertPerformanceMetrics): Promise<PerformanceMetrics> {
     const [newMetrics] = await db
@@ -813,11 +855,11 @@ export class DatabaseStorage implements IStorage {
   }
 
   async getRiskParameters(userId?: string): Promise<RiskParameters[]> {
-    let query = db.select().from(schema.riskParameters);
+    let query: any = db.select().from(schema.riskParameters);
     if (userId) {
       query = query.where(eq(schema.riskParameters.userId, userId));
     }
-    return query;
+    return await query;
   }
 
   async createRiskParameters(params: InsertRiskParameters): Promise<RiskParameters> {
@@ -849,33 +891,50 @@ export class DatabaseStorage implements IStorage {
     return newHealth;
   }
 
-  async updateSystemHealth(service: string, health: Partial<SystemHealth>): Promise<SystemHealth | undefined> {
+  async updateSystemHealth(service: string, health: Partial<SystemHealth>): Promise<SystemHealth> {
     const [updated] = await db
       .update(schema.systemHealth)
       .set(health)
       .where(eq(schema.systemHealth.service, service))
       .returning();
-    return updated || undefined;
+    if (!updated) {
+      throw new Error('System health entry not found');
+    }
+    return updated;
   }
 
-  async getMarketData(): Promise<MarketData[]> {
-    return db.select().from(schema.marketData).orderBy(desc(schema.marketData.timestamp));
-  }
+    async getMarketData(symbol: string): Promise<MarketData | undefined> {
+      const [data] = await db.select().from(schema.marketData).where(eq(schema.marketData.symbol, symbol));
+      return data || undefined;
+    }
 
-  async createMarketData(data: InsertMarketData): Promise<MarketData> {
-    const [newData] = await db
-      .insert(schema.marketData)
-      .values(data)
-      .returning();
-    return newData;
-  }
+    async getAllMarketData(): Promise<MarketData[]> {
+      return db.select().from(schema.marketData).orderBy(desc(schema.marketData.timestamp));
+    }
+
+    async createMarketData(data: InsertMarketData): Promise<MarketData> {
+      const [newData] = await db
+        .insert(schema.marketData)
+        .values(data)
+        .returning();
+      return newData;
+    }
+
+    async updateMarketData(symbol: string, updates: Partial<MarketData>): Promise<MarketData | undefined> {
+      const [updated] = await db
+        .update(schema.marketData)
+        .set(updates)
+        .where(eq(schema.marketData.symbol, symbol))
+        .returning();
+      return updated || undefined;
+    }
 
   async getAlerts(userId?: string): Promise<Alert[]> {
-    let query = db.select().from(schema.alerts);
+    let query: any = db.select().from(schema.alerts);
     if (userId) {
       query = query.where(eq(schema.alerts.userId, userId));
     }
-    return query.orderBy(desc(schema.alerts.triggeredAt));
+    return await query.orderBy(desc(schema.alerts.triggeredAt));
   }
 
   async getUnreadAlerts(userId: string): Promise<Alert[]> {
@@ -923,26 +982,29 @@ export class DatabaseStorage implements IStorage {
     endDate: Date;
     limit?: number;
   }): Promise<HistoricalData[]> {
-    let query = db.select().from(schema.historicalData)
-      .where(
-        and(
-          eq(schema.historicalData.dataType, params.dataType),
-          eq(schema.historicalData.timeframe, params.timeframe),
-          gte(schema.historicalData.timestamp, params.startDate),
-          lte(schema.historicalData.timestamp, params.endDate)
-        )
-      );
-    
-    if (params.symbol) {
-      query = query.where(eq(schema.historicalData.symbol, params.symbol));
+      const conditions = [
+        eq(schema.historicalData.dataType, params.dataType),
+        eq(schema.historicalData.timeframe, params.timeframe),
+        gte(schema.historicalData.timestamp, params.startDate),
+        lte(schema.historicalData.timestamp, params.endDate),
+      ];
+
+      if (params.symbol) {
+        conditions.push(eq(schema.historicalData.symbol, params.symbol));
+      }
+
+      let query: any = db
+        .select()
+        .from(schema.historicalData)
+        .where(and(...conditions));
+
+      if (params.limit) {
+        query = query.limit(params.limit);
+      }
+
+      query = query.orderBy(desc(schema.historicalData.timestamp));
+      return await query;
     }
-    
-    if (params.limit) {
-      query = query.limit(params.limit);
-    }
-    
-    return query.orderBy(desc(schema.historicalData.timestamp));
-  }
 
   async createHistoricalData(data: InsertHistoricalData): Promise<HistoricalData> {
     const [newData] = await db
@@ -977,7 +1039,7 @@ export class DatabaseStorage implements IStorage {
 
   async deleteAccountAlert(alertId: string): Promise<boolean> {
     const result = await db.delete(schema.accountAlerts).where(eq(schema.accountAlerts.id, alertId));
-    return result.rowCount > 0;
+    return (result.rowCount ?? 0) > 0;
   }
 
   // Portfolio Management Methods
@@ -1012,7 +1074,7 @@ export class DatabaseStorage implements IStorage {
 
   async deletePortfolio(id: string): Promise<boolean> {
     const result = await db.delete(schema.portfolios).where(eq(schema.portfolios.id, id));
-    return result.rowCount > 0;
+    return (result.rowCount ?? 0) > 0;
   }
 
   // Portfolio Positions Methods
@@ -1047,21 +1109,23 @@ export class DatabaseStorage implements IStorage {
 
   async deletePortfolioPosition(id: string): Promise<boolean> {
     const result = await db.delete(schema.portfolioPositions).where(eq(schema.portfolioPositions.id, id));
-    return result.rowCount > 0;
+    return (result.rowCount ?? 0) > 0;
   }
 
   // Portfolio Transactions Methods
-  async getPortfolioTransactions(portfolioId: string, limit?: number): Promise<PortfolioTransaction[]> {
-    let query = db.select().from(schema.portfolioTransactions)
-      .where(eq(schema.portfolioTransactions.portfolioId, portfolioId))
-      .orderBy(desc(schema.portfolioTransactions.executionTime));
-    
-    if (limit) {
-      query = query.limit(limit);
+    async getPortfolioTransactions(portfolioId: string, limit?: number): Promise<PortfolioTransaction[]> {
+      let query: any = db
+        .select()
+        .from(schema.portfolioTransactions)
+        .where(eq(schema.portfolioTransactions.portfolioId, portfolioId));
+
+      if (limit) {
+        query = query.limit(limit);
+      }
+
+      query = query.orderBy(desc(schema.portfolioTransactions.executionTime));
+      return await query;
     }
-    
-    return query;
-  }
 
   async createPortfolioTransaction(transaction: InsertPortfolioTransaction): Promise<PortfolioTransaction> {
     const [newTransaction] = await db
