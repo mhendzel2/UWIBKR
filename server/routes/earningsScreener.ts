@@ -64,7 +64,7 @@ router.get('/earnings-screener', async (req, res) => {
   function getQueryParam(key: string, defaultValue: string): string {
     const value = req.query[key];
     if (typeof value === 'string') return value;
-    if (Array.isArray(value)) return value[0] ?? defaultValue;
+    if (Array.isArray(value)) return (value[0] as string) ?? defaultValue;
     return defaultValue;
   }
 
@@ -76,6 +76,7 @@ router.get('/earnings-screener', async (req, res) => {
   const minIvPercent = getQueryParam('minIvPercent', '90');
   const bearishRatio = getQueryParam('bearishRatio', '2');
   const bullishRatio = getQueryParam('bullishRatio', '0.5');
+
   const start = new Date();
   const end = new Date(start.getTime() + parseInt(days) * 24 * 60 * 60 * 1000);
 
@@ -85,7 +86,7 @@ router.get('/earnings-screener', async (req, res) => {
       `https://api.unusualwhales.com/api/reference/earnings_calendar?start=${formatDate(start)}&end=${formatDate(end)}`,
       {
         headers: {
-          Authorization: `Bearer ${apiKey}`,
+          Authorization: `Bearer ${process.env.UNUSUAL_WHALES_API_KEY}`,
           'Content-Type': 'application/json',
         },
       },
@@ -156,6 +157,7 @@ router.get('/earnings-screener', async (req, res) => {
       } else {
         continue; // Skip if no valid date
       }
+      
       const expirations = chain.expirations ?? [];
       const targetExp = expirations
         .map((e) => new Date(e))

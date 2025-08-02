@@ -42,7 +42,17 @@ interface LEAPTrade {
   conviction: 'low' | 'medium' | 'high' | 'exceptional';
 }
 
-export default function LEAPAnalysisPage() {
+interface LEAPAnalysisData {
+  trades: LEAPTrade[];
+  summary: {
+    totalPremium?: number;
+    highConviction?: number;
+    avgProbabilityScore?: number;
+    topSectors?: Array<{ sector: string; count: number }>;
+  const { data: leapData, isLoading, error, dataUpdatedAt: leapUpdatedAt } = useQuery<LEAPAnalysisData>({
+    queryKey: ['/api/leaps/analyze', stringencyLevel],
+    refetchInterval: 5 * 60 * 1000, // Refresh every 5 minutes
+  });
   const [selectedTrade, setSelectedTrade] = useState<LEAPTrade | null>(null);
   const [selectedLeapIds, setSelectedLeapIds] = useState<string[]>([]);
   const [stringencyLevel, setStringencyLevel] = useState(5);
