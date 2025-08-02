@@ -143,6 +143,7 @@ router.get('/earnings-screener', async (req, res) => {
       if (!chainResp.ok) continue;
       const chain = (await chainResp.json()) as ChainResponse;
 
+      if (!event.report_date && !event.earnings_date) continue;
       const earningsDate = new Date(event.report_date || event.earnings_date);
       const expirations = chain.expirations ?? [];
       const targetExp = expirations
