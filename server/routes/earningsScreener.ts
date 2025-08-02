@@ -80,7 +80,7 @@ router.get('/earnings-screener', async (req, res) => {
       `https://api.unusualwhales.com/api/reference/earnings_calendar?start=${formatDate(start)}&end=${formatDate(end)}`,
       {
         headers: {
-          Authorization: `Bearer ${process.env.UNUSUAL_WHALES_API_KEY}`,
+          Authorization: `Bearer ${apiKey}`,
           'Content-Type': 'application/json',
         },
       },
