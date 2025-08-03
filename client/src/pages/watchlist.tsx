@@ -11,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
 import { 
   Eye, EyeOff, Plus, Trash2, Download, Upload, AlertTriangle, 
@@ -23,12 +24,19 @@ export default function WatchlistPage() {
   const [newSymbols, setNewSymbols] = useState('');
   const [selectedSymbol, setSelectedSymbol] = useState<string | null>(null);
   const [showAddDialog, setShowAddDialog] = useState(false);
+  const [currentList, setCurrentList] = useState('default');
+  const [showCreateDialog, setShowCreateDialog] = useState(false);
+  const [newListName, setNewListName] = useState('');
   const queryClient = useQueryClient();
 
   // Fetch watchlist
+  const { data: watchlists } = useQuery({
+    queryKey: ['/api/watchlist/lists'],
+  });
+
   const { data: watchlist, isLoading: watchlistLoading, dataUpdatedAt: watchlistUpdatedAt } = useQuery({
-    queryKey: ['/api/watchlist'],
-    refetchInterval: 30000
+    queryKey: [`/api/watchlist?list=${currentList}`],
+    refetchInterval: 30000,
   });
 
   const symbolsQuery = (watchlist || []).map((w: any) => w.symbol).join(',');
@@ -63,8 +71,8 @@ export default function WatchlistPage() {
 
   // Fetch GEX levels
   const { data: gexLevels, dataUpdatedAt: gexUpdatedAt } = useQuery({
-    queryKey: ['/api/gex/levels'],
-    refetchInterval: 60000
+    queryKey: [`/api/gex/levels?list=${currentList}`],
+    refetchInterval: 60000,
   });
 
   // Fetch intelligence for selected symbol
@@ -77,9 +85,9 @@ export default function WatchlistPage() {
   // Add symbols mutation
   const addSymbolsMutation = useMutation({
     mutationFn: (data: { symbols: string[], options?: any }) =>
-      apiRequest('POST', '/api/watchlist/add', data),
+      apiRequest('POST', '/api/watchlist/add', { ...data, list: currentList }),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['/api/watchlist'] });
+      queryClient.invalidateQueries({ queryKey: [`/api/watchlist?list=${currentList}`] });
       setNewSymbols('');
       setShowAddDialog(false);
     }
@@ -89,16 +97,27 @@ export default function WatchlistPage() {
   const importCsvMutation = useMutation({
     mutationFn: () => apiRequest('POST', '/api/watchlist/import-csv'),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['/api/watchlist'] });
+      queryClient.invalidateQueries({ queryKey: [`/api/watchlist?list=${currentList}`] });
     }
   });
 
   // Remove symbols mutation
   const removeSymbolsMutation = useMutation({
-    mutationFn: (symbols: string[]) =>
-      apiRequest('DELETE', '/api/watchlist/remove', { symbols }),
+    mutationFn: (data: { symbols: string[] }) =>
+      apiRequest('DELETE', '/api/watchlist/remove', { ...data, list: currentList }),
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ['/api/watchlist'] });
+      queryClient.invalidateQueries({ queryKey: [`/api/watchlist?list=${currentList}`] });
+    }
+  });
+
+  const createWatchlistMutation = useMutation({
+    mutationFn: (name: string) =>
+      apiRequest('POST', '/api/watchlist/create', { name }),
+    onSuccess: (_, name) => {
+      queryClient.invalidateQueries({ queryKey: ['/api/watchlist/lists'] });
+      setCurrentList(name);
+      setShowCreateDialog(false);
+      setNewListName('');
     }
   });
 
@@ -119,7 +138,7 @@ export default function WatchlistPage() {
   };
 
   const handleRemoveSymbol = (symbol: string) => {
-    removeSymbolsMutation.mutate([symbol]);
+    removeSymbolsMutation.mutate({ symbols: [symbol] });
   };
 
   const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -145,8 +164,8 @@ export default function WatchlistPage() {
           });
           
           // Refresh data after successful upload
-          queryClient.invalidateQueries({ queryKey: ['/api/watchlist'] });
-          queryClient.invalidateQueries({ queryKey: ['/api/gex/levels'] });
+          queryClient.invalidateQueries({ queryKey: [`/api/watchlist?list=${currentList}`] });
+          queryClient.invalidateQueries({ queryKey: [`/api/gex/levels?list=${currentList}`] });
           
           alert(`Successfully imported ${uploadResult.importResult.imported} records from ${file.name}`);
         };
@@ -207,6 +226,19 @@ export default function WatchlistPage() {
           )}
         </div>
         <div className="flex items-center space-x-4">
+          <Select value={currentList} onValueChange={setCurrentList}>
+            <SelectTrigger className="w-[180px]">
+              <SelectValue placeholder="Watchlist" />
+            </SelectTrigger>
+            <SelectContent>
+              {(watchlists || []).map((w: string) => (
+                <SelectItem key={w} value={w}>{w}</SelectItem>
+              ))}
+            </SelectContent>
+          </Select>
+          <Button variant="outline" onClick={() => setShowCreateDialog(true)}>
+            <Plus className="mr-2 h-4 w-4" /> New Watchlist
+          </Button>
           <Button onClick={() => setShowAddDialog(true)} className="bg-blue-600 hover:bg-blue-700">
             <Plus className="mr-2 h-4 w-4" />
             Add Symbols
@@ -310,6 +342,9 @@ export default function WatchlistPage() {
                             Score: {signal.confidence_score?.toFixed(2)}
                           </span>
                         </div>
+                      )}
+                      {item.price && (
+                        <div>Price: ${item.price.toFixed(2)}</div>
                       )}
                       {item.marketCap && (
                         <div>Market Cap: ${(item.marketCap / 1e9).toFixed(1)}B</div>
@@ -593,6 +628,34 @@ export default function WatchlistPage() {
                 disabled={addSymbolsMutation.isPending || !newSymbols.trim()}
               >
                 {addSymbolsMutation.isPending ? 'Adding...' : 'Add Symbols'}
+              </Button>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      {/* Create Watchlist Dialog */}
+      <Dialog open={showCreateDialog} onOpenChange={setShowCreateDialog}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Create New Watchlist</DialogTitle>
+            <DialogDescription>Enter a name for the watchlist</DialogDescription>
+          </DialogHeader>
+          <div className="space-y-4">
+            <Input
+              placeholder="Watchlist name"
+              value={newListName}
+              onChange={(e) => setNewListName(e.target.value)}
+            />
+            <div className="flex justify-end space-x-2">
+              <Button variant="outline" onClick={() => setShowCreateDialog(false)}>
+                Cancel
+              </Button>
+              <Button
+                onClick={() => createWatchlistMutation.mutate(newListName)}
+                disabled={createWatchlistMutation.isPending || !newListName.trim()}
+              >
+                {createWatchlistMutation.isPending ? 'Creating...' : 'Create'}
               </Button>
             </div>
           </div>
