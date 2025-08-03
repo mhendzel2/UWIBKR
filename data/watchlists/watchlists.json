@@ -144,15 +144,15 @@
       "isDefault": true
     },
     {
-      "id": "watchlist_1754214133665_32nuwgf5p",
-      "name": "Test Watchlist",
-      "description": "Testing watchlist creation",
+      "id": "watchlist_1754234971697_meoz3mzcx",
+      "name": "Rising Profits",
+      "description": "IBD",
       "symbols": [],
-      "createdAt": "2025-08-03T09:42:13.665Z",
-      "updatedAt": "2025-08-03T09:42:13.665Z",
+      "createdAt": "2025-08-03T15:29:31.697Z",
+      "updatedAt": "2025-08-03T15:29:31.697Z",
       "isDefault": false
     }
   ],
-  "currentWatchlistId": "default",
-  "lastUpdated": "2025-08-03T09:42:13.665Z"
+  "currentWatchlistId": "watchlist_1754234971697_meoz3mzcx",
+  "lastUpdated": "2025-08-03T15:32:42.428Z"
 }

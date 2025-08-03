@@ -31,25 +31,13 @@ export class MarketIntelligenceService {
       const marketData = await ibkrService.getMarketData(symbol);
       if (marketData && marketData.last) {
         return marketData.last;
+      } else {
+        throw new Error('No price from IBKR');
       }
     } catch (error) {
-      console.error(`Failed to get real price for ${symbol}:`, error);
+      console.error(`Failed to get real price for ${symbol} from IBKR TWS:`, error);
+      throw new Error('Failed to get real price from IBKR TWS');
     }
-    
-    // Fallback to a more realistic base price than the hardcoded 150
-    const basePrices: { [key: string]: number } = {
-      'AAPL': 230,
-      'TSLA': 250, 
-      'NVDA': 140,
-      'MSFT': 415,
-      'GOOGL': 175,
-      'AMZN': 185,
-      'META': 560,
-      'SPY': 470,
-      'QQQ': 400
-    };
-    
-    return basePrices[symbol] || 100 + Math.random() * 100;
   }
 
   async trackDarkPoolActivity(symbol: string): Promise<DarkPoolData | null> {
