@@ -37,12 +37,14 @@ export interface SentimentAnalysis {
 export class NewsAggregator {
   private alphaVantageKey: string | null = null;
   private newsApiKey: string | null = null;
+  private fmpApiKey: string | null = null;
   private articles: Map<string, NewsArticle> = new Map();
   private sentimentCache: Map<string, SentimentAnalysis> = new Map();
 
   constructor() {
     this.alphaVantageKey = process.env.ALPHA_VANTAGE_API_KEY || null;
     this.newsApiKey = process.env.NEWS_API_KEY || null;
+    this.fmpApiKey = process.env.FMP_API_KEY || null;
   }
 
   // Fetch news from Alpha Vantage (25 requests/day free)
@@ -244,6 +246,94 @@ export class NewsAggregator {
     }
   }
 
+  // Fetch news from Unusual Whales API
+  async fetchUnusualWhalesNews(symbols: string[]): Promise<NewsArticle[]> {
+    try {
+      const { UnusualWhalesService } = await import('./unusualWhales');
+      const uwService = new UnusualWhalesService();
+      const articles: NewsArticle[] = [];
+
+      for (const symbol of symbols.slice(0, 5)) {
+        try {
+          const data = await uwService.getNewsSentiment(symbol);
+
+          for (const item of (data as any[]).slice(0, 10)) {
+            const score = typeof item.sentiment_score === 'number' ? item.sentiment_score : 0;
+            const article: NewsArticle = {
+              id: `uw-${symbol}-${item.id || Date.now()}`,
+              title: item.headline || item.title || 'Unusual Whales News',
+              summary: item.summary || item.text || '',
+              source: 'Unusual Whales',
+              publishedAt: new Date(item.created_at || item.published_at || Date.now()),
+              url: item.url,
+              symbols: [symbol],
+              category: item.category || 'Market News',
+              sentiment: {
+                score,
+                confidence: 0.8,
+                label: this.scoreToLabel(score)
+              }
+            };
+
+            articles.push(article);
+            this.articles.set(article.id, article);
+          }
+        } catch (error) {
+          console.error(`Failed to fetch Unusual Whales news for ${symbol}:`, error);
+        }
+      }
+
+      return articles;
+    } catch (error) {
+      console.error('Unusual Whales news integration not available:', error);
+      return [];
+    }
+  }
+
+  // Fetch news from Financial Modeling Prep API
+  async fetchFmpNews(symbols: string[]): Promise<NewsArticle[]> {
+    if (!this.fmpApiKey) {
+      console.log('FMP API key not configured');
+      return [];
+    }
+
+    try {
+      const tickers = symbols.slice(0, 5).join(',');
+      const url = `https://financialmodelingprep.com/api/v3/stock_news?tickers=${tickers}&limit=50&apikey=${this.fmpApiKey}`;
+      const response = await fetch(url);
+      const data = await response.json();
+
+      const articles: NewsArticle[] = [];
+
+      if (Array.isArray(data)) {
+        for (const item of data) {
+          const article: NewsArticle = {
+            id: `fmp-${item.symbol}-${item.url || Date.now()}`,
+            title: item.title,
+            summary: item.text,
+            source: `FMP (${item.site})`,
+            publishedAt: new Date(item.publishedDate),
+            url: item.url,
+            symbols: [item.symbol],
+            category: 'Company News'
+          };
+
+          article.sentiment = await this.analyzeTextSentiment(
+            `${item.title}. ${item.text || ''}`
+          );
+
+          articles.push(article);
+          this.articles.set(article.id, article);
+        }
+      }
+
+      return articles;
+    } catch (error) {
+      console.error('Failed to fetch FMP news:', error);
+      return [];
+    }
+  }
+
   // AI-powered sentiment analysis using OpenAI
   async analyzeTextSentiment(text: string): Promise<{
     score: number;
@@ -392,26 +482,34 @@ Focus on market impact, price implications, and trading sentiment.`;
     const allArticles: NewsArticle[] = [];
 
     try {
-      // Fetch from all sources in parallel
-      const [alphaVantageNews, newsApiNews, twsNews, marketAuxNews] = await Promise.allSettled([
+      // Fetch from all sources in parallel, prioritizing TWS and Unusual Whales
+      const [twsNews, uwNews, alphaVantageNews, newsApiNews, marketAuxNews, fmpNews] = await Promise.allSettled([
+        this.fetchTWSNews(symbols),
+        this.fetchUnusualWhalesNews(symbols),
         this.fetchAlphaVantageNews(symbols),
         this.fetchNewsApi(symbols.join(' OR ')),
-        this.fetchTWSNews(symbols),
-        this.fetchMarketAuxNews(symbols)
+        this.fetchMarketAuxNews(symbols),
+        this.fetchFmpNews(symbols)
       ]);
 
       // Collect successful results
+      if (twsNews.status === 'fulfilled') {
+        allArticles.push(...twsNews.value);
+      }
+      if (uwNews.status === 'fulfilled') {
+        allArticles.push(...uwNews.value);
+      }
       if (alphaVantageNews.status === 'fulfilled') {
         allArticles.push(...alphaVantageNews.value);
       }
       if (newsApiNews.status === 'fulfilled') {
         allArticles.push(...newsApiNews.value);
       }
-      if (twsNews.status === 'fulfilled') {
-        allArticles.push(...twsNews.value);
-      }
       if (marketAuxNews.status === 'fulfilled') {
         allArticles.push(...marketAuxNews.value);
+      }
+      if (fmpNews.status === 'fulfilled') {
+        allArticles.push(...fmpNews.value);
       }
 
       // Sort by publish date (newest first)
@@ -450,9 +548,11 @@ Focus on market impact, price implications, and trading sentiment.`;
   }
 
   private getSourceWeight(source: string): number {
+    if (source.includes('TWS')) return 1.3; // TWS gets highest weight
+    if (source.includes('Unusual Whales')) return 1.2;
     if (source.includes('Alpha Vantage')) return 1.0;
-    if (source.includes('TWS')) return 1.2; // TWS gets highest weight
     if (source.includes('Bloomberg') || source.includes('Reuters')) return 0.9;
+    if (source.includes('FMP')) return 0.8;
     if (source.includes('MarketAux')) return 0.7;
     return 0.5;
   }
