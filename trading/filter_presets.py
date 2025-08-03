@@ -70,5 +70,20 @@ FILTER_PRESETS: Dict[str, FilterPreset] = {
             "is_out_of_money": True,
         },
     ),
+    "most_successful_combined_strategy": FilterPreset(
+        description="High-probability OTM call alert using top trader settings",
+        params={
+            "option_type": "calls",
+            "side": "ask",
+            "is_out_of_money": True,
+            "premium_min": 500000,
+            "volume_oi_ratio_min": 2,
+            "equity_type": "stocks,adrs",
+            "opening_trades": True,
+            "dte_min": 1,
+            "dte_max": 28,
+            "rule_name[]": "RepeatedHits",
+        },
+    ),
 }
 
