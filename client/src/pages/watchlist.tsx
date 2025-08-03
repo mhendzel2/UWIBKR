@@ -17,6 +17,7 @@ import {
   DollarSign, Activity, Newspaper, Target
 } from 'lucide-react';
 import { apiRequest } from '@/lib/queryClient';
+import WatchlistManager from '@/components/WatchlistManager';
 
 export default function WatchlistPage() {
   const [newSymbols, setNewSymbols] = useState('');
@@ -254,6 +255,7 @@ export default function WatchlistPage() {
       <Tabs defaultValue="watchlist" className="space-y-4">
         <TabsList>
           <TabsTrigger value="watchlist">Watchlist</TabsTrigger>
+          <TabsTrigger value="manage">Manage</TabsTrigger>
           <TabsTrigger value="intelligence">Market Intelligence</TabsTrigger>
           <TabsTrigger value="alerts">Alerts</TabsTrigger>
           <TabsTrigger value="gex">GEX Levels</TabsTrigger>

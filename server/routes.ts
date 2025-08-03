@@ -9,6 +9,7 @@ import ordersRoutes from "./routes/orders";
 import fdaRoutes from "./routes/fdaRoutes";
 import optionsScreenerRoutes from "./routes/optionsScreener";
 import earningsScreenerRoutes from "./routes/earningsScreener";
+import watchlistRoutes from "./routes/watchlistRoutes";
 import { 
   insertTradingSignalSchema, 
   insertPositionSchema,
@@ -2302,6 +2303,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.use("/api/fda", fdaRoutes);
   app.use("/api/visual-transformer", visualTransformerRoutes);
   app.use("/api/sentiment", sentimentRoutes);
+  app.use("/api/watchlist", watchlistRoutes);
 
   // Import watchlist from CSV endpoint
   app.post("/api/watchlist/import-csv", async (req, res) => {
