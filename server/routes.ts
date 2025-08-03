@@ -22,6 +22,7 @@ import { WebSocketService } from "./services/websocket";
 import { SignalProcessor } from "./services/signalProcessor";
 import { RiskManager } from "./services/riskManager";
 import { IBKRService } from "./services/ibkr";
+import { getChannelSignals } from "./services/channelSignals";
 import { UnusualWhalesService } from "./services/unusualWhales";
 
 // Helper function for sector analysis
@@ -1809,6 +1810,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Failed to remove from watchlist:", error);
       res.status(500).json({ message: "Failed to remove from watchlist" });
+    }
+  });
+
+  app.get("/api/watchlist/channel-signals", async (req, res) => {
+    try {
+      const symbolsParam = (req.query.symbols as string) || "";
+      const symbols = symbolsParam.split(",").filter(Boolean);
+      const signals = await getChannelSignals(symbols);
+      res.json(signals);
+    } catch (error) {
+      console.error("Failed to get channel signals:", error);
+      res.status(500).json({ message: "Failed to get channel signals" });
     }
   });
 
