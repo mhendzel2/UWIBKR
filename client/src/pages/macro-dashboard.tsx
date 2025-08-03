@@ -1,3 +1,78 @@
+// --- Types matching backend API ---
+interface TreasuryRates {
+  oneMonth: number;
+  threeMonth: number;
+  sixMonth: number;
+  oneYear: number;
+  twoYear: number;
+  fiveYear: number;
+  tenYear: number;
+  twentyYear: number;
+  thirtyYear: number;
+}
+interface FederalRates {
+  federalFundsRate: number;
+  discountRate: number;
+  primeRate: number;
+}
+interface EconomicData {
+  cpi: number;
+  ppi: number;
+  unemploymentRate: number;
+  gdpGrowth: number;
+  retailSales: number;
+  housingStarts: number;
+  industrialProduction: number;
+  consumerConfidence: number;
+}
+interface SentimentIndicators {
+  vix: number;
+  putCallRatio: number;
+  yieldCurveSpread: number;
+  dollarIndex: number;
+  goldPrice: number;
+  oilPrice: number;
+}
+interface FearGreedComponents {
+  marketMomentum: number;
+  stockPriceStrength: number;
+  stockPriceBreadth: number;
+  putCallOptions: number;
+  marketVolatility: number;
+  safeHavenDemand: number;
+  junkBondDemand: number;
+  overallFearGreed: number;
+}
+interface YieldCurve {
+  shape: 'normal' | 'inverted' | 'flat' | 'humped';
+  steepness: number;
+  inversionPoints: string[];
+  riskSignal: 'low' | 'medium' | 'high';
+}
+interface MacroeconomicIndicators {
+  timestamp: string;
+  treasuryRates: TreasuryRates;
+  federalRates: FederalRates;
+  economicData: EconomicData;
+  sentimentIndicators: SentimentIndicators;
+  fearGreedComponents: FearGreedComponents;
+  yieldCurve: YieldCurve;
+}
+interface MacroAnalysis {
+  marketRegime: string;
+  inflationTrend: string;
+  monetaryPolicy: string;
+  economicHealth: number;
+  riskLevel: string;
+  keySignals: string[];
+  tradingImplications: string[];
+  timeframe: string;
+}
+interface FearGreedIndex {
+  index: number;
+  interpretation: string;
+  components: FearGreedComponents;
+}
 import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -24,25 +99,23 @@ import {
 
 export default function MacroDashboard() {
   // Get macroeconomic data
-  const { data: macroData, isLoading: isLoadingMacro, error: macroError } = useQuery({
+
+  const { data: macroData, isLoading: isLoadingMacro, error: macroError } = useQuery<MacroeconomicIndicators>({
     queryKey: ['/api/macro/data'],
-    refetchInterval: 5 * 60 * 1000 // Refresh every 5 minutes
+    refetchInterval: 5 * 60 * 1000
   });
 
-  // Get macroeconomic analysis
-  const { data: macroAnalysis, isLoading: isLoadingAnalysis } = useQuery({
+  const { data: macroAnalysis, isLoading: isLoadingAnalysis } = useQuery<MacroAnalysis>({
     queryKey: ['/api/macro/analysis'],
-    refetchInterval: 15 * 60 * 1000 // Refresh every 15 minutes
+    refetchInterval: 15 * 60 * 1000
   });
 
-  // Get Fear & Greed Index
-  const { data: fearGreedData } = useQuery({
+  const { data: fearGreedData } = useQuery<FearGreedIndex>({
     queryKey: ['/api/macro/fear-greed'],
-    refetchInterval: 2 * 60 * 1000 // Refresh every 2 minutes
+    refetchInterval: 2 * 60 * 1000
   });
 
-  // Get yield curve data
-  const { data: yieldCurveData } = useQuery({
+  const { data: yieldCurveData } = useQuery<YieldCurve>({
     queryKey: ['/api/macro/yield-curve'],
     refetchInterval: 5 * 60 * 1000
   });
