@@ -44,6 +44,11 @@ app.use((req, res, next) => {
 const { addMLRoutes } = await import('./mlRoutes');
 addMLRoutes(app);
 
+// Initialize sentiment data collection service
+const { sentimentDataCollectorService } = await import('./services/sentimentDataCollectorService');
+console.log('🚀 Starting sentiment data collection service...');
+// Service starts automatically on import
+
   app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
     const status = err.status || err.statusCode || 500;
     const message = err.message || "Internal Server Error";

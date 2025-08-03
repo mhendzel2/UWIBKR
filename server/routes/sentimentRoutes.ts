@@ -13,7 +13,7 @@ router.get('/market', async (req, res) => {
     console.log('📊 Fetching comprehensive market sentiment...');
     
     // Get comprehensive sentiment data
-    const sentimentData = await comprehensiveMarketSentimentService.getComprehensiveDashboard();
+    const sentimentData = await comprehensiveMarketSentimentService.getComprehensiveMarketSentiment();
     
     // Store historical record
     await historicalSentimentService.storeCurrentSentiment(sentimentData);
@@ -116,6 +116,57 @@ router.get('/latest', async (req, res) => {
     res.status(500).json({
       success: false,
       error: 'Failed to fetch latest sentiment',
+      details: error instanceof Error ? error.message : 'Unknown error'
+    });
+  }
+});
+
+// Data collection status and health
+router.get('/collection/status', async (req, res) => {
+  try {
+    const { sentimentDataCollectorService } = await import('../services/sentimentDataCollectorService');
+    
+    const status = sentimentDataCollectorService.getStatus();
+    const healthCheck = await sentimentDataCollectorService.healthCheck();
+    const recentHistory = await sentimentDataCollectorService.getCollectionHistory(5);
+    
+    res.json({
+      success: true,
+      data: {
+        ...status,
+        health: healthCheck,
+        recentCollections: recentHistory
+      },
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    console.error('❌ Error fetching collection status:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to fetch collection status',
+      details: error instanceof Error ? error.message : 'Unknown error'
+    });
+  }
+});
+
+// Force data collection
+router.post('/collection/force', async (req, res) => {
+  try {
+    const { sentimentDataCollectorService } = await import('../services/sentimentDataCollectorService');
+    
+    console.log('🔄 Forcing sentiment data collection...');
+    await sentimentDataCollectorService.forceCollection();
+    
+    res.json({
+      success: true,
+      message: 'Sentiment data collection forced successfully',
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    console.error('❌ Error forcing data collection:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to force data collection',
       details: error instanceof Error ? error.message : 'Unknown error'
     });
   }

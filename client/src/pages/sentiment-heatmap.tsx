@@ -6,67 +6,152 @@ import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Progress } from '@/components/ui/progress';
 import { Alert, AlertDescription } from '@/components/ui/alert';
-import { RefreshCw, AlertTriangle, TrendingUp, TrendingDown, Activity, Bitcoin, DollarSign, Users } from 'lucide-react';
+import { RefreshCw, AlertTriangle, TrendingUp, TrendingDown, Activity, Bitcoin, DollarSign, Users, BarChart3, Clock } from 'lucide-react';
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+  ComposedChart,
+  Bar,
+  Area,
+  AreaChart
+} from 'recharts';
 
 interface MarketSentimentData {
-  timestamp: string;
-  fearGreedIndex: number;
-  vixLevel: number;
-  crypto: {
-    btc: {
-      price: number;
-      change24h: number;
-      sentiment: 'bullish' | 'bearish' | 'neutral';
+  success: boolean;
+  data: {
+    timestamp: string;
+    overallSentiment: number;
+    fearGreedIndex: number;
+    marketTide: any;
+    optionsFlow: {
+      totalPremium: number;
+      callPutRatio: number;
+      netFlow: number;
+      institutionalFlow: number;
+      retailFlow: number;
+      darkPoolActivity: number;
     };
-    totalMarketCap: number;
-    dominance: number;
-  };
-  commodities: {
-    gold: {
-      price: number;
-      change24h: number;
-      sentiment: 'bullish' | 'bearish' | 'neutral';
+    marketBreadth: {
+      advanceDeclineRatio: number;
+      newHighsLows: {
+        newHighs: number;
+        newLows: number;
+        ratio: number;
+      };
+      volumeAnalysis: {
+        upVolumeRatio: number;
+        distributionDays: number;
+        accumulationDays: number;
+      };
     };
-    oil: {
-      price: number;
-      change24h: number;
-      sentiment: 'bullish' | 'bearish' | 'neutral';
+    volatilityMetrics: {
+      vixLevel: number;
+      vixTrend: string;
+      gexLevels: {
+        totalGEX: number;
+        call_gex: number;
+        put_gex: number;
+        gex_flip_point: number;
+      };
     };
-  };
-  trumpCommunications: {
-    recentPosts: TrumpPost[];
-    marketImpactScore: number;
-    alertLevel: 'low' | 'medium' | 'high' | 'critical';
-  };
-  overallSentiment: {
-    score: number;
-    confidence: number;
-    primaryDrivers: string[];
-    recommendation: 'risk-on' | 'risk-off' | 'neutral';
+    sentimentIndicators: {
+      newsFlow: {
+        avgSentiment: number;
+        newsCount: number;
+      };
+      analystSentiment: {
+        upgrades: number;
+        downgrades: number;
+        consensusDirection: string;
+      };
+      socialSentiment: {
+        overallTone: number;
+        twitterMentions: number;
+        redditActivity: number;
+      };
+      cryptoCorrelation: {
+        btcCorrelation: number;
+        cryptoSentiment: number;
+      };
+    };
+    macroContext: {
+      treasuryYields: {
+        twoYear: number;
+        tenYear: number;
+        yieldCurveSlope: number;
+      };
+      dollarStrength: number;
+      commodities: {
+        gold: number;
+        oil: number;
+        copper: number;
+      };
+    };
+    predictiveSignals: {
+      nextDayBias: string;
+      weeklyOutlook: string;
+      confidenceScore: number;
+    };
   };
 }
 
-interface TrumpPost {
-  id: string;
-  content: string;
-  timestamp: string;
-  platform: string;
-  marketImpact: number;
-  affectedSectors: string[];
-  sentiment: 'bullish' | 'bearish' | 'neutral';
+interface HistoricalSentimentData {
+  success: boolean;
+  data: {
+    timestamps: string[];
+    overallSentiment: number[];
+    fearGreedIndex: number[];
+    vixLevel: number[];
+    callPutRatio: number[];
+    marketBreadth: number[];
+    newsFlow: number[];
+    cryptoCorrelation: number[];
+    dollarStrength: number[];
+    confidenceScore: number[];
+  };
+  timeframe: string;
+}
+
+interface SentimentStats {
+  success: boolean;
+  data: {
+    avgSentiment: number;
+    sentimentVolatility: number;
+    fearGreedTrend: 'increasing' | 'decreasing' | 'stable';
+    vixTrend: 'increasing' | 'decreasing' | 'stable';
+    marketRegime: 'bull' | 'bear' | 'sideways';
+    confidenceTrend: 'increasing' | 'decreasing' | 'stable';
+  };
+  timeframe: string;
 }
 
 export default function SentimentHeatmap() {
   const [autoRefresh, setAutoRefresh] = useState(true);
+  const [selectedTimeframe, setSelectedTimeframe] = useState('24h');
+  const [selectedChart, setSelectedChart] = useState('sentiment');
 
+  // Real-time comprehensive sentiment data
   const { data: marketSentiment, isLoading, error, refetch, dataUpdatedAt } = useQuery({
     queryKey: ['/api/sentiment/market'],
     refetchInterval: autoRefresh ? 60000 : false,
   });
 
-  const { data: trumpAlerts } = useQuery({
-    queryKey: ['/api/sentiment/trump-alerts'],
-    refetchInterval: autoRefresh ? 30000 : false,
+  // Historical sentiment data for charts
+  const { data: historicalData, isLoading: isLoadingHistorical } = useQuery<HistoricalSentimentData>({
+    queryKey: ['/api/sentiment/historical', selectedTimeframe],
+    refetchInterval: autoRefresh ? 300000 : false, // 5 minutes
+  });
+
+  // Sentiment statistics and trends
+  const { data: sentimentStats } = useQuery<SentimentStats>({
+    queryKey: ['/api/sentiment/stats', selectedTimeframe === '1h' || selectedTimeframe === '4h' ? '7d' : '30d'],
+    refetchInterval: autoRefresh ? 600000 : false, // 10 minutes
   });
 
   const getFearGreedColor = (score: number) => {
