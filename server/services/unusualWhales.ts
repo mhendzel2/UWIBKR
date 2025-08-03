@@ -327,6 +327,18 @@ export class UnusualWhalesService {
     };
   }
 
+  /**
+   * Check API connectivity
+   */
+  async checkConnection(): Promise<boolean> {
+    try {
+      await this.makeRequest<any>('/market/vix');
+      return true;
+    } catch {
+      return false;
+    }
+  }
+
   async getGammaExposure(symbol: string): Promise<any> {
     try {
       console.log(`Fetching gamma exposure data for ${symbol}...`);

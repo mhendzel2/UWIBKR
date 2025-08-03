@@ -195,7 +195,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   const httpServer = createServer(app);
   
   // Initialize services
-  const wsService = new WebSocketService(httpServer);
+  const wsService = new WebSocketService(httpServer, ibkrService, uwService);
   const signalProcessor = new SignalProcessor();
   const riskManager = new RiskManager();
   const ibkrService = new IBKRService();
@@ -1049,12 +1049,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // System health
   app.get("/api/system/health", async (req, res) => {
     try {
-      const health = await storage.getSystemHealth();
-      
       // Update service statuses
       await storage.updateSystemHealth('IBKR TWS', {
         status: ibkrService.isConnected() ? 'connected' : 'disconnected',
         latency: 12,
+      });
+
+      await storage.updateSystemHealth('Unusual Whales API', {
+        status: await uwService.checkConnection() ? 'connected' : 'disconnected',
       });
 
       const processingStats = signalProcessor.getProcessingStats();

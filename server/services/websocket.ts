@@ -1,6 +1,9 @@
 import { WebSocketServer, WebSocket } from 'ws';
 import { Server } from 'http';
+import os from 'os';
 import { storage } from '../storage';
+import { IBKRService } from './ibkr';
+import { UnusualWhalesService } from './unusualWhales';
 
 interface WebSocketMessage {
   type: string;
@@ -19,17 +22,21 @@ export class WebSocketService {
   private wss: WebSocketServer;
   private clients: Map<string, ClientConnection> = new Map();
   private pingInterval!: NodeJS.Timeout;
+  private ibkr: IBKRService;
+  private uw: UnusualWhalesService;
 
-  constructor(server: Server) {
-    this.wss = new WebSocketServer({ 
-      server, 
+  constructor(server: Server, ibkr: IBKRService, uw: UnusualWhalesService) {
+    this.wss = new WebSocketServer({
+      server,
       path: '/ws',
       perMessageDeflate: false,
     });
+    this.ibkr = ibkr;
+    this.uw = uw;
 
     this.setupWebSocketServer();
     this.startPingInterval();
-    
+
     console.log('WebSocket server initialized on /ws');
   }
 
@@ -266,35 +273,41 @@ export class WebSocketService {
   }
 
   private async getAccountData(): Promise<any> {
-    // Mock account data
-    return {
-      equity: 125847.32,
-      dayPnl: 2345.67,
-      buyingPower: 151694.64,
-      availableFunds: 75847.32,
-    };
+    try {
+      return await this.ibkr.getAccountInfo();
+    } catch (error) {
+      console.error('Failed to fetch account data:', error);
+      return null;
+    }
   }
 
   private async getMarketData(): Promise<any> {
-    // Mock market data
-    return {
-      status: 'OPEN',
-      vix: 18.5,
-      spyPrice: 467.23,
-      lastUpdate: new Date().toISOString(),
-    };
+    try {
+      const [spy, vix] = await Promise.all([
+        this.uw.getStockState('SPY'),
+        this.uw.getStockState('VIX')
+      ]);
+      return {
+        status: 'OPEN',
+        vix: vix?.price ?? null,
+        spyPrice: spy?.price ?? null,
+        lastUpdate: new Date().toISOString(),
+      };
+    } catch (error) {
+      console.error('Failed to fetch market data:', error);
+      return null;
+    }
   }
 
   private async getSystemHealth(): Promise<any> {
+    const services = await storage.getSystemHealth();
+    const uptimeSeconds = process.uptime();
+    const uptime = `${Math.floor(uptimeSeconds / 3600)}h ${Math.floor((uptimeSeconds % 3600) / 60)}m`;
     return {
-      services: [
-        { name: 'IBKR TWS', status: 'connected', latency: 12 },
-        { name: 'Unusual Whales', status: 'active', latency: 45 },
-        { name: 'Gemini AI', status: 'processing', latency: 2300 },
-      ],
-      uptime: '14h 32m',
-      cpuUsage: 23,
-      memoryUsage: '1.2GB',
+      services,
+      uptime,
+      cpuUsage: os.loadavg()[0],
+      memoryUsage: `${(process.memoryUsage().rss / 1024 / 1024).toFixed(1)}MB`,
     };
   }
 

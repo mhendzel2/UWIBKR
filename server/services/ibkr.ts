@@ -118,17 +118,21 @@ export class IBKRService {
     }
 
     try {
-      // Mock account data for development
+      const { data: accounts } = await this.http.get('/portfolio/accounts');
+      const accountId = accounts?.[0]?.accountId || accounts?.[0]?.id;
+      if (!accountId) return null;
+
+      const { data } = await this.http.get(`/portfolio/${accountId}/summary`);
       return {
-        accountId: 'DU123456',
-        netLiquidation: 125847.32,
-        totalCashValue: 80847.32,
-        settledCash: 80847.32,
-        availableFunds: 75847.32,
-        buyingPower: 151694.64,
-        grossPositionValue: 45000.00,
-        realizedPnL: 1250.67,
-        unrealizedPnL: 1095.00,
+        accountId,
+        netLiquidation: Number(data.netliquidation || data.total || 0),
+        totalCashValue: Number(data.totalcashvalue || 0),
+        settledCash: Number(data.settledcash || 0),
+        availableFunds: Number(data.availablefunds || 0),
+        buyingPower: Number(data.buyingpower || 0),
+        grossPositionValue: Number(data.grosspositionvalue || 0),
+        realizedPnL: Number(data.realizedpnl || 0),
+        unrealizedPnL: Number(data.unrealizedpnl || 0),
       };
     } catch (error) {
       console.error('Failed to get account info:', error);
@@ -142,45 +146,29 @@ export class IBKRService {
     }
 
     try {
-      // Mock positions data for development
-      return [
-        {
-          account: 'DU123456',
-          contract: {
-            symbol: 'AAPL',
-            secType: 'OPT',
-            exchange: 'SMART',
-            currency: 'USD',
-            strike: 150,
-            expiry: '20240119',
-            right: 'C',
-          },
-          position: 2,
-          marketPrice: 2.91,
-          marketValue: 582.00,
-          averageCost: 2.45,
-          unrealizedPNL: 92.00,
-          realizedPNL: 0,
+      const { data: accounts } = await this.http.get('/portfolio/accounts');
+      const accountId = accounts?.[0]?.accountId || accounts?.[0]?.id;
+      if (!accountId) return [];
+
+      const { data } = await this.http.get(`/portfolio/${accountId}/positions`);
+      return (data || []).map((pos: any) => ({
+        account: accountId,
+        contract: {
+          symbol: pos.contract?.symbol || pos.symbol,
+          secType: pos.contract?.secType || pos.secType,
+          exchange: pos.contract?.exchange || pos.exchange || 'SMART',
+          currency: pos.contract?.currency || pos.currency || 'USD',
+          strike: pos.contract?.strike,
+          expiry: pos.contract?.expiry,
+          right: pos.contract?.right,
         },
-        {
-          account: 'DU123456',
-          contract: {
-            symbol: 'TSLA',
-            secType: 'OPT',
-            exchange: 'SMART',
-            currency: 'USD',
-            strike: 220,
-            expiry: '20240126',
-            right: 'P',
-          },
-          position: -1,
-          marketPrice: 2.12,
-          marketValue: -212.00,
-          averageCost: 1.85,
-          unrealizedPNL: -27.00,
-          realizedPNL: 0,
-        },
-      ];
+        position: pos.position,
+        marketPrice: pos.marketPrice || pos.marketprice,
+        marketValue: pos.marketValue || pos.marketvalue,
+        averageCost: pos.avgCost || pos.averageCost,
+        unrealizedPNL: pos.unrealizedPnL || pos.unrealizedpnl,
+        realizedPNL: pos.realizedPnL || pos.realizedpnl,
+      }));
     } catch (error) {
       console.error('Failed to get positions:', error);
       return [];
@@ -193,52 +181,13 @@ export class IBKRService {
     }
 
     try {
-      // In real implementation, this would use IB API reqNewsArticle and reqHistoricalNews
-      // TWS provides news from multiple providers: Dow Jones, Reuters, Fly on the Wall, etc.
-      console.log(`Fetching TWS market news for ${symbol || 'all symbols'} for ${days} days`);
-      
-      // Mock TWS news data structure for demonstration
-      const newsItems = [
-        {
-          articleId: 'DJ001',
-          headline: `${symbol || 'Market'} Analysis: Strong Performance Expected`,
-          summary: 'Professional analysts provide detailed market outlook with institutional insights.',
-          providerName: 'Dow Jones',
-          timestamp: new Date(Date.now() - Math.random() * days * 24 * 60 * 60 * 1000).toISOString(),
-          symbols: symbol ? [symbol] : ['SPY', 'QQQ'],
-          sentiment: 'neutral',
-          body: 'Full article content would be available through TWS news feed...'
-        },
-        {
-          articleId: 'RT002',
-          headline: `Institutional Activity Detected in ${symbol || 'Major Indices'}`,
-          summary: 'Reuters reports unusual institutional positioning in key market sectors.',
-          providerName: 'Reuters',
-          timestamp: new Date(Date.now() - Math.random() * days * 24 * 60 * 60 * 1000).toISOString(),
-          symbols: symbol ? [symbol] : ['NVDA', 'TSLA'],
-          sentiment: 'bullish',
-          body: 'Professional institutional analysis from Reuters news wire...'
-        }
-      ];
-
-      return newsItems;
+      const endpoint = symbol ? `/iserver/news/${symbol}` : '/iserver/news';
+      const { data } = await this.http.get(endpoint, { params: { days } });
+      return data || [];
     } catch (error) {
       console.error('Failed to get TWS market news:', error);
       return [];
     }
-  }
-
-  private generateQuote(symbol: string) {
-    return {
-      symbol,
-      bid: 450.25 + Math.random() * 10,
-      ask: 450.75 + Math.random() * 10,
-      last: 450.5 + Math.random() * 10,
-      volume: Math.floor(Math.random() * 1_000_000 + 100_000),
-      change: (Math.random() - 0.5) * 20,
-      changePercent: (Math.random() - 0.5) * 4,
-      timestamp: new Date().toISOString(),
-    };
   }
 
   async getMarketData(symbol: string): Promise<any>;
@@ -251,22 +200,30 @@ export class IBKRService {
 
     try {
       if (typeof input === 'string') {
-        return this.generateQuote(input);
+        const { data: sym } = await this.http.get(`/iserver/marketdata/symbols/${input}`);
+        const conid = sym?.conid || sym?.[0]?.conid;
+        if (!conid) return null;
+        const { data } = await this.http.get('/iserver/marketdata/snapshot', { params: { conids: conid } });
+        return data?.[0] || null;
       }
 
       if (Array.isArray(input)) {
-        console.log(`Fetching TWS market data for symbols: ${input.join(', ')}`);
-        return input.map((s) => this.generateQuote(s));
+        const conids: string[] = [];
+        for (const s of input) {
+          const { data: sym } = await this.http.get(`/iserver/marketdata/symbols/${s}`);
+          const conid = sym?.conid || sym?.[0]?.conid;
+          if (conid) conids.push(conid);
+        }
+        if (!conids.length) return [];
+        const { data } = await this.http.get('/iserver/marketdata/snapshot', { params: { conids: conids.join(',') } });
+        return data || [];
       }
 
-      // Contract market data
-      return {
-        bid: 2.85,
-        ask: 2.95,
-        last: 2.91,
-        volume: 1250,
-        timestamp: new Date(),
-      };
+      const symbol = (input as ContractDetails).symbol;
+      if (symbol) {
+        return this.getMarketData(symbol);
+      }
+      return null;
     } catch (error) {
       console.error('Failed to get TWS market data:', error);
       return Array.isArray(input) ? [] : null;
@@ -279,20 +236,11 @@ export class IBKRService {
     }
 
     try {
-      // In real implementation, this would use IB API reqFundamentalData
-      console.log(`Fetching TWS fundamental data for ${symbol}`);
-      
-      return {
-        symbol,
-        marketCap: 2500000000000,
-        peRatio: 28.5,
-        eps: 15.23,
-        dividendYield: 0.5,
-        beta: 1.15,
-        analystRating: 'Buy',
-        priceTarget: 485.00,
-        timestamp: new Date().toISOString()
-      };
+      const { data: sym } = await this.http.get(`/iserver/marketdata/symbols/${symbol}`);
+      const conid = sym?.conid || sym?.[0]?.conid;
+      if (!conid) return null;
+      const { data } = await this.http.get(`/iserver/fundamentals/financial-summary/${conid}`);
+      return data || null;
     } catch (error) {
       console.error('Failed to get TWS fundamental data:', error);
       return null;
@@ -305,29 +253,8 @@ export class IBKRService {
     }
 
     try {
-      // TWS provides economic calendar events
-      console.log(`Fetching TWS economic calendar for ${days} days`);
-      
-      return [
-        {
-          date: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000).toISOString(),
-          event: 'Federal Reserve Interest Rate Decision',
-          importance: 'High',
-          actual: null,
-          forecast: '5.25%',
-          previous: '5.25%',
-          currency: 'USD'
-        },
-        {
-          date: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000).toISOString(),
-          event: 'Non-Farm Payrolls',
-          importance: 'High',
-          actual: null,
-          forecast: '180K',
-          previous: '199K',
-          currency: 'USD'
-        }
-      ];
+      const { data } = await this.http.get('/iserver/calendar/economic', { params: { days } });
+      return data || [];
     } catch (error) {
       console.error('Failed to get TWS economic calendar:', error);
       return [];
@@ -340,17 +267,9 @@ export class IBKRService {
     }
 
     try {
-      // Validate order parameters
       this.validateOrder(contract, order);
-      
-      // Mock order placement
-      const orderId = `ORD${Date.now()}`;
-      console.log(`Placing order ${orderId}:`, { contract, order });
-      
-      // Simulate order processing delay
-      await new Promise(resolve => setTimeout(resolve, 500));
-      
-      return orderId;
+      const { data } = await this.http.post('/iserver/accounts/orders', { contract, order });
+      return data?.id || null;
     } catch (error) {
       console.error('Failed to place order:', error);
       throw error;
@@ -363,8 +282,7 @@ export class IBKRService {
     }
 
     try {
-      console.log(`Cancelling order ${orderId}`);
-      await new Promise(resolve => setTimeout(resolve, 200));
+      await this.http.delete(`/iserver/accounts/orders/${orderId}`);
       return true;
     } catch (error) {
       console.error('Failed to cancel order:', error);
@@ -413,7 +331,7 @@ export class IBKRService {
       const { data } = await this.http.get('/iserver/marketdata/history', {
         params: {
           conid,
-          period: '1d',
+          period: '1y',
           bar: barMap[timeframe] || '1day'
         }
       });
@@ -466,43 +384,44 @@ export class IBKRService {
   }
 
   async getTechnicalIndicators(symbol: string, indicators: string[]): Promise<any> {
-    // Generate mock technical indicator data
-    const technicalData: any = {
-      symbol,
-      timestamp: new Date().toISOString()
+    const bars = await this.getHistoricalData(symbol, '1D');
+    const closes = bars.map(b => b.close);
+    const result: any = { symbol, timestamp: new Date().toISOString() };
+
+    const sma = (period: number) => {
+      if (closes.length < period) return null;
+      const slice = closes.slice(-period);
+      return slice.reduce((a, b) => a + b, 0) / period;
     };
 
-    indicators.forEach(indicator => {
-      switch (indicator) {
+    const rsi = (period: number) => {
+      if (closes.length <= period) return null;
+      let gains = 0, losses = 0;
+      for (let i = closes.length - period; i < closes.length; i++) {
+        const change = closes[i] - closes[i - 1];
+        if (change >= 0) gains += change; else losses -= change;
+      }
+      const rs = losses === 0 ? 100 : gains / losses;
+      return 100 - 100 / (1 + rs);
+    };
+
+    indicators.forEach(ind => {
+      switch (ind) {
         case 'SMA20':
-          technicalData.sma20 = 100 + Math.random() * 50;
+          result.sma20 = sma(20);
           break;
         case 'SMA50':
-          technicalData.sma50 = 100 + Math.random() * 50;
+          result.sma50 = sma(50);
           break;
         case 'RSI':
-          technicalData.rsi = 30 + Math.random() * 40;
-          break;
-        case 'MACD':
-          technicalData.macd = {
-            macd: (Math.random() - 0.5) * 2,
-            signal: (Math.random() - 0.5) * 2,
-            histogram: (Math.random() - 0.5) * 1
-          };
-          break;
-        case 'Bollinger Bands':
-          technicalData.bollinger = {
-            upper: 105 + Math.random() * 50,
-            middle: 100 + Math.random() * 50,
-            lower: 95 + Math.random() * 50
-          };
+          result.rsi = rsi(14);
           break;
         default:
-          technicalData[indicator.toLowerCase()] = Math.random() * 100;
+          break;
       }
     });
 
-    return technicalData;
+    return result;
   }
 }
 
