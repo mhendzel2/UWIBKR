@@ -162,29 +162,21 @@ export class SophisticatedFilteringService {
     timeWindow: number = 3600000 // 1 hour in ms
   ): Promise<DarkPoolActivity[]> {
     try {
-      // In real implementation, would fetch dark pool data
-      // For now, generate mock data based on typical patterns
-      
-      const now = Date.now();
-      const activities: DarkPoolActivity[] = [];
-
-      // Generate 3-5 mock dark pool activities in the time window
-      const activityCount = 3 + Math.floor(Math.random() * 3);
-      
-      for (let i = 0; i < activityCount; i++) {
-        const timestamp = new Date(now - Math.random() * timeWindow);
-        const volume = 10000 + Math.random() * 100000; // 10K-110K shares
-        const averagePrice = 150 + (Math.random() - 0.5) * 10; // ±$5 range
-        const direction = Math.random() > 0.5 ? 'buying' : 'selling';
-
-        activities.push({
-          volume,
-          averagePrice,
-          timestamp,
-          direction,
-        });
+      const apiUrl = process.env.DARK_POOL_API_URL;
+      if (!apiUrl) {
+        throw new Error('DARK_POOL_API_URL not configured');
       }
 
+      const response = await fetch(`${apiUrl}?symbol=${symbol}&window=${timeWindow}`);
+      if (!response.ok) {
+        throw new Error('Failed to fetch dark pool data');
+      }
+
+      const json = await response.json();
+      const activities = (json || []).map((a: any) => ({
+        ...a,
+        timestamp: new Date(a.timestamp)
+      })) as DarkPoolActivity[];
       return activities.sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime());
     } catch (error) {
       console.error('Failed to analyze dark pool correlation:', error);

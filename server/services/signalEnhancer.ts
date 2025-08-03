@@ -33,28 +33,27 @@ export class SignalEnhancer {
   private enhancedSignals: EnhancedSignal[] = [];
 
   constructor() {
-    this.initializeHistoricalData();
+    void this.initializeHistoricalData();
   }
 
-  private initializeHistoricalData(): void {
-    // Initialize with some mock historical data for common tickers
+  private async initializeHistoricalData(): Promise<void> {
     const commonTickers = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'TSLA', 'NVDA', 'META', 'NFLX'];
-    
-    commonTickers.forEach(ticker => {
-      // Generate realistic price history (random walk with drift)
-      const prices: number[] = [];
-      let currentPrice = 100 + Math.random() * 400; // Start between $100-$500
-      
-      for (let i = 0; i < 252; i++) { // 1 year of daily data
-        const drift = 0.0002; // slight upward drift
-        const volatility = 0.02; // 2% daily volatility
-        const randomChange = (Math.random() - 0.5) * 2 * volatility + drift;
-        currentPrice = currentPrice * (1 + randomChange);
-        prices.push(currentPrice);
+
+    for (const ticker of commonTickers) {
+      try {
+        const url = `https://query1.finance.yahoo.com/v8/finance/chart/${ticker}?range=1y&interval=1d`;
+        const response = await fetch(url);
+        if (!response.ok) {
+          throw new Error('Failed to fetch');
+        }
+        const json = await response.json();
+        const result = json.chart?.result?.[0];
+        const closes = result?.indicators?.quote?.[0]?.close || [];
+        this.historicalData.set(ticker, closes);
+      } catch (error) {
+        console.warn(`Failed to fetch historical data for ${ticker}:`, error);
       }
-      
-      this.historicalData.set(ticker, prices);
-    });
+    }
   }
 
   public async enhanceSignal(signal: any): Promise<EnhancedSignal> {

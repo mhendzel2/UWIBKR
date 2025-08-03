@@ -23,8 +23,8 @@ export interface TransformerPrediction {
   nextPrice: number;
   confidence: number;
   trend: 'bullish' | 'bearish' | 'neutral';
-  attention_weights: number[][];
-  feature_importance: { [key: string]: number };
+  attention_weights?: number[][][];
+  feature_importance?: { [key: string]: number };
 }
 
 export class TransformerMLEngine {
@@ -366,31 +366,13 @@ export class TransformerMLEngine {
       const maxTrendProb = Math.max(...Array.from(trendData));
       const confidence = maxTrendProb * (1 - Math.abs(priceData[0] - 0.5));
       
-      // Generate mock attention weights (in real implementation, extract from model)
-      const attentionWeights = Array(this.config.numHeads).fill(null).map(() =>
-        Array(this.config.sequenceLength).fill(null).map(() =>
-          Array(this.config.sequenceLength).fill(0).map(() => Math.random())
-        )
-      );
-      
-      // Feature importance analysis
-      const featureImportance = {
-        'price_momentum': Math.random() * 0.3 + 0.1,
-        'volume_profile': Math.random() * 0.25 + 0.05,
-        'technical_indicators': Math.random() * 0.2 + 0.1,
-        'temporal_patterns': Math.random() * 0.15 + 0.1,
-        'volatility_regime': Math.random() * 0.1 + 0.05
-      };
-      
       inputs.dispose();
       predictions.forEach(tensor => tensor.dispose());
-      
+
       return {
         nextPrice: priceData[0],
         confidence,
-        trend: trends[trendIndex],
-        attention_weights: attentionWeights,
-        feature_importance: featureImportance
+        trend: trends[trendIndex]
       };
       
     } catch (error) {
@@ -425,7 +407,7 @@ export class TransformerMLEngine {
     transformerScore = Math.max(0, Math.min(1, transformerScore));
     
     // Determine market regime
-    const volatility = prediction.feature_importance['volatility_regime'];
+    const volatility = prediction.feature_importance?.['volatility_regime'] ?? 0;
     let marketRegime = 'normal';
     if (volatility > 0.15) marketRegime = 'high_volatility';
     else if (volatility < 0.05) marketRegime = 'low_volatility';

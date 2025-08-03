@@ -787,32 +787,26 @@ router.post('/market-regime', async (req, res) => {
 router.post('/ensemble-analyze', async (req, res) => {
   try {
     const { symbol, imageData, includeComplexPatterns = true } = req.body;
-    
+
+    if (!imageData) {
+      return res.status(400).json({ success: false, error: 'imageData is required' });
+    }
+
     console.log(`🔬 Ensemble analysis for ${symbol}`);
-    
-    // Create mock image tensor for ensemble analysis
-    const imageTensor = tf.zeros([1, 224, 224, 3]) as tf.Tensor4D;
-    
-      const ensemblePrediction = await visualTransformer
-        .getEnsembleRecognizer()
-        .predictPattern(imageTensor);
-    
+
+    const buffer = Buffer.from(imageData.replace(/^data:image\/(png|jpeg);base64,/, ''), 'base64');
+    let imageTensor = tf.node.decodeImage(buffer, 3);
+    imageTensor = tf.image.resizeBilinear(imageTensor, [224, 224]).div(255).expandDims(0) as tf.Tensor4D;
+
+    const ensemblePrediction = await visualTransformer
+      .getEnsembleRecognizer()
+      .predictPattern(imageTensor);
+
     let complexPatterns: ComplexPattern[] = [];
     if (includeComplexPatterns) {
-      const mockPriceData = Array.from({ length: 100 }, (_, i) => [
-        100 + i * 0.1 + Math.random() * 2,
-        102 + i * 0.1 + Math.random() * 2,
-        98 + i * 0.1 + Math.random() * 2,
-        100 + i * 0.1 + Math.random() * 2
-      ]);
-      const mockVolumeData = Array.from({ length: 100 }, () => 1000000 + Math.random() * 500000);
-      
-      const complexPatternDetector = new ComplexPatternDetector();
-      complexPatterns = await complexPatternDetector.detectComplexPatterns(
-        mockPriceData,
-        mockVolumeData,
-        '1D'
-      );
+      const detector = new ComplexPatternDetector();
+      const { priceData, volumeData } = await detector.fetchMarketData(symbol, '1D');
+      complexPatterns = await detector.detectComplexPatterns(priceData, volumeData, '1D');
     }
     
     imageTensor.dispose();

@@ -302,59 +302,7 @@ export class LEAPAnalyzer {
     }
     
     if (!leap) {
-      // Return a mock analysis for demonstration purposes
-      console.log(`Generating mock analysis for LEAP ID: ${leapId}`);
-      return {
-        trade: {
-          id: leapId,
-          ticker: 'ORCL',
-          strike: 260,
-          expiry: '2026-12-17',
-          type: 'call',
-          originalPremium: 550000,
-          originalPrice: 15.50,
-          daysToExpiry: 745,
-          probabilityScore: 78
-        },
-        analysis: {
-          timeDecay: {
-            daysElapsed: 15,
-            daysRemaining: 730,
-            timeDecayRate: 2.1,
-            accelerationPoint: 655
-          },
-          probabilityAssessment: {
-            overallScore: 78,
-            factors: {
-              premiumSize: 'Good',
-              volumeProfile: 'Strong',
-              moneyness: 'Optimal',
-              sectorStrength: 'Strong',
-              timeHorizon: 'Excellent'
-            }
-          },
-          riskReward: {
-            maxLoss: 550000,
-            breakeven: 275.50,
-            profitPotential: 'High',
-            currentRisk: 15.50
-          },
-          similarHistoricalTrades: [],
-          technicalLevels: {
-            currentUnderlying: 186.45,
-            strike: 260,
-            support: 167.8,
-            resistance: 205.1,
-            targetPrice: 312.0
-          },
-          recommendedActions: [
-            'Monitor closely for earnings impact',
-            'Consider rolling if underlying breaks resistance',
-            'EXCEPTIONAL conviction level',
-            'Strong institutional activity detected'
-          ]
-        }
-      };
+      throw new Error(`LEAP ${leapId} not found`);
     }
     
     // Update current prices if needed

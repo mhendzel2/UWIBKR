@@ -218,52 +218,32 @@ class ShortExpiryAnalyzer {
   }
 
   private async getOptionData(ticker: string, strike: number, expiry: string, type: string) {
-    try {
-      // Get option chain data from Unusual Whales or TWS
-      const optionChain = await this.unusualWhales.getOptionsChain(ticker, expiry);
-      const contract = optionChain.find((opt: any) => 
-        opt.strike === strike && opt.type === type
-      );
+    // Get option chain data from Unusual Whales or TWS
+    const optionChain = await this.unusualWhales.getOptionsChain(ticker, expiry);
+    const contract = optionChain.find((opt: any) =>
+      opt.strike === strike && opt.type === type
+    );
 
-      return contract ? {
-        midpoint: (contract.bid + contract.ask) / 2,
-        bid: contract.bid,
-        ask: contract.ask,
-        openInterest: contract.open_interest,
-        delta: contract.delta,
-        gamma: contract.gamma,
-        theta: contract.theta,
-        vega: contract.vega,
-        iv: contract.implied_volatility
-      } : null;
-    } catch (error) {
-      // Return mock data for demo
-      return {
-        midpoint: 2.50,
-        bid: 2.45,
-        ask: 2.55,
-        openInterest: 1000,
-        delta: 0.45,
-        gamma: 0.02,
-        theta: -0.05,
-        vega: 0.08,
-        iv: 0.25
-      };
-    }
+    return contract ? {
+      midpoint: (contract.bid + contract.ask) / 2,
+      bid: contract.bid,
+      ask: contract.ask,
+      openInterest: contract.open_interest,
+      delta: contract.delta,
+      gamma: contract.gamma,
+      theta: contract.theta,
+      vega: contract.vega,
+      iv: contract.implied_volatility
+    } : null;
   }
 
   private async getStockData(ticker: string) {
-    try {
-      const data = await this.unusualWhales.getStockQuote(ticker);
-      return {
-        price: data.price,
-        volume: data.volume,
-        avgVolume: data.avgVolume
-      };
-    } catch (error) {
-      // Fallback data
-      return { price: 100, volume: 1000000, avgVolume: 800000 };
-    }
+    const data = await this.unusualWhales.getStockQuote(ticker);
+    return {
+      price: data.price,
+      volume: data.volume,
+      avgVolume: data.avgVolume
+    };
   }
 
   private analyzeGexSentiment(gexData: any[], strike: number, optionType: string): 'bullish' | 'bearish' | 'neutral' {
