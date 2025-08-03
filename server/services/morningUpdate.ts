@@ -1,7 +1,7 @@
-import OpenAI from 'openai';
+// import OpenAI from 'openai'; // Removed - using Gemini instead
 import { macroeconomicDataService } from './macroeconomicData';
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+// const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY }); // Removed - using Gemini instead
 
 export interface MorningUpdateData {
   id: string;
@@ -629,14 +629,23 @@ Provide a JSON response with:
 
 Keep it professional and actionable for options traders.`;
 
-      const response = await openai.chat.completions.create({
-        model: "gpt-4o",
-        messages: [{ role: "user", content: prompt }],
-        response_format: { type: "json_object" },
-        temperature: 0.3
-      });
+      // const response = await openai.chat.completions.create({
+      //   model: "gpt-4o",
+      //   messages: [{ role: "user", content: prompt }],
+      //   response_format: { type: "json_object" },
+      //   temperature: 0.3
+      // });
 
-      const summary = JSON.parse(response.choices[0].message.content || '{}');
+      // const summary = JSON.parse(response.choices[0].message.content || '{}');
+
+      // Placeholder response since OpenAI has been removed
+      const summary = {
+        executiveSummary: 'Markets preparing for session open with mixed signals.',
+        marketOutlook: 'Cautious optimism ahead of key economic data.',
+        tradingPlan: 'Focus on high-conviction swing trades with proper risk management.',
+        riskConsiderations: 'Monitor volatility and position sizing.',
+        keyWatchItems: ['VIX levels', 'Treasury yields', 'Options flow']
+      };
 
       return {
         executiveSummary: summary.executiveSummary || 'Markets preparing for session open with mixed signals.',
@@ -647,7 +656,7 @@ Keep it professional and actionable for options traders.`;
       };
 
     } catch (error) {
-      console.error('AI summary unavailable (API quota):', error.message);
+      console.error('AI summary unavailable (API quota):', (error as Error).message);
       
       // Generate intelligent summary based on real data
       const fearGreed = updateData.macroSummary.fearGreedIndex;

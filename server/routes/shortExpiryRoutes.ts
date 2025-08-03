@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import { UnusualWhalesService } from '../services/unusualWhales';
-import openaiService from '../openai';
+// import openaiService from '../openai'; // Removed - using Gemini instead
 
 const router = Router();
 
@@ -348,8 +348,15 @@ class ShortExpiryAnalyzer {
 Recommend: call, put, or none. Include probability (0-100) and reasoning.
 Response format: {"action": "call|put|none", "probability": 75, "reasoning": "explanation"}`;
 
-      const response = await openaiService.analyzeOptionsStrategy(prompt);
-      return JSON.parse(response);
+      // const response = await openaiService.analyzeOptionsStrategy(prompt);
+      // return JSON.parse(response);
+      
+      // Placeholder response since OpenAI has been removed
+      return {
+        action: 'none',
+        probability: 50,
+        reasoning: 'AI analysis temporarily disabled - OpenAI replaced with Gemini'
+      };
     } catch (error) {
       return {
         action: 'none',
@@ -377,8 +384,15 @@ News sentiment: ${newsSentiment}
 Provide probability (0-100) and recommendation (strong_buy, buy, neutral, sell, strong_sell).
 Response format: {"probability": 75, "recommendation": "buy", "reasoning": "explanation"}`;
 
-      const response = await openaiService.analyzeOptionsStrategy(prompt);
-      return JSON.parse(response);
+      // const response = await openaiService.analyzeOptionsStrategy(prompt);
+      // return JSON.parse(response);
+      
+      // Placeholder response since OpenAI has been removed
+      return {
+        probability: 50,
+        recommendation: 'neutral',
+        reasoning: 'AI analysis temporarily disabled - OpenAI replaced with Gemini'
+      };
     } catch (error) {
       return {
         probability: 50,

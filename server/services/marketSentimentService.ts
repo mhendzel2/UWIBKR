@@ -414,12 +414,25 @@ Provide a JSON response with:
 - primaryDrivers: array of main factors
 - recommendation: "risk-on", "risk-off", or "neutral"`;
 
-      const response = await openaiService.createCompletion(prompt, {
-        model: 'gpt-4o',
-        response_format: { type: "json_object" }
-      });
+      // const response = await openaiService.createCompletion(prompt, {
+      //   model: 'gpt-4o',
+      //   response_format: { type: "json_object" }
+      // });
 
-      return JSON.parse(response);
+      // return JSON.parse(response);
+      
+      // Fallback calculation since OpenAI has been removed
+      const score = (data.fearGreed - 50) * 0.8 + 
+                   (data.crypto.btc.change24h * 2) + 
+                   (data.commodities.gold.change24h * 1.5) - 
+                   (data.vixLevel - 20);
+      
+      return {
+        score: Math.max(-100, Math.min(100, score)),
+        confidence: 0.6,
+        primaryDrivers: ['fear_greed_index', 'crypto_performance', 'volatility'],
+        recommendation: score > 10 ? 'risk-on' : score < -10 ? 'risk-off' : 'neutral'
+      };
     } catch (error) {
       console.error('Error calculating overall sentiment:', error);
       // Fallback calculation

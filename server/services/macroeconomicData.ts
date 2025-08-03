@@ -1,7 +1,7 @@
-import OpenAI from 'openai';
+// import OpenAI from 'openai'; // Removed - using Gemini instead
 
 // Create OpenAI instance directly for macroeconomic analysis
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+// const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY }); // Removed - using Gemini instead
 
 export interface MacroeconomicIndicators {
   timestamp: Date;
