@@ -2393,14 +2393,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
         })
         .on('end', async () => {
           try {
-            // Clear existing watchlist and add new symbols
-            await storage.clearWatchlist();
-            for (const symbol of symbols) {
-              await storage.addToWatchlist(symbol);
+            const { gexTracker } = await import('./services/gexTracker');
+            await gexTracker.clearWatchlist();
+            for (const sym of symbols) {
+              await gexTracker.addToWatchlist([sym.symbol], {
+                sector: sym.sector,
+                gexTracking: sym.gexTracking,
+                enabled: sym.enabled
+              });
             }
-            
+
             console.log(`✅ Imported ${symbols.length} symbols from CSV to watchlist`);
-            res.json({ 
+            res.json({
               message: `Successfully imported ${symbols.length} symbols from CSV`,
               symbols: symbols.map(s => s.symbol)
             });
