@@ -99,7 +99,8 @@ export interface WatchlistConfig {
 }
 
 export class GEXTracker {
-  private watchlist: Map<string, WatchlistItem> = new Map();
+  // Support multiple named watchlists
+  private watchlists: Map<string, Map<string, WatchlistItem>> = new Map();
   private gexData: Map<string, GEXData[]> = new Map();
   private sentiments: Map<string, TickerSentimentResult> = new Map();
   private updateTimer?: NodeJS.Timeout;
@@ -110,37 +111,55 @@ export class GEXTracker {
     if (!fs.existsSync(this.dataDir)) {
       fs.mkdirSync(this.dataDir, { recursive: true });
     }
-    this.loadWatchlist();
+    this.loadWatchlists();
     this.scheduleUpdates();
   }
 
-  async loadWatchlist(): Promise<void> {
+  private getWatchlistMap(name: string = 'default'): Map<string, WatchlistItem> {
+    if (!this.watchlists.has(name)) {
+      this.watchlists.set(name, new Map());
+    }
+    return this.watchlists.get(name)!;
+  }
+
+  async loadWatchlists(): Promise<void> {
     try {
-      const watchlistPath = path.join(this.dataDir, 'watchlist.json');
-      if (fs.existsSync(watchlistPath)) {
-        const data = JSON.parse(fs.readFileSync(watchlistPath, 'utf8'));
-        data.forEach((item: WatchlistItem) => {
-          this.watchlist.set(item.symbol, item);
+      const multiPath = path.join(this.dataDir, 'watchlists.json');
+      const legacyPath = path.join(this.dataDir, 'watchlist.json');
+      if (fs.existsSync(multiPath)) {
+        const raw = JSON.parse(fs.readFileSync(multiPath, 'utf8'));
+        Object.keys(raw).forEach(listName => {
+          const items: WatchlistItem[] = raw[listName] || [];
+          this.watchlists.set(listName, new Map(items.map(item => [item.symbol, item])));
         });
-        console.log(`Loaded ${this.watchlist.size} symbols to watchlist`);
+        console.log(`Loaded watchlists: ${Array.from(this.watchlists.keys()).join(', ')}`);
+      } else if (fs.existsSync(legacyPath)) {
+        // Migrate legacy single watchlist
+        const data: WatchlistItem[] = JSON.parse(fs.readFileSync(legacyPath, 'utf8'));
+        this.watchlists.set('default', new Map(data.map(item => [item.symbol, item])));
+        await this.saveWatchlists();
+        fs.unlinkSync(legacyPath);
+        console.log('Migrated legacy watchlist to watchlists.json');
       } else {
-        // Create default watchlist
         await this.createDefaultWatchlist();
       }
     } catch (error) {
-      console.error('Error loading watchlist:', error);
+      console.error('Error loading watchlists:', error);
       await this.createDefaultWatchlist();
     }
   }
 
-  async saveWatchlist(): Promise<void> {
+  async saveWatchlists(): Promise<void> {
     try {
-      const watchlistPath = path.join(this.dataDir, 'watchlist.json');
-      const data = Array.from(this.watchlist.values());
+      const watchlistPath = path.join(this.dataDir, 'watchlists.json');
+      const data: Record<string, WatchlistItem[]> = {};
+      for (const [name, map] of this.watchlists.entries()) {
+        data[name] = Array.from(map.values());
+      }
       fs.writeFileSync(watchlistPath, JSON.stringify(data, null, 2));
-      console.log(`Saved watchlist with ${data.length} symbols`);
+      console.log(`Saved watchlists: ${Object.keys(data).join(', ')}`);
     } catch (error) {
-      console.error('Error saving watchlist:', error);
+      console.error('Error saving watchlists:', error);
     }
   }
 
@@ -179,63 +198,85 @@ export class GEXTracker {
       { symbol: 'UVXY', sector: 'ETF', gexTracking: true }
     ];
 
+    const map = this.getWatchlistMap('default');
     for (const item of defaultSymbols) {
-      this.watchlist.set(item.symbol, {
+      map.set(item.symbol, {
         symbol: item.symbol,
         sector: item.sector,
         enabled: true,
         gexTracking: item.gexTracking,
-        lastUpdated: new Date().toISOString()
+        lastUpdated: new Date().toISOString(),
       });
     }
 
-    await this.saveWatchlist();
+    await this.saveWatchlists();
     console.log('Created default watchlist with major symbols');
   }
 
-  async addToWatchlist(symbols: string[], options?: Partial<WatchlistItem>): Promise<void> {
+  async createWatchlist(name: string, symbols: string[] = []): Promise<void> {
+    const list = this.getWatchlistMap(name);
     for (const symbol of symbols) {
       const upperSymbol = symbol.toUpperCase();
-      this.watchlist.set(upperSymbol, {
+      list.set(upperSymbol, {
+        symbol: upperSymbol,
+        sector: 'Unknown',
+        enabled: true,
+        gexTracking: true,
+        lastUpdated: new Date().toISOString(),
+      });
+    }
+    await this.saveWatchlists();
+  }
+
+  async addToWatchlist(symbols: string[], options?: Partial<WatchlistItem>, listName: string = 'default'): Promise<void> {
+    const list = this.getWatchlistMap(listName);
+    for (const symbol of symbols) {
+      const upperSymbol = symbol.toUpperCase();
+      list.set(upperSymbol, {
         symbol: upperSymbol,
         sector: options?.sector || 'Unknown',
         marketCap: options?.marketCap,
         avgVolume: options?.avgVolume,
         enabled: options?.enabled ?? true,
         gexTracking: options?.gexTracking ?? true,
-        lastUpdated: new Date().toISOString()
+        lastUpdated: new Date().toISOString(),
       });
     }
-    await this.saveWatchlist();
-    console.log(`Added ${symbols.length} symbols to watchlist`);
+    await this.saveWatchlists();
+    console.log(`Added ${symbols.length} symbols to watchlist ${listName}`);
   }
 
-  async removeFromWatchlist(symbols: string[]): Promise<void> {
+  async removeFromWatchlist(symbols: string[], listName: string = 'default'): Promise<void> {
+    const list = this.getWatchlistMap(listName);
     for (const symbol of symbols) {
-      this.watchlist.delete(symbol.toUpperCase());
+      list.delete(symbol.toUpperCase());
     }
-    await this.saveWatchlist();
-    console.log(`Removed ${symbols.length} symbols from watchlist`);
+    await this.saveWatchlists();
+    console.log(`Removed ${symbols.length} symbols from watchlist ${listName}`);
   }
 
-  async clearWatchlist(): Promise<void> {
-    this.watchlist.clear();
-    await this.saveWatchlist();
-    console.log('Cleared watchlist');
+  async clearWatchlist(listName: string = 'default'): Promise<void> {
+    this.watchlists.set(listName, new Map());
+    await this.saveWatchlists();
+    console.log(`Cleared watchlist ${listName}`);
   }
 
-  getWatchlist(): WatchlistItem[] {
-    return Array.from(this.watchlist.values());
+  getWatchlist(listName: string = 'default'): WatchlistItem[] {
+    return Array.from(this.getWatchlistMap(listName).values());
   }
 
-  getGEXEnabledSymbols(): string[] {
-    return Array.from(this.watchlist.values())
+  getWatchlistNames(): string[] {
+    return Array.from(this.watchlists.keys());
+  }
+
+  getGEXEnabledSymbols(listName: string = 'default'): string[] {
+    return this.getWatchlist(listName)
       .filter(item => item.enabled && item.gexTracking)
       .map(item => item.symbol);
   }
 
-  async refreshSentiments(): Promise<void> {
-    const symbols = this.getWatchlist().map(w => w.symbol);
+  async refreshSentiments(listName: string = 'default'): Promise<void> {
+    const symbols = this.getWatchlist(listName).map(w => w.symbol);
     const results = await Promise.all(
       symbols.map(sym => sentimentAnalysisService.getTickerSentiment(sym))
     );
@@ -334,40 +375,66 @@ export class GEXTracker {
   }
 
   private async updateSymbolGEX(symbol: string): Promise<void> {
-    // In a real implementation, this would fetch current options data
-    // For now, we'll simulate GEX calculation with placeholder logic
-    
-    const gexData: GEXData = {
-      symbol,
-      date: new Date().toISOString().split('T')[0],
-      totalGamma: Math.random() * 1000000, // Placeholder
-      callGamma: Math.random() * 600000,
-      putGamma: Math.random() * 400000,
-      netGamma: (Math.random() - 0.5) * 200000,
-      gammaFlip: 400 + Math.random() * 100, // Placeholder price level
-      supportLevel: 390 + Math.random() * 20,
-      resistanceLevel: 420 + Math.random() * 20,
-      gexScore: Math.random() * 100
-    };
+    try {
+      const { UnusualWhalesService } = await import('./unusualWhales');
+      const uw = new UnusualWhalesService();
+      const exposures = await uw.getSpotExposures(symbol);
 
-    // Store GEX data
-    if (!this.gexData.has(symbol)) {
-      this.gexData.set(symbol, []);
-    }
-    
-    const symbolData = this.gexData.get(symbol)!;
-    symbolData.push(gexData);
-    
-    // Keep only last 30 days
-    if (symbolData.length > 30) {
-      symbolData.splice(0, symbolData.length - 30);
-    }
+      if (!exposures.length) {
+        console.warn(`No GEX data available for ${symbol}`);
+        return;
+      }
 
-    // Save to file
-    const filePath = path.join(this.dataDir, `${symbol}_gex.json`);
-    fs.writeFileSync(filePath, JSON.stringify(symbolData, null, 2));
-    
-    console.log(`Updated GEX data for ${symbol}`);
+      const totalGamma = exposures.reduce(
+        (sum, e) =>
+          sum + Math.abs(e.call_gamma_exposure) + Math.abs(e.put_gamma_exposure),
+        0
+      );
+      const callGamma = exposures.reduce((sum, e) => sum + e.call_gamma_exposure, 0);
+      const putGamma = exposures.reduce((sum, e) => sum + e.put_gamma_exposure, 0);
+      const netGamma = exposures.reduce((sum, e) => sum + e.net_gamma_exposure, 0);
+
+      const callWall = exposures.reduce((prev, cur) =>
+        Math.abs(cur.call_gamma_exposure) > Math.abs(prev.call_gamma_exposure) ? cur : prev
+      ).strike;
+      const putWall = exposures.reduce((prev, cur) =>
+        Math.abs(cur.put_gamma_exposure) > Math.abs(prev.put_gamma_exposure) ? cur : prev
+      ).strike;
+      const gammaFlip = exposures.reduce((prev, cur) =>
+        Math.abs(cur.net_gamma_exposure) < Math.abs(prev.net_gamma_exposure) ? cur : prev
+      ).strike;
+
+      const gexData: GEXData = {
+        symbol,
+        date: new Date().toISOString().split('T')[0],
+        totalGamma,
+        callGamma,
+        putGamma,
+        netGamma,
+        gammaFlip,
+        supportLevel: putWall,
+        resistanceLevel: callWall,
+        gexScore: totalGamma === 0 ? 0 : (netGamma / totalGamma) * 100,
+      };
+
+      if (!this.gexData.has(symbol)) {
+        this.gexData.set(symbol, []);
+      }
+
+      const symbolData = this.gexData.get(symbol)!;
+      symbolData.push(gexData);
+
+      if (symbolData.length > 30) {
+        symbolData.splice(0, symbolData.length - 30);
+      }
+
+      const filePath = path.join(this.dataDir, `${symbol}_gex.json`);
+      fs.writeFileSync(filePath, JSON.stringify(symbolData, null, 2));
+
+      console.log(`Updated GEX data for ${symbol}`);
+    } catch (error) {
+      console.error(`Failed to update GEX for ${symbol}:`, error);
+    }
   }
 
   async getGEXLevels(symbol: string): Promise<GEXLevels | null> {
@@ -379,29 +446,43 @@ export class GEXTracker {
 
       const data: GEXData[] = JSON.parse(fs.readFileSync(filePath, 'utf8'));
       const latest = data[data.length - 1];
-      
+
       if (!latest) return null;
 
-      // Calculate key levels and analysis
+      const { ibkrService } = await import('./ibkr');
+      let currentPrice: number | null = null;
+      try {
+        const md = await ibkrService.getMarketData(symbol);
+        currentPrice =
+          md?.lastPrice ||
+          md?.close ||
+          md?.price ||
+          md?.regularMarketPrice ||
+          md?.c ||
+          null;
+      } catch (err) {
+        console.error('Failed to fetch market price:', err);
+      }
+
       const keyLevels = [
         { level: latest.gammaFlip, type: 'gamma_flip' as const, strength: 0.9 },
         { level: latest.supportLevel, type: 'support' as const, strength: 0.8 },
-        { level: latest.resistanceLevel, type: 'resistance' as const, strength: 0.8 }
+        { level: latest.resistanceLevel, type: 'resistance' as const, strength: 0.8 },
       ];
 
       return {
         symbol,
         date: latest.date,
-        currentPrice: latest.gammaFlip + (Math.random() - 0.5) * 10, // Placeholder
+        currentPrice: currentPrice ?? latest.gammaFlip,
         gammaFlip: latest.gammaFlip,
         callWall: latest.resistanceLevel,
         putWall: latest.supportLevel,
         netGamma: latest.netGamma,
         totalGamma: latest.totalGamma,
         gexScore: latest.gexScore,
-        supportLevels: [latest.supportLevel, latest.supportLevel - 10],
-        resistanceLevels: [latest.resistanceLevel, latest.resistanceLevel + 10],
-        keyLevels
+        supportLevels: [latest.supportLevel],
+        resistanceLevels: [latest.resistanceLevel],
+        keyLevels,
       };
     } catch (error) {
       console.error(`Error getting GEX levels for ${symbol}:`, error);
@@ -409,8 +490,8 @@ export class GEXTracker {
     }
   }
 
-  async getAllGEXLevels(): Promise<GEXLevels[]> {
-    const symbols = this.getGEXEnabledSymbols();
+  async getAllGEXLevels(listName: string = 'default'): Promise<GEXLevels[]> {
+    const symbols = this.getGEXEnabledSymbols(listName);
     const results: GEXLevels[] = [];
 
     for (const symbol of symbols) {

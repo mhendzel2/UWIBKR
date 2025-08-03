@@ -1772,9 +1772,33 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Watchlist endpoints
   app.get("/api/watchlist", async (req, res) => {
     try {
+      const list = (req.query.list as string) || 'default';
       const { gexTracker } = await import('./services/gexTracker');
-      const watchlist = gexTracker.getWatchlist();
-      res.json(watchlist);
+      const { ibkrService } = await import('./services/ibkr');
+      const watchlist = gexTracker.getWatchlist(list);
+      const symbols = watchlist.map((w: any) => w.symbol);
+      let prices: any[] = [];
+      if (symbols.length) {
+        try {
+          prices = await ibkrService.getMarketData(symbols);
+        } catch (err) {
+          console.error('Failed to fetch market data:', err);
+        }
+      }
+
+      const priceMap = new Map(
+        (Array.isArray(prices) ? prices : [prices]).map((p: any) => [
+          p?.symbol || p?.ticker || p?.conid || '',
+          p?.lastPrice || p?.price || p?.regularMarketPrice || p?.c,
+        ])
+      );
+
+      const enriched = watchlist.map((item: any) => ({
+        ...item,
+        price: priceMap.get(item.symbol) || null,
+      }));
+
+      res.json(enriched);
     } catch (error) {
       console.error("Failed to get watchlist:", error);
       res.status(500).json({ message: "Failed to get watchlist" });
@@ -1784,13 +1808,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/watchlist/add", async (req, res) => {
     try {
       const { gexTracker } = await import('./services/gexTracker');
-      const { symbols, options } = req.body;
-      
+      const { symbols, options, list } = req.body;
+
       if (!symbols || !Array.isArray(symbols)) {
         return res.status(400).json({ message: "Symbols array is required" });
       }
-      
-      await gexTracker.addToWatchlist(symbols, options);
+
+      await gexTracker.addToWatchlist(symbols, options, list || 'default');
       res.json({ message: `Added ${symbols.length} symbols to watchlist` });
     } catch (error) {
       console.error("Failed to add to watchlist:", error);
@@ -1801,17 +1825,42 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.delete("/api/watchlist/remove", async (req, res) => {
     try {
       const { gexTracker } = await import('./services/gexTracker');
-      const { symbols } = req.body;
-      
+      const { symbols, list } = req.body;
+
       if (!symbols || !Array.isArray(symbols)) {
         return res.status(400).json({ message: "Symbols array is required" });
       }
-      
-      await gexTracker.removeFromWatchlist(symbols);
+
+      await gexTracker.removeFromWatchlist(symbols, list || 'default');
       res.json({ message: `Removed ${symbols.length} symbols from watchlist` });
     } catch (error) {
       console.error("Failed to remove from watchlist:", error);
       res.status(500).json({ message: "Failed to remove from watchlist" });
+    }
+  });
+
+  app.get("/api/watchlist/lists", async (req, res) => {
+    try {
+      const { gexTracker } = await import('./services/gexTracker');
+      res.json(gexTracker.getWatchlistNames());
+    } catch (error) {
+      console.error('Failed to get watchlist names:', error);
+      res.status(500).json({ message: 'Failed to get watchlist names' });
+    }
+  });
+
+  app.post("/api/watchlist/create", async (req, res) => {
+    try {
+      const { gexTracker } = await import('./services/gexTracker');
+      const { name, symbols } = req.body;
+      if (!name) {
+        return res.status(400).json({ message: 'Watchlist name required' });
+      }
+      await gexTracker.createWatchlist(name, symbols || []);
+      res.json({ message: 'Watchlist created', name });
+    } catch (error) {
+      console.error('Failed to create watchlist:', error);
+      res.status(500).json({ message: 'Failed to create watchlist' });
     }
   });
 
@@ -2168,13 +2217,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/gex/levels", async (req, res) => {
     try {
       const { gexTracker } = await import('./services/gexTracker');
-      const { symbol } = req.query;
-      
+      const { symbol, list } = req.query;
+
       if (symbol) {
         const levels = await gexTracker.getGEXLevels(symbol as string);
         res.json(levels);
       } else {
-        const allLevels = await gexTracker.getAllGEXLevels();
+        const allLevels = await gexTracker.getAllGEXLevels((list as string) || 'default');
         res.json(allLevels);
       }
     } catch (error) {
