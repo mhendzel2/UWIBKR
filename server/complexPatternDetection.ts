@@ -451,11 +451,8 @@ export class ComplexPatternDetector {
     let bearishPatterns = 0;
 
     for (const timeframe of timeframes) {
-      // Simulate getting data for each timeframe
-      const mockPriceData = this.generateMockPriceData(100);
-      const mockVolumeData = this.generateMockVolumeData(100);
-      
-      const patterns = await this.detectComplexPatterns(mockPriceData, mockVolumeData, timeframe);
+      const { priceData, volumeData } = await this.fetchMarketData(symbol, timeframe);
+      const patterns = await this.detectComplexPatterns(priceData, volumeData, timeframe);
       analysis.timeframes[timeframe] = patterns;
 
       // Count patterns for confluence analysis
@@ -699,26 +696,47 @@ export class ComplexPatternDetector {
     return Math.floor(typicalDurations[regimeType] * (0.5 + Math.random()));
   }
 
-  private generateMockPriceData(length: number): number[][] {
-    const data: number[][] = [];
-    let price = 100;
-    
-    for (let i = 0; i < length; i++) {
-      const change = (Math.random() - 0.5) * 0.04; // ±2% moves
-      const open = price;
-      const close = price * (1 + change);
-      const high = Math.max(open, close) * (1 + Math.random() * 0.01);
-      const low = Math.min(open, close) * (1 - Math.random() * 0.01);
-      
-      data.push([open, high, low, close]);
-      price = close;
-    }
-    
-    return data;
-  }
+  async fetchMarketData(symbol: string, timeframe: string): Promise<{ priceData: number[][]; volumeData: number[] }> {
+    const intervalMap: Record<string, string> = {
+      '1m': '1m',
+      '5m': '5m',
+      '15m': '15m',
+      '1h': '60m',
+      '4h': '1h',
+      '1D': '1d',
+      '1W': '1wk'
+    };
 
-  private generateMockVolumeData(length: number): number[] {
-    const baseVolume = 1000000;
-    return Array.from({ length }, () => baseVolume * (0.5 + Math.random()));
+    const interval = intervalMap[timeframe] || '1d';
+    const url = `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}?range=1y&interval=${interval}`;
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error(`Failed to fetch market data for ${symbol} (${timeframe})`);
+    }
+
+    const json = await response.json();
+    const result = json.chart?.result?.[0];
+    if (!result) {
+      throw new Error('Invalid market data response');
+    }
+
+    const quote = result.indicators?.quote?.[0] || {};
+    const opens = quote.open || [];
+    const highs = quote.high || [];
+    const lows = quote.low || [];
+    const closes = quote.close || [];
+    const volumes = quote.volume || [];
+
+    const priceData: number[][] = [];
+    for (let i = 0; i < opens.length; i++) {
+      priceData.push([
+        opens[i] || 0,
+        highs[i] || 0,
+        lows[i] || 0,
+        closes[i] || 0
+      ]);
+    }
+
+    return { priceData, volumeData: volumes };
   }
 }
