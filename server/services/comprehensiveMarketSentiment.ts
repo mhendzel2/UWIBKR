@@ -777,3 +777,5 @@ export class ComprehensiveMarketSentimentService {
     this.cache.set(key, { data, timestamp: Date.now() });
   }
 }
+
+export const comprehensiveMarketSentimentService = new ComprehensiveMarketSentimentService();

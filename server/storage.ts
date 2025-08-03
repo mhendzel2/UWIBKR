@@ -1151,6 +1151,32 @@ export interface IStorage {
       timestamp: new Date(),
     };
   }
+
+  // Generic storage methods for non-schema data
+  private genericStorage: Map<string, Map<string, any>> = new Map();
+
+  async store(collection: string, key: string, data: any): Promise<void> {
+    if (!this.genericStorage.has(collection)) {
+      this.genericStorage.set(collection, new Map());
+    }
+    this.genericStorage.get(collection)!.set(key, data);
+  }
+
+  async query(collection: string, filters: any): Promise<any[]> {
+    const collectionData = this.genericStorage.get(collection);
+    if (!collectionData) {
+      return [];
+    }
+    return Array.from(collectionData.values());
+  }
+
+  async delete(collection: string, key: string): Promise<boolean> {
+    const collectionData = this.genericStorage.get(collection);
+    if (!collectionData) {
+      return false;
+    }
+    return collectionData.delete(key);
+  }
 }
 
 export const storage = new DatabaseStorage();

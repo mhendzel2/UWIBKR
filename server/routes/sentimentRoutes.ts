@@ -2,19 +2,121 @@ import { Router } from 'express';
 import { marketSentimentService } from '../services/marketSentimentService';
 import { sentimentAnalysisService } from '../services/sentimentAnalysis';
 import { gexTracker } from '../services/gexTracker';
+import { comprehensiveMarketSentimentService } from '../services/comprehensiveMarketSentiment';
+import { historicalSentimentService } from '../services/historicalSentimentService';
 
 const router = Router();
 
-// Get comprehensive market sentiment analysis
+// Get comprehensive market sentiment analysis with historical tracking
 router.get('/market', async (req, res) => {
   try {
-    const sentiment = await marketSentimentService.getMarketSentiment();
-    res.json(sentiment);
+    console.log('📊 Fetching comprehensive market sentiment...');
+    
+    // Get comprehensive sentiment data
+    const sentimentData = await comprehensiveMarketSentimentService.getComprehensiveDashboard();
+    
+    // Store historical record
+    await historicalSentimentService.storeCurrentSentiment(sentimentData);
+    
+    res.json({
+      success: true,
+      data: sentimentData,
+      timestamp: new Date().toISOString()
+    });
   } catch (error) {
-    console.error('Error fetching market sentiment:', error);
-    res.status(500).json({ 
+    console.error('❌ Error fetching market sentiment:', error);
+    res.status(500).json({
+      success: false,
       error: 'Failed to fetch market sentiment',
-      message: error instanceof Error ? error.message : 'Unknown error'
+      details: error instanceof Error ? error.message : 'Unknown error'
+    });
+  }
+});
+
+// Historical sentiment data for charts
+router.get('/historical/:timeframe', async (req, res) => {
+  try {
+    const { timeframe } = req.params;
+    const validTimeframes = ['1h', '4h', '24h', '7d', '30d'];
+    
+    if (!validTimeframes.includes(timeframe)) {
+      return res.status(400).json({
+        success: false,
+        error: 'Invalid timeframe. Use: 1h, 4h, 24h, 7d, 30d'
+      });
+    }
+    
+    console.log(`📈 Fetching ${timeframe} historical sentiment data...`);
+    
+    const historicalData = await historicalSentimentService.getHistoricalData(timeframe as any);
+    
+    res.json({
+      success: true,
+      data: historicalData,
+      timeframe,
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    console.error('❌ Error fetching historical sentiment:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to fetch historical sentiment data',
+      details: error instanceof Error ? error.message : 'Unknown error'
+    });
+  }
+});
+
+// Sentiment statistics and trends
+router.get('/stats/:timeframe?', async (req, res) => {
+  try {
+    const { timeframe = '7d' } = req.params;
+    const validTimeframes = ['7d', '30d'];
+    
+    if (!validTimeframes.includes(timeframe)) {
+      return res.status(400).json({
+        success: false,
+        error: 'Invalid timeframe. Use: 7d, 30d'
+      });
+    }
+    
+    console.log(`📊 Calculating sentiment statistics for ${timeframe}...`);
+    
+    const stats = await historicalSentimentService.getSentimentStats(timeframe as any);
+    
+    res.json({
+      success: true,
+      data: stats,
+      timeframe,
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    console.error('❌ Error calculating sentiment stats:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to calculate sentiment statistics',
+      details: error instanceof Error ? error.message : 'Unknown error'
+    });
+  }
+});
+
+// Latest sentiment snapshot
+router.get('/latest', async (req, res) => {
+  try {
+    console.log('📊 Fetching latest sentiment snapshot...');
+    
+    const latestSentiment = await historicalSentimentService.getLatestSentiment();
+    
+    res.json({
+      success: true,
+      data: latestSentiment,
+      timestamp: new Date().toISOString()
+    });
+  } catch (error) {
+    console.error('❌ Error fetching latest sentiment:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to fetch latest sentiment',
+      details: error instanceof Error ? error.message : 'Unknown error'
     });
   }
 });
