@@ -55,7 +55,7 @@ export default function PositionsPage() {
   });
 
   const createAlertMutation = useMutation({
-    mutationFn: (data: InsertAccountAlert) => apiRequest('/api/account-alerts', 'POST', data),
+    mutationFn: (data: InsertAccountAlert) => apiRequest('POST', '/api/account-alerts', data),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/account-alerts'] });
       setAlertDialogOpen(false);
@@ -75,7 +75,7 @@ export default function PositionsPage() {
   });
 
   const deleteAlertMutation = useMutation({
-    mutationFn: (alertId: string) => apiRequest(`/api/account-alerts/${alertId}`, 'DELETE'),
+    mutationFn: (alertId: string) => apiRequest('DELETE', `/api/account-alerts/${alertId}`),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/account-alerts'] });
       toast({

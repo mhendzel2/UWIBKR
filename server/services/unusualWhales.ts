@@ -236,13 +236,60 @@ export class UnusualWhalesService {
     }
   }
 
-  async getOptionsFlow(ticker: string): Promise<any[]> {
+  async getOptionsFlow(
+    params: string | {
+      ticker?: string;
+      min_dte?: number;
+      max_dte?: number;
+      min_volume?: number;
+      min_premium?: number;
+      issue_types?: string[];
+      limit?: number;
+    } = ""
+  ): Promise<any[]> {
     try {
-      const data = await this.makeRequest<{ data: any[] }>(`/options/flow/${ticker}`);
+      let endpoint: string;
+      if (typeof params === "string") {
+        endpoint = `/options/flow/${params}`;
+      } else {
+        const search = new URLSearchParams();
+        if (params.ticker) search.append("ticker", params.ticker);
+        if (params.min_dte !== undefined) search.append("min_dte", params.min_dte.toString());
+        if (params.max_dte !== undefined) search.append("max_dte", params.max_dte.toString());
+        if (params.min_volume !== undefined) search.append("min_volume", params.min_volume.toString());
+        if (params.min_premium !== undefined) search.append("min_premium", params.min_premium.toString());
+        if (params.issue_types) {
+          params.issue_types.forEach(t => search.append("issue_types[]", t));
+        }
+        if (params.limit !== undefined) search.append("limit", params.limit.toString());
+        endpoint = `/options/flow?${search.toString()}`;
+      }
+      const data = await this.makeRequest<{ data: any[] }>(endpoint);
       return data.data || [];
     } catch (error) {
-      console.error(`Failed to fetch options flow for ${ticker}:`, error);
+      console.error("Failed to fetch options flow:", error);
       return [];
+    }
+  }
+
+  async getOptionsChain(ticker: string, expiry: string): Promise<any[]> {
+    try {
+      const endpoint = `/options/chain/${ticker}?expiry=${expiry}`;
+      const data = await this.makeRequest<{ data: any[] }>(endpoint);
+      return data.data || [];
+    } catch (error) {
+      console.error(`Failed to fetch options chain for ${ticker}:`, error);
+      return [];
+    }
+  }
+
+  async getStockQuote(ticker: string): Promise<{ price: number; volume: number } | null> {
+    try {
+      const data = await this.makeRequest<{ data: { price: number; volume: number } }>(`/stock/quote/${ticker}`);
+      return data.data || null;
+    } catch (error) {
+      console.error(`Failed to fetch stock quote for ${ticker}:`, error);
+      return null;
     }
   }
 

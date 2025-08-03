@@ -217,6 +217,12 @@ export class GEXTracker {
     console.log(`Removed ${symbols.length} symbols from watchlist`);
   }
 
+  async clearWatchlist(): Promise<void> {
+    this.watchlist.clear();
+    await this.saveWatchlist();
+    console.log('Cleared watchlist');
+  }
+
   getWatchlist(): WatchlistItem[] {
     return Array.from(this.watchlist.values());
   }
