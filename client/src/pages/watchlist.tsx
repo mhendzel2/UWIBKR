@@ -13,7 +13,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
 import {
-  Eye, EyeOff, Plus, Trash2, Download, Upload, AlertTriangle,
+  Plus, Download, Upload, AlertTriangle,
   TrendingUp, TrendingDown, Users, Bell, BellOff, FileText,
   DollarSign, Activity, Newspaper, Target, RefreshCw
 } from 'lucide-react';
@@ -28,6 +28,8 @@ export default function WatchlistPage() {
   const [newListName, setNewListName] = useState('');
   const [selectedSymbols, setSelectedSymbols] = useState<string[]>([]);
   const [quotes, setQuotes] = useState<Record<string, any>>({});
+  const [isEditing, setIsEditing] = useState(false);
+  const [expandedSymbols, setExpandedSymbols] = useState<string[]>([]);
   const queryClient = useQueryClient();
 
   // Fetch watchlist
@@ -41,11 +43,6 @@ export default function WatchlistPage() {
   });
 
   const symbolsQuery = (watchlist || []).filter((w: any) => w.enabled).map((w: any) => w.symbol).join(',');
-  const { data: channelSignals } = useQuery({
-    queryKey: ['/api/watchlist/channel-signals', symbolsQuery],
-    enabled: !!symbolsQuery,
-    refetchInterval: 60000
-  });
 
   // Fetch market alerts
   const { data: alertsData } = useQuery({
@@ -116,14 +113,6 @@ export default function WatchlistPage() {
     }
   });
 
-  // Import CSV mutation
-  const importCsvMutation = useMutation({
-    mutationFn: () => apiRequest('POST', '/api/watchlist/import-csv'),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: [`/api/watchlist?list=${currentList}`] });
-    }
-  });
-
   // Remove symbols mutation
   const removeSymbolsMutation = useMutation({
     mutationFn: (data: { symbols: string[] }) =>
@@ -141,14 +130,6 @@ export default function WatchlistPage() {
       setCurrentList(name);
       setShowCreateDialog(false);
       setNewListName('');
-    }
-  });
-
-  const toggleSymbolMutation = useMutation({
-    mutationFn: (data: { symbol: string, enabled: boolean }) =>
-      apiRequest('PATCH', '/api/watchlist/enable', { ...data, list: currentList }),
-    onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: [`/api/watchlist?list=${currentList}`] });
     }
   });
 
@@ -176,11 +157,6 @@ export default function WatchlistPage() {
     }
   };
 
-  const handleRemoveSymbol = (symbol: string) => {
-    removeSymbolsMutation.mutate({ symbols: [symbol] });
-    setSelectedSymbols((prev) => prev.filter((s) => s !== symbol));
-  };
-
   const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
     if (file) {
@@ -188,7 +164,7 @@ export default function WatchlistPage() {
         const reader = new FileReader();
         reader.onload = async (e) => {
           const fileContent = e.target?.result as string;
-          
+
           // Auto-detect data type from filename
           let dataType = 'historical';
           if (file.name.toLowerCase().includes('options')) {
@@ -196,12 +172,20 @@ export default function WatchlistPage() {
           } else if (file.name.toLowerCase().includes('watchlist')) {
             dataType = 'watchlist';
           }
-          
-          const uploadResult = await apiRequest('POST', '/api/data/upload', {
-            fileName: file.name,
-            fileContent,
-            dataType
-          });
+
+          let uploadResult;
+          if (dataType === 'watchlist') {
+            uploadResult = await apiRequest('POST', '/api/watchlist/import-csv', {
+              csv: fileContent,
+              list: currentList
+            });
+          } else {
+            uploadResult = await apiRequest('POST', '/api/data/upload', {
+              fileName: file.name,
+              fileContent,
+              dataType
+            });
+          }
           
           // Refresh data after successful upload
           queryClient.invalidateQueries({ queryKey: [`/api/watchlist?list=${currentList}`] });
@@ -224,6 +208,12 @@ export default function WatchlistPage() {
     );
   };
 
+  const toggleDetails = (symbol: string) => {
+    setExpandedSymbols((prev) =>
+      prev.includes(symbol) ? prev.filter((s) => s !== symbol) : [...prev, symbol]
+    );
+  };
+
   const clearSelection = () => setSelectedSymbols([]);
 
   const handleRemoveSelected = () => {
@@ -233,12 +223,6 @@ export default function WatchlistPage() {
     }
   };
 
-  const handleUpdateGexSelected = () => {
-    if (selectedSymbols.length > 0) {
-      updateGexMutation.mutate(selectedSymbols);
-      clearSelection();
-    }
-  };
 
   const getSeverityColor = (severity: string) => {
     const colors = {
@@ -362,108 +346,90 @@ export default function WatchlistPage() {
         </TabsList>
 
         <TabsContent value="watchlist" className="space-y-4">
-          {selectedSymbols.length > 0 && (
-            <div className="flex space-x-2">
-              <Button variant="destructive" size="sm" onClick={handleRemoveSelected}>
-                Remove Selected
-              </Button>
-              <Button variant="outline" size="sm" onClick={handleUpdateGexSelected}>
-                Update GEX
-              </Button>
-              <Button variant="ghost" size="sm" onClick={clearSelection}>
-                Clear
-              </Button>
+          <div className="flex justify-end">
+            <Button variant="outline" size="sm" onClick={() => setIsEditing(!isEditing)}>
+              {isEditing ? 'Done' : 'Edit'}
+            </Button>
+          </div>
+          {isEditing ? (
+            <>
+              <div className="space-y-2">
+                {(watchlist || []).map((item: any) => (
+                  <div key={item.symbol} className="flex items-center space-x-2">
+                    <Checkbox
+                      checked={selectedSymbols.includes(item.symbol)}
+                      onCheckedChange={() => toggleSelect(item.symbol)}
+                    />
+                    <span>{item.symbol}</span>
+                  </div>
+                ))}
+              </div>
+              {selectedSymbols.length > 0 && (
+                <div className="flex space-x-2">
+                  <Button variant="destructive" size="sm" onClick={handleRemoveSelected}>
+                    Remove Selected
+                  </Button>
+                  <Button variant="ghost" size="sm" onClick={clearSelection}>
+                    Clear
+                  </Button>
+                </div>
+              )}
+            </>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {(watchlist || []).map((item: any) => {
+                const quote = quotes[item.symbol] || {};
+                const price = typeof quote.last === 'number' ? quote.last : item.price;
+                const change = typeof quote.change === 'number' ? quote.change : item.change;
+                const changePercent = typeof quote.changePct === 'number' ? quote.changePct : item.changePercent;
+                return (
+                  <Card key={item.symbol} className="cursor-pointer hover:shadow-md transition-shadow" onClick={() => setSelectedSymbol(item.symbol)}>
+                    <CardHeader className="pb-2">
+                      <div className="flex items-center justify-between">
+                        <CardTitle className="text-lg">{item.symbol}</CardTitle>
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleDetails(item.symbol);
+                            updateGexMutation.mutate([item.symbol]);
+                          }}
+                        >
+                          {expandedSymbols.includes(item.symbol) ? 'Hide' : 'Update'}
+                        </Button>
+                      </div>
+                    </CardHeader>
+                    <CardContent>
+                      <div className="space-y-2 text-sm">
+                        {typeof price === 'number' && (
+                          <div>
+                            Price: ${price.toFixed(2)}
+                            {typeof change === 'number' && (
+                              <span className={`ml-2 ${change >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                                {change >= 0 ? '+' : ''}{change.toFixed(2)}
+                                {typeof changePercent === 'number' && ` (${changePercent.toFixed(2)}%)`}
+                              </span>
+                            )}
+                          </div>
+                        )}
+                        {expandedSymbols.includes(item.symbol) && (
+                          <>
+                            {item.sector && <div>Sector: {item.sector}</div>}
+                            {item.marketCap && <div>Market Cap: ${(item.marketCap / 1e9).toFixed(1)}B</div>}
+                            {item.avgVolume && <div>Avg Volume: {(item.avgVolume / 1e6).toFixed(1)}M</div>}
+                            <div className="text-xs text-gray-500">
+                              Updated: {new Date(item.lastUpdated || Date.now()).toLocaleString()}
+                            </div>
+                          </>
+                        )}
+                      </div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           )}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {(watchlist || []).map((item: any) => {
-              const signal = (channelSignals || []).find((s: any) => s && s.ticker === item.symbol);
-              const quote = quotes[item.symbol] || {};
-              const price = typeof quote.last === 'number' ? quote.last : item.price;
-              const change = typeof quote.change === 'number' ? quote.change : item.change;
-              const changePercent = typeof quote.changePct === 'number' ? quote.changePct : item.changePercent;
-              return (
-                <Card key={item.symbol} className="cursor-pointer hover:shadow-md transition-shadow"
-                      onClick={() => setSelectedSymbol(item.symbol)}>
-                  <CardHeader className="pb-2">
-                    <div className="flex items-center justify-between">
-                      <div className="flex items-center space-x-2">
-                        <Checkbox
-                          checked={selectedSymbols.includes(item.symbol)}
-                          onCheckedChange={() => toggleSelect(item.symbol)}
-                          onClick={(e) => e.stopPropagation()}
-                        />
-                        <CardTitle className="text-lg">{item.symbol}</CardTitle>
-                      </div>
-                      <div className="flex items-center space-x-2">
-                        {item.gexTracking && <Badge variant="outline">GEX</Badge>}
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            toggleSymbolMutation.mutate({ symbol: item.symbol, enabled: !item.enabled });
-                          }}
-                        >
-                          {item.enabled ?
-                            <Eye className="h-4 w-4 text-green-600" /> :
-                            <EyeOff className="h-4 w-4 text-gray-400" />
-                          }
-                        </Button>
-                        <Button
-                          variant="ghost"
-                          size="sm"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            handleRemoveSymbol(item.symbol);
-                          }}
-                        >
-                          <Trash2 className="h-4 w-4" />
-                        </Button>
-                      </div>
-                    </div>
-                    {item.sector && (
-                      <CardDescription>{item.sector}</CardDescription>
-                    )}
-                  </CardHeader>
-                  <CardContent>
-                    <div className="space-y-2 text-sm">
-                      {signal?.direction && (
-                        <div className="flex items-center space-x-2">
-                          <Badge variant={signal.direction === 'LONG' ? 'default' : 'destructive'}>
-                            {signal.direction}
-                          </Badge>
-                          <span className="text-xs text-gray-500">
-                            Score: {signal.confidence_score?.toFixed(2)}
-                          </span>
-                        </div>
-                      )}
-                      {typeof price === 'number' && (
-                        <div>
-                          Price: ${price.toFixed(2)}
-                          {typeof change === 'number' && (
-                            <span className={`ml-2 ${change >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                              {change >= 0 ? '+' : ''}{change.toFixed(2)}
-                              {typeof changePercent === 'number' && ` (${changePercent.toFixed(2)}%)`}
-                            </span>
-                          )}
-                        </div>
-                      )}
-                      {item.marketCap && (
-                        <div>Market Cap: ${(item.marketCap / 1e9).toFixed(1)}B</div>
-                      )}
-                      {item.avgVolume && (
-                        <div>Avg Volume: {(item.avgVolume / 1e6).toFixed(1)}M</div>
-                      )}
-                      <div className="text-xs text-gray-500">
-                        Updated: {new Date(item.lastUpdated || Date.now()).toLocaleString()}
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              );
-            })}
-          </div>
         </TabsContent>
 
         <TabsContent value="intelligence" className="space-y-4">
