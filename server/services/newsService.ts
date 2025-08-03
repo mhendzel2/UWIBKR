@@ -39,6 +39,7 @@ class NewsService {
   private sentimentCache: Map<string, SentimentAnalysis> = new Map();
   private lastFetchTime: number = 0;
   private cacheExpiry: number = 5 * 60 * 1000; // 5 minutes
+  private marketAuxApiKey: string | undefined = process.env.MARKETAUX_API_KEY;
 
   /**
    * Fetch financial news from TWS (primary source) with fallbacks
@@ -58,18 +59,31 @@ class NewsService {
       try {
         const { ibkrService } = await import('./ibkr');
         const days = timeframe === '1h' ? 1 : timeframe === '24h' ? 1 : timeframe === '7d' ? 7 : 30;
-        
+
         // Get news from TWS for each symbol
         for (const symbol of symbols.slice(0, 5)) { // Limit to avoid overloading
           const twsNews = await ibkrService.getMarketNews(symbol, days);
           news.push(...this.formatTWSNews(twsNews, symbol));
         }
-        
+
         console.log(`Retrieved ${news.length} articles from TWS news feeds`);
       } catch (error) {
-        console.error("Failed to fetch TWS news, using fallback sources:", error);
-        
-        // Fallback: Generate realistic news based on current market conditions
+        console.error("Failed to fetch TWS news:", error);
+      }
+
+      // Secondary source: MarketAux API
+      try {
+        const marketAuxNews = await this.fetchMarketAuxNews(symbols);
+        if (marketAuxNews.length > 0) {
+          news.push(...marketAuxNews);
+          console.log(`Retrieved ${marketAuxNews.length} articles from MarketAux`);
+        }
+      } catch (error) {
+        console.error("Failed to fetch MarketAux news:", error);
+      }
+
+      // If no news was retrieved from external sources, generate simulated news
+      if (news.length === 0) {
         news = await this.generateRealisticNews(symbols);
       }
       
@@ -116,6 +130,52 @@ class NewsService {
       category: this.categorizeNews(article.headline),
       url: article.url || '#'
     }));
+  }
+
+  /**
+   * Fetch news from MarketAux API
+   */
+  private async fetchMarketAuxNews(symbols: string[]): Promise<NewsItem[]> {
+    if (!this.marketAuxApiKey) {
+      console.log('MarketAux API key not configured');
+      return [];
+    }
+
+    const articles: NewsItem[] = [];
+
+    for (const symbol of symbols.slice(0, 3)) { // conservative limit
+      const url = `https://api.marketaux.com/v1/news/all?symbols=${symbol}&filter_entities=true&language=en&api_token=${this.marketAuxApiKey}`;
+
+      try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        if (data.data) {
+          for (const item of data.data.slice(0, 10)) {
+            articles.push({
+              id: item.uuid || `marketaux_${Date.now()}_${Math.random()}`,
+              headline: item.title,
+              summary: item.description || item.title,
+              source: `MarketAux (${item.source})`,
+              timestamp: item.published_at,
+              sentiment: this.classifySentiment(0),
+              sentimentScore: 0,
+              symbols: item.entities?.map((e: any) => e.symbol) || [symbol],
+              impact: this.determineImpact(item.title),
+              category: this.categorizeNews(item.title),
+              url: item.url
+            });
+          }
+        }
+
+        // avoid hitting rate limits
+        await new Promise(resolve => setTimeout(resolve, 2000));
+      } catch (error) {
+        console.error(`MarketAux API error for ${symbol}:`, error);
+      }
+    }
+
+    return articles;
   }
 
   /**

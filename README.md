@@ -83,6 +83,7 @@ GEMINI_API_KEY=your_gemini_key_here
 # Market Data
 UNUSUAL_WHALES_API_KEY=your_unusual_whales_key_here
 OPENFDA_API_KEY=your_fda_key_here
+MARKETAUX_API_KEY=your_marketaux_key_here
 
 # Trading (for live execution)
 IBKR_HOST=127.0.0.1
