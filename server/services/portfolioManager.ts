@@ -169,38 +169,36 @@ export class PortfolioManager {
       );
 
       for (const ibkrPos of ibkrPositions) {
-        const positionKey = `${ibkrPos.symbol}_STK`; // Default to STK for now
-        const existingPosition = currentPositionMap.get(positionKey);
+        const symbol = ibkrPos.contract?.symbol;
+        const secType = ibkrPos.contract?.secType || 'STK';
+        if (!symbol) continue;
 
-        const contractDetails = {
-          secType: 'STK',
-          exchange: 'SMART',
-          currency: 'USD'
-        };
+        const positionKey = `${symbol}_${secType}`;
+        const existingPosition = currentPositionMap.get(positionKey);
 
         if (existingPosition) {
           // Update existing position
           await storage.updatePortfolioPosition(existingPosition.id, {
             quantity: ibkrPos.position,
-            avgCost: ibkrPos.avgCost.toString(),
+            avgCost: ibkrPos.averageCost?.toString(),
             marketPrice: ibkrPos.marketPrice?.toString(),
             marketValue: ibkrPos.marketValue?.toString(),
             unrealizedPnL: ibkrPos.unrealizedPNL?.toString(),
-            contractDetails,
+            contractDetails: ibkrPos.contract,
             lastUpdated: new Date()
           });
         } else {
           // Create new position
           const newPosition: InsertPortfolioPosition = {
             portfolioId,
-            symbol: ibkrPos.symbol,
-            secType: 'STK',
+            symbol,
+            secType,
             quantity: ibkrPos.position,
-            avgCost: ibkrPos.avgCost.toString(),
+            avgCost: ibkrPos.averageCost?.toString(),
             marketPrice: ibkrPos.marketPrice?.toString(),
             marketValue: ibkrPos.marketValue?.toString(),
             unrealizedPnL: ibkrPos.unrealizedPNL?.toString(),
-            contractDetails
+            contractDetails: ibkrPos.contract
           };
           await storage.createPortfolioPosition(newPosition);
         }
