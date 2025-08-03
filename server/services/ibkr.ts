@@ -1,5 +1,6 @@
 import axios, { AxiosInstance } from "axios";
 import https from "https";
+import WebSocket from "ws";
 
 interface IBKRConfig {
   host: string;
@@ -56,6 +57,8 @@ export class IBKRService {
   private reconnectDelay = 5000;
   private apiBaseUrl: string;
   private http: AxiosInstance;
+  private marketDataWS?: WebSocket;
+  private conidMap: Record<string, string> = {};
 
   constructor() {
     this.config = {
@@ -117,6 +120,85 @@ export class IBKRService {
    */
   isConnected(): boolean {
     return this.connected;
+  }
+
+  /**
+   * Start streaming live market data for the given symbols using IBKR's
+   * Client Portal WebSocket. Incoming updates will be forwarded to the
+   * provided callback.
+   */
+  async startMarketDataStream(
+    symbols: string[],
+    onUpdate: (data: any) => void
+  ): Promise<void> {
+    if (!this.connected || symbols.length === 0) return;
+
+    const conids: string[] = [];
+    this.conidMap = {};
+
+    for (const sym of symbols) {
+      try {
+        const { data } = await this.http.get(`/iserver/marketdata/symbols/${sym}`);
+        const conid = data?.conid || data?.[0]?.conid;
+        if (conid) {
+          const id = String(conid);
+          conids.push(id);
+          this.conidMap[id] = sym;
+        }
+      } catch (err) {
+        console.error(`Failed to resolve conid for ${sym}:`, err);
+      }
+    }
+
+    if (!conids.length) return;
+
+    const wsUrl = this.apiBaseUrl.replace(/^http/, "ws") + "/ws";
+    this.marketDataWS = new WebSocket(wsUrl, { rejectUnauthorized: false });
+
+    this.marketDataWS.on("open", () => {
+      try {
+        this.marketDataWS?.send(
+          JSON.stringify({
+            type: "subscribe",
+            topics: conids.map((c) => `smd+${c}`),
+          })
+        );
+      } catch (err) {
+        console.error("Failed to subscribe to market data:", err);
+      }
+    });
+
+    this.marketDataWS.on("message", (msg) => {
+      try {
+        const data = JSON.parse(msg.toString());
+        if (data.topic && data.topic.startsWith("smd+")) {
+          const conid = data.topic.split("+")[1];
+          const symbol = this.conidMap[conid];
+          if (symbol) {
+            const args = data.args || {};
+            const quote = {
+              symbol,
+              last: args["31"] ? Number(args["31"]) : undefined,
+              bid: args["84"] ? Number(args["84"]) : undefined,
+              ask: args["86"] ? Number(args["86"]) : undefined,
+              volume: args["85"] ? Number(args["85"]) : undefined,
+              raw: args,
+            };
+            onUpdate(quote);
+          }
+        }
+      } catch (err) {
+        console.error("Failed to process market data message:", err);
+      }
+    });
+
+    this.marketDataWS.on("error", (err) => {
+      console.error("IBKR market data websocket error:", err);
+    });
+
+    this.marketDataWS.on("close", () => {
+      console.log("IBKR market data websocket closed");
+    });
   }
 
   async getAccountInfo(): Promise<AccountInfo | null> {

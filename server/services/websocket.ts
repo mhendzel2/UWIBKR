@@ -152,6 +152,8 @@ export class WebSocketService {
         case 'system':
           data = await this.getSystemHealth();
           break;
+        case 'quotes':
+          break;
       }
 
       if (data) {
@@ -242,6 +244,14 @@ export class WebSocketService {
       data: market,
       timestamp: Date.now(),
     }, 'market');
+  }
+
+  broadcastQuoteUpdate(quote: any): void {
+    this.broadcast({
+      type: 'quote_update',
+      data: quote,
+      timestamp: Date.now(),
+    }, 'quotes');
   }
 
   broadcastSystemUpdate(system: any): void {
