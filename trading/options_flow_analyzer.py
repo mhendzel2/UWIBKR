@@ -8,6 +8,7 @@ import requests
 from .filter_presets import FILTER_PRESETS
 
 BASE_URL = "https://api.unusualwhales.com"  # Placeholder
+HIGH_PROBABILITY_PRESET = "most_successful_combined_strategy"
 
 
 def fetch_unusual_trades(ticker: str) -> List[dict]:
@@ -48,6 +49,17 @@ def fetch_filtered_flow(preset: str, ticker: Optional[str] = None) -> List[dict]
         return resp.get("data", [])
     except Exception:
         return []
+
+
+def fetch_high_probability_alerts(ticker: Optional[str] = None) -> List[dict]:
+    """Fetch highest probability flow alerts using the combined strategy preset.
+
+    Parameters
+    ----------
+    ticker:
+        Optional single ticker to filter on.
+    """
+    return fetch_filtered_flow(HIGH_PROBABILITY_PRESET, ticker)
 
 
 def analyze_flow_sentiment(ticker: str) -> float:
