@@ -21,7 +21,7 @@ import {
 import { WebSocketService } from "./services/websocket";
 import { SignalProcessor } from "./services/signalProcessor";
 import { RiskManager } from "./services/riskManager";
-import { IBKRService } from "./services/ibkr";
+import { ibkrService } from "./services/ibkr";
 import { getChannelSignals } from "./services/channelSignals";
 import { UnusualWhalesService } from "./services/unusualWhales";
 
@@ -193,13 +193,12 @@ function getIndustry(sector: string): string {
 
 export async function registerRoutes(app: Express): Promise<Server> {
   const httpServer = createServer(app);
-  
+
   // Initialize services
+  const uwService = new UnusualWhalesService();
   const wsService = new WebSocketService(httpServer, ibkrService, uwService);
   const signalProcessor = new SignalProcessor();
   const riskManager = new RiskManager();
-  const ibkrService = new IBKRService();
-  const uwService = new UnusualWhalesService();
 
   // Start services
   await ibkrService.connect();
