@@ -1,10 +1,11 @@
 """Simplified options flow analysis using Unusual Whales API."""
 from __future__ import annotations
 
-from typing import Dict, List
+from typing import Dict, List, Optional
 
 import requests
 
+from .filter_presets import FILTER_PRESETS
 
 BASE_URL = "https://api.unusualwhales.com"  # Placeholder
 
@@ -17,6 +18,33 @@ def fetch_unusual_trades(ticker: str) -> List[dict]:
     """
     try:
         resp = requests.get(f"{BASE_URL}/stocks/{ticker}/unusual").json()
+        return resp.get("data", [])
+    except Exception:
+        return []
+
+
+def fetch_filtered_flow(preset: str, ticker: Optional[str] = None) -> List[dict]:
+    """Fetch flow alerts using a preset filter configuration.
+
+    Parameters
+    ----------
+    preset:
+        Key referencing a preset in ``FILTER_PRESETS``.
+    ticker:
+        Optional single ticker to filter on.
+    """
+    cfg = FILTER_PRESETS.get(preset)
+    if cfg is None:
+        raise ValueError(f"Unknown preset: {preset}")
+
+    params = cfg.params.copy()
+    if ticker:
+        params["ticker"] = ticker
+
+    try:
+        resp = requests.get(
+            f"{BASE_URL}/api/option-trades/flow-alerts", params=params
+        ).json()
         return resp.get("data", [])
     except Exception:
         return []
