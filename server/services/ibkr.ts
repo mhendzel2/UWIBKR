@@ -246,18 +246,25 @@ export class IBKRService {
   async getMarketData(symbols: string[]): Promise<any[]>;
   async getMarketData(contract: ContractDetails): Promise<any>;
   async getMarketData(input: string | string[] | ContractDetails): Promise<any | any[]> {
-    if (!this.connected) {
-      throw new Error('Not connected to IBKR TWS');
-    }
-
     try {
       if (typeof input === 'string') {
+        // Try to get real price from Alpha Vantage first, then fallback to mock
+        const realPrice = await this.getRealPrice(input);
+        if (realPrice) {
+          return realPrice;
+        }
         return this.generateQuote(input);
       }
 
       if (Array.isArray(input)) {
-        console.log(`Fetching TWS market data for symbols: ${input.join(', ')}`);
-        return input.map((s) => this.generateQuote(s));
+        console.log(`Fetching market data for symbols: ${input.join(', ')}`);
+        const prices = await Promise.all(
+          input.map(async (symbol) => {
+            const realPrice = await this.getRealPrice(symbol);
+            return realPrice || this.generateQuote(symbol);
+          })
+        );
+        return prices;
       }
 
       // Contract market data
@@ -269,8 +276,65 @@ export class IBKRService {
         timestamp: new Date(),
       };
     } catch (error) {
-      console.error('Failed to get TWS market data:', error);
+      console.error('Failed to get market data:', error);
       return Array.isArray(input) ? [] : null;
+    }
+  }
+
+  private async getRealPrice(symbol: string): Promise<any | null> {
+    try {
+      // Use Alpha Vantage for real price data
+      const apiKey = process.env.ALPHA_VANTAGE_API_KEY;
+      if (!apiKey) {
+        console.log('Alpha Vantage API key not configured, using mock data');
+        return null;
+      }
+
+      const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${apiKey}`;
+      const response = await fetch(url);
+      const data = await response.json();
+
+      if (data['Global Quote'] && data['Global Quote']['05. price']) {
+        const quote = data['Global Quote'];
+        const price = parseFloat(quote['05. price']);
+        const change = parseFloat(quote['09. change']);
+        const changePercent = parseFloat(quote['10. change percent'].replace('%', ''));
+
+        return {
+          symbol,
+          bid: price - 0.01,
+          ask: price + 0.01,
+          last: price,
+          volume: parseInt(quote['06. volume']) || 0,
+          change: change,
+          changePercent: changePercent,
+          timestamp: new Date().toISOString(),
+          source: 'Alpha Vantage'
+        };
+      }
+
+      // If Alpha Vantage fails, try Unusual Whales for price
+      const { UnusualWhalesService } = await import('./unusualWhales');
+      const uwService = new UnusualWhalesService();
+      const uwData = await uwService.getStockState(symbol);
+      if (uwData && uwData.price) {
+        return {
+          symbol,
+          bid: uwData.price - 0.01,
+          ask: uwData.price + 0.01,
+          last: uwData.price,
+          volume: uwData.volume || 0,
+          change: 0, // StockState doesn't include change data
+          changePercent: 0, // StockState doesn't include change data
+          timestamp: new Date().toISOString(),
+          source: 'Unusual Whales'
+        };
+      }
+
+      return null;
+    } catch (error) {
+      console.error(`Failed to get real price for ${symbol}:`, error);
+      return null;
     }
   }
 

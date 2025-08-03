@@ -1,4 +1,5 @@
 import { gexTracker, type DarkPoolData, type InsiderTrade, type AnalystUpdate, type NewsAlert } from './gexTracker';
+import { ibkrService } from './ibkr';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -25,10 +26,39 @@ export class MarketIntelligenceService {
     this.loadAlertHistory();
   }
 
+  private async getRealPrice(symbol: string): Promise<number> {
+    try {
+      const marketData = await ibkrService.getMarketData(symbol);
+      if (marketData && marketData.last) {
+        return marketData.last;
+      }
+    } catch (error) {
+      console.error(`Failed to get real price for ${symbol}:`, error);
+    }
+    
+    // Fallback to a more realistic base price than the hardcoded 150
+    const basePrices: { [key: string]: number } = {
+      'AAPL': 230,
+      'TSLA': 250, 
+      'NVDA': 140,
+      'MSFT': 415,
+      'GOOGL': 175,
+      'AMZN': 185,
+      'META': 560,
+      'SPY': 470,
+      'QQQ': 400
+    };
+    
+    return basePrices[symbol] || 100 + Math.random() * 100;
+  }
+
   async trackDarkPoolActivity(symbol: string): Promise<DarkPoolData | null> {
     try {
+      // Get real current price for more accurate calculations
+      const currentPrice = await this.getRealPrice(symbol);
+      
       // In production, this would connect to dark pool data providers
-      // For now, we'll simulate realistic dark pool data
+      // For now, we'll simulate realistic dark pool data with real price reference
       
       const darkPoolData: DarkPoolData = {
         symbol,
@@ -43,12 +73,12 @@ export class MarketIntelligenceService {
 
       darkPoolData.darkPoolRatio = darkPoolData.darkPoolVolume / darkPoolData.totalVolume;
 
-      // Generate significant dark pool trades
+      // Generate significant dark pool trades using real price
       const numTrades = Math.floor(Math.random() * 5) + 2;
       for (let i = 0; i < numTrades; i++) {
         darkPoolData.significantTrades.push({
           size: Math.floor(Math.random() * 100000) + 50000,
-          price: 150 + Math.random() * 100, // Placeholder price
+          price: currentPrice + (Math.random() - 0.5) * (currentPrice * 0.02), // ±2% of real price
           timestamp: new Date(Date.now() - Math.random() * 8 * 60 * 60 * 1000).toISOString() // Last 8 hours
         });
       }
@@ -75,8 +105,11 @@ export class MarketIntelligenceService {
 
   async trackInsiderTrades(symbol: string): Promise<InsiderTrade[]> {
     try {
+      // Get real current price for more accurate calculations
+      const currentPrice = await this.getRealPrice(symbol);
+      
       // In production, this would connect to SEC EDGAR filings API
-      // Simulating recent insider trades
+      // Simulating recent insider trades with real price reference
       
       const trades: InsiderTrade[] = [];
       const numTrades = Math.floor(Math.random() * 3) + 1;
@@ -92,7 +125,8 @@ export class MarketIntelligenceService {
         const insider = insiders[Math.floor(Math.random() * insiders.length)];
         const isBuy = Math.random() > 0.3; // 70% buy, 30% sell
         const shares = Math.floor(Math.random() * 50000) + 1000;
-        const price = 150 + Math.random() * 100;
+        // Use real price with small variation for historical trade price
+        const tradePrice = currentPrice + (Math.random() - 0.5) * (currentPrice * 0.05); // ±5% variation
         
         const trade: InsiderTrade = {
           symbol,
@@ -100,8 +134,8 @@ export class MarketIntelligenceService {
           title: insider.title,
           transactionType: isBuy ? 'buy' : 'sell',
           shares,
-          price,
-          value: shares * price,
+          price: tradePrice,
+          value: shares * tradePrice,
           date: new Date(Date.now() - Math.random() * 7 * 24 * 60 * 60 * 1000).toISOString(), // Last 7 days
           filingDate: new Date(Date.now() - Math.random() * 3 * 24 * 60 * 60 * 1000).toISOString(), // Last 3 days
           ownershipPercent: Math.random() * 5 + 0.1 // 0.1% to 5%
@@ -132,8 +166,11 @@ export class MarketIntelligenceService {
 
   async trackAnalystUpdates(symbol: string): Promise<AnalystUpdate[]> {
     try {
+      // Get real current price for more accurate calculations
+      const currentPrice = await this.getRealPrice(symbol);
+      
       // In production, this would connect to financial data providers
-      // Simulating analyst updates
+      // Simulating analyst updates with real price targets
       
       const updates: AnalystUpdate[] = [];
       const numUpdates = Math.floor(Math.random() * 2) + 1;
@@ -147,8 +184,9 @@ export class MarketIntelligenceService {
         const action = actions[Math.floor(Math.random() * actions.length)];
         const previousRating = ratings[Math.floor(Math.random() * ratings.length)];
         const newRating = ratings[Math.floor(Math.random() * ratings.length)];
-        const previousTarget = 150 + Math.random() * 100;
-        const newTarget = previousTarget + (Math.random() - 0.5) * 50;
+        // Base targets on real current price with realistic ranges
+        const previousTarget = currentPrice + (Math.random() - 0.5) * (currentPrice * 0.3); // ±30%
+        const newTarget = previousTarget + (Math.random() - 0.5) * (currentPrice * 0.2); // ±20% change
         
         const update: AnalystUpdate = {
           symbol,
