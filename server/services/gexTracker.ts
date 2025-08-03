@@ -112,7 +112,6 @@ export class GEXTracker {
       fs.mkdirSync(this.dataDir, { recursive: true });
     }
     this.loadWatchlists();
-    this.scheduleUpdates();
   }
 
   private getWatchlistMap(name: string = 'default'): Map<string, WatchlistItem> {
@@ -253,6 +252,17 @@ export class GEXTracker {
     }
     await this.saveWatchlists();
     console.log(`Removed ${symbols.length} symbols from watchlist ${listName}`);
+  }
+
+  async setSymbolEnabled(symbol: string, enabled: boolean, listName: string = 'default'): Promise<void> {
+    const list = this.getWatchlistMap(listName);
+    const item = list.get(symbol.toUpperCase());
+    if (item) {
+      item.enabled = enabled;
+      item.lastUpdated = new Date().toISOString();
+      await this.saveWatchlists();
+      console.log(`Set ${symbol} ${enabled ? 'enabled' : 'disabled'} in watchlist ${listName}`);
+    }
   }
 
   async clearWatchlist(listName: string = 'default'): Promise<void> {

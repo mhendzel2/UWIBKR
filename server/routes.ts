@@ -586,8 +586,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Sophisticated Alert-Based Endpoints for Swing/LEAP Opportunities
   app.get("/api/flow-alerts", async (req, res) => {
     try {
-      const { ticker, minPremium, minDte } = req.query;
-      
+      const { ticker, minPremium, minDte, list } = req.query;
+
       const filters = {
         ticker: ticker as string,
         minPremium: minPremium ? parseInt(minPremium as string) : 500000,
@@ -596,6 +596,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
       };
 
       const alerts = await unusualWhales.getFlowAlerts(filters);
+
+      if (!ticker) {
+        const { gexTracker } = await import('./services/gexTracker');
+        const watchlist = gexTracker.getWatchlist((list as string) || 'default');
+        const symbols = new Set(watchlist.filter(w => w.enabled).map(w => w.symbol));
+        const filtered = alerts.filter(alert => symbols.has(alert.ticker));
+        return res.json(filtered);
+      }
+
       res.json(alerts);
     } catch (error) {
       console.error("Failed to fetch sophisticated flow alerts:", error);
@@ -1875,6 +1884,23 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  app.patch("/api/watchlist/enable", async (req, res) => {
+    try {
+      const { gexTracker } = await import('./services/gexTracker');
+      const { symbol, enabled, list } = req.body;
+
+      if (!symbol || typeof enabled === 'undefined') {
+        return res.status(400).json({ message: 'Symbol and enabled flag are required' });
+      }
+
+      await gexTracker.setSymbolEnabled(symbol, enabled, list || 'default');
+      res.json({ message: `${enabled ? 'Enabled' : 'Disabled'} ${symbol}` });
+    } catch (error) {
+      console.error('Failed to update watchlist symbol:', error);
+      res.status(500).json({ message: 'Failed to update watchlist symbol' });
+    }
+  });
+
   app.get("/api/watchlist/lists", async (req, res) => {
     try {
       const { gexTracker } = await import('./services/gexTracker');
@@ -2268,14 +2294,15 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.post("/api/gex/force-update", async (req, res) => {
+  app.post("/api/gex/update", async (req, res) => {
     try {
       const { gexTracker } = await import('./services/gexTracker');
-      await gexTracker.forceUpdate();
-      res.json({ message: "GEX update completed" });
+      const { list } = req.body;
+      await gexTracker.performDailyUpdate(list || 'default');
+      res.json({ message: 'GEX update completed' });
     } catch (error) {
-      console.error("Failed to force GEX update:", error);
-      res.status(500).json({ message: "Failed to force GEX update" });
+      console.error('Failed to update GEX:', error);
+      res.status(500).json({ message: 'Failed to update GEX' });
     }
   });
 

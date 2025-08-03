@@ -8,15 +8,13 @@ import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Textarea } from "@/components/ui/textarea";
-import { Switch } from "@/components/ui/switch";
-import { Label } from "@/components/ui/label";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
-import { 
-  Eye, EyeOff, Plus, Trash2, Download, Upload, AlertTriangle, 
-  TrendingUp, TrendingDown, Users, Bell, BellOff, FileText, 
-  DollarSign, Activity, Newspaper, Target
+import {
+  Eye, EyeOff, Plus, Trash2, Download, Upload, AlertTriangle,
+  TrendingUp, TrendingDown, Users, Bell, BellOff, FileText,
+  DollarSign, Activity, Newspaper, Target, RefreshCw
 } from 'lucide-react';
 import { apiRequest } from '@/lib/queryClient';
 
@@ -39,7 +37,7 @@ export default function WatchlistPage() {
     refetchInterval: 30000,
   });
 
-  const symbolsQuery = (watchlist || []).map((w: any) => w.symbol).join(',');
+  const symbolsQuery = (watchlist || []).filter((w: any) => w.enabled).map((w: any) => w.symbol).join(',');
   const { data: channelSignals } = useQuery({
     queryKey: ['/api/watchlist/channel-signals', symbolsQuery],
     enabled: !!symbolsQuery,
@@ -69,10 +67,10 @@ export default function WatchlistPage() {
     return [];
   })();
 
-  // Fetch GEX levels
-  const { data: gexLevels, dataUpdatedAt: gexUpdatedAt } = useQuery({
+  // Fetch GEX levels on demand
+  const { data: gexLevels, dataUpdatedAt: gexUpdatedAt, refetch: refetchGex, isFetching: gexLoading } = useQuery({
     queryKey: [`/api/gex/levels?list=${currentList}`],
-    refetchInterval: 60000,
+    enabled: false,
   });
 
   // Fetch intelligence for selected symbol
@@ -118,6 +116,21 @@ export default function WatchlistPage() {
       setCurrentList(name);
       setShowCreateDialog(false);
       setNewListName('');
+    }
+  });
+
+  const toggleSymbolMutation = useMutation({
+    mutationFn: (data: { symbol: string, enabled: boolean }) =>
+      apiRequest('PATCH', '/api/watchlist/enable', { ...data, list: currentList }),
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: [`/api/watchlist?list=${currentList}`] });
+    }
+  });
+
+  const updateGexMutation = useMutation({
+    mutationFn: () => apiRequest('POST', '/api/gex/update', { list: currentList }),
+    onSuccess: () => {
+      refetchGex();
     }
   });
 
@@ -311,10 +324,19 @@ export default function WatchlistPage() {
                       <CardTitle className="text-lg">{item.symbol}</CardTitle>
                       <div className="flex items-center space-x-2">
                         {item.gexTracking && <Badge variant="outline">GEX</Badge>}
-                        {item.enabled ?
-                          <Eye className="h-4 w-4 text-green-600" /> :
-                          <EyeOff className="h-4 w-4 text-gray-400" />
-                        }
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            toggleSymbolMutation.mutate({ symbol: item.symbol, enabled: !item.enabled });
+                          }}
+                        >
+                          {item.enabled ?
+                            <Eye className="h-4 w-4 text-green-600" /> :
+                            <EyeOff className="h-4 w-4 text-gray-400" />
+                          }
+                        </Button>
                         <Button
                           variant="ghost"
                           size="sm"
@@ -558,6 +580,15 @@ export default function WatchlistPage() {
         </TabsContent>
 
         <TabsContent value="gex" className="space-y-4">
+          <div className="flex justify-end">
+            <Button
+              variant="outline"
+              onClick={() => updateGexMutation.mutate()}
+              disabled={updateGexMutation.isPending || gexLoading}
+            >
+              {updateGexMutation.isPending || gexLoading ? 'Loading...' : <RefreshCw className="h-4 w-4" />}
+            </Button>
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {(gexLevels || []).map((gex: any) => (
               <Card key={gex.symbol}>
