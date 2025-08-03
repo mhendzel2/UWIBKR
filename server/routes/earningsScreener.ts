@@ -11,6 +11,47 @@ import { Router } from 'express';
  * All external requests use the Unusual Whales API and require
  * `process.env.UNUSUAL_WHALES_API_KEY` to be defined.
  */
+
+interface EarningsEvent {
+  ticker?: string;
+  symbol?: string;
+  report_date?: string;
+  earnings_date?: string;
+}
+
+interface OptionsTrade {
+  premium?: number;
+}
+
+interface OptionsSummary {
+  total_volume?: number;
+  avg_30day_volume?: number;
+  put_call_premium_ratio?: number;
+  trades?: OptionsTrade[];
+}
+
+interface ChainOption {
+  expiration: string;
+  strike: number;
+  implied_volatility?: number;
+}
+
+interface ChainResponse {
+  expirations?: string[];
+  options?: ChainOption[];
+  underlying_price?: number;
+}
+
+interface Candidate {
+  ticker: string;
+  earningsDate: string;
+  totalVolume: number;
+  avg30Volume: number;
+  putCallPremiumRatio: number;
+  largeTrades: number;
+  atmIV: number;
+}
+
 const router = Router();
 
 // Helper to format date as YYYY-MM-DD
@@ -19,16 +60,22 @@ function formatDate(date: Date): string {
 }
 
 router.get('/earnings-screener', async (req, res) => {
-  const {
-    days = '5',
-    minVolume = '1000',
-    minLargeTrades = '5',
-    largeTradePremium = '50000',
-    volumeMultiplier = '3',
-    minIvPercent = '90',
-    bearishRatio = '2',
-    bullishRatio = '0.5',
-  } = req.query as Record<string, string>;
+  // Helper to safely extract a string parameter from req.query
+  function getQueryParam(key: string, defaultValue: string): string {
+    const value = req.query[key];
+    if (typeof value === 'string') return value;
+    if (Array.isArray(value)) return (value[0] as string) ?? defaultValue;
+    return defaultValue;
+  }
+
+  const days = getQueryParam('days', '5');
+  const minVolume = getQueryParam('minVolume', '1000');
+  const minLargeTrades = getQueryParam('minLargeTrades', '5');
+  const largeTradePremium = getQueryParam('largeTradePremium', '50000');
+  const volumeMultiplier = getQueryParam('volumeMultiplier', '3');
+  const minIvPercent = getQueryParam('minIvPercent', '90');
+  const bearishRatio = getQueryParam('bearishRatio', '2');
+  const bullishRatio = getQueryParam('bullishRatio', '0.5');
 
   const start = new Date();
   const end = new Date(start.getTime() + parseInt(days) * 24 * 60 * 60 * 1000);
@@ -45,10 +92,12 @@ router.get('/earnings-screener', async (req, res) => {
       },
     );
 
-    const earningsData = (await earningsResp.json()) as any;
-    const events = Array.isArray(earningsData.data) ? earningsData.data : [];
+    const earningsData = (await earningsResp.json()) as {
+      data?: EarningsEvent[];
+    };
+    const events = earningsData.data ?? [];
 
-    const candidates: any[] = [];
+    const candidates: Candidate[] = [];
 
     for (const event of events) {
       const ticker = event.ticker || event.symbol;
@@ -66,15 +115,15 @@ router.get('/earnings-screener', async (req, res) => {
       );
 
       if (!summaryResp.ok) continue;
-      const summary = (await summaryResp.json()) as any;
+      const summary = (await summaryResp.json()) as OptionsSummary;
 
-      const totalVolume = summary.total_volume || 0;
-      const avg30 = summary.avg_30day_volume || 0;
-      const putCallRatio = summary.put_call_premium_ratio || 0;
-      const trades = Array.isArray(summary.trades) ? summary.trades : [];
+      const totalVolume = summary.total_volume ?? 0;
+      const avg30 = summary.avg_30day_volume ?? 0;
+      const putCallRatio = summary.put_call_premium_ratio ?? 0;
+      const trades = summary.trades ?? [];
 
       const largeTrades = trades.filter(
-        (t: any) => (t.premium || 0) >= parseFloat(largeTradePremium),
+        (t: OptionsTrade) => (t.premium ?? 0) >= parseFloat(largeTradePremium),
       );
 
       const volumeOk =
@@ -98,29 +147,38 @@ router.get('/earnings-screener', async (req, res) => {
         },
       );
       if (!chainResp.ok) continue;
-      const chain = (await chainResp.json()) as any;
+      const chain = (await chainResp.json()) as ChainResponse;
 
-      const earningsDate = new Date(event.report_date || event.earnings_date);
-      const expirations: string[] = Array.isArray(chain.expirations)
-        ? chain.expirations
-        : [];
+      let earningsDate: Date | null = null;
+      if (event.report_date && !isNaN(new Date(event.report_date).getTime())) {
+        earningsDate = new Date(event.report_date);
+      } else if (event.earnings_date && !isNaN(new Date(event.earnings_date).getTime())) {
+        earningsDate = new Date(event.earnings_date);
+      } else {
+        continue; // Skip if no valid date
+      }
+      
+      const expirations = chain.expirations ?? [];
       const targetExp = expirations
         .map((e) => new Date(e))
-        .filter((d) => d >= earningsDate)
+        .filter((d) => d >= earningsDate!)
         .sort((a, b) => a.getTime() - b.getTime())[0];
       if (!targetExp) continue;
 
-      const options = Array.isArray(chain.options) ? chain.options : [];
-      const underlying = chain.underlying_price || 0;
-      let bestIv = 0;
+      const options = chain.options ?? [];
+      const underlying = chain.underlying_price ?? 0;
+      let atmIV = 0;
+      let bestDiff = Infinity;
       for (const opt of options) {
         if (opt.expiration !== formatDate(targetExp)) continue;
-        if (Math.abs(opt.strike - underlying) < Math.abs(bestIv - underlying)) {
-          bestIv = opt.implied_volatility || 0;
+        const diff = Math.abs(opt.strike - underlying);
+        if (diff < bestDiff) {
+          bestDiff = diff;
+          atmIV = opt.implied_volatility ?? 0;
         }
       }
 
-      if (bestIv * 100 < parseFloat(minIvPercent)) continue;
+      if (atmIV * 100 < parseFloat(minIvPercent)) continue;
 
       candidates.push({
         ticker,
@@ -129,14 +187,18 @@ router.get('/earnings-screener', async (req, res) => {
         avg30Volume: avg30,
         putCallPremiumRatio: putCallRatio,
         largeTrades: largeTrades.length,
-        atmIV: bestIv * 100,
+        atmIV: atmIV * 100,
       });
     }
 
     res.json({ success: true, total: candidates.length, candidates });
   } catch (err) {
     console.error('earnings screener error', err);
-    res.status(500).json({ success: false, error: 'Failed to run earnings screener' });
+    res.status(500).json({
+      success: false,
+      error: 'Failed to run earnings screener',
+      details: err instanceof Error ? { name: err.name, message: err.message } : String(err),
+    });
   }
 });
 
