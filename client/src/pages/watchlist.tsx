@@ -30,6 +30,13 @@ export default function WatchlistPage() {
     refetchInterval: 30000
   });
 
+  const symbolsQuery = (watchlist || []).map((w: any) => w.symbol).join(',');
+  const { data: channelSignals } = useQuery({
+    queryKey: ['/api/watchlist/channel-signals', symbolsQuery],
+    enabled: !!symbolsQuery,
+    refetchInterval: 60000
+  });
+
   // Fetch market alerts
   const { data: alertsData } = useQuery({
     queryKey: ['/api/intelligence/alerts'],
@@ -261,49 +268,62 @@ export default function WatchlistPage() {
 
         <TabsContent value="watchlist" className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {(watchlist || []).map((item: any) => (
-              <Card key={item.symbol} className="cursor-pointer hover:shadow-md transition-shadow"
-                    onClick={() => setSelectedSymbol(item.symbol)}>
-                <CardHeader className="pb-2">
-                  <div className="flex items-center justify-between">
-                    <CardTitle className="text-lg">{item.symbol}</CardTitle>
-                    <div className="flex items-center space-x-2">
-                      {item.gexTracking && <Badge variant="outline">GEX</Badge>}
-                      {item.enabled ? 
-                        <Eye className="h-4 w-4 text-green-600" /> : 
-                        <EyeOff className="h-4 w-4 text-gray-400" />
-                      }
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={(e) => {
-                          e.stopPropagation();
-                          handleRemoveSymbol(item.symbol);
-                        }}
-                      >
-                        <Trash2 className="h-4 w-4" />
-                      </Button>
+            {(watchlist || []).map((item: any) => {
+              const signal = (channelSignals || []).find((s: any) => s && s.ticker === item.symbol);
+              return (
+                <Card key={item.symbol} className="cursor-pointer hover:shadow-md transition-shadow"
+                      onClick={() => setSelectedSymbol(item.symbol)}>
+                  <CardHeader className="pb-2">
+                    <div className="flex items-center justify-between">
+                      <CardTitle className="text-lg">{item.symbol}</CardTitle>
+                      <div className="flex items-center space-x-2">
+                        {item.gexTracking && <Badge variant="outline">GEX</Badge>}
+                        {item.enabled ?
+                          <Eye className="h-4 w-4 text-green-600" /> :
+                          <EyeOff className="h-4 w-4 text-gray-400" />
+                        }
+                        <Button
+                          variant="ghost"
+                          size="sm"
+                          onClick={(e) => {
+                            e.stopPropagation();
+                            handleRemoveSymbol(item.symbol);
+                          }}
+                        >
+                          <Trash2 className="h-4 w-4" />
+                        </Button>
+                      </div>
                     </div>
-                  </div>
-                  {item.sector && (
-                    <CardDescription>{item.sector}</CardDescription>
-                  )}
-                </CardHeader>
-                <CardContent>
-                  <div className="space-y-2 text-sm">
-                    {item.marketCap && (
-                      <div>Market Cap: ${(item.marketCap / 1e9).toFixed(1)}B</div>
+                    {item.sector && (
+                      <CardDescription>{item.sector}</CardDescription>
                     )}
-                    {item.avgVolume && (
-                      <div>Avg Volume: {(item.avgVolume / 1e6).toFixed(1)}M</div>
-                    )}
-                    <div className="text-xs text-gray-500">
-                      Updated: {new Date(item.lastUpdated || Date.now()).toLocaleString()}
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2 text-sm">
+                      {signal?.direction && (
+                        <div className="flex items-center space-x-2">
+                          <Badge variant={signal.direction === 'LONG' ? 'default' : 'destructive'}>
+                            {signal.direction}
+                          </Badge>
+                          <span className="text-xs text-gray-500">
+                            Score: {signal.confidence_score?.toFixed(2)}
+                          </span>
+                        </div>
+                      )}
+                      {item.marketCap && (
+                        <div>Market Cap: ${(item.marketCap / 1e9).toFixed(1)}B</div>
+                      )}
+                      {item.avgVolume && (
+                        <div>Avg Volume: {(item.avgVolume / 1e6).toFixed(1)}M</div>
+                      )}
+                      <div className="text-xs text-gray-500">
+                        Updated: {new Date(item.lastUpdated || Date.now()).toLocaleString()}
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+                  </CardContent>
+                </Card>
+              );
+            })}
           </div>
         </TabsContent>
 
