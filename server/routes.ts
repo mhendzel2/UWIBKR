@@ -24,6 +24,7 @@ import { RiskManager } from "./services/riskManager";
 import { ibkrService } from "./services/ibkr";
 import { getChannelSignals } from "./services/channelSignals";
 import { UnusualWhalesService } from "./services/unusualWhales";
+import { gexTracker } from "./services/gexTracker";
 
 // Helper function for sector analysis
 function getTopSectors(trades: any[]): any[] {
@@ -202,6 +203,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
 
   // Start services
   await ibkrService.connect();
+  const defaultWatchlist = gexTracker.getWatchlist('default');
+  const watchlistSymbols = defaultWatchlist.filter((w: any) => w.enabled).map((w: any) => w.symbol);
+  await ibkrService.startMarketDataStream(watchlistSymbols, (quote) => wsService.broadcastQuoteUpdate(quote));
   signalProcessor.startProcessing();
 
   // Trading Signals endpoints

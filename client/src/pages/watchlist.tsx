@@ -27,6 +27,7 @@ export default function WatchlistPage() {
   const [showCreateDialog, setShowCreateDialog] = useState(false);
   const [newListName, setNewListName] = useState('');
   const [selectedSymbols, setSelectedSymbols] = useState<string[]>([]);
+  const [quotes, setQuotes] = useState<Record<string, any>>({});
   const queryClient = useQueryClient();
 
   // Fetch watchlist
@@ -68,6 +69,28 @@ export default function WatchlistPage() {
     }
     return [];
   })();
+
+  useEffect(() => {
+    if (!symbolsQuery) return;
+    const protocol = window.location.protocol === 'https:' ? 'wss' : 'ws';
+    const ws = new WebSocket(`${protocol}://${window.location.host}/ws`);
+    ws.onopen = () => {
+      ws.send(JSON.stringify({ type: 'subscribe', channel: 'quotes' }));
+    };
+    ws.onmessage = (event) => {
+      try {
+        const msg = JSON.parse(event.data);
+        if (msg.type === 'quote_update' && msg.data?.symbol) {
+          setQuotes((prev) => ({ ...prev, [msg.data.symbol]: msg.data }));
+        }
+      } catch {
+        // ignore parse errors
+      }
+    };
+    return () => {
+      ws.close();
+    };
+  }, [symbolsQuery]);
 
   // Fetch GEX levels on demand
   const { data: gexLevels, dataUpdatedAt: gexUpdatedAt, refetch: refetchGex, isFetching: gexLoading } = useQuery({
@@ -355,6 +378,10 @@ export default function WatchlistPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {(watchlist || []).map((item: any) => {
               const signal = (channelSignals || []).find((s: any) => s && s.ticker === item.symbol);
+              const quote = quotes[item.symbol] || {};
+              const price = typeof quote.last === 'number' ? quote.last : item.price;
+              const change = typeof quote.change === 'number' ? quote.change : item.change;
+              const changePercent = typeof quote.changePct === 'number' ? quote.changePct : item.changePercent;
               return (
                 <Card key={item.symbol} className="cursor-pointer hover:shadow-md transition-shadow"
                       onClick={() => setSelectedSymbol(item.symbol)}>
@@ -411,13 +438,13 @@ export default function WatchlistPage() {
                           </span>
                         </div>
                       )}
-                      {typeof item.price === 'number' && (
+                      {typeof price === 'number' && (
                         <div>
-                          Price: ${item.price.toFixed(2)}
-                          {typeof item.change === 'number' && (
-                            <span className={`ml-2 ${item.change >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                              {item.change >= 0 ? '+' : ''}{item.change.toFixed(2)}
-                              {typeof item.changePercent === 'number' && ` (${item.changePercent.toFixed(2)}%)`}
+                          Price: ${price.toFixed(2)}
+                          {typeof change === 'number' && (
+                            <span className={`ml-2 ${change >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                              {change >= 0 ? '+' : ''}{change.toFixed(2)}
+                              {typeof changePercent === 'number' && ` (${changePercent.toFixed(2)}%)`}
                             </span>
                           )}
                         </div>
