@@ -35,6 +35,7 @@ export interface ProcessedAlert {
   type: 'call' | 'put';
   expiry: string;
   created_at: string;
+  dte: number;
 }
 
 export class AlertProcessor extends EventEmitter {
@@ -127,7 +128,8 @@ export class AlertProcessor extends EventEmitter {
           strike: parseFloat(record.strike),
           type: record.type,
           expiry: record.expiry,
-          created_at: record.created_at
+          created_at: record.created_at,
+          dte: record.dte
         };
       });
 

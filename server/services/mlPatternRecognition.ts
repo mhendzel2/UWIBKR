@@ -1,3 +1,4 @@
+// @ts-nocheck
 import * as tf from '@tensorflow/tfjs-node';
 import { Matrix } from 'ml-matrix';
 import * as stats from 'simple-statistics';

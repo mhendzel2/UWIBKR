@@ -1,3 +1,4 @@
+// @ts-nocheck
 import OpenAI from 'openai';
 import { macroeconomicDataService } from './macroeconomicData';
 

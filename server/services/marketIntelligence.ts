@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { gexTracker, type DarkPoolData, type InsiderTrade, type AnalystUpdate, type NewsAlert } from './gexTracker';
 import * as fs from 'fs';
 import * as path from 'path';

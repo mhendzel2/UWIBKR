@@ -1,20 +1,8 @@
+import type { FlowAlert } from './alertProcessor';
+
 interface UnusualWhalesConfig {
   apiKey: string;
   baseUrl: string;
-}
-
-interface FlowAlert {
-  ticker: string;
-  total_premium: number;
-  total_size: number;
-  open_interest: number;
-  alert_rule: string;
-  ask_side_percentage: number;
-  underlying_price: number;
-  strike: number;
-  expiry: string;
-  option_type: string;
-  dte: number;
 }
 
 interface GammaExposure {
