@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
-import { 
+import {
   BarChart3,
   Activity,
   Settings,
@@ -14,7 +14,7 @@ import {
   RefreshCw,
   Target
 } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 interface ChartData {
   timestamp: string;
@@ -48,10 +48,24 @@ interface OptionsData {
 }
 
 export default function AdvancedChartingPage() {
-  const [selectedSymbol, setSelectedSymbol] = useState<string>('SPX');
+  const [selectedSymbol, setSelectedSymbol] = useState<string>('');
   const [timeframe, setTimeframe] = useState<string>('1D');
   const [chartType, setChartType] = useState<string>('candlestick');
   const [indicators, setIndicators] = useState<string[]>(['SMA20', 'SMA50']);
+  const [customSymbol, setCustomSymbol] = useState('');
+
+  const { data: watchlist = [] } = useQuery<any[]>({
+    queryKey: ['/api/watchlist?list=default'],
+  });
+
+  const watchlistSymbols = (watchlist || []).map((w: any) => w.symbol);
+  const symbols = watchlistSymbols.length > 0 ? watchlistSymbols : ['SPX', 'SPY', 'QQQ', 'NVDA', 'TSLA', 'AAPL', 'MSFT', 'AMZN', 'META'];
+
+  useEffect(() => {
+    if (!selectedSymbol && symbols.length > 0) {
+      setSelectedSymbol(symbols[0]);
+    }
+  }, [symbols, selectedSymbol]);
 
   const { data: chartData = [], isLoading: loadingChart } = useQuery<ChartData[]>({
     queryKey: ['/api/charts/data', selectedSymbol, timeframe],
@@ -64,6 +78,7 @@ export default function AdvancedChartingPage() {
       }
       return res.json();
     },
+    enabled: !!selectedSymbol,
   });
 
   const { data: optionsData = [], isLoading: loadingOptions } = useQuery<OptionsData[]>({
@@ -77,9 +92,8 @@ export default function AdvancedChartingPage() {
       }
       return res.json();
     },
+    enabled: !!selectedSymbol,
   });
-
-  const symbols = ['SPX', 'SPY', 'QQQ', 'NVDA', 'TSLA', 'AAPL', 'MSFT', 'AMZN', 'META'];
   const timeframes = ['1m', '5m', '15m', '1H', '1D', '1W', '1M'];
   const chartTypes = ['candlestick', 'line', 'area', 'heikin-ashi'];
   const availableIndicators = [
@@ -150,7 +164,7 @@ export default function AdvancedChartingPage() {
               <label className="text-sm font-medium">Symbol:</label>
               <Select value={selectedSymbol} onValueChange={setSelectedSymbol}>
                 <SelectTrigger className="w-24">
-                  <SelectValue />
+                  <SelectValue placeholder="Select" />
                 </SelectTrigger>
                 <SelectContent>
                   {symbols.map((symbol) => (
@@ -160,6 +174,24 @@ export default function AdvancedChartingPage() {
                   ))}
                 </SelectContent>
               </Select>
+              <Input
+                className="w-24"
+                placeholder="Ticker"
+                value={customSymbol}
+                onChange={(e) => setCustomSymbol(e.target.value.toUpperCase())}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' && customSymbol) {
+                    setSelectedSymbol(customSymbol);
+                  }
+                }}
+              />
+              <Button
+                size="sm"
+                variant="outline"
+                onClick={() => customSymbol && setSelectedSymbol(customSymbol)}
+              >
+                Load
+              </Button>
             </div>
 
             <div className="flex items-center gap-2">
