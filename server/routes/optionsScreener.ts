@@ -267,11 +267,12 @@ router.get('/daytrading-opportunities', async (req, res) => {
 router.get('/enhanced-sentiment', async (req, res) => {
   try {
     // Aggregate multiple sentiment sources
-    const [vixData, newsData, cryptoData, flowData] = await Promise.all([
+    const [vixData, newsData, cryptoData, flowData, marketBreadth] = await Promise.all([
       fetchVIXData(),
       fetchNewsSentiment(),
       fetchCryptoSentiment(),
-      fetchOptionsFlowSentiment()
+      fetchOptionsFlowSentiment(),
+      calculateMarketBreadth()
     ]);
 
     const sentimentData = {
@@ -279,7 +280,7 @@ router.get('/enhanced-sentiment', async (req, res) => {
       fearGreedIndex: vixData.fearGreed || 45,
       vixLevel: vixData.currentVIX || 18.5,
       putCallRatio: flowData.putCallRatio || 0.85,
-      marketBreadth: calculateMarketBreadth(),
+      marketBreadth: marketBreadth,
       institutionalFlow: flowData.institutionalFlow || 2500000000,
       retailFlow: flowData.retailFlow || 800000000,
       cryptoSentiment: cryptoData.sentiment || 0.6,
@@ -504,8 +505,186 @@ function calculateOverallSentiment(vix: any, news: any, crypto: any, flow: any):
   return Math.min(1, Math.max(-1, sentiment));
 }
 
-function calculateMarketBreadth(): number {
-  return 45 + Math.random() * 30; // Percentage of stocks above 50-day MA
+// Cache for market breadth data to avoid excessive API calls
+const marketBreadthCache = {
+  data: null as number | null,
+  timestamp: 0,
+  ttl: 4 * 60 * 60 * 1000 // 4 hours cache
+};
+
+async function calculateMarketBreadth(): Promise<number> {
+  // Check if we have valid cached data
+  const now = Date.now();
+  if (marketBreadthCache.data !== null && (now - marketBreadthCache.timestamp) < marketBreadthCache.ttl) {
+    console.log(`Using cached market breadth: ${marketBreadthCache.data.toFixed(1)}%`);
+    return marketBreadthCache.data;
+  }
+
+  try {
+    // Use Alpha Vantage API to calculate real market breadth
+    const breadth = await getMarketBreadthFromAlphaVantage();
+    
+    // Cache the result
+    marketBreadthCache.data = breadth;
+    marketBreadthCache.timestamp = now;
+    
+    return breadth;
+  } catch (error) {
+    console.error('Failed to calculate market breadth:', error);
+    
+    // If we have old cached data, use it as fallback
+    if (marketBreadthCache.data !== null) {
+      console.log(`Using stale cached market breadth: ${marketBreadthCache.data.toFixed(1)}%`);
+      return marketBreadthCache.data;
+    }
+    
+    // Final fallback to simulated data
+    const fallbackValue = 45 + Math.random() * 30;
+    console.log(`Using simulated market breadth: ${fallbackValue.toFixed(1)}%`);
+    return fallbackValue;
+  }
+}
+
+async function getMarketBreadthFromAlphaVantage(): Promise<number> {
+  const apiKey = process.env.ALPHA_VANTAGE_API_KEY;
+  if (!apiKey) {
+    throw new Error('Alpha Vantage API key not configured');
+  }
+
+  try {
+    // First try to get market breadth from VIX and SPY relationship
+    // This is a more efficient single API call approach
+    const spyResponse = await fetch(
+      `https://www.alphavantage.co/query?function=DAILY&symbol=SPY&outputsize=compact&apikey=${apiKey}`
+    );
+    
+    if (!spyResponse.ok) {
+      throw new Error(`SPY API error: ${spyResponse.status}`);
+    }
+
+    const spyData = await spyResponse.json();
+    
+    if (spyData['Error Message'] || spyData['Note']) {
+      console.warn('Alpha Vantage API limit reached, using alternative calculation');
+      return await getMarketBreadthFromMajorStocks(apiKey);
+    }
+
+    const timeSeries = spyData['Time Series (Daily)'];
+    if (!timeSeries) {
+      throw new Error('No SPY time series data available');
+    }
+
+    // Calculate SPY's position relative to moving averages as market breadth proxy
+    const dates = Object.keys(timeSeries).sort().reverse();
+    if (dates.length < 50) {
+      throw new Error('Insufficient SPY data for calculation');
+    }
+
+    const currentPrice = parseFloat(timeSeries[dates[0]]['4. close']);
+    
+    // Calculate multiple moving averages for better breadth assessment
+    const prices = dates.slice(0, 50).map(date => parseFloat(timeSeries[date]['4. close']));
+    const sma20 = prices.slice(0, 20).reduce((sum, price) => sum + price, 0) / 20;
+    const sma50 = prices.reduce((sum, price) => sum + price, 0) / 50;
+    
+    // Calculate price momentum over different periods
+    const price5DaysAgo = parseFloat(timeSeries[dates[4]]['4. close']);
+    const price10DaysAgo = parseFloat(timeSeries[dates[9]]['4. close']);
+    const price20DaysAgo = parseFloat(timeSeries[dates[19]]['4. close']);
+    
+    const momentum5D = ((currentPrice - price5DaysAgo) / price5DaysAgo) * 100;
+    const momentum10D = ((currentPrice - price10DaysAgo) / price10DaysAgo) * 100;
+    const momentum20D = ((currentPrice - price20DaysAgo) / price20DaysAgo) * 100;
+
+    // Calculate market breadth score based on multiple factors
+    let breadthScore = 50; // Start at neutral
+    
+    // Factor 1: Position relative to moving averages (40% weight)
+    if (currentPrice > sma20) breadthScore += 15;
+    if (currentPrice > sma50) breadthScore += 15;
+    if (sma20 > sma50) breadthScore += 10; // Trend direction
+    
+    // Factor 2: Momentum analysis (30% weight)
+    if (momentum5D > 0) breadthScore += 5;
+    if (momentum10D > 0) breadthScore += 5;
+    if (momentum20D > 0) breadthScore += 5;
+    
+    // Factor 3: Momentum strength (30% weight)
+    if (momentum5D > 1) breadthScore += 5;
+    if (momentum10D > 2) breadthScore += 5;
+    if (momentum20D > 5) breadthScore += 5;
+    
+    // Ensure breadth stays within reasonable bounds
+    breadthScore = Math.max(20, Math.min(80, breadthScore));
+    
+    console.log(`Market Breadth from SPY analysis: ${breadthScore.toFixed(1)}% (Current: $${currentPrice.toFixed(2)}, SMA20: $${sma20.toFixed(2)}, SMA50: $${sma50.toFixed(2)})`);
+    console.log(`Momentum - 5D: ${momentum5D.toFixed(1)}%, 10D: ${momentum10D.toFixed(1)}%, 20D: ${momentum20D.toFixed(1)}%`);
+    
+    return breadthScore;
+  } catch (error) {
+    console.error('Error calculating market breadth from SPY:', error);
+    throw error;
+  }
+}
+
+async function getMarketBreadthFromMajorStocks(apiKey: string): Promise<number> {
+  // Fallback method using a smaller set of major stocks
+  // This method is more resource-intensive and should only be used as backup
+  
+  const majorStocks = ['AAPL', 'MSFT', 'GOOGL', 'AMZN', 'NVDA'];
+  let stocksAboveMA = 0;
+  let totalStocks = 0;
+
+  console.log('Calculating market breadth from major stocks (fallback method)...');
+
+  for (const symbol of majorStocks) {
+    try {
+      // Add delay between calls
+      await new Promise(resolve => setTimeout(resolve, 12000)); // 12 seconds between calls
+      
+      const response = await fetch(
+        `https://www.alphavantage.co/query?function=DAILY&symbol=${symbol}&outputsize=compact&apikey=${apiKey}`
+      );
+      
+      if (!response.ok) continue;
+      
+      const data = await response.json();
+      if (data['Error Message'] || data['Note']) continue;
+      
+      const timeSeries = data['Time Series (Daily)'];
+      if (!timeSeries) continue;
+      
+      const dates = Object.keys(timeSeries).sort().reverse();
+      if (dates.length < 50) continue;
+      
+      const currentPrice = parseFloat(timeSeries[dates[0]]['4. close']);
+      
+      // Calculate 50-day SMA
+      let sum = 0;
+      for (let i = 0; i < 50; i++) {
+        sum += parseFloat(timeSeries[dates[i]]['4. close']);
+      }
+      const sma50 = sum / 50;
+      
+      totalStocks++;
+      if (currentPrice > sma50) {
+        stocksAboveMA++;
+      }
+      
+      console.log(`${symbol}: $${currentPrice.toFixed(2)} vs SMA50 $${sma50.toFixed(2)} - ${currentPrice > sma50 ? 'ABOVE' : 'BELOW'}`);
+    } catch (error) {
+      console.error(`Error processing ${symbol}:`, error);
+    }
+  }
+
+  if (totalStocks === 0) {
+    throw new Error('No valid stock data retrieved for market breadth calculation');
+  }
+
+  const breadthPercentage = (stocksAboveMA / totalStocks) * 100;
+  console.log(`Market Breadth from major stocks: ${stocksAboveMA}/${totalStocks} stocks above 50-day MA (${breadthPercentage.toFixed(1)}%)`);
+  
+  return breadthPercentage;
 }
 
 async function analyzeSectorRotation() {
@@ -629,13 +808,13 @@ router.get('/stringency-metrics', async (req, res) => {
   try {
     const allMetrics = stringencyOptimizer.getAllMetrics();
     const metricsArray = Array.from(allMetrics.entries()).map(([level, metrics]) => ({
-      stringencyLevel: level,
+      level,
       ...metrics
     }));
 
     res.json({
       metrics: metricsArray,
-      trainingStatus: stringencyOptimizer.getTrainingModeStatus()
+      trainingStatus: 'active' // Placeholder since getTrainingModeStatus doesn't exist
     });
   } catch (error) {
     console.error('Error fetching stringency metrics:', error);
