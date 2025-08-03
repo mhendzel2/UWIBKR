@@ -1833,13 +1833,25 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const priceMap = new Map(
         (Array.isArray(prices) ? prices : [prices]).map((p: any) => [
           p?.symbol || p?.ticker || p?.conid || '',
-          p?.lastPrice || p?.price || p?.regularMarketPrice || p?.c,
+          {
+            price: p?.lastPrice || p?.price || p?.regularMarketPrice || p?.c,
+            change:
+              p?.regularMarketChange ||
+              p?.change ||
+              (typeof p?.d !== 'undefined' ? p.d : null),
+            changePercent:
+              p?.regularMarketChangePercent ||
+              p?.percentChange ||
+              (typeof p?.dp !== 'undefined' ? p.dp : null),
+          },
         ])
       );
 
       const enriched = watchlist.map((item: any) => ({
         ...item,
-        price: priceMap.get(item.symbol) || null,
+        price: priceMap.get(item.symbol)?.price ?? null,
+        change: priceMap.get(item.symbol)?.change ?? null,
+        changePercent: priceMap.get(item.symbol)?.changePercent ?? null,
       }));
 
       res.json(enriched);
@@ -2135,22 +2147,24 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.get("/api/macro/fear-greed", async (req, res) => {
+  app.get("/api/macro/fear-greed", async (_req, res) => {
     try {
-      const { macroeconomicDataService } = await import('./services/macroeconomicData');
-      const macroData = await macroeconomicDataService.getMacroeconomicData();
+      const axios = (await import('axios')).default;
+      const { data } = await axios.get('https://production.dataviz.cnn.io/index/fearandgreed/graphdata', {
+        headers: { 'User-Agent': 'Mozilla/5.0' },
+      });
+      const latest = data?.fear_and_greed?.last || data?.fearAndGreed?.last || {};
+      const score = latest?.score || latest?.value;
+      const interpretation = score > 75 ? 'Extreme Greed' : score > 55 ? 'Greed' : score > 45 ? 'Neutral' : score > 25 ? 'Fear' : 'Extreme Fear';
       res.json({
-        index: macroData.fearGreedComponents.overallFearGreed,
-        components: macroData.fearGreedComponents,
-        interpretation: macroData.fearGreedComponents.overallFearGreed > 75 ? 'Extreme Greed' :
-                       macroData.fearGreedComponents.overallFearGreed > 55 ? 'Greed' :
-                       macroData.fearGreedComponents.overallFearGreed > 45 ? 'Neutral' :
-                       macroData.fearGreedComponents.overallFearGreed > 25 ? 'Fear' : 'Extreme Fear',
-        timestamp: macroData.timestamp
+        index: score,
+        previousClose: data?.fear_and_greed?.previous_close?.score || null,
+        timestamp: latest?.timestamp ? new Date(latest.timestamp * 1000).toISOString() : new Date().toISOString(),
+        interpretation,
       });
     } catch (error) {
-      console.error("Failed to get Fear & Greed Index:", error);
-      res.status(500).json({ message: "Failed to get Fear & Greed Index" });
+      console.error("Failed to fetch Fear & Greed Index:", error);
+      res.status(500).json({ message: "Failed to fetch Fear & Greed Index" });
     }
   });
 
@@ -2296,9 +2310,14 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/gex/update", async (req, res) => {
     try {
       const { gexTracker } = await import('./services/gexTracker');
-      const { list } = req.body;
-      await gexTracker.performDailyUpdate(list || 'default');
-      res.json({ message: 'GEX update completed' });
+      const { list, symbols } = req.body;
+      if (Array.isArray(symbols) && symbols.length > 0) {
+        await gexTracker.updateSymbols(symbols, list || 'default');
+        res.json({ message: 'GEX update completed for selected symbols' });
+      } else {
+        await gexTracker.performDailyUpdate(list || 'default');
+        res.json({ message: 'GEX update completed' });
+      }
     } catch (error) {
       console.error('Failed to update GEX:', error);
       res.status(500).json({ message: 'Failed to update GEX' });

@@ -10,6 +10,7 @@ import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, Di
 import { Textarea } from "@/components/ui/textarea";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Checkbox } from "@/components/ui/checkbox";
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts';
 import {
   Eye, EyeOff, Plus, Trash2, Download, Upload, AlertTriangle,
@@ -25,6 +26,7 @@ export default function WatchlistPage() {
   const [currentList, setCurrentList] = useState('default');
   const [showCreateDialog, setShowCreateDialog] = useState(false);
   const [newListName, setNewListName] = useState('');
+  const [selectedSymbols, setSelectedSymbols] = useState<string[]>([]);
   const queryClient = useQueryClient();
 
   // Fetch watchlist
@@ -128,7 +130,8 @@ export default function WatchlistPage() {
   });
 
   const updateGexMutation = useMutation({
-    mutationFn: () => apiRequest('POST', '/api/gex/update', { list: currentList }),
+    mutationFn: (symbols: string[]) =>
+      apiRequest('POST', '/api/gex/update', { list: currentList, symbols }),
     onSuccess: () => {
       refetchGex();
     }
@@ -152,6 +155,7 @@ export default function WatchlistPage() {
 
   const handleRemoveSymbol = (symbol: string) => {
     removeSymbolsMutation.mutate({ symbols: [symbol] });
+    setSelectedSymbols((prev) => prev.filter((s) => s !== symbol));
   };
 
   const handleFileUpload = async (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -188,6 +192,28 @@ export default function WatchlistPage() {
         console.error('File upload failed:', error);
         alert('Failed to upload file. Please check the format and try again.');
       }
+    }
+  };
+
+  const toggleSelect = (symbol: string) => {
+    setSelectedSymbols((prev) =>
+      prev.includes(symbol) ? prev.filter((s) => s !== symbol) : [...prev, symbol]
+    );
+  };
+
+  const clearSelection = () => setSelectedSymbols([]);
+
+  const handleRemoveSelected = () => {
+    if (selectedSymbols.length > 0) {
+      removeSymbolsMutation.mutate({ symbols: selectedSymbols });
+      clearSelection();
+    }
+  };
+
+  const handleUpdateGexSelected = () => {
+    if (selectedSymbols.length > 0) {
+      updateGexMutation.mutate(selectedSymbols);
+      clearSelection();
     }
   };
 
@@ -313,6 +339,19 @@ export default function WatchlistPage() {
         </TabsList>
 
         <TabsContent value="watchlist" className="space-y-4">
+          {selectedSymbols.length > 0 && (
+            <div className="flex space-x-2">
+              <Button variant="destructive" size="sm" onClick={handleRemoveSelected}>
+                Remove Selected
+              </Button>
+              <Button variant="outline" size="sm" onClick={handleUpdateGexSelected}>
+                Update GEX
+              </Button>
+              <Button variant="ghost" size="sm" onClick={clearSelection}>
+                Clear
+              </Button>
+            </div>
+          )}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {(watchlist || []).map((item: any) => {
               const signal = (channelSignals || []).find((s: any) => s && s.ticker === item.symbol);
@@ -321,7 +360,14 @@ export default function WatchlistPage() {
                       onClick={() => setSelectedSymbol(item.symbol)}>
                   <CardHeader className="pb-2">
                     <div className="flex items-center justify-between">
-                      <CardTitle className="text-lg">{item.symbol}</CardTitle>
+                      <div className="flex items-center space-x-2">
+                        <Checkbox
+                          checked={selectedSymbols.includes(item.symbol)}
+                          onCheckedChange={() => toggleSelect(item.symbol)}
+                          onClick={(e) => e.stopPropagation()}
+                        />
+                        <CardTitle className="text-lg">{item.symbol}</CardTitle>
+                      </div>
                       <div className="flex items-center space-x-2">
                         {item.gexTracking && <Badge variant="outline">GEX</Badge>}
                         <Button
@@ -365,8 +411,16 @@ export default function WatchlistPage() {
                           </span>
                         </div>
                       )}
-                      {item.price && (
-                        <div>Price: ${item.price.toFixed(2)}</div>
+                      {typeof item.price === 'number' && (
+                        <div>
+                          Price: ${item.price.toFixed(2)}
+                          {typeof item.change === 'number' && (
+                            <span className={`ml-2 ${item.change >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                              {item.change >= 0 ? '+' : ''}{item.change.toFixed(2)}
+                              {typeof item.changePercent === 'number' && ` (${item.changePercent.toFixed(2)}%)`}
+                            </span>
+                          )}
+                        </div>
                       )}
                       {item.marketCap && (
                         <div>Market Cap: ${(item.marketCap / 1e9).toFixed(1)}B</div>
@@ -583,7 +637,7 @@ export default function WatchlistPage() {
           <div className="flex justify-end">
             <Button
               variant="outline"
-              onClick={() => updateGexMutation.mutate()}
+              onClick={() => updateGexMutation.mutate([])}
               disabled={updateGexMutation.isPending || gexLoading}
             >
               {updateGexMutation.isPending || gexLoading ? 'Loading...' : <RefreshCw className="h-4 w-4" />}
