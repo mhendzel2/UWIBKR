@@ -81,9 +81,11 @@ export class MacroeconomicDataService {
   private dataCache: Map<string, MacroeconomicIndicators> = new Map();
   private analysisCache: Map<string, MacroAnalysis> = new Map();
   private fredApiKey: string | null = null;
+  private alphaVantageKey: string | null = null;
 
   constructor() {
     this.fredApiKey = process.env.FRED_API_KEY || null;
+    this.alphaVantageKey = process.env.ALPHA_VANTAGE_API_KEY || null;
     // Update data every 30 minutes
     setInterval(() => this.updateMacroData(), 30 * 60 * 1000);
   }
@@ -120,6 +122,20 @@ export class MacroeconomicDataService {
     }
   }
 
+  private async fetchAlphaVantageEconomic(func: string, options: Record<string,string> = {}): Promise<number | null> {
+    if (!this.alphaVantageKey) return null;
+    try {
+      const params = new URLSearchParams({ function: func, apikey: this.alphaVantageKey, ...options });
+      const response = await fetch(`https://www.alphavantage.co/query?${params}`);
+      const data = await response.json();
+      const value = data?.data?.[0]?.value;
+      return value ? parseFloat(value) : null;
+    } catch (error) {
+      console.error(`Alpha Vantage ${func} fetch failed:`, error);
+      return null;
+    }
+  }
+
   // Fetch treasury rates from multiple sources
   async fetchTreasuryRates(): Promise<MacroeconomicIndicators['treasuryRates']> {
     const treasurySeries = {
@@ -135,9 +151,24 @@ export class MacroeconomicDataService {
     };
 
     const rates: any = {};
-    
+
     for (const [period, seriesId] of Object.entries(treasurySeries)) {
-      rates[period] = await this.fetchFredData(seriesId) || 0;
+      let rate = await this.fetchFredData(seriesId);
+      if ((rate === null || rate === 0) && this.alphaVantageKey) {
+        const maturityMap: any = {
+          oneMonth: '1month',
+          threeMonth: '3month',
+          sixMonth: '6month',
+          oneYear: '1year',
+          twoYear: '2year',
+          fiveYear: '5year',
+          tenYear: '10year',
+          twentyYear: '20year',
+          thirtyYear: '30year'
+        };
+        rate = await this.fetchAlphaVantageEconomic('TREASURY_YIELD', { interval: 'daily', maturity: maturityMap[period] });
+      }
+      rates[period] = rate || 0;
       // Rate limiting - FRED allows 120 calls/minute
       await new Promise(resolve => setTimeout(resolve, 500));
     }
@@ -174,9 +205,26 @@ export class MacroeconomicDataService {
     };
 
     const data: any = {};
-    
+
     for (const [indicator, seriesId] of Object.entries(economicSeries)) {
-      data[indicator] = await this.fetchFredData(seriesId) || 0;
+      let value = await this.fetchFredData(seriesId);
+      if ((value === null || value === 0) && this.alphaVantageKey) {
+        const avFuncs: any = {
+          cpi: 'CPI',
+          ppi: 'PPI',
+          unemploymentRate: 'UNEMPLOYMENT',
+          gdpGrowth: 'REAL_GDP',
+          retailSales: 'RETAIL_SALES',
+          housingStarts: 'HOUSING_STARTS',
+          industrialProduction: 'INDUSTRIAL_PRODUCTION',
+          consumerConfidence: 'CONSUMER_SENTIMENT'
+        };
+        const func = avFuncs[indicator];
+        if (func) {
+          value = await this.fetchAlphaVantageEconomic(func);
+        }
+      }
+      data[indicator] = value || 0;
       await new Promise(resolve => setTimeout(resolve, 500));
     }
 

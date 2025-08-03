@@ -1,5 +1,6 @@
 // @ts-nocheck
 import { gexTracker, type DarkPoolData, type InsiderTrade, type AnalystUpdate, type NewsAlert } from './gexTracker';
+import { fundamentalsAnalyzer } from './fundamentalsAnalyzer';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -24,6 +25,17 @@ export class MarketIntelligenceService {
       fs.mkdirSync(this.dataDir, { recursive: true });
     }
     this.loadAlertHistory();
+  }
+
+  async trackFundamentalData(symbol: string): Promise<any> {
+    try {
+      const data = await fundamentalsAnalyzer.getFundamentals(symbol);
+      await this.saveFundamentalsData(symbol, data);
+      return data;
+    } catch (error) {
+      console.error(`Error tracking fundamentals for ${symbol}:`, error);
+      return null;
+    }
   }
 
   async trackDarkPoolActivity(symbol: string): Promise<DarkPoolData | null> {
@@ -388,6 +400,11 @@ export class MarketIntelligenceService {
     existingAlerts = existingAlerts.filter(alert => new Date(alert.publishedAt) > sevenDaysAgo);
     
     fs.writeFileSync(filePath, JSON.stringify(existingAlerts, null, 2));
+  }
+
+  private async saveFundamentalsData(symbol: string, data: any): Promise<void> {
+    const filePath = path.join(this.dataDir, `${symbol}_fundamentals.json`);
+    fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
   }
 
   private async saveAlertHistory(): Promise<void> {

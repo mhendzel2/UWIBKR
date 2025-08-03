@@ -165,9 +165,10 @@ export class FundamentalsAnalyzer {
     
     try {
       // Fetch from multiple sources in parallel
-      const [twsData, alphaVantageData, newsData] = await Promise.allSettled([
+      const [twsData, alphaVantageData, fmpData, newsData] = await Promise.allSettled([
         this.fetchTWSFundamentals(symbol),
         this.fetchAlphaVantageFundamentals(symbol),
+        this.fetchFMPFundamentals(symbol),
         this.fetchNewsAndSentiment(symbol)
       ]);
 
@@ -176,6 +177,7 @@ export class FundamentalsAnalyzer {
         symbol,
         twsData.status === 'fulfilled' ? twsData.value : null,
         alphaVantageData.status === 'fulfilled' ? alphaVantageData.value : null,
+        fmpData.status === 'fulfilled' ? fmpData.value : null,
         newsData.status === 'fulfilled' ? newsData.value : null
       );
 
@@ -264,6 +266,22 @@ export class FundamentalsAnalyzer {
     return data;
   }
 
+  // Fetch fundamentals from Financial Modeling Prep as a backup
+  private async fetchFMPFundamentals(symbol: string): Promise<any> {
+    const apiKey = process.env.FMP_API_KEY;
+    if (!apiKey) return null;
+
+    try {
+      const url = `https://financialmodelingprep.com/api/v3/profile/${symbol}?apikey=${apiKey}`;
+      const response = await fetch(url);
+      const data = await response.json();
+      return Array.isArray(data) ? data[0] : null;
+    } catch (error) {
+      console.error(`FMP fundamentals fetch failed for ${symbol}:`, error);
+      return null;
+    }
+  }
+
   // Fetch news and sentiment data
   private async fetchNewsAndSentiment(symbol: string): Promise<any> {
     try {
@@ -284,17 +302,20 @@ export class FundamentalsAnalyzer {
     symbol: string,
     twsData: any,
     alphaVantageData: any,
+    fmpData: any,
     newsData: any
   ): Promise<CompanyFundamentals> {
     
     // Extract company basics
-    const companyName = alphaVantageData?.overview?.Name || 
-                       twsData?.contract?.longName || 
+    const companyName = alphaVantageData?.overview?.Name ||
+                       fmpData?.companyName ||
+                       twsData?.contract?.longName ||
                        symbol;
-    
-    const sector = alphaVantageData?.overview?.Sector || 'Unknown';
-    const industry = alphaVantageData?.overview?.Industry || 'Unknown';
-    const marketCap = this.parseNumber(alphaVantageData?.overview?.MarketCapitalization) || 0;
+
+    const sector = alphaVantageData?.overview?.Sector || fmpData?.sector || 'Unknown';
+    const industry = alphaVantageData?.overview?.Industry || fmpData?.industry || 'Unknown';
+    const marketCap = this.parseNumber(alphaVantageData?.overview?.MarketCapitalization) ||
+                      this.parseNumber(fmpData?.mktCap) || 0;
 
     // Build comprehensive fundamentals object
     const fundamentals: CompanyFundamentals = {

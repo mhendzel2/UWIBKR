@@ -112,6 +112,8 @@ export class GEXTracker {
       fs.mkdirSync(this.dataDir, { recursive: true });
     }
     this.loadWatchlists();
+    this.performDailyUpdate().catch(err => console.error('Initial update failed', err));
+    this.scheduleUpdates();
   }
 
   private getWatchlistMap(name: string = 'default'): Map<string, WatchlistItem> {
@@ -341,7 +343,7 @@ export class GEXTracker {
   async performDailyUpdate(): Promise<void> {
     console.log('Starting daily GEX and market intelligence update...');
     
-    const symbols = this.getGEXEnabledSymbols();
+    const items = this.getWatchlist().filter(w => w.enabled);
     const results = {
       success: 0,
       failed: 0,
@@ -351,25 +353,28 @@ export class GEXTracker {
     // Import market intelligence service
     const { marketIntelligence } = await import('./marketIntelligence');
 
-    for (const symbol of symbols) {
+    for (const item of items) {
       try {
-        // Update GEX data
-        await this.updateSymbolGEX(symbol);
-        
+        // Update GEX data when enabled
+        if (item.gexTracking) {
+          await this.updateSymbolGEX(item.symbol);
+        }
+
         // Update market intelligence data
         await Promise.all([
-          marketIntelligence.trackDarkPoolActivity(symbol),
-          marketIntelligence.trackInsiderTrades(symbol),
-          marketIntelligence.trackAnalystUpdates(symbol),
-          marketIntelligence.trackNewsAlerts(symbol)
+          marketIntelligence.trackDarkPoolActivity(item.symbol),
+          marketIntelligence.trackInsiderTrades(item.symbol),
+          marketIntelligence.trackAnalystUpdates(item.symbol),
+          marketIntelligence.trackNewsAlerts(item.symbol),
+          marketIntelligence.trackFundamentalData(item.symbol)
         ]);
-        
+
         results.success++;
-        console.log(`✅ Updated all data for ${symbol}`);
+        console.log(`✅ Updated all data for ${item.symbol}`);
       } catch (error) {
         results.failed++;
-        results.errors.push(`${symbol}: ${error.message}`);
-        console.error(`Failed to update data for ${symbol}:`, error);
+        results.errors.push(`${item.symbol}: ${error.message}`);
+        console.error(`Failed to update data for ${item.symbol}:`, error);
       }
     }
 
@@ -397,6 +402,7 @@ export class GEXTracker {
           marketIntelligence.trackInsiderTrades(symbol),
           marketIntelligence.trackAnalystUpdates(symbol),
           marketIntelligence.trackNewsAlerts(symbol),
+          marketIntelligence.trackFundamentalData(symbol),
         ]);
         results.success++;
         console.log(`✅ Updated data for ${symbol}`);
