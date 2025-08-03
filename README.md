@@ -90,6 +90,8 @@ IBKR_PORT=7497
 IBKR_CLIENT_ID=1
 ```
 
+If the IBKR port is unreachable, the application will automatically use Yahoo Finance as a fallback source for market data.
+
 ## 🎯 Main Features Overview
 
 ### Dashboard
