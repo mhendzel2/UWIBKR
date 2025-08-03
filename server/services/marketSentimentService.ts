@@ -1,5 +1,5 @@
 import { UnusualWhalesService } from './unusualWhales';
-import openaiService from '../openai';
+// import openaiService from '../openai'; // Removed - using Gemini instead
 
 export interface MarketSentimentData {
   timestamp: Date;
