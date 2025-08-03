@@ -33,11 +33,38 @@ PORT="3000"
 npm run dev
 ```
 
+### 4. Access the GUI
+After starting the development server, open your web browser and go to:
+```
+http://localhost:3000
+```
+
+The GUI will be available at this URL. If port 3000 is already in use, check your `.env` file for a different PORT setting.
+
 ## ⚠️ Important Notes
 
 - **Always use WSL2 terminal** for all commands
 - **Don't run from Windows PowerShell** - native modules are Linux-specific
 - Access your project at: `cd /mnt/c/Users/mjhen/UWIBKR/UWIBKR`
+
+## How to Start the GUI
+
+1. **Open WSL2 Terminal** (Ubuntu/WSL2, NOT Windows PowerShell)
+2. **Navigate to project:**
+   ```bash
+   cd /mnt/c/Users/mjhen/UWIBKR/UWIBKR
+   ```
+3. **Start PostgreSQL:**
+   ```bash
+   sudo service postgresql start
+   ```
+4. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+5. **Open your browser and go to:** `http://localhost:3000`
+
+**Important:** The server must be running in WSL2 for the GUI to work properly.
 
 ## Manual Installation Steps
 
@@ -137,18 +164,24 @@ psql -h localhost -U postgres -d uwibkr_dev
 
 ### Common Issues
 
-1. **"Connection refused" error**
+1. **GUI not loading / "This site can't be reached" error**
+   - Make sure you're running `npm run dev` in WSL2, not Windows PowerShell
+   - Check if the server is actually running: look for "serving on port 3000" message
+   - Verify the port in your browser URL matches the PORT in your `.env` file
+   - Try accessing `http://127.0.0.1:3000` instead of `localhost:3000`
+
+2. **"Connection refused" error**
    - PostgreSQL not running: `sudo service postgresql start`
    - Wrong connection string in `.env`
 
-2. **"Authentication failed" error**
+3. **"Authentication failed" error**
    - Check password in `.env` matches what you set
    - Reset password: `sudo -u postgres psql -c "ALTER USER postgres PASSWORD 'postgres';"`
 
-3. **"Database does not exist" error**
+4. **"Database does not exist" error**
    - Create database: `sudo -u postgres createdb uwibkr_dev`
 
-4. **Port 3000 already in use**
+5. **Port 3000 already in use**
    - Change port in `.env`: `PORT=3001`
    - Kill existing process: `sudo lsof -t -i tcp:3000 | xargs kill -9`
 
