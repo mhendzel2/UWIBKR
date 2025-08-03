@@ -77,7 +77,14 @@ export class IBKRService {
       this.connectionAttempts = 0;
       return true;
     } catch (error) {
-      console.error('Failed to connect to IBKR API:', error);
+      const err: any = error;
+      if (err?.code === 'ECONNREFUSED') {
+        console.warn(
+          `IBKR port ${this.config.port} unavailable, falling back to Yahoo Finance`
+        );
+      } else {
+        console.error('Failed to connect to IBKR API:', error);
+      }
       this.connectionAttempts++;
       if (this.connectionAttempts < this.maxRetries) {
         setTimeout(() => this.connect(), this.reconnectDelay);
@@ -195,7 +202,7 @@ export class IBKRService {
   async getMarketData(contract: ContractDetails): Promise<any>;
   async getMarketData(input: string | string[] | ContractDetails): Promise<any | any[]> {
     if (!this.connected) {
-      throw new Error('Not connected to IBKR TWS');
+      return this.getYahooMarketData(input);
     }
 
     try {
@@ -226,6 +233,37 @@ export class IBKRService {
       return null;
     } catch (error) {
       console.error('Failed to get TWS market data:', error);
+      return Array.isArray(input) ? [] : null;
+    }
+  }
+
+  private async getYahooMarketData(
+    input: string | string[] | ContractDetails
+  ): Promise<any | any[]> {
+    try {
+      if (typeof input === 'string') {
+        const { data } = await axios.get(
+          'https://query1.finance.yahoo.com/v7/finance/quote',
+          { params: { symbols: input } }
+        );
+        return data?.quoteResponse?.result?.[0] || null;
+      }
+
+      if (Array.isArray(input)) {
+        const { data } = await axios.get(
+          'https://query1.finance.yahoo.com/v7/finance/quote',
+          { params: { symbols: input.join(',') } }
+        );
+        return data?.quoteResponse?.result || [];
+      }
+
+      const symbol = (input as ContractDetails).symbol;
+      if (symbol) {
+        return this.getYahooMarketData(symbol);
+      }
+      return null;
+    } catch (error) {
+      console.error('Failed to fetch Yahoo Finance market data:', error);
       return Array.isArray(input) ? [] : null;
     }
   }
@@ -310,7 +348,7 @@ export class IBKRService {
 
   async getHistoricalData(symbol: string, timeframe: string): Promise<any[]> {
     if (!this.connected) {
-      throw new Error('Not connected to IBKR TWS');
+      return this.getYahooHistoricalData(symbol, timeframe);
     }
 
     try {
@@ -346,6 +384,48 @@ export class IBKRService {
       }));
     } catch (error) {
       console.error('Failed to fetch historical data:', error);
+      return [];
+    }
+  }
+
+  private async getYahooHistoricalData(
+    symbol: string,
+    timeframe: string
+  ): Promise<any[]> {
+    try {
+      const intervalMap: Record<string, string> = {
+        '1m': '1m',
+        '5m': '5m',
+        '15m': '15m',
+        '1H': '60m',
+        '1D': '1d',
+        '1W': '1wk',
+        '1M': '1mo'
+      };
+
+      const { data } = await axios.get(
+        `https://query1.finance.yahoo.com/v8/finance/chart/${symbol}`,
+        {
+          params: {
+            range: '1y',
+            interval: intervalMap[timeframe] || '1d'
+          }
+        }
+      );
+
+      const result = data?.chart?.result?.[0];
+      const timestamps: number[] = result?.timestamp || [];
+      const quote = result?.indicators?.quote?.[0] || {};
+      return timestamps.map((t, i) => ({
+        timestamp: t * 1000,
+        open: quote.open?.[i],
+        high: quote.high?.[i],
+        low: quote.low?.[i],
+        close: quote.close?.[i],
+        volume: quote.volume?.[i]
+      }));
+    } catch (error) {
+      console.error('Failed to fetch Yahoo Finance historical data:', error);
       return [];
     }
   }
