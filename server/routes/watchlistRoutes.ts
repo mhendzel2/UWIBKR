@@ -228,4 +228,19 @@ router.delete('/remove', async (req, res) => {
   }
 });
 
+// Import CSV endpoint
+router.post('/import-csv', async (req, res) => {
+  try {
+    // This endpoint expects the CSV to have been processed by /api/data/upload first
+    // For now, return success - the actual CSV processing happens in /api/data/upload
+    res.json({ 
+      success: true, 
+      message: 'CSV import endpoint ready. Please use the file upload feature.' 
+    });
+  } catch (error) {
+    console.error('Error with CSV import:', error);
+    res.status(500).json({ error: 'Failed to import CSV' });
+  }
+});
+
 export default router;

@@ -69,8 +69,10 @@ export default function WatchlistPage() {
 
   // Add symbols mutation
   const addSymbolsMutation = useMutation({
-    mutationFn: (data: { symbols: string[], options?: any }) => 
-      apiRequest('/api/watchlist/add', 'POST', data),
+    mutationFn: async (data: { symbols: string[], options?: any }) => {
+      const response = await apiRequest('POST', '/api/watchlist/add', data);
+      return response.json();
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/watchlist'] });
       setNewSymbols('');
@@ -80,7 +82,10 @@ export default function WatchlistPage() {
 
   // Import CSV mutation
   const importCsvMutation = useMutation({
-    mutationFn: () => apiRequest('/api/watchlist/import-csv', 'POST'),
+    mutationFn: async () => {
+      const response = await apiRequest('POST', '/api/watchlist/import-csv');
+      return response.json();
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/watchlist'] });
     }
@@ -88,8 +93,10 @@ export default function WatchlistPage() {
 
   // Remove symbols mutation
   const removeSymbolsMutation = useMutation({
-    mutationFn: (symbols: string[]) => 
-      apiRequest('/api/watchlist/remove', 'DELETE', { symbols }),
+    mutationFn: async (symbols: string[]) => {
+      const response = await apiRequest('DELETE', '/api/watchlist/remove', { symbols });
+      return response.json();
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/watchlist'] });
     }
@@ -97,8 +104,10 @@ export default function WatchlistPage() {
 
   // Acknowledge alert mutation
   const acknowledgeAlertMutation = useMutation({
-    mutationFn: (alertId: string) => 
-      apiRequest(`/api/intelligence/alerts/${alertId}/acknowledge`, 'POST'),
+    mutationFn: async (alertId: string) => {
+      const response = await apiRequest('POST', `/api/intelligence/alerts/${alertId}/acknowledge`);
+      return response.json();
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/intelligence/alerts'] });
     }
@@ -131,17 +140,18 @@ export default function WatchlistPage() {
             dataType = 'watchlist';
           }
           
-          const uploadResult = await apiRequest('/api/data/upload', 'POST', {
+          const response = await apiRequest('POST', '/api/data/upload', {
             fileName: file.name,
             fileContent,
             dataType
           });
+          const uploadResult = await response.json();
           
           // Refresh data after successful upload
           queryClient.invalidateQueries({ queryKey: ['/api/watchlist'] });
           queryClient.invalidateQueries({ queryKey: ['/api/gex/levels'] });
           
-          alert(`Successfully imported ${(uploadResult as any).importResult.imported} records from ${file.name}`);
+          alert(`Successfully imported ${uploadResult.importResult.imported} records from ${file.name}`);
         };
         
         reader.readAsText(file);

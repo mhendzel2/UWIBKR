@@ -310,7 +310,7 @@ export class GEXTracker {
         console.log(`✅ Updated all data for ${symbol}`);
       } catch (error) {
         results.failed++;
-        results.errors.push(`${symbol}: ${error.message}`);
+        results.errors.push(`${symbol}: ${error instanceof Error ? error.message : 'Unknown error'}`);
         console.error(`Failed to update data for ${symbol}:`, error);
       }
     }
@@ -365,6 +365,83 @@ export class GEXTracker {
 
   async getGEXLevels(symbol: string): Promise<GEXLevels | null> {
     try {
+      // Try to get real-time data from Unusual Whales API first
+      const { UnusualWhalesService } = await import('./unusualWhales');
+      const uwService = new UnusualWhalesService();
+      
+      try {
+        // Get current stock price and gamma exposure data
+        const [stockState, spotExposures, greeks] = await Promise.allSettled([
+          uwService.getStockState(symbol),
+          uwService.getSpotExposures(symbol),
+          uwService.getGreeks(symbol)
+        ]);
+
+        const currentPrice = stockState.status === 'fulfilled' && stockState.value ? stockState.value.price : null;
+        const gexData = spotExposures.status === 'fulfilled' ? spotExposures.value : [];
+        const greeksData = greeks.status === 'fulfilled' ? greeks.value : null;
+
+        if (currentPrice && gexData.length > 0) {
+          // Calculate GEX levels from real API data
+          let netGamma = 0;
+          let totalGamma = 0;
+          let gammaFlip = currentPrice;
+          let callWall = currentPrice * 1.05;
+          let putWall = currentPrice * 0.95;
+
+          // Process gamma exposure data to find key levels
+          gexData.forEach((strike: any) => {
+            netGamma += strike.net_gamma_exposure || 0;
+            totalGamma += Math.abs(strike.call_gamma_exposure || 0) + Math.abs(strike.put_gamma_exposure || 0);
+            
+            // Find gamma flip point (where net gamma crosses zero)
+            if (Math.abs(strike.net_gamma_exposure || 0) < Math.abs(netGamma) && Math.abs(strike.strike - currentPrice) < Math.abs(gammaFlip - currentPrice)) {
+              gammaFlip = strike.strike;
+            }
+            
+            // Find call wall (highest call gamma above current price)
+            if (strike.strike > currentPrice && (strike.call_gamma_exposure || 0) > 0) {
+              if (Math.abs(strike.strike - currentPrice) < Math.abs(callWall - currentPrice)) {
+                callWall = strike.strike;
+              }
+            }
+            
+            // Find put wall (highest put gamma below current price)
+            if (strike.strike < currentPrice && (strike.put_gamma_exposure || 0) > 0) {
+              if (Math.abs(strike.strike - currentPrice) < Math.abs(putWall - currentPrice)) {
+                putWall = strike.strike;
+              }
+            }
+          });
+
+          const gexScore = totalGamma > 0 ? (netGamma / totalGamma) * 100 : 0;
+
+          const keyLevels = [
+            { level: gammaFlip, type: 'gamma_flip' as const, strength: 0.9 },
+            { level: putWall, type: 'support' as const, strength: 0.8 },
+            { level: callWall, type: 'resistance' as const, strength: 0.8 }
+          ];
+
+          return {
+            symbol,
+            date: new Date().toISOString().split('T')[0],
+            currentPrice,
+            gammaFlip,
+            callWall,
+            putWall,
+            netGamma,
+            totalGamma,
+            gexScore,
+            supportLevels: [putWall, putWall - (currentPrice * 0.02)],
+            resistanceLevels: [callWall, callWall + (currentPrice * 0.02)],
+            keyLevels
+          };
+        }
+      } catch (apiError) {
+        console.log(`API call failed for ${symbol}, falling back to stored data:`, apiError);
+      }
+
+      // Fallback to stored data if API fails
       const filePath = path.join(this.dataDir, `${symbol}_gex.json`);
       if (!fs.existsSync(filePath)) {
         return null;
@@ -385,7 +462,7 @@ export class GEXTracker {
       return {
         symbol,
         date: latest.date,
-        currentPrice: latest.gammaFlip + (Math.random() - 0.5) * 10, // Placeholder
+        currentPrice: latest.gammaFlip, // Remove random placeholder
         gammaFlip: latest.gammaFlip,
         callWall: latest.resistanceLevel,
         putWall: latest.supportLevel,

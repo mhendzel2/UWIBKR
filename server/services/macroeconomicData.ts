@@ -87,6 +87,11 @@ export class MacroeconomicDataService {
 
   constructor() {
     this.fredApiKey = process.env.FRED_API_KEY || null;
+    console.log('MacroeconomicDataService initialized');
+    console.log('FRED API Key configured:', this.fredApiKey ? 'Yes' : 'No');
+    if (this.fredApiKey) {
+      console.log('FRED API Key preview:', this.fredApiKey.substring(0, 8) + '...');
+    }
     // Update data every 30 minutes
     setInterval(() => this.updateMacroData(), 30 * 60 * 1000);
   }
@@ -108,14 +113,30 @@ export class MacroeconomicDataService {
         sort_order: 'desc'
       });
 
-      const response = await fetch(`${url}?${params}`);
+      const fullUrl = `${url}?${params}`;
+      console.log(`Fetching FRED data for ${seriesId}...`);
+      
+      const response = await fetch(fullUrl);
+      console.log(`FRED API Response Status for ${seriesId}:`, response.status);
+      
+      if (!response.ok) {
+        console.error(`FRED API Error for ${seriesId}:`, response.status, response.statusText);
+        const errorText = await response.text();
+        console.error('Error response:', errorText);
+        return null;
+      }
+      
       const data = await response.json();
+      console.log(`FRED API Response for ${seriesId}:`, JSON.stringify(data).substring(0, 200) + '...');
 
       if (data.observations && data.observations.length > 0) {
         const latestValue = data.observations[0].value;
-        return latestValue === '.' ? null : parseFloat(latestValue);
+        const parsedValue = latestValue === '.' ? null : parseFloat(latestValue);
+        console.log(`FRED ${seriesId} latest value:`, parsedValue);
+        return parsedValue;
       }
 
+      console.log(`No observations found for ${seriesId}`);
       return null;
     } catch (error) {
       console.error(`Failed to fetch FRED data for ${seriesId}:`, error);

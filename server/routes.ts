@@ -2,7 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import agentRoutes from "./agentRoutes";
-import visualTransformerRoutes from "./visualTransformerRoutes";
+// import visualTransformerRoutes from "./visualTransformerRoutes"; // Temporarily disabled due to TensorFlow compatibility
 import sentimentRoutes from "./routes/sentimentRoutes";
 import shortExpiryRoutes from "./routes/shortExpiryRoutes";
 import ordersRoutes from "./routes/orders";
@@ -1619,17 +1619,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(400).json({ message: "File name and content are required" });
       }
 
-      const fs = require('fs');
-      const path = require('path');
-      const uploadsDir = path.join(process.cwd(), 'uploads');
+      const fs = await import('fs');
+      const path = await import('path');
+      const uploadsDir = path.default.join(process.cwd(), 'uploads');
       
       // Ensure uploads directory exists
-      if (!fs.existsSync(uploadsDir)) {
-        fs.mkdirSync(uploadsDir, { recursive: true });
+      if (!fs.default.existsSync(uploadsDir)) {
+        fs.default.mkdirSync(uploadsDir, { recursive: true });
       }
       
-      const filePath = path.join(uploadsDir, fileName);
-      fs.writeFileSync(filePath, fileContent);
+      const filePath = path.default.join(uploadsDir, fileName);
+      fs.default.writeFileSync(filePath, fileContent);
       
       // Auto-detect data type from filename or use provided type
       let importResult;
@@ -2301,7 +2301,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.use("/api/short-expiry", shortExpiryRoutes);
   app.use("/api/orders", ordersRoutes);
   app.use("/api/fda", fdaRoutes);
-  app.use("/api/visual-transformer", visualTransformerRoutes);
+  // app.use("/api/visual-transformer", visualTransformerRoutes); // Temporarily disabled due to TensorFlow compatibility
   app.use("/api/sentiment", sentimentRoutes);
   app.use("/api/watchlist", watchlistRoutes);
 

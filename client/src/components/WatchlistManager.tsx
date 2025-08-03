@@ -50,8 +50,10 @@ export default function WatchlistManager({ onWatchlistChange }: WatchlistManager
 
   // Create watchlist mutation
   const createWatchlistMutation = useMutation({
-    mutationFn: (data: { name: string; description?: string }) => 
-      apiRequest('/api/watchlist/watchlists', 'POST', data),
+    mutationFn: async (data: { name: string; description?: string }) => {
+      const response = await apiRequest('POST', '/api/watchlist/watchlists', data);
+      return response.json();
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/watchlist/watchlists'] });
       setShowCreateDialog(false);
@@ -62,8 +64,10 @@ export default function WatchlistManager({ onWatchlistChange }: WatchlistManager
 
   // Update watchlist mutation
   const updateWatchlistMutation = useMutation({
-    mutationFn: ({ id, data }: { id: string; data: { name?: string; description?: string } }) => 
-      apiRequest(`/api/watchlist/watchlists/${id}`, 'PUT', data),
+    mutationFn: async ({ id, data }: { id: string; data: { name?: string; description?: string } }) => {
+      const response = await apiRequest('PUT', `/api/watchlist/watchlists/${id}`, data);
+      return response.json();
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/watchlist/watchlists'] });
       setShowEditDialog(false);
@@ -73,8 +77,10 @@ export default function WatchlistManager({ onWatchlistChange }: WatchlistManager
 
   // Delete watchlist mutation
   const deleteWatchlistMutation = useMutation({
-    mutationFn: (id: string) => 
-      apiRequest(`/api/watchlist/watchlists/${id}`, 'DELETE'),
+    mutationFn: async (id: string) => {
+      const response = await apiRequest('DELETE', `/api/watchlist/watchlists/${id}`);
+      return response.json();
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/watchlist/watchlists'] });
     }
@@ -82,8 +88,10 @@ export default function WatchlistManager({ onWatchlistChange }: WatchlistManager
 
   // Duplicate watchlist mutation
   const duplicateWatchlistMutation = useMutation({
-    mutationFn: ({ id, name }: { id: string; name: string }) => 
-      apiRequest(`/api/watchlist/watchlists/${id}/duplicate`, 'POST', { name }),
+    mutationFn: async ({ id, name }: { id: string; name: string }) => {
+      const response = await apiRequest('POST', `/api/watchlist/watchlists/${id}/duplicate`, { name });
+      return response.json();
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/watchlist/watchlists'] });
     }
@@ -91,8 +99,10 @@ export default function WatchlistManager({ onWatchlistChange }: WatchlistManager
 
   // Activate watchlist mutation
   const activateWatchlistMutation = useMutation({
-    mutationFn: (id: string) => 
-      apiRequest(`/api/watchlist/watchlists/${id}/activate`, 'POST'),
+    mutationFn: async (id: string) => {
+      const response = await apiRequest('POST', `/api/watchlist/watchlists/${id}/activate`);
+      return response.json();
+    },
     onSuccess: (data: any) => {
       queryClient.invalidateQueries({ queryKey: ['/api/watchlist/watchlists'] });
       queryClient.invalidateQueries({ queryKey: ['/api/watchlist/watchlists/current'] });

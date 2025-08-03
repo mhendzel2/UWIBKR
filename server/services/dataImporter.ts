@@ -91,7 +91,7 @@ export class DataImporter {
               errors.push(`Invalid data row: ${JSON.stringify(row)}`);
             }
           } catch (error) {
-            errors.push(`Error parsing row: ${error.message}`);
+            errors.push(`Error parsing row: ${error instanceof Error ? error.message : String(error)}`);
           }
         })
         .on('end', async () => {
@@ -100,7 +100,7 @@ export class DataImporter {
             await this.storeHistoricalData(results);
             resolve({ success: true, imported: results.length, errors });
           } catch (error) {
-            errors.push(`Storage error: ${error.message}`);
+            errors.push(`Storage error: ${error instanceof Error ? error.message : String(error)}`);
             resolve({ success: false, imported: 0, errors });
           }
         })
@@ -143,7 +143,7 @@ export class DataImporter {
               errors.push(`Invalid options data row: ${JSON.stringify(row)}`);
             }
           } catch (error) {
-            errors.push(`Error parsing options row: ${error.message}`);
+            errors.push(`Error parsing options row: ${error instanceof Error ? error.message : String(error)}`);
           }
         })
         .on('end', async () => {
@@ -151,7 +151,7 @@ export class DataImporter {
             await this.storeOptionsData(results);
             resolve({ success: true, imported: results.length, errors });
           } catch (error) {
-            errors.push(`Options storage error: ${error.message}`);
+            errors.push(`Options storage error: ${error instanceof Error ? error.message : String(error)}`);
             resolve({ success: false, imported: 0, errors });
           }
         })
@@ -187,7 +187,7 @@ export class DataImporter {
               errors.push(`Invalid symbol in row: ${JSON.stringify(row)}`);
             }
           } catch (error) {
-            errors.push(`Error parsing watchlist row: ${error.message}`);
+            errors.push(`Error parsing watchlist row: ${error instanceof Error ? error.message : String(error)}`);
           }
         })
         .on('end', async () => {
@@ -195,7 +195,7 @@ export class DataImporter {
             await this.storeWatchlist(results);
             resolve({ success: true, imported: results.length, errors });
           } catch (error) {
-            errors.push(`Watchlist storage error: ${error.message}`);
+            errors.push(`Watchlist storage error: ${error instanceof Error ? error.message : String(error)}`);
             resolve({ success: false, imported: 0, errors });
           }
         })
@@ -290,9 +290,29 @@ Options Data: Symbol, Date, Strike, Expiry, Type, Bid, Ask, Volume, Open Interes
   }
 
   private async storeWatchlist(items: WatchlistItem[]): Promise<void> {
-    const filePath = path.join(this.uploadsDir, `watchlist_${Date.now()}.json`);
-    fs.writeFileSync(filePath, JSON.stringify(items, null, 2));
-    console.log(`Stored ${items.length} watchlist items to ${filePath}`);
+    try {
+      // Import the watchlistManager to add symbols to current watchlist
+      const { watchlistManager } = await import('./watchlistManager');
+      
+      // Extract symbols and prepare them for adding to current watchlist
+      const symbols = items.map(item => item.symbol);
+      const options = {
+        sector: items[0]?.sector,
+        enabled: true,
+        gexTracking: true
+      };
+      
+      // Add symbols to current watchlist
+      await watchlistManager.addToWatchlist(symbols, options);
+      
+      // Also store as backup JSON file
+      const filePath = path.join(this.uploadsDir, `watchlist_${Date.now()}.json`);
+      fs.writeFileSync(filePath, JSON.stringify(items, null, 2));
+      console.log(`Stored ${items.length} watchlist items to current watchlist and backup file ${filePath}`);
+    } catch (error) {
+      console.error('Error storing watchlist:', error);
+      throw error;
+    }
   }
 
   async getStoredData(): Promise<{
@@ -313,7 +333,7 @@ Options Data: Symbol, Date, Strike, Expiry, Type, Bid, Ask, Volume, Open Interes
     const files = fs.readdirSync(this.uploadsDir);
     const dataFiles = files.filter(f => f.includes(type));
     
-    let allData = [];
+    let allData: any[] = [];
     for (const file of dataFiles) {
       const filePath = path.join(this.uploadsDir, file);
       const data = JSON.parse(fs.readFileSync(filePath, 'utf8'));

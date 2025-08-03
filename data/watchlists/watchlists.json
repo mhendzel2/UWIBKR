@@ -1,0 +1,158 @@
+{
+  "watchlists": [
+    {
+      "id": "default",
+      "name": "Default Watchlist",
+      "description": "Default watchlist with major market symbols",
+      "symbols": [
+        {
+          "symbol": "SPY",
+          "sector": "ETF",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-03T09:23:51.466Z"
+        },
+        {
+          "symbol": "QQQ",
+          "sector": "ETF",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-03T09:23:51.466Z"
+        },
+        {
+          "symbol": "IWM",
+          "sector": "ETF",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-03T09:23:51.466Z"
+        },
+        {
+          "symbol": "AAPL",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-03T09:23:51.466Z"
+        },
+        {
+          "symbol": "MSFT",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-03T09:23:51.466Z"
+        },
+        {
+          "symbol": "GOOGL",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-03T09:23:51.466Z"
+        },
+        {
+          "symbol": "AMZN",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-03T09:23:51.466Z"
+        },
+        {
+          "symbol": "META",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-03T09:23:51.466Z"
+        },
+        {
+          "symbol": "NFLX",
+          "sector": "Communication Services",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-03T09:23:51.466Z"
+        },
+        {
+          "symbol": "NVDA",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-03T09:23:51.466Z"
+        },
+        {
+          "symbol": "TSLA",
+          "sector": "Consumer Cyclical",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-03T09:23:51.466Z"
+        },
+        {
+          "symbol": "AMD",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-03T09:23:51.466Z"
+        },
+        {
+          "symbol": "JPM",
+          "sector": "Financials",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-03T09:23:51.466Z"
+        },
+        {
+          "symbol": "BAC",
+          "sector": "Financials",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-03T09:23:51.466Z"
+        },
+        {
+          "symbol": "XLF",
+          "sector": "ETF",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-03T09:23:51.466Z"
+        },
+        {
+          "symbol": "XLE",
+          "sector": "ETF",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-03T09:23:51.466Z"
+        },
+        {
+          "symbol": "CVX",
+          "sector": "Energy",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-03T09:23:51.466Z"
+        },
+        {
+          "symbol": "VIX",
+          "sector": "Volatility",
+          "enabled": true,
+          "gexTracking": false,
+          "lastUpdated": "2025-08-03T09:23:51.466Z"
+        },
+        {
+          "symbol": "UVXY",
+          "sector": "ETF",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-03T09:23:51.466Z"
+        }
+      ],
+      "createdAt": "2025-08-03T09:23:51.466Z",
+      "updatedAt": "2025-08-03T09:23:51.466Z",
+      "isDefault": true
+    },
+    {
+      "id": "watchlist_1754214133665_32nuwgf5p",
+      "name": "Test Watchlist",
+      "description": "Testing watchlist creation",
+      "symbols": [],
+      "createdAt": "2025-08-03T09:42:13.665Z",
+      "updatedAt": "2025-08-03T09:42:13.665Z",
+      "isDefault": false
+    }
+  ],
+  "currentWatchlistId": "default",
+  "lastUpdated": "2025-08-03T09:42:13.665Z"
+}
