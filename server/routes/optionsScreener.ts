@@ -263,36 +263,97 @@ router.get('/daytrading-opportunities', async (req, res) => {
   }
 });
 
-// Enhanced Market Sentiment
+// Enhanced Market Sentiment with Comprehensive Unusual Whales Data
 router.get('/enhanced-sentiment', async (req, res) => {
   try {
-    // Aggregate multiple sentiment sources
-    const [vixData, newsData, cryptoData, flowData, marketBreadth] = await Promise.all([
-      fetchVIXData(),
-      fetchNewsSentiment(),
-      fetchCryptoSentiment(),
-      fetchOptionsFlowSentiment(),
-      calculateMarketBreadth()
-    ]);
-
-    const sentimentData = {
-      overallSentiment: calculateOverallSentiment(vixData, newsData, cryptoData, flowData),
-      fearGreedIndex: vixData.fearGreed || 45,
-      vixLevel: vixData.currentVIX || 18.5,
-      putCallRatio: flowData.putCallRatio || 0.85,
-      marketBreadth: marketBreadth,
-      institutionalFlow: flowData.institutionalFlow || 2500000000,
-      retailFlow: flowData.retailFlow || 800000000,
-      cryptoSentiment: cryptoData.sentiment || 0.6,
-      newsFlow: newsData.recentNews || []
-    };
-
-    res.json(sentimentData);
+    console.log('🔍 Fetching comprehensive market sentiment...');
+    
+    // Use the comprehensive market sentiment service
+    const { ComprehensiveMarketSentimentService } = await import('../services/comprehensiveMarketSentiment');
+    const sentimentService = new ComprehensiveMarketSentimentService();
+    
+    const comprehensiveData = await sentimentService.getComprehensiveMarketSentiment();
+    
+    console.log(`✅ Enhanced sentiment generated with ${comprehensiveData.overallSentiment.toFixed(2)} score`);
+    
+    res.json({
+      success: true,
+      data: comprehensiveData,
+      lastUpdated: comprehensiveData.timestamp
+    });
   } catch (error) {
-    console.error('Failed to get enhanced sentiment:', error);
+    console.error('❌ Failed to get comprehensive market sentiment:', error);
     res.status(500).json({
       success: false,
-      error: 'Failed to retrieve enhanced sentiment data'
+      error: 'Failed to retrieve comprehensive market sentiment data',
+      details: error instanceof Error ? error.message : 'Unknown error'
+    });
+  }
+});
+
+// Comprehensive Market Dashboard - Full Data
+router.get('/comprehensive-dashboard', async (req, res) => {
+  try {
+    console.log('🎯 Generating comprehensive market dashboard...');
+    
+    const { ComprehensiveMarketSentimentService } = await import('../services/comprehensiveMarketSentiment');
+    const sentimentService = new ComprehensiveMarketSentimentService();
+    
+    const comprehensiveData = await sentimentService.getComprehensiveMarketSentiment();
+    
+    // Return the full data structure for advanced dashboard
+    res.json({
+      success: true,
+      dashboard: {
+        sentiment: {
+          overall: comprehensiveData.overallSentiment,
+          fearGreed: comprehensiveData.fearGreedIndex,
+          confidence: comprehensiveData.predictiveSignals.confidenceScore,
+          nextDayBias: comprehensiveData.predictiveSignals.nextDayBias,
+          weeklyOutlook: comprehensiveData.predictiveSignals.weeklyOutlook
+        },
+        marketStructure: {
+          marketTide: comprehensiveData.marketTide,
+          optionsFlow: comprehensiveData.optionsFlow,
+          marketBreadth: comprehensiveData.marketBreadth,
+          volatility: comprehensiveData.volatilityMetrics,
+          gexLevels: comprehensiveData.volatilityMetrics.gexLevels
+        },
+        sentimentSources: {
+          newsFlow: comprehensiveData.sentimentIndicators.newsFlow.slice(0, 5),
+          analystSentiment: comprehensiveData.sentimentIndicators.analystSentiment,
+          socialSentiment: comprehensiveData.sentimentIndicators.socialSentiment,
+          insiderActivity: comprehensiveData.sentimentIndicators.insiderActivity,
+          cryptoCorrelation: comprehensiveData.sentimentIndicators.cryptoCorrelation
+        },
+        macroEnvironment: {
+          treasuryYields: comprehensiveData.macroContext.treasuryYields,
+          dollarStrength: comprehensiveData.macroContext.dollarStrength,
+          commodities: comprehensiveData.macroContext.commoditiesFlow,
+          international: comprehensiveData.macroContext.internationalMarkets
+        },
+        unusualActivity: {
+          largestFlows: comprehensiveData.unusualActivity.largestFlows.slice(0, 5),
+          sectorAlerts: comprehensiveData.unusualActivity.sectorAlerts,
+          darkPoolSignals: comprehensiveData.unusualActivity.darkPoolSignals.slice(0, 3),
+          optionsAlerts: comprehensiveData.unusualActivity.optionsAlerts
+        },
+        riskFactors: comprehensiveData.predictiveSignals.keyRiskFactors,
+        supportResistance: comprehensiveData.predictiveSignals.supportResistanceLevels
+      },
+      metadata: {
+        dataPoints: Object.keys(comprehensiveData).length,
+        lastUpdated: comprehensiveData.timestamp,
+        cacheStatus: 'active',
+        apiSources: ['Unusual Whales', 'Alpha Vantage', 'Internal Analysis']
+      }
+    });
+  } catch (error) {
+    console.error('❌ Failed to generate comprehensive dashboard:', error);
+    res.status(500).json({
+      success: false,
+      error: 'Failed to generate comprehensive market dashboard',
+      details: error instanceof Error ? error.message : 'Unknown error'
     });
   }
 });
