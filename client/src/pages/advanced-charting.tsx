@@ -48,7 +48,7 @@ interface OptionsData {
 }
 
 export default function AdvancedChartingPage() {
-  const [selectedSymbol, setSelectedSymbol] = useState<string>('SPY');
+  const [selectedSymbol, setSelectedSymbol] = useState<string>('SPX');
   const [timeframe, setTimeframe] = useState<string>('1D');
   const [chartType, setChartType] = useState<string>('candlestick');
   const [indicators, setIndicators] = useState<string[]>(['SMA20', 'SMA50']);
@@ -79,7 +79,7 @@ export default function AdvancedChartingPage() {
     },
   });
 
-  const symbols = ['SPY', 'QQQ', 'NVDA', 'TSLA', 'AAPL', 'MSFT', 'AMZN', 'META'];
+  const symbols = ['SPX', 'SPY', 'QQQ', 'NVDA', 'TSLA', 'AAPL', 'MSFT', 'AMZN', 'META'];
   const timeframes = ['1m', '5m', '15m', '1H', '1D', '1W', '1M'];
   const chartTypes = ['candlestick', 'line', 'area', 'heikin-ashi'];
   const availableIndicators = [

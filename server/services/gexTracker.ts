@@ -374,7 +374,7 @@ export class GEXTracker {
     }
 
     console.log(`Daily update completed: ${results.success} success, ${results.failed} failed`);
-    
+
     if (results.errors.length > 0) {
       console.log('Update errors:', results.errors);
     }
@@ -382,6 +382,34 @@ export class GEXTracker {
     // Save update log
     await this.refreshSentiments();
     await this.saveUpdateLog(results);
+  }
+
+  async updateSymbols(symbols: string[], listName: string = 'default'): Promise<void> {
+    console.log(`Updating GEX data for ${symbols.length} symbols in ${listName} watchlist...`);
+    const { marketIntelligence } = await import('./marketIntelligence');
+    const results = { success: 0, failed: 0, errors: [] as string[] };
+
+    for (const symbol of symbols) {
+      try {
+        await this.updateSymbolGEX(symbol);
+        await Promise.all([
+          marketIntelligence.trackDarkPoolActivity(symbol),
+          marketIntelligence.trackInsiderTrades(symbol),
+          marketIntelligence.trackAnalystUpdates(symbol),
+          marketIntelligence.trackNewsAlerts(symbol),
+        ]);
+        results.success++;
+        console.log(`✅ Updated data for ${symbol}`);
+      } catch (error) {
+        results.failed++;
+        results.errors.push(`${symbol}: ${error.message}`);
+        console.error(`Failed to update data for ${symbol}:`, error);
+      }
+    }
+
+    if (results.errors.length > 0) {
+      console.log('Update errors:', results.errors);
+    }
   }
 
   private async updateSymbolGEX(symbol: string): Promise<void> {

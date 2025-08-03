@@ -287,7 +287,22 @@ export class IBKRService {
 
   async getEconomicCalendar(days: number = 7): Promise<any[]> {
     if (!this.connected) {
-      throw new Error('Not connected to IBKR TWS');
+      try {
+        const today = new Date();
+        const from = today.toISOString().split('T')[0];
+        const to = new Date(today.getTime() + days * 24 * 60 * 60 * 1000)
+          .toISOString()
+          .split('T')[0];
+        const apiKey = process.env.FMP_API_KEY || 'demo';
+        const { data } = await axios.get(
+          'https://financialmodelingprep.com/api/v3/economic_calendar',
+          { params: { from, to, apikey: apiKey } }
+        );
+        return data || [];
+      } catch (error) {
+        console.error('Failed to fetch external economic calendar:', error);
+        return [];
+      }
     }
 
     try {
