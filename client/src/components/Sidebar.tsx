@@ -1,5 +1,8 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
+import { useQuery } from "@tanstack/react-query";
+import { tradingApi } from "@/lib/tradingApi";
+import type { SystemHealth } from "@/types/trading";
 
 const navigationItems = [
   { href: "/", label: "Dashboard", icon: "fas fa-tachometer-alt" },
@@ -36,20 +39,37 @@ const navigationItems = [
   { href: "/settings", label: "Settings", icon: "fas fa-cog" },
 ];
 
-interface SystemStatus {
-  service: string;
-  status: 'connected' | 'active' | 'processing' | 'disconnected' | 'error';
-  indicator: string;
+function indicatorClass(status: string) {
+  switch (status) {
+    case 'connected':
+    case 'active':
+      return 'bg-green-500';
+    case 'processing':
+      return 'bg-yellow-500 animate-pulse';
+    default:
+      return 'bg-red-500';
+  }
 }
 
-const systemStatuses: SystemStatus[] = [
-  { service: "IBKR TWS", status: "connected", indicator: "bg-green-500" },
-  { service: "Unusual Whales", status: "active", indicator: "bg-green-500" },
-  { service: "Gemini AI", status: "processing", indicator: "bg-yellow-500 animate-pulse" },
-];
+function textClass(status: string) {
+  switch (status) {
+    case 'connected':
+    case 'active':
+      return 'text-green-400';
+    case 'processing':
+      return 'text-yellow-400';
+    default:
+      return 'text-red-400';
+  }
+}
 
 export default function Sidebar() {
   const [location] = useLocation();
+  const { data: systemStatuses } = useQuery<SystemHealth[]>({
+    queryKey: ['systemStatus'],
+    queryFn: tradingApi.getSystemHealth,
+    refetchInterval: 10000,
+  });
 
   return (
     <div className="w-64 bg-dark-800 border-r border-dark-700 flex flex-col">
@@ -92,20 +112,13 @@ export default function Sidebar() {
       {/* System Status */}
       <div className="p-4 border-t border-dark-700">
         <div className="space-y-2">
-          {systemStatuses.map((status) => (
+          {systemStatuses?.map((status) => (
             <div key={status.service} className="flex items-center justify-between text-xs">
               <span className="text-dark-400">{status.service}</span>
               <div className="flex items-center space-x-1">
-                <div className={`w-2 h-2 ${status.indicator} rounded-full`}></div>
-                <span className={cn(
-                  status.status === 'connected' || status.status === 'active' ? 'text-green-400' :
-                  status.status === 'processing' ? 'text-yellow-400' :
-                  'text-red-400'
-                )}>
-                  {status.status === 'connected' ? 'Connected' :
-                   status.status === 'active' ? 'Active' :
-                   status.status === 'processing' ? 'Processing' :
-                   'Disconnected'}
+                <div className={`w-2 h-2 ${indicatorClass(status.status)} rounded-full`}></div>
+                <span className={cn(textClass(status.status))}>
+                  {status.status.charAt(0).toUpperCase() + status.status.slice(1)}
                 </span>
               </div>
             </div>
