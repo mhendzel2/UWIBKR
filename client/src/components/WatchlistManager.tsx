@@ -90,10 +90,10 @@ export default function WatchlistManager({ onWatchlistChange }: WatchlistManager
   });
 
   // Activate watchlist mutation
-  const activateWatchlistMutation = useMutation<Watchlist, Error, string>({
+  const activateWatchlistMutation = useMutation({
     mutationFn: (id: string) => 
       apiRequest(`/api/watchlist/watchlists/${id}/activate`, 'POST'),
-    onSuccess: (data: Watchlist) => {
+    onSuccess: (data: any) => {
       queryClient.invalidateQueries({ queryKey: ['/api/watchlist/watchlists'] });
       queryClient.invalidateQueries({ queryKey: ['/api/watchlist/watchlists/current'] });
       if (onWatchlistChange) {

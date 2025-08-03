@@ -26,13 +26,13 @@ export default function WatchlistPage() {
   const queryClient = useQueryClient();
 
   // Fetch watchlist
-  const { data: watchlist, isLoading: watchlistLoading, dataUpdatedAt: watchlistUpdatedAt } = useQuery({
+  const { data: watchlist, isLoading: watchlistLoading, dataUpdatedAt: watchlistUpdatedAt } = useQuery<any[]>({
     queryKey: ['/api/watchlist'],
     refetchInterval: 30000
   });
 
   // Fetch market alerts
-  const { data: alertsData } = useQuery({
+  const { data: alertsData } = useQuery<any>({
     queryKey: ['/api/intelligence/alerts'],
     refetchInterval: 10000
   });
@@ -55,13 +55,13 @@ export default function WatchlistPage() {
   })();
 
   // Fetch GEX levels
-  const { data: gexLevels, dataUpdatedAt: gexUpdatedAt } = useQuery({
+  const { data: gexLevels, dataUpdatedAt: gexUpdatedAt } = useQuery<any[]>({
     queryKey: ['/api/gex/levels'],
     refetchInterval: 60000
   });
 
   // Fetch intelligence for selected symbol
-  const { data: intelligence } = useQuery({
+  const { data: intelligence } = useQuery<any>({
     queryKey: ['/api/intelligence', selectedSymbol],
     enabled: !!selectedSymbol,
     refetchInterval: 120000
@@ -141,7 +141,7 @@ export default function WatchlistPage() {
           queryClient.invalidateQueries({ queryKey: ['/api/watchlist'] });
           queryClient.invalidateQueries({ queryKey: ['/api/gex/levels'] });
           
-          alert(`Successfully imported ${uploadResult.importResult.imported} records from ${file.name}`);
+          alert(`Successfully imported ${(uploadResult as any).importResult.imported} records from ${file.name}`);
         };
         
         reader.readAsText(file);
@@ -153,7 +153,7 @@ export default function WatchlistPage() {
   };
 
   const getSeverityColor = (severity: string) => {
-    const colors = {
+    const colors: Record<string, string> = {
       low: 'bg-blue-100 text-blue-800',
       medium: 'bg-yellow-100 text-yellow-800',
       high: 'bg-orange-100 text-orange-800',
@@ -162,13 +162,12 @@ export default function WatchlistPage() {
     return colors[severity] || 'bg-gray-100 text-gray-800';
   };
 
-  const getAlertIcon = (type: string) => {
-    const icons = {
+    const getAlertIcon = (type: string) => {
+    const icons: Record<string, any> = {
       dark_pool: Activity,
       insider: Users,
       analyst: Target,
       news: Newspaper,
-      volume: TrendingUp,
       price: DollarSign
     };
     return icons[type] || AlertTriangle;
@@ -372,7 +371,7 @@ export default function WatchlistPage() {
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-3">
-                        {intelligence.insiderTrades.slice(0, 3).map((trade: any, index: number) => (
+                        {intelligence.insiderTrades && intelligence.insiderTrades.slice(0, 3).map((trade: any, index: number) => (
                           <div key={index} className="p-3 border rounded-lg">
                             <div className="flex justify-between items-start">
                               <div>
@@ -405,7 +404,7 @@ export default function WatchlistPage() {
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-3">
-                        {intelligence.analystUpdates.slice(0, 3).map((update: any, index: number) => (
+                        {intelligence.analystUpdates && intelligence.analystUpdates.slice(0, 3).map((update: any, index: number) => (
                           <div key={index} className="p-3 border rounded-lg">
                             <div className="flex justify-between items-start">
                               <div>
@@ -437,7 +436,7 @@ export default function WatchlistPage() {
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-3">
-                        {intelligence.newsAlerts.slice(0, 3).map((news: any, index: number) => (
+                        {intelligence.newsAlerts && intelligence.newsAlerts.slice(0, 3).map((news: any, index: number) => (
                           <div key={index} className="p-3 border rounded-lg">
                             <div className="flex justify-between items-start mb-2">
                               <div className="text-sm font-medium">{news.headline}</div>
@@ -513,7 +512,7 @@ export default function WatchlistPage() {
 
         <TabsContent value="gex" className="space-y-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {(gexLevels || []).map((gex: any) => (
+            {Array.isArray(gexLevels) && gexLevels.map((gex: any) => (
               <Card key={gex.symbol}>
                 <CardHeader>
                   <CardTitle>{gex.symbol} GEX Levels</CardTitle>
