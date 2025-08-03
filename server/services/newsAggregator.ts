@@ -1,7 +1,5 @@
 // @ts-nocheck
-import OpenAI from 'openai';
-
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+import { createCompletion } from '../geminiService';
 
 export interface NewsArticle {
   id: string;
@@ -334,7 +332,7 @@ export class NewsAggregator {
     }
   }
 
-  // AI-powered sentiment analysis using OpenAI
+  // AI-powered sentiment analysis using Google Gemini
   async analyzeTextSentiment(text: string): Promise<{
     score: number;
     confidence: number;
@@ -354,14 +352,8 @@ Provide a JSON object with:
 
 Focus on market impact, price implications, and trading sentiment.`;
 
-      const response = await openai.chat.completions.create({
-        model: "gpt-4o",
-        messages: [{ role: "user", content: prompt }],
-        response_format: { type: "json_object" },
-        temperature: 0.3
-      });
-
-      const analysis = JSON.parse(response.choices[0].message.content || '{}');
+      const responseText = await createCompletion(prompt);
+      const analysis = JSON.parse(responseText || '{}');
       
       return {
         score: Math.max(-1, Math.min(1, analysis.score || 0)),

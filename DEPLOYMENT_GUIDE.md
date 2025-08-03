@@ -43,7 +43,7 @@ heroku create your-trading-app
 heroku addons:create heroku-postgresql:hobby-dev
 
 # Set environment variables
-heroku config:set OPENAI_API_KEY=your_key_here
+heroku config:set GEMINI_API_KEY=your_key_here
 heroku config:set UNUSUAL_WHALES_API_KEY=your_key_here
 
 # Deploy
@@ -76,7 +76,6 @@ PGPASSWORD=your_pg_password
 PGDATABASE=your_database_name
 
 # AI Services
-OPENAI_API_KEY=sk-your_openai_key_here
 GEMINI_API_KEY=your_gemini_key_here
 
 # Market Data APIs
@@ -95,11 +94,11 @@ PORT=5000
 
 ### API Key Setup Instructions
 
-#### 1. OpenAI API Key
-- Visit: https://platform.openai.com/api-keys
+#### 1. Google Gemini API Key
+- Visit: https://ai.google.dev
 - Create new API key
 - Add billing information for usage
-- Cost: ~$0.002 per 1K tokens (GPT-4o)
+- Cost varies by model usage
 
 #### 2. Unusual Whales API Key
 - Visit: https://unusualwhales.com/api

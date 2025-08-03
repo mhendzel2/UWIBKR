@@ -1,8 +1,6 @@
 // @ts-nocheck
-import OpenAI from 'openai';
+import { createCompletion } from '../geminiService';
 import { macroeconomicDataService } from './macroeconomicData';
-
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
 
 export interface MorningUpdateData {
   id: string;
@@ -630,14 +628,8 @@ Provide a JSON response with:
 
 Keep it professional and actionable for options traders.`;
 
-      const response = await openai.chat.completions.create({
-        model: "gpt-4o",
-        messages: [{ role: "user", content: prompt }],
-        response_format: { type: "json_object" },
-        temperature: 0.3
-      });
-
-      const summary = JSON.parse(response.choices[0].message.content || '{}');
+      const responseText = await createCompletion(prompt);
+      const summary = JSON.parse(responseText || '{}');
 
       return {
         executiveSummary: summary.executiveSummary || 'Markets preparing for session open with mixed signals.',

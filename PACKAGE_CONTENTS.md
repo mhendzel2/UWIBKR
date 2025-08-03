@@ -106,7 +106,7 @@ ai-trading-platform/
 │   │   ├── sentimentAnalysis.ts       # Sentiment analysis agent
 │   │   └── execution.ts               # Execution agent
 │   ├── gemini.ts                      # Google Gemini integration
-│   ├── openai.ts                      # OpenAI integration
+│   ├── geminiService.ts               # Google Gemini integration
 │   └── [additional server files]
 │
 ├── shared/                            # Shared type definitions
@@ -134,7 +134,7 @@ ai-trading-platform/
 - **Visual Analytics**: Heat maps, radar, and chart pattern recognition
 
 ### ✅ AI & Machine Learning
-- **OpenAI GPT-4o Integration**: Intelligent signal analysis and optimization
+- **Google Gemini Integration**: Intelligent signal analysis and optimization
 - **Google Gemini Support**: Alternative AI model integration
 - **TensorFlow.js Models**: Visual pattern recognition and chart analysis
 - **Training Mode**: Systematic performance data collection for ML optimization
@@ -171,7 +171,7 @@ ai-trading-platform/
 - RESTful API design
 
 ### AI & Analytics
-- OpenAI GPT-4o for intelligence
+- Google Gemini for intelligence
 - Google Gemini integration
 - TensorFlow.js for ML models
 - Custom ensemble modeling
@@ -186,7 +186,7 @@ ai-trading-platform/
 - 4GB+ RAM recommended for production
 
 ### Required API Keys
-- OpenAI API key (for AI features)
+- Google Gemini API key (for AI features)
 - Unusual Whales API key (for market data)
 - OpenFDA API key (for pharmaceutical monitoring)
 - Optional: Google Gemini API key

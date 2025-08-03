@@ -1,6 +1,5 @@
-import OpenAI from 'openai';
-
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+import { createCompletion } from '../geminiService';
+import { storeTrade } from '../mlStore';
 
 interface StringencyMetrics {
   stringencyLevel: number;
@@ -59,6 +58,7 @@ export class StringencyOptimizer {
 
   async recordTradeOutcome(trade: TradeOutcome): Promise<void> {
     this.tradeOutcomes.push(trade);
+    storeTrade(trade);
     
     if (trade.exitDate && trade.exitPrice) {
       // Calculate performance metrics
@@ -188,16 +188,8 @@ Consider:
 
 Respond with JSON: {"recommendedStringency": number, "reasoning": "explanation", "confidence": number}`;
 
-      const response = await openai.chat.completions.create({
-        model: "gpt-4o",
-        messages: [{
-          role: "user",
-          content: prompt
-        }],
-        response_format: { type: "json_object" },
-      });
-
-      const analysis = JSON.parse(response.choices[0].message.content || '{}');
+      const responseText = await createCompletion(prompt);
+      const analysis = JSON.parse(responseText || '{}');
       
       return Math.max(1, Math.min(10, analysis.recommendedStringency || 5));
     } catch (error) {
@@ -249,16 +241,8 @@ Based on recent performance vs historical data, should we:
 
 Respond with JSON: {"recommendedStringency": number, "reasoning": "detailed explanation", "confidence": number}`;
 
-      const response = await openai.chat.completions.create({
-        model: "gpt-4o",
-        messages: [{
-          role: "user",
-          content: prompt
-        }],
-        response_format: { type: "json_object" },
-      });
-
-      return JSON.parse(response.choices[0].message.content || '{}');
+      const responseText = await createCompletion(prompt);
+      return JSON.parse(responseText || '{}');
     } catch (error) {
       return {
         recommendedStringency: currentStringency,

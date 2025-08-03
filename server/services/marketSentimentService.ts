@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { UnusualWhalesService } from './unusualWhales';
-import openaiService from '../openai';
+import geminiService from '../geminiService';
 
 export interface MarketSentimentData {
   timestamp: Date;
@@ -415,9 +415,8 @@ Provide a JSON response with:
 - primaryDrivers: array of main factors
 - recommendation: "risk-on", "risk-off", or "neutral"`;
 
-      const response = await openaiService.createCompletion(prompt, {
-        model: 'gpt-4o',
-        response_format: { type: "json_object" }
+      const response = await geminiService.createCompletion(prompt, {
+        model: 'gemini-2.0-flash',
       });
 
       return JSON.parse(response);

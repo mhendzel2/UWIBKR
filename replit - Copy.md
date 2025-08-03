@@ -2,7 +2,7 @@
 
 ## Overview
 
-This project is a sophisticated AI-driven options trading application that combines algorithmic analysis with human oversight. It integrates real-time market data from Unusual Whales, AI-powered analysis via ChatGPT/OpenAI, and automated execution through Interactive Brokers (IBKR). The system features a React frontend with WebSocket communication and an Express.js backend implementing event-driven microservices.
+This project is a sophisticated AI-driven options trading application that combines algorithmic analysis with human oversight. It integrates real-time market data from Unusual Whales, AI-powered analysis via Google Gemini, and automated execution through Interactive Brokers (IBKR). The system features a React frontend with WebSocket communication and an Express.js backend implementing event-driven microservices.
 
 The application focuses on analyzing unusual options flow and other market intelligence to identify high-probability trading opportunities while maintaining strict risk management protocols. All AI-generated trade signals require human approval before execution. Key capabilities include comprehensive trade tracking, real-time performance analytics, AI-powered trade assessment, and historical trade analysis. The system also provides institutional-grade pre-market intelligence, a multi-agent trading system for consensus-driven decisions, and a sophisticated alert-based architecture for swing and LEAP opportunities.
 
@@ -69,7 +69,7 @@ Preferred communication style: Simple, everyday language.
 - **Barchart**: Source for historical and options data import.
 
 ### AI & Analysis
-- **ChatGPT/OpenAI**: Large language model for intelligent signal analysis, market sentiment evaluation, trade opportunity assessment, and morning update summaries.
+- **Google Gemini**: Large language model for intelligent signal analysis, market sentiment evaluation, trade opportunity assessment, and morning update summaries.
 
 ### Development & Infrastructure
 - **Neon Database**: Serverless PostgreSQL hosting.

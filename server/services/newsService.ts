@@ -1,4 +1,4 @@
-import { analyzeMarketSentiment } from "../openai";
+import { analyzeMarketSentiment } from "../geminiService";
 
 export interface NewsItem {
   id: string;
@@ -90,7 +90,7 @@ class NewsService {
       // Enhance all articles with AI sentiment analysis
       for (const article of news) {
         try {
-          if (process.env.OPENAI_API_KEY) {
+          if (process.env.GEMINI_API_KEY) {
             const sentimentResult = await analyzeMarketSentiment([article], []);
             article.sentimentScore = sentimentResult.confidence / 100; // Convert to 0-1 scale
             article.sentiment = this.classifySentiment(article.sentimentScore);
