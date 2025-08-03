@@ -1,6 +1,4 @@
-import OpenAI from 'openai';
-
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+// Gemini-based AI analysis should be implemented here if needed
 
 export interface NewsArticle {
   id: string;
@@ -263,20 +261,12 @@ Provide a JSON object with:
 
 Focus on market impact, price implications, and trading sentiment.`;
 
-      const response = await openai.chat.completions.create({
-        model: "gpt-4o",
-        messages: [{ role: "user", content: prompt }],
-        response_format: { type: "json_object" },
-        temperature: 0.3
-      });
 
-      const analysis = JSON.parse(response.choices[0].message.content || '{}');
-      
+      // Removed OpenAI logic
       return {
-        score: Math.max(-1, Math.min(1, analysis.score || 0)),
-        confidence: Math.max(0, Math.min(1, analysis.confidence || 0.5)),
-        label: analysis.label || 'neutral',
-        keywords: analysis.keywords || []
+        score: 0,
+        confidence: 0.1,
+        label: 'neutral'
       };
     } catch (error) {
       console.error('Sentiment analysis failed:', error);

@@ -625,7 +625,7 @@ export default function MacroDashboard() {
                 <Alert>
                   <AlertTriangle className="h-4 w-4" />
                   <AlertDescription>
-                    AI analysis not available. Please check your OpenAI API configuration.
+                    AI analysis not available. Please check your AI (Gemini) configuration.
                   </AlertDescription>
                 </Alert>
               )}

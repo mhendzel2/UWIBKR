@@ -1,7 +1,5 @@
 import { Router } from 'express';
-import OpenAI from 'openai';
-
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+// Gemini-based AI analysis should be implemented here if needed
 
 const router = Router();
 
@@ -317,22 +315,7 @@ Provide a JSON response with:
 
 Respond only with valid JSON.`;
 
-    const response = await openai.chat.completions.create({
-      model: 'gpt-4o',
-      messages: [{ role: 'user', content: prompt }],
-      response_format: { type: 'json_object' },
-      temperature: 0.3
-    });
-
-    const analysis = JSON.parse(response.choices[0].message.content || '{}');
-    
-    return {
-      sentiment: analysis.sentiment || 0,
-      confidence: analysis.confidence || 0.5,
-      key_phrases: analysis.key_phrases || [],
-      reasoning: analysis.reasoning || 'Unable to analyze sentiment',
-      model_used: 'gpt-4o'
-    };
+    // Removed OpenAI logic
     
   } catch (error) {
     console.error('Error in AI sentiment analysis:', error);

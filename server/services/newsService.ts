@@ -1,4 +1,4 @@
-import { analyzeMarketSentiment } from "../openai";
+import { analyzeSentiment } from "./gemini";
 
 export interface NewsItem {
   id: string;
@@ -73,14 +73,12 @@ class NewsService {
         news = await this.generateRealisticNews(symbols);
       }
       
-      // Enhance all articles with AI sentiment analysis
+      // Enhance all articles with Gemini AI sentiment analysis
       for (const article of news) {
         try {
-          if (process.env.OPENAI_API_KEY) {
-            const sentimentResult = await analyzeMarketSentiment([article], []);
-            article.sentimentScore = sentimentResult.confidence / 100; // Convert to 0-1 scale
-            article.sentiment = this.classifySentiment(article.sentimentScore);
-          }
+          const sentimentResult = await analyzeSentiment(article.headline + ' ' + article.summary);
+          article.sentimentScore = (sentimentResult.rating - 3) / 2; // Convert 1-5 to -1 to 1
+          article.sentiment = this.classifySentiment(article.sentimentScore);
         } catch (error) {
           console.error("Error analyzing sentiment:", error);
           // Use basic keyword-based sentiment as fallback

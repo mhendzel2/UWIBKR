@@ -1,6 +1,4 @@
-import OpenAI from 'openai';
-
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+import { analyzeOptionsFlow } from './gemini';
 
 interface StringencyMetrics {
   stringencyLevel: number;
@@ -12,8 +10,6 @@ interface StringencyMetrics {
   winRate: number;
   avgWinDuration: number;
   avgLossDuration: number;
-  tradesGenerated: number;
-  timestamp: Date;
 }
 
 interface TradeOutcome {
@@ -27,18 +23,12 @@ interface TradeOutcome {
   stringencyUsed: number;
   success?: boolean;
   duration?: number;
-  type: 'leap' | 'screener';
-}
-
-export class StringencyOptimizer {
-  private performanceHistory: Map<number, StringencyMetrics[]> = new Map();
-  private tradeOutcomes: TradeOutcome[] = [];
-
-  constructor() {
-    this.loadHistoricalData();
-  }
-
-  private loadHistoricalData(): void {
+      // Removed OpenAI logic
+      return {
+        recommendedStringency: currentStringency,
+        reasoning: 'Gemini-based recommendation not yet implemented',
+        confidence: 50
+      };
     // Initialize with baseline metrics for each stringency level
     for (let level = 1; level <= 10; level++) {
       this.performanceHistory.set(level, [{
@@ -251,37 +241,13 @@ Respond with JSON: {"recommendedStringency": number, "reasoning": "detailed expl
 
       const response = await openai.chat.completions.create({
         model: "gpt-4o",
-        messages: [{
-          role: "user",
-          content: prompt
-        }],
-        response_format: { type: "json_object" },
-      });
 
-      return JSON.parse(response.choices[0].message.content || '{}');
-    } catch (error) {
-      return {
-        recommendedStringency: currentStringency,
-        reasoning: 'Unable to analyze performance data',
-        confidence: 50
-      };
-    }
-  }
-
-  enableTrainingMode(): void {
-    console.log('🎯 Training mode enabled: Collecting performance data for stringency optimization');
-  }
-
-  getTrainingModeStatus(): { active: boolean; tradesCollected: number; recommendationsGenerated: number } {
-    const last30Days = new Date(Date.now() - 30 * 24 * 60 * 60 * 1000);
-    const recentTrades = this.tradeOutcomes.filter(t => t.entryDate >= last30Days);
-    
+    // TODO: Implement Gemini-based recommendation logic or fallback to local logic
+    // For now, return a default recommendation
     return {
-      active: true,
-      tradesCollected: recentTrades.length,
-      recommendationsGenerated: this.performanceHistory.size
+      recommendedStringency: currentStringency,
+      reasoning: 'Gemini-based recommendation not yet implemented',
+      confidence: 50
     };
-  }
-}
 
 export const stringencyOptimizer = new StringencyOptimizer();
