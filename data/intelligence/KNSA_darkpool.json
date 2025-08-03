@@ -1,0 +1,43 @@
+[
+  {
+    "symbol": "KNSA",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5513657,
+    "totalVolume": 14068630,
+    "darkPoolRatio": 0.3919114370055933,
+    "avgDarkPoolSize": 9693,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 86576,
+        "price": 456.86650478450093,
+        "timestamp": "2025-08-03T09:52:43.988Z"
+      },
+      {
+        "size": 66854,
+        "price": 457.7789213716106,
+        "timestamp": "2025-08-03T13:04:56.841Z"
+      },
+      {
+        "size": 132671,
+        "price": 461.7902278695736,
+        "timestamp": "2025-08-03T08:46:06.094Z"
+      },
+      {
+        "size": 121946,
+        "price": 460.35955617187074,
+        "timestamp": "2025-08-03T15:45:40.423Z"
+      },
+      {
+        "size": 66072,
+        "price": 463.3522525033127,
+        "timestamp": "2025-08-03T14:06:45.013Z"
+      },
+      {
+        "size": 87488,
+        "price": 455.09772087989893,
+        "timestamp": "2025-08-03T15:07:48.062Z"
+      }
+    ]
+  }
+]

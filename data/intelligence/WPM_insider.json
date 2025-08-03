@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "WPM",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 25294,
+    "price": 451.03366765518945,
+    "value": 11408445.589670362,
+    "date": "2025-07-29T23:19:39.309Z",
+    "filingDate": "2025-08-01T00:38:03.888Z",
+    "ownershipPercent": 1.9468289394327576
+  },
+  {
+    "symbol": "WPM",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 40473,
+    "price": 453.96372059888967,
+    "value": 18373273.66379886,
+    "date": "2025-08-03T08:05:25.698Z",
+    "filingDate": "2025-08-03T11:19:56.102Z",
+    "ownershipPercent": 2.372833238652731
+  },
+  {
+    "symbol": "WPM",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 5260,
+    "price": 462.1652271152975,
+    "value": 2430989.094626465,
+    "date": "2025-07-30T05:26:47.591Z",
+    "filingDate": "2025-08-01T20:27:13.853Z",
+    "ownershipPercent": 1.8243292368008457
+  }
+]

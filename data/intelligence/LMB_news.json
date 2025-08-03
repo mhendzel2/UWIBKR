@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "LMB",
+    "headline": "Analyst upgrades LMB on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for LMB with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.7493088878731222,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T13:39:14.033Z",
+    "url": "https://example.com/news/lmb-1754238630468"
+  },
+  {
+    "symbol": "LMB",
+    "headline": "LMB announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for LMB with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.5808157512428764,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T05:32:09.540Z",
+    "url": "https://example.com/news/lmb-1754238630468"
+  },
+  {
+    "symbol": "LMB",
+    "headline": "Analyst upgrades LMB on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for LMB with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.6711548259886195,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T13:25:30.946Z",
+    "url": "https://example.com/news/lmb-1754238630468"
+  }
+]

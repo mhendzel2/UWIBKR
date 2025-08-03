@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "RL",
+    "headline": "Regulatory approval granted for RL new product",
+    "summary": "Recent developments suggest positive momentum for RL with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.5351437277001337,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T11:57:32.512Z",
+    "url": "https://example.com/news/rl-1754238647096"
+  },
+  {
+    "symbol": "RL",
+    "headline": "Analyst upgrades RL on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for RL with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.7033139908823556,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T12:56:56.334Z",
+    "url": "https://example.com/news/rl-1754238647096"
+  }
+]

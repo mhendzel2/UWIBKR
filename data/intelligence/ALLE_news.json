@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "ALLE",
+    "headline": "ALLE reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for ALLE with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.7713308677567812,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T08:54:20.895Z",
+    "url": "https://example.com/news/alle-1754238635665"
+  },
+  {
+    "symbol": "ALLE",
+    "headline": "ALLE announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for ALLE with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.6442012449870282,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T14:47:36.536Z",
+    "url": "https://example.com/news/alle-1754238635666"
+  },
+  {
+    "symbol": "ALLE",
+    "headline": "ALLE reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for ALLE with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.5599298627395304,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T11:20:29.185Z",
+    "url": "https://example.com/news/alle-1754238635666"
+  }
+]

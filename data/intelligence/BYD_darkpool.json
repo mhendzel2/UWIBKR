@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "BYD",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1408478,
+    "totalVolume": 10865614,
+    "darkPoolRatio": 0.12962709700528657,
+    "avgDarkPoolSize": 5560,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 109912,
+        "price": 453.71044406428916,
+        "timestamp": "2025-08-03T15:29:09.188Z"
+      },
+      {
+        "size": 90039,
+        "price": 448.5737017947116,
+        "timestamp": "2025-08-03T14:38:16.425Z"
+      },
+      {
+        "size": 127189,
+        "price": 451.4538632808271,
+        "timestamp": "2025-08-03T13:05:40.653Z"
+      },
+      {
+        "size": 113664,
+        "price": 449.9868406258614,
+        "timestamp": "2025-08-03T16:30:00.098Z"
+      }
+    ]
+  }
+]

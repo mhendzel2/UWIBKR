@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "TT",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Buy",
+    "previousTarget": 469.2363661104273,
+    "newTarget": 433.63433449432836,
+    "date": "2025-07-31T14:39:20.702Z",
+    "reasoning": "Margin pressure concerns"
+  },
+  {
+    "symbol": "TT",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Hold",
+    "newRating": "Outperform",
+    "previousTarget": 450.7903585974194,
+    "newTarget": 415.15839350914763,
+    "date": "2025-07-29T22:39:30.701Z",
+    "reasoning": "Positive sector outlook"
+  }
+]

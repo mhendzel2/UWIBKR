@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "SXT",
+    "headline": "Analyst upgrades SXT on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for SXT with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.8612801592666842,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T06:30:48.282Z",
+    "url": "https://example.com/news/sxt-1754238642177"
+  },
+  {
+    "symbol": "SXT",
+    "headline": "Regulatory approval granted for SXT new product",
+    "summary": "Recent developments suggest positive momentum for SXT with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5753230887422189,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T05:34:37.937Z",
+    "url": "https://example.com/news/sxt-1754238642177"
+  }
+]

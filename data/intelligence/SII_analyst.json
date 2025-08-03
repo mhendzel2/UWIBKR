@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "SII",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 421.33101939214464,
+    "newTarget": 418.6851058553594,
+    "date": "2025-07-31T14:35:14.132Z",
+    "reasoning": "Competitive headwinds"
+  },
+  {
+    "symbol": "SII",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Outperform",
+    "newRating": "Outperform",
+    "previousTarget": 477.73412539276774,
+    "newTarget": 441.12126994123025,
+    "date": "2025-08-02T02:33:23.902Z",
+    "reasoning": "Compelling growth story"
+  }
+]

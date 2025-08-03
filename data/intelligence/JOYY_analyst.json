@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "JOYY",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Hold",
+    "previousTarget": 448.182174395419,
+    "newTarget": 423.04559534554573,
+    "date": "2025-07-31T21:18:14.331Z",
+    "reasoning": "Valuation concerns"
+  },
+  {
+    "symbol": "JOYY",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Underperform",
+    "previousTarget": 429.248678138669,
+    "newTarget": 413.9868461270028,
+    "date": "2025-08-01T10:51:15.759Z",
+    "reasoning": "Competitive headwinds"
+  }
+]

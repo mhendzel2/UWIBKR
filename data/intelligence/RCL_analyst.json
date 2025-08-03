@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "RCL",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Sell",
+    "previousTarget": 429.69921279208535,
+    "newTarget": 401.5806168126188,
+    "date": "2025-08-01T09:01:54.089Z",
+    "reasoning": "Strong earnings momentum"
+  },
+  {
+    "symbol": "RCL",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Hold",
+    "newRating": "Buy",
+    "previousTarget": 469.5475020458758,
+    "newTarget": 429.49993931688255,
+    "date": "2025-08-02T11:42:31.956Z",
+    "reasoning": "Compelling growth story"
+  }
+]

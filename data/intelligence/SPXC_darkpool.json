@@ -1,0 +1,43 @@
+[
+  {
+    "symbol": "SPXC",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5743839,
+    "totalVolume": 9303853,
+    "darkPoolRatio": 0.6173613233141151,
+    "avgDarkPoolSize": 1287,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 109991,
+        "price": 454.2312647202358,
+        "timestamp": "2025-08-03T14:55:09.798Z"
+      },
+      {
+        "size": 82444,
+        "price": 459.41851498999324,
+        "timestamp": "2025-08-03T11:32:07.306Z"
+      },
+      {
+        "size": 91975,
+        "price": 459.8290728060292,
+        "timestamp": "2025-08-03T09:21:12.937Z"
+      },
+      {
+        "size": 77424,
+        "price": 461.78238651895083,
+        "timestamp": "2025-08-03T14:04:01.635Z"
+      },
+      {
+        "size": 91450,
+        "price": 453.57529434244935,
+        "timestamp": "2025-08-03T11:46:11.659Z"
+      },
+      {
+        "size": 53084,
+        "price": 458.78440714075333,
+        "timestamp": "2025-08-03T13:51:46.886Z"
+      }
+    ]
+  }
+]

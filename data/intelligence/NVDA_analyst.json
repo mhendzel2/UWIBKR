@@ -22,5 +22,29 @@
     "newTarget": 198.5535392143485,
     "date": "2025-07-30T13:02:33.280Z",
     "reasoning": "Improved market position"
+  },
+  {
+    "symbol": "NVDA",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 452.4976525292877,
+    "newTarget": 485.5419086485183,
+    "date": "2025-08-01T21:35:22.533Z",
+    "reasoning": "Attractive valuation"
+  },
+  {
+    "symbol": "NVDA",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Buy",
+    "previousTarget": 523.6434757111988,
+    "newTarget": 524.8202313309688,
+    "date": "2025-08-02T21:02:14.232Z",
+    "reasoning": "Fair valuation"
   }
 ]

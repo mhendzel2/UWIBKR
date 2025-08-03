@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "HLI",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 30084,
+    "price": 449.15236565251496,
+    "value": 13512299.76829026,
+    "date": "2025-07-31T07:55:27.863Z",
+    "filingDate": "2025-08-01T08:25:52.963Z",
+    "ownershipPercent": 4.2353389205998955
+  },
+  {
+    "symbol": "HLI",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 8249,
+    "price": 456.75185186830714,
+    "value": 3767746.0260616657,
+    "date": "2025-07-31T19:55:57.967Z",
+    "filingDate": "2025-08-02T14:51:53.397Z",
+    "ownershipPercent": 1.3822267109109343
+  }
+]

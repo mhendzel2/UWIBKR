@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "SKYW",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Outperform",
+    "newRating": "Sell",
+    "previousTarget": 489.3853449903738,
+    "newTarget": 503.06067590065254,
+    "date": "2025-08-02T22:08:42.131Z",
+    "reasoning": "Fair valuation"
+  }
+]

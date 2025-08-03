@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "KGC",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Hold",
+    "previousTarget": 450.5285246141415,
+    "newTarget": 479.1782735506515,
+    "date": "2025-07-31T15:33:57.168Z",
+    "reasoning": "Stable fundamentals"
+  },
+  {
+    "symbol": "KGC",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 413.59594029592114,
+    "newTarget": 454.4552003050642,
+    "date": "2025-08-01T11:26:58.807Z",
+    "reasoning": "Attractive valuation"
+  }
+]

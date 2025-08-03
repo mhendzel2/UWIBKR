@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "MEDP",
+    "headline": "MEDP announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for MEDP with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.4362378754353068,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T10:09:03.303Z",
+    "url": "https://example.com/news/medp-1754238641755"
+  },
+  {
+    "symbol": "MEDP",
+    "headline": "Regulatory approval granted for MEDP new product",
+    "summary": "Recent developments suggest positive momentum for MEDP with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.6407705736697006,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T16:06:50.544Z",
+    "url": "https://example.com/news/medp-1754238641755"
+  }
+]

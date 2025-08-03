@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "GOLF",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Outperform",
+    "previousTarget": 390.62062245659524,
+    "newTarget": 368.9857651794616,
+    "date": "2025-08-03T07:42:40.193Z",
+    "reasoning": "Balanced risk/reward"
+  },
+  {
+    "symbol": "GOLF",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Underperform",
+    "previousTarget": 499.84194471230717,
+    "newTarget": 530.9439722315047,
+    "date": "2025-07-30T20:25:00.361Z",
+    "reasoning": "Attractive valuation"
+  }
+]

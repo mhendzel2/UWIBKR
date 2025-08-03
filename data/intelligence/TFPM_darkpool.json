@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "TFPM",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1543167,
+    "totalVolume": 18869388,
+    "darkPoolRatio": 0.08178150769913682,
+    "avgDarkPoolSize": 6225,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 147430,
+        "price": 458.49792039189373,
+        "timestamp": "2025-08-03T12:24:37.468Z"
+      },
+      {
+        "size": 96312,
+        "price": 462.26592371331014,
+        "timestamp": "2025-08-03T12:53:46.749Z"
+      }
+    ]
+  }
+]

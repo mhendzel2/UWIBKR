@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "AAMI",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 37416,
+    "price": 457.71792221059906,
+    "value": 17125973.777431775,
+    "date": "2025-07-29T12:47:31.936Z",
+    "filingDate": "2025-08-01T09:09:00.954Z",
+    "ownershipPercent": 2.574793211765235
+  },
+  {
+    "symbol": "AAMI",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 34742,
+    "price": 453.9353208806489,
+    "value": 15770620.918035503,
+    "date": "2025-08-03T01:43:27.655Z",
+    "filingDate": "2025-07-31T19:50:38.327Z",
+    "ownershipPercent": 3.172038590742605
+  },
+  {
+    "symbol": "AAMI",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 40991,
+    "price": 445.96366298566727,
+    "value": 18280496.50944549,
+    "date": "2025-07-28T06:51:38.757Z",
+    "filingDate": "2025-07-31T19:33:03.072Z",
+    "ownershipPercent": 1.7791565971443613
+  }
+]

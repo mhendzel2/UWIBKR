@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "WFC",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5586360,
+    "totalVolume": 10873522,
+    "darkPoolRatio": 0.513758099721507,
+    "avgDarkPoolSize": 1039,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 56618,
+        "price": 461.09403669369937,
+        "timestamp": "2025-08-03T12:57:42.477Z"
+      },
+      {
+        "size": 140211,
+        "price": 455.27625739796116,
+        "timestamp": "2025-08-03T09:20:21.886Z"
+      },
+      {
+        "size": 51836,
+        "price": 456.36887478326287,
+        "timestamp": "2025-08-03T14:50:00.672Z"
+      },
+      {
+        "size": 85602,
+        "price": 458.58197323963475,
+        "timestamp": "2025-08-03T12:38:13.856Z"
+      }
+    ]
+  }
+]

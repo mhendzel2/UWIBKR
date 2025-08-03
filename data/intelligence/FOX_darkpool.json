@@ -1,0 +1,43 @@
+[
+  {
+    "symbol": "FOX",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5165516,
+    "totalVolume": 5072876,
+    "darkPoolRatio": 1.0182618301728645,
+    "avgDarkPoolSize": 8157,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 75452,
+        "price": 456.13881315516505,
+        "timestamp": "2025-08-03T13:15:09.536Z"
+      },
+      {
+        "size": 138850,
+        "price": 458.12451418832563,
+        "timestamp": "2025-08-03T16:00:07.369Z"
+      },
+      {
+        "size": 131682,
+        "price": 458.2135163287307,
+        "timestamp": "2025-08-03T15:15:32.806Z"
+      },
+      {
+        "size": 69887,
+        "price": 459.72622608283126,
+        "timestamp": "2025-08-03T15:13:17.877Z"
+      },
+      {
+        "size": 50609,
+        "price": 455.7961035647637,
+        "timestamp": "2025-08-03T15:04:01.138Z"
+      },
+      {
+        "size": 94170,
+        "price": 453.3164073844396,
+        "timestamp": "2025-08-03T14:57:43.096Z"
+      }
+    ]
+  }
+]

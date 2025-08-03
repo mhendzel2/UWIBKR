@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "KAR",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1178857,
+    "totalVolume": 5409928,
+    "darkPoolRatio": 0.2179062272178114,
+    "avgDarkPoolSize": 8343,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 144034,
+        "price": 448.6151675661984,
+        "timestamp": "2025-08-03T14:29:32.527Z"
+      },
+      {
+        "size": 117576,
+        "price": 455.2993792819315,
+        "timestamp": "2025-08-03T12:09:06.211Z"
+      }
+    ]
+  }
+]

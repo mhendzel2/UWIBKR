@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "JOYY",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 7648,
+    "price": 446.3281775334606,
+    "value": 3413517.9017759063,
+    "date": "2025-07-29T04:18:05.207Z",
+    "filingDate": "2025-08-01T14:12:31.979Z",
+    "ownershipPercent": 1.4018329279739994
+  }
+]

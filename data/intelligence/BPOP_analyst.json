@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "BPOP",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Underperform",
+    "previousTarget": 427.5718545111269,
+    "newTarget": 445.0833812053226,
+    "date": "2025-07-29T23:11:52.200Z",
+    "reasoning": "Fair valuation"
+  }
+]

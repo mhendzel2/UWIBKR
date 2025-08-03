@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "ROOT",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 2817,
+    "price": 461.6875723938072,
+    "value": 1300573.891433355,
+    "date": "2025-08-02T00:23:12.679Z",
+    "filingDate": "2025-08-01T12:51:12.348Z",
+    "ownershipPercent": 1.2541287265951695
+  },
+  {
+    "symbol": "ROOT",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 46634,
+    "price": 458.04741079524103,
+    "value": 21360582.95502527,
+    "date": "2025-07-28T08:08:35.138Z",
+    "filingDate": "2025-08-02T22:03:08.702Z",
+    "ownershipPercent": 3.6252983075252945
+  },
+  {
+    "symbol": "ROOT",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 34537,
+    "price": 441.92987416321444,
+    "value": 15262932.063974937,
+    "date": "2025-07-28T05:00:22.354Z",
+    "filingDate": "2025-08-02T16:25:12.759Z",
+    "ownershipPercent": 0.5448090111935732
+  }
+]

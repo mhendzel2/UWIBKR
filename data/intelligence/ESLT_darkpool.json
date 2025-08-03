@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "ESLT",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3395999,
+    "totalVolume": 6803589,
+    "darkPoolRatio": 0.49914817017900404,
+    "avgDarkPoolSize": 6032,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 71824,
+        "price": 455.2757287187584,
+        "timestamp": "2025-08-03T13:22:19.785Z"
+      },
+      {
+        "size": 109641,
+        "price": 453.3804892015717,
+        "timestamp": "2025-08-03T10:31:01.292Z"
+      },
+      {
+        "size": 84743,
+        "price": 450.5505022089259,
+        "timestamp": "2025-08-03T15:35:35.440Z"
+      }
+    ]
+  }
+]

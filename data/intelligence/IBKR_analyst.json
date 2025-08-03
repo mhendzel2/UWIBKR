@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "IBKR",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Buy",
+    "previousTarget": 505.8172030908293,
+    "newTarget": 531.6431513280788,
+    "date": "2025-08-01T14:31:10.975Z",
+    "reasoning": "Improved market position"
+  }
+]

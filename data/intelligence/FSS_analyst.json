@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "FSS",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Sell",
+    "previousTarget": 496.2778252777486,
+    "newTarget": 483.09307549418406,
+    "date": "2025-08-01T17:25:39.985Z",
+    "reasoning": "Margin pressure concerns"
+  }
+]

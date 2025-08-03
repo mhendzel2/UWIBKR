@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "WCC",
+    "headline": "Regulatory approval granted for WCC new product",
+    "summary": "Recent developments suggest positive momentum for WCC with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.7233538916493174,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T07:22:41.517Z",
+    "url": "https://example.com/news/wcc-1754238647514"
+  },
+  {
+    "symbol": "WCC",
+    "headline": "Analyst upgrades WCC on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for WCC with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.5324661101628996,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T07:31:34.533Z",
+    "url": "https://example.com/news/wcc-1754238647514"
+  },
+  {
+    "symbol": "WCC",
+    "headline": "Regulatory approval granted for WCC new product",
+    "summary": "Recent developments suggest positive momentum for WCC with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.7109810883284651,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T15:51:09.134Z",
+    "url": "https://example.com/news/wcc-1754238647514"
+  }
+]

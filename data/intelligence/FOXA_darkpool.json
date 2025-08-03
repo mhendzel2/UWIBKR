@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "FOXA",
+    "date": "2025-08-03",
+    "darkPoolVolume": 2981432,
+    "totalVolume": 19903180,
+    "darkPoolRatio": 0.1497967661449075,
+    "avgDarkPoolSize": 3806,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 53923,
+        "price": 458.0127572207706,
+        "timestamp": "2025-08-03T15:15:07.567Z"
+      },
+      {
+        "size": 148622,
+        "price": 461.2736773080306,
+        "timestamp": "2025-08-03T14:20:41.813Z"
+      },
+      {
+        "size": 87795,
+        "price": 462.31258780499655,
+        "timestamp": "2025-08-03T13:27:25.746Z"
+      }
+    ]
+  }
+]

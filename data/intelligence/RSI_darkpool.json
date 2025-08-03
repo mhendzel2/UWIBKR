@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "RSI",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3407377,
+    "totalVolume": 10722666,
+    "darkPoolRatio": 0.31777330376605967,
+    "avgDarkPoolSize": 4530,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 149789,
+        "price": 456.415607853954,
+        "timestamp": "2025-08-03T14:58:22.844Z"
+      },
+      {
+        "size": 100914,
+        "price": 454.58810459568156,
+        "timestamp": "2025-08-03T09:12:26.747Z"
+      }
+    ]
+  }
+]

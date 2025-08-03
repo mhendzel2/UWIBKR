@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "TEL",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 18149,
+    "price": 460.06905336010584,
+    "value": 8349793.249432561,
+    "date": "2025-07-29T16:24:22.939Z",
+    "filingDate": "2025-08-01T10:11:10.692Z",
+    "ownershipPercent": 0.3468159667052194
+  },
+  {
+    "symbol": "TEL",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 10554,
+    "price": 447.3393580765876,
+    "value": 4721219.585140306,
+    "date": "2025-07-31T19:18:45.112Z",
+    "filingDate": "2025-08-03T03:08:01.412Z",
+    "ownershipPercent": 3.8072795517981906
+  },
+  {
+    "symbol": "TEL",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 38266,
+    "price": 449.1412121590934,
+    "value": 17186837.624479868,
+    "date": "2025-07-31T19:16:12.862Z",
+    "filingDate": "2025-08-01T19:03:59.557Z",
+    "ownershipPercent": 0.9874171358063032
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "JCI",
+    "headline": "JCI announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for JCI with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.49538060367102477,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T06:21:07.974Z",
+    "url": "https://example.com/news/jci-1754238644054"
+  },
+  {
+    "symbol": "JCI",
+    "headline": "JCI reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for JCI with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.6336437640884557,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T08:50:51.258Z",
+    "url": "https://example.com/news/jci-1754238644054"
+  }
+]

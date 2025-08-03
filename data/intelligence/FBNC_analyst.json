@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "FBNC",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 518.55474300086,
+    "newTarget": 476.81093866777934,
+    "date": "2025-08-03T13:29:59.245Z",
+    "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "FBNC",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Underperform",
+    "newRating": "Underperform",
+    "previousTarget": 431.55100193080403,
+    "newTarget": 408.9662782904637,
+    "date": "2025-07-31T20:14:00.788Z",
+    "reasoning": "Strong management team"
+  }
+]

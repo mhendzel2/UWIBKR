@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "COUR",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Outperform",
+    "newRating": "Buy",
+    "previousTarget": 457.2404413838282,
+    "newTarget": 500.7342939912814,
+    "date": "2025-07-29T16:55:22.853Z",
+    "reasoning": "Margin pressure concerns"
+  },
+  {
+    "symbol": "COUR",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 457.522669277697,
+    "newTarget": 478.51824916593614,
+    "date": "2025-07-31T09:10:47.883Z",
+    "reasoning": "Strong management team"
+  }
+]

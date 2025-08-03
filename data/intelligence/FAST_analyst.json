@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "FAST",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Outperform",
+    "newRating": "Underperform",
+    "previousTarget": 518.8317047723534,
+    "newTarget": 479.067558394274,
+    "date": "2025-07-31T15:18:18.410Z",
+    "reasoning": "Improved market position"
+  },
+  {
+    "symbol": "FAST",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Underperform",
+    "newRating": "Hold",
+    "previousTarget": 443.62303364170606,
+    "newTarget": 450.5354939290392,
+    "date": "2025-08-03T04:59:06.358Z",
+    "reasoning": "Attractive valuation"
+  }
+]

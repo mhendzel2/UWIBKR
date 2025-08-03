@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "CCEP",
+    "headline": "CCEP announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for CCEP with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.4075203979744943,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T09:07:21.406Z",
+    "url": "https://example.com/news/ccep-1754238647954"
+  },
+  {
+    "symbol": "CCEP",
+    "headline": "CCEP reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for CCEP with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.8233155614091116,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T08:00:10.932Z",
+    "url": "https://example.com/news/ccep-1754238647954"
+  },
+  {
+    "symbol": "CCEP",
+    "headline": "Analyst upgrades CCEP on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for CCEP with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.7103146154611224,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T10:01:49.728Z",
+    "url": "https://example.com/news/ccep-1754238647957"
+  }
+]

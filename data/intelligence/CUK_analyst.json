@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "CUK",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Sell",
+    "newRating": "Sell",
+    "previousTarget": 510.4375336171305,
+    "newTarget": 549.030285389668,
+    "date": "2025-08-02T06:51:19.768Z",
+    "reasoning": "Competitive headwinds"
+  }
+]

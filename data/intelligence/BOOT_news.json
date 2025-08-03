@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "BOOT",
+    "headline": "BOOT announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for BOOT with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.6799165293398023,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T12:12:16.130Z",
+    "url": "https://example.com/news/boot-1754238643016"
+  },
+  {
+    "symbol": "BOOT",
+    "headline": "Analyst upgrades BOOT on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for BOOT with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.7663921785279497,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T05:40:48.767Z",
+    "url": "https://example.com/news/boot-1754238643016"
+  }
+]

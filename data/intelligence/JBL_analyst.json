@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "JBL",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Outperform",
+    "newRating": "Underperform",
+    "previousTarget": 472.2502558104405,
+    "newTarget": 454.19830584599833,
+    "date": "2025-08-02T06:29:01.437Z",
+    "reasoning": "Competitive headwinds"
+  },
+  {
+    "symbol": "JBL",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Buy",
+    "newRating": "Buy",
+    "previousTarget": 518.528083541846,
+    "newTarget": 550.107032454632,
+    "date": "2025-08-03T08:15:21.568Z",
+    "reasoning": "Improved market position"
+  }
+]

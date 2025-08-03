@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "WFC",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 22035,
+    "price": 462.82718983031526,
+    "value": 10198397.127910998,
+    "date": "2025-08-01T19:46:36.412Z",
+    "filingDate": "2025-08-03T03:15:37.360Z",
+    "ownershipPercent": 4.102079758466987
+  }
+]

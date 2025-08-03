@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "CAT",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 32317,
+    "price": 458.9694206057397,
+    "value": 14832514.76571569,
+    "date": "2025-07-28T11:16:05.097Z",
+    "filingDate": "2025-08-01T13:40:20.671Z",
+    "ownershipPercent": 0.5892136497454402
+  },
+  {
+    "symbol": "CAT",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 32874,
+    "price": 466.0339747991487,
+    "value": 15320400.887547215,
+    "date": "2025-08-02T06:53:41.586Z",
+    "filingDate": "2025-08-01T02:07:48.025Z",
+    "ownershipPercent": 2.7031091336642965
+  },
+  {
+    "symbol": "CAT",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 41252,
+    "price": 454.89461970976566,
+    "value": 18765312.852267254,
+    "date": "2025-08-02T19:29:54.708Z",
+    "filingDate": "2025-08-02T23:57:22.490Z",
+    "ownershipPercent": 3.8111691498579003
+  }
+]

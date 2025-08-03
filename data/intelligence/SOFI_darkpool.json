@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "SOFI",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4790737,
+    "totalVolume": 9881305,
+    "darkPoolRatio": 0.4848283703417717,
+    "avgDarkPoolSize": 2480,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 54705,
+        "price": 455.09883865649704,
+        "timestamp": "2025-08-03T09:18:52.380Z"
+      },
+      {
+        "size": 120412,
+        "price": 460.52041443642463,
+        "timestamp": "2025-08-03T13:20:19.621Z"
+      }
+    ]
+  }
+]

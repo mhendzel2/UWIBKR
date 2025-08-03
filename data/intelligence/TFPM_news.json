@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "TFPM",
+    "headline": "TFPM raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for TFPM with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.9066719027534414,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T12:36:22.142Z",
+    "url": "https://example.com/news/tfpm-1754238611005"
+  },
+  {
+    "symbol": "TFPM",
+    "headline": "TFPM reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for TFPM with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.6199623917306482,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T13:04:29.092Z",
+    "url": "https://example.com/news/tfpm-1754238611006"
+  }
+]

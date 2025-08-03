@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "PRM",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4636514,
+    "totalVolume": 14102104,
+    "darkPoolRatio": 0.32878171938031375,
+    "avgDarkPoolSize": 1975,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 121782,
+        "price": 455.3446340536764,
+        "timestamp": "2025-08-03T16:03:34.343Z"
+      },
+      {
+        "size": 84962,
+        "price": 456.9393159581585,
+        "timestamp": "2025-08-03T15:24:00.896Z"
+      },
+      {
+        "size": 58580,
+        "price": 455.97333392393534,
+        "timestamp": "2025-08-03T11:23:44.423Z"
+      },
+      {
+        "size": 54843,
+        "price": 455.28353079626964,
+        "timestamp": "2025-08-03T12:28:25.449Z"
+      }
+    ]
+  }
+]

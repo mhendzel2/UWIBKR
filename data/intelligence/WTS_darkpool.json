@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "WTS",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3033084,
+    "totalVolume": 6112395,
+    "darkPoolRatio": 0.4962185853499324,
+    "avgDarkPoolSize": 9508,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 68339,
+        "price": 462.1968418699115,
+        "timestamp": "2025-08-03T15:31:04.143Z"
+      },
+      {
+        "size": 114102,
+        "price": 453.98226376887135,
+        "timestamp": "2025-08-03T13:08:55.550Z"
+      },
+      {
+        "size": 100635,
+        "price": 456.4913439792459,
+        "timestamp": "2025-08-03T14:16:14.121Z"
+      },
+      {
+        "size": 123719,
+        "price": 455.32676230333203,
+        "timestamp": "2025-08-03T09:37:18.758Z"
+      }
+    ]
+  }
+]

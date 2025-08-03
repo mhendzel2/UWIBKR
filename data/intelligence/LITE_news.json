@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "LITE",
+    "headline": "Regulatory approval granted for LITE new product",
+    "summary": "Recent developments suggest positive momentum for LITE with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.7236401528384314,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T09:19:01.472Z",
+    "url": "https://example.com/news/lite-1754238619384"
+  },
+  {
+    "symbol": "LITE",
+    "headline": "LITE announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for LITE with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.670104937355521,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T14:12:31.635Z",
+    "url": "https://example.com/news/lite-1754238619384"
+  }
+]

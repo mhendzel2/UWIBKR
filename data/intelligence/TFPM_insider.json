@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "TFPM",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 22843,
+    "price": 451.49966386459135,
+    "value": 10313606.82165886,
+    "date": "2025-07-29T18:23:33.342Z",
+    "filingDate": "2025-08-02T01:41:20.245Z",
+    "ownershipPercent": 0.8456720616611945
+  }
+]

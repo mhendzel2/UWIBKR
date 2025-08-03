@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "GTES",
+    "headline": "GTES raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for GTES with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.7708570986548002,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T07:25:23.057Z",
+    "url": "https://example.com/news/gtes-1754238646156"
+  },
+  {
+    "symbol": "GTES",
+    "headline": "Analyst upgrades GTES on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for GTES with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.5429525289218052,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T11:10:28.441Z",
+    "url": "https://example.com/news/gtes-1754238646158"
+  },
+  {
+    "symbol": "GTES",
+    "headline": "GTES raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for GTES with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.8355038173522895,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T09:25:07.163Z",
+    "url": "https://example.com/news/gtes-1754238646158"
+  }
+]

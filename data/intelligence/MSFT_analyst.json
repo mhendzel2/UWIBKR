@@ -22,5 +22,29 @@
     "newTarget": 164.7316672922075,
     "date": "2025-08-01T19:16:11.434Z",
     "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "MSFT",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Outperform",
+    "previousTarget": 512.9912486803273,
+    "newTarget": 500.8431663243684,
+    "date": "2025-08-01T17:32:22.479Z",
+    "reasoning": "Competitive headwinds"
+  },
+  {
+    "symbol": "MSFT",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Sell",
+    "newRating": "Underperform",
+    "previousTarget": 550.0490442983034,
+    "newTarget": 499.04332232302824,
+    "date": "2025-08-03T03:12:51.378Z",
+    "reasoning": "Positive sector outlook"
   }
 ]

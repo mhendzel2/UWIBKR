@@ -31,5 +31,38 @@
     "category": "guidance",
     "publishedAt": "2025-08-02T01:35:01.982Z",
     "url": "https://example.com/news/amzn-1754101860483"
+  },
+  {
+    "symbol": "AMZN",
+    "headline": "AMZN raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for AMZN with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.6542702538198262,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T15:37:17.094Z",
+    "url": "https://example.com/news/amzn-1754238603185"
+  },
+  {
+    "symbol": "AMZN",
+    "headline": "Analyst upgrades AMZN on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for AMZN with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.5790585109356943,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T13:41:05.084Z",
+    "url": "https://example.com/news/amzn-1754238603186"
+  },
+  {
+    "symbol": "AMZN",
+    "headline": "Regulatory approval granted for AMZN new product",
+    "summary": "Recent developments suggest positive momentum for AMZN with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.681731632176245,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T11:12:33.894Z",
+    "url": "https://example.com/news/amzn-1754238603186"
   }
 ]

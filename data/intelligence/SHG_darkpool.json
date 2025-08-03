@@ -1,0 +1,43 @@
+[
+  {
+    "symbol": "SHG",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3360824,
+    "totalVolume": 19290012,
+    "darkPoolRatio": 0.1742261228245996,
+    "avgDarkPoolSize": 1754,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 55924,
+        "price": 457.34777762049185,
+        "timestamp": "2025-08-03T16:19:40.693Z"
+      },
+      {
+        "size": 62450,
+        "price": 458.9153601301024,
+        "timestamp": "2025-08-03T09:56:05.105Z"
+      },
+      {
+        "size": 66796,
+        "price": 454.21920736371857,
+        "timestamp": "2025-08-03T11:28:07.885Z"
+      },
+      {
+        "size": 121499,
+        "price": 454.5059351312949,
+        "timestamp": "2025-08-03T09:12:59.881Z"
+      },
+      {
+        "size": 55777,
+        "price": 459.9765550843215,
+        "timestamp": "2025-08-03T10:42:30.695Z"
+      },
+      {
+        "size": 108999,
+        "price": 458.8615637458395,
+        "timestamp": "2025-08-03T11:47:46.905Z"
+      }
+    ]
+  }
+]

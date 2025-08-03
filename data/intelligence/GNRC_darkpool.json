@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "GNRC",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4647578,
+    "totalVolume": 6995969,
+    "darkPoolRatio": 0.6643222690094824,
+    "avgDarkPoolSize": 2945,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 143814,
+        "price": 459.15773083722314,
+        "timestamp": "2025-08-03T09:02:49.096Z"
+      },
+      {
+        "size": 135749,
+        "price": 461.21522375776266,
+        "timestamp": "2025-08-03T12:29:26.966Z"
+      },
+      {
+        "size": 94598,
+        "price": 458.5581710669534,
+        "timestamp": "2025-08-03T13:28:57.559Z"
+      },
+      {
+        "size": 143908,
+        "price": 457.55785719552495,
+        "timestamp": "2025-08-03T16:17:46.747Z"
+      }
+    ]
+  }
+]

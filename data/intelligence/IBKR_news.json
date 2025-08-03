@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "IBKR",
+    "headline": "IBKR announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for IBKR with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.6853744931893149,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T09:26:38.264Z",
+    "url": "https://example.com/news/ibkr-1754238614178"
+  },
+  {
+    "symbol": "IBKR",
+    "headline": "IBKR announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for IBKR with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5066280133819088,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T12:29:59.399Z",
+    "url": "https://example.com/news/ibkr-1754238614178"
+  },
+  {
+    "symbol": "IBKR",
+    "headline": "IBKR raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for IBKR with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.8071161311145539,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T15:22:54.553Z",
+    "url": "https://example.com/news/ibkr-1754238614178"
+  }
+]

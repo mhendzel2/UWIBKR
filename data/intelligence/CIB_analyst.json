@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "CIB",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Underperform",
+    "previousTarget": 401.0077370818614,
+    "newTarget": 428.3549422139468,
+    "date": "2025-07-31T07:20:10.112Z",
+    "reasoning": "Balanced risk/reward"
+  },
+  {
+    "symbol": "CIB",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Sell",
+    "previousTarget": 474.6750774938091,
+    "newTarget": 506.5028334136358,
+    "date": "2025-07-29T23:37:57.460Z",
+    "reasoning": "Balanced risk/reward"
+  }
+]

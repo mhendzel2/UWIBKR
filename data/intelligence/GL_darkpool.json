@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "GL",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4360991,
+    "totalVolume": 14496010,
+    "darkPoolRatio": 0.3008407830844488,
+    "avgDarkPoolSize": 10707,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 99024,
+        "price": 461.5235480526554,
+        "timestamp": "2025-08-03T12:44:31.860Z"
+      },
+      {
+        "size": 130183,
+        "price": 458.98048576573564,
+        "timestamp": "2025-08-03T14:18:11.198Z"
+      },
+      {
+        "size": 121004,
+        "price": 462.91944301807007,
+        "timestamp": "2025-08-03T09:16:20.680Z"
+      },
+      {
+        "size": 109081,
+        "price": 457.51355300257666,
+        "timestamp": "2025-08-03T16:30:27.255Z"
+      },
+      {
+        "size": 136419,
+        "price": 457.4901359101776,
+        "timestamp": "2025-08-03T14:10:02.300Z"
+      }
+    ]
+  }
+]

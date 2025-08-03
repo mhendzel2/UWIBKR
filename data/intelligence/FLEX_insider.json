@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "FLEX",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 50376,
+    "price": 458.313182020301,
+    "value": 23087984.857454684,
+    "date": "2025-07-30T10:06:17.434Z",
+    "filingDate": "2025-08-01T11:34:32.357Z",
+    "ownershipPercent": 1.5153626009033494
+  },
+  {
+    "symbol": "FLEX",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 41702,
+    "price": 453.16012511193196,
+    "value": 18897683.537417788,
+    "date": "2025-07-31T06:00:16.056Z",
+    "filingDate": "2025-08-03T13:39:51.726Z",
+    "ownershipPercent": 3.7900221074041873
+  },
+  {
+    "symbol": "FLEX",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 49816,
+    "price": 450.76747371979985,
+    "value": 22455432.47082555,
+    "date": "2025-07-28T02:31:42.080Z",
+    "filingDate": "2025-08-03T06:17:12.580Z",
+    "ownershipPercent": 3.9563454560303923
+  }
+]

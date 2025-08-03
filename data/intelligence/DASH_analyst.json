@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "DASH",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Hold",
+    "previousTarget": 501.6832778391519,
+    "newTarget": 495.32809971904516,
+    "date": "2025-07-30T23:45:07.549Z",
+    "reasoning": "Strong management team"
+  },
+  {
+    "symbol": "DASH",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Underperform",
+    "newRating": "Underperform",
+    "previousTarget": 447.99271611804835,
+    "newTarget": 433.50439294345216,
+    "date": "2025-08-03T12:44:24.246Z",
+    "reasoning": "Stable fundamentals"
+  }
+]

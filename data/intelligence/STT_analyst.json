@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "STT",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Underperform",
+    "previousTarget": 450.16455050395626,
+    "newTarget": 491.4932681538507,
+    "date": "2025-08-02T14:51:42.992Z",
+    "reasoning": "Stable fundamentals"
+  }
+]

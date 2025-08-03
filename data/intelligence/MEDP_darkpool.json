@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "MEDP",
+    "date": "2025-08-03",
+    "darkPoolVolume": 2078156,
+    "totalVolume": 6649826,
+    "darkPoolRatio": 0.3125128386817941,
+    "avgDarkPoolSize": 5842,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 114668,
+        "price": 461.7606904252337,
+        "timestamp": "2025-08-03T11:43:08.333Z"
+      },
+      {
+        "size": 73828,
+        "price": 455.12906245308875,
+        "timestamp": "2025-08-03T14:27:08.782Z"
+      },
+      {
+        "size": 91154,
+        "price": 459.7224851126862,
+        "timestamp": "2025-08-03T09:03:16.985Z"
+      }
+    ]
+  }
+]

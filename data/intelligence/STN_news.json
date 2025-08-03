@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "STN",
+    "headline": "Analyst upgrades STN on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for STN with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.8015352603354708,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T09:57:39.631Z",
+    "url": "https://example.com/news/stn-1754238635038"
+  },
+  {
+    "symbol": "STN",
+    "headline": "STN announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for STN with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.35612801767873503,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T12:42:47.507Z",
+    "url": "https://example.com/news/stn-1754238635038"
+  },
+  {
+    "symbol": "STN",
+    "headline": "Analyst upgrades STN on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for STN with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.8116312501139326,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T06:35:31.240Z",
+    "url": "https://example.com/news/stn-1754238635038"
+  }
+]

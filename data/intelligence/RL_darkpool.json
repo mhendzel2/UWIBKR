@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "RL",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5352388,
+    "totalVolume": 13891431,
+    "darkPoolRatio": 0.3853014135116821,
+    "avgDarkPoolSize": 10727,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 55684,
+        "price": 453.6718521098111,
+        "timestamp": "2025-08-03T12:27:01.788Z"
+      },
+      {
+        "size": 98891,
+        "price": 457.77971184285474,
+        "timestamp": "2025-08-03T15:46:39.881Z"
+      },
+      {
+        "size": 91682,
+        "price": 452.3355245006855,
+        "timestamp": "2025-08-03T12:51:01.504Z"
+      },
+      {
+        "size": 70616,
+        "price": 452.17273054689383,
+        "timestamp": "2025-08-03T10:23:42.106Z"
+      }
+    ]
+  }
+]

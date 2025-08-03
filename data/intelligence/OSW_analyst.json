@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "OSW",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Hold",
+    "previousTarget": 397.6473767527178,
+    "newTarget": 412.428296004571,
+    "date": "2025-08-02T06:14:42.925Z",
+    "reasoning": "Stable fundamentals"
+  },
+  {
+    "symbol": "OSW",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Outperform",
+    "previousTarget": 399.07042579076244,
+    "newTarget": 404.05139763008515,
+    "date": "2025-08-03T01:33:40.196Z",
+    "reasoning": "Stable fundamentals"
+  }
+]

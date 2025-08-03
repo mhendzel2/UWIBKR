@@ -9,5 +9,38 @@
     "category": "general",
     "publishedAt": "2025-08-01T14:40:43.351Z",
     "url": "https://example.com/news/spy-1754101860361"
+  },
+  {
+    "symbol": "SPY",
+    "headline": "SPY announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for SPY with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.6944388650892152,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T13:26:43.282Z",
+    "url": "https://example.com/news/spy-1754238601208"
+  },
+  {
+    "symbol": "SPY",
+    "headline": "SPY raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for SPY with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.7531490521298968,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T09:36:11.017Z",
+    "url": "https://example.com/news/spy-1754238601208"
+  },
+  {
+    "symbol": "SPY",
+    "headline": "SPY reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for SPY with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.5954410846059688,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T12:48:09.986Z",
+    "url": "https://example.com/news/spy-1754238601209"
   }
 ]

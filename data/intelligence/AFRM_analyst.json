@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "AFRM",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Sell",
+    "newRating": "Sell",
+    "previousTarget": 513.0855031008432,
+    "newTarget": 477.07537907745507,
+    "date": "2025-08-03T04:37:12.084Z",
+    "reasoning": "Positive sector outlook"
+  }
+]

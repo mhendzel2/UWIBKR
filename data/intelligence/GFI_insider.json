@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "GFI",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 1184,
+    "price": 461.35879646416936,
+    "value": 546248.8150135765,
+    "date": "2025-07-30T14:12:29.843Z",
+    "filingDate": "2025-08-03T14:23:19.931Z",
+    "ownershipPercent": 3.835125170702014
+  },
+  {
+    "symbol": "GFI",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 32782,
+    "price": 453.088831718961,
+    "value": 14853158.08141098,
+    "date": "2025-08-02T10:35:21.604Z",
+    "filingDate": "2025-08-01T05:02:36.774Z",
+    "ownershipPercent": 2.743530055982714
+  },
+  {
+    "symbol": "GFI",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 3144,
+    "price": 445.87975519443614,
+    "value": 1401845.9503313072,
+    "date": "2025-08-01T04:29:58.996Z",
+    "filingDate": "2025-08-02T04:36:31.913Z",
+    "ownershipPercent": 0.16758758685829314
+  }
+]

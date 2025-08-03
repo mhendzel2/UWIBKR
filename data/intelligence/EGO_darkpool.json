@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "EGO",
+    "date": "2025-08-03",
+    "darkPoolVolume": 2113392,
+    "totalVolume": 12429422,
+    "darkPoolRatio": 0.17003139808110143,
+    "avgDarkPoolSize": 7251,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 91050,
+        "price": 451.36596741269136,
+        "timestamp": "2025-08-03T11:57:17.160Z"
+      },
+      {
+        "size": 133754,
+        "price": 452.7721676728571,
+        "timestamp": "2025-08-03T12:49:40.285Z"
+      },
+      {
+        "size": 67365,
+        "price": 450.0711356714866,
+        "timestamp": "2025-08-03T09:51:38.272Z"
+      },
+      {
+        "size": 69801,
+        "price": 453.1691274173158,
+        "timestamp": "2025-08-03T14:19:05.782Z"
+      },
+      {
+        "size": 111969,
+        "price": 452.41284225300427,
+        "timestamp": "2025-08-03T10:09:38.729Z"
+      }
+    ]
+  }
+]

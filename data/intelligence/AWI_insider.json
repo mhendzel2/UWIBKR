@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "AWI",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 44431,
+    "price": 466.21955723886174,
+    "value": 20714601.147679865,
+    "date": "2025-08-01T23:00:17.941Z",
+    "filingDate": "2025-08-02T01:14:01.103Z",
+    "ownershipPercent": 4.388501402034089
+  }
+]

@@ -1,0 +1,43 @@
+[
+  {
+    "symbol": "CASY",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4682656,
+    "totalVolume": 19336655,
+    "darkPoolRatio": 0.24216473842037312,
+    "avgDarkPoolSize": 3299,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 61270,
+        "price": 447.63069055816817,
+        "timestamp": "2025-08-03T11:06:54.169Z"
+      },
+      {
+        "size": 51518,
+        "price": 449.3756442434746,
+        "timestamp": "2025-08-03T15:51:36.524Z"
+      },
+      {
+        "size": 114574,
+        "price": 448.0940756272711,
+        "timestamp": "2025-08-03T11:35:29.380Z"
+      },
+      {
+        "size": 114206,
+        "price": 455.10711349087524,
+        "timestamp": "2025-08-03T15:06:48.560Z"
+      },
+      {
+        "size": 71815,
+        "price": 454.52547068284446,
+        "timestamp": "2025-08-03T12:07:19.088Z"
+      },
+      {
+        "size": 60109,
+        "price": 451.4633045911573,
+        "timestamp": "2025-08-03T15:35:55.200Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "CRDO",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 1021,
+    "price": 466.9530876933351,
+    "value": 476759.1025348951,
+    "date": "2025-08-01T01:40:22.317Z",
+    "filingDate": "2025-08-03T10:15:05.617Z",
+    "ownershipPercent": 1.1918793044702847
+  },
+  {
+    "symbol": "CRDO",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 38402,
+    "price": 455.2649564568055,
+    "value": 17483084.857854247,
+    "date": "2025-08-03T08:08:57.059Z",
+    "filingDate": "2025-08-02T13:20:49.985Z",
+    "ownershipPercent": 4.290129476478744
+  },
+  {
+    "symbol": "CRDO",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 49311,
+    "price": 455.6377497817815,
+    "value": 22467953.07948943,
+    "date": "2025-07-28T12:42:17.489Z",
+    "filingDate": "2025-07-31T17:48:51.764Z",
+    "ownershipPercent": 3.1121341355880583
+  }
+]

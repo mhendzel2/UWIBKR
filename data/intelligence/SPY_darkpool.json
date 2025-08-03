@@ -24,5 +24,36 @@
         "timestamp": "2025-08-01T22:57:20.830Z"
       }
     ]
+  },
+  {
+    "symbol": "SPY",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5746285,
+    "totalVolume": 12358579,
+    "darkPoolRatio": 0.46496324536987627,
+    "avgDarkPoolSize": 1613,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 140076,
+        "price": 626.4611215714053,
+        "timestamp": "2025-08-03T14:04:11.269Z"
+      },
+      {
+        "size": 124527,
+        "price": 624.3869384562329,
+        "timestamp": "2025-08-03T14:15:11.976Z"
+      },
+      {
+        "size": 100747,
+        "price": 618.5416926738142,
+        "timestamp": "2025-08-03T08:34:22.842Z"
+      },
+      {
+        "size": 117793,
+        "price": 624.7139694971592,
+        "timestamp": "2025-08-03T13:45:35.762Z"
+      }
+    ]
   }
 ]

@@ -29,5 +29,41 @@
         "timestamp": "2025-08-01T22:56:42.467Z"
       }
     ]
+  },
+  {
+    "symbol": "XLE",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5575153,
+    "totalVolume": 19564015,
+    "darkPoolRatio": 0.28496977742043234,
+    "avgDarkPoolSize": 6431,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 137789,
+        "price": 452.58251338558296,
+        "timestamp": "2025-08-03T09:17:05.215Z"
+      },
+      {
+        "size": 84224,
+        "price": 456.8920951274542,
+        "timestamp": "2025-08-03T13:26:32.061Z"
+      },
+      {
+        "size": 65979,
+        "price": 453.09399048007276,
+        "timestamp": "2025-08-03T11:14:57.769Z"
+      },
+      {
+        "size": 120072,
+        "price": 456.27006287286224,
+        "timestamp": "2025-08-03T12:23:47.348Z"
+      },
+      {
+        "size": 97632,
+        "price": 454.7035523089917,
+        "timestamp": "2025-08-03T16:23:26.909Z"
+      }
+    ]
   }
 ]

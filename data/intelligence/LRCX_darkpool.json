@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "LRCX",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5016805,
+    "totalVolume": 11571311,
+    "darkPoolRatio": 0.4335554545202354,
+    "avgDarkPoolSize": 2289,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 61387,
+        "price": 458.2186924076588,
+        "timestamp": "2025-08-03T11:11:22.782Z"
+      },
+      {
+        "size": 126578,
+        "price": 455.9160523095766,
+        "timestamp": "2025-08-03T09:37:41.661Z"
+      },
+      {
+        "size": 133595,
+        "price": 454.38475747983165,
+        "timestamp": "2025-08-03T09:25:17.699Z"
+      },
+      {
+        "size": 80648,
+        "price": 451.0179859590671,
+        "timestamp": "2025-08-03T12:41:36.073Z"
+      }
+    ]
+  }
+]

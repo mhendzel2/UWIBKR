@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "ALLE",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 25639,
+    "price": 453.27269523155314,
+    "value": 11621458.633041792,
+    "date": "2025-07-31T15:01:57.305Z",
+    "filingDate": "2025-08-01T13:39:45.653Z",
+    "ownershipPercent": 1.7939208226505288
+  },
+  {
+    "symbol": "ALLE",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 19751,
+    "price": 460.4270242608302,
+    "value": 9093894.156175656,
+    "date": "2025-08-01T16:56:00.403Z",
+    "filingDate": "2025-08-01T07:24:08.925Z",
+    "ownershipPercent": 4.902244581918707
+  }
+]

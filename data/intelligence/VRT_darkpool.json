@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "VRT",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4610946,
+    "totalVolume": 19367678,
+    "darkPoolRatio": 0.2380742802518712,
+    "avgDarkPoolSize": 4234,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 139535,
+        "price": 461.2362427871704,
+        "timestamp": "2025-08-03T16:28:24.496Z"
+      },
+      {
+        "size": 63941,
+        "price": 458.12317556660753,
+        "timestamp": "2025-08-03T11:14:47.984Z"
+      },
+      {
+        "size": 73182,
+        "price": 460.6560508862938,
+        "timestamp": "2025-08-03T08:50:23.937Z"
+      },
+      {
+        "size": 125869,
+        "price": 457.3017500011466,
+        "timestamp": "2025-08-03T09:12:40.887Z"
+      }
+    ]
+  }
+]

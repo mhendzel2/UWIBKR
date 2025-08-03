@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "TGTX",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 16673,
+    "price": 457.69017545363295,
+    "value": 7631068.295338422,
+    "date": "2025-08-02T06:30:04.131Z",
+    "filingDate": "2025-08-01T17:39:09.141Z",
+    "ownershipPercent": 4.456811219693808
+  }
+]

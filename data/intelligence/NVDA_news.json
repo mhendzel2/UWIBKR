@@ -20,5 +20,16 @@
     "category": "regulatory",
     "publishedAt": "2025-08-02T00:12:23.576Z",
     "url": "https://example.com/news/nvda-1754101860492"
+  },
+  {
+    "symbol": "NVDA",
+    "headline": "Regulatory approval granted for NVDA new product",
+    "summary": "Recent developments suggest positive momentum for NVDA with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.49335643407901464,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T14:47:12.703Z",
+    "url": "https://example.com/news/nvda-1754238603481"
   }
 ]

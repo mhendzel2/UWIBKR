@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "SYF",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Outperform",
+    "newRating": "Underperform",
+    "previousTarget": 437.41460952196536,
+    "newTarget": 413.21442321306586,
+    "date": "2025-08-01T15:24:26.921Z",
+    "reasoning": "Margin pressure concerns"
+  },
+  {
+    "symbol": "SYF",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Buy",
+    "previousTarget": 507.97840185869666,
+    "newTarget": 467.63167160008743,
+    "date": "2025-08-01T01:46:58.634Z",
+    "reasoning": "Balanced risk/reward"
+  }
+]

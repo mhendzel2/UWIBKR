@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "KAR",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Hold",
+    "previousTarget": 431.6374048561033,
+    "newTarget": 396.502345306423,
+    "date": "2025-08-02T04:47:00.803Z",
+    "reasoning": "Valuation concerns"
+  }
+]

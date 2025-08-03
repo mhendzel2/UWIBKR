@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "CAKE",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1129446,
+    "totalVolume": 15624386,
+    "darkPoolRatio": 0.07228738460506544,
+    "avgDarkPoolSize": 9733,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 142487,
+        "price": 450.2817312908005,
+        "timestamp": "2025-08-03T16:18:41.659Z"
+      },
+      {
+        "size": 84223,
+        "price": 451.54359682052706,
+        "timestamp": "2025-08-03T10:27:54.817Z"
+      },
+      {
+        "size": 99573,
+        "price": 451.68148600840493,
+        "timestamp": "2025-08-03T13:28:23.655Z"
+      },
+      {
+        "size": 53281,
+        "price": 451.14010293100023,
+        "timestamp": "2025-08-03T15:53:06.644Z"
+      },
+      {
+        "size": 102613,
+        "price": 458.29162878566416,
+        "timestamp": "2025-08-03T10:39:18.709Z"
+      }
+    ]
+  }
+]

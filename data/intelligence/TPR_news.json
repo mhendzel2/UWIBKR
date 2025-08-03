@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "TPR",
+    "headline": "Regulatory approval granted for TPR new product",
+    "summary": "Recent developments suggest positive momentum for TPR with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.6306103539032909,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T11:32:41.639Z",
+    "url": "https://example.com/news/tpr-1754238631304"
+  },
+  {
+    "symbol": "TPR",
+    "headline": "TPR reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for TPR with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.7356807549726292,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T09:07:48.618Z",
+    "url": "https://example.com/news/tpr-1754238631304"
+  },
+  {
+    "symbol": "TPR",
+    "headline": "TPR reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for TPR with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.8324939583498288,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T09:53:43.479Z",
+    "url": "https://example.com/news/tpr-1754238631305"
+  }
+]

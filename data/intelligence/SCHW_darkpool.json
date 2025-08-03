@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "SCHW",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5070756,
+    "totalVolume": 16859551,
+    "darkPoolRatio": 0.300764593315682,
+    "avgDarkPoolSize": 6245,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 134871,
+        "price": 454.5218062630082,
+        "timestamp": "2025-08-03T15:16:04.686Z"
+      },
+      {
+        "size": 87207,
+        "price": 453.56571944423786,
+        "timestamp": "2025-08-03T10:41:30.246Z"
+      },
+      {
+        "size": 98560,
+        "price": 454.63000313161365,
+        "timestamp": "2025-08-03T14:44:30.768Z"
+      },
+      {
+        "size": 147551,
+        "price": 451.784185729589,
+        "timestamp": "2025-08-03T11:16:40.413Z"
+      },
+      {
+        "size": 80370,
+        "price": 455.4286808962482,
+        "timestamp": "2025-08-03T10:40:37.743Z"
+      }
+    ]
+  }
+]

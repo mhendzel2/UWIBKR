@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "WPM",
+    "headline": "Regulatory approval granted for WPM new product",
+    "summary": "Recent developments suggest positive momentum for WPM with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.5008035507590533,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T10:55:13.339Z",
+    "url": "https://example.com/news/wpm-1754238611634"
+  },
+  {
+    "symbol": "WPM",
+    "headline": "Analyst upgrades WPM on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for WPM with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.6306208132927451,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T08:54:12.058Z",
+    "url": "https://example.com/news/wpm-1754238611634"
+  },
+  {
+    "symbol": "WPM",
+    "headline": "Regulatory approval granted for WPM new product",
+    "summary": "Recent developments suggest positive momentum for WPM with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.6307887065434997,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T14:34:10.998Z",
+    "url": "https://example.com/news/wpm-1754238611634"
+  }
+]

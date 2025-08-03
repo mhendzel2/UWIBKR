@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "GFI",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4935904,
+    "totalVolume": 14861280,
+    "darkPoolRatio": 0.33213182175425,
+    "avgDarkPoolSize": 7105,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 85790,
+        "price": 448.30914322312475,
+        "timestamp": "2025-08-03T14:45:03.961Z"
+      },
+      {
+        "size": 143588,
+        "price": 450.0751311555488,
+        "timestamp": "2025-08-03T09:07:52.439Z"
+      },
+      {
+        "size": 88727,
+        "price": 448.576632379235,
+        "timestamp": "2025-08-03T11:08:07.135Z"
+      },
+      {
+        "size": 55774,
+        "price": 451.4090997436573,
+        "timestamp": "2025-08-03T10:48:37.746Z"
+      }
+    ]
+  }
+]

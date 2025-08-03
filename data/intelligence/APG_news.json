@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "APG",
+    "headline": "APG raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for APG with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.7353123549152086,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T15:43:19.604Z",
+    "url": "https://example.com/news/apg-1754238612059"
+  },
+  {
+    "symbol": "APG",
+    "headline": "APG raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for APG with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.8282591951939229,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T05:55:48.623Z",
+    "url": "https://example.com/news/apg-1754238612061"
+  }
+]

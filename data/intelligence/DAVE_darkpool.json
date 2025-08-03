@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "DAVE",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4515245,
+    "totalVolume": 8187690,
+    "darkPoolRatio": 0.551467507929587,
+    "avgDarkPoolSize": 1741,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 52251,
+        "price": 451.80482378801554,
+        "timestamp": "2025-08-03T14:42:08.263Z"
+      },
+      {
+        "size": 86042,
+        "price": 458.42357231125027,
+        "timestamp": "2025-08-03T09:04:44.346Z"
+      },
+      {
+        "size": 149356,
+        "price": 454.09680760086565,
+        "timestamp": "2025-08-03T08:31:33.030Z"
+      }
+    ]
+  }
+]

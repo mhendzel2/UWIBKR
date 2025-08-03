@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "MCRI",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Outperform",
+    "previousTarget": 516.1254630324117,
+    "newTarget": 522.2567171567835,
+    "date": "2025-08-03T09:09:00.600Z",
+    "reasoning": "Stable fundamentals"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "BVN",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Underperform",
+    "newRating": "Underperform",
+    "previousTarget": 405.73812738404763,
+    "newTarget": 379.7015231060411,
+    "date": "2025-08-02T18:30:06.612Z",
+    "reasoning": "Balanced risk/reward"
+  }
+]

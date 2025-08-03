@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "EAT",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Buy",
+    "previousTarget": 444.73028271687775,
+    "newTarget": 481.17519065736514,
+    "date": "2025-07-30T08:46:12.005Z",
+    "reasoning": "Competitive headwinds"
+  }
+]

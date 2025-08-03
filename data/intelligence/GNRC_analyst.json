@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "GNRC",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Outperform",
+    "previousTarget": 391.9032837521776,
+    "newTarget": 347.33940150802977,
+    "date": "2025-07-29T22:41:16.894Z",
+    "reasoning": "Compelling growth story"
+  }
+]

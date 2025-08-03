@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "AMSC",
+    "headline": "Regulatory approval granted for AMSC new product",
+    "summary": "Recent developments suggest positive momentum for AMSC with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5635747275698759,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T06:34:38.013Z",
+    "url": "https://example.com/news/amsc-1754238606315"
+  },
+  {
+    "symbol": "AMSC",
+    "headline": "AMSC announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for AMSC with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.4125143637877904,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T12:19:07.803Z",
+    "url": "https://example.com/news/amsc-1754238606315"
+  }
+]

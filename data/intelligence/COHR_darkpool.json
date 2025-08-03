@@ -1,0 +1,43 @@
+[
+  {
+    "symbol": "COHR",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1223277,
+    "totalVolume": 7349105,
+    "darkPoolRatio": 0.1664525136053982,
+    "avgDarkPoolSize": 6200,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 92230,
+        "price": 455.0689711515812,
+        "timestamp": "2025-08-03T11:54:28.521Z"
+      },
+      {
+        "size": 95178,
+        "price": 452.9701505731805,
+        "timestamp": "2025-08-03T14:24:13.829Z"
+      },
+      {
+        "size": 143618,
+        "price": 448.6208868124868,
+        "timestamp": "2025-08-03T09:01:19.983Z"
+      },
+      {
+        "size": 65277,
+        "price": 455.12593366951825,
+        "timestamp": "2025-08-03T13:22:42.804Z"
+      },
+      {
+        "size": 136651,
+        "price": 455.91313954872817,
+        "timestamp": "2025-08-03T14:59:12.590Z"
+      },
+      {
+        "size": 83146,
+        "price": 448.02388613337826,
+        "timestamp": "2025-08-03T16:08:09.834Z"
+      }
+    ]
+  }
+]

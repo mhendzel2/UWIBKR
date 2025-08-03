@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "VNT",
+    "headline": "VNT raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for VNT with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.6802395064636009,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T09:30:55.357Z",
+    "url": "https://example.com/news/vnt-1754238642802"
+  },
+  {
+    "symbol": "VNT",
+    "headline": "VNT announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for VNT with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.5663694702140016,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T15:41:30.674Z",
+    "url": "https://example.com/news/vnt-1754238642803"
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "BVN",
+    "headline": "BVN raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for BVN with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.818944704409644,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T04:58:03.610Z",
+    "url": "https://example.com/news/bvn-1754238612480"
+  },
+  {
+    "symbol": "BVN",
+    "headline": "BVN announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for BVN with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.508256739314114,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T13:47:31.570Z",
+    "url": "https://example.com/news/bvn-1754238612481"
+  }
+]

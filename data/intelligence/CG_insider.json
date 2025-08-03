@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "CG",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 28659,
+    "price": 462.6028404278546,
+    "value": 13257734.803821884,
+    "date": "2025-07-30T20:39:15.717Z",
+    "filingDate": "2025-08-02T13:39:19.960Z",
+    "ownershipPercent": 4.609714959227066
+  }
+]

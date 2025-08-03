@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "TEL",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Outperform",
+    "newRating": "Buy",
+    "previousTarget": 479.73462472803186,
+    "newTarget": 454.0755159826066,
+    "date": "2025-08-01T14:08:13.122Z",
+    "reasoning": "Attractive valuation"
+  },
+  {
+    "symbol": "TEL",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 430.8081909365398,
+    "newTarget": 442.27453320133975,
+    "date": "2025-07-31T00:23:44.171Z",
+    "reasoning": "Fair valuation"
+  }
+]

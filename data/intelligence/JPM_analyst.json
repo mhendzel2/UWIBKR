@@ -22,5 +22,17 @@
     "newTarget": 182.83961354133814,
     "date": "2025-07-31T07:20:31.429Z",
     "reasoning": "Strong earnings momentum"
+  },
+  {
+    "symbol": "JPM",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Outperform",
+    "newRating": "Hold",
+    "previousTarget": 507.44555487115616,
+    "newTarget": 547.5590443898127,
+    "date": "2025-08-01T08:27:04.494Z",
+    "reasoning": "Competitive headwinds"
   }
 ]

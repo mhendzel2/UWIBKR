@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "CHEF",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 15033,
+    "price": 459.4629366799987,
+    "value": 6907106.32711042,
+    "date": "2025-07-30T04:17:54.316Z",
+    "filingDate": "2025-08-02T06:20:18.768Z",
+    "ownershipPercent": 4.843257274981649
+  }
+]

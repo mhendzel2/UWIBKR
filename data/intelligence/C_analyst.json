@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "C",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Outperform",
+    "newRating": "Underperform",
+    "previousTarget": 481.4380321939972,
+    "newTarget": 474.56785755213764,
+    "date": "2025-08-01T05:19:59.540Z",
+    "reasoning": "Valuation concerns"
+  },
+  {
+    "symbol": "C",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Hold",
+    "previousTarget": 469.07318012192593,
+    "newTarget": 514.2964251887172,
+    "date": "2025-07-30T19:28:52.920Z",
+    "reasoning": "Margin pressure concerns"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "FTI",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Sell",
+    "newRating": "Sell",
+    "previousTarget": 417.988959568222,
+    "newTarget": 397.47135318283864,
+    "date": "2025-08-01T18:20:45.538Z",
+    "reasoning": "Strong earnings momentum"
+  },
+  {
+    "symbol": "FTI",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Buy",
+    "newRating": "Underperform",
+    "previousTarget": 504.5920137233374,
+    "newTarget": 464.51597059762025,
+    "date": "2025-07-30T07:31:23.030Z",
+    "reasoning": "Strong earnings momentum"
+  }
+]

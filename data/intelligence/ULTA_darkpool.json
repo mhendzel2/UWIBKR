@@ -1,0 +1,43 @@
+[
+  {
+    "symbol": "ULTA",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4626546,
+    "totalVolume": 7597354,
+    "darkPoolRatio": 0.6089680696726781,
+    "avgDarkPoolSize": 3540,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 122864,
+        "price": 456.44500300078283,
+        "timestamp": "2025-08-03T12:49:07.738Z"
+      },
+      {
+        "size": 110894,
+        "price": 459.2443925823065,
+        "timestamp": "2025-08-03T16:20:24.153Z"
+      },
+      {
+        "size": 65556,
+        "price": 456.38311644176855,
+        "timestamp": "2025-08-03T15:27:59.968Z"
+      },
+      {
+        "size": 99798,
+        "price": 458.64830926855296,
+        "timestamp": "2025-08-03T14:25:23.650Z"
+      },
+      {
+        "size": 140238,
+        "price": 456.0179781879786,
+        "timestamp": "2025-08-03T10:45:59.681Z"
+      },
+      {
+        "size": 71454,
+        "price": 456.54555547864004,
+        "timestamp": "2025-08-03T09:49:39.808Z"
+      }
+    ]
+  }
+]

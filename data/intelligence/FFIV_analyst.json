@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "FFIV",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Underperform",
+    "newRating": "Hold",
+    "previousTarget": 433.7522815498095,
+    "newTarget": 412.9941712462263,
+    "date": "2025-07-31T17:03:44.223Z",
+    "reasoning": "Compelling growth story"
+  },
+  {
+    "symbol": "FFIV",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Hold",
+    "previousTarget": 458.89685542881466,
+    "newTarget": 462.2035979810632,
+    "date": "2025-07-31T17:40:32.472Z",
+    "reasoning": "Margin pressure concerns"
+  }
+]

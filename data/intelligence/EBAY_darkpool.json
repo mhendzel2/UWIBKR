@@ -1,0 +1,43 @@
+[
+  {
+    "symbol": "EBAY",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4891286,
+    "totalVolume": 7260383,
+    "darkPoolRatio": 0.6736953133188703,
+    "avgDarkPoolSize": 8256,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 83304,
+        "price": 461.2722675933305,
+        "timestamp": "2025-08-03T16:06:53.386Z"
+      },
+      {
+        "size": 69241,
+        "price": 458.95876260662766,
+        "timestamp": "2025-08-03T15:11:33.808Z"
+      },
+      {
+        "size": 72148,
+        "price": 454.87038555673126,
+        "timestamp": "2025-08-03T12:40:10.193Z"
+      },
+      {
+        "size": 94590,
+        "price": 456.6660338471994,
+        "timestamp": "2025-08-03T10:02:59.767Z"
+      },
+      {
+        "size": 115952,
+        "price": 463.0090534999716,
+        "timestamp": "2025-08-03T12:08:16.455Z"
+      },
+      {
+        "size": 114336,
+        "price": 455.3710698228567,
+        "timestamp": "2025-08-03T11:57:59.339Z"
+      }
+    ]
+  }
+]

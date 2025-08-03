@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "ZWS",
+    "headline": "Regulatory approval granted for ZWS new product",
+    "summary": "Recent developments suggest positive momentum for ZWS with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5555864590439872,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T09:08:06.500Z",
+    "url": "https://example.com/news/zws-1754238635459"
+  },
+  {
+    "symbol": "ZWS",
+    "headline": "ZWS raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for ZWS with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.9989323201239149,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T14:02:38.598Z",
+    "url": "https://example.com/news/zws-1754238635459"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "LRN",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Underperform",
+    "previousTarget": 403.8746332389235,
+    "newTarget": 395.22275533686746,
+    "date": "2025-07-31T02:11:23.088Z",
+    "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "LRN",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Outperform",
+    "newRating": "Outperform",
+    "previousTarget": 415.3113899273233,
+    "newTarget": 407.33847969036395,
+    "date": "2025-07-30T02:28:34.275Z",
+    "reasoning": "Stable fundamentals"
+  }
+]

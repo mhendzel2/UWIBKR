@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "SKYW",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4088111,
+    "totalVolume": 16022520,
+    "darkPoolRatio": 0.2551478169476462,
+    "avgDarkPoolSize": 5172,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 59169,
+        "price": 457.47781459028016,
+        "timestamp": "2025-08-03T16:03:38.594Z"
+      },
+      {
+        "size": 123544,
+        "price": 453.99083553238796,
+        "timestamp": "2025-08-03T14:40:18.393Z"
+      },
+      {
+        "size": 52912,
+        "price": 457.3606733987167,
+        "timestamp": "2025-08-03T09:54:22.064Z"
+      },
+      {
+        "size": 138533,
+        "price": 462.5698425282987,
+        "timestamp": "2025-08-03T10:22:40.763Z"
+      }
+    ]
+  }
+]

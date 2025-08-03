@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "ZWS",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5621084,
+    "totalVolume": 7288218,
+    "darkPoolRatio": 0.7712562933765154,
+    "avgDarkPoolSize": 8961,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 132992,
+        "price": 453.6755832169683,
+        "timestamp": "2025-08-03T10:41:22.691Z"
+      },
+      {
+        "size": 82109,
+        "price": 452.3122531794764,
+        "timestamp": "2025-08-03T11:42:47.521Z"
+      },
+      {
+        "size": 137143,
+        "price": 449.45012779179905,
+        "timestamp": "2025-08-03T12:43:24.482Z"
+      }
+    ]
+  }
+]

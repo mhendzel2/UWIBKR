@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "GTES",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1904707,
+    "totalVolume": 17968385,
+    "darkPoolRatio": 0.10600323846578309,
+    "avgDarkPoolSize": 3062,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 137689,
+        "price": 454.69889174732594,
+        "timestamp": "2025-08-03T14:17:41.459Z"
+      },
+      {
+        "size": 57975,
+        "price": 455.4010517778932,
+        "timestamp": "2025-08-03T10:44:09.554Z"
+      },
+      {
+        "size": 69887,
+        "price": 447.2679318626925,
+        "timestamp": "2025-08-03T14:34:00.205Z"
+      },
+      {
+        "size": 87081,
+        "price": 452.2200025102011,
+        "timestamp": "2025-08-03T11:03:48.235Z"
+      }
+    ]
+  }
+]

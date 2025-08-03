@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "COF",
+    "date": "2025-08-03",
+    "darkPoolVolume": 2147765,
+    "totalVolume": 8228314,
+    "darkPoolRatio": 0.26102127361692806,
+    "avgDarkPoolSize": 2559,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 100134,
+        "price": 448.97615490268555,
+        "timestamp": "2025-08-03T13:01:16.809Z"
+      },
+      {
+        "size": 78742,
+        "price": 455.96841683947815,
+        "timestamp": "2025-08-03T08:40:25.262Z"
+      },
+      {
+        "size": 112426,
+        "price": 451.16047099256775,
+        "timestamp": "2025-08-03T15:29:29.637Z"
+      }
+    ]
+  }
+]

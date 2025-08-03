@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "BKNG",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5598428,
+    "totalVolume": 10529570,
+    "darkPoolRatio": 0.5316862891836989,
+    "avgDarkPoolSize": 4364,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 148569,
+        "price": 448.73594068644337,
+        "timestamp": "2025-08-03T11:33:14.244Z"
+      },
+      {
+        "size": 137282,
+        "price": 449.451528643777,
+        "timestamp": "2025-08-03T08:40:39.766Z"
+      },
+      {
+        "size": 92090,
+        "price": 450.7269672418189,
+        "timestamp": "2025-08-03T11:15:48.656Z"
+      },
+      {
+        "size": 143991,
+        "price": 450.39087187223737,
+        "timestamp": "2025-08-03T11:35:34.715Z"
+      }
+    ]
+  }
+]

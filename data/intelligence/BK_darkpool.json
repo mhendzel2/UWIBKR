@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "BK",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3514636,
+    "totalVolume": 14600251,
+    "darkPoolRatio": 0.24072435467034095,
+    "avgDarkPoolSize": 4105,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 140222,
+        "price": 456.67398287066504,
+        "timestamp": "2025-08-03T10:46:27.207Z"
+      },
+      {
+        "size": 142186,
+        "price": 453.06439232797584,
+        "timestamp": "2025-08-03T09:29:51.132Z"
+      },
+      {
+        "size": 99978,
+        "price": 459.870618830803,
+        "timestamp": "2025-08-03T15:33:35.588Z"
+      },
+      {
+        "size": 82921,
+        "price": 457.21198495357186,
+        "timestamp": "2025-08-03T11:51:20.674Z"
+      },
+      {
+        "size": 116792,
+        "price": 454.78669908312725,
+        "timestamp": "2025-08-03T16:01:37.399Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "ALV",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Outperform",
+    "previousTarget": 486.33457844311727,
+    "newTarget": 466.3814209622336,
+    "date": "2025-07-31T12:21:22.246Z",
+    "reasoning": "Attractive valuation"
+  },
+  {
+    "symbol": "ALV",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Buy",
+    "newRating": "Buy",
+    "previousTarget": 475.6464807984863,
+    "newTarget": 471.59647497295975,
+    "date": "2025-08-02T14:31:01.474Z",
+    "reasoning": "Strong earnings momentum"
+  }
+]

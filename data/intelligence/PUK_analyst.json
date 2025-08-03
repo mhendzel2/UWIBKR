@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "PUK",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Sell",
+    "previousTarget": 512.3389522110367,
+    "newTarget": 525.5195911207811,
+    "date": "2025-08-03T15:50:39.701Z",
+    "reasoning": "Competitive headwinds"
+  },
+  {
+    "symbol": "PUK",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Outperform",
+    "previousTarget": 466.2967479522753,
+    "newTarget": 479.61372650054443,
+    "date": "2025-07-31T20:05:50.873Z",
+    "reasoning": "Attractive valuation"
+  }
+]

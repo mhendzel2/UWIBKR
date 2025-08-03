@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "ING",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Sell",
+    "previousTarget": 505.7208677785053,
+    "newTarget": 502.7309451477677,
+    "date": "2025-07-31T11:20:44.465Z",
+    "reasoning": "Balanced risk/reward"
+  },
+  {
+    "symbol": "ING",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Outperform",
+    "newRating": "Hold",
+    "previousTarget": 410.5731198915392,
+    "newTarget": 393.587736083679,
+    "date": "2025-08-02T13:21:02.921Z",
+    "reasoning": "Fair valuation"
+  }
+]

@@ -22,5 +22,29 @@
     "date": "2025-07-27T09:18:53.964Z",
     "filingDate": "2025-08-01T20:32:27.051Z",
     "ownershipPercent": 3.6843488286817205
+  },
+  {
+    "symbol": "UVXY",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 10406,
+    "price": 468.912531558526,
+    "value": 4879503.8033980215,
+    "date": "2025-07-30T13:41:48.229Z",
+    "filingDate": "2025-08-02T12:58:25.372Z",
+    "ownershipPercent": 2.5606773503467175
+  },
+  {
+    "symbol": "UVXY",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 23775,
+    "price": 470.01277653357033,
+    "value": 11174553.762085635,
+    "date": "2025-07-29T20:56:24.023Z",
+    "filingDate": "2025-08-02T10:32:45.574Z",
+    "ownershipPercent": 4.334973197585581
   }
 ]

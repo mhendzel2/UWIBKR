@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "LECO",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Underperform",
+    "previousTarget": 423.20357220532213,
+    "newTarget": 419.5084251674828,
+    "date": "2025-08-01T08:59:06.810Z",
+    "reasoning": "Stable fundamentals"
+  },
+  {
+    "symbol": "LECO",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Underperform",
+    "previousTarget": 401.14675271830276,
+    "newTarget": 415.57028583959,
+    "date": "2025-07-30T13:39:57.815Z",
+    "reasoning": "Compelling growth story"
+  }
+]

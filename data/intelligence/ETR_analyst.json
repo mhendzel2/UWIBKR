@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "ETR",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Outperform",
+    "newRating": "Sell",
+    "previousTarget": 453.9774993357562,
+    "newTarget": 490.70136015189917,
+    "date": "2025-07-30T17:26:40.739Z",
+    "reasoning": "Fair valuation"
+  }
+]

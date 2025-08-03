@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "DAVE",
+    "headline": "Regulatory approval granted for DAVE new product",
+    "summary": "Recent developments suggest positive momentum for DAVE with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.4109581794383597,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T11:16:26.932Z",
+    "url": "https://example.com/news/dave-1754238613106"
+  },
+  {
+    "symbol": "DAVE",
+    "headline": "Analyst upgrades DAVE on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for DAVE with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.5641603262969666,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T10:05:22.026Z",
+    "url": "https://example.com/news/dave-1754238613106"
+  },
+  {
+    "symbol": "DAVE",
+    "headline": "Analyst upgrades DAVE on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for DAVE with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.5483065296179902,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T10:41:30.037Z",
+    "url": "https://example.com/news/dave-1754238613106"
+  }
+]

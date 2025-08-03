@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "PH",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 496.26763031358666,
+    "newTarget": 481.79080290990777,
+    "date": "2025-08-01T16:04:51.207Z",
+    "reasoning": "Valuation concerns"
+  },
+  {
+    "symbol": "PH",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 449.64897297638464,
+    "newTarget": 449.9993906882243,
+    "date": "2025-07-29T22:28:02.090Z",
+    "reasoning": "Margin pressure concerns"
+  }
+]

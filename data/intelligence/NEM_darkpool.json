@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "NEM",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4392336,
+    "totalVolume": 19233085,
+    "darkPoolRatio": 0.22837397120638733,
+    "avgDarkPoolSize": 2598,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 51402,
+        "price": 452.4634742380272,
+        "timestamp": "2025-08-03T15:56:16.186Z"
+      },
+      {
+        "size": 108454,
+        "price": 453.6256947067716,
+        "timestamp": "2025-08-03T09:33:23.436Z"
+      },
+      {
+        "size": 81583,
+        "price": 452.506525851767,
+        "timestamp": "2025-08-03T10:04:52.226Z"
+      }
+    ]
+  }
+]

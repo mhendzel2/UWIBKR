@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "LFUS",
+    "headline": "Analyst upgrades LFUS on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for LFUS with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.6127839781419033,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T12:34:14.553Z",
+    "url": "https://example.com/news/lfus-1754238637355"
+  },
+  {
+    "symbol": "LFUS",
+    "headline": "LFUS announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for LFUS with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.4221902934738232,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T13:26:49.434Z",
+    "url": "https://example.com/news/lfus-1754238637355"
+  }
+]

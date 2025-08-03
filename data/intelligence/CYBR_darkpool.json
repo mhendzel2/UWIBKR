@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "CYBR",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4548582,
+    "totalVolume": 7785902,
+    "darkPoolRatio": 0.5842074559890428,
+    "avgDarkPoolSize": 2745,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 131286,
+        "price": 456.8488504661829,
+        "timestamp": "2025-08-03T15:44:22.944Z"
+      },
+      {
+        "size": 58041,
+        "price": 457.21244019498465,
+        "timestamp": "2025-08-03T14:34:22.089Z"
+      },
+      {
+        "size": 145807,
+        "price": 456.02200592710756,
+        "timestamp": "2025-08-03T16:01:09.353Z"
+      },
+      {
+        "size": 127126,
+        "price": 461.7902153538446,
+        "timestamp": "2025-08-03T16:14:44.084Z"
+      },
+      {
+        "size": 108809,
+        "price": 459.1138085825886,
+        "timestamp": "2025-08-03T16:18:35.933Z"
+      }
+    ]
+  }
+]

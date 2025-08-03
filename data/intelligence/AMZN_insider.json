@@ -22,5 +22,41 @@
     "date": "2025-07-30T00:39:38.852Z",
     "filingDate": "2025-08-01T16:55:06.399Z",
     "ownershipPercent": 2.9253983008052784
+  },
+  {
+    "symbol": "AMZN",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 40720,
+    "price": 212.30123914846308,
+    "value": 8644906.458125416,
+    "date": "2025-07-28T13:55:14.181Z",
+    "filingDate": "2025-08-01T09:53:05.255Z",
+    "ownershipPercent": 3.245385823223915
+  },
+  {
+    "symbol": "AMZN",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 44719,
+    "price": 214.98815550942322,
+    "value": 9614055.326225897,
+    "date": "2025-08-02T06:13:52.891Z",
+    "filingDate": "2025-07-31T20:56:55.851Z",
+    "ownershipPercent": 0.16005929554099066
+  },
+  {
+    "symbol": "AMZN",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 7202,
+    "price": 212.43538381143483,
+    "value": 1529959.6342099537,
+    "date": "2025-07-29T01:53:54.691Z",
+    "filingDate": "2025-08-01T12:18:39.371Z",
+    "ownershipPercent": 3.8764785946686273
   }
 ]

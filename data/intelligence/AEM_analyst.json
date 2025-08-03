@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "AEM",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Outperform",
+    "newRating": "Sell",
+    "previousTarget": 404.992103615274,
+    "newTarget": 450.45269264061085,
+    "date": "2025-07-31T04:30:40.822Z",
+    "reasoning": "Valuation concerns"
+  },
+  {
+    "symbol": "AEM",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Outperform",
+    "newRating": "Sell",
+    "previousTarget": 421.1318065339777,
+    "newTarget": 421.3442024388273,
+    "date": "2025-07-31T07:22:25.365Z",
+    "reasoning": "Valuation concerns"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "MCRI",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 5462,
+    "price": 461.2103373466901,
+    "value": 2519130.8625876214,
+    "date": "2025-08-03T10:51:29.316Z",
+    "filingDate": "2025-08-03T10:32:47.968Z",
+    "ownershipPercent": 1.5280237739385794
+  }
+]

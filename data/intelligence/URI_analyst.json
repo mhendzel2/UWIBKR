@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "URI",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 417.13693995942356,
+    "newTarget": 425.2615526643282,
+    "date": "2025-07-31T13:41:01.177Z",
+    "reasoning": "Margin pressure concerns"
+  },
+  {
+    "symbol": "URI",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Buy",
+    "previousTarget": 491.67777398366076,
+    "newTarget": 514.3885894180082,
+    "date": "2025-07-31T14:48:53.503Z",
+    "reasoning": "Attractive valuation"
+  }
+]

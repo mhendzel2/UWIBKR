@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "CUK",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5200225,
+    "totalVolume": 19837828,
+    "darkPoolRatio": 0.26213681255831034,
+    "avgDarkPoolSize": 1379,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 74079,
+        "price": 448.12461188758186,
+        "timestamp": "2025-08-03T09:14:41.882Z"
+      },
+      {
+        "size": 103283,
+        "price": 450.6135739761436,
+        "timestamp": "2025-08-03T11:24:23.167Z"
+      },
+      {
+        "size": 127116,
+        "price": 453.5262231093378,
+        "timestamp": "2025-08-03T13:26:09.886Z"
+      }
+    ]
+  }
+]

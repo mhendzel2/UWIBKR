@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "EAT",
+    "headline": "EAT reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for EAT with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.582041240127098,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T15:07:22.827Z",
+    "url": "https://example.com/news/eat-1754238618531"
+  },
+  {
+    "symbol": "EAT",
+    "headline": "EAT announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for EAT with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.3631821916371961,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T16:03:46.554Z",
+    "url": "https://example.com/news/eat-1754238618532"
+  }
+]

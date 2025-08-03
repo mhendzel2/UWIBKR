@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "JOYY",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4451856,
+    "totalVolume": 17394499,
+    "darkPoolRatio": 0.25593470671388696,
+    "avgDarkPoolSize": 7564,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 117395,
+        "price": 457.2766302877772,
+        "timestamp": "2025-08-03T12:05:06.756Z"
+      },
+      {
+        "size": 62058,
+        "price": 452.3538706735215,
+        "timestamp": "2025-08-03T11:06:43.593Z"
+      },
+      {
+        "size": 73369,
+        "price": 457.4799154515327,
+        "timestamp": "2025-08-03T16:18:35.034Z"
+      }
+    ]
+  }
+]

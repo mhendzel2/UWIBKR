@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "LPLA",
+    "headline": "Analyst upgrades LPLA on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for LPLA with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.7158670998036879,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T10:06:06.645Z",
+    "url": "https://example.com/news/lpla-1754238619592"
+  },
+  {
+    "symbol": "LPLA",
+    "headline": "Regulatory approval granted for LPLA new product",
+    "summary": "Recent developments suggest positive momentum for LPLA with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.688275337507371,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T06:47:45.289Z",
+    "url": "https://example.com/news/lpla-1754238619592"
+  },
+  {
+    "symbol": "LPLA",
+    "headline": "LPLA announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for LPLA with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.6723630572877564,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T13:40:57.542Z",
+    "url": "https://example.com/news/lpla-1754238619592"
+  }
+]

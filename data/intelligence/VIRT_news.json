@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "VIRT",
+    "headline": "VIRT reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for VIRT with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7363226064871947,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T06:16:38.696Z",
+    "url": "https://example.com/news/virt-1754238622558"
+  },
+  {
+    "symbol": "VIRT",
+    "headline": "Analyst upgrades VIRT on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for VIRT with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.521707187323306,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T15:27:23.938Z",
+    "url": "https://example.com/news/virt-1754238622559"
+  }
+]

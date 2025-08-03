@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "TGTX",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Outperform",
+    "previousTarget": 523.2045545154715,
+    "newTarget": 527.8267392499313,
+    "date": "2025-08-03T13:58:54.904Z",
+    "reasoning": "Margin pressure concerns"
+  },
+  {
+    "symbol": "TGTX",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Sell",
+    "previousTarget": 522.7137446457423,
+    "newTarget": 494.22750502988464,
+    "date": "2025-07-31T15:23:26.827Z",
+    "reasoning": "Balanced risk/reward"
+  }
+]

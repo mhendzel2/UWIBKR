@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "HOOD",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 18670,
+    "price": 464.25387416772185,
+    "value": 8667619.830711367,
+    "date": "2025-08-03T16:01:59.497Z",
+    "filingDate": "2025-08-03T13:13:11.003Z",
+    "ownershipPercent": 2.2143987201033055
+  }
+]

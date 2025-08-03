@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "AMSC",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Underperform",
+    "previousTarget": 409.14896525828055,
+    "newTarget": 408.85383926409656,
+    "date": "2025-08-03T13:35:01.297Z",
+    "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "AMSC",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Underperform",
+    "newRating": "Buy",
+    "previousTarget": 403.06236888529645,
+    "newTarget": 361.57223037731586,
+    "date": "2025-07-29T18:30:29.131Z",
+    "reasoning": "Attractive valuation"
+  }
+]

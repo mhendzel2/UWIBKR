@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "IDCC",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4331358,
+    "totalVolume": 8248538,
+    "darkPoolRatio": 0.5251061460830998,
+    "avgDarkPoolSize": 8399,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 147284,
+        "price": 454.2759973156484,
+        "timestamp": "2025-08-03T12:50:05.734Z"
+      },
+      {
+        "size": 148124,
+        "price": 452.7602373156987,
+        "timestamp": "2025-08-03T10:43:11.752Z"
+      },
+      {
+        "size": 64348,
+        "price": 458.08302477646095,
+        "timestamp": "2025-08-03T09:00:09.515Z"
+      },
+      {
+        "size": 58040,
+        "price": 452.63484073280574,
+        "timestamp": "2025-08-03T09:44:58.744Z"
+      },
+      {
+        "size": 53870,
+        "price": 457.5598199741054,
+        "timestamp": "2025-08-03T12:34:31.715Z"
+      }
+    ]
+  }
+]

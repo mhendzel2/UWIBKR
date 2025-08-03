@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "NTES",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4710451,
+    "totalVolume": 14747205,
+    "darkPoolRatio": 0.3194131362519203,
+    "avgDarkPoolSize": 5651,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 111804,
+        "price": 452.8016992199967,
+        "timestamp": "2025-08-03T14:18:24.934Z"
+      },
+      {
+        "size": 93693,
+        "price": 456.71274052902316,
+        "timestamp": "2025-08-03T14:50:25.664Z"
+      },
+      {
+        "size": 90380,
+        "price": 451.28802475255014,
+        "timestamp": "2025-08-03T16:26:07.031Z"
+      }
+    ]
+  }
+]

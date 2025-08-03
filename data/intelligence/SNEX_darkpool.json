@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "SNEX",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5116544,
+    "totalVolume": 13301115,
+    "darkPoolRatio": 0.38467030771480437,
+    "avgDarkPoolSize": 1431,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 77102,
+        "price": 449.4966552455863,
+        "timestamp": "2025-08-03T09:51:19.540Z"
+      },
+      {
+        "size": 128712,
+        "price": 450.01238840148375,
+        "timestamp": "2025-08-03T16:12:00.685Z"
+      },
+      {
+        "size": 109313,
+        "price": 448.86390918864566,
+        "timestamp": "2025-08-03T11:23:17.188Z"
+      },
+      {
+        "size": 90725,
+        "price": 449.6108269717361,
+        "timestamp": "2025-08-03T12:25:09.604Z"
+      }
+    ]
+  }
+]

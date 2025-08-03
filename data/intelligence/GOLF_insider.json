@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "GOLF",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 26633,
+    "price": 448.19118827933215,
+    "value": 11936675.917443452,
+    "date": "2025-07-30T16:29:47.457Z",
+    "filingDate": "2025-08-02T21:23:51.663Z",
+    "ownershipPercent": 2.5662731215085666
+  },
+  {
+    "symbol": "GOLF",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 33660,
+    "price": 456.0362770068709,
+    "value": 15350181.084051274,
+    "date": "2025-08-01T21:47:23.023Z",
+    "filingDate": "2025-08-01T13:54:38.327Z",
+    "ownershipPercent": 1.1705469647523437
+  },
+  {
+    "symbol": "GOLF",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 38105,
+    "price": 458.06559448913936,
+    "value": 17454589.478008654,
+    "date": "2025-08-03T09:17:24.950Z",
+    "filingDate": "2025-08-02T02:24:28.275Z",
+    "ownershipPercent": 3.012441551226918
+  }
+]

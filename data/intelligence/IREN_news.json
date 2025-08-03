@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "IREN",
+    "headline": "IREN raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for IREN with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.9254971652770427,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T07:03:04.356Z",
+    "url": "https://example.com/news/iren-1754238625595"
+  },
+  {
+    "symbol": "IREN",
+    "headline": "IREN reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for IREN with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.8221041364668243,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T15:22:20.987Z",
+    "url": "https://example.com/news/iren-1754238625596"
+  }
+]

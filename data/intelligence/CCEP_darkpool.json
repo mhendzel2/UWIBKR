@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "CCEP",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5806816,
+    "totalVolume": 17190196,
+    "darkPoolRatio": 0.33779812632735545,
+    "avgDarkPoolSize": 7756,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 111044,
+        "price": 453.9774182170687,
+        "timestamp": "2025-08-03T08:37:54.705Z"
+      },
+      {
+        "size": 72847,
+        "price": 455.6226748867333,
+        "timestamp": "2025-08-03T09:39:22.794Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "AAMI",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Buy",
+    "previousTarget": 458.9578375941511,
+    "newTarget": 457.7514172082933,
+    "date": "2025-08-03T03:20:23.942Z",
+    "reasoning": "Margin pressure concerns"
+  },
+  {
+    "symbol": "AAMI",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Buy",
+    "newRating": "Buy",
+    "previousTarget": 401.9461731607587,
+    "newTarget": 411.5352134490053,
+    "date": "2025-08-01T22:01:33.346Z",
+    "reasoning": "Strong earnings momentum"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "NXT",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 410.03763355311935,
+    "newTarget": 372.5066002031674,
+    "date": "2025-08-02T05:06:10.595Z",
+    "reasoning": "Stable fundamentals"
+  }
+]

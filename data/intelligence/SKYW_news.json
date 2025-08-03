@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "SKYW",
+    "headline": "SKYW announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for SKYW with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.4622300408900276,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T06:58:02.760Z",
+    "url": "https://example.com/news/skyw-1754238640081"
+  },
+  {
+    "symbol": "SKYW",
+    "headline": "SKYW announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for SKYW with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.613564666473882,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T06:58:04.841Z",
+    "url": "https://example.com/news/skyw-1754238640081"
+  },
+  {
+    "symbol": "SKYW",
+    "headline": "SKYW reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for SKYW with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.8785414504644898,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T12:58:09.512Z",
+    "url": "https://example.com/news/skyw-1754238640081"
+  }
+]

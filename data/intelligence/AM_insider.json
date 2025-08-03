@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "AM",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 7604,
+    "price": 444.9349388889038,
+    "value": 3383285.275311224,
+    "date": "2025-07-28T07:40:42.970Z",
+    "filingDate": "2025-08-03T11:43:16.437Z",
+    "ownershipPercent": 2.6334384858713
+  }
+]

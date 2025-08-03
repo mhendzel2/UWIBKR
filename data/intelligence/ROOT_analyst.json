@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "ROOT",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Outperform",
+    "previousTarget": 391.57945440793696,
+    "newTarget": 391.16034951450655,
+    "date": "2025-07-31T01:21:49.779Z",
+    "reasoning": "Fair valuation"
+  }
+]

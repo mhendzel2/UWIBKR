@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "PH",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4348577,
+    "totalVolume": 11663417,
+    "darkPoolRatio": 0.3728390230753132,
+    "avgDarkPoolSize": 9883,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 145525,
+        "price": 453.6330877505532,
+        "timestamp": "2025-08-03T14:32:28.372Z"
+      },
+      {
+        "size": 68792,
+        "price": 458.913643742517,
+        "timestamp": "2025-08-03T11:57:09.589Z"
+      }
+    ]
+  }
+]

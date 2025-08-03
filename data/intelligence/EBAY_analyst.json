@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "EBAY",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Underperform",
+    "newRating": "Buy",
+    "previousTarget": 521.88896076697,
+    "newTarget": 487.631592992741,
+    "date": "2025-07-31T13:46:36.167Z",
+    "reasoning": "Balanced risk/reward"
+  },
+  {
+    "symbol": "EBAY",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Underperform",
+    "previousTarget": 463.4541071509953,
+    "newTarget": 501.383779579673,
+    "date": "2025-08-01T09:05:04.306Z",
+    "reasoning": "Strong management team"
+  }
+]

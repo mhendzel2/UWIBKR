@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "EAT",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 43031,
+    "price": 457.31878889964315,
+    "value": 19678884.805140544,
+    "date": "2025-07-31T20:59:32.049Z",
+    "filingDate": "2025-08-03T03:15:48.197Z",
+    "ownershipPercent": 1.4376373367649242
+  }
+]

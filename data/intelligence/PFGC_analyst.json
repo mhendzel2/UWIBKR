@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "PFGC",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Underperform",
+    "previousTarget": 421.94699643673175,
+    "newTarget": 439.18001458293156,
+    "date": "2025-08-02T06:40:27.047Z",
+    "reasoning": "Positive sector outlook"
+  },
+  {
+    "symbol": "PFGC",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 405.0789437110209,
+    "newTarget": 383.982020687661,
+    "date": "2025-07-31T13:41:12.649Z",
+    "reasoning": "Attractive valuation"
+  }
+]

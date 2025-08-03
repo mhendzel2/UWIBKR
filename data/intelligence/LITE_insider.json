@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "LITE",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 50255,
+    "price": 444.29590463108207,
+    "value": 22328090.687235028,
+    "date": "2025-08-01T06:00:11.616Z",
+    "filingDate": "2025-08-02T23:07:32.830Z",
+    "ownershipPercent": 3.057109183857302
+  },
+  {
+    "symbol": "LITE",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 32043,
+    "price": 454.7551503277989,
+    "value": 14571719.28195366,
+    "date": "2025-07-27T17:39:04.004Z",
+    "filingDate": "2025-08-01T19:30:53.694Z",
+    "ownershipPercent": 4.363990958922915
+  },
+  {
+    "symbol": "LITE",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 22406,
+    "price": 461.50043964364374,
+    "value": 10340378.850655481,
+    "date": "2025-08-01T13:08:01.511Z",
+    "filingDate": "2025-08-03T06:38:43.359Z",
+    "ownershipPercent": 1.5891492368946714
+  }
+]

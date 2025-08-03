@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "IBKR",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1679385,
+    "totalVolume": 9938252,
+    "darkPoolRatio": 0.16898192961901148,
+    "avgDarkPoolSize": 9319,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 141452,
+        "price": 458.6756076478977,
+        "timestamp": "2025-08-03T11:07:29.460Z"
+      },
+      {
+        "size": 57309,
+        "price": 455.3588689419093,
+        "timestamp": "2025-08-03T16:25:02.312Z"
+      },
+      {
+        "size": 128488,
+        "price": 455.1242298167612,
+        "timestamp": "2025-08-03T13:20:44.777Z"
+      }
+    ]
+  }
+]

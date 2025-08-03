@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "HOOD",
+    "headline": "HOOD reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for HOOD with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.8105907775092716,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T10:13:58.079Z",
+    "url": "https://example.com/news/hood-1754238609304"
+  },
+  {
+    "symbol": "HOOD",
+    "headline": "Analyst upgrades HOOD on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for HOOD with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.8562477776429395,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T08:22:31.000Z",
+    "url": "https://example.com/news/hood-1754238609305"
+  },
+  {
+    "symbol": "HOOD",
+    "headline": "HOOD announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for HOOD with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.6598462259610982,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T11:30:07.599Z",
+    "url": "https://example.com/news/hood-1754238609305"
+  }
+]

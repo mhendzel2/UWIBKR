@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "AM",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1072191,
+    "totalVolume": 9539481,
+    "darkPoolRatio": 0.11239510828733765,
+    "avgDarkPoolSize": 4747,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 145883,
+        "price": 459.2704365486165,
+        "timestamp": "2025-08-03T13:34:43.523Z"
+      },
+      {
+        "size": 88408,
+        "price": 461.7065236471014,
+        "timestamp": "2025-08-03T13:02:36.864Z"
+      }
+    ]
+  }
+]

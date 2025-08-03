@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "COF",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Sell",
+    "previousTarget": 503.7141154634998,
+    "newTarget": 523.8996371654906,
+    "date": "2025-07-31T23:56:28.205Z",
+    "reasoning": "Margin pressure concerns"
+  },
+  {
+    "symbol": "COF",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Underperform",
+    "previousTarget": 504.22443621668856,
+    "newTarget": 505.2455774698166,
+    "date": "2025-08-02T14:41:05.689Z",
+    "reasoning": "Valuation concerns"
+  }
+]

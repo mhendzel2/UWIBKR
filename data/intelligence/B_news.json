@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "B",
+    "headline": "Regulatory approval granted for B new product",
+    "summary": "Recent developments suggest positive momentum for B with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.5931625339790109,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T16:15:13.433Z",
+    "url": "https://example.com/news/b-1754238606970"
+  },
+  {
+    "symbol": "B",
+    "headline": "B raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for B with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.9686254214601022,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T06:01:42.914Z",
+    "url": "https://example.com/news/b-1754238606970"
+  },
+  {
+    "symbol": "B",
+    "headline": "B raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for B with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.7514706218230545,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T06:41:05.908Z",
+    "url": "https://example.com/news/b-1754238606971"
+  }
+]

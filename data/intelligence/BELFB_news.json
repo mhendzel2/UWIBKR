@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "BELFB",
+    "headline": "BELFB reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for BELFB with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7892376578929614,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T05:59:08.868Z",
+    "url": "https://example.com/news/belfb-1754238607395"
+  },
+  {
+    "symbol": "BELFB",
+    "headline": "BELFB raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for BELFB with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.961384668277092,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T14:15:14.820Z",
+    "url": "https://example.com/news/belfb-1754238607397"
+  },
+  {
+    "symbol": "BELFB",
+    "headline": "BELFB announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for BELFB with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.5442724273506493,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T09:03:47.836Z",
+    "url": "https://example.com/news/belfb-1754238607398"
+  }
+]

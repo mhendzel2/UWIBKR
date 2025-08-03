@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "MPWR",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4607167,
+    "totalVolume": 18539064,
+    "darkPoolRatio": 0.24851130564088889,
+    "avgDarkPoolSize": 1392,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 90492,
+        "price": 453.80025010301256,
+        "timestamp": "2025-08-03T15:03:10.462Z"
+      },
+      {
+        "size": 80971,
+        "price": 448.805609151797,
+        "timestamp": "2025-08-03T15:31:10.051Z"
+      }
+    ]
+  }
+]

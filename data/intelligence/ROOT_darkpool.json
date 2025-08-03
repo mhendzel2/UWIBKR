@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "ROOT",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1553244,
+    "totalVolume": 18428469,
+    "darkPoolRatio": 0.08428502660747347,
+    "avgDarkPoolSize": 5201,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 137909,
+        "price": 462.85413410002593,
+        "timestamp": "2025-08-03T09:17:18.579Z"
+      },
+      {
+        "size": 88269,
+        "price": 459.99760101181215,
+        "timestamp": "2025-08-03T14:52:02.832Z"
+      },
+      {
+        "size": 98356,
+        "price": 458.2143247136014,
+        "timestamp": "2025-08-03T12:06:53.566Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "PENG",
+    "headline": "PENG reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for PENG with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.886180678983353,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T10:15:47.456Z",
+    "url": "https://example.com/news/peng-1754238626238"
+  },
+  {
+    "symbol": "PENG",
+    "headline": "PENG reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for PENG with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7525515712668076,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T09:24:40.828Z",
+    "url": "https://example.com/news/peng-1754238626239"
+  },
+  {
+    "symbol": "PENG",
+    "headline": "PENG raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for PENG with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7555039842478252,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T14:19:43.523Z",
+    "url": "https://example.com/news/peng-1754238626240"
+  }
+]

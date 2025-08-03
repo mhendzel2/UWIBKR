@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "HWKN",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 38150,
+    "price": 452.7222571121477,
+    "value": 17271354.108828437,
+    "date": "2025-07-28T23:09:24.037Z",
+    "filingDate": "2025-08-01T10:53:28.482Z",
+    "ownershipPercent": 3.1240589129717744
+  },
+  {
+    "symbol": "HWKN",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 17488,
+    "price": 464.4446594802304,
+    "value": 8122208.20499027,
+    "date": "2025-08-02T04:11:19.130Z",
+    "filingDate": "2025-08-01T20:07:55.287Z",
+    "ownershipPercent": 0.8887414166439999
+  },
+  {
+    "symbol": "HWKN",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 30432,
+    "price": 461.4586669379421,
+    "value": 14043110.152255453,
+    "date": "2025-07-31T07:41:41.322Z",
+    "filingDate": "2025-08-03T01:44:37.945Z",
+    "ownershipPercent": 0.7061597548306796
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "VRNS",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1251533,
+    "totalVolume": 5137544,
+    "darkPoolRatio": 0.24360531024162518,
+    "avgDarkPoolSize": 3414,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 136944,
+        "price": 455.47932713231404,
+        "timestamp": "2025-08-03T11:35:42.302Z"
+      },
+      {
+        "size": 137229,
+        "price": 459.4300287449851,
+        "timestamp": "2025-08-03T08:32:55.605Z"
+      }
+    ]
+  }
+]

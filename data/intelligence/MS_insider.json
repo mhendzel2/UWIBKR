@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "MS",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 27868,
+    "price": 457.19376822137895,
+    "value": 12741075.932793388,
+    "date": "2025-07-29T23:02:28.857Z",
+    "filingDate": "2025-08-02T15:39:41.266Z",
+    "ownershipPercent": 4.255819491615831
+  }
+]

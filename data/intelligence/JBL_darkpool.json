@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "JBL",
+    "date": "2025-08-03",
+    "darkPoolVolume": 2832102,
+    "totalVolume": 10885879,
+    "darkPoolRatio": 0.260162913807879,
+    "avgDarkPoolSize": 5456,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 123180,
+        "price": 456.1308428370878,
+        "timestamp": "2025-08-03T13:03:07.079Z"
+      },
+      {
+        "size": 91116,
+        "price": 459.7452163565424,
+        "timestamp": "2025-08-03T12:40:12.324Z"
+      }
+    ]
+  }
+]

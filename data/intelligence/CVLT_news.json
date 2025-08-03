@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "CVLT",
+    "headline": "CVLT announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for CVLT with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.6895993962379067,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T16:27:06.102Z",
+    "url": "https://example.com/news/cvlt-1754238632988"
+  },
+  {
+    "symbol": "CVLT",
+    "headline": "Regulatory approval granted for CVLT new product",
+    "summary": "Recent developments suggest positive momentum for CVLT with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.4097980040734256,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T10:21:53.744Z",
+    "url": "https://example.com/news/cvlt-1754238632988"
+  },
+  {
+    "symbol": "CVLT",
+    "headline": "Analyst upgrades CVLT on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for CVLT with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.8577446941728267,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T16:14:01.607Z",
+    "url": "https://example.com/news/cvlt-1754238632988"
+  }
+]

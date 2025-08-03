@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "MYRG",
+    "headline": "MYRG reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for MYRG with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.6033242620245928,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T13:13:53.287Z",
+    "url": "https://example.com/news/myrg-1754238637778"
+  },
+  {
+    "symbol": "MYRG",
+    "headline": "MYRG reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for MYRG with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7548330472519476,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T13:53:10.115Z",
+    "url": "https://example.com/news/myrg-1754238637779"
+  },
+  {
+    "symbol": "MYRG",
+    "headline": "MYRG announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for MYRG with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.30336206093297013,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T06:19:36.695Z",
+    "url": "https://example.com/news/myrg-1754238637780"
+  }
+]

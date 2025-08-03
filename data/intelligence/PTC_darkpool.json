@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "PTC",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3846072,
+    "totalVolume": 18875733,
+    "darkPoolRatio": 0.20375749116603842,
+    "avgDarkPoolSize": 10054,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 104344,
+        "price": 453.56711287712596,
+        "timestamp": "2025-08-03T09:55:46.227Z"
+      },
+      {
+        "size": 74428,
+        "price": 447.8917638639264,
+        "timestamp": "2025-08-03T14:38:36.830Z"
+      },
+      {
+        "size": 77701,
+        "price": 451.7470106903088,
+        "timestamp": "2025-08-03T16:00:03.863Z"
+      },
+      {
+        "size": 80296,
+        "price": 451.2927389855151,
+        "timestamp": "2025-08-03T13:23:47.097Z"
+      },
+      {
+        "size": 84943,
+        "price": 454.2730297565305,
+        "timestamp": "2025-08-03T13:05:04.682Z"
+      }
+    ]
+  }
+]

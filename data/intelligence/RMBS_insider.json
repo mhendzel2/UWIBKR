@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "RMBS",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 44359,
+    "price": 455.9122165115848,
+    "value": 20223810.01223739,
+    "date": "2025-08-01T04:44:01.316Z",
+    "filingDate": "2025-08-02T23:42:39.206Z",
+    "ownershipPercent": 3.2635956498040963
+  },
+  {
+    "symbol": "RMBS",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 25798,
+    "price": 448.0194170753989,
+    "value": 11558004.921711141,
+    "date": "2025-07-30T20:39:35.573Z",
+    "filingDate": "2025-07-31T16:46:40.872Z",
+    "ownershipPercent": 4.144228037588986
+  }
+]

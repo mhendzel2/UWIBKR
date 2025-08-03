@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "INDV",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5569624,
+    "totalVolume": 12437282,
+    "darkPoolRatio": 0.4478168139952121,
+    "avgDarkPoolSize": 7802,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 109537,
+        "price": 454.1692199752021,
+        "timestamp": "2025-08-03T14:43:05.271Z"
+      },
+      {
+        "size": 113111,
+        "price": 454.4375114129256,
+        "timestamp": "2025-08-03T09:13:22.126Z"
+      }
+    ]
+  }
+]

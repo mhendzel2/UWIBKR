@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "INOD",
+    "headline": "Analyst upgrades INOD on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for INOD with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.7797858829555064,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T16:14:34.072Z",
+    "url": "https://example.com/news/inod-1754238633739"
+  },
+  {
+    "symbol": "INOD",
+    "headline": "INOD raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for INOD with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7681508312530485,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T09:01:02.567Z",
+    "url": "https://example.com/news/inod-1754238633739"
+  }
+]

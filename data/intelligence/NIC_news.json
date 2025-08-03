@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "NIC",
+    "headline": "NIC announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for NIC with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.6613077042026898,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T13:05:12.349Z",
+    "url": "https://example.com/news/nic-1754238648806"
+  },
+  {
+    "symbol": "NIC",
+    "headline": "Regulatory approval granted for NIC new product",
+    "summary": "Recent developments suggest positive momentum for NIC with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5721792085747308,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T12:59:18.667Z",
+    "url": "https://example.com/news/nic-1754238648806"
+  }
+]

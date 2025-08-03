@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "NVT",
+    "date": "2025-08-03",
+    "darkPoolVolume": 2284381,
+    "totalVolume": 6335639,
+    "darkPoolRatio": 0.3605604738527558,
+    "avgDarkPoolSize": 9438,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 71635,
+        "price": 463.3501585215845,
+        "timestamp": "2025-08-03T15:28:03.467Z"
+      },
+      {
+        "size": 84869,
+        "price": 455.2483158891885,
+        "timestamp": "2025-08-03T15:02:42.645Z"
+      },
+      {
+        "size": 105028,
+        "price": 456.1302713120982,
+        "timestamp": "2025-08-03T09:49:33.779Z"
+      },
+      {
+        "size": 51391,
+        "price": 464.03500088028505,
+        "timestamp": "2025-08-03T16:18:49.941Z"
+      },
+      {
+        "size": 93594,
+        "price": 458.1039721849495,
+        "timestamp": "2025-08-03T16:28:32.147Z"
+      }
+    ]
+  }
+]

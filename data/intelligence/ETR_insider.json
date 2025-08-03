@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "ETR",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 23230,
+    "price": 465.93212798316415,
+    "value": 10823603.333048902,
+    "date": "2025-08-01T13:26:18.893Z",
+    "filingDate": "2025-08-03T09:55:59.370Z",
+    "ownershipPercent": 1.779986148835494
+  }
+]

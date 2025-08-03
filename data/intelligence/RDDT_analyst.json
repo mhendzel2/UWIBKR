@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "RDDT",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Hold",
+    "previousTarget": 492.4820260537516,
+    "newTarget": 500.7796677208852,
+    "date": "2025-08-02T01:38:18.084Z",
+    "reasoning": "Competitive headwinds"
+  },
+  {
+    "symbol": "RDDT",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Sell",
+    "previousTarget": 425.55907932665554,
+    "newTarget": 439.7942383348765,
+    "date": "2025-08-02T15:50:30.148Z",
+    "reasoning": "Strong management team"
+  }
+]

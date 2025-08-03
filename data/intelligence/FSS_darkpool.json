@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "FSS",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1890448,
+    "totalVolume": 9254294,
+    "darkPoolRatio": 0.2042779276301358,
+    "avgDarkPoolSize": 1206,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 76787,
+        "price": 460.98092958400355,
+        "timestamp": "2025-08-03T09:58:30.853Z"
+      },
+      {
+        "size": 114218,
+        "price": 461.8447748360408,
+        "timestamp": "2025-08-03T15:48:55.351Z"
+      },
+      {
+        "size": 77284,
+        "price": 464.3094788197377,
+        "timestamp": "2025-08-03T13:50:20.706Z"
+      },
+      {
+        "size": 114973,
+        "price": 459.4193161878044,
+        "timestamp": "2025-08-03T10:07:46.102Z"
+      },
+      {
+        "size": 75711,
+        "price": 456.1971258298803,
+        "timestamp": "2025-08-03T10:13:58.856Z"
+      }
+    ]
+  }
+]

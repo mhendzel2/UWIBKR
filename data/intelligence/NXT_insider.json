@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "NXT",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 45617,
+    "price": 453.33409411642265,
+    "value": 20679741.371308852,
+    "date": "2025-07-30T19:38:44.285Z",
+    "filingDate": "2025-08-03T14:34:47.319Z",
+    "ownershipPercent": 1.5964316966198466
+  },
+  {
+    "symbol": "NXT",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 31946,
+    "price": 454.7343048476241,
+    "value": 14526942.1026622,
+    "date": "2025-08-02T09:38:56.897Z",
+    "filingDate": "2025-08-02T22:52:31.470Z",
+    "ownershipPercent": 4.33615442894544
+  },
+  {
+    "symbol": "NXT",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 4514,
+    "price": 443.2717075862112,
+    "value": 2000928.4880441574,
+    "date": "2025-08-03T01:08:05.716Z",
+    "filingDate": "2025-08-03T00:34:08.544Z",
+    "ownershipPercent": 0.4114391122979032
+  }
+]

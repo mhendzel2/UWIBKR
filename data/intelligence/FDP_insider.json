@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "FDP",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 19325,
+    "price": 445.86257345969847,
+    "value": 8616294.232108673,
+    "date": "2025-08-01T23:30:12.878Z",
+    "filingDate": "2025-08-01T07:23:27.274Z",
+    "ownershipPercent": 2.7039114226757675
+  }
+]

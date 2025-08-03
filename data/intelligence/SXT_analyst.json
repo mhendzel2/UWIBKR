@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "SXT",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Outperform",
+    "newRating": "Buy",
+    "previousTarget": 396.96697354173017,
+    "newTarget": 426.9938310219352,
+    "date": "2025-07-29T21:51:03.173Z",
+    "reasoning": "Attractive valuation"
+  },
+  {
+    "symbol": "SXT",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Sell",
+    "previousTarget": 459.83132309534926,
+    "newTarget": 440.4860604532735,
+    "date": "2025-08-03T04:07:02.206Z",
+    "reasoning": "Strong management team"
+  }
+]

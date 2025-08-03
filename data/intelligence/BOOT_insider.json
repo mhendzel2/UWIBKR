@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "BOOT",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 4406,
+    "price": 450.3908925734465,
+    "value": 1984422.2726786053,
+    "date": "2025-07-29T10:26:50.212Z",
+    "filingDate": "2025-08-01T19:47:15.812Z",
+    "ownershipPercent": 3.1309419431722953
+  }
+]

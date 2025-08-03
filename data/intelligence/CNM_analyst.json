@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "CNM",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Underperform",
+    "previousTarget": 475.80442684098495,
+    "newTarget": 452.26411966135964,
+    "date": "2025-08-03T08:07:17.328Z",
+    "reasoning": "Margin pressure concerns"
+  }
+]

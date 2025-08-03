@@ -1,0 +1,43 @@
+[
+  {
+    "symbol": "BPOP",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1074697,
+    "totalVolume": 6934937,
+    "darkPoolRatio": 0.15496853107677835,
+    "avgDarkPoolSize": 1210,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 88523,
+        "price": 455.09709391914635,
+        "timestamp": "2025-08-03T09:28:30.423Z"
+      },
+      {
+        "size": 71487,
+        "price": 452.92119610505364,
+        "timestamp": "2025-08-03T08:45:13.142Z"
+      },
+      {
+        "size": 71999,
+        "price": 456.5786206357817,
+        "timestamp": "2025-08-03T14:00:43.319Z"
+      },
+      {
+        "size": 58431,
+        "price": 461.5909600615162,
+        "timestamp": "2025-08-03T13:25:32.178Z"
+      },
+      {
+        "size": 126053,
+        "price": 453.30200675621694,
+        "timestamp": "2025-08-03T12:36:31.707Z"
+      },
+      {
+        "size": 131472,
+        "price": 460.3994589541538,
+        "timestamp": "2025-08-03T09:48:42.438Z"
+      }
+    ]
+  }
+]

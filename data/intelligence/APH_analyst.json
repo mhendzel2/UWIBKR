@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "APH",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Hold",
+    "newRating": "Underperform",
+    "previousTarget": 437.15206614292015,
+    "newTarget": 405.1933021079982,
+    "date": "2025-07-31T20:36:13.659Z",
+    "reasoning": "Strong earnings momentum"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "CW",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3537976,
+    "totalVolume": 17409954,
+    "darkPoolRatio": 0.20321570062735375,
+    "avgDarkPoolSize": 1743,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 75203,
+        "price": 455.4541072511667,
+        "timestamp": "2025-08-03T10:15:17.466Z"
+      },
+      {
+        "size": 149180,
+        "price": 462.028373929973,
+        "timestamp": "2025-08-03T10:48:53.900Z"
+      },
+      {
+        "size": 139206,
+        "price": 456.79393015024084,
+        "timestamp": "2025-08-03T14:10:15.870Z"
+      },
+      {
+        "size": 86092,
+        "price": 456.9973300477903,
+        "timestamp": "2025-08-03T09:58:26.033Z"
+      },
+      {
+        "size": 97923,
+        "price": 453.5949611149797,
+        "timestamp": "2025-08-03T15:02:45.305Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "MOD",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Sell",
+    "previousTarget": 451.67693003519736,
+    "newTarget": 483.49687076525936,
+    "date": "2025-07-31T17:41:42.304Z",
+    "reasoning": "Attractive valuation"
+  }
+]

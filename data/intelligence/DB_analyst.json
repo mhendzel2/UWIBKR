@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "DB",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Buy",
+    "previousTarget": 458.74664198209456,
+    "newTarget": 472.68735016770546,
+    "date": "2025-07-30T16:37:33.998Z",
+    "reasoning": "Competitive headwinds"
+  },
+  {
+    "symbol": "DB",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Outperform",
+    "previousTarget": 468.5439243285263,
+    "newTarget": 492.5657689602853,
+    "date": "2025-08-01T07:09:43.862Z",
+    "reasoning": "Balanced risk/reward"
+  }
+]

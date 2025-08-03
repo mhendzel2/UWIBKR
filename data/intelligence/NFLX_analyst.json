@@ -22,5 +22,17 @@
     "newTarget": 157.6183089312188,
     "date": "2025-07-30T11:47:30.886Z",
     "reasoning": "Strong management team"
+  },
+  {
+    "symbol": "NFLX",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Buy",
+    "previousTarget": 411.23029042931995,
+    "newTarget": 407.70288539388144,
+    "date": "2025-07-30T04:51:56.539Z",
+    "reasoning": "Balanced risk/reward"
   }
 ]

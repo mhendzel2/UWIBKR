@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "DAVE",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 29716,
+    "price": 449.58018050337137,
+    "value": 13359724.643838184,
+    "date": "2025-07-29T15:34:40.354Z",
+    "filingDate": "2025-07-31T21:03:32.842Z",
+    "ownershipPercent": 0.6172862437495096
+  }
+]

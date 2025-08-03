@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "KAR",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 30105,
+    "price": 451.8120045837788,
+    "value": 13601800.39799466,
+    "date": "2025-07-28T08:04:48.962Z",
+    "filingDate": "2025-08-03T08:18:40.805Z",
+    "ownershipPercent": 2.318039345448256
+  },
+  {
+    "symbol": "KAR",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 17086,
+    "price": 444.1552606829534,
+    "value": 7588836.784028942,
+    "date": "2025-08-02T18:26:29.024Z",
+    "filingDate": "2025-08-01T21:24:02.882Z",
+    "ownershipPercent": 0.12197189713785575
+  },
+  {
+    "symbol": "KAR",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 47080,
+    "price": 456.7459713675928,
+    "value": 21503600.33198627,
+    "date": "2025-07-30T06:34:10.567Z",
+    "filingDate": "2025-08-01T23:00:36.304Z",
+    "ownershipPercent": 1.7085871326221969
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "ETN",
+    "headline": "Regulatory approval granted for ETN new product",
+    "summary": "Recent developments suggest positive momentum for ETN with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.6648419702549363,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T09:14:13.262Z",
+    "url": "https://example.com/news/etn-1754238624451"
+  },
+  {
+    "symbol": "ETN",
+    "headline": "ETN reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for ETN with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.7946194543358317,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T14:13:34.579Z",
+    "url": "https://example.com/news/etn-1754238624451"
+  }
+]

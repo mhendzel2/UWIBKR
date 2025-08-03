@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "FUTU",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Hold",
+    "newRating": "Buy",
+    "previousTarget": 462.5843268832443,
+    "newTarget": 421.1058084923239,
+    "date": "2025-08-03T08:31:52.279Z",
+    "reasoning": "Strong management team"
+  },
+  {
+    "symbol": "FUTU",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Sell",
+    "newRating": "Underperform",
+    "previousTarget": 493.41425682869783,
+    "newTarget": 492.08875097260267,
+    "date": "2025-07-31T15:36:11.455Z",
+    "reasoning": "Margin pressure concerns"
+  }
+]

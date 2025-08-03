@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "ITRI",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Hold",
+    "previousTarget": 468.94796079875323,
+    "newTarget": 502.5638878391065,
+    "date": "2025-08-02T01:05:38.362Z",
+    "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "ITRI",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 449.69604607442454,
+    "newTarget": 420.054351620275,
+    "date": "2025-08-03T01:12:25.921Z",
+    "reasoning": "Valuation concerns"
+  }
+]

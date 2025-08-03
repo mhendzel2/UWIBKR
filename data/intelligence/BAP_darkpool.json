@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "BAP",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1060395,
+    "totalVolume": 19878562,
+    "darkPoolRatio": 0.05334364729199225,
+    "avgDarkPoolSize": 9235,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 109812,
+        "price": 460.8596087793798,
+        "timestamp": "2025-08-03T15:30:24.833Z"
+      },
+      {
+        "size": 75102,
+        "price": 457.4273449080797,
+        "timestamp": "2025-08-03T09:25:37.085Z"
+      },
+      {
+        "size": 64836,
+        "price": 455.08738624194865,
+        "timestamp": "2025-08-03T09:47:45.912Z"
+      },
+      {
+        "size": 109166,
+        "price": 456.6452827871262,
+        "timestamp": "2025-08-03T15:07:50.595Z"
+      }
+    ]
+  }
+]

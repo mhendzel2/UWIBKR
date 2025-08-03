@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "GOLF",
+    "date": "2025-08-03",
+    "darkPoolVolume": 2202810,
+    "totalVolume": 13510543,
+    "darkPoolRatio": 0.16304377995762273,
+    "avgDarkPoolSize": 1582,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 82226,
+        "price": 455.11817965583265,
+        "timestamp": "2025-08-03T09:15:26.948Z"
+      },
+      {
+        "size": 143730,
+        "price": 459.6112170532475,
+        "timestamp": "2025-08-03T09:04:29.482Z"
+      },
+      {
+        "size": 87898,
+        "price": 462.9719363041501,
+        "timestamp": "2025-08-03T16:28:15.415Z"
+      },
+      {
+        "size": 149819,
+        "price": 461.2853133377327,
+        "timestamp": "2025-08-03T09:41:14.668Z"
+      }
+    ]
+  }
+]

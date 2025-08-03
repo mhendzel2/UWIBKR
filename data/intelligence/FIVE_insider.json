@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "FIVE",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 18402,
+    "price": 447.38479867079525,
+    "value": 8232775.0651399745,
+    "date": "2025-08-03T04:21:00.758Z",
+    "filingDate": "2025-08-01T12:27:30.935Z",
+    "ownershipPercent": 1.8690670143247112
+  },
+  {
+    "symbol": "FIVE",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 17791,
+    "price": 444.6301397814916,
+    "value": 7910414.816852517,
+    "date": "2025-08-01T16:09:04.338Z",
+    "filingDate": "2025-08-02T08:27:11.114Z",
+    "ownershipPercent": 4.232685018265492
+  }
+]

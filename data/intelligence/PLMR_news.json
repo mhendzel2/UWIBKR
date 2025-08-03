@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "PLMR",
+    "headline": "Regulatory approval granted for PLMR new product",
+    "summary": "Recent developments suggest positive momentum for PLMR with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.6384685757141589,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T07:15:32.092Z",
+    "url": "https://example.com/news/plmr-1754238634613"
+  },
+  {
+    "symbol": "PLMR",
+    "headline": "PLMR announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for PLMR with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.6419502623422336,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T10:40:47.273Z",
+    "url": "https://example.com/news/plmr-1754238634613"
+  },
+  {
+    "symbol": "PLMR",
+    "headline": "PLMR raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for PLMR with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.6087759652814367,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T13:05:24.189Z",
+    "url": "https://example.com/news/plmr-1754238634613"
+  }
+]

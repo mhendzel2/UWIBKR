@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "FTI",
+    "headline": "FTI reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for FTI with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.5142729642064997,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T07:15:21.318Z",
+    "url": "https://example.com/news/fti-1754238651571"
+  },
+  {
+    "symbol": "FTI",
+    "headline": "FTI reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for FTI with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.8533156565660497,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T05:33:15.178Z",
+    "url": "https://example.com/news/fti-1754238651572"
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "SPXC",
+    "headline": "SPXC raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for SPXC with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.9968247455602006,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T09:17:09.014Z",
+    "url": "https://example.com/news/spxc-1754238621499"
+  },
+  {
+    "symbol": "SPXC",
+    "headline": "Regulatory approval granted for SPXC new product",
+    "summary": "Recent developments suggest positive momentum for SPXC with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.46023432216488147,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T04:34:15.339Z",
+    "url": "https://example.com/news/spxc-1754238621500"
+  }
+]

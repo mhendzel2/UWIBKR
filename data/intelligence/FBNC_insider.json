@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "FBNC",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 41095,
+    "price": 454.7785126641394,
+    "value": 18689122.977932807,
+    "date": "2025-07-28T06:27:36.795Z",
+    "filingDate": "2025-07-31T20:24:19.188Z",
+    "ownershipPercent": 0.7061428962774329
+  },
+  {
+    "symbol": "FBNC",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 32002,
+    "price": 460.4132189309728,
+    "value": 14734143.83222899,
+    "date": "2025-08-03T10:58:57.764Z",
+    "filingDate": "2025-08-02T13:32:13.698Z",
+    "ownershipPercent": 4.9696903484311
+  },
+  {
+    "symbol": "FBNC",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 43983,
+    "price": 457.7026534842654,
+    "value": 20131135.808198445,
+    "date": "2025-07-27T19:39:18.685Z",
+    "filingDate": "2025-08-03T01:38:10.981Z",
+    "ownershipPercent": 1.2280327804328695
+  }
+]

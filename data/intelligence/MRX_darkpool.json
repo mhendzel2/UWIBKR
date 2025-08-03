@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "MRX",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4150446,
+    "totalVolume": 9155933,
+    "darkPoolRatio": 0.45330672472155487,
+    "avgDarkPoolSize": 3456,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 135643,
+        "price": 457.8085443137024,
+        "timestamp": "2025-08-03T12:53:38.783Z"
+      },
+      {
+        "size": 111924,
+        "price": 455.668250008684,
+        "timestamp": "2025-08-03T08:58:45.002Z"
+      }
+    ]
+  }
+]

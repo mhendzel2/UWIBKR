@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "IDXX",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 1696,
+    "price": 449.7847972639421,
+    "value": 762835.0161596457,
+    "date": "2025-07-30T07:19:03.302Z",
+    "filingDate": "2025-08-03T05:48:20.274Z",
+    "ownershipPercent": 5.0647733924361455
+  }
+]

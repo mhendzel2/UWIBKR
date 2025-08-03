@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "BYD",
+    "headline": "BYD raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for BYD with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.8131924164230356,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T08:23:35.516Z",
+    "url": "https://example.com/news/byd-1754238636525"
+  },
+  {
+    "symbol": "BYD",
+    "headline": "Regulatory approval granted for BYD new product",
+    "summary": "Recent developments suggest positive momentum for BYD with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.6719034631266508,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T06:49:02.002Z",
+    "url": "https://example.com/news/byd-1754238636526"
+  },
+  {
+    "symbol": "BYD",
+    "headline": "BYD reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for BYD with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7312531661276787,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T10:39:47.476Z",
+    "url": "https://example.com/news/byd-1754238636526"
+  }
+]

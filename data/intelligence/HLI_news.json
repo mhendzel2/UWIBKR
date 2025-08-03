@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "HLI",
+    "headline": "HLI raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for HLI with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.6733254416591902,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T13:46:19.320Z",
+    "url": "https://example.com/news/hli-1754238618956"
+  },
+  {
+    "symbol": "HLI",
+    "headline": "Regulatory approval granted for HLI new product",
+    "summary": "Recent developments suggest positive momentum for HLI with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.44665867184104613,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T15:35:21.801Z",
+    "url": "https://example.com/news/hli-1754238618957"
+  },
+  {
+    "symbol": "HLI",
+    "headline": "HLI announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for HLI with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.4235156871097594,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T06:44:12.608Z",
+    "url": "https://example.com/news/hli-1754238618957"
+  }
+]

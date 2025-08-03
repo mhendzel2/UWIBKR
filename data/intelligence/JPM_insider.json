@@ -22,5 +22,29 @@
     "date": "2025-07-28T10:42:11.389Z",
     "filingDate": "2025-07-31T00:33:02.585Z",
     "ownershipPercent": 0.9355272958456194
+  },
+  {
+    "symbol": "JPM",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 22753,
+    "price": 451.9498971511448,
+    "value": 10283216.009879997,
+    "date": "2025-08-01T03:47:44.504Z",
+    "filingDate": "2025-08-03T11:46:56.901Z",
+    "ownershipPercent": 4.567898999644416
+  },
+  {
+    "symbol": "JPM",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 38632,
+    "price": 455.1474476316758,
+    "value": 17583256.1969069,
+    "date": "2025-08-01T02:43:17.797Z",
+    "filingDate": "2025-08-03T01:15:29.846Z",
+    "ownershipPercent": 1.6323371588789182
   }
 ]

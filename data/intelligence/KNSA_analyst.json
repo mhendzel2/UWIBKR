@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "KNSA",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Hold",
+    "previousTarget": 415.6724166352066,
+    "newTarget": 433.2666109612117,
+    "date": "2025-07-31T14:05:09.957Z",
+    "reasoning": "Margin pressure concerns"
+  },
+  {
+    "symbol": "KNSA",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 520.8891277185314,
+    "newTarget": 558.7724551545548,
+    "date": "2025-08-01T02:43:20.130Z",
+    "reasoning": "Positive sector outlook"
+  }
+]

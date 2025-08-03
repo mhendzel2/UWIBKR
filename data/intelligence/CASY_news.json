@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "CASY",
+    "headline": "CASY announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for CASY with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.3493026631455596,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T10:04:25.948Z",
+    "url": "https://example.com/news/casy-1754238639243"
+  },
+  {
+    "symbol": "CASY",
+    "headline": "CASY announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for CASY with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.32592208411825097,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T08:53:46.164Z",
+    "url": "https://example.com/news/casy-1754238639243"
+  },
+  {
+    "symbol": "CASY",
+    "headline": "CASY raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for CASY with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.8770945878975738,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T10:46:51.932Z",
+    "url": "https://example.com/news/casy-1754238639243"
+  }
+]

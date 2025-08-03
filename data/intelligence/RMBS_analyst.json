@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "RMBS",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Underperform",
+    "previousTarget": 486.12137904221095,
+    "newTarget": 491.21710168405184,
+    "date": "2025-08-02T09:14:10.307Z",
+    "reasoning": "Balanced risk/reward"
+  },
+  {
+    "symbol": "RMBS",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 500.18490436768406,
+    "newTarget": 529.565619568314,
+    "date": "2025-07-31T22:53:21.276Z",
+    "reasoning": "Positive sector outlook"
+  }
+]

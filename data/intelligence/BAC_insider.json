@@ -10,5 +10,17 @@
     "date": "2025-07-29T08:10:30.277Z",
     "filingDate": "2025-08-01T21:01:10.188Z",
     "ownershipPercent": 4.093067942388808
+  },
+  {
+    "symbol": "BAC",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 30676,
+    "price": 459.9192471538744,
+    "value": 14108482.825692251,
+    "date": "2025-07-30T01:19:16.541Z",
+    "filingDate": "2025-08-02T13:08:27.503Z",
+    "ownershipPercent": 3.419995035066694
   }
 ]

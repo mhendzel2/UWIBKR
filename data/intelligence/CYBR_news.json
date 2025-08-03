@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "CYBR",
+    "headline": "CYBR raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for CYBR with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.6004347441257849,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T14:26:35.134Z",
+    "url": "https://example.com/news/cybr-1754238618319"
+  },
+  {
+    "symbol": "CYBR",
+    "headline": "CYBR raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for CYBR with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.9221416267313626,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T12:36:32.380Z",
+    "url": "https://example.com/news/cybr-1754238618321"
+  }
+]

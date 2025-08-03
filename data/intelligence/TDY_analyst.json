@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "TDY",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Sell",
+    "newRating": "Hold",
+    "previousTarget": 414.3227883577022,
+    "newTarget": 426.70894341050666,
+    "date": "2025-07-30T07:27:20.373Z",
+    "reasoning": "Margin pressure concerns"
+  }
+]

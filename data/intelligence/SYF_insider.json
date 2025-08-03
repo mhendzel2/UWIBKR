@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "SYF",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 28677,
+    "price": 459.5304651039687,
+    "value": 13177955.147786511,
+    "date": "2025-07-31T11:01:32.709Z",
+    "filingDate": "2025-08-02T19:54:01.328Z",
+    "ownershipPercent": 1.420530466668074
+  },
+  {
+    "symbol": "SYF",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 34366,
+    "price": 459.2921690384567,
+    "value": 15784034.681175603,
+    "date": "2025-08-02T04:44:15.610Z",
+    "filingDate": "2025-08-02T15:36:50.091Z",
+    "ownershipPercent": 4.9548445632066205
+  }
+]

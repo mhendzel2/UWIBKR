@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "GLW",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Underperform",
+    "previousTarget": 459.2717919100464,
+    "newTarget": 478.4681952707198,
+    "date": "2025-07-31T04:03:21.128Z",
+    "reasoning": "Improved market position"
+  },
+  {
+    "symbol": "GLW",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Sell",
+    "previousTarget": 419.18778206301226,
+    "newTarget": 392.5066083679149,
+    "date": "2025-07-30T18:35:01.029Z",
+    "reasoning": "Competitive headwinds"
+  }
+]

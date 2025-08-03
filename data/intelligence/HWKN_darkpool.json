@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "HWKN",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5405638,
+    "totalVolume": 10596073,
+    "darkPoolRatio": 0.5101548469890685,
+    "avgDarkPoolSize": 1389,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 115433,
+        "price": 458.8971144856724,
+        "timestamp": "2025-08-03T12:33:10.343Z"
+      },
+      {
+        "size": 67392,
+        "price": 458.292144871062,
+        "timestamp": "2025-08-03T08:35:45.144Z"
+      },
+      {
+        "size": 96595,
+        "price": 456.2161055299878,
+        "timestamp": "2025-08-03T14:04:57.481Z"
+      },
+      {
+        "size": 78347,
+        "price": 452.747882847386,
+        "timestamp": "2025-08-03T16:09:14.775Z"
+      },
+      {
+        "size": 88027,
+        "price": 458.63491444433953,
+        "timestamp": "2025-08-03T09:49:51.508Z"
+      }
+    ]
+  }
+]

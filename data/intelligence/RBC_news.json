@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "RBC",
+    "headline": "RBC announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for RBC with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5821172575044419,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T08:49:40.187Z",
+    "url": "https://example.com/news/rbc-1754238644675"
+  },
+  {
+    "symbol": "RBC",
+    "headline": "RBC raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for RBC with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7734929561199847,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T06:13:22.641Z",
+    "url": "https://example.com/news/rbc-1754238644675"
+  }
+]

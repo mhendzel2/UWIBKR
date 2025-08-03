@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "GL",
+    "headline": "GL reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for GL with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.613132220932669,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T06:25:03.320Z",
+    "url": "https://example.com/news/gl-1754238648382"
+  },
+  {
+    "symbol": "GL",
+    "headline": "GL raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for GL with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.6367233157278993,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T13:05:23.149Z",
+    "url": "https://example.com/news/gl-1754238648383"
+  }
+]

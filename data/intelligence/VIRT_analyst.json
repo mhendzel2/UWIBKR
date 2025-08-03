@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "VIRT",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Outperform",
+    "previousTarget": 503.64920751122304,
+    "newTarget": 490.62018375684806,
+    "date": "2025-07-30T06:44:23.510Z",
+    "reasoning": "Compelling growth story"
+  }
+]

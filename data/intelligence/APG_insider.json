@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "APG",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 37465,
+    "price": 465.66113359585705,
+    "value": 17445994.370168783,
+    "date": "2025-07-28T18:06:38.239Z",
+    "filingDate": "2025-08-02T02:41:52.600Z",
+    "ownershipPercent": 3.595249702583606
+  }
+]

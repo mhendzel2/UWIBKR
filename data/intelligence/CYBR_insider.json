@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "CYBR",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 49264,
+    "price": 464.5391896922749,
+    "value": 22885058.64100023,
+    "date": "2025-08-01T20:05:04.257Z",
+    "filingDate": "2025-08-02T10:20:48.144Z",
+    "ownershipPercent": 3.3166829990003435
+  },
+  {
+    "symbol": "CYBR",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 12752,
+    "price": 462.3189702561161,
+    "value": 5895491.508705992,
+    "date": "2025-07-29T13:10:32.021Z",
+    "filingDate": "2025-08-03T14:49:22.359Z",
+    "ownershipPercent": 3.7107260147006116
+  }
+]

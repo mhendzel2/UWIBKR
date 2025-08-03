@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "GFI",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Underperform",
+    "previousTarget": 428.50106701765725,
+    "newTarget": 456.3138458658138,
+    "date": "2025-08-01T09:44:29.774Z",
+    "reasoning": "Balanced risk/reward"
+  }
+]

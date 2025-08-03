@@ -1,0 +1,43 @@
+[
+  {
+    "symbol": "SYF",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4826939,
+    "totalVolume": 18661669,
+    "darkPoolRatio": 0.2586552681863557,
+    "avgDarkPoolSize": 8394,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 109797,
+        "price": 458.26372507843905,
+        "timestamp": "2025-08-03T09:15:13.392Z"
+      },
+      {
+        "size": 82885,
+        "price": 457.4660556247571,
+        "timestamp": "2025-08-03T15:20:03.678Z"
+      },
+      {
+        "size": 124159,
+        "price": 457.6859853918096,
+        "timestamp": "2025-08-03T13:46:46.009Z"
+      },
+      {
+        "size": 141109,
+        "price": 456.4470441085841,
+        "timestamp": "2025-08-03T12:11:35.797Z"
+      },
+      {
+        "size": 116619,
+        "price": 451.4279041082543,
+        "timestamp": "2025-08-03T14:21:49.682Z"
+      },
+      {
+        "size": 100418,
+        "price": 456.70722632789,
+        "timestamp": "2025-08-03T12:38:40.656Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "MTZ",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Underperform",
+    "newRating": "Underperform",
+    "previousTarget": 403.3792391383756,
+    "newTarget": 359.0016321408235,
+    "date": "2025-07-31T02:22:18.411Z",
+    "reasoning": "Attractive valuation"
+  }
+]

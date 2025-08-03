@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "TMDX",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Underperform",
+    "newRating": "Outperform",
+    "previousTarget": 401.95989092209027,
+    "newTarget": 427.2734583872766,
+    "date": "2025-07-30T19:18:21.038Z",
+    "reasoning": "Compelling growth story"
+  },
+  {
+    "symbol": "TMDX",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Underperform",
+    "previousTarget": 490.52010847413703,
+    "newTarget": 490.44671816927996,
+    "date": "2025-07-31T20:12:25.715Z",
+    "reasoning": "Margin pressure concerns"
+  }
+]

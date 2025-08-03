@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "RDDT",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 17533,
+    "price": 461.4835342335947,
+    "value": 8091190.805717615,
+    "date": "2025-07-30T04:21:18.103Z",
+    "filingDate": "2025-08-01T11:57:50.293Z",
+    "ownershipPercent": 5.053337245450172
+  }
+]

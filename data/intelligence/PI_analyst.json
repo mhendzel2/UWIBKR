@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "PI",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Underperform",
+    "previousTarget": 475.102238695696,
+    "newTarget": 502.2096197990488,
+    "date": "2025-08-02T07:37:41.712Z",
+    "reasoning": "Stable fundamentals"
+  },
+  {
+    "symbol": "PI",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 429.66466092427885,
+    "newTarget": 448.32562114546914,
+    "date": "2025-08-02T17:22:45.467Z",
+    "reasoning": "Stable fundamentals"
+  }
+]

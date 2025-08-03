@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "VRT",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Underperform",
+    "newRating": "Hold",
+    "previousTarget": 462.4168162834626,
+    "newTarget": 497.3734403097874,
+    "date": "2025-07-31T17:43:51.627Z",
+    "reasoning": "Compelling growth story"
+  },
+  {
+    "symbol": "VRT",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Buy",
+    "previousTarget": 490.63032366197035,
+    "newTarget": 468.8053070622985,
+    "date": "2025-08-01T22:48:24.166Z",
+    "reasoning": "Margin pressure concerns"
+  }
+]

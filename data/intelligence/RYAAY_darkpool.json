@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "RYAAY",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5250133,
+    "totalVolume": 14360542,
+    "darkPoolRatio": 0.36559434873697666,
+    "avgDarkPoolSize": 5746,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 64984,
+        "price": 460.93250734392046,
+        "timestamp": "2025-08-03T14:14:12.109Z"
+      },
+      {
+        "size": 140489,
+        "price": 461.0008200531895,
+        "timestamp": "2025-08-03T14:27:53.503Z"
+      },
+      {
+        "size": 116389,
+        "price": 454.94280928880465,
+        "timestamp": "2025-08-03T14:51:55.694Z"
+      }
+    ]
+  }
+]

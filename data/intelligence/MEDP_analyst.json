@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "MEDP",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Outperform",
+    "newRating": "Buy",
+    "previousTarget": 516.410863524696,
+    "newTarget": 482.8309342442141,
+    "date": "2025-07-30T10:30:05.437Z",
+    "reasoning": "Strong earnings momentum"
+  }
+]

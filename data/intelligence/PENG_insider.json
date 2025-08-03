@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "PENG",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 46019,
+    "price": 457.0609726799139,
+    "value": 21033488.901756957,
+    "date": "2025-07-28T07:14:53.740Z",
+    "filingDate": "2025-07-31T19:54:54.077Z",
+    "ownershipPercent": 5.070955189570634
+  }
+]

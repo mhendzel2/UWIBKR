@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "FLEX",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4967811,
+    "totalVolume": 18916026,
+    "darkPoolRatio": 0.26262445399472384,
+    "avgDarkPoolSize": 4378,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 140630,
+        "price": 456.267638474115,
+        "timestamp": "2025-08-03T15:44:56.885Z"
+      },
+      {
+        "size": 133665,
+        "price": 457.0797390638766,
+        "timestamp": "2025-08-03T12:22:35.370Z"
+      },
+      {
+        "size": 53973,
+        "price": 459.7965500329316,
+        "timestamp": "2025-08-03T11:46:23.727Z"
+      }
+    ]
+  }
+]

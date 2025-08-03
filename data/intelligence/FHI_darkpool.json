@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "FHI",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5392474,
+    "totalVolume": 9565429,
+    "darkPoolRatio": 0.5637461738516902,
+    "avgDarkPoolSize": 5819,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 110040,
+        "price": 458.73948713102817,
+        "timestamp": "2025-08-03T09:00:08.605Z"
+      },
+      {
+        "size": 52568,
+        "price": 456.7827077797918,
+        "timestamp": "2025-08-03T13:09:52.802Z"
+      },
+      {
+        "size": 120515,
+        "price": 462.47934663767296,
+        "timestamp": "2025-08-03T11:51:30.143Z"
+      },
+      {
+        "size": 76572,
+        "price": 457.23279737904517,
+        "timestamp": "2025-08-03T14:22:36.203Z"
+      }
+    ]
+  }
+]

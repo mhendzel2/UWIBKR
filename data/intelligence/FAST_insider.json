@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "FAST",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 45795,
+    "price": 451.05540022418006,
+    "value": 20656082.053266324,
+    "date": "2025-08-02T22:09:00.619Z",
+    "filingDate": "2025-08-02T06:11:20.241Z",
+    "ownershipPercent": 2.6743138097328036
+  }
+]

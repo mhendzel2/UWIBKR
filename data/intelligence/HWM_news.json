@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "HWM",
+    "headline": "Analyst upgrades HWM on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for HWM with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.7001926442131441,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T13:56:27.040Z",
+    "url": "https://example.com/news/hwm-1754238613959"
+  },
+  {
+    "symbol": "HWM",
+    "headline": "HWM announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for HWM with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.4974620816319962,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T15:25:30.827Z",
+    "url": "https://example.com/news/hwm-1754238613959"
+  },
+  {
+    "symbol": "HWM",
+    "headline": "Regulatory approval granted for HWM new product",
+    "summary": "Recent developments suggest positive momentum for HWM with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7579499989769448,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T11:49:13.772Z",
+    "url": "https://example.com/news/hwm-1754238613959"
+  }
+]

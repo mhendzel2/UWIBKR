@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "TRS",
+    "headline": "TRS announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for TRS with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.6251347787114492,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T14:55:02.118Z",
+    "url": "https://example.com/news/trs-1754238622351"
+  },
+  {
+    "symbol": "TRS",
+    "headline": "Regulatory approval granted for TRS new product",
+    "summary": "Recent developments suggest positive momentum for TRS with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.63044499119525,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T15:11:49.503Z",
+    "url": "https://example.com/news/trs-1754238622351"
+  }
+]

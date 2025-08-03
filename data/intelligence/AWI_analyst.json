@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "AWI",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Underperform",
+    "newRating": "Sell",
+    "previousTarget": 445.9870454592728,
+    "newTarget": 430.2277008124635,
+    "date": "2025-08-02T04:36:23.093Z",
+    "reasoning": "Compelling growth story"
+  },
+  {
+    "symbol": "AWI",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Outperform",
+    "newRating": "Buy",
+    "previousTarget": 470.8567978996269,
+    "newTarget": 436.24849652781194,
+    "date": "2025-08-02T07:42:56.514Z",
+    "reasoning": "Fair valuation"
+  }
+]

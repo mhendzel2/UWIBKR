@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "PENG",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Outperform",
+    "newRating": "Underperform",
+    "previousTarget": 502.0494019966847,
+    "newTarget": 503.7421579999451,
+    "date": "2025-08-01T16:58:21.581Z",
+    "reasoning": "Margin pressure concerns"
+  }
+]

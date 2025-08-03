@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "WT",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Buy",
+    "previousTarget": 497.0731151941855,
+    "newTarget": 508.22422391201155,
+    "date": "2025-08-02T18:21:40.348Z",
+    "reasoning": "Competitive headwinds"
+  }
+]

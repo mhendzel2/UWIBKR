@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "BPOP",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 31722,
+    "price": 467.4493324268733,
+    "value": 14828427.723245274,
+    "date": "2025-07-30T09:45:27.619Z",
+    "filingDate": "2025-08-03T06:58:12.004Z",
+    "ownershipPercent": 0.4858039871549068
+  },
+  {
+    "symbol": "BPOP",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 42417,
+    "price": 468.33887048871054,
+    "value": 19865529.869519636,
+    "date": "2025-08-02T12:23:20.125Z",
+    "filingDate": "2025-08-03T09:52:21.090Z",
+    "ownershipPercent": 3.1332950643662714
+  },
+  {
+    "symbol": "BPOP",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 50182,
+    "price": 467.4347272744361,
+    "value": 23456809.484085754,
+    "date": "2025-07-28T08:01:56.620Z",
+    "filingDate": "2025-08-02T14:55:34.270Z",
+    "ownershipPercent": 3.83021247881859
+  }
+]

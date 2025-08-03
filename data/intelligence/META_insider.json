@@ -22,5 +22,29 @@
     "date": "2025-07-31T00:18:48.347Z",
     "filingDate": "2025-07-30T10:29:43.372Z",
     "ownershipPercent": 2.451456114692522
+  },
+  {
+    "symbol": "META",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 30492,
+    "price": 468.7061978766016,
+    "value": 14291789.385653336,
+    "date": "2025-08-03T06:30:56.822Z",
+    "filingDate": "2025-08-03T00:47:04.960Z",
+    "ownershipPercent": 2.755075041464711
+  },
+  {
+    "symbol": "META",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 18940,
+    "price": 464.4443326517008,
+    "value": 8796575.660423214,
+    "date": "2025-08-02T10:25:17.497Z",
+    "filingDate": "2025-08-01T19:09:40.316Z",
+    "ownershipPercent": 2.4420852307291665
   }
 ]

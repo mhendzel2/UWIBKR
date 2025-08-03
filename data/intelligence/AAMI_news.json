@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "AAMI",
+    "headline": "Analyst upgrades AAMI on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for AAMI with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5050789994546677,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T11:17:04.294Z",
+    "url": "https://example.com/news/aami-1754238622765"
+  },
+  {
+    "symbol": "AAMI",
+    "headline": "AAMI reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for AAMI with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.541803188083474,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T07:38:06.545Z",
+    "url": "https://example.com/news/aami-1754238622765"
+  },
+  {
+    "symbol": "AAMI",
+    "headline": "Regulatory approval granted for AAMI new product",
+    "summary": "Recent developments suggest positive momentum for AAMI with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.6429200232855258,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T14:34:13.570Z",
+    "url": "https://example.com/news/aami-1754238622766"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "KB",
+    "headline": "KB announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for KB with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.3918473091490691,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T12:23:34.072Z",
+    "url": "https://example.com/news/kb-1754238648594"
+  },
+  {
+    "symbol": "KB",
+    "headline": "Analyst upgrades KB on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for KB with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.5630301917593368,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T06:07:08.730Z",
+    "url": "https://example.com/news/kb-1754238648594"
+  },
+  {
+    "symbol": "KB",
+    "headline": "Analyst upgrades KB on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for KB with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7223877780367034,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T13:38:59.459Z",
+    "url": "https://example.com/news/kb-1754238648594"
+  }
+]

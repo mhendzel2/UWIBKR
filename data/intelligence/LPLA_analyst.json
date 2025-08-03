@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "LPLA",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Sell",
+    "newRating": "Underperform",
+    "previousTarget": 465.2457870906227,
+    "newTarget": 435.564946377534,
+    "date": "2025-07-31T21:20:17.287Z",
+    "reasoning": "Positive sector outlook"
+  }
+]

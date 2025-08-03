@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "VC",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5006103,
+    "totalVolume": 19422173,
+    "darkPoolRatio": 0.2577519518542029,
+    "avgDarkPoolSize": 7512,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 95298,
+        "price": 452.13337076910244,
+        "timestamp": "2025-08-03T09:37:49.922Z"
+      },
+      {
+        "size": 103327,
+        "price": 456.7221027424586,
+        "timestamp": "2025-08-03T11:06:59.532Z"
+      }
+    ]
+  }
+]

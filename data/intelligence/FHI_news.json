@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "FHI",
+    "headline": "FHI reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for FHI with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5286273334023291,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T06:59:59.356Z",
+    "url": "https://example.com/news/fhi-1754238637147"
+  },
+  {
+    "symbol": "FHI",
+    "headline": "Regulatory approval granted for FHI new product",
+    "summary": "Recent developments suggest positive momentum for FHI with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.5975794895187024,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T15:32:10.418Z",
+    "url": "https://example.com/news/fhi-1754238637148"
+  },
+  {
+    "symbol": "FHI",
+    "headline": "FHI announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for FHI with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.5141842410727014,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T06:36:11.229Z",
+    "url": "https://example.com/news/fhi-1754238637148"
+  }
+]

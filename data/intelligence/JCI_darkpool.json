@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "JCI",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4676068,
+    "totalVolume": 12540115,
+    "darkPoolRatio": 0.37288876537416127,
+    "avgDarkPoolSize": 3457,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 123987,
+        "price": 460.65150312738393,
+        "timestamp": "2025-08-03T11:05:05.811Z"
+      },
+      {
+        "size": 80866,
+        "price": 455.45246150856883,
+        "timestamp": "2025-08-03T14:07:40.762Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "IDCC",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 4098,
+    "price": 447.5848321140466,
+    "value": 1834202.642003363,
+    "date": "2025-08-03T02:11:53.384Z",
+    "filingDate": "2025-08-03T08:26:34.939Z",
+    "ownershipPercent": 2.8973440437251043
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "EME",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1542419,
+    "totalVolume": 6967903,
+    "darkPoolRatio": 0.2213605729012014,
+    "avgDarkPoolSize": 4401,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 92858,
+        "price": 456.1032775720046,
+        "timestamp": "2025-08-03T08:34:13.425Z"
+      },
+      {
+        "size": 52427,
+        "price": 456.8337509628098,
+        "timestamp": "2025-08-03T14:35:24.917Z"
+      }
+    ]
+  }
+]

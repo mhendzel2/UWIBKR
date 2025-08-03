@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "SII",
+    "date": "2025-08-03",
+    "darkPoolVolume": 2901185,
+    "totalVolume": 13105818,
+    "darkPoolRatio": 0.22136619019125706,
+    "avgDarkPoolSize": 3662,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 141539,
+        "price": 463.21649507959955,
+        "timestamp": "2025-08-03T13:06:00.127Z"
+      },
+      {
+        "size": 60992,
+        "price": 455.7753011895254,
+        "timestamp": "2025-08-03T11:12:03.139Z"
+      }
+    ]
+  }
+]

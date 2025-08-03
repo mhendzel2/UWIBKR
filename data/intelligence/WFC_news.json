@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "WFC",
+    "headline": "WFC announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for WFC with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.3764661483319035,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T12:05:22.923Z",
+    "url": "https://example.com/news/wfc-1754238650506"
+  },
+  {
+    "symbol": "WFC",
+    "headline": "WFC announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for WFC with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.5103441837597519,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T07:29:41.471Z",
+    "url": "https://example.com/news/wfc-1754238650506"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "BYD",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Outperform",
+    "previousTarget": 488.11366303910455,
+    "newTarget": 483.9028081145255,
+    "date": "2025-08-01T12:47:01.473Z",
+    "reasoning": "Stable fundamentals"
+  },
+  {
+    "symbol": "BYD",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Underperform",
+    "previousTarget": 453.81615607354956,
+    "newTarget": 410.5141065651947,
+    "date": "2025-07-31T16:12:01.270Z",
+    "reasoning": "Competitive headwinds"
+  }
+]

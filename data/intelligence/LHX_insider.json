@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "LHX",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 25281,
+    "price": 463.84556900080173,
+    "value": 11726479.829909269,
+    "date": "2025-07-30T18:02:26.845Z",
+    "filingDate": "2025-08-02T19:18:00.899Z",
+    "ownershipPercent": 3.3122185102476287
+  }
+]

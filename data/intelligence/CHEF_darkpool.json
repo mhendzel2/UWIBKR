@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "CHEF",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3365387,
+    "totalVolume": 12790819,
+    "darkPoolRatio": 0.26310957883150404,
+    "avgDarkPoolSize": 6261,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 111698,
+        "price": 455.4934158805685,
+        "timestamp": "2025-08-03T11:33:00.793Z"
+      },
+      {
+        "size": 119928,
+        "price": 454.0709655807927,
+        "timestamp": "2025-08-03T15:59:40.721Z"
+      },
+      {
+        "size": 83846,
+        "price": 452.78986770445107,
+        "timestamp": "2025-08-03T10:56:25.726Z"
+      },
+      {
+        "size": 112186,
+        "price": 459.6525287680832,
+        "timestamp": "2025-08-03T13:02:31.429Z"
+      },
+      {
+        "size": 115395,
+        "price": 460.90974138139495,
+        "timestamp": "2025-08-03T10:22:32.762Z"
+      }
+    ]
+  }
+]

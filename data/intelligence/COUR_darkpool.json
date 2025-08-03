@@ -1,0 +1,43 @@
+[
+  {
+    "symbol": "COUR",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1163806,
+    "totalVolume": 18622219,
+    "darkPoolRatio": 0.06249555973968516,
+    "avgDarkPoolSize": 6569,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 54742,
+        "price": 459.0738463333817,
+        "timestamp": "2025-08-03T14:27:03.395Z"
+      },
+      {
+        "size": 64050,
+        "price": 458.2363277528629,
+        "timestamp": "2025-08-03T10:43:46.121Z"
+      },
+      {
+        "size": 67589,
+        "price": 458.2915835425367,
+        "timestamp": "2025-08-03T14:05:06.105Z"
+      },
+      {
+        "size": 125853,
+        "price": 460.62137250340305,
+        "timestamp": "2025-08-03T13:29:27.508Z"
+      },
+      {
+        "size": 88179,
+        "price": 455.17052451676534,
+        "timestamp": "2025-08-03T15:08:34.652Z"
+      },
+      {
+        "size": 121338,
+        "price": 456.22932055391834,
+        "timestamp": "2025-08-03T11:02:39.275Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "TFPM",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Underperform",
+    "newRating": "Outperform",
+    "previousTarget": 412.755724660919,
+    "newTarget": 415.09478582928585,
+    "date": "2025-08-02T06:04:37.038Z",
+    "reasoning": "Stable fundamentals"
+  }
+]

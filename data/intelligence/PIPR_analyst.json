@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "PIPR",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Outperform",
+    "previousTarget": 453.64164547656515,
+    "newTarget": 451.97048102096164,
+    "date": "2025-08-01T06:15:21.486Z",
+    "reasoning": "Margin pressure concerns"
+  }
+]

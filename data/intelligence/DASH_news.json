@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "DASH",
+    "headline": "DASH announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for DASH with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.6497813094371088,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T13:46:26.956Z",
+    "url": "https://example.com/news/dash-1754238608029"
+  },
+  {
+    "symbol": "DASH",
+    "headline": "DASH announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for DASH with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.46319611731381005,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T15:41:33.063Z",
+    "url": "https://example.com/news/dash-1754238608029"
+  },
+  {
+    "symbol": "DASH",
+    "headline": "Regulatory approval granted for DASH new product",
+    "summary": "Recent developments suggest positive momentum for DASH with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.4632491912305323,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T12:48:22.463Z",
+    "url": "https://example.com/news/dash-1754238608029"
+  }
+]

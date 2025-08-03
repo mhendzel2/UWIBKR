@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "NDAQ",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Hold",
+    "newRating": "Outperform",
+    "previousTarget": 508.0696305478486,
+    "newTarget": 480.2968986254222,
+    "date": "2025-07-31T22:32:21.702Z",
+    "reasoning": "Strong management team"
+  }
+]

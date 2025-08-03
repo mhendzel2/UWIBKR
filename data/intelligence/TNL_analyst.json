@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "TNL",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Hold",
+    "newRating": "Buy",
+    "previousTarget": 410.16619626226407,
+    "newTarget": 380.4343299387918,
+    "date": "2025-07-31T03:34:16.237Z",
+    "reasoning": "Improved market position"
+  }
+]

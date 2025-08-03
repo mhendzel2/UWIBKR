@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "ICE",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Outperform",
+    "newRating": "Hold",
+    "previousTarget": 492.904513948619,
+    "newTarget": 448.3850033019535,
+    "date": "2025-07-31T07:34:07.639Z",
+    "reasoning": "Strong earnings momentum"
+  },
+  {
+    "symbol": "ICE",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Buy",
+    "newRating": "Underperform",
+    "previousTarget": 423.02360296057327,
+    "newTarget": 403.66624423647596,
+    "date": "2025-08-01T03:13:12.303Z",
+    "reasoning": "Improved market position"
+  }
+]

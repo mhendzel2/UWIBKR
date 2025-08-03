@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "FOX",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 6193,
+    "price": 462.638983646811,
+    "value": 2865123.225724701,
+    "date": "2025-07-30T22:33:42.522Z",
+    "filingDate": "2025-07-31T20:03:08.020Z",
+    "ownershipPercent": 1.7117013454270258
+  },
+  {
+    "symbol": "FOX",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 11463,
+    "price": 469.12547737430094,
+    "value": 5377585.347141611,
+    "date": "2025-08-01T07:00:11.095Z",
+    "filingDate": "2025-08-01T11:58:25.997Z",
+    "ownershipPercent": 3.818611195353998
+  }
+]

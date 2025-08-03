@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "TIGO",
+    "headline": "TIGO announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for TIGO with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.4236515754989153,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T14:53:48.891Z",
+    "url": "https://example.com/news/tigo-1754238622135"
+  },
+  {
+    "symbol": "TIGO",
+    "headline": "TIGO raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for TIGO with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.699158125025764,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T13:58:45.301Z",
+    "url": "https://example.com/news/tigo-1754238622135"
+  },
+  {
+    "symbol": "TIGO",
+    "headline": "TIGO reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for TIGO with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.5545068160127511,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T11:46:45.769Z",
+    "url": "https://example.com/news/tigo-1754238622136"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "TTMI",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Hold",
+    "previousTarget": 458.6384817557306,
+    "newTarget": 477.31587359987697,
+    "date": "2025-08-03T05:56:52.219Z",
+    "reasoning": "Stable fundamentals"
+  },
+  {
+    "symbol": "TTMI",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Sell",
+    "previousTarget": 482.1969081984917,
+    "newTarget": 510.131428104533,
+    "date": "2025-07-31T22:55:51.398Z",
+    "reasoning": "Stable fundamentals"
+  }
+]

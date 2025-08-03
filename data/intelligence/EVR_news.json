@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "EVR",
+    "headline": "EVR announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for EVR with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.6787166139505267,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T07:11:03.014Z",
+    "url": "https://example.com/news/evr-1754238628801"
+  },
+  {
+    "symbol": "EVR",
+    "headline": "EVR raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for EVR with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.8346306614783017,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T09:57:10.599Z",
+    "url": "https://example.com/news/evr-1754238628801"
+  },
+  {
+    "symbol": "EVR",
+    "headline": "EVR raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for EVR with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.6202108672604603,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T10:18:17.842Z",
+    "url": "https://example.com/news/evr-1754238628802"
+  }
+]

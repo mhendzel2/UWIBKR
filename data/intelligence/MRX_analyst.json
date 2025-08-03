@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "MRX",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Underperform",
+    "previousTarget": 501.37760718152146,
+    "newTarget": 510.8741132929806,
+    "date": "2025-07-31T05:47:05.815Z",
+    "reasoning": "Balanced risk/reward"
+  },
+  {
+    "symbol": "MRX",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Outperform",
+    "previousTarget": 523.8233515408808,
+    "newTarget": 553.9618072543786,
+    "date": "2025-08-02T04:35:53.990Z",
+    "reasoning": "Compelling growth story"
+  }
+]

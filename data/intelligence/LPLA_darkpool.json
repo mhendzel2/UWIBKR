@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "LPLA",
+    "date": "2025-08-03",
+    "darkPoolVolume": 2064146,
+    "totalVolume": 15829710,
+    "darkPoolRatio": 0.1303969561034283,
+    "avgDarkPoolSize": 10571,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 112583,
+        "price": 449.7709183560429,
+        "timestamp": "2025-08-03T09:17:41.009Z"
+      },
+      {
+        "size": 127211,
+        "price": 453.075525621333,
+        "timestamp": "2025-08-03T11:23:09.148Z"
+      },
+      {
+        "size": 126874,
+        "price": 452.48824184972483,
+        "timestamp": "2025-08-03T14:25:00.749Z"
+      },
+      {
+        "size": 52345,
+        "price": 453.89101317212743,
+        "timestamp": "2025-08-03T08:54:33.553Z"
+      },
+      {
+        "size": 75528,
+        "price": 457.0465761837446,
+        "timestamp": "2025-08-03T11:28:57.096Z"
+      }
+    ]
+  }
+]

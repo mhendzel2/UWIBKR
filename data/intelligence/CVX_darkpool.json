@@ -29,5 +29,36 @@
         "timestamp": "2025-08-02T00:45:18.707Z"
       }
     ]
+  },
+  {
+    "symbol": "CVX",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5645026,
+    "totalVolume": 12004562,
+    "darkPoolRatio": 0.47024006373576976,
+    "avgDarkPoolSize": 4739,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 60391,
+        "price": 448.04530946317107,
+        "timestamp": "2025-08-03T15:00:37.468Z"
+      },
+      {
+        "size": 67862,
+        "price": 456.1718473174196,
+        "timestamp": "2025-08-03T08:31:33.763Z"
+      },
+      {
+        "size": 89768,
+        "price": 449.0689245362516,
+        "timestamp": "2025-08-03T15:39:31.695Z"
+      },
+      {
+        "size": 112310,
+        "price": 453.047221160914,
+        "timestamp": "2025-08-03T10:46:31.224Z"
+      }
+    ]
   }
 ]

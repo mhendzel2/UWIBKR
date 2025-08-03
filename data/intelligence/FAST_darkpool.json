@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "FAST",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4302855,
+    "totalVolume": 10089893,
+    "darkPoolRatio": 0.42645199508062176,
+    "avgDarkPoolSize": 6343,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 63115,
+        "price": 450.1848399986302,
+        "timestamp": "2025-08-03T16:02:25.497Z"
+      },
+      {
+        "size": 80196,
+        "price": 451.53268759896076,
+        "timestamp": "2025-08-03T14:01:07.854Z"
+      },
+      {
+        "size": 90144,
+        "price": 458.32253720501785,
+        "timestamp": "2025-08-03T09:03:27.040Z"
+      },
+      {
+        "size": 109316,
+        "price": 452.42506520398854,
+        "timestamp": "2025-08-03T15:20:27.115Z"
+      }
+    ]
+  }
+]

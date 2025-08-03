@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "NVT",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Underperform",
+    "newRating": "Hold",
+    "previousTarget": 507.85711905847916,
+    "newTarget": 517.5511384451504,
+    "date": "2025-07-29T21:26:03.218Z",
+    "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "NVT",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Underperform",
+    "newRating": "Underperform",
+    "previousTarget": 445.1553983743126,
+    "newTarget": 400.9316165521133,
+    "date": "2025-07-30T04:46:05.576Z",
+    "reasoning": "Balanced risk/reward"
+  }
+]

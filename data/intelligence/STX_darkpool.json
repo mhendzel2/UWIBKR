@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "STX",
+    "date": "2025-08-03",
+    "darkPoolVolume": 2817120,
+    "totalVolume": 16499244,
+    "darkPoolRatio": 0.17074236855943217,
+    "avgDarkPoolSize": 2845,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 61088,
+        "price": 452.99255949464083,
+        "timestamp": "2025-08-03T09:33:56.414Z"
+      },
+      {
+        "size": 130071,
+        "price": 457.30552212779645,
+        "timestamp": "2025-08-03T12:05:07.954Z"
+      },
+      {
+        "size": 118650,
+        "price": 450.38403528465176,
+        "timestamp": "2025-08-03T11:04:39.292Z"
+      },
+      {
+        "size": 149825,
+        "price": 455.13435114446327,
+        "timestamp": "2025-08-03T09:16:49.061Z"
+      }
+    ]
+  }
+]

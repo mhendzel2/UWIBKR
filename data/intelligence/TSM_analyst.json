@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "TSM",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Sell",
+    "newRating": "Hold",
+    "previousTarget": 437.6006906451718,
+    "newTarget": 437.98253376382235,
+    "date": "2025-07-30T10:49:05.039Z",
+    "reasoning": "Strong earnings momentum"
+  }
+]

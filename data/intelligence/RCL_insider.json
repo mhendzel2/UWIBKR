@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "RCL",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 12352,
+    "price": 466.86413502536965,
+    "value": 5766705.795833366,
+    "date": "2025-08-01T01:27:58.569Z",
+    "filingDate": "2025-08-02T23:25:32.446Z",
+    "ownershipPercent": 3.7454629294195785
+  }
+]

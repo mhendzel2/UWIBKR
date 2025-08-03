@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "BVN",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 32574,
+    "price": 468.85331955790826,
+    "value": 15272428.031279303,
+    "date": "2025-07-28T22:12:05.284Z",
+    "filingDate": "2025-08-01T05:54:59.086Z",
+    "ownershipPercent": 3.3172636089024166
+  }
+]

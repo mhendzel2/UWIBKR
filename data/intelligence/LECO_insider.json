@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "LECO",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 35712,
+    "price": 454.40751197297766,
+    "value": 16227801.067578979,
+    "date": "2025-08-02T15:46:24.672Z",
+    "filingDate": "2025-07-31T23:32:07.859Z",
+    "ownershipPercent": 1.135637836203951
+  }
+]

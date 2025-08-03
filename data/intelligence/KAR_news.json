@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "KAR",
+    "headline": "KAR raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for KAR with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.6536691761454548,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T06:11:21.091Z",
+    "url": "https://example.com/news/kar-1754238641546"
+  },
+  {
+    "symbol": "KAR",
+    "headline": "KAR reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for KAR with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7793508708766852,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T11:19:42.374Z",
+    "url": "https://example.com/news/kar-1754238641548"
+  }
+]

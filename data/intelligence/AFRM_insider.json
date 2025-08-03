@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "AFRM",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 14396,
+    "price": 445.01070444772694,
+    "value": 6406374.101229477,
+    "date": "2025-07-30T20:32:32.140Z",
+    "filingDate": "2025-08-02T20:29:03.281Z",
+    "ownershipPercent": 0.9154850518752832
+  },
+  {
+    "symbol": "AFRM",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 43081,
+    "price": 442.28964524729776,
+    "value": 19054280.206898835,
+    "date": "2025-07-30T09:59:11.537Z",
+    "filingDate": "2025-08-01T21:35:13.147Z",
+    "ownershipPercent": 0.3263790722989589
+  },
+  {
+    "symbol": "AFRM",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 23425,
+    "price": 454.71480633702953,
+    "value": 10651694.338444917,
+    "date": "2025-07-29T23:22:39.615Z",
+    "filingDate": "2025-08-02T03:37:43.625Z",
+    "ownershipPercent": 3.254613714748913
+  }
+]

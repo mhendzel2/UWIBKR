@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "PBI",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Underperform",
+    "newRating": "Hold",
+    "previousTarget": 441.7670544656095,
+    "newTarget": 443.8639281466287,
+    "date": "2025-08-01T05:43:15.829Z",
+    "reasoning": "Balanced risk/reward"
+  }
+]

@@ -10,5 +10,41 @@
     "date": "2025-07-27T02:04:05.618Z",
     "filingDate": "2025-08-01T20:27:31.249Z",
     "ownershipPercent": 0.8759081902539866
+  },
+  {
+    "symbol": "MSFT",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 45041,
+    "price": 518.6118530932287,
+    "value": 23358796.475172114,
+    "date": "2025-08-02T15:59:05.211Z",
+    "filingDate": "2025-08-02T14:44:35.100Z",
+    "ownershipPercent": 4.341554531945769
+  },
+  {
+    "symbol": "MSFT",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 12975,
+    "price": 526.0634259412074,
+    "value": 6825672.951587166,
+    "date": "2025-07-30T07:14:50.769Z",
+    "filingDate": "2025-08-02T01:00:16.771Z",
+    "ownershipPercent": 0.6339957572477216
+  },
+  {
+    "symbol": "MSFT",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 2970,
+    "price": 534.511179739925,
+    "value": 1587498.2038275772,
+    "date": "2025-07-30T10:36:56.796Z",
+    "filingDate": "2025-08-02T08:41:36.686Z",
+    "ownershipPercent": 3.754489110442163
   }
 ]

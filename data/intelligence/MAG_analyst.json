@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "MAG",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Outperform",
+    "newRating": "Sell",
+    "previousTarget": 394.0284275163071,
+    "newTarget": 378.0393297778852,
+    "date": "2025-08-03T10:13:24.677Z",
+    "reasoning": "Attractive valuation"
+  },
+  {
+    "symbol": "MAG",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Sell",
+    "newRating": "Hold",
+    "previousTarget": 402.49534634136154,
+    "newTarget": 390.0617759632238,
+    "date": "2025-08-01T03:15:23.701Z",
+    "reasoning": "Competitive headwinds"
+  }
+]

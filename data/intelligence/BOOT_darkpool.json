@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "BOOT",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1755173,
+    "totalVolume": 18561279,
+    "darkPoolRatio": 0.094560994422852,
+    "avgDarkPoolSize": 6768,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 98520,
+        "price": 460.4885867437136,
+        "timestamp": "2025-08-03T15:57:02.491Z"
+      },
+      {
+        "size": 63536,
+        "price": 461.3252713784595,
+        "timestamp": "2025-08-03T14:38:40.005Z"
+      }
+    ]
+  }
+]

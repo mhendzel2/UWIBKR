@@ -10,5 +10,41 @@
     "date": "2025-07-27T22:58:36.260Z",
     "filingDate": "2025-08-01T12:20:15.403Z",
     "ownershipPercent": 2.545124953761928
+  },
+  {
+    "symbol": "XLE",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 40252,
+    "price": 467.75703280994856,
+    "value": 18828156.08466605,
+    "date": "2025-07-28T20:57:37.642Z",
+    "filingDate": "2025-08-01T22:56:08.611Z",
+    "ownershipPercent": 2.3737402911482453
+  },
+  {
+    "symbol": "XLE",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 40441,
+    "price": 463.2838781737644,
+    "value": 18735663.317225207,
+    "date": "2025-07-29T12:41:20.060Z",
+    "filingDate": "2025-08-01T12:37:36.258Z",
+    "ownershipPercent": 4.40182388194016
+  },
+  {
+    "symbol": "XLE",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 31105,
+    "price": 449.6017761496478,
+    "value": 13984863.247134794,
+    "date": "2025-07-31T11:05:26.277Z",
+    "filingDate": "2025-08-02T17:47:52.620Z",
+    "ownershipPercent": 0.33731718169505587
   }
 ]

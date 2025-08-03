@@ -31,5 +31,27 @@
     "category": "earnings",
     "publishedAt": "2025-08-01T20:02:33.385Z",
     "url": "https://example.com/news/xle-1754101860540"
+  },
+  {
+    "symbol": "XLE",
+    "headline": "Analyst upgrades XLE on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for XLE with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7899148767179569,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T16:19:32.409Z",
+    "url": "https://example.com/news/xle-1754238605471"
+  },
+  {
+    "symbol": "XLE",
+    "headline": "Analyst upgrades XLE on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for XLE with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.841697449273148,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T06:53:03.851Z",
+    "url": "https://example.com/news/xle-1754238605471"
   }
 ]

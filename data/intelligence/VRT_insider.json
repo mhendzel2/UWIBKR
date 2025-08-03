@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "VRT",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 29719,
+    "price": 465.2396839506791,
+    "value": 13826458.167330232,
+    "date": "2025-08-03T10:43:41.123Z",
+    "filingDate": "2025-08-03T11:11:18.350Z",
+    "ownershipPercent": 2.578764887790449
+  }
+]

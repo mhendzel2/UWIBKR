@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "ULTA",
+    "headline": "Analyst upgrades ULTA on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for ULTA with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5067998602090197,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T09:42:57.291Z",
+    "url": "https://example.com/news/ulta-1754238638616"
+  },
+  {
+    "symbol": "ULTA",
+    "headline": "Analyst upgrades ULTA on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for ULTA with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.5119156062841401,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T15:10:38.935Z",
+    "url": "https://example.com/news/ulta-1754238638616"
+  }
+]

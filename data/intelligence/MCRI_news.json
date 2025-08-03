@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "MCRI",
+    "headline": "Regulatory approval granted for MCRI new product",
+    "summary": "Recent developments suggest positive momentum for MCRI with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.4355830614921597,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T09:38:02.729Z",
+    "url": "https://example.com/news/mcri-1754238633953"
+  },
+  {
+    "symbol": "MCRI",
+    "headline": "Regulatory approval granted for MCRI new product",
+    "summary": "Recent developments suggest positive momentum for MCRI with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.7369207270470631,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T05:44:34.803Z",
+    "url": "https://example.com/news/mcri-1754238633953"
+  },
+  {
+    "symbol": "MCRI",
+    "headline": "MCRI announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for MCRI with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.537464468376414,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T06:47:52.098Z",
+    "url": "https://example.com/news/mcri-1754238633953"
+  }
+]

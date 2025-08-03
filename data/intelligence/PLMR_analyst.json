@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "PLMR",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Buy",
+    "newRating": "Outperform",
+    "previousTarget": 415.9795271904592,
+    "newTarget": 426.79339457745,
+    "date": "2025-08-01T14:03:05.304Z",
+    "reasoning": "Positive sector outlook"
+  },
+  {
+    "symbol": "PLMR",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Underperform",
+    "previousTarget": 385.27167173560167,
+    "newTarget": 375.0671023474136,
+    "date": "2025-07-30T22:17:50.811Z",
+    "reasoning": "Balanced risk/reward"
+  }
+]

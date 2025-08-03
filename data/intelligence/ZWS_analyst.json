@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "ZWS",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 388.95091372615855,
+    "newTarget": 382.9669987140451,
+    "date": "2025-07-30T01:40:50.187Z",
+    "reasoning": "Stable fundamentals"
+  }
+]

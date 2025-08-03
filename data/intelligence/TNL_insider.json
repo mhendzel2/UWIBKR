@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "TNL",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 45259,
+    "price": 454.8006265197723,
+    "value": 20583821.555658374,
+    "date": "2025-07-30T15:22:21.816Z",
+    "filingDate": "2025-08-02T08:01:53.406Z",
+    "ownershipPercent": 0.3567505332740194
+  },
+  {
+    "symbol": "TNL",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 37357,
+    "price": 459.9948335730923,
+    "value": 17184026.99779001,
+    "date": "2025-08-02T13:38:32.341Z",
+    "filingDate": "2025-08-01T10:53:11.072Z",
+    "ownershipPercent": 2.7364607006268824
+  },
+  {
+    "symbol": "TNL",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 31312,
+    "price": 445.65436550339575,
+    "value": 13954329.492642328,
+    "date": "2025-07-28T04:51:55.335Z",
+    "filingDate": "2025-08-02T21:10:37.060Z",
+    "ownershipPercent": 2.471505984404613
+  }
+]

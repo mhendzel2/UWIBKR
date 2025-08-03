@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "BKNG",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Hold",
+    "previousTarget": 474.57312157459165,
+    "newTarget": 493.38611784319613,
+    "date": "2025-08-03T06:36:31.899Z",
+    "reasoning": "Valuation concerns"
+  },
+  {
+    "symbol": "BKNG",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Hold",
+    "newRating": "Outperform",
+    "previousTarget": 437.10606994315924,
+    "newTarget": 394.90677207607933,
+    "date": "2025-07-31T00:35:52.474Z",
+    "reasoning": "Attractive valuation"
+  }
+]

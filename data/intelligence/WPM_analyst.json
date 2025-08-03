@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "WPM",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Underperform",
+    "previousTarget": 403.24483392098244,
+    "newTarget": 436.2366454146855,
+    "date": "2025-08-03T14:31:48.783Z",
+    "reasoning": "Positive sector outlook"
+  },
+  {
+    "symbol": "WPM",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 506.1464439960836,
+    "newTarget": 524.2328569511235,
+    "date": "2025-08-01T21:39:52.781Z",
+    "reasoning": "Fair valuation"
+  }
+]

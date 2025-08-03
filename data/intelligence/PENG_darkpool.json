@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "PENG",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1499070,
+    "totalVolume": 8045889,
+    "darkPoolRatio": 0.18631502373448106,
+    "avgDarkPoolSize": 9559,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 96148,
+        "price": 460.82520050175424,
+        "timestamp": "2025-08-03T09:37:03.367Z"
+      },
+      {
+        "size": 127468,
+        "price": 459.0824060772891,
+        "timestamp": "2025-08-03T12:18:23.974Z"
+      },
+      {
+        "size": 68040,
+        "price": 457.47331974077116,
+        "timestamp": "2025-08-03T09:08:03.186Z"
+      }
+    ]
+  }
+]

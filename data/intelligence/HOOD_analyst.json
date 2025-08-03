@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "HOOD",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Underperform",
+    "newRating": "Buy",
+    "previousTarget": 430.81694038128416,
+    "newTarget": 449.5840441164581,
+    "date": "2025-08-01T07:01:20.831Z",
+    "reasoning": "Attractive valuation"
+  },
+  {
+    "symbol": "HOOD",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Outperform",
+    "newRating": "Sell",
+    "previousTarget": 513.6360211225908,
+    "newTarget": 509.08061230078073,
+    "date": "2025-07-30T06:09:43.883Z",
+    "reasoning": "Margin pressure concerns"
+  }
+]

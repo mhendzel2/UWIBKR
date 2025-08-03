@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "TSM",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1445569,
+    "totalVolume": 14958273,
+    "darkPoolRatio": 0.09664010009711682,
+    "avgDarkPoolSize": 1263,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 87829,
+        "price": 456.71812405513685,
+        "timestamp": "2025-08-03T09:39:07.104Z"
+      },
+      {
+        "size": 100995,
+        "price": 460.05052536578347,
+        "timestamp": "2025-08-03T16:15:35.596Z"
+      },
+      {
+        "size": 134228,
+        "price": 457.5760734758657,
+        "timestamp": "2025-08-03T10:19:11.741Z"
+      },
+      {
+        "size": 143515,
+        "price": 455.44455034483576,
+        "timestamp": "2025-08-03T16:06:07.402Z"
+      },
+      {
+        "size": 71453,
+        "price": 455.15644550263676,
+        "timestamp": "2025-08-03T09:18:22.295Z"
+      }
+    ]
+  }
+]

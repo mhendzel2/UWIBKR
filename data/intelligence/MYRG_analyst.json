@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "MYRG",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Underperform",
+    "newRating": "Outperform",
+    "previousTarget": 442.7974453969523,
+    "newTarget": 399.3394933229591,
+    "date": "2025-07-31T05:20:25.910Z",
+    "reasoning": "Compelling growth story"
+  },
+  {
+    "symbol": "MYRG",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Outperform",
+    "newRating": "Hold",
+    "previousTarget": 430.74446261216275,
+    "newTarget": 399.9609665325073,
+    "date": "2025-08-02T06:47:33.743Z",
+    "reasoning": "Strong management team"
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "HLI",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5741371,
+    "totalVolume": 17508452,
+    "darkPoolRatio": 0.32791996688228064,
+    "avgDarkPoolSize": 3761,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 80018,
+        "price": 448.45150992714247,
+        "timestamp": "2025-08-03T14:40:48.194Z"
+      },
+      {
+        "size": 133103,
+        "price": 450.38422964418214,
+        "timestamp": "2025-08-03T14:50:47.624Z"
+      },
+      {
+        "size": 127137,
+        "price": 450.36747107366716,
+        "timestamp": "2025-08-03T12:11:18.166Z"
+      }
+    ]
+  }
+]

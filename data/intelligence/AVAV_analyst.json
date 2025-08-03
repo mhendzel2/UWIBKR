@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "AVAV",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 411.44970887388433,
+    "newTarget": 413.89314112283597,
+    "date": "2025-07-30T08:14:53.202Z",
+    "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "AVAV",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Buy",
+    "previousTarget": 457.1647962019234,
+    "newTarget": 494.9358065029735,
+    "date": "2025-07-31T13:39:19.128Z",
+    "reasoning": "Competitive headwinds"
+  }
+]

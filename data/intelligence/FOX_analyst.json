@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "FOX",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Outperform",
+    "previousTarget": 448.09737749652425,
+    "newTarget": 460.4049885737191,
+    "date": "2025-08-01T04:07:12.935Z",
+    "reasoning": "Margin pressure concerns"
+  }
+]

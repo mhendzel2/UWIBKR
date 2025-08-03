@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "CALM",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 10853,
+    "price": 454.478536162375,
+    "value": 4932455.552970256,
+    "date": "2025-07-28T07:07:24.280Z",
+    "filingDate": "2025-08-01T22:19:48.296Z",
+    "ownershipPercent": 2.814971283676726
+  }
+]

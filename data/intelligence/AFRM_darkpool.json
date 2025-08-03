@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "AFRM",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3694088,
+    "totalVolume": 6284386,
+    "darkPoolRatio": 0.587820035242902,
+    "avgDarkPoolSize": 10879,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 63956,
+        "price": 456.2976360297054,
+        "timestamp": "2025-08-03T15:14:38.222Z"
+      },
+      {
+        "size": 81688,
+        "price": 454.7940932838425,
+        "timestamp": "2025-08-03T09:11:06.126Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "CVLT",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Buy",
+    "previousTarget": 412.4032251918224,
+    "newTarget": 444.18244335770873,
+    "date": "2025-07-31T01:15:22.521Z",
+    "reasoning": "Balanced risk/reward"
+  },
+  {
+    "symbol": "CVLT",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Hold",
+    "newRating": "Buy",
+    "previousTarget": 453.2534896652695,
+    "newTarget": 462.45192374676515,
+    "date": "2025-07-30T19:09:52.701Z",
+    "reasoning": "Positive sector outlook"
+  }
+]

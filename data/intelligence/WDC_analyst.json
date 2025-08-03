@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "WDC",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 471.71545429525617,
+    "newTarget": 474.77383302737854,
+    "date": "2025-08-02T19:29:33.579Z",
+    "reasoning": "Strong management team"
+  }
+]

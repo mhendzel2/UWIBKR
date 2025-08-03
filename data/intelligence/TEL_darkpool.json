@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "TEL",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5089172,
+    "totalVolume": 14685013,
+    "darkPoolRatio": 0.34655549845274225,
+    "avgDarkPoolSize": 10991,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 100046,
+        "price": 460.4074036545503,
+        "timestamp": "2025-08-03T11:29:14.928Z"
+      },
+      {
+        "size": 59227,
+        "price": 452.99888210708025,
+        "timestamp": "2025-08-03T08:41:21.461Z"
+      },
+      {
+        "size": 110871,
+        "price": 461.3143181465482,
+        "timestamp": "2025-08-03T16:23:14.592Z"
+      },
+      {
+        "size": 104903,
+        "price": 460.73130214391034,
+        "timestamp": "2025-08-03T08:55:28.819Z"
+      },
+      {
+        "size": 92287,
+        "price": 458.52212467598986,
+        "timestamp": "2025-08-03T12:14:48.781Z"
+      }
+    ]
+  }
+]

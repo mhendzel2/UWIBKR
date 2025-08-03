@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "SN",
+    "headline": "SN announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for SN with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.6800805192472956,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T15:56:48.538Z",
+    "url": "https://example.com/news/sn-1754238644887"
+  },
+  {
+    "symbol": "SN",
+    "headline": "SN announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for SN with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.6189472719905345,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T09:40:01.232Z",
+    "url": "https://example.com/news/sn-1754238644887"
+  }
+]

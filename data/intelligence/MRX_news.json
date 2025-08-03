@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "MRX",
+    "headline": "Analyst upgrades MRX on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for MRX with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.896271089064676,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T11:23:34.324Z",
+    "url": "https://example.com/news/mrx-1754238634187"
+  },
+  {
+    "symbol": "MRX",
+    "headline": "MRX announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for MRX with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.3551541216854708,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T04:35:56.800Z",
+    "url": "https://example.com/news/mrx-1754238634187"
+  },
+  {
+    "symbol": "MRX",
+    "headline": "MRX reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for MRX with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.8222162174030434,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T14:03:39.416Z",
+    "url": "https://example.com/news/mrx-1754238634187"
+  }
+]

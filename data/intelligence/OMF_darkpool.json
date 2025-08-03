@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "OMF",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5619241,
+    "totalVolume": 8127619,
+    "darkPoolRatio": 0.6913760352201549,
+    "avgDarkPoolSize": 7131,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 135474,
+        "price": 454.24868634173566,
+        "timestamp": "2025-08-03T09:40:50.632Z"
+      },
+      {
+        "size": 52102,
+        "price": 455.3077858508968,
+        "timestamp": "2025-08-03T15:55:39.512Z"
+      },
+      {
+        "size": 102119,
+        "price": 452.5552915339562,
+        "timestamp": "2025-08-03T14:27:05.501Z"
+      },
+      {
+        "size": 146868,
+        "price": 459.062266274655,
+        "timestamp": "2025-08-03T10:29:17.919Z"
+      }
+    ]
+  }
+]

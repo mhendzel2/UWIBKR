@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "AZZ",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Hold",
+    "newRating": "Outperform",
+    "previousTarget": 466.4564849400069,
+    "newTarget": 441.895926857489,
+    "date": "2025-07-29T23:02:11.048Z",
+    "reasoning": "Attractive valuation"
+  },
+  {
+    "symbol": "AZZ",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Underperform",
+    "previousTarget": 413.8948346768827,
+    "newTarget": 417.43195656653285,
+    "date": "2025-07-30T15:57:45.610Z",
+    "reasoning": "Stable fundamentals"
+  }
+]

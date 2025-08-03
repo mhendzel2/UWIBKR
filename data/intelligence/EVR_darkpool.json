@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "EVR",
+    "date": "2025-08-03",
+    "darkPoolVolume": 2741373,
+    "totalVolume": 12521476,
+    "darkPoolRatio": 0.21893369439832813,
+    "avgDarkPoolSize": 5465,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 74766,
+        "price": 462.9519934640983,
+        "timestamp": "2025-08-03T15:49:43.422Z"
+      },
+      {
+        "size": 114453,
+        "price": 463.35701586550397,
+        "timestamp": "2025-08-03T14:48:23.598Z"
+      }
+    ]
+  }
+]

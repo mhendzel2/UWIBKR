@@ -19,5 +19,26 @@
         "timestamp": "2025-08-01T18:50:37.627Z"
       }
     ]
+  },
+  {
+    "symbol": "AMZN",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1771315,
+    "totalVolume": 12964839,
+    "darkPoolRatio": 0.1366245273080522,
+    "avgDarkPoolSize": 3687,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 59587,
+        "price": 212.94630609515045,
+        "timestamp": "2025-08-03T13:28:50.854Z"
+      },
+      {
+        "size": 54203,
+        "price": 215.48875597408195,
+        "timestamp": "2025-08-03T10:29:03.636Z"
+      }
+    ]
   }
 ]

@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "GLW",
+    "headline": "GLW reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for GLW with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.6258401829365777,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T11:18:57.023Z",
+    "url": "https://example.com/news/glw-1754238624868"
+  },
+  {
+    "symbol": "GLW",
+    "headline": "GLW raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for GLW with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.8011154363068655,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T14:23:15.316Z",
+    "url": "https://example.com/news/glw-1754238624869"
+  },
+  {
+    "symbol": "GLW",
+    "headline": "Regulatory approval granted for GLW new product",
+    "summary": "Recent developments suggest positive momentum for GLW with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.7345688149714753,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T15:16:22.529Z",
+    "url": "https://example.com/news/glw-1754238624870"
+  }
+]

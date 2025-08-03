@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "CW",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 390.8101030020007,
+    "newTarget": 388.59543431872913,
+    "date": "2025-07-31T23:52:31.367Z",
+    "reasoning": "Strong management team"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "NVT",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 15670,
+    "price": 467.2611626308142,
+    "value": 7321982.418424859,
+    "date": "2025-08-01T15:08:18.275Z",
+    "filingDate": "2025-08-03T09:27:05.038Z",
+    "ownershipPercent": 4.08748315407028
+  },
+  {
+    "symbol": "NVT",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 5615,
+    "price": 457.39366484583763,
+    "value": 2568265.428109378,
+    "date": "2025-07-30T12:57:09.169Z",
+    "filingDate": "2025-08-01T22:31:02.302Z",
+    "ownershipPercent": 1.685111217158789
+  }
+]

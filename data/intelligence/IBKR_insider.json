@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "IBKR",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 20234,
+    "price": 465.5780588562131,
+    "value": 9420506.442896616,
+    "date": "2025-07-28T01:19:00.481Z",
+    "filingDate": "2025-08-03T09:20:26.551Z",
+    "ownershipPercent": 2.4840073167761534
+  },
+  {
+    "symbol": "IBKR",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 50480,
+    "price": 467.1638710511033,
+    "value": 23582432.210659694,
+    "date": "2025-07-30T13:38:46.732Z",
+    "filingDate": "2025-08-01T17:01:53.142Z",
+    "ownershipPercent": 0.27388952559797997
+  },
+  {
+    "symbol": "IBKR",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 17697,
+    "price": 448.7984320091747,
+    "value": 7942385.851266365,
+    "date": "2025-07-30T08:47:51.262Z",
+    "filingDate": "2025-08-01T10:14:15.607Z",
+    "ownershipPercent": 4.909063469988331
+  }
+]

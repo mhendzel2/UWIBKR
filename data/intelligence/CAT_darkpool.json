@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "CAT",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1830959,
+    "totalVolume": 9106576,
+    "darkPoolRatio": 0.20105899297386856,
+    "avgDarkPoolSize": 1947,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 66599,
+        "price": 453.1425936862785,
+        "timestamp": "2025-08-03T11:00:48.215Z"
+      },
+      {
+        "size": 77470,
+        "price": 454.4455646341007,
+        "timestamp": "2025-08-03T09:22:20.008Z"
+      },
+      {
+        "size": 132561,
+        "price": 452.97932194026527,
+        "timestamp": "2025-08-03T13:06:30.936Z"
+      },
+      {
+        "size": 130665,
+        "price": 461.2314716802401,
+        "timestamp": "2025-08-03T09:39:56.981Z"
+      }
+    ]
+  }
+]

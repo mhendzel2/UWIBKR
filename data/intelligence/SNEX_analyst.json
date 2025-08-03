@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "SNEX",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Sell",
+    "previousTarget": 401.28020960119835,
+    "newTarget": 388.0473880342806,
+    "date": "2025-08-01T03:40:44.382Z",
+    "reasoning": "Balanced risk/reward"
+  },
+  {
+    "symbol": "SNEX",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Hold",
+    "previousTarget": 475.59887775732125,
+    "newTarget": 504.0785357507969,
+    "date": "2025-07-31T17:52:16.494Z",
+    "reasoning": "Fair valuation"
+  }
+]

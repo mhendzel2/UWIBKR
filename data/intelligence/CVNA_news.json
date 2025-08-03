@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "CVNA",
+    "headline": "CVNA announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for CVNA with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.6539403244511061,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T10:59:55.171Z",
+    "url": "https://example.com/news/cvna-1754238612895"
+  },
+  {
+    "symbol": "CVNA",
+    "headline": "Regulatory approval granted for CVNA new product",
+    "summary": "Recent developments suggest positive momentum for CVNA with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.563085634528572,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T10:29:47.417Z",
+    "url": "https://example.com/news/cvna-1754238612895"
+  }
+]

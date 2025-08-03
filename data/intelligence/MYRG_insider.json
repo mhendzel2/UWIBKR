@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "MYRG",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 45051,
+    "price": 448.0872196214239,
+    "value": 20186777.33116477,
+    "date": "2025-07-29T14:11:49.851Z",
+    "filingDate": "2025-08-02T12:21:39.455Z",
+    "ownershipPercent": 2.104521919502386
+  },
+  {
+    "symbol": "MYRG",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 5749,
+    "price": 462.215291151884,
+    "value": 2657275.708832181,
+    "date": "2025-08-02T14:39:05.477Z",
+    "filingDate": "2025-08-02T19:27:56.028Z",
+    "ownershipPercent": 2.163333401605063
+  }
+]

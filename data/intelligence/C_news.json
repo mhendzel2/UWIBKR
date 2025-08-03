@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "C",
+    "headline": "C reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for C with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.5957129949564799,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T15:53:51.761Z",
+    "url": "https://example.com/news/c-1754238647732"
+  },
+  {
+    "symbol": "C",
+    "headline": "C announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for C with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.4355929734921121,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T06:20:02.051Z",
+    "url": "https://example.com/news/c-1754238647733"
+  }
+]

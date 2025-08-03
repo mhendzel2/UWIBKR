@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "FTAI",
+    "headline": "Regulatory approval granted for FTAI new product",
+    "summary": "Recent developments suggest positive momentum for FTAI with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.7487428565279199,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T14:19:00.058Z",
+    "url": "https://example.com/news/ftai-1754238629427"
+  },
+  {
+    "symbol": "FTAI",
+    "headline": "FTAI raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for FTAI with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.789065507170833,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T07:48:12.081Z",
+    "url": "https://example.com/news/ftai-1754238629427"
+  },
+  {
+    "symbol": "FTAI",
+    "headline": "FTAI reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for FTAI with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.8422564538315265,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T06:55:12.659Z",
+    "url": "https://example.com/news/ftai-1754238629429"
+  }
+]

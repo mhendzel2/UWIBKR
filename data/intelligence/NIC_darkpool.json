@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "NIC",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4129654,
+    "totalVolume": 15136170,
+    "darkPoolRatio": 0.2728334842962255,
+    "avgDarkPoolSize": 6553,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 86801,
+        "price": 451.7101711117592,
+        "timestamp": "2025-08-03T11:47:46.301Z"
+      },
+      {
+        "size": 81623,
+        "price": 448.0021412859603,
+        "timestamp": "2025-08-03T14:06:06.472Z"
+      },
+      {
+        "size": 123065,
+        "price": 448.6399951009977,
+        "timestamp": "2025-08-03T13:06:32.549Z"
+      },
+      {
+        "size": 111302,
+        "price": 452.6728198330597,
+        "timestamp": "2025-08-03T14:05:48.890Z"
+      },
+      {
+        "size": 109100,
+        "price": 452.3269442453478,
+        "timestamp": "2025-08-03T12:35:14.434Z"
+      }
+    ]
+  }
+]

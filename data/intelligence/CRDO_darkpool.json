@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "CRDO",
+    "date": "2025-08-03",
+    "darkPoolVolume": 2714236,
+    "totalVolume": 10691599,
+    "darkPoolRatio": 0.2538662364722059,
+    "avgDarkPoolSize": 5184,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 123450,
+        "price": 451.27550209653606,
+        "timestamp": "2025-08-03T15:59:35.176Z"
+      },
+      {
+        "size": 93133,
+        "price": 455.146506151593,
+        "timestamp": "2025-08-03T11:16:09.638Z"
+      }
+    ]
+  }
+]

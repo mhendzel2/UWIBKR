@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "STN",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5857205,
+    "totalVolume": 5614197,
+    "darkPoolRatio": 1.0432845516464777,
+    "avgDarkPoolSize": 7659,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 104883,
+        "price": 451.4533006210091,
+        "timestamp": "2025-08-03T09:05:07.349Z"
+      },
+      {
+        "size": 64576,
+        "price": 449.8592856851783,
+        "timestamp": "2025-08-03T08:47:21.165Z"
+      },
+      {
+        "size": 73752,
+        "price": 451.070013044701,
+        "timestamp": "2025-08-03T09:11:44.174Z"
+      },
+      {
+        "size": 133827,
+        "price": 457.1855584864029,
+        "timestamp": "2025-08-03T10:01:29.405Z"
+      },
+      {
+        "size": 139738,
+        "price": 457.49231744741155,
+        "timestamp": "2025-08-03T15:48:21.170Z"
+      }
+    ]
+  }
+]

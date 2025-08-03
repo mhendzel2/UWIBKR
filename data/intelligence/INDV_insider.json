@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "INDV",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 28082,
+    "price": 449.52276565846137,
+    "value": 12623498.305220911,
+    "date": "2025-07-31T22:06:12.769Z",
+    "filingDate": "2025-08-02T09:53:39.100Z",
+    "ownershipPercent": 1.2849577475331786
+  },
+  {
+    "symbol": "INDV",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 40555,
+    "price": 465.56926116818363,
+    "value": 18881161.386675686,
+    "date": "2025-07-29T21:42:55.456Z",
+    "filingDate": "2025-08-03T13:43:37.267Z",
+    "ownershipPercent": 4.5091085618967
+  }
+]

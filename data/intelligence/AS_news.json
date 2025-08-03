@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "AS",
+    "headline": "AS reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for AS with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.5043171307670791,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T08:18:16.372Z",
+    "url": "https://example.com/news/as-1754238631945"
+  },
+  {
+    "symbol": "AS",
+    "headline": "Analyst upgrades AS on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for AS with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.7639629823047827,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T10:41:21.153Z",
+    "url": "https://example.com/news/as-1754238631946"
+  }
+]

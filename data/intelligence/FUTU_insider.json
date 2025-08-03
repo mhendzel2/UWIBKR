@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "FUTU",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 4821,
+    "price": 450.3794969884507,
+    "value": 2171279.5549813206,
+    "date": "2025-07-30T07:10:30.818Z",
+    "filingDate": "2025-07-31T16:52:54.096Z",
+    "ownershipPercent": 3.824860475478141
+  },
+  {
+    "symbol": "FUTU",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 25767,
+    "price": 464.26277935908655,
+    "value": 11962659.035745583,
+    "date": "2025-08-01T22:37:12.549Z",
+    "filingDate": "2025-08-01T20:48:05.149Z",
+    "ownershipPercent": 2.6995535442347496
+  },
+  {
+    "symbol": "FUTU",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 22809,
+    "price": 463.25454344410826,
+    "value": 10566372.881416665,
+    "date": "2025-08-01T23:19:34.905Z",
+    "filingDate": "2025-08-03T10:35:54.817Z",
+    "ownershipPercent": 3.40034405627049
+  }
+]

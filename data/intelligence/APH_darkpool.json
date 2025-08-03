@@ -1,0 +1,43 @@
+[
+  {
+    "symbol": "APH",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4133637,
+    "totalVolume": 6666793,
+    "darkPoolRatio": 0.6200338003594832,
+    "avgDarkPoolSize": 1649,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 64069,
+        "price": 452.51528637486837,
+        "timestamp": "2025-08-03T14:29:20.147Z"
+      },
+      {
+        "size": 81372,
+        "price": 454.7013416717776,
+        "timestamp": "2025-08-03T12:05:43.936Z"
+      },
+      {
+        "size": 87777,
+        "price": 454.13369774592996,
+        "timestamp": "2025-08-03T10:43:51.790Z"
+      },
+      {
+        "size": 58786,
+        "price": 455.7542260480634,
+        "timestamp": "2025-08-03T16:23:05.631Z"
+      },
+      {
+        "size": 68672,
+        "price": 456.33903942103393,
+        "timestamp": "2025-08-03T09:31:09.206Z"
+      },
+      {
+        "size": 124044,
+        "price": 456.02371057426404,
+        "timestamp": "2025-08-03T14:01:26.723Z"
+      }
+    ]
+  }
+]

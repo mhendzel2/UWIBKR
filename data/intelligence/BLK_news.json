@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "BLK",
+    "headline": "BLK reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for BLK with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.6167469881259557,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T06:16:02.564Z",
+    "url": "https://example.com/news/blk-1754238645517"
+  },
+  {
+    "symbol": "BLK",
+    "headline": "Regulatory approval granted for BLK new product",
+    "summary": "Recent developments suggest positive momentum for BLK with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.4566816623024251,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T16:05:04.159Z",
+    "url": "https://example.com/news/blk-1754238645518"
+  }
+]

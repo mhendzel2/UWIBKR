@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "RMD",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Outperform",
+    "newRating": "Sell",
+    "previousTarget": 441.7427368344295,
+    "newTarget": 448.1345908383203,
+    "date": "2025-07-29T17:50:35.839Z",
+    "reasoning": "Competitive headwinds"
+  },
+  {
+    "symbol": "RMD",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Hold",
+    "newRating": "Buy",
+    "previousTarget": 515.1597824137704,
+    "newTarget": 473.12724146165743,
+    "date": "2025-08-03T09:46:58.294Z",
+    "reasoning": "Strong management team"
+  }
+]

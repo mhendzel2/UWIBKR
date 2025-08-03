@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "AEM",
+    "headline": "Regulatory approval granted for AEM new product",
+    "summary": "Recent developments suggest positive momentum for AEM with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.7060481881693076,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T07:13:13.325Z",
+    "url": "https://example.com/news/aem-1754238606109"
+  },
+  {
+    "symbol": "AEM",
+    "headline": "AEM announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for AEM with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.6679209168880005,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T15:23:36.664Z",
+    "url": "https://example.com/news/aem-1754238606109"
+  }
+]

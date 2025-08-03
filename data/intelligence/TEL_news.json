@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "TEL",
+    "headline": "Regulatory approval granted for TEL new product",
+    "summary": "Recent developments suggest positive momentum for TEL with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.5057461688940966,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T14:22:45.862Z",
+    "url": "https://example.com/news/tel-1754238616406"
+  },
+  {
+    "symbol": "TEL",
+    "headline": "TEL reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for TEL with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.6720601366364841,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T07:02:01.859Z",
+    "url": "https://example.com/news/tel-1754238616406"
+  },
+  {
+    "symbol": "TEL",
+    "headline": "Regulatory approval granted for TEL new product",
+    "summary": "Recent developments suggest positive momentum for TEL with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5226208459520313,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T08:30:18.966Z",
+    "url": "https://example.com/news/tel-1754238616407"
+  }
+]

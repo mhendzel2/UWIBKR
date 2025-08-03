@@ -20,5 +20,16 @@
     "category": "earnings",
     "publishedAt": "2025-08-02T00:16:51.138Z",
     "url": "https://example.com/news/googl-1754101860476"
+  },
+  {
+    "symbol": "GOOGL",
+    "headline": "GOOGL announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for GOOGL with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.563221669733959,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T05:41:59.347Z",
+    "url": "https://example.com/news/googl-1754238603042"
   }
 ]

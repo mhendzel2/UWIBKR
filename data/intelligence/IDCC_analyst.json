@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "IDCC",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Sell",
+    "newRating": "Outperform",
+    "previousTarget": 405.9126461457246,
+    "newTarget": 383.56938658926384,
+    "date": "2025-08-02T00:13:43.773Z",
+    "reasoning": "Valuation concerns"
+  },
+  {
+    "symbol": "IDCC",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Outperform",
+    "newRating": "Underperform",
+    "previousTarget": 464.67242430279276,
+    "newTarget": 493.9270326567218,
+    "date": "2025-07-31T12:30:09.117Z",
+    "reasoning": "Positive sector outlook"
+  }
+]

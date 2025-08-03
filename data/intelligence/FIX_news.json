@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "FIX",
+    "headline": "Analyst upgrades FIX on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for FIX with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.8517637946569439,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T14:51:34.507Z",
+    "url": "https://example.com/news/fix-1754238608449"
+  },
+  {
+    "symbol": "FIX",
+    "headline": "Analyst upgrades FIX on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for FIX with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.6043874875430382,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T11:09:18.682Z",
+    "url": "https://example.com/news/fix-1754238608449"
+  },
+  {
+    "symbol": "FIX",
+    "headline": "Regulatory approval granted for FIX new product",
+    "summary": "Recent developments suggest positive momentum for FIX with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.7401686419481444,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T04:39:32.454Z",
+    "url": "https://example.com/news/fix-1754238608449"
+  }
+]

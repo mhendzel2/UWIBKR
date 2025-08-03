@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "AAMI",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1151284,
+    "totalVolume": 6808733,
+    "darkPoolRatio": 0.16908931514864806,
+    "avgDarkPoolSize": 4126,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 75203,
+        "price": 453.26638517833527,
+        "timestamp": "2025-08-03T14:00:28.844Z"
+      },
+      {
+        "size": 110654,
+        "price": 453.27231349716885,
+        "timestamp": "2025-08-03T15:07:00.158Z"
+      }
+    ]
+  }
+]

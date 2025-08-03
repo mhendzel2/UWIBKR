@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "BVN",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1971297,
+    "totalVolume": 15652001,
+    "darkPoolRatio": 0.1259453663464499,
+    "avgDarkPoolSize": 7444,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 81736,
+        "price": 454.98719534614855,
+        "timestamp": "2025-08-03T09:39:48.975Z"
+      },
+      {
+        "size": 79909,
+        "price": 454.9813329909191,
+        "timestamp": "2025-08-03T16:20:32.359Z"
+      }
+    ]
+  }
+]

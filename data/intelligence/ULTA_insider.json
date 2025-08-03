@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "ULTA",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 45659,
+    "price": 463.2354684305317,
+    "value": 21150868.253069647,
+    "date": "2025-07-27T18:02:04.397Z",
+    "filingDate": "2025-08-02T07:22:51.360Z",
+    "ownershipPercent": 4.4497558469542815
+  }
+]

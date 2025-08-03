@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "ITRI",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 47340,
+    "price": 445.7550039078586,
+    "value": 21102041.884998027,
+    "date": "2025-07-29T22:32:02.655Z",
+    "filingDate": "2025-07-31T19:45:44.064Z",
+    "ownershipPercent": 0.5352672760863807
+  }
+]

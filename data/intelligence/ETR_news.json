@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "ETR",
+    "headline": "Analyst upgrades ETR on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for ETR with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7158882920994223,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T05:49:09.753Z",
+    "url": "https://example.com/news/etr-1754238628593"
+  },
+  {
+    "symbol": "ETR",
+    "headline": "Regulatory approval granted for ETR new product",
+    "summary": "Recent developments suggest positive momentum for ETR with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.7276455696573528,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T11:59:04.685Z",
+    "url": "https://example.com/news/etr-1754238628593"
+  }
+]

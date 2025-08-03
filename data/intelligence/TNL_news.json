@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "TNL",
+    "headline": "Analyst upgrades TNL on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for TNL with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.5354487878433787,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T08:51:40.568Z",
+    "url": "https://example.com/news/tnl-1754238650297"
+  },
+  {
+    "symbol": "TNL",
+    "headline": "Analyst upgrades TNL on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for TNL with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.8109943695384052,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T11:01:44.903Z",
+    "url": "https://example.com/news/tnl-1754238650297"
+  },
+  {
+    "symbol": "TNL",
+    "headline": "Regulatory approval granted for TNL new product",
+    "summary": "Recent developments suggest positive momentum for TNL with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.6925155685818652,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T15:52:47.405Z",
+    "url": "https://example.com/news/tnl-1754238650297"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "DB",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 4225,
+    "price": 455.41428837018594,
+    "value": 1924125.3683640356,
+    "date": "2025-07-28T00:26:50.372Z",
+    "filingDate": "2025-07-31T18:34:25.071Z",
+    "ownershipPercent": 4.684186603278778
+  },
+  {
+    "symbol": "DB",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 7447,
+    "price": 464.3021578549569,
+    "value": 3457658.1695458638,
+    "date": "2025-07-28T03:32:46.152Z",
+    "filingDate": "2025-08-03T15:12:14.910Z",
+    "ownershipPercent": 0.7672387049526695
+  }
+]

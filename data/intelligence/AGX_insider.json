@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "AGX",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 8634,
+    "price": 456.65115375764685,
+    "value": 3942726.061543523,
+    "date": "2025-07-29T16:55:19.321Z",
+    "filingDate": "2025-08-01T01:45:15.656Z",
+    "ownershipPercent": 0.3841218739894058
+  }
+]

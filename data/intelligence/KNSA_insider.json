@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "KNSA",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 10922,
+    "price": 451.2457526477058,
+    "value": 4928506.110418242,
+    "date": "2025-07-27T19:19:36.957Z",
+    "filingDate": "2025-08-03T05:04:03.330Z",
+    "ownershipPercent": 4.367327211343059
+  },
+  {
+    "symbol": "KNSA",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 19134,
+    "price": 457.74439902291715,
+    "value": 8758481.330904497,
+    "date": "2025-08-02T14:23:39.867Z",
+    "filingDate": "2025-07-31T21:12:28.874Z",
+    "ownershipPercent": 1.7979209476317748
+  },
+  {
+    "symbol": "KNSA",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 49795,
+    "price": 455.82340741821645,
+    "value": 22697726.572390087,
+    "date": "2025-07-31T13:12:27.001Z",
+    "filingDate": "2025-08-02T16:40:05.894Z",
+    "ownershipPercent": 0.2134116291139986
+  }
+]

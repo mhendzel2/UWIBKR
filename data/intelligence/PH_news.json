@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "PH",
+    "headline": "Regulatory approval granted for PH new product",
+    "summary": "Recent developments suggest positive momentum for PH with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5978954488194304,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T07:34:17.525Z",
+    "url": "https://example.com/news/ph-1754238641966"
+  },
+  {
+    "symbol": "PH",
+    "headline": "Regulatory approval granted for PH new product",
+    "summary": "Recent developments suggest positive momentum for PH with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.4771510540719339,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T16:11:25.009Z",
+    "url": "https://example.com/news/ph-1754238641966"
+  },
+  {
+    "symbol": "PH",
+    "headline": "Regulatory approval granted for PH new product",
+    "summary": "Recent developments suggest positive momentum for PH with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.6970519745451078,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T11:41:23.851Z",
+    "url": "https://example.com/news/ph-1754238641966"
+  }
+]

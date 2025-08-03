@@ -1,0 +1,13 @@
+[
+  {
+    "symbol": "CBOE",
+    "headline": "CBOE reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for CBOE with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.7998485629273302,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T15:13:08.530Z",
+    "url": "https://example.com/news/cboe-1754238623399"
+  }
+]

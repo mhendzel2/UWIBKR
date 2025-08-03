@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "TDG",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Outperform",
+    "previousTarget": 444.99746558786967,
+    "newTarget": 414.9263898556309,
+    "date": "2025-07-30T18:15:38.623Z",
+    "reasoning": "Valuation concerns"
+  }
+]

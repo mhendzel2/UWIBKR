@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "KLAC",
+    "headline": "Regulatory approval granted for KLAC new product",
+    "summary": "Recent developments suggest positive momentum for KLAC with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.685622983408037,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T13:50:11.528Z",
+    "url": "https://example.com/news/klac-1754238630256"
+  },
+  {
+    "symbol": "KLAC",
+    "headline": "KLAC announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for KLAC with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.6758213217245667,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T12:51:19.055Z",
+    "url": "https://example.com/news/klac-1754238630256"
+  }
+]

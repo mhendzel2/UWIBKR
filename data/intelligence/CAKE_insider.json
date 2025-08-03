@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "CAKE",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 38326,
+    "price": 444.5092260749161,
+    "value": 17036260.598547235,
+    "date": "2025-08-03T00:44:32.376Z",
+    "filingDate": "2025-08-01T19:09:55.302Z",
+    "ownershipPercent": 2.270562050594467
+  }
+]

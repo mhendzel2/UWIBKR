@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "COUR",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 34614,
+    "price": 456.389682853123,
+    "value": 15797472.482278,
+    "date": "2025-07-30T14:19:20.432Z",
+    "filingDate": "2025-08-03T10:10:16.834Z",
+    "ownershipPercent": 3.2104052726384436
+  }
+]

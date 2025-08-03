@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "FBNC",
+    "headline": "FBNC announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for FBNC with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.6426288835617702,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T05:24:11.352Z",
+    "url": "https://example.com/news/fbnc-1754238645732"
+  },
+  {
+    "symbol": "FBNC",
+    "headline": "Regulatory approval granted for FBNC new product",
+    "summary": "Recent developments suggest positive momentum for FBNC with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.4904350967856361,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T12:47:03.312Z",
+    "url": "https://example.com/news/fbnc-1754238645732"
+  }
+]

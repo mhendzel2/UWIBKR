@@ -10,5 +10,17 @@
     "newTarget": 213.1796363415364,
     "date": "2025-07-29T01:57:53.059Z",
     "reasoning": "Strong earnings momentum"
+  },
+  {
+    "symbol": "CVX",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Outperform",
+    "previousTarget": 492.94587506266953,
+    "newTarget": 465.7142629620346,
+    "date": "2025-07-31T14:53:12.670Z",
+    "reasoning": "Balanced risk/reward"
   }
 ]

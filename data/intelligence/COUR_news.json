@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "COUR",
+    "headline": "Analyst upgrades COUR on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for COUR with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.5651138184188107,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T10:56:27.293Z",
+    "url": "https://example.com/news/cour-1754238643434"
+  },
+  {
+    "symbol": "COUR",
+    "headline": "COUR announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for COUR with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.34777104654611674,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T14:38:33.421Z",
+    "url": "https://example.com/news/cour-1754238643434"
+  }
+]

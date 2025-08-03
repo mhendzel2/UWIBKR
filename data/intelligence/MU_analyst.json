@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "MU",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Outperform",
+    "newRating": "Outperform",
+    "previousTarget": 459.4509252373728,
+    "newTarget": 441.6172727077867,
+    "date": "2025-08-03T13:23:54.504Z",
+    "reasoning": "Compelling growth story"
+  }
+]

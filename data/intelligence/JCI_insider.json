@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "JCI",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 28749,
+    "price": 454.6515997333755,
+    "value": 13070778.840734813,
+    "date": "2025-07-27T23:29:30.848Z",
+    "filingDate": "2025-08-02T13:29:54.844Z",
+    "ownershipPercent": 1.806791096825976
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "JCI",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Outperform",
+    "newRating": "Buy",
+    "previousTarget": 439.8866598730973,
+    "newTarget": 478.41502046503365,
+    "date": "2025-07-29T18:46:21.546Z",
+    "reasoning": "Attractive valuation"
+  },
+  {
+    "symbol": "JCI",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Outperform",
+    "previousTarget": 426.88631785926924,
+    "newTarget": 405.4861919373094,
+    "date": "2025-08-02T01:23:51.508Z",
+    "reasoning": "Strong earnings momentum"
+  }
+]

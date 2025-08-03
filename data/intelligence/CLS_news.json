@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "CLS",
+    "headline": "CLS raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for CLS with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.7737503384032158,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T15:12:12.619Z",
+    "url": "https://example.com/news/cls-1754238607608"
+  },
+  {
+    "symbol": "CLS",
+    "headline": "Analyst upgrades CLS on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for CLS with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.5037219050944036,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T13:57:06.704Z",
+    "url": "https://example.com/news/cls-1754238607609"
+  },
+  {
+    "symbol": "CLS",
+    "headline": "Analyst upgrades CLS on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for CLS with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.6672952176809553,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T13:59:47.606Z",
+    "url": "https://example.com/news/cls-1754238607609"
+  }
+]

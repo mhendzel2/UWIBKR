@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "TDG",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 45002,
+    "price": 449.4259194427922,
+    "value": 20225065.226764534,
+    "date": "2025-07-28T04:20:01.948Z",
+    "filingDate": "2025-07-31T20:57:05.382Z",
+    "ownershipPercent": 2.5471219640716494
+  },
+  {
+    "symbol": "TDG",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 13350,
+    "price": 448.40387710291037,
+    "value": 5986191.759323853,
+    "date": "2025-08-02T03:25:17.762Z",
+    "filingDate": "2025-08-03T01:07:18.975Z",
+    "ownershipPercent": 3.6849784167794652
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "EVR",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Outperform",
+    "newRating": "Buy",
+    "previousTarget": 479.08381797817526,
+    "newTarget": 507.23171373012667,
+    "date": "2025-07-30T00:58:45.824Z",
+    "reasoning": "Balanced risk/reward"
+  },
+  {
+    "symbol": "EVR",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Hold",
+    "newRating": "Buy",
+    "previousTarget": 465.3214333765938,
+    "newTarget": 483.99923510583125,
+    "date": "2025-07-29T17:56:39.146Z",
+    "reasoning": "Positive sector outlook"
+  }
+]

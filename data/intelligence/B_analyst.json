@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "B",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Underperform",
+    "newRating": "Hold",
+    "previousTarget": 476.4104124619443,
+    "newTarget": 447.26187277392535,
+    "date": "2025-08-02T01:08:53.098Z",
+    "reasoning": "Strong management team"
+  }
+]

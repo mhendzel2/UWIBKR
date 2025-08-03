@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "AVAV",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5869607,
+    "totalVolume": 13391235,
+    "darkPoolRatio": 0.43831707829785677,
+    "avgDarkPoolSize": 6792,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 68268,
+        "price": 460.2153996274427,
+        "timestamp": "2025-08-03T14:00:19.715Z"
+      },
+      {
+        "size": 108699,
+        "price": 453.87330554219255,
+        "timestamp": "2025-08-03T08:55:03.794Z"
+      }
+    ]
+  }
+]

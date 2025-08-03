@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "AMG",
+    "date": "2025-08-03",
+    "darkPoolVolume": 2292337,
+    "totalVolume": 5632375,
+    "darkPoolRatio": 0.4069929647795113,
+    "avgDarkPoolSize": 9680,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 136549,
+        "price": 448.06255366318715,
+        "timestamp": "2025-08-03T16:20:00.479Z"
+      },
+      {
+        "size": 71867,
+        "price": 451.0707467399204,
+        "timestamp": "2025-08-03T10:17:44.802Z"
+      },
+      {
+        "size": 130209,
+        "price": 454.7840239033207,
+        "timestamp": "2025-08-03T14:05:26.409Z"
+      },
+      {
+        "size": 137882,
+        "price": 453.3923910651411,
+        "timestamp": "2025-08-03T13:09:07.691Z"
+      },
+      {
+        "size": 140581,
+        "price": 452.47942425140127,
+        "timestamp": "2025-08-03T14:05:28.946Z"
+      }
+    ]
+  }
+]

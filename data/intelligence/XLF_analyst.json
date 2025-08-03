@@ -22,5 +22,29 @@
     "newTarget": 196.73462146428875,
     "date": "2025-07-29T18:05:09.447Z",
     "reasoning": "Compelling growth story"
+  },
+  {
+    "symbol": "XLF",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Hold",
+    "newRating": "Hold",
+    "previousTarget": 454.5033196044234,
+    "newTarget": 413.2936318806832,
+    "date": "2025-08-02T05:49:35.280Z",
+    "reasoning": "Strong management team"
+  },
+  {
+    "symbol": "XLF",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Outperform",
+    "previousTarget": 395.33556752996157,
+    "newTarget": 435.93064186352944,
+    "date": "2025-07-31T15:37:14.878Z",
+    "reasoning": "Stable fundamentals"
   }
 ]

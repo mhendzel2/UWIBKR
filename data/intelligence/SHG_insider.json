@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "SHG",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 2771,
+    "price": 462.4307727052116,
+    "value": 1281395.6711661413,
+    "date": "2025-08-03T03:30:50.523Z",
+    "filingDate": "2025-08-02T23:22:40.377Z",
+    "ownershipPercent": 0.10769983807507147
+  },
+  {
+    "symbol": "SHG",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 11857,
+    "price": 458.4812779086059,
+    "value": 5436212.51216234,
+    "date": "2025-08-03T10:03:58.121Z",
+    "filingDate": "2025-07-31T20:53:54.009Z",
+    "ownershipPercent": 4.4997371778697435
+  },
+  {
+    "symbol": "SHG",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 18685,
+    "price": 458.75104198331314,
+    "value": 8571763.219458206,
+    "date": "2025-07-29T22:42:02.530Z",
+    "filingDate": "2025-08-02T21:30:11.118Z",
+    "ownershipPercent": 4.373141744180549
+  }
+]

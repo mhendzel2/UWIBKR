@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "RL",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 42914,
+    "price": 457.77815554285473,
+    "value": 19645091.766966067,
+    "date": "2025-07-28T04:16:50.687Z",
+    "filingDate": "2025-07-31T22:07:34.054Z",
+    "ownershipPercent": 3.5021000102386304
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "LFUS",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3540680,
+    "totalVolume": 6201847,
+    "darkPoolRatio": 0.5709073442153604,
+    "avgDarkPoolSize": 6751,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 88087,
+        "price": 457.2079221551746,
+        "timestamp": "2025-08-03T10:26:16.897Z"
+      },
+      {
+        "size": 112066,
+        "price": 459.3784344233068,
+        "timestamp": "2025-08-03T13:19:38.033Z"
+      }
+    ]
+  }
+]

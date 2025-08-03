@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "FTAI",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 26767,
+    "price": 457.17540985720836,
+    "value": 12237214.195647897,
+    "date": "2025-08-01T05:44:34.677Z",
+    "filingDate": "2025-07-31T23:54:51.822Z",
+    "ownershipPercent": 2.3361986673116077
+  }
+]

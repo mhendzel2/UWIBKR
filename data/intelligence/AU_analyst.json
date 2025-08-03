@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "AU",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Outperform",
+    "newRating": "Outperform",
+    "previousTarget": 489.05806666923024,
+    "newTarget": 516.1658858767726,
+    "date": "2025-08-01T16:12:37.846Z",
+    "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "AU",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Outperform",
+    "newRating": "Underperform",
+    "previousTarget": 443.99605133653944,
+    "newTarget": 480.9034078486158,
+    "date": "2025-08-02T02:37:53.938Z",
+    "reasoning": "Competitive headwinds"
+  }
+]

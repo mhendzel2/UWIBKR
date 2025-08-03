@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "PTC",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 44925,
+    "price": 450.74126592950876,
+    "value": 20249551.37188318,
+    "date": "2025-08-02T16:45:55.123Z",
+    "filingDate": "2025-08-01T23:03:42.923Z",
+    "ownershipPercent": 0.7111482722573824
+  },
+  {
+    "symbol": "PTC",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 17119,
+    "price": 451.44650753767695,
+    "value": 7728312.7625374915,
+    "date": "2025-08-01T20:52:42.031Z",
+    "filingDate": "2025-08-03T15:30:16.921Z",
+    "ownershipPercent": 3.62682111180356
+  },
+  {
+    "symbol": "PTC",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 19752,
+    "price": 446.9069772970127,
+    "value": 8827306.615570595,
+    "date": "2025-07-28T18:36:13.879Z",
+    "filingDate": "2025-08-02T12:23:09.628Z",
+    "ownershipPercent": 0.7387535376787234
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "AZZ",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4162984,
+    "totalVolume": 8586847,
+    "darkPoolRatio": 0.4848093834675289,
+    "avgDarkPoolSize": 9042,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 115037,
+        "price": 450.82594281526843,
+        "timestamp": "2025-08-03T09:41:39.587Z"
+      },
+      {
+        "size": 66625,
+        "price": 450.1872536965915,
+        "timestamp": "2025-08-03T12:04:43.388Z"
+      },
+      {
+        "size": 97992,
+        "price": 448.55073099590777,
+        "timestamp": "2025-08-03T10:29:46.501Z"
+      },
+      {
+        "size": 51623,
+        "price": 452.8632025929904,
+        "timestamp": "2025-08-03T12:25:24.434Z"
+      }
+    ]
+  }
+]

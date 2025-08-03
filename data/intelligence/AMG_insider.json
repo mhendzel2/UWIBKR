@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "AMG",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 36702,
+    "price": 451.14328557930185,
+    "value": 16557860.867331536,
+    "date": "2025-07-30T00:23:47.562Z",
+    "filingDate": "2025-08-02T21:27:07.787Z",
+    "ownershipPercent": 2.0398436190368208
+  },
+  {
+    "symbol": "AMG",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 10376,
+    "price": 454.360619966804,
+    "value": 4714445.792775558,
+    "date": "2025-07-29T14:46:50.054Z",
+    "filingDate": "2025-08-02T12:40:36.917Z",
+    "ownershipPercent": 3.7406725132467478
+  },
+  {
+    "symbol": "AMG",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 23224,
+    "price": 453.42896849939376,
+    "value": 10530434.36442992,
+    "date": "2025-07-30T08:29:09.636Z",
+    "filingDate": "2025-08-01T02:25:14.747Z",
+    "ownershipPercent": 3.968269036284433
+  }
+]

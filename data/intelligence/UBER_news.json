@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "UBER",
+    "headline": "Regulatory approval granted for UBER new product",
+    "summary": "Recent developments suggest positive momentum for UBER with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.5491448986996896,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T09:58:48.488Z",
+    "url": "https://example.com/news/uber-1754238631524"
+  },
+  {
+    "symbol": "UBER",
+    "headline": "Regulatory approval granted for UBER new product",
+    "summary": "Recent developments suggest positive momentum for UBER with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.6630162515671517,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T05:09:17.341Z",
+    "url": "https://example.com/news/uber-1754238631524"
+  },
+  {
+    "symbol": "UBER",
+    "headline": "UBER announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for UBER with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.48765845179505096,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T12:32:02.560Z",
+    "url": "https://example.com/news/uber-1754238631524"
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "TMDX",
+    "headline": "TMDX raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for TMDX with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.6471162877438017,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T16:08:52.260Z",
+    "url": "https://example.com/news/tmdx-1754238635250"
+  },
+  {
+    "symbol": "TMDX",
+    "headline": "TMDX raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for TMDX with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.897401870071304,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T09:33:10.400Z",
+    "url": "https://example.com/news/tmdx-1754238635252"
+  }
+]

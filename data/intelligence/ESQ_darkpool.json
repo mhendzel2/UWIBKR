@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "ESQ",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4660760,
+    "totalVolume": 8769454,
+    "darkPoolRatio": 0.5314766460945003,
+    "avgDarkPoolSize": 7664,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 95564,
+        "price": 452.4039905878559,
+        "timestamp": "2025-08-03T16:16:42.898Z"
+      },
+      {
+        "size": 56312,
+        "price": 454.0908783841024,
+        "timestamp": "2025-08-03T12:35:40.554Z"
+      },
+      {
+        "size": 51742,
+        "price": 452.35882272513686,
+        "timestamp": "2025-08-03T14:08:55.391Z"
+      },
+      {
+        "size": 149986,
+        "price": 454.77394783881164,
+        "timestamp": "2025-08-03T11:03:49.794Z"
+      },
+      {
+        "size": 66085,
+        "price": 449.1490982810491,
+        "timestamp": "2025-08-03T10:29:33.761Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "TIGO",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 15057,
+    "price": 463.15109832450344,
+    "value": 6973666.087472049,
+    "date": "2025-07-29T15:26:47.496Z",
+    "filingDate": "2025-07-31T22:14:27.800Z",
+    "ownershipPercent": 1.768095603935903
+  },
+  {
+    "symbol": "TIGO",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 49404,
+    "price": 446.79258726109714,
+    "value": 22073340.981047243,
+    "date": "2025-08-02T07:12:44.799Z",
+    "filingDate": "2025-08-02T17:52:27.022Z",
+    "ownershipPercent": 4.695301471455682
+  },
+  {
+    "symbol": "TIGO",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 10779,
+    "price": 455.65209246343693,
+    "value": 4911473.904663387,
+    "date": "2025-08-02T06:47:33.766Z",
+    "filingDate": "2025-08-03T04:16:08.656Z",
+    "ownershipPercent": 3.919459591355705
+  }
+]

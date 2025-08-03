@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "ALV",
+    "date": "2025-08-03",
+    "darkPoolVolume": 2325258,
+    "totalVolume": 7297039,
+    "darkPoolRatio": 0.31865774597066016,
+    "avgDarkPoolSize": 8956,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 68395,
+        "price": 456.3968527872087,
+        "timestamp": "2025-08-03T12:31:00.660Z"
+      },
+      {
+        "size": 127143,
+        "price": 461.6089653867215,
+        "timestamp": "2025-08-03T09:48:36.821Z"
+      },
+      {
+        "size": 74557,
+        "price": 456.0754590242976,
+        "timestamp": "2025-08-03T15:42:20.685Z"
+      }
+    ]
+  }
+]

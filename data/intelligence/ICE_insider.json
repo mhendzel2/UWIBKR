@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "ICE",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 16316,
+    "price": 444.5370730770863,
+    "value": 7253066.88432574,
+    "date": "2025-07-31T04:12:24.338Z",
+    "filingDate": "2025-08-01T01:24:51.441Z",
+    "ownershipPercent": 1.1135306878193907
+  }
+]

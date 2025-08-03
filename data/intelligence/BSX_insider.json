@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "BSX",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 31617,
+    "price": 450.8725860699484,
+    "value": 14255238.553773558,
+    "date": "2025-07-28T00:15:51.089Z",
+    "filingDate": "2025-08-02T16:06:09.926Z",
+    "ownershipPercent": 1.7639578152420532
+  },
+  {
+    "symbol": "BSX",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 39350,
+    "price": 450.9795140027794,
+    "value": 17746043.87600937,
+    "date": "2025-07-29T17:33:39.460Z",
+    "filingDate": "2025-08-02T19:22:12.883Z",
+    "ownershipPercent": 1.2953513402411077
+  },
+  {
+    "symbol": "BSX",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 2630,
+    "price": 463.835759693308,
+    "value": 1219888.0479934,
+    "date": "2025-08-02T20:03:11.841Z",
+    "filingDate": "2025-08-01T02:07:58.885Z",
+    "ownershipPercent": 2.585735857931586
+  }
+]

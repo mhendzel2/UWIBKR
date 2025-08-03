@@ -10,5 +10,41 @@
     "date": "2025-07-27T06:59:02.838Z",
     "filingDate": "2025-07-30T23:48:40.989Z",
     "ownershipPercent": 2.4539668888031483
+  },
+  {
+    "symbol": "NFLX",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 33976,
+    "price": 457.8647528825053,
+    "value": 15556412.843936,
+    "date": "2025-08-02T07:51:57.859Z",
+    "filingDate": "2025-08-02T08:21:22.874Z",
+    "ownershipPercent": 0.4570469136144871
+  },
+  {
+    "symbol": "NFLX",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 17006,
+    "price": 459.2585564256891,
+    "value": 7810151.010575269,
+    "date": "2025-07-30T16:12:23.808Z",
+    "filingDate": "2025-08-03T08:01:27.700Z",
+    "ownershipPercent": 3.3388378151122944
+  },
+  {
+    "symbol": "NFLX",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 12455,
+    "price": 447.31941623011943,
+    "value": 5571363.329146137,
+    "date": "2025-08-02T05:28:30.475Z",
+    "filingDate": "2025-08-01T15:11:09.615Z",
+    "ownershipPercent": 4.440623179936803
   }
 ]

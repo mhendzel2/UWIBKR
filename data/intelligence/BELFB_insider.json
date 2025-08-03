@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "BELFB",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 18811,
+    "price": 452.80120114881805,
+    "value": 8517643.394810416,
+    "date": "2025-07-29T10:05:15.698Z",
+    "filingDate": "2025-08-02T06:52:50.008Z",
+    "ownershipPercent": 3.32942380431712
+  },
+  {
+    "symbol": "BELFB",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 44054,
+    "price": 448.20959694144733,
+    "value": 19745425.58365852,
+    "date": "2025-08-01T12:37:09.387Z",
+    "filingDate": "2025-08-02T18:27:30.500Z",
+    "ownershipPercent": 4.7044778330581085
+  },
+  {
+    "symbol": "BELFB",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 50014,
+    "price": 462.66425496782955,
+    "value": 23139690.047961026,
+    "date": "2025-07-30T07:28:07.448Z",
+    "filingDate": "2025-07-31T20:02:14.439Z",
+    "ownershipPercent": 2.0400567938986756
+  }
+]

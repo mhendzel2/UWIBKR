@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "WCC",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4293940,
+    "totalVolume": 12803255,
+    "darkPoolRatio": 0.3353787767251375,
+    "avgDarkPoolSize": 8302,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 50369,
+        "price": 450.2360518785389,
+        "timestamp": "2025-08-03T11:14:56.844Z"
+      },
+      {
+        "size": 69488,
+        "price": 450.6637467592724,
+        "timestamp": "2025-08-03T16:28:44.957Z"
+      }
+    ]
+  }
+]

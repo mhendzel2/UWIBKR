@@ -1,0 +1,43 @@
+[
+  {
+    "symbol": "MCRI",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5454889,
+    "totalVolume": 9116482,
+    "darkPoolRatio": 0.5983546065247537,
+    "avgDarkPoolSize": 7981,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 51222,
+        "price": 450.5255378057227,
+        "timestamp": "2025-08-03T08:41:09.813Z"
+      },
+      {
+        "size": 81267,
+        "price": 454.03642255509504,
+        "timestamp": "2025-08-03T10:46:27.087Z"
+      },
+      {
+        "size": 124975,
+        "price": 453.1525233074797,
+        "timestamp": "2025-08-03T14:55:48.686Z"
+      },
+      {
+        "size": 61724,
+        "price": 451.74699598280836,
+        "timestamp": "2025-08-03T14:51:34.052Z"
+      },
+      {
+        "size": 50984,
+        "price": 455.69066766200984,
+        "timestamp": "2025-08-03T16:16:11.050Z"
+      },
+      {
+        "size": 133525,
+        "price": 449.03643253022545,
+        "timestamp": "2025-08-03T11:27:50.700Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "CCL",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Buy",
+    "previousTarget": 473.39885271487356,
+    "newTarget": 477.1820740698533,
+    "date": "2025-07-30T14:00:38.853Z",
+    "reasoning": "Fair valuation"
+  }
+]

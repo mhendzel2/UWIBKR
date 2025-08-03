@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "BBVA",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1401299,
+    "totalVolume": 13841734,
+    "darkPoolRatio": 0.10123724383086685,
+    "avgDarkPoolSize": 8413,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 125324,
+        "price": 457.46059570904845,
+        "timestamp": "2025-08-03T09:25:40.755Z"
+      },
+      {
+        "size": 107770,
+        "price": 452.2016357829476,
+        "timestamp": "2025-08-03T15:00:04.085Z"
+      }
+    ]
+  }
+]

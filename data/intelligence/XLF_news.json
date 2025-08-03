@@ -31,5 +31,27 @@
     "category": "general",
     "publishedAt": "2025-08-01T18:00:40.745Z",
     "url": "https://example.com/news/xlf-1754101860532"
+  },
+  {
+    "symbol": "XLF",
+    "headline": "XLF reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for XLF with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.742050610018107,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T09:34:57.810Z",
+    "url": "https://example.com/news/xlf-1754238605253"
+  },
+  {
+    "symbol": "XLF",
+    "headline": "XLF raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for XLF with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.9539034721707482,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T15:49:26.546Z",
+    "url": "https://example.com/news/xlf-1754238605255"
   }
 ]

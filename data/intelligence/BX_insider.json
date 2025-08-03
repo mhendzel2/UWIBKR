@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "BX",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 21031,
+    "price": 444.6476806667246,
+    "value": 9351385.372101886,
+    "date": "2025-07-29T14:33:14.739Z",
+    "filingDate": "2025-08-01T21:31:15.512Z",
+    "ownershipPercent": 0.8930273040758095
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "NET",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Sell",
+    "previousTarget": 395.86214520993684,
+    "newTarget": 358.8387957764726,
+    "date": "2025-07-31T08:32:13.782Z",
+    "reasoning": "Balanced risk/reward"
+  },
+  {
+    "symbol": "NET",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Sell",
+    "previousTarget": 445.98640247562355,
+    "newTarget": 471.7300438622161,
+    "date": "2025-08-02T14:40:25.206Z",
+    "reasoning": "Compelling growth story"
+  }
+]

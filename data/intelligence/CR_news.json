@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "CR",
+    "headline": "Regulatory approval granted for CR new product",
+    "summary": "Recent developments suggest positive momentum for CR with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.5756093250743864,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T08:34:27.062Z",
+    "url": "https://example.com/news/cr-1754238624033"
+  },
+  {
+    "symbol": "CR",
+    "headline": "CR reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for CR with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.8285676417433908,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T12:49:43.984Z",
+    "url": "https://example.com/news/cr-1754238624033"
+  }
+]

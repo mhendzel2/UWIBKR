@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "SII",
+    "headline": "SII raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for SII with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.9528760523435276,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T04:44:01.758Z",
+    "url": "https://example.com/news/sii-1754238638407"
+  },
+  {
+    "symbol": "SII",
+    "headline": "SII raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for SII with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.8932087577132111,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T07:30:48.791Z",
+    "url": "https://example.com/news/sii-1754238638408"
+  }
+]

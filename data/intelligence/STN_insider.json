@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "STN",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 16972,
+    "price": 459.8560187015813,
+    "value": 7804676.349403238,
+    "date": "2025-08-01T11:38:20.302Z",
+    "filingDate": "2025-08-01T18:00:36.709Z",
+    "ownershipPercent": 2.0011584403320835
+  },
+  {
+    "symbol": "STN",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 47438,
+    "price": 449.0829918966826,
+    "value": 21303598.96959483,
+    "date": "2025-07-28T03:07:29.141Z",
+    "filingDate": "2025-08-01T03:34:55.510Z",
+    "ownershipPercent": 1.8812951939523892
+  }
+]

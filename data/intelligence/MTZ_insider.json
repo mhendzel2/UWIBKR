@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "MTZ",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 3356,
+    "price": 449.9813433292832,
+    "value": 1510137.3882130745,
+    "date": "2025-08-02T20:54:44.558Z",
+    "filingDate": "2025-08-03T01:27:28.690Z",
+    "ownershipPercent": 2.3994144956591676
+  }
+]

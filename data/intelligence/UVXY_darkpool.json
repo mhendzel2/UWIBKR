@@ -39,5 +39,41 @@
         "timestamp": "2025-08-02T02:08:41.058Z"
       }
     ]
+  },
+  {
+    "symbol": "UVXY",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5560397,
+    "totalVolume": 10715600,
+    "darkPoolRatio": 0.5189067341072828,
+    "avgDarkPoolSize": 9854,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 114497,
+        "price": 453.46615047145343,
+        "timestamp": "2025-08-03T10:26:42.886Z"
+      },
+      {
+        "size": 130107,
+        "price": 456.5283830407687,
+        "timestamp": "2025-08-03T15:15:22.828Z"
+      },
+      {
+        "size": 125937,
+        "price": 457.17017428897736,
+        "timestamp": "2025-08-03T11:53:14.782Z"
+      },
+      {
+        "size": 72497,
+        "price": 457.0771845050791,
+        "timestamp": "2025-08-03T09:23:17.434Z"
+      },
+      {
+        "size": 116185,
+        "price": 457.1683984744222,
+        "timestamp": "2025-08-03T12:41:47.898Z"
+      }
+    ]
   }
 ]

@@ -1,0 +1,43 @@
+[
+  {
+    "symbol": "GILD",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3364130,
+    "totalVolume": 9562477,
+    "darkPoolRatio": 0.3518052906166467,
+    "avgDarkPoolSize": 4580,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 114563,
+        "price": 447.8156185363205,
+        "timestamp": "2025-08-03T09:14:07.422Z"
+      },
+      {
+        "size": 68745,
+        "price": 450.81329909832965,
+        "timestamp": "2025-08-03T09:03:27.402Z"
+      },
+      {
+        "size": 126284,
+        "price": 455.52382866144336,
+        "timestamp": "2025-08-03T16:16:20.045Z"
+      },
+      {
+        "size": 107803,
+        "price": 452.2254498696662,
+        "timestamp": "2025-08-03T09:23:50.299Z"
+      },
+      {
+        "size": 114497,
+        "price": 453.27120750476405,
+        "timestamp": "2025-08-03T15:15:48.895Z"
+      },
+      {
+        "size": 58901,
+        "price": 454.0461878669609,
+        "timestamp": "2025-08-03T10:11:48.826Z"
+      }
+    ]
+  }
+]

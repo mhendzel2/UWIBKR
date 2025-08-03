@@ -1,0 +1,13 @@
+[
+  {
+    "symbol": "CAT",
+    "headline": "CAT reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for CAT with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.5584823954412078,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T12:01:29.287Z",
+    "url": "https://example.com/news/cat-1754238643227"
+  }
+]

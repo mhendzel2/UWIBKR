@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "AFRM",
+    "headline": "Regulatory approval granted for AFRM new product",
+    "summary": "Recent developments suggest positive momentum for AFRM with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.6453013435066534,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T10:23:26.475Z",
+    "url": "https://example.com/news/afrm-1754238640288"
+  },
+  {
+    "symbol": "AFRM",
+    "headline": "AFRM reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for AFRM with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.8328260177029745,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T10:19:05.950Z",
+    "url": "https://example.com/news/afrm-1754238640288"
+  }
+]

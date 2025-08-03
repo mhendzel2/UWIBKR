@@ -9,5 +9,38 @@
     "category": "guidance",
     "publishedAt": "2025-08-01T20:05:52.410Z",
     "url": "https://example.com/news/iwm-1754101860417"
+  },
+  {
+    "symbol": "IWM",
+    "headline": "Regulatory approval granted for IWM new product",
+    "summary": "Recent developments suggest positive momentum for IWM with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.7615870107189908,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T06:01:23.031Z",
+    "url": "https://example.com/news/iwm-1754238602300"
+  },
+  {
+    "symbol": "IWM",
+    "headline": "Regulatory approval granted for IWM new product",
+    "summary": "Recent developments suggest positive momentum for IWM with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5910184759587883,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T11:47:38.704Z",
+    "url": "https://example.com/news/iwm-1754238602300"
+  },
+  {
+    "symbol": "IWM",
+    "headline": "Analyst upgrades IWM on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for IWM with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.8586500536475241,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T13:19:41.870Z",
+    "url": "https://example.com/news/iwm-1754238602300"
   }
 ]

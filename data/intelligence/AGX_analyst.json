@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "AGX",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Hold",
+    "previousTarget": 387.1744052059604,
+    "newTarget": 422.0788234351324,
+    "date": "2025-07-29T22:18:05.389Z",
+    "reasoning": "Valuation concerns"
+  },
+  {
+    "symbol": "AGX",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Hold",
+    "previousTarget": 396.8144743049432,
+    "newTarget": 378.6670391507197,
+    "date": "2025-07-29T16:35:04.638Z",
+    "reasoning": "Compelling growth story"
+  }
+]

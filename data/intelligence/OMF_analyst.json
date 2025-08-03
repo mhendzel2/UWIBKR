@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "OMF",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Outperform",
+    "newRating": "Outperform",
+    "previousTarget": 495.2170920822936,
+    "newTarget": 495.71318823392255,
+    "date": "2025-07-31T16:06:17.165Z",
+    "reasoning": "Compelling growth story"
+  },
+  {
+    "symbol": "OMF",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Outperform",
+    "newRating": "Underperform",
+    "previousTarget": 517.9888812069612,
+    "newTarget": 489.4619968180322,
+    "date": "2025-07-31T14:26:56.457Z",
+    "reasoning": "Positive sector outlook"
+  }
+]

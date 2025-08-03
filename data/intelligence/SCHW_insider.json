@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "SCHW",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 23826,
+    "price": 447.71816973267187,
+    "value": 10667333.11205064,
+    "date": "2025-07-29T07:48:02.635Z",
+    "filingDate": "2025-08-02T03:02:57.509Z",
+    "ownershipPercent": 3.1593960675913535
+  }
+]

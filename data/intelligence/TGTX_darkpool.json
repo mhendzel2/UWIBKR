@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "TGTX",
+    "date": "2025-08-03",
+    "darkPoolVolume": 2372515,
+    "totalVolume": 16764185,
+    "darkPoolRatio": 0.1415228357358261,
+    "avgDarkPoolSize": 3319,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 57868,
+        "price": 454.2769966252488,
+        "timestamp": "2025-08-03T11:44:19.153Z"
+      },
+      {
+        "size": 96283,
+        "price": 455.06665599107424,
+        "timestamp": "2025-08-03T15:35:33.441Z"
+      }
+    ]
+  }
+]

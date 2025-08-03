@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "PAAS",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Sell",
+    "newRating": "Outperform",
+    "previousTarget": 421.29653700077955,
+    "newTarget": 457.3396010365246,
+    "date": "2025-07-31T21:29:03.345Z",
+    "reasoning": "Improved market position"
+  }
+]

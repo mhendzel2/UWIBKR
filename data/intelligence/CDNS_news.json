@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "CDNS",
+    "headline": "CDNS reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for CDNS with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.8169403144677632,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T09:58:41.417Z",
+    "url": "https://example.com/news/cdns-1754238617885"
+  },
+  {
+    "symbol": "CDNS",
+    "headline": "CDNS announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for CDNS with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.3226006546686484,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T12:23:21.571Z",
+    "url": "https://example.com/news/cdns-1754238617886"
+  }
+]

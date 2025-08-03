@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "SPXC",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 418.3899141716768,
+    "newTarget": 402.7317682051554,
+    "date": "2025-08-01T19:51:28.451Z",
+    "reasoning": "Balanced risk/reward"
+  }
+]

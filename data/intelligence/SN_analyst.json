@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "SN",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Hold",
+    "previousTarget": 446.12746191729906,
+    "newTarget": 477.2214054938869,
+    "date": "2025-07-31T13:21:31.045Z",
+    "reasoning": "Improved market position"
+  }
+]

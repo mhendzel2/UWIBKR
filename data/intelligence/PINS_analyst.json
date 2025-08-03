@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "PINS",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Outperform",
+    "previousTarget": 487.29332250905543,
+    "newTarget": 508.96929433440033,
+    "date": "2025-07-30T06:44:04.201Z",
+    "reasoning": "Strong management team"
+  },
+  {
+    "symbol": "PINS",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Sell",
+    "previousTarget": 423.5226483178773,
+    "newTarget": 449.9271692746362,
+    "date": "2025-07-31T21:30:26.817Z",
+    "reasoning": "Balanced risk/reward"
+  }
+]

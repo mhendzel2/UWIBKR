@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "WNS",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Underperform",
+    "previousTarget": 516.6003016118626,
+    "newTarget": 501.0027191036496,
+    "date": "2025-08-02T02:35:06.744Z",
+    "reasoning": "Stable fundamentals"
+  }
+]

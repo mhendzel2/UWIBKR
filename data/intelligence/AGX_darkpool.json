@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "AGX",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5788613,
+    "totalVolume": 13903213,
+    "darkPoolRatio": 0.4163507384947638,
+    "avgDarkPoolSize": 6866,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 70547,
+        "price": 460.88976756151703,
+        "timestamp": "2025-08-03T14:32:56.417Z"
+      },
+      {
+        "size": 53816,
+        "price": 462.30145271065703,
+        "timestamp": "2025-08-03T10:36:18.169Z"
+      },
+      {
+        "size": 110028,
+        "price": 457.30041053801096,
+        "timestamp": "2025-08-03T15:26:21.273Z"
+      },
+      {
+        "size": 83772,
+        "price": 454.6088558097727,
+        "timestamp": "2025-08-03T16:21:35.359Z"
+      },
+      {
+        "size": 128308,
+        "price": 462.32255397821183,
+        "timestamp": "2025-08-03T10:40:25.879Z"
+      }
+    ]
+  }
+]

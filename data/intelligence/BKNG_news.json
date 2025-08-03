@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "BKNG",
+    "headline": "BKNG announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for BKNG with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.47017888150705467,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T14:00:18.796Z",
+    "url": "https://example.com/news/bkng-1754238623188"
+  },
+  {
+    "symbol": "BKNG",
+    "headline": "Regulatory approval granted for BKNG new product",
+    "summary": "Recent developments suggest positive momentum for BKNG with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.4342973231992096,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T10:05:56.173Z",
+    "url": "https://example.com/news/bkng-1754238623188"
+  },
+  {
+    "symbol": "BKNG",
+    "headline": "Regulatory approval granted for BKNG new product",
+    "summary": "Recent developments suggest positive momentum for BKNG with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.6651955802534487,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T05:51:52.942Z",
+    "url": "https://example.com/news/bkng-1754238623188"
+  }
+]

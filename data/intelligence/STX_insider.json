@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "STX",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 22661,
+    "price": 448.38523675771205,
+    "value": 10160857.850166513,
+    "date": "2025-08-02T00:20:44.885Z",
+    "filingDate": "2025-08-01T06:50:20.374Z",
+    "ownershipPercent": 3.3920040765659167
+  },
+  {
+    "symbol": "STX",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 34966,
+    "price": 449.730483983862,
+    "value": 15725276.102979718,
+    "date": "2025-07-29T18:54:34.402Z",
+    "filingDate": "2025-08-03T10:48:55.792Z",
+    "ownershipPercent": 4.764937429647451
+  }
+]

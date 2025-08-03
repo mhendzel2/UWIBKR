@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "TDY",
+    "date": "2025-08-03",
+    "darkPoolVolume": 2735709,
+    "totalVolume": 10520648,
+    "darkPoolRatio": 0.2600323668275947,
+    "avgDarkPoolSize": 9433,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 112556,
+        "price": 459.2609885748315,
+        "timestamp": "2025-08-03T16:13:36.378Z"
+      },
+      {
+        "size": 147395,
+        "price": 463.26255756235304,
+        "timestamp": "2025-08-03T15:03:42.267Z"
+      }
+    ]
+  }
+]

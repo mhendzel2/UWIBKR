@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "FTAI",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Underperform",
+    "previousTarget": 409.66228058610756,
+    "newTarget": 396.9762721151609,
+    "date": "2025-07-30T09:59:24.158Z",
+    "reasoning": "Strong management team"
+  },
+  {
+    "symbol": "FTAI",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Hold",
+    "newRating": "Buy",
+    "previousTarget": 391.9583567082595,
+    "newTarget": 365.9646788059634,
+    "date": "2025-08-03T15:31:25.343Z",
+    "reasoning": "Attractive valuation"
+  }
+]

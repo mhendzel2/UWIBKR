@@ -1,0 +1,43 @@
+[
+  {
+    "symbol": "ITRI",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3814858,
+    "totalVolume": 9339530,
+    "darkPoolRatio": 0.40846359506313484,
+    "avgDarkPoolSize": 5490,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 108816,
+        "price": 462.6364802526003,
+        "timestamp": "2025-08-03T10:17:32.285Z"
+      },
+      {
+        "size": 112293,
+        "price": 458.2080578454683,
+        "timestamp": "2025-08-03T14:35:19.335Z"
+      },
+      {
+        "size": 122570,
+        "price": 459.57698409874274,
+        "timestamp": "2025-08-03T12:33:28.629Z"
+      },
+      {
+        "size": 72722,
+        "price": 458.30429170684835,
+        "timestamp": "2025-08-03T11:40:40.630Z"
+      },
+      {
+        "size": 96120,
+        "price": 456.6912748190955,
+        "timestamp": "2025-08-03T11:07:29.084Z"
+      },
+      {
+        "size": 57011,
+        "price": 456.491520294214,
+        "timestamp": "2025-08-03T15:45:26.764Z"
+      }
+    ]
+  }
+]

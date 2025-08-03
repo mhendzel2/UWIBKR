@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "PINS",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 48082,
+    "price": 446.75804046808224,
+    "value": 21481020.10178633,
+    "date": "2025-07-30T20:27:57.026Z",
+    "filingDate": "2025-08-03T15:26:15.618Z",
+    "ownershipPercent": 0.2622495235116994
+  },
+  {
+    "symbol": "PINS",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 49532,
+    "price": 463.4296094378445,
+    "value": 22954595.414675314,
+    "date": "2025-07-28T11:33:52.502Z",
+    "filingDate": "2025-07-31T17:00:58.315Z",
+    "ownershipPercent": 2.1700004443768695
+  },
+  {
+    "symbol": "PINS",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 8866,
+    "price": 450.8600568613881,
+    "value": 3997325.264133067,
+    "date": "2025-07-31T07:14:57.792Z",
+    "filingDate": "2025-08-02T21:26:46.752Z",
+    "ownershipPercent": 4.895641781778574
+  }
+]

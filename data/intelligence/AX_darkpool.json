@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "AX",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1273319,
+    "totalVolume": 18823644,
+    "darkPoolRatio": 0.06764466008813172,
+    "avgDarkPoolSize": 7115,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 128084,
+        "price": 452.0819496089295,
+        "timestamp": "2025-08-03T13:02:36.897Z"
+      },
+      {
+        "size": 132568,
+        "price": 456.75856823543995,
+        "timestamp": "2025-08-03T09:38:42.207Z"
+      },
+      {
+        "size": 58981,
+        "price": 449.3595991972956,
+        "timestamp": "2025-08-03T13:44:21.055Z"
+      }
+    ]
+  }
+]

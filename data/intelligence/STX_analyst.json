@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "STX",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Hold",
+    "newRating": "Underperform",
+    "previousTarget": 404.3315523619307,
+    "newTarget": 384.52239909078116,
+    "date": "2025-08-01T14:19:59.000Z",
+    "reasoning": "Attractive valuation"
+  },
+  {
+    "symbol": "STX",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 435.4007324946393,
+    "newTarget": 472.92600281215226,
+    "date": "2025-08-03T10:51:21.710Z",
+    "reasoning": "Valuation concerns"
+  }
+]

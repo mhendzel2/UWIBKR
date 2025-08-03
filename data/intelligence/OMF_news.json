@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "OMF",
+    "headline": "OMF reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for OMF with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.65605988089483,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T10:11:30.541Z",
+    "url": "https://example.com/news/omf-1754238646878"
+  },
+  {
+    "symbol": "OMF",
+    "headline": "Regulatory approval granted for OMF new product",
+    "summary": "Recent developments suggest positive momentum for OMF with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.45913167259460114,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T11:35:17.417Z",
+    "url": "https://example.com/news/omf-1754238646879"
+  }
+]

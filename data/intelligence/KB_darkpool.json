@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "KB",
+    "date": "2025-08-03",
+    "darkPoolVolume": 2788102,
+    "totalVolume": 8689529,
+    "darkPoolRatio": 0.3208576667388992,
+    "avgDarkPoolSize": 6996,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 90410,
+        "price": 449.3097377536908,
+        "timestamp": "2025-08-03T09:23:17.320Z"
+      },
+      {
+        "size": 117298,
+        "price": 450.14846110092543,
+        "timestamp": "2025-08-03T13:33:31.582Z"
+      }
+    ]
+  }
+]

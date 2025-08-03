@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "TSM",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 45596,
+    "price": 446.9632452179702,
+    "value": 20379736.128958568,
+    "date": "2025-07-31T09:11:53.035Z",
+    "filingDate": "2025-08-03T03:54:12.715Z",
+    "ownershipPercent": 0.24244397025163336
+  },
+  {
+    "symbol": "TSM",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 21618,
+    "price": 452.60471307774924,
+    "value": 9784408.687314782,
+    "date": "2025-07-30T18:30:43.891Z",
+    "filingDate": "2025-08-02T05:09:48.558Z",
+    "ownershipPercent": 3.856117342998632
+  },
+  {
+    "symbol": "TSM",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 10145,
+    "price": 449.985999618648,
+    "value": 4565107.966131184,
+    "date": "2025-07-29T02:02:21.120Z",
+    "filingDate": "2025-08-02T23:48:10.011Z",
+    "ownershipPercent": 3.6457582819650702
+  }
+]

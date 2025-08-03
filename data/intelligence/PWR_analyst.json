@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "PWR",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Underperform",
+    "previousTarget": 392.2148706773711,
+    "newTarget": 369.739686210252,
+    "date": "2025-08-01T22:09:04.618Z",
+    "reasoning": "Attractive valuation"
+  },
+  {
+    "symbol": "PWR",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Sell",
+    "previousTarget": 518.366367508967,
+    "newTarget": 487.21980896636967,
+    "date": "2025-08-03T12:43:29.638Z",
+    "reasoning": "Fair valuation"
+  }
+]

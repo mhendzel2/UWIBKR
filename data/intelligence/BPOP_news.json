@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "BPOP",
+    "headline": "BPOP reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for BPOP with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.8595966602493158,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T12:56:23.831Z",
+    "url": "https://example.com/news/bpop-1754238640708"
+  },
+  {
+    "symbol": "BPOP",
+    "headline": "Analyst upgrades BPOP on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for BPOP with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.7692855364230458,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T11:23:04.875Z",
+    "url": "https://example.com/news/bpop-1754238640710"
+  }
+]

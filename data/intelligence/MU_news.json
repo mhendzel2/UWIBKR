@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "MU",
+    "headline": "MU announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for MU with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.4248150052541132,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T06:52:03.506Z",
+    "url": "https://example.com/news/mu-1754238615312"
+  },
+  {
+    "symbol": "MU",
+    "headline": "MU raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for MU with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.951180449916943,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T11:36:05.457Z",
+    "url": "https://example.com/news/mu-1754238615312"
+  }
+]

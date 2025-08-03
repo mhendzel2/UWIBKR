@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "FOXA",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Hold",
+    "newRating": "Buy",
+    "previousTarget": 450.40544358644735,
+    "newTarget": 421.73470308095966,
+    "date": "2025-07-30T01:48:16.342Z",
+    "reasoning": "Strong management team"
+  }
+]

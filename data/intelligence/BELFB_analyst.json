@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "BELFB",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Underperform",
+    "previousTarget": 426.06835612993126,
+    "newTarget": 465.40558863068054,
+    "date": "2025-07-31T01:30:44.927Z",
+    "reasoning": "Compelling growth story"
+  },
+  {
+    "symbol": "BELFB",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Underperform",
+    "newRating": "Buy",
+    "previousTarget": 406.9083671803623,
+    "newTarget": 376.4676537242106,
+    "date": "2025-07-29T23:03:08.998Z",
+    "reasoning": "Strong management team"
+  }
+]

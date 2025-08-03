@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "RSI",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Buy",
+    "previousTarget": 475.0150082470452,
+    "newTarget": 466.7902168940891,
+    "date": "2025-08-01T11:40:54.512Z",
+    "reasoning": "Positive sector outlook"
+  }
+]

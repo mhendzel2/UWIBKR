@@ -9,5 +9,27 @@
     "category": "analyst",
     "publishedAt": "2025-08-02T00:41:10.358Z",
     "url": "https://example.com/news/crm-1754101860511"
+  },
+  {
+    "symbol": "CRM",
+    "headline": "CRM announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for CRM with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5749773331752164,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T09:38:34.092Z",
+    "url": "https://example.com/news/crm-1754238604603"
+  },
+  {
+    "symbol": "CRM",
+    "headline": "CRM reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for CRM with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.6433793638680162,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T06:09:37.039Z",
+    "url": "https://example.com/news/crm-1754238604603"
   }
 ]

@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "URI",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 47748,
+    "price": 448.72952454066603,
+    "value": 21425937.33776772,
+    "date": "2025-07-30T05:05:49.138Z",
+    "filingDate": "2025-08-01T18:27:49.362Z",
+    "ownershipPercent": 3.0095617423825205
+  },
+  {
+    "symbol": "URI",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 32382,
+    "price": 452.39848689737516,
+    "value": 14649567.802710803,
+    "date": "2025-08-02T01:40:24.657Z",
+    "filingDate": "2025-08-02T21:17:55.241Z",
+    "ownershipPercent": 1.8503471087636825
+  }
+]

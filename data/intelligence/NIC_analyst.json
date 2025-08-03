@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "NIC",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Hold",
+    "newRating": "Buy",
+    "previousTarget": 471.7551094576433,
+    "newTarget": 492.0444063616253,
+    "date": "2025-08-03T10:18:14.882Z",
+    "reasoning": "Compelling growth story"
+  }
+]

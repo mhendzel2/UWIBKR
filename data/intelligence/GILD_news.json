@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "GILD",
+    "headline": "Regulatory approval granted for GILD new product",
+    "summary": "Recent developments suggest positive momentum for GILD with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.4867227432255838,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T15:47:27.984Z",
+    "url": "https://example.com/news/gild-1754238624657"
+  },
+  {
+    "symbol": "GILD",
+    "headline": "Analyst upgrades GILD on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for GILD with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.669537124543183,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T08:39:25.436Z",
+    "url": "https://example.com/news/gild-1754238624657"
+  }
+]

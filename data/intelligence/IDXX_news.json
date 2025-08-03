@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "IDXX",
+    "headline": "Regulatory approval granted for IDXX new product",
+    "summary": "Recent developments suggest positive momentum for IDXX with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.5153172033603958,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T05:17:54.361Z",
+    "url": "https://example.com/news/idxx-1754238646365"
+  },
+  {
+    "symbol": "IDXX",
+    "headline": "IDXX raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for IDXX with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.8969173845515215,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T08:31:00.852Z",
+    "url": "https://example.com/news/idxx-1754238646365"
+  }
+]

@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "TCBI",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5621998,
+    "totalVolume": 14157988,
+    "darkPoolRatio": 0.39709017976283073,
+    "avgDarkPoolSize": 1427,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 87496,
+        "price": 456.6730069990757,
+        "timestamp": "2025-08-03T11:52:42.766Z"
+      },
+      {
+        "size": 68430,
+        "price": 455.11136626174084,
+        "timestamp": "2025-08-03T14:54:55.598Z"
+      },
+      {
+        "size": 104163,
+        "price": 457.0890983534412,
+        "timestamp": "2025-08-03T13:38:34.323Z"
+      },
+      {
+        "size": 104847,
+        "price": 455.06483947252184,
+        "timestamp": "2025-08-03T10:37:42.053Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "PUK",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4296466,
+    "totalVolume": 19672121,
+    "darkPoolRatio": 0.218403800993294,
+    "avgDarkPoolSize": 6112,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 97007,
+        "price": 461.79826446099986,
+        "timestamp": "2025-08-03T14:26:15.674Z"
+      },
+      {
+        "size": 85962,
+        "price": 459.1927836692557,
+        "timestamp": "2025-08-03T09:50:00.839Z"
+      },
+      {
+        "size": 72836,
+        "price": 462.0258704821834,
+        "timestamp": "2025-08-03T15:35:52.944Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "NRG",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Buy",
+    "previousTarget": 392.50682692201235,
+    "newTarget": 403.1735207604262,
+    "date": "2025-07-30T02:05:24.864Z",
+    "reasoning": "Margin pressure concerns"
+  }
+]

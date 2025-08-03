@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "OSW",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3980182,
+    "totalVolume": 9085287,
+    "darkPoolRatio": 0.43809094858533365,
+    "avgDarkPoolSize": 10316,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 146182,
+        "price": 450.4993145378638,
+        "timestamp": "2025-08-03T15:34:48.671Z"
+      },
+      {
+        "size": 134299,
+        "price": 452.2537523814561,
+        "timestamp": "2025-08-03T09:54:35.158Z"
+      },
+      {
+        "size": 93629,
+        "price": 450.61670394561486,
+        "timestamp": "2025-08-03T10:07:52.606Z"
+      },
+      {
+        "size": 101057,
+        "price": 456.8413992917594,
+        "timestamp": "2025-08-03T15:15:18.021Z"
+      }
+    ]
+  }
+]

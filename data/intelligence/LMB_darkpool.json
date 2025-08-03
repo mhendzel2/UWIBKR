@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "LMB",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4386689,
+    "totalVolume": 15568308,
+    "darkPoolRatio": 0.2817704403073218,
+    "avgDarkPoolSize": 3582,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 112256,
+        "price": 450.54960813033387,
+        "timestamp": "2025-08-03T08:52:18.819Z"
+      },
+      {
+        "size": 90070,
+        "price": 449.42083429073557,
+        "timestamp": "2025-08-03T12:55:17.538Z"
+      },
+      {
+        "size": 121900,
+        "price": 454.8252939209973,
+        "timestamp": "2025-08-03T15:56:59.450Z"
+      },
+      {
+        "size": 70982,
+        "price": 454.049113085673,
+        "timestamp": "2025-08-03T08:50:22.185Z"
+      },
+      {
+        "size": 91668,
+        "price": 451.994887245571,
+        "timestamp": "2025-08-03T14:25:00.728Z"
+      }
+    ]
+  }
+]

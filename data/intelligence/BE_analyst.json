@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "BE",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Sell",
+    "previousTarget": 425.45355477170153,
+    "newTarget": 463.56038530522454,
+    "date": "2025-07-31T05:49:38.747Z",
+    "reasoning": "Competitive headwinds"
+  },
+  {
+    "symbol": "BE",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Sell",
+    "newRating": "Hold",
+    "previousTarget": 505.464682392999,
+    "newTarget": 486.618835056732,
+    "date": "2025-08-02T08:30:14.818Z",
+    "reasoning": "Valuation concerns"
+  }
+]

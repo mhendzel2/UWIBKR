@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "CYBR",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Outperform",
+    "previousTarget": 391.2660053910357,
+    "newTarget": 436.4630118458939,
+    "date": "2025-07-30T20:36:35.593Z",
+    "reasoning": "Margin pressure concerns"
+  },
+  {
+    "symbol": "CYBR",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Outperform",
+    "newRating": "Hold",
+    "previousTarget": 503.8294605618893,
+    "newTarget": 493.6249926579476,
+    "date": "2025-07-30T10:23:38.199Z",
+    "reasoning": "Stable fundamentals"
+  }
+]

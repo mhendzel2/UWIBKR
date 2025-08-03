@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "PWR",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1109863,
+    "totalVolume": 10990004,
+    "darkPoolRatio": 0.10098840728356423,
+    "avgDarkPoolSize": 3838,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 77865,
+        "price": 450.73391333430186,
+        "timestamp": "2025-08-03T09:25:29.557Z"
+      },
+      {
+        "size": 96821,
+        "price": 457.35353809466915,
+        "timestamp": "2025-08-03T15:59:09.184Z"
+      },
+      {
+        "size": 95363,
+        "price": 459.1884362984218,
+        "timestamp": "2025-08-03T11:01:36.581Z"
+      },
+      {
+        "size": 91861,
+        "price": 451.730541049229,
+        "timestamp": "2025-08-03T10:52:47.123Z"
+      }
+    ]
+  }
+]

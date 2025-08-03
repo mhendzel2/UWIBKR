@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "PINS",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1384715,
+    "totalVolume": 7846170,
+    "darkPoolRatio": 0.17648292096653526,
+    "avgDarkPoolSize": 10801,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 81533,
+        "price": 453.38617437116574,
+        "timestamp": "2025-08-03T13:24:23.974Z"
+      },
+      {
+        "size": 120926,
+        "price": 459.8774355095597,
+        "timestamp": "2025-08-03T14:51:17.486Z"
+      },
+      {
+        "size": 149023,
+        "price": 459.53801737630306,
+        "timestamp": "2025-08-03T12:53:44.075Z"
+      },
+      {
+        "size": 60805,
+        "price": 452.30897607842553,
+        "timestamp": "2025-08-03T16:15:04.381Z"
+      }
+    ]
+  }
+]

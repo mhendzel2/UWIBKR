@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "COHR",
+    "headline": "COHR reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for COHR with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.559853791524018,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T14:01:33.161Z",
+    "url": "https://example.com/news/cohr-1754238612686"
+  },
+  {
+    "symbol": "COHR",
+    "headline": "Analyst upgrades COHR on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for COHR with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.779495930414273,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T05:02:42.455Z",
+    "url": "https://example.com/news/cohr-1754238612687"
+  },
+  {
+    "symbol": "COHR",
+    "headline": "Analyst upgrades COHR on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for COHR with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.8995799390787482,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T14:12:11.451Z",
+    "url": "https://example.com/news/cohr-1754238612687"
+  }
+]

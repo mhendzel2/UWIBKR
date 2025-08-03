@@ -1,0 +1,43 @@
+[
+  {
+    "symbol": "TIGO",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3343838,
+    "totalVolume": 6143495,
+    "darkPoolRatio": 0.544289203458292,
+    "avgDarkPoolSize": 2010,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 80438,
+        "price": 452.54427363576997,
+        "timestamp": "2025-08-03T11:11:24.280Z"
+      },
+      {
+        "size": 144834,
+        "price": 452.251938297944,
+        "timestamp": "2025-08-03T11:05:41.491Z"
+      },
+      {
+        "size": 90406,
+        "price": 451.33974793383436,
+        "timestamp": "2025-08-03T14:05:36.563Z"
+      },
+      {
+        "size": 101874,
+        "price": 453.4340545357857,
+        "timestamp": "2025-08-03T11:12:14.006Z"
+      },
+      {
+        "size": 125756,
+        "price": 448.4721179281819,
+        "timestamp": "2025-08-03T12:27:38.104Z"
+      },
+      {
+        "size": 142970,
+        "price": 454.5865212509433,
+        "timestamp": "2025-08-03T10:33:17.392Z"
+      }
+    ]
+  }
+]

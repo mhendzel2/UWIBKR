@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "CAKE",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Outperform",
+    "newRating": "Sell",
+    "previousTarget": 424.9800270797703,
+    "newTarget": 441.3222878544537,
+    "date": "2025-08-01T07:30:38.809Z",
+    "reasoning": "Margin pressure concerns"
+  },
+  {
+    "symbol": "CAKE",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Outperform",
+    "newRating": "Hold",
+    "previousTarget": 417.1559281252883,
+    "newTarget": 412.5480506224485,
+    "date": "2025-08-01T23:45:40.053Z",
+    "reasoning": "Stable fundamentals"
+  }
+]

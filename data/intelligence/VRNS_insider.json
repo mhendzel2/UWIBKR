@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "VRNS",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 13592,
+    "price": 462.1407397541677,
+    "value": 6281416.934738648,
+    "date": "2025-07-29T05:08:14.603Z",
+    "filingDate": "2025-08-03T15:05:38.665Z",
+    "ownershipPercent": 1.0638810073590743
+  }
+]

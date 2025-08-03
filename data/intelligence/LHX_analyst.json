@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "LHX",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Outperform",
+    "newRating": "Outperform",
+    "previousTarget": 403.02665104972584,
+    "newTarget": 438.71017495790306,
+    "date": "2025-08-02T03:19:35.551Z",
+    "reasoning": "Strong earnings momentum"
+  }
+]

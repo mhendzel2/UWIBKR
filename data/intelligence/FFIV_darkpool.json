@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "FFIV",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3674706,
+    "totalVolume": 6194837,
+    "darkPoolRatio": 0.5931884890595185,
+    "avgDarkPoolSize": 4836,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 79000,
+        "price": 454.5036915151517,
+        "timestamp": "2025-08-03T16:20:49.600Z"
+      },
+      {
+        "size": 132110,
+        "price": 456.07059142208306,
+        "timestamp": "2025-08-03T09:50:29.070Z"
+      },
+      {
+        "size": 122523,
+        "price": 460.5697848802296,
+        "timestamp": "2025-08-03T13:15:59.728Z"
+      },
+      {
+        "size": 118661,
+        "price": 457.35998655330394,
+        "timestamp": "2025-08-03T12:27:55.563Z"
+      },
+      {
+        "size": 85620,
+        "price": 461.47287745743415,
+        "timestamp": "2025-08-03T08:46:14.423Z"
+      }
+    ]
+  }
+]

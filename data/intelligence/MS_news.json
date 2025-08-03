@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "MS",
+    "headline": "MS raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for MS with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.6053619837742125,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T10:09:20.749Z",
+    "url": "https://example.com/news/ms-1754238644261"
+  },
+  {
+    "symbol": "MS",
+    "headline": "Analyst upgrades MS on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for MS with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.5355384548223436,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T13:26:29.428Z",
+    "url": "https://example.com/news/ms-1754238644262"
+  },
+  {
+    "symbol": "MS",
+    "headline": "Analyst upgrades MS on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for MS with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.8619708367354227,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T06:59:34.979Z",
+    "url": "https://example.com/news/ms-1754238644262"
+  }
+]

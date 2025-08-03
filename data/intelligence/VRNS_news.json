@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "VRNS",
+    "headline": "Analyst upgrades VRNS on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for VRNS with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.6324514174926316,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T10:33:28.957Z",
+    "url": "https://example.com/news/vrns-1754238645100"
+  },
+  {
+    "symbol": "VRNS",
+    "headline": "VRNS reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for VRNS with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.6741272126808916,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T11:06:10.954Z",
+    "url": "https://example.com/news/vrns-1754238645100"
+  }
+]

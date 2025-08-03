@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "PAAS",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1298317,
+    "totalVolume": 9973190,
+    "darkPoolRatio": 0.1301807144955626,
+    "avgDarkPoolSize": 1314,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 139087,
+        "price": 458.52847121476344,
+        "timestamp": "2025-08-03T12:37:09.500Z"
+      },
+      {
+        "size": 118904,
+        "price": 456.83205282709685,
+        "timestamp": "2025-08-03T12:07:48.504Z"
+      },
+      {
+        "size": 50446,
+        "price": 459.61380762018126,
+        "timestamp": "2025-08-03T10:52:56.587Z"
+      },
+      {
+        "size": 75417,
+        "price": 457.80809793260863,
+        "timestamp": "2025-08-03T13:02:23.803Z"
+      },
+      {
+        "size": 112688,
+        "price": 457.2819132440602,
+        "timestamp": "2025-08-03T13:37:39.415Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "TPR",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 29316,
+    "price": 444.82054362041697,
+    "value": 13040359.056776144,
+    "date": "2025-07-31T14:35:40.810Z",
+    "filingDate": "2025-08-03T10:48:09.736Z",
+    "ownershipPercent": 2.4463124707077744
+  },
+  {
+    "symbol": "TPR",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 25159,
+    "price": 453.45515029020646,
+    "value": 11408478.126151305,
+    "date": "2025-08-01T20:08:06.234Z",
+    "filingDate": "2025-08-03T02:17:34.210Z",
+    "ownershipPercent": 0.9850892546559186
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "IDXX",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Sell",
+    "previousTarget": 512.2419281413211,
+    "newTarget": 514.3525519733884,
+    "date": "2025-08-01T14:17:35.052Z",
+    "reasoning": "Compelling growth story"
+  }
+]

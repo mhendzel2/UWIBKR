@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "VNT",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5433690,
+    "totalVolume": 16118023,
+    "darkPoolRatio": 0.3371188885882592,
+    "avgDarkPoolSize": 6295,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 111458,
+        "price": 451.3865897837803,
+        "timestamp": "2025-08-03T13:49:20.588Z"
+      },
+      {
+        "size": 145867,
+        "price": 449.1858983649464,
+        "timestamp": "2025-08-03T14:59:36.683Z"
+      }
+    ]
+  }
+]

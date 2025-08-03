@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "SXT",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5862620,
+    "totalVolume": 8096892,
+    "darkPoolRatio": 0.7240580706769956,
+    "avgDarkPoolSize": 8845,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 149945,
+        "price": 458.8149500862483,
+        "timestamp": "2025-08-03T16:25:12.357Z"
+      },
+      {
+        "size": 65420,
+        "price": 461.90089116813647,
+        "timestamp": "2025-08-03T12:15:58.299Z"
+      },
+      {
+        "size": 118539,
+        "price": 459.42607718923364,
+        "timestamp": "2025-08-03T12:12:54.850Z"
+      },
+      {
+        "size": 51951,
+        "price": 455.0553588897105,
+        "timestamp": "2025-08-03T13:40:50.428Z"
+      },
+      {
+        "size": 100669,
+        "price": 460.16332508325166,
+        "timestamp": "2025-08-03T09:50:10.019Z"
+      }
+    ]
+  }
+]

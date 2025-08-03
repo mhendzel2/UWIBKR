@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "DRI",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Hold",
+    "newRating": "Buy",
+    "previousTarget": 468.97109055936227,
+    "newTarget": 511.480264658443,
+    "date": "2025-08-02T13:32:45.236Z",
+    "reasoning": "Strong earnings momentum"
+  },
+  {
+    "symbol": "DRI",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Sell",
+    "previousTarget": 408.9023875369014,
+    "newTarget": 371.3058127787159,
+    "date": "2025-07-30T17:54:55.997Z",
+    "reasoning": "Balanced risk/reward"
+  }
+]

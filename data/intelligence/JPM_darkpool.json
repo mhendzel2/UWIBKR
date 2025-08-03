@@ -19,5 +19,41 @@
         "timestamp": "2025-08-01T20:42:05.597Z"
       }
     ]
+  },
+  {
+    "symbol": "JPM",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5845424,
+    "totalVolume": 6724154,
+    "darkPoolRatio": 0.8693173892210083,
+    "avgDarkPoolSize": 9657,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 114883,
+        "price": 451.80292312337485,
+        "timestamp": "2025-08-03T11:56:06.450Z"
+      },
+      {
+        "size": 71991,
+        "price": 453.10860115902,
+        "timestamp": "2025-08-03T15:33:30.331Z"
+      },
+      {
+        "size": 125955,
+        "price": 448.460805574357,
+        "timestamp": "2025-08-03T15:26:53.697Z"
+      },
+      {
+        "size": 56918,
+        "price": 448.5283362866054,
+        "timestamp": "2025-08-03T11:57:19.797Z"
+      },
+      {
+        "size": 104306,
+        "price": 450.1066965503547,
+        "timestamp": "2025-08-03T12:09:20.268Z"
+      }
+    ]
   }
 ]

@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "GL",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Outperform",
+    "newRating": "Hold",
+    "previousTarget": 468.36471212451335,
+    "newTarget": 510.4090438153412,
+    "date": "2025-07-30T23:52:34.127Z",
+    "reasoning": "Margin pressure concerns"
+  },
+  {
+    "symbol": "GL",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Hold",
+    "previousTarget": 488.9303762265415,
+    "newTarget": 456.6233632149975,
+    "date": "2025-08-03T16:16:58.747Z",
+    "reasoning": "Margin pressure concerns"
+  }
+]

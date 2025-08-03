@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "CALM",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Outperform",
+    "previousTarget": 431.91579779217676,
+    "newTarget": 411.6144444096257,
+    "date": "2025-08-02T14:00:23.896Z",
+    "reasoning": "Competitive headwinds"
+  }
+]

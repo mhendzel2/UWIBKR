@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "AWI",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3185504,
+    "totalVolume": 16082541,
+    "darkPoolRatio": 0.1980721827477387,
+    "avgDarkPoolSize": 4856,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 144940,
+        "price": 460.54368913980977,
+        "timestamp": "2025-08-03T09:51:29.602Z"
+      },
+      {
+        "size": 88893,
+        "price": 456.35151906063936,
+        "timestamp": "2025-08-03T15:07:04.038Z"
+      }
+    ]
+  }
+]

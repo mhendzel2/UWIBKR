@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "BAP",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 42522,
+    "price": 448.22176062362996,
+    "value": 19059285.705237992,
+    "date": "2025-07-30T00:32:32.094Z",
+    "filingDate": "2025-08-01T13:51:27.679Z",
+    "ownershipPercent": 1.5861210124195535
+  }
+]

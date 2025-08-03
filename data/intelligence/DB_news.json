@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "DB",
+    "headline": "Regulatory approval granted for DB new product",
+    "summary": "Recent developments suggest positive momentum for DB with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.6908150554575699,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T13:13:33.296Z",
+    "url": "https://example.com/news/db-1754238636940"
+  },
+  {
+    "symbol": "DB",
+    "headline": "DB announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for DB with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.36512463730692757,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T10:23:25.869Z",
+    "url": "https://example.com/news/db-1754238636940"
+  }
+]

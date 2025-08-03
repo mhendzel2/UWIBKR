@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "PFGC",
+    "headline": "Analyst upgrades PFGC on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for PFGC with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.8041939025287883,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T15:03:38.911Z",
+    "url": "https://example.com/news/pfgc-1754238637989"
+  },
+  {
+    "symbol": "PFGC",
+    "headline": "PFGC announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for PFGC with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.3637879208081458,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T08:11:55.670Z",
+    "url": "https://example.com/news/pfgc-1754238637989"
+  }
+]

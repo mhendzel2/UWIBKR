@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "AMSC",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3680533,
+    "totalVolume": 9769223,
+    "darkPoolRatio": 0.3767477720592518,
+    "avgDarkPoolSize": 4777,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 65744,
+        "price": 450.2886451575402,
+        "timestamp": "2025-08-03T09:47:42.088Z"
+      },
+      {
+        "size": 110282,
+        "price": 455.8935075379785,
+        "timestamp": "2025-08-03T12:29:31.768Z"
+      },
+      {
+        "size": 112036,
+        "price": 455.46271756177674,
+        "timestamp": "2025-08-03T13:22:31.411Z"
+      }
+    ]
+  }
+]

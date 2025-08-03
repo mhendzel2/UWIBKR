@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "AM",
+    "headline": "Regulatory approval granted for AM new product",
+    "summary": "Recent developments suggest positive momentum for AM with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.7212556450302307,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T13:19:05.170Z",
+    "url": "https://example.com/news/am-1754238627519"
+  },
+  {
+    "symbol": "AM",
+    "headline": "Analyst upgrades AM on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for AM with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.6243399596906867,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T15:28:55.947Z",
+    "url": "https://example.com/news/am-1754238627519"
+  }
+]

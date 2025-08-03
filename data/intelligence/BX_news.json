@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "BX",
+    "headline": "Regulatory approval granted for BX new product",
+    "summary": "Recent developments suggest positive momentum for BX with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.7963720990513837,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T07:20:20.029Z",
+    "url": "https://example.com/news/bx-1754238636317"
+  },
+  {
+    "symbol": "BX",
+    "headline": "Analyst upgrades BX on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for BX with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.5667245708996094,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T05:32:01.720Z",
+    "url": "https://example.com/news/bx-1754238636317"
+  },
+  {
+    "symbol": "BX",
+    "headline": "BX announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for BX with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.32789620528134367,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T07:01:19.688Z",
+    "url": "https://example.com/news/bx-1754238636317"
+  }
+]

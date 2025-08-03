@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "ITT",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 38644,
+    "price": 444.238675526757,
+    "value": 17167159.377056,
+    "date": "2025-07-30T03:02:06.284Z",
+    "filingDate": "2025-08-01T14:42:13.377Z",
+    "ownershipPercent": 2.129384039759342
+  }
+]

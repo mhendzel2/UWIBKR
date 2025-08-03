@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "HWM",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Sell",
+    "previousTarget": 475.1488304190163,
+    "newTarget": 502.4851967722673,
+    "date": "2025-07-31T00:45:06.901Z",
+    "reasoning": "Valuation concerns"
+  },
+  {
+    "symbol": "HWM",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Buy",
+    "previousTarget": 412.3075384079509,
+    "newTarget": 408.29095259653775,
+    "date": "2025-08-02T01:45:55.131Z",
+    "reasoning": "Valuation concerns"
+  }
+]

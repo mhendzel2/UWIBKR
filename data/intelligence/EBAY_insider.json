@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "EBAY",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 11148,
+    "price": 449.2082405903154,
+    "value": 5007773.466100836,
+    "date": "2025-07-31T06:25:51.884Z",
+    "filingDate": "2025-08-01T22:49:39.440Z",
+    "ownershipPercent": 2.952120686190359
+  },
+  {
+    "symbol": "EBAY",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 36487,
+    "price": 455.27277096407596,
+    "value": 16611537.59416624,
+    "date": "2025-08-02T01:13:41.620Z",
+    "filingDate": "2025-08-03T01:27:25.144Z",
+    "ownershipPercent": 2.8391770538048777
+  },
+  {
+    "symbol": "EBAY",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 32840,
+    "price": 448.5528059184702,
+    "value": 14730474.146362562,
+    "date": "2025-07-31T20:59:54.944Z",
+    "filingDate": "2025-08-03T04:10:17.481Z",
+    "ownershipPercent": 1.128666183493151
+  }
+]

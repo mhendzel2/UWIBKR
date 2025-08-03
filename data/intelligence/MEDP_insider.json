@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "MEDP",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 50366,
+    "price": 461.9484905660958,
+    "value": 23266497.675851982,
+    "date": "2025-07-30T13:07:24.060Z",
+    "filingDate": "2025-08-02T09:29:27.782Z",
+    "ownershipPercent": 1.7035983970829527
+  }
+]

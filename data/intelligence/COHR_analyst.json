@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "COHR",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Hold",
+    "newRating": "Outperform",
+    "previousTarget": 395.13172180551913,
+    "newTarget": 393.79023106153574,
+    "date": "2025-08-01T23:41:53.918Z",
+    "reasoning": "Improved market position"
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "ROOT",
+    "headline": "ROOT announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for ROOT with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.5521153096285626,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T10:57:11.496Z",
+    "url": "https://example.com/news/root-1754238649017"
+  },
+  {
+    "symbol": "ROOT",
+    "headline": "ROOT raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for ROOT with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.9633830736838052,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T13:31:17.171Z",
+    "url": "https://example.com/news/root-1754238649017"
+  }
+]

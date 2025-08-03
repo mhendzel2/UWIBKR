@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "LRCX",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Sell",
+    "newRating": "Underperform",
+    "previousTarget": 506.1330435152048,
+    "newTarget": 532.7440632739515,
+    "date": "2025-07-29T18:43:44.831Z",
+    "reasoning": "Valuation concerns"
+  }
+]

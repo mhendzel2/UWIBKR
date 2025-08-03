@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "CR",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 49449,
+    "price": 445.01894878330927,
+    "value": 22005741.99838586,
+    "date": "2025-08-03T16:16:49.818Z",
+    "filingDate": "2025-08-03T08:10:29.102Z",
+    "ownershipPercent": 1.7829826215413036
+  },
+  {
+    "symbol": "CR",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 41587,
+    "price": 459.75777312778996,
+    "value": 19119946.5110654,
+    "date": "2025-08-02T13:18:15.816Z",
+    "filingDate": "2025-08-03T13:31:17.836Z",
+    "ownershipPercent": 3.8157932618098234
+  },
+  {
+    "symbol": "CR",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 4019,
+    "price": 449.95896949278995,
+    "value": 1808385.098391523,
+    "date": "2025-07-27T23:44:03.620Z",
+    "filingDate": "2025-08-02T14:00:44.221Z",
+    "ownershipPercent": 0.5338799346621391
+  }
+]

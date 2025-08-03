@@ -10,5 +10,29 @@
     "date": "2025-07-31T10:45:37.122Z",
     "filingDate": "2025-08-01T02:41:48.446Z",
     "ownershipPercent": 3.2127989088912945
+  },
+  {
+    "symbol": "CVX",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 33256,
+    "price": 461.8359938213877,
+    "value": 15358817.81052407,
+    "date": "2025-07-29T00:53:17.834Z",
+    "filingDate": "2025-08-03T01:28:11.023Z",
+    "ownershipPercent": 1.017104978877298
+  },
+  {
+    "symbol": "CVX",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 7832,
+    "price": 442.80413114509616,
+    "value": 3468041.955128393,
+    "date": "2025-07-28T05:20:17.043Z",
+    "filingDate": "2025-08-01T10:07:12.266Z",
+    "ownershipPercent": 1.6459974902885999
   }
 ]

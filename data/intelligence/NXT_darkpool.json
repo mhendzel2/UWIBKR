@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "NXT",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4758517,
+    "totalVolume": 7597970,
+    "darkPoolRatio": 0.6262879427004845,
+    "avgDarkPoolSize": 2596,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 133494,
+        "price": 463.5002535989146,
+        "timestamp": "2025-08-03T09:11:01.935Z"
+      },
+      {
+        "size": 114739,
+        "price": 461.31645749194394,
+        "timestamp": "2025-08-03T11:18:26.198Z"
+      },
+      {
+        "size": 75927,
+        "price": 463.0912546759775,
+        "timestamp": "2025-08-03T13:55:10.628Z"
+      },
+      {
+        "size": 126659,
+        "price": 456.7123097705948,
+        "timestamp": "2025-08-03T14:31:01.439Z"
+      },
+      {
+        "size": 72913,
+        "price": 458.5603311053823,
+        "timestamp": "2025-08-03T13:10:42.907Z"
+      }
+    ]
+  }
+]

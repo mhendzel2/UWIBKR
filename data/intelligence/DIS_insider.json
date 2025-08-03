@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "DIS",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 39850,
+    "price": 445.24643169557606,
+    "value": 17743070.303068705,
+    "date": "2025-07-27T22:01:07.342Z",
+    "filingDate": "2025-08-01T09:06:38.383Z",
+    "ownershipPercent": 4.5738957207822715
+  },
+  {
+    "symbol": "DIS",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 12190,
+    "price": 458.3031987774679,
+    "value": 5586715.993097334,
+    "date": "2025-08-03T15:29:09.053Z",
+    "filingDate": "2025-08-02T19:48:19.226Z",
+    "ownershipPercent": 5.081354901139795
+  },
+  {
+    "symbol": "DIS",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 32320,
+    "price": 445.0819311710165,
+    "value": 14385048.015447253,
+    "date": "2025-07-27T21:21:48.275Z",
+    "filingDate": "2025-08-01T06:34:48.372Z",
+    "ownershipPercent": 4.207662977616597
+  }
+]

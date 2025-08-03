@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "HOOD",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4190376,
+    "totalVolume": 5227977,
+    "darkPoolRatio": 0.8015291574542122,
+    "avgDarkPoolSize": 4873,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 111554,
+        "price": 453.9516707413823,
+        "timestamp": "2025-08-03T10:57:10.688Z"
+      },
+      {
+        "size": 89928,
+        "price": 455.1386918061495,
+        "timestamp": "2025-08-03T13:16:17.668Z"
+      },
+      {
+        "size": 81802,
+        "price": 457.0297199546267,
+        "timestamp": "2025-08-03T08:31:39.192Z"
+      },
+      {
+        "size": 101298,
+        "price": 454.9014728556885,
+        "timestamp": "2025-08-03T13:57:15.528Z"
+      }
+    ]
+  }
+]

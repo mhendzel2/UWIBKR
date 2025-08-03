@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "FAST",
+    "headline": "Regulatory approval granted for FAST new product",
+    "summary": "Recent developments suggest positive momentum for FAST with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.7721921930048077,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T09:40:01.760Z",
+    "url": "https://example.com/news/fast-1754238649442"
+  },
+  {
+    "symbol": "FAST",
+    "headline": "FAST announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for FAST with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.5325190895066267,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T14:52:46.730Z",
+    "url": "https://example.com/news/fast-1754238649442"
+  }
+]

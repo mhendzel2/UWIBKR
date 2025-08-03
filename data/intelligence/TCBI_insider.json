@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "TCBI",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 14206,
+    "price": 454.94703068220605,
+    "value": 6462977.517871419,
+    "date": "2025-08-01T21:37:47.182Z",
+    "filingDate": "2025-08-01T15:29:14.375Z",
+    "ownershipPercent": 4.59035825878036
+  }
+]

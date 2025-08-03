@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "DAVE",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Sell",
+    "previousTarget": 437.5482181257081,
+    "newTarget": 445.3679733110435,
+    "date": "2025-07-31T23:45:38.895Z",
+    "reasoning": "Positive sector outlook"
+  }
+]

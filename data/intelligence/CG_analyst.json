@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "CG",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Outperform",
+    "newRating": "Hold",
+    "previousTarget": 424.0742626733141,
+    "newTarget": 400.09092479189496,
+    "date": "2025-07-30T08:40:53.664Z",
+    "reasoning": "Fair valuation"
+  }
+]

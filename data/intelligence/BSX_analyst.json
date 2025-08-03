@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "BSX",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Buy",
+    "previousTarget": 431.81686559319013,
+    "newTarget": 446.26318305699255,
+    "date": "2025-07-29T18:41:53.715Z",
+    "reasoning": "Valuation concerns"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "BLK",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Hold",
+    "previousTarget": 490.62264406969246,
+    "newTarget": 495.9652525056921,
+    "date": "2025-08-02T06:16:01.926Z",
+    "reasoning": "Improved market position"
+  },
+  {
+    "symbol": "BLK",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Hold",
+    "previousTarget": 471.24772964888945,
+    "newTarget": 489.40402057707774,
+    "date": "2025-07-31T06:37:51.298Z",
+    "reasoning": "Balanced risk/reward"
+  }
+]

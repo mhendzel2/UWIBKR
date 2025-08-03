@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "PRM",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 26995,
+    "price": 446.9588558319384,
+    "value": 12065654.313183177,
+    "date": "2025-07-29T05:05:42.140Z",
+    "filingDate": "2025-08-01T02:06:28.409Z",
+    "ownershipPercent": 2.0058540185127494
+  },
+  {
+    "symbol": "PRM",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 37978,
+    "price": 443.95663276788355,
+    "value": 16860584.999258682,
+    "date": "2025-08-01T15:18:43.164Z",
+    "filingDate": "2025-08-01T15:30:49.395Z",
+    "ownershipPercent": 3.581246435545513
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "RBC",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 19814,
+    "price": 452.70695624509585,
+    "value": 8969935.63104033,
+    "date": "2025-08-02T17:53:01.350Z",
+    "filingDate": "2025-08-02T10:01:57.156Z",
+    "ownershipPercent": 5.097789081607935
+  },
+  {
+    "symbol": "RBC",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 34678,
+    "price": 457.3556210156401,
+    "value": 15860178.225580368,
+    "date": "2025-07-31T12:20:45.368Z",
+    "filingDate": "2025-08-01T04:56:41.260Z",
+    "ownershipPercent": 2.51511396245928
+  },
+  {
+    "symbol": "RBC",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 46669,
+    "price": 455.5349127875067,
+    "value": 21259358.84488015,
+    "date": "2025-07-31T07:46:29.112Z",
+    "filingDate": "2025-08-03T02:13:58.102Z",
+    "ownershipPercent": 4.551879063101388
+  }
+]

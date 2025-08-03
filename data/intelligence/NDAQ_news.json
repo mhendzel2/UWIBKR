@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "NDAQ",
+    "headline": "NDAQ announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for NDAQ with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.6840215330822603,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T10:08:51.020Z",
+    "url": "https://example.com/news/ndaq-1754238620018"
+  },
+  {
+    "symbol": "NDAQ",
+    "headline": "NDAQ reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for NDAQ with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.8681155088406541,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T16:02:43.783Z",
+    "url": "https://example.com/news/ndaq-1754238620018"
+  },
+  {
+    "symbol": "NDAQ",
+    "headline": "Analyst upgrades NDAQ on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for NDAQ with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.7422129999001004,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T04:48:49.863Z",
+    "url": "https://example.com/news/ndaq-1754238620020"
+  }
+]

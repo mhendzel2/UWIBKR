@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "TT",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4294645,
+    "totalVolume": 7170587,
+    "darkPoolRatio": 0.5989251647040891,
+    "avgDarkPoolSize": 4944,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 139985,
+        "price": 457.1071780511612,
+        "timestamp": "2025-08-03T12:18:43.700Z"
+      },
+      {
+        "size": 59848,
+        "price": 454.1431071856725,
+        "timestamp": "2025-08-03T16:19:17.748Z"
+      }
+    ]
+  }
+]

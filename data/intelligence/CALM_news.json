@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "CALM",
+    "headline": "CALM announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for CALM with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5535615332851208,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T16:09:42.487Z",
+    "url": "https://example.com/news/calm-1754238627961"
+  },
+  {
+    "symbol": "CALM",
+    "headline": "CALM raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for CALM with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7446690026296885,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T09:20:06.310Z",
+    "url": "https://example.com/news/calm-1754238627961"
+  },
+  {
+    "symbol": "CALM",
+    "headline": "CALM reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for CALM with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.7878070540276488,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T16:19:38.755Z",
+    "url": "https://example.com/news/calm-1754238627962"
+  }
+]

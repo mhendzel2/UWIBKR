@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "INDV",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Buy",
+    "previousTarget": 455.8380670256838,
+    "newTarget": 438.02747970196253,
+    "date": "2025-08-02T11:32:24.464Z",
+    "reasoning": "Stable fundamentals"
+  }
+]

@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "ING",
+    "headline": "Analyst upgrades ING on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for ING with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5485436514262321,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T14:05:29.201Z",
+    "url": "https://example.com/news/ing-1754238630048"
+  },
+  {
+    "symbol": "ING",
+    "headline": "Analyst upgrades ING on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for ING with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.6393008281736989,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T08:28:45.541Z",
+    "url": "https://example.com/news/ing-1754238630048"
+  },
+  {
+    "symbol": "ING",
+    "headline": "ING announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for ING with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.43461070199358787,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T05:28:18.954Z",
+    "url": "https://example.com/news/ing-1754238630048"
+  }
+]

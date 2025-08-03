@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "LFUS",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Underperform",
+    "newRating": "Outperform",
+    "previousTarget": 448.7188749368152,
+    "newTarget": 478.09085673115925,
+    "date": "2025-07-31T23:51:43.653Z",
+    "reasoning": "Strong management team"
+  },
+  {
+    "symbol": "LFUS",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Outperform",
+    "previousTarget": 434.83772119035683,
+    "newTarget": 449.01594308603114,
+    "date": "2025-08-03T04:10:21.981Z",
+    "reasoning": "Competitive headwinds"
+  }
+]

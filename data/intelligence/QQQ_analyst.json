@@ -22,5 +22,29 @@
     "newTarget": 187.5563377028006,
     "date": "2025-07-30T11:27:02.076Z",
     "reasoning": "Positive sector outlook"
+  },
+  {
+    "symbol": "QQQ",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Sell",
+    "previousTarget": 477.2004720969222,
+    "newTarget": 448.5088318197659,
+    "date": "2025-08-01T00:19:10.411Z",
+    "reasoning": "Strong management team"
+  },
+  {
+    "symbol": "QQQ",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Underperform",
+    "previousTarget": 601.1430401221556,
+    "newTarget": 653.4933141299164,
+    "date": "2025-08-02T23:58:03.471Z",
+    "reasoning": "Competitive headwinds"
   }
 ]

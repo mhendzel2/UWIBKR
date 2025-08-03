@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "NDAQ",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 21019,
+    "price": 463.3763188316848,
+    "value": 9739706.845523182,
+    "date": "2025-08-03T13:34:03.052Z",
+    "filingDate": "2025-08-02T09:36:37.155Z",
+    "ownershipPercent": 1.8106141108421947
+  },
+  {
+    "symbol": "NDAQ",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 15773,
+    "price": 467.9329275355249,
+    "value": 7380706.0660178345,
+    "date": "2025-07-31T03:19:29.031Z",
+    "filingDate": "2025-08-02T02:24:40.854Z",
+    "ownershipPercent": 4.020471551873116
+  },
+  {
+    "symbol": "NDAQ",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 6759,
+    "price": 451.65170143018787,
+    "value": 3052713.8499666397,
+    "date": "2025-07-30T19:24:20.025Z",
+    "filingDate": "2025-08-01T00:11:57.812Z",
+    "ownershipPercent": 3.8879145833359963
+  }
+]

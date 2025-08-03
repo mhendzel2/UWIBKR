@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "SPXC",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 47764,
+    "price": 448.69786770249317,
+    "value": 21431604.952941883,
+    "date": "2025-07-31T14:19:22.977Z",
+    "filingDate": "2025-07-31T18:32:27.753Z",
+    "ownershipPercent": 1.6093116568402632
+  }
+]

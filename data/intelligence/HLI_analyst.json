@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "HLI",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Underperform",
+    "newRating": "Buy",
+    "previousTarget": 437.87221224845024,
+    "newTarget": 445.6025318257016,
+    "date": "2025-08-03T02:16:49.450Z",
+    "reasoning": "Fair valuation"
+  }
+]

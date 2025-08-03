@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "WNS",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 23662,
+    "price": 450.0013450875168,
+    "value": 10647931.827460824,
+    "date": "2025-07-27T19:26:31.065Z",
+    "filingDate": "2025-08-02T18:50:28.987Z",
+    "ownershipPercent": 2.880048868134389
+  },
+  {
+    "symbol": "WNS",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 16886,
+    "price": 460.2281417464093,
+    "value": 7771412.401529867,
+    "date": "2025-08-01T14:01:21.851Z",
+    "filingDate": "2025-08-01T01:22:08.282Z",
+    "ownershipPercent": 4.663254876540621
+  },
+  {
+    "symbol": "WNS",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 14593,
+    "price": 458.30663277753183,
+    "value": 6688068.692122522,
+    "date": "2025-08-02T21:50:38.834Z",
+    "filingDate": "2025-08-03T02:20:13.281Z",
+    "ownershipPercent": 4.5303541182481055
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "STT",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 2237,
+    "price": 464.7576513949006,
+    "value": 1039662.8661703927,
+    "date": "2025-08-01T05:43:54.043Z",
+    "filingDate": "2025-07-31T18:57:30.085Z",
+    "ownershipPercent": 1.9820362130674496
+  },
+  {
+    "symbol": "STT",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 41980,
+    "price": 471.0153399423968,
+    "value": 19773223.970781818,
+    "date": "2025-07-31T12:07:51.385Z",
+    "filingDate": "2025-08-02T20:40:45.994Z",
+    "ownershipPercent": 0.9857715868418991
+  },
+  {
+    "symbol": "STT",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 21143,
+    "price": 459.66544348587746,
+    "value": 9718706.471621906,
+    "date": "2025-07-31T22:46:46.344Z",
+    "filingDate": "2025-08-01T08:19:04.402Z",
+    "ownershipPercent": 4.859546705357142
+  }
+]

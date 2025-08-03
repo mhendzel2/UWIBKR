@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "MPWR",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Buy",
+    "previousTarget": 452.7031810065181,
+    "newTarget": 446.3665554584341,
+    "date": "2025-08-01T05:51:48.657Z",
+    "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "MPWR",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Outperform",
+    "previousTarget": 455.398640836013,
+    "newTarget": 428.13052877332024,
+    "date": "2025-07-29T23:34:38.214Z",
+    "reasoning": "Competitive headwinds"
+  }
+]

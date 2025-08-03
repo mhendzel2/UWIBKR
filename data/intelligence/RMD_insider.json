@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "RMD",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 3998,
+    "price": 454.77962720439297,
+    "value": 1818208.949563163,
+    "date": "2025-07-28T14:10:35.886Z",
+    "filingDate": "2025-08-01T19:50:26.957Z",
+    "ownershipPercent": 1.0083279564110492
+  },
+  {
+    "symbol": "RMD",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 44132,
+    "price": 454.7941965153675,
+    "value": 20070977.480616197,
+    "date": "2025-08-02T23:50:37.357Z",
+    "filingDate": "2025-08-02T23:59:58.313Z",
+    "ownershipPercent": 3.3950811049299245
+  }
+]

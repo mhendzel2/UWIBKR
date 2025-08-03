@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "BYD",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 12634,
+    "price": 457.3659285801459,
+    "value": 5778361.141681563,
+    "date": "2025-07-31T00:33:26.681Z",
+    "filingDate": "2025-08-02T16:07:42.509Z",
+    "ownershipPercent": 4.961593340435375
+  },
+  {
+    "symbol": "BYD",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 2404,
+    "price": 442.3520261142472,
+    "value": 1063414.2707786504,
+    "date": "2025-07-27T23:19:38.960Z",
+    "filingDate": "2025-08-01T14:19:10.888Z",
+    "ownershipPercent": 1.356284135691982
+  },
+  {
+    "symbol": "BYD",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 36315,
+    "price": 458.2050415599056,
+    "value": 16639716.084247973,
+    "date": "2025-07-30T13:47:20.323Z",
+    "filingDate": "2025-08-01T10:51:23.660Z",
+    "ownershipPercent": 3.134409107554944
+  }
+]

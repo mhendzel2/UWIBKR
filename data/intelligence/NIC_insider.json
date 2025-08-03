@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "NIC",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 12644,
+    "price": 460.5157852318531,
+    "value": 5822761.5884715505,
+    "date": "2025-08-01T22:20:11.742Z",
+    "filingDate": "2025-08-02T12:59:07.706Z",
+    "ownershipPercent": 0.3112514792434494
+  },
+  {
+    "symbol": "NIC",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 16319,
+    "price": 452.98159846760063,
+    "value": 7392206.705392775,
+    "date": "2025-08-01T17:27:44.925Z",
+    "filingDate": "2025-08-02T07:48:48.425Z",
+    "ownershipPercent": 1.7496970679233181
+  }
+]

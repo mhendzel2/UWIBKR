@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "SHG",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Sell",
+    "previousTarget": 521.4305384283426,
+    "newTarget": 523.943117995634,
+    "date": "2025-08-02T03:11:57.489Z",
+    "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "SHG",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Hold",
+    "newRating": "Outperform",
+    "previousTarget": 396.34482438645097,
+    "newTarget": 366.0955578233963,
+    "date": "2025-08-03T01:43:50.841Z",
+    "reasoning": "Improved market position"
+  }
+]

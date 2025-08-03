@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "GILD",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 40719,
+    "price": 443.3488354730241,
+    "value": 18052721.231626067,
+    "date": "2025-07-31T08:55:49.402Z",
+    "filingDate": "2025-08-02T15:04:58.474Z",
+    "ownershipPercent": 3.285588419993466
+  },
+  {
+    "symbol": "GILD",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 45773,
+    "price": 464.42449550693937,
+    "value": 21258102.432839137,
+    "date": "2025-08-01T14:29:10.830Z",
+    "filingDate": "2025-07-31T23:27:04.497Z",
+    "ownershipPercent": 3.052332041161653
+  }
+]

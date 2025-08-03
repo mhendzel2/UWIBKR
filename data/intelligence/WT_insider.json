@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "WT",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 13698,
+    "price": 467.17388916709905,
+    "value": 6399347.933810922,
+    "date": "2025-08-03T01:32:36.198Z",
+    "filingDate": "2025-08-01T13:15:27.142Z",
+    "ownershipPercent": 2.8653999193322632
+  },
+  {
+    "symbol": "WT",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 7922,
+    "price": 455.77636061397146,
+    "value": 3610660.328783882,
+    "date": "2025-07-28T13:49:01.149Z",
+    "filingDate": "2025-08-02T01:46:48.829Z",
+    "ownershipPercent": 4.956222678488009
+  },
+  {
+    "symbol": "WT",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 43886,
+    "price": 459.2243455540213,
+    "value": 20153519.628983777,
+    "date": "2025-07-27T23:44:23.906Z",
+    "filingDate": "2025-08-02T14:14:23.900Z",
+    "ownershipPercent": 1.819439592224965
+  }
+]

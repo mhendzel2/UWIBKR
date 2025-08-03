@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "INOD",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Sell",
+    "newRating": "Hold",
+    "previousTarget": 459.0374686987073,
+    "newTarget": 460.3836106209788,
+    "date": "2025-08-03T15:26:48.653Z",
+    "reasoning": "Strong earnings momentum"
+  }
+]

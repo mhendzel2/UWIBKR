@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "PBI",
+    "headline": "Analyst upgrades PBI on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for PBI with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.8374767742223318,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T12:16:22.127Z",
+    "url": "https://example.com/news/pbi-1754238639662"
+  },
+  {
+    "symbol": "PBI",
+    "headline": "PBI reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for PBI with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.8191745726121537,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T09:50:40.251Z",
+    "url": "https://example.com/news/pbi-1754238639662"
+  },
+  {
+    "symbol": "PBI",
+    "headline": "PBI reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for PBI with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.841183092429043,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T14:25:08.097Z",
+    "url": "https://example.com/news/pbi-1754238639663"
+  }
+]

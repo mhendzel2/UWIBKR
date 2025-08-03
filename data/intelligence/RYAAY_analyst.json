@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "RYAAY",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Hold",
+    "previousTarget": 490.0793656630172,
+    "newTarget": 486.62685110984904,
+    "date": "2025-07-30T17:21:32.935Z",
+    "reasoning": "Competitive headwinds"
+  }
+]

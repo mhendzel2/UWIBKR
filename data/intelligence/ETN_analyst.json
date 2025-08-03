@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "ETN",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Outperform",
+    "previousTarget": 484.3183093770872,
+    "newTarget": 527.4844996490516,
+    "date": "2025-08-03T01:53:15.212Z",
+    "reasoning": "Strong management team"
+  }
+]

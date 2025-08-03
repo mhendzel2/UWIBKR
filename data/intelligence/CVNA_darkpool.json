@@ -1,0 +1,43 @@
+[
+  {
+    "symbol": "CVNA",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3292982,
+    "totalVolume": 13873687,
+    "darkPoolRatio": 0.2373544970417741,
+    "avgDarkPoolSize": 8265,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 51587,
+        "price": 454.3894689331322,
+        "timestamp": "2025-08-03T11:30:25.963Z"
+      },
+      {
+        "size": 56084,
+        "price": 453.7632184614624,
+        "timestamp": "2025-08-03T12:22:58.689Z"
+      },
+      {
+        "size": 75163,
+        "price": 455.7904062008237,
+        "timestamp": "2025-08-03T12:17:45.586Z"
+      },
+      {
+        "size": 76222,
+        "price": 454.9973447948799,
+        "timestamp": "2025-08-03T09:02:56.073Z"
+      },
+      {
+        "size": 89315,
+        "price": 455.0519932324951,
+        "timestamp": "2025-08-03T14:45:47.015Z"
+      },
+      {
+        "size": 56785,
+        "price": 454.4617221836195,
+        "timestamp": "2025-08-03T16:21:36.145Z"
+      }
+    ]
+  }
+]

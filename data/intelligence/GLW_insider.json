@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "GLW",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 29018,
+    "price": 449.73439911363386,
+    "value": 13050392.793479428,
+    "date": "2025-08-02T16:38:02.215Z",
+    "filingDate": "2025-08-03T07:33:55.446Z",
+    "ownershipPercent": 0.8943988289317194
+  },
+  {
+    "symbol": "GLW",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 8207,
+    "price": 452.95176897839,
+    "value": 3717375.1680056467,
+    "date": "2025-08-03T08:03:33.344Z",
+    "filingDate": "2025-08-03T07:55:20.539Z",
+    "ownershipPercent": 2.6317004783301825
+  },
+  {
+    "symbol": "GLW",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 26540,
+    "price": 464.32340575353595,
+    "value": 12323143.188698845,
+    "date": "2025-07-31T12:05:20.705Z",
+    "filingDate": "2025-08-02T02:03:51.478Z",
+    "ownershipPercent": 1.948672410665525
+  }
+]

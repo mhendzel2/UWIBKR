@@ -22,5 +22,29 @@
     "newTarget": 137.84184972858827,
     "date": "2025-07-30T22:27:28.844Z",
     "reasoning": "Strong management team"
+  },
+  {
+    "symbol": "IWM",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Outperform",
+    "newRating": "Hold",
+    "previousTarget": 204.27916369523192,
+    "newTarget": 208.79166100204637,
+    "date": "2025-07-30T11:26:10.862Z",
+    "reasoning": "Strong management team"
+  },
+  {
+    "symbol": "IWM",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 226.9040149187138,
+    "newTarget": 232.33673711694317,
+    "date": "2025-07-31T02:25:15.058Z",
+    "reasoning": "Valuation concerns"
   }
 ]

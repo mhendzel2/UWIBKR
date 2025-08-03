@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "OSW",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 49223,
+    "price": 452.65901997782527,
+    "value": 22281234.940368492,
+    "date": "2025-08-02T09:33:50.898Z",
+    "filingDate": "2025-08-02T06:21:33.665Z",
+    "ownershipPercent": 1.69086944353526
+  },
+  {
+    "symbol": "OSW",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 50234,
+    "price": 462.35997974753377,
+    "value": 23226191.222637612,
+    "date": "2025-08-02T20:17:15.168Z",
+    "filingDate": "2025-08-02T05:36:31.738Z",
+    "ownershipPercent": 3.5458826916863164
+  }
+]

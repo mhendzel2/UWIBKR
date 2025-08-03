@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "GTES",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 25532,
+    "price": 462.02194385279324,
+    "value": 11796344.270449517,
+    "date": "2025-07-28T10:29:52.366Z",
+    "filingDate": "2025-08-01T04:04:28.307Z",
+    "ownershipPercent": 0.5711050782017179
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "SCHW",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Underperform",
+    "newRating": "Sell",
+    "previousTarget": 416.69758647057785,
+    "newTarget": 443.97232844297196,
+    "date": "2025-07-30T10:37:37.997Z",
+    "reasoning": "Strong management team"
+  }
+]

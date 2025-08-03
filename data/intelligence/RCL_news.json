@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "RCL",
+    "headline": "Regulatory approval granted for RCL new product",
+    "summary": "Recent developments suggest positive momentum for RCL with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.790265522360674,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T07:58:49.306Z",
+    "url": "https://example.com/news/rcl-1754238620867"
+  },
+  {
+    "symbol": "RCL",
+    "headline": "RCL announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for RCL with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.3083315121747734,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T12:17:27.834Z",
+    "url": "https://example.com/news/rcl-1754238620867"
+  },
+  {
+    "symbol": "RCL",
+    "headline": "RCL reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for RCL with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.5314232528653987,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T14:33:40.551Z",
+    "url": "https://example.com/news/rcl-1754238620867"
+  }
+]

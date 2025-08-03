@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "TT",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 44093,
+    "price": 458.4650403586891,
+    "value": 20215099.02453568,
+    "date": "2025-08-01T04:31:37.772Z",
+    "filingDate": "2025-08-03T09:45:13.962Z",
+    "ownershipPercent": 2.541666867580361
+  },
+  {
+    "symbol": "TT",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 45798,
+    "price": 458.5323586938188,
+    "value": 20999864.963459514,
+    "date": "2025-08-01T20:04:01.963Z",
+    "filingDate": "2025-08-02T19:59:54.446Z",
+    "ownershipPercent": 2.24693212576457
+  },
+  {
+    "symbol": "TT",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 9017,
+    "price": 447.84549888345157,
+    "value": 4038222.863432083,
+    "date": "2025-07-29T15:20:09.460Z",
+    "filingDate": "2025-08-01T06:06:19.447Z",
+    "ownershipPercent": 0.6486413349496877
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "CECO",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 15698,
+    "price": 465.0965544480227,
+    "value": 7301085.71172506,
+    "date": "2025-07-31T15:39:42.859Z",
+    "filingDate": "2025-08-02T19:31:34.864Z",
+    "ownershipPercent": 2.8011809866606563
+  },
+  {
+    "symbol": "CECO",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 8250,
+    "price": 468.63960512154375,
+    "value": 3866276.742252736,
+    "date": "2025-07-30T09:20:12.230Z",
+    "filingDate": "2025-08-03T02:58:55.776Z",
+    "ownershipPercent": 2.7213736345277595
+  }
+]

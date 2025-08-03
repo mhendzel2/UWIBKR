@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "SHOP",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Outperform",
+    "previousTarget": 434.0144819705783,
+    "newTarget": 424.6731815996667,
+    "date": "2025-08-03T10:04:06.630Z",
+    "reasoning": "Competitive headwinds"
+  }
+]

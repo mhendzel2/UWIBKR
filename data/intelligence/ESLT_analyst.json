@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "ESLT",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Underperform",
+    "newRating": "Underperform",
+    "previousTarget": 514.2461759997111,
+    "newTarget": 521.1850214036658,
+    "date": "2025-08-02T03:11:56.684Z",
+    "reasoning": "Strong management team"
+  }
+]

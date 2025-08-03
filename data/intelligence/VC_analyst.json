@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "VC",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Hold",
+    "newRating": "Outperform",
+    "previousTarget": 442.14955182886877,
+    "newTarget": 414.95078747965493,
+    "date": "2025-07-31T09:58:57.946Z",
+    "reasoning": "Strong management team"
+  },
+  {
+    "symbol": "VC",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Outperform",
+    "newRating": "Hold",
+    "previousTarget": 425.52371519776693,
+    "newTarget": 407.13099269926806,
+    "date": "2025-07-30T02:59:06.811Z",
+    "reasoning": "Compelling growth story"
+  }
+]

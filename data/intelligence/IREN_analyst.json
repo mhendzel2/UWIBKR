@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "IREN",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Outperform",
+    "newRating": "Sell",
+    "previousTarget": 438.9960711934243,
+    "newTarget": 446.00673145739285,
+    "date": "2025-07-29T19:13:47.753Z",
+    "reasoning": "Strong management team"
+  },
+  {
+    "symbol": "IREN",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Outperform",
+    "newRating": "Buy",
+    "previousTarget": 423.09993701058596,
+    "newTarget": 396.20246868803514,
+    "date": "2025-08-02T23:16:38.009Z",
+    "reasoning": "Positive sector outlook"
+  }
+]

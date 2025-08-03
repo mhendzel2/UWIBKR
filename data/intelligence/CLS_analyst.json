@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "CLS",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Sell",
+    "newRating": "Sell",
+    "previousTarget": 412.1992871254175,
+    "newTarget": 414.66586929232534,
+    "date": "2025-07-29T17:55:55.884Z",
+    "reasoning": "Competitive headwinds"
+  },
+  {
+    "symbol": "CLS",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Hold",
+    "newRating": "Outperform",
+    "previousTarget": 441.8447747061383,
+    "newTarget": 475.38695488478635,
+    "date": "2025-07-31T16:09:47.489Z",
+    "reasoning": "Compelling growth story"
+  }
+]

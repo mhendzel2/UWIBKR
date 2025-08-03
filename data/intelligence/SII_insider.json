@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "SII",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 4683,
+    "price": 464.2937371724319,
+    "value": 2174287.5711784987,
+    "date": "2025-08-02T06:57:49.352Z",
+    "filingDate": "2025-08-01T10:23:59.938Z",
+    "ownershipPercent": 2.5614927486750982
+  }
+]

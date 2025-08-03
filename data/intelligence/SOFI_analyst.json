@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "SOFI",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Hold",
+    "previousTarget": 517.958948847295,
+    "newTarget": 491.3978443522186,
+    "date": "2025-08-02T19:46:57.458Z",
+    "reasoning": "Attractive valuation"
+  },
+  {
+    "symbol": "SOFI",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Buy",
+    "previousTarget": 461.08938293914576,
+    "newTarget": 466.3372645215515,
+    "date": "2025-08-01T02:09:39.136Z",
+    "reasoning": "Stable fundamentals"
+  }
+]

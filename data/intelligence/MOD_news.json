@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "MOD",
+    "headline": "Regulatory approval granted for MOD new product",
+    "summary": "Recent developments suggest positive momentum for MOD with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.5203408818180209,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T06:15:12.653Z",
+    "url": "https://example.com/news/mod-1754238630896"
+  },
+  {
+    "symbol": "MOD",
+    "headline": "Regulatory approval granted for MOD new product",
+    "summary": "Recent developments suggest positive momentum for MOD with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7215364284653366,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T09:08:24.420Z",
+    "url": "https://example.com/news/mod-1754238630896"
+  },
+  {
+    "symbol": "MOD",
+    "headline": "MOD reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for MOD with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.6034119835613798,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T16:10:00.962Z",
+    "url": "https://example.com/news/mod-1754238630896"
+  }
+]

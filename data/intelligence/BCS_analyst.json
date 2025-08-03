@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "BCS",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Underperform",
+    "previousTarget": 431.815677106588,
+    "newTarget": 416.0252593114701,
+    "date": "2025-08-01T13:09:15.593Z",
+    "reasoning": "Stable fundamentals"
+  },
+  {
+    "symbol": "BCS",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Sell",
+    "previousTarget": 499.79306185062114,
+    "newTarget": 545.5245989731312,
+    "date": "2025-07-30T11:14:19.374Z",
+    "reasoning": "Strong earnings momentum"
+  }
+]

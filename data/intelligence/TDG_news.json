@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "TDG",
+    "headline": "TDG announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for TDG with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.3657301639196483,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T05:01:51.808Z",
+    "url": "https://example.com/news/tdg-1754238642386"
+  },
+  {
+    "symbol": "TDG",
+    "headline": "TDG reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for TDG with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7637215343837624,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T05:36:37.234Z",
+    "url": "https://example.com/news/tdg-1754238642386"
+  },
+  {
+    "symbol": "TDG",
+    "headline": "TDG reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for TDG with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.7840536558140344,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T14:01:32.778Z",
+    "url": "https://example.com/news/tdg-1754238642388"
+  }
+]

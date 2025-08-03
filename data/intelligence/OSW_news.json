@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "OSW",
+    "headline": "Analyst upgrades OSW on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for OSW with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.8474075045053543,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T06:07:19.387Z",
+    "url": "https://example.com/news/osw-1754238634400"
+  },
+  {
+    "symbol": "OSW",
+    "headline": "Analyst upgrades OSW on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for OSW with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.7587454355332967,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T05:29:18.642Z",
+    "url": "https://example.com/news/osw-1754238634400"
+  }
+]

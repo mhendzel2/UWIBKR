@@ -34,5 +34,41 @@
     "date": "2025-07-30T03:42:07.296Z",
     "filingDate": "2025-07-31T03:19:10.559Z",
     "ownershipPercent": 0.4033749845001543
+  },
+  {
+    "symbol": "IWM",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 15575,
+    "price": 217.99816996684416,
+    "value": 3395321.4972335976,
+    "date": "2025-08-01T15:16:56.718Z",
+    "filingDate": "2025-08-02T10:15:07.917Z",
+    "ownershipPercent": 4.626179299706832
+  },
+  {
+    "symbol": "IWM",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 6706,
+    "price": 210.58474812944937,
+    "value": 1412181.3209560874,
+    "date": "2025-08-02T11:59:25.794Z",
+    "filingDate": "2025-08-02T17:50:11.168Z",
+    "ownershipPercent": 2.7454836050732845
+  },
+  {
+    "symbol": "IWM",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 31112,
+    "price": 216.7490822268111,
+    "value": 6743497.446240547,
+    "date": "2025-07-28T07:48:54.504Z",
+    "filingDate": "2025-08-02T20:14:38.733Z",
+    "ownershipPercent": 1.6522497516038037
   }
 ]

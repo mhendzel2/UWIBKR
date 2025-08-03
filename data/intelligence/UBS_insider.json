@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "UBS",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 45151,
+    "price": 464.52582540054,
+    "value": 20973805.542659782,
+    "date": "2025-08-03T08:45:05.073Z",
+    "filingDate": "2025-08-01T00:57:31.731Z",
+    "ownershipPercent": 2.047544537499447
+  },
+  {
+    "symbol": "UBS",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 9555,
+    "price": 464.9221146086773,
+    "value": 4442330.805085911,
+    "date": "2025-07-31T14:25:34.431Z",
+    "filingDate": "2025-08-02T22:58:26.831Z",
+    "ownershipPercent": 2.174626769176191
+  },
+  {
+    "symbol": "UBS",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 41201,
+    "price": 469.45810632511456,
+    "value": 19342143.438701045,
+    "date": "2025-07-29T05:32:43.522Z",
+    "filingDate": "2025-08-02T12:19:26.992Z",
+    "ownershipPercent": 4.862019106365053
+  }
+]

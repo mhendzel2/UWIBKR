@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "AVAV",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 43900,
+    "price": 458.0527457073726,
+    "value": 20108515.53655366,
+    "date": "2025-08-02T09:20:46.705Z",
+    "filingDate": "2025-08-02T23:42:50.484Z",
+    "ownershipPercent": 0.31079666449294485
+  }
+]

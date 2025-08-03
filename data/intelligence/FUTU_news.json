@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "FUTU",
+    "headline": "Regulatory approval granted for FUTU new product",
+    "summary": "Recent developments suggest positive momentum for FUTU with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.4189803377497455,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T16:08:53.287Z",
+    "url": "https://example.com/news/futu-1754238608662"
+  },
+  {
+    "symbol": "FUTU",
+    "headline": "Regulatory approval granted for FUTU new product",
+    "summary": "Recent developments suggest positive momentum for FUTU with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.5054090162579008,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T07:56:03.865Z",
+    "url": "https://example.com/news/futu-1754238608662"
+  },
+  {
+    "symbol": "FUTU",
+    "headline": "FUTU raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for FUTU with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.9474342075343936,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T11:02:36.196Z",
+    "url": "https://example.com/news/futu-1754238608662"
+  }
+]

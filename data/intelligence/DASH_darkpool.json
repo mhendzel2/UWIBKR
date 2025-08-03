@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "DASH",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3203430,
+    "totalVolume": 13054032,
+    "darkPoolRatio": 0.24539774377755472,
+    "avgDarkPoolSize": 10047,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 101046,
+        "price": 460.3959499530814,
+        "timestamp": "2025-08-03T13:43:19.524Z"
+      },
+      {
+        "size": 106368,
+        "price": 458.32198018071057,
+        "timestamp": "2025-08-03T15:08:23.006Z"
+      },
+      {
+        "size": 89423,
+        "price": 458.62135757987556,
+        "timestamp": "2025-08-03T14:03:18.689Z"
+      },
+      {
+        "size": 70579,
+        "price": 458.8036332022811,
+        "timestamp": "2025-08-03T14:06:01.601Z"
+      },
+      {
+        "size": 135174,
+        "price": 457.05065470490314,
+        "timestamp": "2025-08-03T15:50:00.257Z"
+      }
+    ]
+  }
+]

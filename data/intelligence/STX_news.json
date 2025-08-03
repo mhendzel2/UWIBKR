@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "STX",
+    "headline": "Analyst upgrades STX on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for STX with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.6667865428531918,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T11:33:45.106Z",
+    "url": "https://example.com/news/stx-1754238621711"
+  },
+  {
+    "symbol": "STX",
+    "headline": "STX raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for STX with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.83143508679808,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T15:36:08.083Z",
+    "url": "https://example.com/news/stx-1754238621711"
+  },
+  {
+    "symbol": "STX",
+    "headline": "STX reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for STX with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.6241080026828794,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T05:51:49.773Z",
+    "url": "https://example.com/news/stx-1754238621712"
+  }
+]

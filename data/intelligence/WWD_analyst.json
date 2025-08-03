@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "WWD",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Buy",
+    "previousTarget": 444.7609790878983,
+    "newTarget": 404.56476114017556,
+    "date": "2025-08-02T23:43:46.505Z",
+    "reasoning": "Positive sector outlook"
+  }
+]

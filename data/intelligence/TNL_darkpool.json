@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "TNL",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5994424,
+    "totalVolume": 8699894,
+    "darkPoolRatio": 0.6890226478621464,
+    "avgDarkPoolSize": 3749,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 69713,
+        "price": 454.83273125597566,
+        "timestamp": "2025-08-03T15:44:06.270Z"
+      },
+      {
+        "size": 80296,
+        "price": 449.7375225447355,
+        "timestamp": "2025-08-03T12:53:56.839Z"
+      },
+      {
+        "size": 113534,
+        "price": 452.16517766020075,
+        "timestamp": "2025-08-03T14:39:59.358Z"
+      },
+      {
+        "size": 62143,
+        "price": 449.99322778981195,
+        "timestamp": "2025-08-03T09:24:43.135Z"
+      },
+      {
+        "size": 69197,
+        "price": 448.8577204955464,
+        "timestamp": "2025-08-03T15:42:38.615Z"
+      }
+    ]
+  }
+]

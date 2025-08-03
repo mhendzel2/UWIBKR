@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "NET",
+    "headline": "Regulatory approval granted for NET new product",
+    "summary": "Recent developments suggest positive momentum for NET with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.42848226702483294,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T14:52:16.310Z",
+    "url": "https://example.com/news/net-1754238625809"
+  },
+  {
+    "symbol": "NET",
+    "headline": "Regulatory approval granted for NET new product",
+    "summary": "Recent developments suggest positive momentum for NET with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.4455058718755964,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T04:41:22.891Z",
+    "url": "https://example.com/news/net-1754238625809"
+  }
+]

@@ -34,5 +34,41 @@
     "date": "2025-07-30T12:50:56.384Z",
     "filingDate": "2025-07-31T02:09:00.643Z",
     "ownershipPercent": 4.95763672439412
+  },
+  {
+    "symbol": "NVDA",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 47624,
+    "price": 176.30026411283703,
+    "value": 8396123.77810975,
+    "date": "2025-08-03T02:01:43.440Z",
+    "filingDate": "2025-08-01T15:50:37.487Z",
+    "ownershipPercent": 3.3996750343286517
+  },
+  {
+    "symbol": "NVDA",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 32852,
+    "price": 177.6018490357897,
+    "value": 5834575.944523764,
+    "date": "2025-07-28T07:18:11.179Z",
+    "filingDate": "2025-08-03T06:43:30.832Z",
+    "ownershipPercent": 1.8998329354056598
+  },
+  {
+    "symbol": "NVDA",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 14759,
+    "price": 176.9771754082986,
+    "value": 2612006.131851079,
+    "date": "2025-07-31T04:37:02.226Z",
+    "filingDate": "2025-07-31T20:02:31.413Z",
+    "ownershipPercent": 1.58180829219557
   }
 ]

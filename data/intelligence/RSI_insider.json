@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "RSI",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 41611,
+    "price": 461.92446797711676,
+    "value": 19221139.036995806,
+    "date": "2025-08-03T13:53:27.995Z",
+    "filingDate": "2025-08-01T19:41:38.242Z",
+    "ownershipPercent": 2.038436626441954
+  },
+  {
+    "symbol": "RSI",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 49454,
+    "price": 462.0166018854704,
+    "value": 22848569.029644053,
+    "date": "2025-07-31T21:33:14.662Z",
+    "filingDate": "2025-08-01T16:48:11.263Z",
+    "ownershipPercent": 4.992656330743504
+  }
+]

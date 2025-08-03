@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "VIRT",
+    "date": "2025-08-03",
+    "darkPoolVolume": 2276965,
+    "totalVolume": 18688134,
+    "darkPoolRatio": 0.12184014733627231,
+    "avgDarkPoolSize": 10179,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 84807,
+        "price": 448.8662948474467,
+        "timestamp": "2025-08-03T09:49:17.603Z"
+      },
+      {
+        "size": 67372,
+        "price": 449.1555372850235,
+        "timestamp": "2025-08-03T13:20:01.565Z"
+      },
+      {
+        "size": 125677,
+        "price": 452.5851243454795,
+        "timestamp": "2025-08-03T16:21:57.140Z"
+      }
+    ]
+  }
+]

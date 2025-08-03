@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "ATI",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 32249,
+    "price": 464.2578028216119,
+    "value": 14971849.883194162,
+    "date": "2025-08-01T12:10:40.602Z",
+    "filingDate": "2025-08-02T12:42:03.079Z",
+    "ownershipPercent": 1.4131466098025713
+  }
+]

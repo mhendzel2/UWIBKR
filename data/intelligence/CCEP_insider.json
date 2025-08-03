@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "CCEP",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 29430,
+    "price": 441.996364017224,
+    "value": 13007952.993026901,
+    "date": "2025-08-01T00:17:21.478Z",
+    "filingDate": "2025-08-03T06:57:06.554Z",
+    "ownershipPercent": 4.606364852671474
+  },
+  {
+    "symbol": "CCEP",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 22342,
+    "price": 444.00462478784436,
+    "value": 9919951.327010019,
+    "date": "2025-07-30T17:21:20.698Z",
+    "filingDate": "2025-08-03T00:02:05.622Z",
+    "ownershipPercent": 4.819415865617141
+  }
+]

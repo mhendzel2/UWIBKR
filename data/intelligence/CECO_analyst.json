@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "CECO",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Underperform",
+    "newRating": "Buy",
+    "previousTarget": 516.8189610471006,
+    "newTarget": 484.7678021229709,
+    "date": "2025-08-01T23:59:21.438Z",
+    "reasoning": "Attractive valuation"
+  },
+  {
+    "symbol": "CECO",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Buy",
+    "newRating": "Outperform",
+    "previousTarget": 459.68926731569945,
+    "newTarget": 494.19296979471966,
+    "date": "2025-07-30T08:36:07.171Z",
+    "reasoning": "Strong earnings momentum"
+  }
+]

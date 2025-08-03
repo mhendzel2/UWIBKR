@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "CECO",
+    "headline": "Analyst upgrades CECO on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for CECO with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.7906302399207917,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T15:49:51.748Z",
+    "url": "https://example.com/news/ceco-1754238623612"
+  },
+  {
+    "symbol": "CECO",
+    "headline": "CECO raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for CECO with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.8492755042797556,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T11:42:09.919Z",
+    "url": "https://example.com/news/ceco-1754238623612"
+  },
+  {
+    "symbol": "CECO",
+    "headline": "CECO announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for CECO with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.44383467451207687,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T12:43:26.426Z",
+    "url": "https://example.com/news/ceco-1754238623613"
+  }
+]

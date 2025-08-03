@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "RSI",
+    "headline": "RSI announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for RSI with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.6545691114344854,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T14:17:06.276Z",
+    "url": "https://example.com/news/rsi-1754238610573"
+  },
+  {
+    "symbol": "RSI",
+    "headline": "RSI announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for RSI with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.47680766242307876,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T08:20:50.553Z",
+    "url": "https://example.com/news/rsi-1754238610573"
+  },
+  {
+    "symbol": "RSI",
+    "headline": "RSI raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for RSI with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.7045661963347829,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T09:13:27.759Z",
+    "url": "https://example.com/news/rsi-1754238610573"
+  }
+]

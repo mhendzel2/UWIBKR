@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "COF",
+    "headline": "Analyst upgrades COF on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for COF with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.7984069232997606,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T06:59:28.220Z",
+    "url": "https://example.com/news/cof-1754238632776"
+  },
+  {
+    "symbol": "COF",
+    "headline": "Analyst upgrades COF on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for COF with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.7090013448261411,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T08:11:10.944Z",
+    "url": "https://example.com/news/cof-1754238632776"
+  },
+  {
+    "symbol": "COF",
+    "headline": "COF raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for COF with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.6418662515660115,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T08:22:20.745Z",
+    "url": "https://example.com/news/cof-1754238632776"
+  }
+]

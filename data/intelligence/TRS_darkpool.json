@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "TRS",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5252262,
+    "totalVolume": 18860271,
+    "darkPoolRatio": 0.2784828489473985,
+    "avgDarkPoolSize": 6264,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 50592,
+        "price": 458.1606611760333,
+        "timestamp": "2025-08-03T12:52:09.945Z"
+      },
+      {
+        "size": 111301,
+        "price": 454.4341386182994,
+        "timestamp": "2025-08-03T10:04:53.373Z"
+      },
+      {
+        "size": 145595,
+        "price": 454.30113927546756,
+        "timestamp": "2025-08-03T08:37:56.018Z"
+      },
+      {
+        "size": 77109,
+        "price": 454.48539537193113,
+        "timestamp": "2025-08-03T15:13:54.307Z"
+      },
+      {
+        "size": 120847,
+        "price": 455.2236051679511,
+        "timestamp": "2025-08-03T11:50:04.438Z"
+      }
+    ]
+  }
+]

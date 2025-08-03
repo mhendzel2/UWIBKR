@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "AMSC",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 33392,
+    "price": 454.7564965544004,
+    "value": 15185228.93294454,
+    "date": "2025-08-03T15:27:28.496Z",
+    "filingDate": "2025-08-01T15:58:32.234Z",
+    "ownershipPercent": 4.974915081368701
+  },
+  {
+    "symbol": "AMSC",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 40805,
+    "price": 446.5334080033936,
+    "value": 18220795.713578478,
+    "date": "2025-07-31T14:52:30.002Z",
+    "filingDate": "2025-08-02T14:59:45.109Z",
+    "ownershipPercent": 3.2352851028325325
+  }
+]

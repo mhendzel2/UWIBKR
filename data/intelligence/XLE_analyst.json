@@ -22,5 +22,29 @@
     "newTarget": 168.1959392080403,
     "date": "2025-07-28T05:54:36.210Z",
     "reasoning": "Balanced risk/reward"
+  },
+  {
+    "symbol": "XLE",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Outperform",
+    "newRating": "Outperform",
+    "previousTarget": 503.93996552674844,
+    "newTarget": 529.8026147284555,
+    "date": "2025-08-01T21:08:53.234Z",
+    "reasoning": "Positive sector outlook"
+  },
+  {
+    "symbol": "XLE",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Buy",
+    "previousTarget": 477.8745753046796,
+    "newTarget": 519.0247496769105,
+    "date": "2025-08-03T04:54:48.088Z",
+    "reasoning": "Compelling growth story"
   }
 ]

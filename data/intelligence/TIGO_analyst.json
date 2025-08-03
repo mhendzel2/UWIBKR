@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "TIGO",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Outperform",
+    "newRating": "Buy",
+    "previousTarget": 439.7118792614394,
+    "newTarget": 425.13535943896073,
+    "date": "2025-08-03T05:36:48.096Z",
+    "reasoning": "Fair valuation"
+  }
+]

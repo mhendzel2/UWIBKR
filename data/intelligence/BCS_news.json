@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "BCS",
+    "headline": "BCS reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for BCS with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.7797184326860263,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T16:07:07.456Z",
+    "url": "https://example.com/news/bcs-1754238617459"
+  },
+  {
+    "symbol": "BCS",
+    "headline": "Regulatory approval granted for BCS new product",
+    "summary": "Recent developments suggest positive momentum for BCS with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.4563722120287911,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T09:17:32.048Z",
+    "url": "https://example.com/news/bcs-1754238617460"
+  },
+  {
+    "symbol": "BCS",
+    "headline": "Regulatory approval granted for BCS new product",
+    "summary": "Recent developments suggest positive momentum for BCS with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.5630167510991916,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T16:14:04.049Z",
+    "url": "https://example.com/news/bcs-1754238617460"
+  }
+]

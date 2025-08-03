@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "KGC",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 30456,
+    "price": 463.280241096271,
+    "value": 14109663.02282803,
+    "date": "2025-08-03T00:58:05.613Z",
+    "filingDate": "2025-08-02T05:40:35.142Z",
+    "ownershipPercent": 2.5853456469243388
+  },
+  {
+    "symbol": "KGC",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 29258,
+    "price": 459.17509842622127,
+    "value": 13434545.029754382,
+    "date": "2025-07-28T14:34:44.622Z",
+    "filingDate": "2025-08-02T13:22:32.505Z",
+    "ownershipPercent": 4.859473981109481
+  },
+  {
+    "symbol": "KGC",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 21484,
+    "price": 446.71361037240564,
+    "value": 9597195.205240762,
+    "date": "2025-08-01T21:14:15.292Z",
+    "filingDate": "2025-08-03T09:00:13.649Z",
+    "ownershipPercent": 3.6392987319419903
+  }
+]

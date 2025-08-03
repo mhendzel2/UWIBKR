@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "CCEP",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Outperform",
+    "newRating": "Underperform",
+    "previousTarget": 459.84340622981335,
+    "newTarget": 458.49561901560844,
+    "date": "2025-07-31T13:37:50.537Z",
+    "reasoning": "Strong earnings momentum"
+  },
+  {
+    "symbol": "CCEP",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Sell",
+    "newRating": "Underperform",
+    "previousTarget": 456.2336767908356,
+    "newTarget": 459.0789847131025,
+    "date": "2025-08-02T23:36:52.263Z",
+    "reasoning": "Strong earnings momentum"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "MRX",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 40085,
+    "price": 440.8625129548785,
+    "value": 17671973.831796307,
+    "date": "2025-07-31T01:26:50.049Z",
+    "filingDate": "2025-08-03T11:29:28.754Z",
+    "ownershipPercent": 1.6489487959987514
+  },
+  {
+    "symbol": "MRX",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 47087,
+    "price": 443.4680959108158,
+    "value": 20881582.232152585,
+    "date": "2025-07-30T21:42:36.748Z",
+    "filingDate": "2025-08-02T03:40:51.860Z",
+    "ownershipPercent": 3.458494820490632
+  }
+]

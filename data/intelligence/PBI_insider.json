@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "PBI",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 16752,
+    "price": 451.68545455950675,
+    "value": 7566634.734780857,
+    "date": "2025-07-30T15:47:46.593Z",
+    "filingDate": "2025-08-01T19:23:41.256Z",
+    "ownershipPercent": 0.9125770713073299
+  },
+  {
+    "symbol": "PBI",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 35202,
+    "price": 463.8139685242782,
+    "value": 16327179.31999164,
+    "date": "2025-07-29T08:39:08.787Z",
+    "filingDate": "2025-08-02T08:31:19.161Z",
+    "ownershipPercent": 4.11971786900734
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "TTMI",
+    "headline": "TTMI reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for TTMI with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.7088945295356117,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T15:42:19.358Z",
+    "url": "https://example.com/news/ttmi-1754238616616"
+  },
+  {
+    "symbol": "TTMI",
+    "headline": "TTMI announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for TTMI with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.4627931823975988,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T15:51:44.056Z",
+    "url": "https://example.com/news/ttmi-1754238616617"
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "ALLE",
+    "date": "2025-08-03",
+    "darkPoolVolume": 2275777,
+    "totalVolume": 8785523,
+    "darkPoolRatio": 0.2590371683051766,
+    "avgDarkPoolSize": 2954,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 120103,
+        "price": 457.9763823501953,
+        "timestamp": "2025-08-03T12:31:24.268Z"
+      },
+      {
+        "size": 71257,
+        "price": 454.7503383751076,
+        "timestamp": "2025-08-03T14:23:55.184Z"
+      },
+      {
+        "size": 141530,
+        "price": 461.53746249983607,
+        "timestamp": "2025-08-03T14:17:36.853Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "UBER",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Sell",
+    "newRating": "Underperform",
+    "previousTarget": 403.49812678638244,
+    "newTarget": 364.0507045826001,
+    "date": "2025-07-30T23:25:53.352Z",
+    "reasoning": "Improved market position"
+  }
+]

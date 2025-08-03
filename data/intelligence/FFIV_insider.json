@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "FFIV",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 11892,
+    "price": 462.53366524672947,
+    "value": 5500450.347114107,
+    "date": "2025-07-30T16:13:21.450Z",
+    "filingDate": "2025-08-03T01:06:44.030Z",
+    "ownershipPercent": 3.455634249269459
+  },
+  {
+    "symbol": "FFIV",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 19393,
+    "price": 449.8213815541039,
+    "value": 8723386.052478736,
+    "date": "2025-07-28T20:18:16.464Z",
+    "filingDate": "2025-08-03T03:46:26.282Z",
+    "ownershipPercent": 1.5616189576155126
+  }
+]

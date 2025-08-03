@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "RDDT",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3837350,
+    "totalVolume": 5940724,
+    "darkPoolRatio": 0.6459397878103746,
+    "avgDarkPoolSize": 5392,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 63206,
+        "price": 455.300481902212,
+        "timestamp": "2025-08-03T13:19:09.678Z"
+      },
+      {
+        "size": 116472,
+        "price": 456.1939929124944,
+        "timestamp": "2025-08-03T09:32:58.291Z"
+      },
+      {
+        "size": 128257,
+        "price": 453.46530055927275,
+        "timestamp": "2025-08-03T15:41:49.309Z"
+      },
+      {
+        "size": 88778,
+        "price": 450.8013828410443,
+        "timestamp": "2025-08-03T09:15:15.237Z"
+      },
+      {
+        "size": 69040,
+        "price": 455.113693662197,
+        "timestamp": "2025-08-03T12:38:36.052Z"
+      }
+    ]
+  }
+]

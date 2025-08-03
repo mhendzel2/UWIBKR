@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "VNT",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 11223,
+    "price": 444.24654231170814,
+    "value": 4985778.9443643,
+    "date": "2025-07-27T19:17:16.917Z",
+    "filingDate": "2025-07-31T18:29:51.585Z",
+    "ownershipPercent": 3.1954233493851647
+  },
+  {
+    "symbol": "VNT",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 7551,
+    "price": 447.7616470393375,
+    "value": 3381048.1967940377,
+    "date": "2025-07-27T23:13:59.488Z",
+    "filingDate": "2025-08-02T01:34:54.931Z",
+    "ownershipPercent": 4.971047453026436
+  },
+  {
+    "symbol": "VNT",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 12400,
+    "price": 444.0603966891814,
+    "value": 5506348.918945849,
+    "date": "2025-07-29T00:21:24.612Z",
+    "filingDate": "2025-07-31T23:24:18.989Z",
+    "ownershipPercent": 0.7519621829425248
+  }
+]

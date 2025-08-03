@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "TPR",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Underperform",
+    "newRating": "Buy",
+    "previousTarget": 391.53724008515127,
+    "newTarget": 389.73670813925315,
+    "date": "2025-08-03T12:42:03.128Z",
+    "reasoning": "Stable fundamentals"
+  },
+  {
+    "symbol": "TPR",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Outperform",
+    "newRating": "Sell",
+    "previousTarget": 489.9372584617015,
+    "newTarget": 483.98557350043563,
+    "date": "2025-07-31T19:44:47.129Z",
+    "reasoning": "Improved market position"
+  }
+]

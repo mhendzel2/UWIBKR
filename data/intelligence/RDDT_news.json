@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "RDDT",
+    "headline": "RDDT announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for RDDT with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.6231175994354257,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T11:42:22.686Z",
+    "url": "https://example.com/news/rddt-1754238639869"
+  },
+  {
+    "symbol": "RDDT",
+    "headline": "RDDT reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for RDDT with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.5492519413845662,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T04:51:27.078Z",
+    "url": "https://example.com/news/rddt-1754238639869"
+  }
+]

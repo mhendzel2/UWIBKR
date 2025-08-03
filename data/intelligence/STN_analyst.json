@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "STN",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Outperform",
+    "previousTarget": 424.5867240724166,
+    "newTarget": 414.6467029597352,
+    "date": "2025-08-01T23:02:02.670Z",
+    "reasoning": "Margin pressure concerns"
+  },
+  {
+    "symbol": "STN",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Sell",
+    "newRating": "Underperform",
+    "previousTarget": 446.22428052596894,
+    "newTarget": 417.65964375556234,
+    "date": "2025-08-02T03:57:16.756Z",
+    "reasoning": "Competitive headwinds"
+  }
+]

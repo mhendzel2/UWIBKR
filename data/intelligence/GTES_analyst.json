@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "GTES",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Sell",
+    "newRating": "Sell",
+    "previousTarget": 510.23481895194004,
+    "newTarget": 539.061794858939,
+    "date": "2025-08-01T23:06:18.363Z",
+    "reasoning": "Improved market position"
+  },
+  {
+    "symbol": "GTES",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Buy",
+    "newRating": "Underperform",
+    "previousTarget": 481.64717288715764,
+    "newTarget": 494.16579586882835,
+    "date": "2025-08-01T02:45:40.147Z",
+    "reasoning": "Strong earnings momentum"
+  }
+]

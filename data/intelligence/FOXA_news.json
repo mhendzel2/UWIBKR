@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "FOXA",
+    "headline": "FOXA raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for FOXA with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.6277317997542727,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T11:25:09.215Z",
+    "url": "https://example.com/news/foxa-1754238629219"
+  },
+  {
+    "symbol": "FOXA",
+    "headline": "FOXA reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for FOXA with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.8005103999167522,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T13:43:53.657Z",
+    "url": "https://example.com/news/foxa-1754238629221"
+  },
+  {
+    "symbol": "FOXA",
+    "headline": "FOXA raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for FOXA with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.7642248403272509,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T12:08:40.992Z",
+    "url": "https://example.com/news/foxa-1754238629222"
+  }
+]

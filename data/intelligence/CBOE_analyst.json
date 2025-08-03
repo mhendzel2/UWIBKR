@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "CBOE",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Underperform",
+    "previousTarget": 434.2765268170673,
+    "newTarget": 469.9464263572132,
+    "date": "2025-07-31T23:20:51.564Z",
+    "reasoning": "Margin pressure concerns"
+  }
+]

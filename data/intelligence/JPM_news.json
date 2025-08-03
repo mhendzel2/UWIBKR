@@ -20,5 +20,38 @@
     "category": "earnings",
     "publishedAt": "2025-08-01T22:02:28.467Z",
     "url": "https://example.com/news/jpm-1754101860518"
+  },
+  {
+    "symbol": "JPM",
+    "headline": "JPM raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for JPM with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.9796355973028994,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T10:05:42.752Z",
+    "url": "https://example.com/news/jpm-1754238604819"
+  },
+  {
+    "symbol": "JPM",
+    "headline": "Analyst upgrades JPM on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for JPM with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.8101993972490072,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T14:22:26.057Z",
+    "url": "https://example.com/news/jpm-1754238604820"
+  },
+  {
+    "symbol": "JPM",
+    "headline": "JPM reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for JPM with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.6560904692090396,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T15:21:15.680Z",
+    "url": "https://example.com/news/jpm-1754238604820"
   }
 ]

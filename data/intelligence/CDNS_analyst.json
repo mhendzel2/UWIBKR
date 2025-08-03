@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "CDNS",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Buy",
+    "previousTarget": 417.92630265990846,
+    "newTarget": 438.22104619110144,
+    "date": "2025-07-30T05:10:50.812Z",
+    "reasoning": "Competitive headwinds"
+  }
+]

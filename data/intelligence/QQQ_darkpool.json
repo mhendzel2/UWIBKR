@@ -24,5 +24,36 @@
         "timestamp": "2025-08-01T20:54:31.411Z"
       }
     ]
+  },
+  {
+    "symbol": "QQQ",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4932549,
+    "totalVolume": 16732049,
+    "darkPoolRatio": 0.29479647113153923,
+    "avgDarkPoolSize": 7405,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 73337,
+        "price": 558.1110573717391,
+        "timestamp": "2025-08-03T15:26:36.236Z"
+      },
+      {
+        "size": 88925,
+        "price": 558.2807774921218,
+        "timestamp": "2025-08-03T14:34:49.152Z"
+      },
+      {
+        "size": 135743,
+        "price": 555.6153811332737,
+        "timestamp": "2025-08-03T10:51:40.059Z"
+      },
+      {
+        "size": 63086,
+        "price": 552.3755467028035,
+        "timestamp": "2025-08-03T14:43:55.775Z"
+      }
+    ]
   }
 ]

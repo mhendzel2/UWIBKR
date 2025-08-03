@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "OR",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5134285,
+    "totalVolume": 14618416,
+    "darkPoolRatio": 0.35122033741549014,
+    "avgDarkPoolSize": 4982,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 98013,
+        "price": 456.8240556493333,
+        "timestamp": "2025-08-03T09:44:54.320Z"
+      },
+      {
+        "size": 57956,
+        "price": 453.8325770922447,
+        "timestamp": "2025-08-03T15:57:39.438Z"
+      },
+      {
+        "size": 137858,
+        "price": 458.27831126667616,
+        "timestamp": "2025-08-03T12:40:58.721Z"
+      },
+      {
+        "size": 89750,
+        "price": 450.01943730625715,
+        "timestamp": "2025-08-03T14:21:59.804Z"
+      },
+      {
+        "size": 106037,
+        "price": 456.11409994630645,
+        "timestamp": "2025-08-03T14:51:53.879Z"
+      }
+    ]
+  }
+]

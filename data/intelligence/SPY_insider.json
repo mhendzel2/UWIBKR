@@ -22,5 +22,17 @@
     "date": "2025-07-26T09:14:24.044Z",
     "filingDate": "2025-07-31T06:19:37.781Z",
     "ownershipPercent": 4.679413837422251
+  },
+  {
+    "symbol": "SPY",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 50577,
+    "price": 611.6910077321809,
+    "value": 30937496.098070513,
+    "date": "2025-07-29T15:08:06.243Z",
+    "filingDate": "2025-08-01T12:25:36.505Z",
+    "ownershipPercent": 4.924681260657528
   }
 ]

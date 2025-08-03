@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "JBL",
+    "headline": "JBL raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for JBL with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.8830515882084629,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T05:45:47.032Z",
+    "url": "https://example.com/news/jbl-1754238619166"
+  },
+  {
+    "symbol": "JBL",
+    "headline": "Regulatory approval granted for JBL new product",
+    "summary": "Recent developments suggest positive momentum for JBL with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.4527970224311658,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T07:35:46.248Z",
+    "url": "https://example.com/news/jbl-1754238619167"
+  }
+]

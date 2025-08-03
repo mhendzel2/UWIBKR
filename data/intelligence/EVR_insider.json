@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "EVR",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 21643,
+    "price": 446.39352844031004,
+    "value": 9661295.13603363,
+    "date": "2025-07-28T17:11:07.836Z",
+    "filingDate": "2025-08-02T00:24:48.971Z",
+    "ownershipPercent": 4.460539046264851
+  }
+]

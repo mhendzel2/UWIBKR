@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "ESQ",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Sell",
+    "newRating": "Underperform",
+    "previousTarget": 410.19245057744837,
+    "newTarget": 455.91835765855586,
+    "date": "2025-08-01T22:58:30.639Z",
+    "reasoning": "Valuation concerns"
+  }
+]

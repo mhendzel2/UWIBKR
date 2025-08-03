@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "CNM",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 23627,
+    "price": 467.28725027379653,
+    "value": 11040595.86221899,
+    "date": "2025-08-01T21:34:07.994Z",
+    "filingDate": "2025-08-02T20:21:14.919Z",
+    "ownershipPercent": 3.8726424818987626
+  },
+  {
+    "symbol": "CNM",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 7769,
+    "price": 451.94121040083104,
+    "value": 3511131.2636040566,
+    "date": "2025-07-29T06:16:21.071Z",
+    "filingDate": "2025-08-01T12:32:36.616Z",
+    "ownershipPercent": 2.4366916390708893
+  },
+  {
+    "symbol": "CNM",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 43387,
+    "price": 458.13487215765986,
+    "value": 19877097.69830439,
+    "date": "2025-07-29T18:25:36.687Z",
+    "filingDate": "2025-07-31T23:19:59.628Z",
+    "ownershipPercent": 4.153255086258904
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "MU",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 15131,
+    "price": 459.6562734903502,
+    "value": 6955059.074182489,
+    "date": "2025-08-02T19:12:31.659Z",
+    "filingDate": "2025-08-03T11:09:06.983Z",
+    "ownershipPercent": 3.230493506874009
+  },
+  {
+    "symbol": "MU",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 1591,
+    "price": 463.9228621755581,
+    "value": 738101.273721313,
+    "date": "2025-08-01T02:13:48.224Z",
+    "filingDate": "2025-08-02T19:19:25.882Z",
+    "ownershipPercent": 1.2743981613386723
+  },
+  {
+    "symbol": "MU",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 8400,
+    "price": 460.97762903772013,
+    "value": 3872212.083916849,
+    "date": "2025-08-02T10:15:19.927Z",
+    "filingDate": "2025-08-03T15:36:55.807Z",
+    "ownershipPercent": 0.6432994452695683
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "CLS",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 22573,
+    "price": 460.01084333011386,
+    "value": 10383824.76649066,
+    "date": "2025-07-30T21:11:06.359Z",
+    "filingDate": "2025-08-03T00:20:21.691Z",
+    "ownershipPercent": 2.6980974531925894
+  }
+]

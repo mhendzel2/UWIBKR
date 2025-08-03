@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "NEM",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 482.9735125829154,
+    "newTarget": 444.7060342796817,
+    "date": "2025-08-02T18:28:16.111Z",
+    "reasoning": "Competitive headwinds"
+  },
+  {
+    "symbol": "NEM",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Hold",
+    "previousTarget": 499.7069650218224,
+    "newTarget": 520.7957409198572,
+    "date": "2025-07-31T16:08:35.767Z",
+    "reasoning": "Attractive valuation"
+  }
+]

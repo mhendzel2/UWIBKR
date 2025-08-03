@@ -31,5 +31,27 @@
     "category": "guidance",
     "publishedAt": "2025-08-01T15:17:12.401Z",
     "url": "https://example.com/news/uvxy-1754101860546"
+  },
+  {
+    "symbol": "UVXY",
+    "headline": "Analyst upgrades UVXY on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for UVXY with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.7077774525987062,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T13:36:18.412Z",
+    "url": "https://example.com/news/uvxy-1754238605897"
+  },
+  {
+    "symbol": "UVXY",
+    "headline": "UVXY announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for UVXY with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.46505096648292604,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T10:09:18.559Z",
+    "url": "https://example.com/news/uvxy-1754238605897"
   }
 ]

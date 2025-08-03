@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "LMB",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Buy",
+    "newRating": "Hold",
+    "previousTarget": 460.98904725679984,
+    "newTarget": 473.32871542212007,
+    "date": "2025-08-02T20:23:38.343Z",
+    "reasoning": "Improved market position"
+  }
+]

@@ -1,0 +1,43 @@
+[
+  {
+    "symbol": "TTMI",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3720374,
+    "totalVolume": 12376071,
+    "darkPoolRatio": 0.3006102663761383,
+    "avgDarkPoolSize": 4463,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 91321,
+        "price": 459.9199199371602,
+        "timestamp": "2025-08-03T15:45:43.954Z"
+      },
+      {
+        "size": 144932,
+        "price": 456.6491085520585,
+        "timestamp": "2025-08-03T11:22:23.683Z"
+      },
+      {
+        "size": 125927,
+        "price": 456.62984861299213,
+        "timestamp": "2025-08-03T11:55:50.937Z"
+      },
+      {
+        "size": 58410,
+        "price": 463.24168072143226,
+        "timestamp": "2025-08-03T08:39:13.389Z"
+      },
+      {
+        "size": 72081,
+        "price": 462.5886499145506,
+        "timestamp": "2025-08-03T09:58:49.342Z"
+      },
+      {
+        "size": 142705,
+        "price": 455.7513264604001,
+        "timestamp": "2025-08-03T15:48:03.470Z"
+      }
+    ]
+  }
+]

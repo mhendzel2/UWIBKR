@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "GE",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 40417,
+    "price": 451.4475783935813,
+    "value": 18246156.775933374,
+    "date": "2025-07-30T20:28:42.211Z",
+    "filingDate": "2025-08-01T09:32:43.327Z",
+    "ownershipPercent": 0.4934808715017801
+  },
+  {
+    "symbol": "GE",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 3881,
+    "price": 450.79255518171226,
+    "value": 1749525.9066602252,
+    "date": "2025-07-28T19:28:36.873Z",
+    "filingDate": "2025-08-01T08:26:10.874Z",
+    "ownershipPercent": 5.060422469930017
+  },
+  {
+    "symbol": "GE",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 27329,
+    "price": 461.27210915804875,
+    "value": 12606105.471180314,
+    "date": "2025-07-28T01:31:44.062Z",
+    "filingDate": "2025-08-03T14:08:33.005Z",
+    "ownershipPercent": 4.5602508052039274
+  }
+]

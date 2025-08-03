@@ -22,5 +22,29 @@
     "newTarget": 206.24334596281142,
     "date": "2025-07-28T03:45:50.994Z",
     "reasoning": "Strong earnings momentum"
+  },
+  {
+    "symbol": "UVXY",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Outperform",
+    "newRating": "Outperform",
+    "previousTarget": 438.52550298863696,
+    "newTarget": 394.2568056569325,
+    "date": "2025-08-02T08:17:34.588Z",
+    "reasoning": "Valuation concerns"
+  },
+  {
+    "symbol": "UVXY",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Hold",
+    "previousTarget": 445.1922694198721,
+    "newTarget": 436.8556434876824,
+    "date": "2025-08-01T02:18:12.261Z",
+    "reasoning": "Margin pressure concerns"
   }
 ]

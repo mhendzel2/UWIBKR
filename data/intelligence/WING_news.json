@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "WING",
+    "headline": "Regulatory approval granted for WING new product",
+    "summary": "Recent developments suggest positive momentum for WING with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.7187084382764056,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T04:48:59.787Z",
+    "url": "https://example.com/news/wing-1754238650715"
+  },
+  {
+    "symbol": "WING",
+    "headline": "Analyst upgrades WING on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for WING with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.8435877937763134,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T13:47:54.891Z",
+    "url": "https://example.com/news/wing-1754238650715"
+  },
+  {
+    "symbol": "WING",
+    "headline": "Regulatory approval granted for WING new product",
+    "summary": "Recent developments suggest positive momentum for WING with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.6466380050645308,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T07:01:20.556Z",
+    "url": "https://example.com/news/wing-1754238650715"
+  }
+]

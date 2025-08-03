@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "GE",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Sell",
+    "previousTarget": 507.7758469627243,
+    "newTarget": 502.67866488372715,
+    "date": "2025-07-31T08:28:43.502Z",
+    "reasoning": "Positive sector outlook"
+  }
+]

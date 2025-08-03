@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "DRI",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3941686,
+    "totalVolume": 10928513,
+    "darkPoolRatio": 0.36067907866330945,
+    "avgDarkPoolSize": 9372,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 111712,
+        "price": 453.4024659628028,
+        "timestamp": "2025-08-03T08:43:58.250Z"
+      },
+      {
+        "size": 85907,
+        "price": 455.29266886046264,
+        "timestamp": "2025-08-03T14:24:21.437Z"
+      }
+    ]
+  }
+]

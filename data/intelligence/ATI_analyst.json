@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "ATI",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Outperform",
+    "newRating": "Hold",
+    "previousTarget": 488.84528519219236,
+    "newTarget": 454.1550169924794,
+    "date": "2025-08-01T11:40:01.957Z",
+    "reasoning": "Valuation concerns"
+  }
+]

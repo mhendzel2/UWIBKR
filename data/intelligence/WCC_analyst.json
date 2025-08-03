@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "WCC",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Sell",
+    "previousTarget": 469.12680180334445,
+    "newTarget": 437.2197197022471,
+    "date": "2025-07-30T21:45:11.226Z",
+    "reasoning": "Margin pressure concerns"
+  }
+]

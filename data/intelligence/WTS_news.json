@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "WTS",
+    "headline": "WTS announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for WTS with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.49705777549056335,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T09:16:00.231Z",
+    "url": "https://example.com/news/wts-1754238650930"
+  },
+  {
+    "symbol": "WTS",
+    "headline": "WTS raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for WTS with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.7561047791559202,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T09:42:06.289Z",
+    "url": "https://example.com/news/wts-1754238650930"
+  }
+]

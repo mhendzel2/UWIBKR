@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "AZZ",
+    "headline": "AZZ reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for AZZ with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.6129331701886137,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T09:01:17.192Z",
+    "url": "https://example.com/news/azz-1754238627752"
+  },
+  {
+    "symbol": "AZZ",
+    "headline": "AZZ reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for AZZ with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.6022443340981486,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T06:11:52.589Z",
+    "url": "https://example.com/news/azz-1754238627754"
+  }
+]

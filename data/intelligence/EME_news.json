@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "EME",
+    "headline": "EME announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for EME with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5017156069165568,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T05:46:40.950Z",
+    "url": "https://example.com/news/eme-1754238608238"
+  },
+  {
+    "symbol": "EME",
+    "headline": "Regulatory approval granted for EME new product",
+    "summary": "Recent developments suggest positive momentum for EME with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.48619864763795967,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T10:11:06.104Z",
+    "url": "https://example.com/news/eme-1754238608238"
+  },
+  {
+    "symbol": "EME",
+    "headline": "EME raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for EME with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.8550120595352575,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T15:26:33.040Z",
+    "url": "https://example.com/news/eme-1754238608238"
+  }
+]

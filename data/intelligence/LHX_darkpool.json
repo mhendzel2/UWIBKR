@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "LHX",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5892383,
+    "totalVolume": 14984931,
+    "darkPoolRatio": 0.39322056271063244,
+    "avgDarkPoolSize": 10034,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 97569,
+        "price": 453.9016223205907,
+        "timestamp": "2025-08-03T12:57:09.687Z"
+      },
+      {
+        "size": 88760,
+        "price": 455.8409545755513,
+        "timestamp": "2025-08-03T13:40:17.931Z"
+      },
+      {
+        "size": 114536,
+        "price": 452.0020447523014,
+        "timestamp": "2025-08-03T12:15:54.096Z"
+      },
+      {
+        "size": 131836,
+        "price": 459.07767699486016,
+        "timestamp": "2025-08-03T13:33:01.716Z"
+      }
+    ]
+  }
+]

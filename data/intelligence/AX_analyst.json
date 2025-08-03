@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "AX",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Outperform",
+    "previousTarget": 493.9541934712892,
+    "newTarget": 459.2178968312992,
+    "date": "2025-08-02T19:42:48.199Z",
+    "reasoning": "Compelling growth story"
+  },
+  {
+    "symbol": "AX",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Underperform",
+    "previousTarget": 468.9569693296979,
+    "newTarget": 427.5109174208687,
+    "date": "2025-07-30T12:46:03.205Z",
+    "reasoning": "Fair valuation"
+  }
+]

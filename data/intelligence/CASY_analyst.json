@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "CASY",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Hold",
+    "previousTarget": 394.534280209392,
+    "newTarget": 383.05862233747365,
+    "date": "2025-08-02T02:46:21.479Z",
+    "reasoning": "Valuation concerns"
+  }
+]

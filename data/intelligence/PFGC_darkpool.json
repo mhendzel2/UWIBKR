@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "PFGC",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4536153,
+    "totalVolume": 17734784,
+    "darkPoolRatio": 0.25577717777673525,
+    "avgDarkPoolSize": 1910,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 101941,
+        "price": 459.44024211212553,
+        "timestamp": "2025-08-03T10:02:24.640Z"
+      },
+      {
+        "size": 114680,
+        "price": 453.8405416983116,
+        "timestamp": "2025-08-03T14:29:55.287Z"
+      },
+      {
+        "size": 87801,
+        "price": 450.7626485519876,
+        "timestamp": "2025-08-03T12:59:27.992Z"
+      },
+      {
+        "size": 107214,
+        "price": 458.5898653104337,
+        "timestamp": "2025-08-03T13:20:53.197Z"
+      }
+    ]
+  }
+]

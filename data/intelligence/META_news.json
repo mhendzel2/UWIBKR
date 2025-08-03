@@ -31,5 +31,16 @@
     "category": "regulatory",
     "publishedAt": "2025-08-01T22:11:45.198Z",
     "url": "https://example.com/news/meta-1754101860503"
+  },
+  {
+    "symbol": "META",
+    "headline": "META raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for META with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.9301406960996861,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T15:20:36.414Z",
+    "url": "https://example.com/news/meta-1754238603817"
   }
 ]

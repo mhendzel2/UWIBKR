@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "CR",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Sell",
+    "newRating": "Outperform",
+    "previousTarget": 505.3229615746723,
+    "newTarget": 492.4340501214096,
+    "date": "2025-08-02T18:31:48.482Z",
+    "reasoning": "Positive sector outlook"
+  },
+  {
+    "symbol": "CR",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Outperform",
+    "newRating": "Underperform",
+    "previousTarget": 468.07735096062504,
+    "newTarget": 437.38168678302026,
+    "date": "2025-07-30T00:58:20.726Z",
+    "reasoning": "Attractive valuation"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "FHI",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 8924,
+    "price": 452.22877627481614,
+    "value": 4035689.5994764594,
+    "date": "2025-07-31T17:33:00.219Z",
+    "filingDate": "2025-08-03T13:59:45.253Z",
+    "ownershipPercent": 4.959791761296572
+  }
+]

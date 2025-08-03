@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "LECO",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4748102,
+    "totalVolume": 15000963,
+    "darkPoolRatio": 0.31651981276135405,
+    "avgDarkPoolSize": 5256,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 126501,
+        "price": 461.16803210052734,
+        "timestamp": "2025-08-03T08:53:53.596Z"
+      },
+      {
+        "size": 114634,
+        "price": 459.5681152029282,
+        "timestamp": "2025-08-03T14:33:23.408Z"
+      },
+      {
+        "size": 113252,
+        "price": 460.12842227210405,
+        "timestamp": "2025-08-03T10:25:50.052Z"
+      },
+      {
+        "size": 75618,
+        "price": 457.8194040374936,
+        "timestamp": "2025-08-03T09:09:48.240Z"
+      }
+    ]
+  }
+]

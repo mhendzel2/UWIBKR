@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "BSX",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1414902,
+    "totalVolume": 17768691,
+    "darkPoolRatio": 0.07962893833878928,
+    "avgDarkPoolSize": 6151,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 138932,
+        "price": 453.8063991876261,
+        "timestamp": "2025-08-03T14:28:27.982Z"
+      },
+      {
+        "size": 94910,
+        "price": 450.5276720128702,
+        "timestamp": "2025-08-03T09:49:58.632Z"
+      }
+    ]
+  }
+]

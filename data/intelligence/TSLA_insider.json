@@ -22,5 +22,41 @@
     "date": "2025-07-26T12:39:24.112Z",
     "filingDate": "2025-07-31T08:46:18.852Z",
     "ownershipPercent": 0.15409920155669657
+  },
+  {
+    "symbol": "TSLA",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 12804,
+    "price": 301.0148895973522,
+    "value": 3854194.6464044973,
+    "date": "2025-07-31T03:18:14.923Z",
+    "filingDate": "2025-08-02T13:42:16.811Z",
+    "ownershipPercent": 4.312147615010747
+  },
+  {
+    "symbol": "TSLA",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 34784,
+    "price": 308.95330635795597,
+    "value": 10746631.80835514,
+    "date": "2025-08-01T14:45:53.182Z",
+    "filingDate": "2025-08-01T08:14:09.360Z",
+    "ownershipPercent": 3.427124215697853
+  },
+  {
+    "symbol": "TSLA",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 3763,
+    "price": 306.19966552307824,
+    "value": 1152229.3413633434,
+    "date": "2025-07-30T01:03:19.088Z",
+    "filingDate": "2025-08-01T04:53:31.976Z",
+    "ownershipPercent": 2.088687589630609
   }
 ]

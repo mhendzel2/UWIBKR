@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "WING",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Outperform",
+    "newRating": "Underperform",
+    "previousTarget": 404.59579666729314,
+    "newTarget": 371.6839100531955,
+    "date": "2025-07-31T06:07:37.880Z",
+    "reasoning": "Competitive headwinds"
+  }
+]

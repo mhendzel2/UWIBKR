@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "CECO",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1805975,
+    "totalVolume": 6002755,
+    "darkPoolRatio": 0.3008576895108996,
+    "avgDarkPoolSize": 7990,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 53566,
+        "price": 459.20064787888435,
+        "timestamp": "2025-08-03T12:21:17.033Z"
+      },
+      {
+        "size": 133943,
+        "price": 454.85587022205885,
+        "timestamp": "2025-08-03T10:26:33.629Z"
+      },
+      {
+        "size": 65556,
+        "price": 451.5904292159329,
+        "timestamp": "2025-08-03T08:38:42.271Z"
+      },
+      {
+        "size": 133691,
+        "price": 451.9012626962902,
+        "timestamp": "2025-08-03T15:06:04.637Z"
+      },
+      {
+        "size": 148593,
+        "price": 457.8215041224617,
+        "timestamp": "2025-08-03T13:53:15.844Z"
+      }
+    ]
+  }
+]

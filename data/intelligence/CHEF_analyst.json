@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "CHEF",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Outperform",
+    "previousTarget": 404.3748246819582,
+    "newTarget": 431.80859069361355,
+    "date": "2025-07-29T22:28:35.064Z",
+    "reasoning": "Valuation concerns"
+  }
+]

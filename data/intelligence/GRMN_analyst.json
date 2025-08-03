@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "GRMN",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Sell",
+    "newRating": "Outperform",
+    "previousTarget": 435.0743054303885,
+    "newTarget": 399.1242439529846,
+    "date": "2025-07-30T17:45:47.583Z",
+    "reasoning": "Improved market position"
+  }
+]

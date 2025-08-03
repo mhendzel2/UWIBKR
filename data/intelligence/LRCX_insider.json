@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "LRCX",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 16721,
+    "price": 449.13861901741683,
+    "value": 7510046.848590227,
+    "date": "2025-07-28T00:09:40.691Z",
+    "filingDate": "2025-08-02T06:02:01.987Z",
+    "ownershipPercent": 3.2992615319039955
+  },
+  {
+    "symbol": "LRCX",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 9177,
+    "price": 459.9799895475027,
+    "value": 4221236.364077432,
+    "date": "2025-07-30T05:44:00.353Z",
+    "filingDate": "2025-08-03T15:27:01.203Z",
+    "ownershipPercent": 2.5766194069552015
+  }
+]

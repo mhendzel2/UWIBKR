@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "FDP",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3168176,
+    "totalVolume": 15448720,
+    "darkPoolRatio": 0.20507692546696427,
+    "avgDarkPoolSize": 5768,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 53611,
+        "price": 461.20299466799696,
+        "timestamp": "2025-08-03T13:26:50.617Z"
+      },
+      {
+        "size": 75694,
+        "price": 457.11860734035434,
+        "timestamp": "2025-08-03T12:07:15.242Z"
+      },
+      {
+        "size": 96327,
+        "price": 460.0778464156011,
+        "timestamp": "2025-08-03T14:21:48.651Z"
+      },
+      {
+        "size": 54734,
+        "price": 461.36806161192766,
+        "timestamp": "2025-08-03T09:37:39.341Z"
+      },
+      {
+        "size": 80726,
+        "price": 458.58972029631144,
+        "timestamp": "2025-08-03T12:22:40.740Z"
+      }
+    ]
+  }
+]

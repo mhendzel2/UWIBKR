@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "NRG",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3619175,
+    "totalVolume": 9310434,
+    "darkPoolRatio": 0.3887224806061672,
+    "avgDarkPoolSize": 1308,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 133850,
+        "price": 450.16895760324763,
+        "timestamp": "2025-08-03T12:39:00.046Z"
+      },
+      {
+        "size": 114745,
+        "price": 450.87255644806163,
+        "timestamp": "2025-08-03T15:09:15.396Z"
+      },
+      {
+        "size": 60770,
+        "price": 457.4234359066493,
+        "timestamp": "2025-08-03T15:03:51.261Z"
+      },
+      {
+        "size": 67902,
+        "price": 455.1002806752225,
+        "timestamp": "2025-08-03T15:00:14.474Z"
+      },
+      {
+        "size": 134778,
+        "price": 453.83500127013394,
+        "timestamp": "2025-08-03T12:14:09.555Z"
+      }
+    ]
+  }
+]

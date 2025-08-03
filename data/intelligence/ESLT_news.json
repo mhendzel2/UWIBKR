@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "ESLT",
+    "headline": "ESLT reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for ESLT with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.6706121685164226,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T07:13:04.467Z",
+    "url": "https://example.com/news/eslt-1754238613531"
+  },
+  {
+    "symbol": "ESLT",
+    "headline": "Regulatory approval granted for ESLT new product",
+    "summary": "Recent developments suggest positive momentum for ESLT with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7157063831476166,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T13:36:01.079Z",
+    "url": "https://example.com/news/eslt-1754238613532"
+  }
+]

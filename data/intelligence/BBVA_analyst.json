@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "BBVA",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Sell",
+    "previousTarget": 476.75098833887233,
+    "newTarget": 489.8865627843072,
+    "date": "2025-07-31T09:17:24.621Z",
+    "reasoning": "Compelling growth story"
+  }
+]

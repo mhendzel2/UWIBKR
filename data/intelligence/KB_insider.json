@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "KB",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 3305,
+    "price": 454.25484672440433,
+    "value": 1501312.2684241564,
+    "date": "2025-08-01T11:43:29.934Z",
+    "filingDate": "2025-08-03T00:32:56.323Z",
+    "ownershipPercent": 4.608913490943099
+  }
+]

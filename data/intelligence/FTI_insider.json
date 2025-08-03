@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "FTI",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 33608,
+    "price": 446.0717893695801,
+    "value": 14991580.697132846,
+    "date": "2025-07-29T21:44:30.150Z",
+    "filingDate": "2025-08-02T14:46:54.669Z",
+    "ownershipPercent": 3.580113911690582
+  },
+  {
+    "symbol": "FTI",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 41391,
+    "price": 461.9862942818125,
+    "value": 19122074.7066185,
+    "date": "2025-07-27T22:25:06.596Z",
+    "filingDate": "2025-08-02T22:12:48.856Z",
+    "ownershipPercent": 4.710128612481528
+  }
+]

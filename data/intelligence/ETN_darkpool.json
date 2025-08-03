@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "ETN",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3360490,
+    "totalVolume": 15621223,
+    "darkPoolRatio": 0.21512336133988996,
+    "avgDarkPoolSize": 9869,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 107369,
+        "price": 452.51678220996234,
+        "timestamp": "2025-08-03T13:35:32.380Z"
+      },
+      {
+        "size": 52417,
+        "price": 453.36526016471987,
+        "timestamp": "2025-08-03T11:34:29.787Z"
+      },
+      {
+        "size": 115128,
+        "price": 452.38271498635214,
+        "timestamp": "2025-08-03T13:57:20.514Z"
+      },
+      {
+        "size": 119613,
+        "price": 454.2435559748933,
+        "timestamp": "2025-08-03T12:29:48.316Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "PLMR",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 37967,
+    "price": 441.9549284943232,
+    "value": 16779702.77014397,
+    "date": "2025-08-01T17:23:06.731Z",
+    "filingDate": "2025-07-31T18:39:34.263Z",
+    "ownershipPercent": 3.8834271745152926
+  },
+  {
+    "symbol": "PLMR",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 10616,
+    "price": 447.83577347399995,
+    "value": 4754224.571199983,
+    "date": "2025-07-28T16:18:03.969Z",
+    "filingDate": "2025-08-03T02:12:36.300Z",
+    "ownershipPercent": 3.525629898090399
+  },
+  {
+    "symbol": "PLMR",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 45952,
+    "price": 439.6083251536267,
+    "value": 20200881.757459454,
+    "date": "2025-07-29T18:48:53.525Z",
+    "filingDate": "2025-08-02T07:52:47.242Z",
+    "ownershipPercent": 4.862158516229425
+  }
+]

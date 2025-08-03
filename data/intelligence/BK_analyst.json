@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "BK",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Hold",
+    "previousTarget": 393.68350945286096,
+    "newTarget": 404.87606009301174,
+    "date": "2025-07-30T18:37:50.346Z",
+    "reasoning": "Strong management team"
+  },
+  {
+    "symbol": "BK",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Buy",
+    "previousTarget": 450.5692596393036,
+    "newTarget": 449.64361958009937,
+    "date": "2025-07-31T13:21:42.095Z",
+    "reasoning": "Positive sector outlook"
+  }
+]

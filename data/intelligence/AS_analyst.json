@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "AS",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Buy",
+    "previousTarget": 422.4742990401723,
+    "newTarget": 406.6629753420932,
+    "date": "2025-07-29T22:25:55.844Z",
+    "reasoning": "Competitive headwinds"
+  },
+  {
+    "symbol": "AS",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 490.2674365221595,
+    "newTarget": 511.8635166362662,
+    "date": "2025-07-29T22:30:40.343Z",
+    "reasoning": "Stable fundamentals"
+  }
+]

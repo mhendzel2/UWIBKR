@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "EGO",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Underperform",
+    "newRating": "Underperform",
+    "previousTarget": 410.8411238685155,
+    "newTarget": 426.4187148429563,
+    "date": "2025-07-29T23:33:08.627Z",
+    "reasoning": "Strong management team"
+  }
+]

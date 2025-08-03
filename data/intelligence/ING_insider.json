@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "ING",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 49909,
+    "price": 448.7458046895677,
+    "value": 22396454.366251636,
+    "date": "2025-07-28T10:42:56.773Z",
+    "filingDate": "2025-08-01T21:11:37.666Z",
+    "ownershipPercent": 2.556063040305514
+  },
+  {
+    "symbol": "ING",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 22009,
+    "price": 454.74281945603633,
+    "value": 10008434.713407904,
+    "date": "2025-07-31T12:37:40.241Z",
+    "filingDate": "2025-08-03T15:44:22.741Z",
+    "ownershipPercent": 1.477353201661371
+  },
+  {
+    "symbol": "ING",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 39825,
+    "price": 450.404664184257,
+    "value": 17937365.751138035,
+    "date": "2025-08-03T12:08:05.970Z",
+    "filingDate": "2025-08-03T05:41:12.603Z",
+    "ownershipPercent": 3.9413231924362777
+  }
+]

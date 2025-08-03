@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "KLAC",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 14278,
+    "price": 465.88596556830066,
+    "value": 6651919.816384197,
+    "date": "2025-08-03T15:58:57.770Z",
+    "filingDate": "2025-08-02T00:19:45.763Z",
+    "ownershipPercent": 0.6393866206161701
+  },
+  {
+    "symbol": "KLAC",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 19812,
+    "price": 459.17529277184076,
+    "value": 9097180.90039571,
+    "date": "2025-07-30T18:34:08.893Z",
+    "filingDate": "2025-07-31T21:31:49.254Z",
+    "ownershipPercent": 1.1083975331580675
+  },
+  {
+    "symbol": "KLAC",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 34259,
+    "price": 453.77816932063587,
+    "value": 15545986.302755665,
+    "date": "2025-07-30T10:17:02.404Z",
+    "filingDate": "2025-08-03T00:21:50.565Z",
+    "ownershipPercent": 0.8802888874852498
+  }
+]

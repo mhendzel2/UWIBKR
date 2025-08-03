@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "WFC",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 431.45808615180374,
+    "newTarget": 404.1543402129831,
+    "date": "2025-08-03T13:14:53.139Z",
+    "reasoning": "Strong earnings momentum"
+  },
+  {
+    "symbol": "WFC",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Outperform",
+    "newRating": "Buy",
+    "previousTarget": 403.4632965145611,
+    "newTarget": 443.38986611703734,
+    "date": "2025-08-02T12:08:08.578Z",
+    "reasoning": "Attractive valuation"
+  }
+]

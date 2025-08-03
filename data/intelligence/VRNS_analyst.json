@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "VRNS",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Sell",
+    "newRating": "Hold",
+    "previousTarget": 452.5066602694622,
+    "newTarget": 429.69725217649693,
+    "date": "2025-07-30T21:49:11.292Z",
+    "reasoning": "Strong earnings momentum"
+  }
+]

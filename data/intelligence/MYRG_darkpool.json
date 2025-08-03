@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "MYRG",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1307890,
+    "totalVolume": 16827937,
+    "darkPoolRatio": 0.07772135110798192,
+    "avgDarkPoolSize": 9545,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 122581,
+        "price": 451.1394373456875,
+        "timestamp": "2025-08-03T13:41:17.385Z"
+      },
+      {
+        "size": 127758,
+        "price": 451.14248122195244,
+        "timestamp": "2025-08-03T09:05:24.075Z"
+      },
+      {
+        "size": 105697,
+        "price": 449.2534521489028,
+        "timestamp": "2025-08-03T09:16:07.316Z"
+      }
+    ]
+  }
+]

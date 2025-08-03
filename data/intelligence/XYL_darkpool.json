@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "XYL",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4183875,
+    "totalVolume": 15632547,
+    "darkPoolRatio": 0.2676387283530956,
+    "avgDarkPoolSize": 7251,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 98732,
+        "price": 452.6348053336197,
+        "timestamp": "2025-08-03T09:20:54.653Z"
+      },
+      {
+        "size": 90402,
+        "price": 451.3942480888089,
+        "timestamp": "2025-08-03T11:11:11.031Z"
+      }
+    ]
+  }
+]

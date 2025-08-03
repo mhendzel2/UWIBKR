@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "BOOT",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 479.6680247519077,
+    "newTarget": 511.93343288081957,
+    "date": "2025-07-30T16:22:46.799Z",
+    "reasoning": "Strong earnings momentum"
+  },
+  {
+    "symbol": "BOOT",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Sell",
+    "previousTarget": 425.11050673476035,
+    "newTarget": 469.6216367604956,
+    "date": "2025-08-02T03:04:30.487Z",
+    "reasoning": "Margin pressure concerns"
+  }
+]

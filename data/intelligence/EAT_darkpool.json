@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "EAT",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3839652,
+    "totalVolume": 13136936,
+    "darkPoolRatio": 0.2922791128768535,
+    "avgDarkPoolSize": 3625,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 93972,
+        "price": 454.9647363837659,
+        "timestamp": "2025-08-03T13:46:14.266Z"
+      },
+      {
+        "size": 82582,
+        "price": 458.6527215617682,
+        "timestamp": "2025-08-03T09:57:07.991Z"
+      },
+      {
+        "size": 85193,
+        "price": 458.3741390924242,
+        "timestamp": "2025-08-03T10:45:55.213Z"
+      }
+    ]
+  }
+]

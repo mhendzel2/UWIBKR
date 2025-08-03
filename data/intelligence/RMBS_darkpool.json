@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "RMBS",
+    "date": "2025-08-03",
+    "darkPoolVolume": 2524542,
+    "totalVolume": 7391194,
+    "darkPoolRatio": 0.34156078165449316,
+    "avgDarkPoolSize": 10960,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 143028,
+        "price": 455.4547693076873,
+        "timestamp": "2025-08-03T11:35:21.280Z"
+      },
+      {
+        "size": 85073,
+        "price": 453.2528235151363,
+        "timestamp": "2025-08-03T09:36:00.112Z"
+      },
+      {
+        "size": 63850,
+        "price": 460.5404385177457,
+        "timestamp": "2025-08-03T10:58:22.137Z"
+      },
+      {
+        "size": 135710,
+        "price": 461.2812546762965,
+        "timestamp": "2025-08-03T13:38:25.784Z"
+      }
+    ]
+  }
+]

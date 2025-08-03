@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "FHI",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Buy",
+    "newRating": "Underperform",
+    "previousTarget": 413.2882276083455,
+    "newTarget": 449.332903672931,
+    "date": "2025-07-31T18:39:51.032Z",
+    "reasoning": "Improved market position"
+  }
+]

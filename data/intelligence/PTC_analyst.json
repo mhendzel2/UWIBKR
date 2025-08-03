@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "PTC",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Underperform",
+    "previousTarget": 516.761407738289,
+    "newTarget": 524.2379637489382,
+    "date": "2025-08-02T14:45:46.310Z",
+    "reasoning": "Strong management team"
+  },
+  {
+    "symbol": "PTC",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Hold",
+    "newRating": "Hold",
+    "previousTarget": 514.2345703258445,
+    "newTarget": 515.742474180657,
+    "date": "2025-08-02T01:42:27.215Z",
+    "reasoning": "Strong management team"
+  }
+]

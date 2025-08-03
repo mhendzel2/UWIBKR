@@ -22,5 +22,17 @@
     "newTarget": 206.2815143775177,
     "date": "2025-08-01T23:34:36.054Z",
     "reasoning": "Valuation concerns"
+  },
+  {
+    "symbol": "CRM",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Outperform",
+    "newRating": "Outperform",
+    "previousTarget": 523.0765242420542,
+    "newTarget": 524.4625403446313,
+    "date": "2025-08-03T02:16:13.395Z",
+    "reasoning": "Strong earnings momentum"
   }
 ]

@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "WING",
+    "date": "2025-08-03",
+    "darkPoolVolume": 5068635,
+    "totalVolume": 6572466,
+    "darkPoolRatio": 0.7711922739501429,
+    "avgDarkPoolSize": 9893,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 121959,
+        "price": 449.92196251222055,
+        "timestamp": "2025-08-03T10:58:52.962Z"
+      },
+      {
+        "size": 106106,
+        "price": 450.65381382533633,
+        "timestamp": "2025-08-03T13:50:34.884Z"
+      },
+      {
+        "size": 66809,
+        "price": 456.80314119934167,
+        "timestamp": "2025-08-03T11:21:23.205Z"
+      },
+      {
+        "size": 73559,
+        "price": 458.3779254147126,
+        "timestamp": "2025-08-03T08:47:57.071Z"
+      }
+    ]
+  }
+]

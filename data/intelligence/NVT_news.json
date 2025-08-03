@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "NVT",
+    "headline": "NVT reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for NVT with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.8210836348989942,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T16:07:01.261Z",
+    "url": "https://example.com/news/nvt-1754238609936"
+  },
+  {
+    "symbol": "NVT",
+    "headline": "NVT raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for NVT with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.7122462139258282,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T08:30:36.053Z",
+    "url": "https://example.com/news/nvt-1754238609938"
+  }
+]

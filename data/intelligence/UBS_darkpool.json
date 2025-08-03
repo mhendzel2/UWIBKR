@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "UBS",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1595215,
+    "totalVolume": 13599004,
+    "darkPoolRatio": 0.1173038113673619,
+    "avgDarkPoolSize": 6979,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 140095,
+        "price": 453.2991818967958,
+        "timestamp": "2025-08-03T15:49:08.614Z"
+      },
+      {
+        "size": 109555,
+        "price": 451.3538092360851,
+        "timestamp": "2025-08-03T16:28:35.531Z"
+      }
+    ]
+  }
+]

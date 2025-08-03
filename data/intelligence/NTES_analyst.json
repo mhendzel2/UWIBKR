@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "NTES",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 482.6455065414651,
+    "newTarget": 503.33603454731445,
+    "date": "2025-08-02T07:46:18.126Z",
+    "reasoning": "Strong earnings momentum"
+  },
+  {
+    "symbol": "NTES",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 453.777825669914,
+    "newTarget": 433.37760671832535,
+    "date": "2025-08-01T14:39:18.401Z",
+    "reasoning": "Margin pressure concerns"
+  }
+]

@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "UBER",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3091546,
+    "totalVolume": 16238635,
+    "darkPoolRatio": 0.19038213495161385,
+    "avgDarkPoolSize": 2174,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 56606,
+        "price": 454.72295084130445,
+        "timestamp": "2025-08-03T13:10:06.240Z"
+      },
+      {
+        "size": 81399,
+        "price": 450.5042161977772,
+        "timestamp": "2025-08-03T10:12:28.755Z"
+      },
+      {
+        "size": 103298,
+        "price": 457.1773858270259,
+        "timestamp": "2025-08-03T09:43:16.813Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "FIX",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Underperform",
+    "newRating": "Hold",
+    "previousTarget": 457.9189903616471,
+    "newTarget": 437.2964136331,
+    "date": "2025-07-31T13:04:52.421Z",
+    "reasoning": "Balanced risk/reward"
+  }
+]

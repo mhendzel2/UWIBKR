@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "NDAQ",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1057898,
+    "totalVolume": 6965069,
+    "darkPoolRatio": 0.1518862196483624,
+    "avgDarkPoolSize": 10150,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 149334,
+        "price": 455.7125826077279,
+        "timestamp": "2025-08-03T08:53:49.112Z"
+      },
+      {
+        "size": 132156,
+        "price": 464.4121781292867,
+        "timestamp": "2025-08-03T09:07:18.297Z"
+      },
+      {
+        "size": 82535,
+        "price": 455.6055259105645,
+        "timestamp": "2025-08-03T10:45:27.010Z"
+      }
+    ]
+  }
+]

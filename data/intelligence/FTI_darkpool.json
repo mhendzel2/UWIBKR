@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "FTI",
+    "date": "2025-08-03",
+    "darkPoolVolume": 3232736,
+    "totalVolume": 14439741,
+    "darkPoolRatio": 0.22387769974544558,
+    "avgDarkPoolSize": 4118,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 114792,
+        "price": 451.5665185632872,
+        "timestamp": "2025-08-03T10:32:06.414Z"
+      },
+      {
+        "size": 113704,
+        "price": 454.5803462529683,
+        "timestamp": "2025-08-03T16:25:06.483Z"
+      }
+    ]
+  }
+]

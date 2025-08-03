@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "PI",
+    "headline": "Regulatory approval granted for PI new product",
+    "summary": "Recent developments suggest positive momentum for PI with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.4504502850447939,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T11:22:28.725Z",
+    "url": "https://example.com/news/pi-1754238644470"
+  },
+  {
+    "symbol": "PI",
+    "headline": "Regulatory approval granted for PI new product",
+    "summary": "Recent developments suggest positive momentum for PI with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.5469999645747295,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T14:43:06.713Z",
+    "url": "https://example.com/news/pi-1754238644470"
+  },
+  {
+    "symbol": "PI",
+    "headline": "PI announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for PI with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5711896796569687,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T14:21:30.053Z",
+    "url": "https://example.com/news/pi-1754238644470"
+  }
+]

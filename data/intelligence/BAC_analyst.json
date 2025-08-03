@@ -10,5 +10,17 @@
     "newTarget": 223.02388903313127,
     "date": "2025-07-30T14:59:19.576Z",
     "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "BAC",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Sell",
+    "previousTarget": 467.59564961015235,
+    "newTarget": 439.6756129410295,
+    "date": "2025-08-01T09:53:13.795Z",
+    "reasoning": "Valuation concerns"
   }
 ]

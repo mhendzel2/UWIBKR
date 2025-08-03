@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "KLAC",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Hold",
+    "previousTarget": 524.2755519504651,
+    "newTarget": 501.5012772433348,
+    "date": "2025-08-03T11:41:02.015Z",
+    "reasoning": "Compelling growth story"
+  }
+]

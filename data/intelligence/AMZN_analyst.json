@@ -10,5 +10,17 @@
     "newTarget": 152.06699770135364,
     "date": "2025-07-30T02:21:06.752Z",
     "reasoning": "Strong earnings momentum"
+  },
+  {
+    "symbol": "AMZN",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Outperform",
+    "newRating": "Underperform",
+    "previousTarget": 237.7012952707436,
+    "newTarget": 256.07688286947456,
+    "date": "2025-08-02T07:36:22.089Z",
+    "reasoning": "Fair valuation"
   }
 ]

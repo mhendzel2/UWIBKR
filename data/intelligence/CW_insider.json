@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "CW",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 26876,
+    "price": 454.13057549608993,
+    "value": 12205213.347032914,
+    "date": "2025-07-30T20:41:57.095Z",
+    "filingDate": "2025-08-03T00:50:06.329Z",
+    "ownershipPercent": 2.24766074357303
+  },
+  {
+    "symbol": "CW",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 10110,
+    "price": 453.441273750172,
+    "value": 4584291.277614239,
+    "date": "2025-08-01T03:57:05.990Z",
+    "filingDate": "2025-08-01T02:43:14.241Z",
+    "ownershipPercent": 0.8083652254084926
+  },
+  {
+    "symbol": "CW",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 46968,
+    "price": 466.856446130869,
+    "value": 21927313.561874654,
+    "date": "2025-07-29T10:52:25.227Z",
+    "filingDate": "2025-08-03T03:23:35.619Z",
+    "ownershipPercent": 0.5136946908026029
+  }
+]

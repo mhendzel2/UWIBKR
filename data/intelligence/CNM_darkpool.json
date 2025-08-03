@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "CNM",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1099756,
+    "totalVolume": 6564797,
+    "darkPoolRatio": 0.1675232303451272,
+    "avgDarkPoolSize": 4979,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 95530,
+        "price": 458.555315165185,
+        "timestamp": "2025-08-03T15:56:34.636Z"
+      },
+      {
+        "size": 112981,
+        "price": 463.92195098571585,
+        "timestamp": "2025-08-03T11:27:27.306Z"
+      },
+      {
+        "size": 111980,
+        "price": 463.5967531834064,
+        "timestamp": "2025-08-03T15:50:56.885Z"
+      }
+    ]
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "CASY",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 39198,
+    "price": 451.9513050868552,
+    "value": 17715587.25679455,
+    "date": "2025-07-29T19:13:00.192Z",
+    "filingDate": "2025-08-02T00:09:48.850Z",
+    "ownershipPercent": 2.3555025264383755
+  }
+]

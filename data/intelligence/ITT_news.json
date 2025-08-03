@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "ITT",
+    "headline": "Regulatory approval granted for ITT new product",
+    "summary": "Recent developments suggest positive momentum for ITT with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.7548581719488715,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T04:51:02.923Z",
+    "url": "https://example.com/news/itt-1754238643849"
+  },
+  {
+    "symbol": "ITT",
+    "headline": "ITT reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for ITT with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.6321197329823423,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T08:49:12.018Z",
+    "url": "https://example.com/news/itt-1754238643849"
+  }
+]

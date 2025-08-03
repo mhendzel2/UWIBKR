@@ -22,5 +22,17 @@
     "newTarget": 237.08825901905823,
     "date": "2025-07-29T04:18:43.123Z",
     "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "META",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Underperform",
+    "previousTarget": 512.7664132465513,
+    "newTarget": 517.5291095095348,
+    "date": "2025-07-31T14:20:57.380Z",
+    "reasoning": "Compelling growth story"
   }
 ]

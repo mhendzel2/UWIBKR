@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "ITRI",
+    "headline": "ITRI announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for ITRI with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.33448982961650414,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T10:18:40.224Z",
+    "url": "https://example.com/news/itri-1754238649865"
+  },
+  {
+    "symbol": "ITRI",
+    "headline": "ITRI reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for ITRI with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.8559557437136671,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T07:42:42.513Z",
+    "url": "https://example.com/news/itri-1754238649865"
+  }
+]

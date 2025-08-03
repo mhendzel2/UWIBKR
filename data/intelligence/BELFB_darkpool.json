@@ -1,0 +1,43 @@
+[
+  {
+    "symbol": "BELFB",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4447387,
+    "totalVolume": 8047590,
+    "darkPoolRatio": 0.5526358822951964,
+    "avgDarkPoolSize": 3935,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 132272,
+        "price": 455.0848797238866,
+        "timestamp": "2025-08-03T12:54:09.566Z"
+      },
+      {
+        "size": 124526,
+        "price": 454.9628679525986,
+        "timestamp": "2025-08-03T16:22:11.889Z"
+      },
+      {
+        "size": 141091,
+        "price": 450.07778528603103,
+        "timestamp": "2025-08-03T10:00:14.817Z"
+      },
+      {
+        "size": 98874,
+        "price": 458.1705919499659,
+        "timestamp": "2025-08-03T08:58:20.750Z"
+      },
+      {
+        "size": 148867,
+        "price": 450.15961408802895,
+        "timestamp": "2025-08-03T10:53:40.902Z"
+      },
+      {
+        "size": 70394,
+        "price": 451.65304229819156,
+        "timestamp": "2025-08-03T15:38:39.021Z"
+      }
+    ]
+  }
+]

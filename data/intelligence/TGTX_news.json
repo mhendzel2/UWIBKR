@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "TGTX",
+    "headline": "TGTX announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for TGTX with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.3297994017596856,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T07:58:12.363Z",
+    "url": "https://example.com/news/tgtx-1754238621923"
+  },
+  {
+    "symbol": "TGTX",
+    "headline": "TGTX reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for TGTX with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.5082807785826419,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T14:05:24.043Z",
+    "url": "https://example.com/news/tgtx-1754238621923"
+  },
+  {
+    "symbol": "TGTX",
+    "headline": "Analyst upgrades TGTX on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for TGTX with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.6636956008753474,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T12:46:28.134Z",
+    "url": "https://example.com/news/tgtx-1754238621924"
+  }
+]

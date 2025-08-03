@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "PUK",
+    "headline": "Analyst upgrades PUK on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for PUK with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.8040112515989366,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T06:06:30.713Z",
+    "url": "https://example.com/news/puk-1754238652210"
+  },
+  {
+    "symbol": "PUK",
+    "headline": "PUK raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for PUK with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.8008785061714219,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T15:20:12.516Z",
+    "url": "https://example.com/news/puk-1754238652210"
+  },
+  {
+    "symbol": "PUK",
+    "headline": "PUK reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for PUK with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7500285355156622,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T07:22:06.598Z",
+    "url": "https://example.com/news/puk-1754238652211"
+  }
+]

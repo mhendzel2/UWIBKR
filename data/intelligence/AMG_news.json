@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "AMG",
+    "headline": "AMG raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for AMG with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.8392729921472003,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T07:30:46.120Z",
+    "url": "https://example.com/news/amg-1754238651352"
+  },
+  {
+    "symbol": "AMG",
+    "headline": "AMG reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for AMG with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.6638547838332589,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T10:05:27.157Z",
+    "url": "https://example.com/news/amg-1754238651353"
+  },
+  {
+    "symbol": "AMG",
+    "headline": "Regulatory approval granted for AMG new product",
+    "summary": "Recent developments suggest positive momentum for AMG with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.4678205727420376,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T14:28:20.531Z",
+    "url": "https://example.com/news/amg-1754238651354"
+  }
+]

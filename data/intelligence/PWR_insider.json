@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "PWR",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 49682,
+    "price": 444.73187068105443,
+    "value": 22095168.799176145,
+    "date": "2025-07-27T19:42:48.176Z",
+    "filingDate": "2025-08-01T01:38:43.372Z",
+    "ownershipPercent": 2.569337198292738
+  }
+]

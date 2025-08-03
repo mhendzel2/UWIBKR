@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "FDP",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Outperform",
+    "newRating": "Buy",
+    "previousTarget": 512.372722282137,
+    "newTarget": 525.0849308054871,
+    "date": "2025-08-01T11:57:29.079Z",
+    "reasoning": "Improved market position"
+  }
+]

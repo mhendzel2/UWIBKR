@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "ULTA",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Underperform",
+    "previousTarget": 388.51169265175673,
+    "newTarget": 367.8063327533804,
+    "date": "2025-07-30T04:38:37.785Z",
+    "reasoning": "Margin pressure concerns"
+  }
+]

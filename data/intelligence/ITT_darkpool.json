@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "ITT",
+    "date": "2025-08-03",
+    "darkPoolVolume": 2237054,
+    "totalVolume": 5097618,
+    "darkPoolRatio": 0.4388430047131817,
+    "avgDarkPoolSize": 1116,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 134125,
+        "price": 453.4381255606127,
+        "timestamp": "2025-08-03T09:09:10.146Z"
+      },
+      {
+        "size": 74862,
+        "price": 456.98354258675084,
+        "timestamp": "2025-08-03T14:13:29.344Z"
+      },
+      {
+        "size": 111076,
+        "price": 455.816037240912,
+        "timestamp": "2025-08-03T09:35:07.450Z"
+      }
+    ]
+  }
+]

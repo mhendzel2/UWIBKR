@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "ICE",
+    "headline": "ICE raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for ICE with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.7434867873813321,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T10:44:20.881Z",
+    "url": "https://example.com/news/ice-1754238629838"
+  },
+  {
+    "symbol": "ICE",
+    "headline": "Regulatory approval granted for ICE new product",
+    "summary": "Recent developments suggest positive momentum for ICE with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.48376671059535,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T11:31:35.474Z",
+    "url": "https://example.com/news/ice-1754238629839"
+  },
+  {
+    "symbol": "ICE",
+    "headline": "ICE reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for ICE with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.7821202826712697,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T15:25:06.838Z",
+    "url": "https://example.com/news/ice-1754238629839"
+  }
+]

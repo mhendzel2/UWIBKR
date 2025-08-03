@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "ETN",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 40598,
+    "price": 443.470313598578,
+    "value": 18004007.79147507,
+    "date": "2025-07-27T19:56:34.742Z",
+    "filingDate": "2025-07-31T17:14:34.765Z",
+    "ownershipPercent": 0.5987490879586331
+  }
+]

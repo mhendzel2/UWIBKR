@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "NWG",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Sell",
+    "previousTarget": 409.6379068032778,
+    "newTarget": 383.77440721732364,
+    "date": "2025-08-02T13:21:55.565Z",
+    "reasoning": "Stable fundamentals"
+  }
+]

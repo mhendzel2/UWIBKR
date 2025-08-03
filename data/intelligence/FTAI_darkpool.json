@@ -1,0 +1,43 @@
+[
+  {
+    "symbol": "FTAI",
+    "date": "2025-08-03",
+    "darkPoolVolume": 2679780,
+    "totalVolume": 5183781,
+    "darkPoolRatio": 0.51695470931353,
+    "avgDarkPoolSize": 8188,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 142124,
+        "price": 453.743966111499,
+        "timestamp": "2025-08-03T11:06:14.499Z"
+      },
+      {
+        "size": 63327,
+        "price": 457.3745001215514,
+        "timestamp": "2025-08-03T10:29:56.716Z"
+      },
+      {
+        "size": 113920,
+        "price": 456.62007738476086,
+        "timestamp": "2025-08-03T13:49:56.659Z"
+      },
+      {
+        "size": 149264,
+        "price": 455.89587995737105,
+        "timestamp": "2025-08-03T12:38:15.913Z"
+      },
+      {
+        "size": 123733,
+        "price": 453.4684788254191,
+        "timestamp": "2025-08-03T09:26:22.777Z"
+      },
+      {
+        "size": 110356,
+        "price": 452.50304599379115,
+        "timestamp": "2025-08-03T08:34:37.492Z"
+      }
+    ]
+  }
+]

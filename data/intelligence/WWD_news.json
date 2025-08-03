@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "WWD",
+    "headline": "WWD raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for WWD with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.9019391488614078,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T06:10:13.369Z",
+    "url": "https://example.com/news/wwd-1754238627310"
+  },
+  {
+    "symbol": "WWD",
+    "headline": "Regulatory approval granted for WWD new product",
+    "summary": "Recent developments suggest positive momentum for WWD with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.40691942305990564,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T09:54:09.612Z",
+    "url": "https://example.com/news/wwd-1754238627312"
+  },
+  {
+    "symbol": "WWD",
+    "headline": "WWD announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for WWD with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.4004193130200459,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T11:14:42.621Z",
+    "url": "https://example.com/news/wwd-1754238627312"
+  }
+]

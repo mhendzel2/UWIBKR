@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "FBNC",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1054065,
+    "totalVolume": 9024533,
+    "darkPoolRatio": 0.11679994964836407,
+    "avgDarkPoolSize": 4687,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 93342,
+        "price": 450.4773457424942,
+        "timestamp": "2025-08-03T15:41:34.771Z"
+      },
+      {
+        "size": 92180,
+        "price": 447.5169166386245,
+        "timestamp": "2025-08-03T15:03:57.941Z"
+      },
+      {
+        "size": 58741,
+        "price": 455.098423441869,
+        "timestamp": "2025-08-03T09:37:46.471Z"
+      },
+      {
+        "size": 112495,
+        "price": 449.2707655738465,
+        "timestamp": "2025-08-03T09:41:49.097Z"
+      },
+      {
+        "size": 98150,
+        "price": 450.5692829389705,
+        "timestamp": "2025-08-03T14:55:28.845Z"
+      }
+    ]
+  }
+]

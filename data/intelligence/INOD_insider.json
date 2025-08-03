@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "INOD",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 27329,
+    "price": 446.9287507782373,
+    "value": 12214115.830018448,
+    "date": "2025-07-30T23:05:16.997Z",
+    "filingDate": "2025-08-02T21:14:19.193Z",
+    "ownershipPercent": 4.132755500486045
+  },
+  {
+    "symbol": "INOD",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 15084,
+    "price": 444.8222126133937,
+    "value": 6709698.255060431,
+    "date": "2025-08-01T11:12:55.703Z",
+    "filingDate": "2025-08-01T05:27:07.595Z",
+    "ownershipPercent": 2.3173696413773492
+  }
+]

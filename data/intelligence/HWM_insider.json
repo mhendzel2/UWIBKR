@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "HWM",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 15929,
+    "price": 463.8894799101185,
+    "value": 7389295.525488278,
+    "date": "2025-07-30T21:06:54.672Z",
+    "filingDate": "2025-08-03T11:22:42.026Z",
+    "ownershipPercent": 1.1733519111801594
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "BE",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 6240,
+    "price": 464.9852319807274,
+    "value": 2901507.847559739,
+    "date": "2025-08-02T17:15:05.778Z",
+    "filingDate": "2025-07-31T17:39:45.121Z",
+    "ownershipPercent": 4.775263892692306
+  }
+]

@@ -22,5 +22,17 @@
     "newTarget": 192.22609861824728,
     "date": "2025-07-31T21:29:17.136Z",
     "reasoning": "Attractive valuation"
+  },
+  {
+    "symbol": "GOOGL",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Outperform",
+    "newRating": "Hold",
+    "previousTarget": 177.74317944537012,
+    "newTarget": 181.60799562917418,
+    "date": "2025-08-01T06:10:33.148Z",
+    "reasoning": "Margin pressure concerns"
   }
 ]

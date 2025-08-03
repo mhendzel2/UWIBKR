@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "AX",
+    "headline": "AX reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for AX with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.7488957774490856,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T12:34:06.843Z",
+    "url": "https://example.com/news/ax-1754238640499"
+  },
+  {
+    "symbol": "AX",
+    "headline": "AX announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for AX with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.6808534291930148,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T05:03:24.345Z",
+    "url": "https://example.com/news/ax-1754238640500"
+  },
+  {
+    "symbol": "AX",
+    "headline": "Analyst upgrades AX on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for AX with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.8727193998189534,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T05:05:52.561Z",
+    "url": "https://example.com/news/ax-1754238640500"
+  }
+]

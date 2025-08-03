@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "APG",
+    "date": "2025-08-03",
+    "darkPoolVolume": 4899865,
+    "totalVolume": 6754428,
+    "darkPoolRatio": 0.7254300438171819,
+    "avgDarkPoolSize": 6942,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 55081,
+        "price": 453.69810774710885,
+        "timestamp": "2025-08-03T14:21:11.057Z"
+      },
+      {
+        "size": 56153,
+        "price": 449.72551049579124,
+        "timestamp": "2025-08-03T12:26:40.706Z"
+      },
+      {
+        "size": 128509,
+        "price": 452.73445642095635,
+        "timestamp": "2025-08-03T10:04:44.445Z"
+      },
+      {
+        "size": 117639,
+        "price": 455.37886159384584,
+        "timestamp": "2025-08-03T08:47:08.868Z"
+      }
+    ]
+  }
+]

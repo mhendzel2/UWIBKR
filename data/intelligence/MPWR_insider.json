@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "MPWR",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 37959,
+    "price": 456.8987834785443,
+    "value": 17343420.922062065,
+    "date": "2025-08-02T14:43:29.959Z",
+    "filingDate": "2025-08-02T20:51:30.141Z",
+    "ownershipPercent": 4.39173751078323
+  },
+  {
+    "symbol": "MPWR",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 27993,
+    "price": 446.91906598047177,
+    "value": 12510605.413991347,
+    "date": "2025-07-31T07:01:10.004Z",
+    "filingDate": "2025-07-31T23:15:48.478Z",
+    "ownershipPercent": 3.0353916961531846
+  }
+]

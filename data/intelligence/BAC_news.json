@@ -20,5 +20,27 @@
     "category": "earnings",
     "publishedAt": "2025-08-02T00:35:32.847Z",
     "url": "https://example.com/news/bac-1754101860526"
+  },
+  {
+    "symbol": "BAC",
+    "headline": "BAC raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for BAC with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.9866869407522111,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T09:44:09.806Z",
+    "url": "https://example.com/news/bac-1754238605040"
+  },
+  {
+    "symbol": "BAC",
+    "headline": "Analyst upgrades BAC on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for BAC with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.7708059360693771,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T13:28:08.893Z",
+    "url": "https://example.com/news/bac-1754238605041"
   }
 ]

@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "ITT",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Sell",
+    "previousTarget": 436.25405801260433,
+    "newTarget": 455.9270966077775,
+    "date": "2025-08-02T07:47:13.261Z",
+    "reasoning": "Stable fundamentals"
+  },
+  {
+    "symbol": "ITT",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Sell",
+    "previousTarget": 506.9802706050697,
+    "newTarget": 550.786646999752,
+    "date": "2025-07-30T22:55:50.299Z",
+    "reasoning": "Strong management team"
+  }
+]

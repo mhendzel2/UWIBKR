@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "KB",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Underperform",
+    "newRating": "Outperform",
+    "previousTarget": 475.19135669682714,
+    "newTarget": 439.3622713890094,
+    "date": "2025-08-01T00:18:42.470Z",
+    "reasoning": "Strong management team"
+  }
+]

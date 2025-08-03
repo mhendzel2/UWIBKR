@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "WGS",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1735407,
+    "totalVolume": 10979255,
+    "darkPoolRatio": 0.15806236397642645,
+    "avgDarkPoolSize": 3496,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 72354,
+        "price": 457.87345219100473,
+        "timestamp": "2025-08-03T16:06:31.255Z"
+      },
+      {
+        "size": 55356,
+        "price": 462.21457063168054,
+        "timestamp": "2025-08-03T10:38:41.941Z"
+      },
+      {
+        "size": 148068,
+        "price": 459.8462824746022,
+        "timestamp": "2025-08-03T12:50:40.318Z"
+      }
+    ]
+  }
+]

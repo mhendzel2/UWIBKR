@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "LRCX",
+    "headline": "LRCX announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for LRCX with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.45991049785667926,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T16:22:03.775Z",
+    "url": "https://example.com/news/lrcx-1754238614604"
+  },
+  {
+    "symbol": "LRCX",
+    "headline": "Analyst upgrades LRCX on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for LRCX with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.8277636202640295,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T08:38:36.853Z",
+    "url": "https://example.com/news/lrcx-1754238614604"
+  },
+  {
+    "symbol": "LRCX",
+    "headline": "LRCX reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for LRCX with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.6644683743480218,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T10:14:40.281Z",
+    "url": "https://example.com/news/lrcx-1754238614604"
+  }
+]

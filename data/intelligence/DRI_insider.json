@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "DRI",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 25730,
+    "price": 454.9832025115672,
+    "value": 11706717.800622623,
+    "date": "2025-08-01T00:03:56.410Z",
+    "filingDate": "2025-08-01T04:02:31.110Z",
+    "ownershipPercent": 3.47215846772117
+  },
+  {
+    "symbol": "DRI",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 20415,
+    "price": 460.8513441704904,
+    "value": 9408280.191240562,
+    "date": "2025-07-29T03:31:26.240Z",
+    "filingDate": "2025-08-03T07:58:25.888Z",
+    "ownershipPercent": 1.10715086679247
+  }
+]

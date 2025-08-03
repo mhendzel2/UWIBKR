@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "EME",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Sell",
+    "newRating": "Outperform",
+    "previousTarget": 465.1896716591205,
+    "newTarget": 507.66196902154053,
+    "date": "2025-07-31T09:09:52.130Z",
+    "reasoning": "Competitive headwinds"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "GRMN",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 24369,
+    "price": 452.278855158748,
+    "value": 11021583.42136353,
+    "date": "2025-08-01T10:09:37.148Z",
+    "filingDate": "2025-08-02T23:59:16.172Z",
+    "ownershipPercent": 0.3235593725384299
+  },
+  {
+    "symbol": "GRMN",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 1930,
+    "price": 459.32380500929196,
+    "value": 886494.9436679335,
+    "date": "2025-08-01T18:38:24.400Z",
+    "filingDate": "2025-08-03T01:47:51.032Z",
+    "ownershipPercent": 4.677981000361841
+  },
+  {
+    "symbol": "GRMN",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 32068,
+    "price": 461.6386643249148,
+    "value": 14803828.68757137,
+    "date": "2025-08-03T05:16:19.021Z",
+    "filingDate": "2025-08-01T08:04:02.170Z",
+    "ownershipPercent": 3.8483891250562565
+  }
+]

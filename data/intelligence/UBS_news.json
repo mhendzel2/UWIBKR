@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "UBS",
+    "headline": "UBS raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for UBS with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.8489805233054813,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T09:18:01.142Z",
+    "url": "https://example.com/news/ubs-1754238651997"
+  },
+  {
+    "symbol": "UBS",
+    "headline": "UBS raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for UBS with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7879692017139139,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T14:02:10.982Z",
+    "url": "https://example.com/news/ubs-1754238651999"
+  },
+  {
+    "symbol": "UBS",
+    "headline": "UBS reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for UBS with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.8273104966248164,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T13:02:59.301Z",
+    "url": "https://example.com/news/ubs-1754238652000"
+  }
+]

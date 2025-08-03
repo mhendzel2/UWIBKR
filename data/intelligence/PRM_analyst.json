@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "PRM",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Outperform",
+    "newRating": "Sell",
+    "previousTarget": 491.36349224456745,
+    "newTarget": 514.7997830160347,
+    "date": "2025-07-31T20:13:35.361Z",
+    "reasoning": "Improved market position"
+  }
+]

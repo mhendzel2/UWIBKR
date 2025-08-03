@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "AU",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 38674,
+    "price": 461.1056397358999,
+    "value": 17832799.51114619,
+    "date": "2025-08-01T22:04:14.115Z",
+    "filingDate": "2025-08-03T03:17:39.939Z",
+    "ownershipPercent": 0.13559574456393989
+  },
+  {
+    "symbol": "AU",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 45287,
+    "price": 460.86007572588227,
+    "value": 20870970.24939803,
+    "date": "2025-08-02T06:20:37.688Z",
+    "filingDate": "2025-07-31T21:17:26.490Z",
+    "ownershipPercent": 4.81019516667024
+  }
+]

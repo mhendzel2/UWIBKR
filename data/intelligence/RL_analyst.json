@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "RL",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Hold",
+    "previousTarget": 388.03944704896986,
+    "newTarget": 388.8973861495702,
+    "date": "2025-08-03T12:22:00.353Z",
+    "reasoning": "Attractive valuation"
+  },
+  {
+    "symbol": "RL",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Underperform",
+    "newRating": "Hold",
+    "previousTarget": 447.5012061247302,
+    "newTarget": 422.0855090264374,
+    "date": "2025-07-31T10:26:51.811Z",
+    "reasoning": "Balanced risk/reward"
+  }
+]

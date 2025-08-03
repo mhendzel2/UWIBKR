@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "JOYY",
+    "headline": "JOYY reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for JOYY with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7290119858907625,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T13:59:21.338Z",
+    "url": "https://example.com/news/joyy-1754238650079"
+  },
+  {
+    "symbol": "JOYY",
+    "headline": "JOYY raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for JOYY with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.8548484803528597,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T10:10:37.643Z",
+    "url": "https://example.com/news/joyy-1754238650080"
+  }
+]

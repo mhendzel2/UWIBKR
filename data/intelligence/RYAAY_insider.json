@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "RYAAY",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 44975,
+    "price": 449.4557565369482,
+    "value": 20214272.650249243,
+    "date": "2025-08-03T05:47:36.991Z",
+    "filingDate": "2025-08-03T03:37:32.337Z",
+    "ownershipPercent": 2.0770201124066454
+  },
+  {
+    "symbol": "RYAAY",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 37155,
+    "price": 460.5256891465733,
+    "value": 17110831.98024093,
+    "date": "2025-07-28T21:38:23.604Z",
+    "filingDate": "2025-08-03T11:45:44.542Z",
+    "ownershipPercent": 4.694476913288002
+  }
+]

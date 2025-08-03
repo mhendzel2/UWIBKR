@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "MS",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Hold",
+    "previousTarget": 401.4853731623232,
+    "newTarget": 407.38793923836306,
+    "date": "2025-08-01T20:25:37.557Z",
+    "reasoning": "Fair valuation"
+  }
+]

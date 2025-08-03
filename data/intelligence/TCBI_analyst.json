@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "TCBI",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Outperform",
+    "newRating": "Buy",
+    "previousTarget": 486.66137725016586,
+    "newTarget": 500.7346533622152,
+    "date": "2025-08-02T02:58:48.041Z",
+    "reasoning": "Attractive valuation"
+  },
+  {
+    "symbol": "TCBI",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Outperform",
+    "previousTarget": 483.16124727479814,
+    "newTarget": 524.8399829632723,
+    "date": "2025-07-31T07:09:29.931Z",
+    "reasoning": "Positive sector outlook"
+  }
+]

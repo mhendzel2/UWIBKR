@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "FLEX",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 489.0857014220447,
+    "newTarget": 513.6712069740622,
+    "date": "2025-07-31T16:47:41.886Z",
+    "reasoning": "Compelling growth story"
+  },
+  {
+    "symbol": "FLEX",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Outperform",
+    "newRating": "Underperform",
+    "previousTarget": 459.18470591990365,
+    "newTarget": 418.2208755082947,
+    "date": "2025-07-30T00:35:01.041Z",
+    "reasoning": "Improved market position"
+  }
+]

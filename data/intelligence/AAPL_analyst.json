@@ -10,5 +10,29 @@
     "newTarget": 229.87835198016478,
     "date": "2025-08-01T16:29:51.240Z",
     "reasoning": "Attractive valuation"
+  },
+  {
+    "symbol": "AAPL",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Underperform",
+    "previousTarget": 210.61590514528865,
+    "newTarget": 191.3649752375486,
+    "date": "2025-07-30T10:05:39.517Z",
+    "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "AAPL",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Hold",
+    "previousTarget": 181.2721245580364,
+    "newTarget": 199.14982906439312,
+    "date": "2025-08-02T08:49:47.887Z",
+    "reasoning": "Strong earnings momentum"
   }
 ]

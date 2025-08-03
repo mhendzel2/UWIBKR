@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "CAT",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Outperform",
+    "newRating": "Buy",
+    "previousTarget": 476.099718743338,
+    "newTarget": 461.62784242646865,
+    "date": "2025-08-01T07:55:49.205Z",
+    "reasoning": "Valuation concerns"
+  },
+  {
+    "symbol": "CAT",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Hold",
+    "previousTarget": 489.9711293104394,
+    "newTarget": 461.10560878176983,
+    "date": "2025-07-29T16:38:38.602Z",
+    "reasoning": "Valuation concerns"
+  }
+]

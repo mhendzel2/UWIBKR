@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "FIVE",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 508.3813171523515,
+    "newTarget": 546.7571891500077,
+    "date": "2025-07-31T15:29:19.483Z",
+    "reasoning": "Competitive headwinds"
+  },
+  {
+    "symbol": "FIVE",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Buy",
+    "previousTarget": 468.1111663577703,
+    "newTarget": 437.2523473780922,
+    "date": "2025-08-02T12:45:27.040Z",
+    "reasoning": "Margin pressure concerns"
+  }
+]

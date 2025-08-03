@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "APG",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Buy",
+    "previousTarget": 449.1940747893176,
+    "newTarget": 416.6132978528136,
+    "date": "2025-07-31T01:36:20.422Z",
+    "reasoning": "Strong earnings momentum"
+  }
+]

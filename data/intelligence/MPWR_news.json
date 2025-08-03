@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "MPWR",
+    "headline": "MPWR announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for MPWR with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.6101393488973244,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T11:23:11.139Z",
+    "url": "https://example.com/news/mpwr-1754238615095"
+  },
+  {
+    "symbol": "MPWR",
+    "headline": "Analyst upgrades MPWR on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for MPWR with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.7944155386008523,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T14:47:08.494Z",
+    "url": "https://example.com/news/mpwr-1754238615095"
+  },
+  {
+    "symbol": "MPWR",
+    "headline": "MPWR announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for MPWR with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.4764324718388191,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T11:57:53.923Z",
+    "url": "https://example.com/news/mpwr-1754238615095"
+  }
+]

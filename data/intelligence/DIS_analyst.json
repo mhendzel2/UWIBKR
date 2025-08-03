@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "DIS",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Buy",
+    "previousTarget": 463.25993616145496,
+    "newTarget": 419.3718692458795,
+    "date": "2025-08-01T04:46:03.149Z",
+    "reasoning": "Compelling growth story"
+  },
+  {
+    "symbol": "DIS",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Underperform",
+    "newRating": "Sell",
+    "previousTarget": 494.7642918227218,
+    "newTarget": 461.49448662780344,
+    "date": "2025-07-30T22:20:46.558Z",
+    "reasoning": "Attractive valuation"
+  }
+]

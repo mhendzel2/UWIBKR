@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "SHOP",
+    "headline": "SHOP announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for SHOP with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.336671331110343,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T13:58:13.181Z",
+    "url": "https://example.com/news/shop-1754238621080"
+  },
+  {
+    "symbol": "SHOP",
+    "headline": "SHOP raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for SHOP with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.7036103894072427,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T13:21:25.313Z",
+    "url": "https://example.com/news/shop-1754238621080"
+  },
+  {
+    "symbol": "SHOP",
+    "headline": "Analyst upgrades SHOP on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for SHOP with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.747206074560247,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T06:22:59.475Z",
+    "url": "https://example.com/news/shop-1754238621081"
+  }
+]

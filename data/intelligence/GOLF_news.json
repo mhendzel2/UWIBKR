@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "GOLF",
+    "headline": "GOLF raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for GOLF with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.7018208222994073,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T05:38:50.868Z",
+    "url": "https://example.com/news/golf-1754238645941"
+  },
+  {
+    "symbol": "GOLF",
+    "headline": "Analyst upgrades GOLF on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for GOLF with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.80873174742412,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T12:46:05.513Z",
+    "url": "https://example.com/news/golf-1754238645943"
+  }
+]

@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "GILD",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Buy",
+    "previousTarget": 470.1924475021082,
+    "newTarget": 496.73721555162444,
+    "date": "2025-08-02T10:35:34.864Z",
+    "reasoning": "Competitive headwinds"
+  }
+]

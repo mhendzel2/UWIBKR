@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "CIB",
+    "headline": "CIB announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for CIB with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.42987989475135296,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T07:37:31.936Z",
+    "url": "https://example.com/news/cib-1754238648173"
+  },
+  {
+    "symbol": "CIB",
+    "headline": "CIB raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for CIB with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.6462749290391347,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T13:17:33.894Z",
+    "url": "https://example.com/news/cib-1754238648173"
+  },
+  {
+    "symbol": "CIB",
+    "headline": "CIB announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for CIB with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.5483813477803097,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T13:16:12.651Z",
+    "url": "https://example.com/news/cib-1754238648174"
+  }
+]

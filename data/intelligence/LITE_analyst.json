@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "LITE",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Hold",
+    "previousTarget": 473.42830367594854,
+    "newTarget": 430.77391615084707,
+    "date": "2025-08-02T00:06:43.623Z",
+    "reasoning": "Compelling growth story"
+  },
+  {
+    "symbol": "LITE",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Sell",
+    "previousTarget": 425.39300231460993,
+    "newTarget": 384.0357512274461,
+    "date": "2025-07-29T21:23:57.879Z",
+    "reasoning": "Strong management team"
+  }
+]

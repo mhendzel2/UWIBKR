@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "HWKN",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Outperform",
+    "newRating": "Sell",
+    "previousTarget": 463.7443158837176,
+    "newTarget": 419.2943443925428,
+    "date": "2025-08-03T11:14:45.478Z",
+    "reasoning": "Stable fundamentals"
+  }
+]

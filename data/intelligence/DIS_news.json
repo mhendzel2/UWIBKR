@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "DIS",
+    "headline": "Regulatory approval granted for DIS new product",
+    "summary": "Recent developments suggest positive momentum for DIS with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5766556898897817,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T14:41:21.111Z",
+    "url": "https://example.com/news/dis-1754238643642"
+  },
+  {
+    "symbol": "DIS",
+    "headline": "DIS reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for DIS with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.8000581136190323,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T11:15:45.315Z",
+    "url": "https://example.com/news/dis-1754238643642"
+  },
+  {
+    "symbol": "DIS",
+    "headline": "DIS reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for DIS with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.6896715800156029,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T06:43:47.459Z",
+    "url": "https://example.com/news/dis-1754238643643"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "BAP",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Outperform",
+    "newRating": "Hold",
+    "previousTarget": 411.73839818694574,
+    "newTarget": 394.6319864493949,
+    "date": "2025-08-03T14:19:31.146Z",
+    "reasoning": "Balanced risk/reward"
+  },
+  {
+    "symbol": "BAP",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 459.1748874025331,
+    "newTarget": 460.05893486778496,
+    "date": "2025-08-02T16:17:14.661Z",
+    "reasoning": "Balanced risk/reward"
+  }
+]

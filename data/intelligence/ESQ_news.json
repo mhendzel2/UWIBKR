@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "ESQ",
+    "headline": "Analyst upgrades ESQ on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for ESQ with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.6214118065147042,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T07:12:18.312Z",
+    "url": "https://example.com/news/esq-1754238628380"
+  },
+  {
+    "symbol": "ESQ",
+    "headline": "ESQ reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for ESQ with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.528707554114846,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T13:41:45.345Z",
+    "url": "https://example.com/news/esq-1754238628380"
+  }
+]

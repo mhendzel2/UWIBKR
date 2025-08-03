@@ -1,0 +1,24 @@
+[
+  {
+    "symbol": "CW",
+    "headline": "Regulatory approval granted for CW new product",
+    "summary": "Recent developments suggest positive momentum for CW with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.529649368655451,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T08:36:53.590Z",
+    "url": "https://example.com/news/cw-1754238618104"
+  },
+  {
+    "symbol": "CW",
+    "headline": "CW raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for CW with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7715721992706825,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T06:45:46.230Z",
+    "url": "https://example.com/news/cw-1754238618104"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "LRN",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 23598,
+    "price": 451.7392712407524,
+    "value": 10660143.322739275,
+    "date": "2025-07-28T00:40:04.415Z",
+    "filingDate": "2025-08-02T05:35:45.808Z",
+    "ownershipPercent": 2.3409270974140948
+  },
+  {
+    "symbol": "LRN",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 14677,
+    "price": 460.65807462897857,
+    "value": 6761078.561329518,
+    "date": "2025-07-30T11:12:57.533Z",
+    "filingDate": "2025-08-03T14:08:21.483Z",
+    "ownershipPercent": 0.6148115950454923
+  },
+  {
+    "symbol": "LRN",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 30588,
+    "price": 452.42030427441546,
+    "value": 13838632.26714582,
+    "date": "2025-08-03T16:23:55.741Z",
+    "filingDate": "2025-08-01T04:16:23.628Z",
+    "ownershipPercent": 2.8591796854190776
+  }
+]

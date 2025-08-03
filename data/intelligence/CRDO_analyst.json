@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "CRDO",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Buy",
+    "previousTarget": 471.07889341278945,
+    "newTarget": 475.65739352753536,
+    "date": "2025-07-29T18:22:16.865Z",
+    "reasoning": "Fair valuation"
+  }
+]

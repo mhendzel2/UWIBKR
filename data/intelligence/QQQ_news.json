@@ -31,5 +31,38 @@
     "category": "earnings",
     "publishedAt": "2025-08-01T20:09:57.951Z",
     "url": "https://example.com/news/qqq-1754101860377"
+  },
+  {
+    "symbol": "QQQ",
+    "headline": "Regulatory approval granted for QQQ new product",
+    "summary": "Recent developments suggest positive momentum for QQQ with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7462804000412973,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T10:00:23.562Z",
+    "url": "https://example.com/news/qqq-1754238601822"
+  },
+  {
+    "symbol": "QQQ",
+    "headline": "Analyst upgrades QQQ on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for QQQ with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.8677955641191369,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T06:01:41.157Z",
+    "url": "https://example.com/news/qqq-1754238601822"
+  },
+  {
+    "symbol": "QQQ",
+    "headline": "QQQ reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for QQQ with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7578593008069894,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T05:39:51.930Z",
+    "url": "https://example.com/news/qqq-1754238601822"
   }
 ]

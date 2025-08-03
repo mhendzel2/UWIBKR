@@ -10,5 +10,17 @@
     "newTarget": 216.61036108904392,
     "date": "2025-07-28T05:55:00.181Z",
     "reasoning": "Strong earnings momentum"
+  },
+  {
+    "symbol": "TSLA",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 346.8792117844982,
+    "newTarget": 339.00483420497966,
+    "date": "2025-07-30T20:09:51.032Z",
+    "reasoning": "Strong earnings momentum"
   }
 ]

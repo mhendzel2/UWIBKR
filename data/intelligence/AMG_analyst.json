@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "AMG",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Sell",
+    "newRating": "Hold",
+    "previousTarget": 404.8707144568602,
+    "newTarget": 386.66652089196083,
+    "date": "2025-08-02T02:06:44.831Z",
+    "reasoning": "Competitive headwinds"
+  },
+  {
+    "symbol": "AMG",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Hold",
+    "previousTarget": 488.07630506038976,
+    "newTarget": 504.7126080559435,
+    "date": "2025-07-31T21:43:12.977Z",
+    "reasoning": "Improved market position"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "ALV",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 42935,
+    "price": 454.61418637385185,
+    "value": 19518860.091961328,
+    "date": "2025-07-28T05:16:08.581Z",
+    "filingDate": "2025-08-03T14:10:53.630Z",
+    "ownershipPercent": 0.17549816534087706
+  },
+  {
+    "symbol": "ALV",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 21330,
+    "price": 459.4343137526134,
+    "value": 9799733.912343243,
+    "date": "2025-08-01T22:49:23.770Z",
+    "filingDate": "2025-08-03T15:13:55.193Z",
+    "ownershipPercent": 0.5584379038986341
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "LFUS",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 49298,
+    "price": 444.29874429634185,
+    "value": 21903039.49632106,
+    "date": "2025-07-31T18:54:19.312Z",
+    "filingDate": "2025-08-01T12:40:21.159Z",
+    "ownershipPercent": 1.4076475650867082
+  },
+  {
+    "symbol": "LFUS",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 21872,
+    "price": 459.62627105918983,
+    "value": 10052945.800606601,
+    "date": "2025-07-31T02:22:45.191Z",
+    "filingDate": "2025-08-02T14:31:45.367Z",
+    "ownershipPercent": 0.8659601988437048
+  },
+  {
+    "symbol": "LFUS",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 40461,
+    "price": 463.9168315478599,
+    "value": 18770538.921257958,
+    "date": "2025-07-30T21:00:53.043Z",
+    "filingDate": "2025-08-01T22:15:09.810Z",
+    "ownershipPercent": 3.863317386596353
+  }
+]

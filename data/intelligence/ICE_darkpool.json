@@ -1,0 +1,28 @@
+[
+  {
+    "symbol": "ICE",
+    "date": "2025-08-03",
+    "darkPoolVolume": 2645333,
+    "totalVolume": 15788726,
+    "darkPoolRatio": 0.16754569051359813,
+    "avgDarkPoolSize": 3661,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 56560,
+        "price": 462.919702628853,
+        "timestamp": "2025-08-03T13:58:34.977Z"
+      },
+      {
+        "size": 105449,
+        "price": 462.6620957863095,
+        "timestamp": "2025-08-03T12:16:49.616Z"
+      },
+      {
+        "size": 97385,
+        "price": 455.83212071297146,
+        "timestamp": "2025-08-03T09:00:21.441Z"
+      }
+    ]
+  }
+]

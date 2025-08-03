@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "WTS",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Sell",
+    "previousTarget": 495.1038422006494,
+    "newTarget": 503.6445464352832,
+    "date": "2025-08-03T12:11:12.796Z",
+    "reasoning": "Competitive headwinds"
+  },
+  {
+    "symbol": "WTS",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Hold",
+    "newRating": "Hold",
+    "previousTarget": 397.9096795107345,
+    "newTarget": 372.26803603402556,
+    "date": "2025-08-03T05:55:09.860Z",
+    "reasoning": "Positive sector outlook"
+  }
+]

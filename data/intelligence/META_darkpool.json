@@ -24,5 +24,26 @@
         "timestamp": "2025-08-02T01:47:18.803Z"
       }
     ]
+  },
+  {
+    "symbol": "META",
+    "date": "2025-08-03",
+    "darkPoolVolume": 1402038,
+    "totalVolume": 12420785,
+    "darkPoolRatio": 0.11287837282426191,
+    "avgDarkPoolSize": 6394,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 111498,
+        "price": 456.08778859766977,
+        "timestamp": "2025-08-03T13:16:15.336Z"
+      },
+      {
+        "size": 84242,
+        "price": 462.3278405182208,
+        "timestamp": "2025-08-03T12:42:16.783Z"
+      }
+    ]
   }
 ]
