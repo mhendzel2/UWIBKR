@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { z } from 'zod';
+import { gexTracker } from '../services/gexTracker';
 
 const router = Router();
 
@@ -18,6 +19,9 @@ const RadarSettingsSchema = z.object({
 router.get('/radar', async (req, res) => {
   try {
     const settings = RadarSettingsSchema.parse(req.query);
+
+    const watchlist = gexTracker.getWatchlist();
+    const symbols = new Set(watchlist.filter(w => w.enabled).map(w => w.symbol));
     
     // Fetch real-time data from multiple sources for comprehensive scanning
     const [flowAlertsResponse, unusualVolumeResponse, momentumResponse, optionChainResponse] = await Promise.all([
@@ -64,7 +68,7 @@ router.get('/radar', async (req, res) => {
     const opportunities = [];
     
     // Process flow alerts for sweep and unusual activity
-    const flowAlerts = flowData.data || [];
+    const flowAlerts = (flowData.data || []).filter((a: any) => symbols.has((a.ticker || a.symbol || '').toUpperCase()));
     for (const alert of flowAlerts) {
       if (shouldProcessAlert(alert, settings)) {
         const opportunity = await processFlowAlert(alert, settings.sensitivity);
@@ -75,7 +79,7 @@ router.get('/radar', async (req, res) => {
     }
     
     // Process unusual volume alerts
-    const volumeAlerts = volumeData.data || [];
+    const volumeAlerts = (volumeData.data || []).filter((a: any) => symbols.has((a.ticker || a.symbol || '').toUpperCase()));
     for (const alert of volumeAlerts) {
       if (shouldProcessVolumeAlert(alert, settings)) {
         const opportunity = await processVolumeAlert(alert, settings.sensitivity);
@@ -86,7 +90,7 @@ router.get('/radar', async (req, res) => {
     }
     
     // Process momentum alerts
-    const momentumAlerts = momentumData.data || [];
+    const momentumAlerts = (momentumData.data || []).filter((a: any) => symbols.has((a.ticker || a.symbol || '').toUpperCase()));
     for (const alert of momentumAlerts) {
       if (shouldProcessMomentumAlert(alert, settings)) {
         const opportunity = await processMomentumAlert(alert, settings.sensitivity);

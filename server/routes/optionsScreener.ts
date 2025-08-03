@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { z } from 'zod';
 import { stringencyOptimizer } from '../services/stringencyOptimizer';
+import { gexTracker } from '../services/gexTracker';
 
 const router = Router();
 
@@ -40,6 +41,9 @@ const ScreenerFiltersSchema = z.object({
 router.post('/screen', async (req, res) => {
   try {
     const filters = ScreenerFiltersSchema.parse(req.body);
+
+    const watchlist = gexTracker.getWatchlist();
+    const symbols = new Set(watchlist.filter(w => w.enabled).map(w => w.symbol));
     
     // Build sophisticated API query with stringency-based parameters
     const params = new URLSearchParams({
@@ -115,7 +119,7 @@ router.post('/screen', async (req, res) => {
       analystDataResponse.ok ? analystDataResponse.json() : { data: [] },
     ]);
 
-    const alerts = flowData.data || [];
+    const alerts = (flowData.data || []).filter((a: any) => symbols.has((a.ticker || a.symbol || '').toUpperCase()));
     
     // Enhanced processing with AI-powered scoring
     const screenedOptions = alerts
