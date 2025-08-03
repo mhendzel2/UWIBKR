@@ -309,6 +309,14 @@ export default function WatchlistPage() {
           </div>
         </TabsContent>
 
+        <TabsContent value="manage" className="space-y-4">
+          <WatchlistManager onWatchlistChange={(watchlist) => {
+            // Refresh watchlist data when active watchlist changes
+            queryClient.invalidateQueries({ queryKey: ['/api/watchlist'] });
+            queryClient.invalidateQueries({ queryKey: ['/api/gex/levels'] });
+          }} />
+        </TabsContent>
+
         <TabsContent value="intelligence" className="space-y-4">
           {selectedSymbol ? (
             <div>
