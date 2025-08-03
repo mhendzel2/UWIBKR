@@ -28,7 +28,7 @@
 
 ### API Integrations Working
 - ✅ Unusual Whales API for premium options flow data
-- ✅ OpenAI GPT-4o for intelligent analysis
+- ✅ Google Gemini for intelligent analysis
 - ✅ OpenFDA API for pharmaceutical monitoring
 - ✅ Interactive Brokers for trading execution
 - ✅ Real-time market data feeds

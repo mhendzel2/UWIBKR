@@ -1,7 +1,8 @@
 // @ts-nocheck
 import { Router } from 'express';
 import { UnusualWhalesService } from '../services/unusualWhales';
-import openaiService from '../openai';
+import geminiService from '../geminiService';
+import { storeSignal, storeTicker, storeTrade } from '../mlStore';
 
 const router = Router();
 
@@ -134,6 +135,7 @@ class ShortExpiryAnalyzer {
           };
 
           contracts.push(contract);
+          storeSignal(contract);
         } catch (error) {
           console.error(`Error analyzing contract ${flow.ticker}:`, error);
         }
@@ -154,6 +156,7 @@ class ShortExpiryAnalyzer {
     try {
       // Get current stock price
       const stockData = await this.getStockData(ticker);
+      storeTicker({ ticker, stockData });
       
       // Get GEX exposure
       const gexData = await this.unusualWhales.getGammaExposure(ticker);
@@ -165,6 +168,7 @@ class ShortExpiryAnalyzer {
         min_dte: 0,
         max_dte: 5
       });
+      storeTicker({ ticker, flowData });
 
       // Analyze flow sentiment
       const flowSentiment = this.analyzeTickerFlowSentiment(flowData);
@@ -329,8 +333,12 @@ class ShortExpiryAnalyzer {
 Recommend: call, put, or none. Include probability (0-100) and reasoning.
 Response format: {"action": "call|put|none", "probability": 75, "reasoning": "explanation"}`;
 
-      const response = await openaiService.analyzeOptionsStrategy(prompt);
-      return JSON.parse(response);
+      const response = await geminiService.analyzeOptionsStrategy(prompt);
+      const result = JSON.parse(response);
+      if (result.recommendation && result.recommendation !== 'neutral') {
+        storeTrade({ ticker, optionData, analysis: result });
+      }
+      return result;
     } catch (error) {
       return {
         action: 'none',
@@ -358,8 +366,12 @@ News sentiment: ${newsSentiment}
 Provide probability (0-100) and recommendation (strong_buy, buy, neutral, sell, strong_sell).
 Response format: {"probability": 75, "recommendation": "buy", "reasoning": "explanation"}`;
 
-      const response = await openaiService.analyzeOptionsStrategy(prompt);
-      return JSON.parse(response);
+      const response = await geminiService.analyzeOptionsStrategy(prompt);
+      const result = JSON.parse(response);
+      if (result.recommendation && result.recommendation !== 'neutral') {
+        storeTrade({ ticker, optionData, analysis: result });
+      }
+      return result;
     } catch (error) {
       return {
         probability: 50,
@@ -434,7 +446,7 @@ Response format: {"probability": 75, "recommendation": "buy", "reasoning": "expl
         );
 
         if (analysis.probability >= threshold) {
-          contracts.push({
+          const contract = {
             id: `${flow.ticker}-${flow.strike}-${flow.expiry}-${flow.option_type}`,
             ticker: flow.ticker,
             strike: flow.strike,
@@ -460,7 +472,9 @@ Response format: {"probability": 75, "recommendation": "buy", "reasoning": "expl
             heat_score: this.calculateHeatScore(flow, optionData, gexSentiment, flowSentiment),
             underlying_price: flow.underlying_price,
             moneyness: this.getMoneyness(flow.underlying_price, flow.strike, flow.option_type)
-          });
+          };
+          contracts.push(contract);
+          storeSignal(contract);
         }
       }
 

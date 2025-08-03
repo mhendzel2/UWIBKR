@@ -30,7 +30,7 @@ A sophisticated AI-driven options trading application that combines algorithmic 
 - **Backend**: Node.js + Express, TypeScript
 - **Database**: PostgreSQL with Drizzle ORM
 - **Real-time**: WebSocket implementation for live data streaming
-- **AI/ML**: OpenAI GPT-4o, TensorFlow.js, Google Gemini
+- **AI/ML**: Google Gemini, TensorFlow.js
 - **Market Data**: Unusual Whales API, Interactive Brokers TWS, OpenFDA API
 - **Build Tool**: Vite for fast development and optimized production builds
 
@@ -77,7 +77,7 @@ Add these to your `.env` file:
 DATABASE_URL=postgresql://username:password@host:port/database
 
 # AI Services
-OPENAI_API_KEY=your_openai_key_here
+GEMINI_API_KEY=your_gemini_key_here
 GEMINI_API_KEY=your_gemini_key_here
 
 # Market Data
