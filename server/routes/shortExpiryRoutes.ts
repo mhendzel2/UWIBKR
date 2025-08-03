@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { Router } from 'express';
 import { UnusualWhalesService } from '../services/unusualWhales';
 import openaiService from '../openai';

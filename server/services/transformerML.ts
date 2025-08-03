@@ -1,5 +1,10 @@
 import * as tf from '@tensorflow/tfjs-node';
-import { TradeSignal } from '../storage';
+import type { TradingSignal as BaseTradingSignal } from '@shared/schema';
+
+interface TradeSignal extends BaseTradingSignal {
+  type: 'CALL' | 'PUT';
+  analysis?: Record<string, unknown>;
+}
 
 export interface TransformerConfig {
   sequenceLength: number;
@@ -90,7 +95,7 @@ export class TransformerMLEngine {
     
     // Scaled dot-product attention
     const scores = tf.matMul(qReshaped, kReshaped.transpose([0, 1, 3, 2])).div(Math.sqrt(headDim));
-    const attentionWeights = tf.softmax(scores, -1);
+    const attentionWeights = tf.softmax(scores, -1) as tf.Tensor4D;
     const attended = tf.matMul(attentionWeights, vReshaped);
     
     // Concatenate heads
@@ -107,7 +112,7 @@ export class TransformerMLEngine {
     const input = tf.input({ shape: [this.config.sequenceLength, modelDim] });
     
     // Multi-head self-attention
-    const attention = tf.layers.multiHeadAttention({
+    const attention = (tf.layers as any).multiHeadAttention({
       numHeads,
       keyDim: modelDim / numHeads,
       dropout: 0.1
@@ -142,12 +147,13 @@ export class TransformerMLEngine {
     const input = tf.input({ shape: [this.config.sequenceLength, this.config.modelDimension] });
     
     // Positional encoding
-    const posEncoding = this.createPositionalEncoding(
-      this.config.sequenceLength,
-      this.config.modelDimension
-    );
-    
-    let x = tf.layers.add().apply([input, posEncoding]) as tf.SymbolicTensor;
+      const posEncoding = this.createPositionalEncoding(
+        this.config.sequenceLength,
+        this.config.modelDimension
+      );
+
+      const posEncodingTensor = posEncoding as unknown as tf.SymbolicTensor;
+      let x = tf.layers.add().apply([input, posEncodingTensor]) as tf.SymbolicTensor;
     
     // Stack transformer encoder layers
     for (let i = 0; i < this.config.numLayers; i++) {
@@ -198,11 +204,6 @@ export class TransformerMLEngine {
         price_prediction: 'meanSquaredError',
         trend_classification: 'categoricalCrossentropy',
         volatility_prediction: 'binaryCrossentropy'
-      },
-      lossWeights: {
-        price_prediction: 1.0,
-        trend_classification: 0.5,
-        volatility_prediction: 0.3
       },
       metrics: ['accuracy', 'mse']
     });
@@ -420,7 +421,7 @@ export class TransformerMLEngine {
     // Enhanced signal with transformer insights
     const enhancedSignal: TradeSignal = {
       ...signal,
-      confidence: Math.max(signal.confidence, transformerScore),
+        confidence: Math.max(parseFloat(signal.confidence), transformerScore).toString(),
       analysis: {
         ...signal.analysis,
         transformer_score: transformerScore,

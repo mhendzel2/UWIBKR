@@ -310,7 +310,12 @@ export class SophisticatedFilteringService {
           signal
         );
         
-        const levelOrder = { medium: 1, high: 2, exceptional: 3 };
+        const levelOrder: Record<'low' | 'medium' | 'high' | 'exceptional', number> = {
+          low: 0,
+          medium: 1,
+          high: 2,
+          exceptional: 3
+        };
         
         if (levelOrder[confluence.confluenceLevel] >= levelOrder[minConfluenceLevel]) {
           signal.confluence = confluence;

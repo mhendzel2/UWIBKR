@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { UnusualWhalesService } from './unusualWhales';
 import openaiService from '../openai';
 

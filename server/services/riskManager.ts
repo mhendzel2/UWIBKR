@@ -192,7 +192,7 @@ export class RiskManager {
         if (position.status === 'open') {
           openPositions++;
           totalExposure += Math.abs(parseFloat(position.entryPrice) * position.quantity * 100);
-          totalPnL += parseFloat(position.pnl);
+          totalPnL += parseFloat(position.pnl ?? '0');
         }
       }
       

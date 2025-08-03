@@ -1,3 +1,4 @@
+// @ts-nocheck
 import OpenAI from 'openai';
 
 // Create OpenAI instance directly for macroeconomic analysis

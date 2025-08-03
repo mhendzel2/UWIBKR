@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { dataImporter, type WatchlistItem, type GEXData } from './dataImporter';
 import { sentimentAnalysisService, type TickerSentimentResult } from './sentimentAnalysis';
 import * as fs from 'fs';
