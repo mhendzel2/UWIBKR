@@ -13,6 +13,7 @@ const navigationItems = [
   { href: "/machine-learning", label: "ML Engine", icon: "fas fa-cogs" },
   { href: "/macro", label: "Macro Dashboard", icon: "fas fa-globe" },
   { href: "/watchlist", label: "Watchlist & Intelligence", icon: "fas fa-list-alt" },
+  { href: "/earnings", label: "Earnings Dashboard", icon: "fas fa-bullhorn" },
   { href: "/flow", label: "Options Flow", icon: "fas fa-water" },
   { href: "/options-screener", label: "Options Screener", icon: "fas fa-search" },
   { href: "/options-heatmap", label: "Options Heat Map", icon: "fas fa-fire" },

@@ -39,6 +39,7 @@ import FlowNetworkPage from "@/pages/flow-network";
 import WhaleScoreHeatMapPage from "@/pages/whale-score-heatmap";
 import SentimentFlowOverlayPage from "@/pages/sentiment-flow-overlay";
 import NotFound from "@/pages/not-found";
+import EarningsDashboardPage from "@/pages/earnings-dashboard";
 
 function Router() {
   return (
@@ -76,6 +77,7 @@ function Router() {
       <Route path="/flow-network" component={FlowNetworkPage} />
       <Route path="/whale-score-heatmap" component={WhaleScoreHeatMapPage} />
       <Route path="/sentiment-flow-overlay" component={SentimentFlowOverlayPage} />
+      <Route path="/earnings" component={EarningsDashboardPage} />
       <Route component={NotFound} />
     </Switch>
   );

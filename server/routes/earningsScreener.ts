@@ -69,7 +69,15 @@ router.get('/earnings-screener', async (req, res) => {
   }
 
   const days = getQueryParam('days', '5');
-  const minVolume = getQueryParam('minVolume', '1000');
+  // Allow filtering by exchange, defaulting to NASDAQ & NYSE
+  const exchangesParam = getQueryParam('exchanges', 'NASDAQ,NYSE');
+  const exchanges = exchangesParam
+    .split(',')
+    .map((e) => e.trim().toUpperCase())
+    .filter((e) => e.length > 0);
+
+  // Lower default minimum volume to 500 contracts
+  const minVolume = getQueryParam('minVolume', '500');
   const minLargeTrades = getQueryParam('minLargeTrades', '5');
   const largeTradePremium = getQueryParam('largeTradePremium', '50000');
   const volumeMultiplier = getQueryParam('volumeMultiplier', '3');
@@ -102,6 +110,16 @@ router.get('/earnings-screener', async (req, res) => {
     for (const event of events) {
       const ticker = event.ticker || event.symbol;
       if (!ticker) continue;
+
+      // Filter by exchange when provided
+      const eventExchange =
+        (event as any).exchange ||
+        (event as any).primary_exchange ||
+        (event as any).market ||
+        '';
+      if (exchanges.length && !exchanges.includes(String(eventExchange).toUpperCase())) {
+        continue;
+      }
 
       // Step 2: options summary for ticker
       const summaryResp = await fetch(
