@@ -114,6 +114,7 @@ export class GEXTracker {
     this.loadWatchlists();
     this.performDailyUpdate().catch(err => console.error('Initial update failed', err));
     this.scheduleUpdates();
+    this.startFundamentalUpdates();
   }
 
   private getWatchlistMap(name: string = 'default'): Map<string, WatchlistItem> {
@@ -244,13 +245,30 @@ export class GEXTracker {
       });
     }
     await this.saveWatchlists();
+    try {
+      const { marketIntelligence } = await import('./marketIntelligence');
+      for (const symbol of symbols) {
+        marketIntelligence.trackFundamentalData(symbol).catch(() => {});
+      }
+    } catch (err) {
+      console.error('Failed to fetch fundamentals for new symbols:', err);
+    }
     console.log(`Added ${symbols.length} symbols to watchlist ${listName}`);
   }
 
   async removeFromWatchlist(symbols: string[], listName: string = 'default'): Promise<void> {
     const list = this.getWatchlistMap(listName);
     for (const symbol of symbols) {
-      list.delete(symbol.toUpperCase());
+      const upper = symbol.toUpperCase();
+      list.delete(upper);
+      const fundamentalsPath = path.join(process.cwd(), 'data', 'intelligence', `${upper}_fundamentals.json`);
+      if (fs.existsSync(fundamentalsPath)) {
+        try {
+          fs.unlinkSync(fundamentalsPath);
+        } catch (err) {
+          console.error('Failed to remove fundamentals file for', upper, err);
+        }
+      }
     }
     await this.saveWatchlists();
     console.log(`Removed ${symbols.length} symbols from watchlist ${listName}`);
@@ -325,6 +343,25 @@ export class GEXTracker {
       
       console.log(`GEX update scheduled for ${tomorrow.toLocaleString()} ET`);
     }
+  }
+
+  private startFundamentalUpdates(): void {
+    setInterval(async () => {
+      try {
+        const { marketIntelligence } = await import('./marketIntelligence');
+        const symbols = new Set<string>();
+        for (const map of this.watchlists.values()) {
+          for (const item of map.values()) {
+            symbols.add(item.symbol);
+          }
+        }
+        for (const symbol of symbols) {
+          await marketIntelligence.trackFundamentalData(symbol);
+        }
+      } catch (error) {
+        console.error('Fundamentals background update failed:', error);
+      }
+    }, 60 * 60 * 1000); // hourly
   }
 
   private getNextUpdateTime(): Date {

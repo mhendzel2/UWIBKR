@@ -2523,65 +2523,51 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Import watchlist from CSV endpoint
   app.post("/api/watchlist/import-csv", async (req, res) => {
     try {
-      const fs = require('fs');
-      const path = require('path');
       const csv = require('fast-csv');
-      
-      const csvPath = path.join(process.cwd(), 'data', 'ai-watchlist-intraday.csv');
-      const symbols: any[] = [];
-      
-      if (!fs.existsSync(csvPath)) {
-        return res.status(404).json({ message: "CSV file not found" });
+      const { list = 'default', csv: csvContent } = req.body || {};
+      if (!csvContent) {
+        return res.status(400).json({ message: 'CSV content required' });
       }
-      
-      fs.createReadStream(csvPath)
-        .pipe(csv.parse({ headers: true }))
+
+      const symbols: any[] = [];
+      csv.parseString(csvContent, { headers: true })
         .on('data', (row: any) => {
           if (row.Symbol && row.Symbol !== 'Symbol') {
             const sector = getSectorForSymbol(row.Symbol);
             symbols.push({
               symbol: row.Symbol,
-              name: row.Name,
-              sector: sector,
+              sector,
               enabled: true,
-              gexTracking: !['VIX'].includes(row.Symbol),
-              lastPrice: parseFloat(row.Last) || 0,
-              change: parseFloat(row.Change?.replace(/[^-0-9.]/g, '')) || 0,
-              changePercent: parseFloat(row['%Chg']?.replace(/[^-0-9.]/g, '')) || 0,
-              volume: parseInt(row.Volume?.replace(/,/g, '')) || 0,
-              lastUpdated: new Date().toISOString()
+              gexTracking: !['VIX'].includes(row.Symbol)
             });
           }
         })
         .on('end', async () => {
           try {
             const { gexTracker } = await import('./services/gexTracker');
-            await gexTracker.clearWatchlist();
             for (const sym of symbols) {
               await gexTracker.addToWatchlist([sym.symbol], {
                 sector: sym.sector,
                 gexTracking: sym.gexTracking,
                 enabled: sym.enabled
-              });
+              }, list);
             }
-
-            console.log(`✅ Imported ${symbols.length} symbols from CSV to watchlist`);
             res.json({
               message: `Successfully imported ${symbols.length} symbols from CSV`,
               symbols: symbols.map(s => s.symbol)
             });
           } catch (error) {
             console.error('Failed to import symbols:', error);
-            res.status(500).json({ message: "Failed to import symbols to watchlist" });
+            res.status(500).json({ message: 'Failed to import symbols to watchlist' });
           }
         })
         .on('error', (error: any) => {
           console.error('CSV parsing error:', error);
-          res.status(500).json({ message: "Failed to parse CSV file" });
+          res.status(500).json({ message: 'Failed to parse CSV' });
         });
     } catch (error) {
-      console.error("Failed to import CSV:", error);
-      res.status(500).json({ message: "Failed to import CSV data" });
+      console.error('Failed to import CSV:', error);
+      res.status(500).json({ message: 'Failed to import CSV data' });
     }
   });
 
