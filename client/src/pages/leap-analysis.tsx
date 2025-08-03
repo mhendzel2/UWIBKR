@@ -49,17 +49,17 @@ interface LEAPAnalysisData {
     highConviction?: number;
     avgProbabilityScore?: number;
     topSectors?: Array<{ sector: string; count: number }>;
-  const { data: leapData, isLoading, error, dataUpdatedAt: leapUpdatedAt } = useQuery<LEAPAnalysisData>({
-    queryKey: ['/api/leaps/analyze', stringencyLevel],
-    refetchInterval: 5 * 60 * 1000, // Refresh every 5 minutes
-  });
+  };
+}
+
+export default function LEAPAnalysisPage() {
   const [selectedTrade, setSelectedTrade] = useState<LEAPTrade | null>(null);
   const [selectedLeapIds, setSelectedLeapIds] = useState<string[]>([]);
   const [stringencyLevel, setStringencyLevel] = useState(5);
   const [trainingMode, setTrainingMode] = useState(false);
   const queryClient = useQueryClient();
 
-  const { data: leapData, isLoading, error, dataUpdatedAt: leapUpdatedAt } = useQuery({
+  const { data: leapData, isLoading, error, dataUpdatedAt: leapUpdatedAt } = useQuery<LEAPAnalysisData>({
     queryKey: ['/api/leaps/analyze', stringencyLevel],
     refetchInterval: 5 * 60 * 1000, // Refresh every 5 minutes
   });
