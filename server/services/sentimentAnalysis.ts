@@ -106,6 +106,63 @@ export class SentimentAnalysisService {
     return this.getTickerSentiment(etf, weights);
   }
 
+  async getSectorTideExpirySentiment(
+    sectorOrEtf: string
+  ): Promise<{
+    gauge: number;
+    trend: 'rising' | 'falling';
+    expiry: { weekly: number; zero_dte: number };
+    raw: { tide: any; expiry: any };
+  }> {
+    try {
+      const key = sectorOrEtf.toLowerCase();
+      const isSector = !!this.sectorEtfMap[key];
+      const tide = isSector
+        ? await this.uw.getSectorTide(key)
+        : await this.uw.getEtfTide(sectorOrEtf);
+
+      let gauge = 0;
+      let trend: 'rising' | 'falling' = 'rising';
+
+      if (tide && Array.isArray(tide.data) && tide.data.length >= 2) {
+        const latest = tide.data[tide.data.length - 1];
+        const prev = tide.data[tide.data.length - 2];
+        const call = Number(latest?.net_call_premium ?? 0);
+        const put = Math.abs(Number(latest?.net_put_premium ?? 0));
+        gauge = call + put === 0 ? 0 : (call - put) / (call + put);
+        const prevCall = Number(prev?.net_call_premium ?? 0);
+        trend = call >= prevCall ? 'rising' : 'falling';
+      }
+
+      const expiryData = await this.uw.getNetFlowExpiry({
+        tide_type: ['equity_only'],
+        expiration: ['weekly', 'zero_dte'],
+      });
+
+      const expiry = { weekly: 0, zero_dte: 0 };
+      if (expiryData && Array.isArray(expiryData.data)) {
+        expiryData.data.forEach((item: any) => {
+          const exp = (item.expiration || item.expiration_type || '').toLowerCase();
+          const call = Number(item.net_call_premium ?? 0);
+          const put = Math.abs(Number(item.net_put_premium ?? 0));
+          const net = call - put;
+          if (exp.includes('zero')) expiry.zero_dte += net;
+          else if (exp.includes('week')) expiry.weekly += net;
+        });
+      }
+
+      return { gauge, trend, expiry, raw: { tide, expiry: expiryData } };
+    } catch (error) {
+      console.error('Failed to combine sector tide and expiry data:', error);
+      return {
+        gauge: 0,
+        trend: 'falling',
+        expiry: { weekly: 0, zero_dte: 0 },
+        raw: { tide: null, expiry: null },
+      };
+    }
+  }
+
   private sectorEtfMap: Record<string, string> = {
     technology: 'XLK',
     financials: 'XLF',
