@@ -88,7 +88,7 @@ export default function MachineLearning() {
 
   // Enable/disable transformer
   const enableTransformerMutation = useMutation({
-    mutationFn: (enable: boolean) => apiRequest('/api/ml/enable-transformer', 'POST', { enable }),
+    mutationFn: (enable: boolean) => apiRequest('https://api.unusualwhales.com/api/ml/enable-transformer', 'POST', { enable }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/ml/status'] });
     }
@@ -97,7 +97,7 @@ export default function MachineLearning() {
   // Analyze signal with transformer
   const analyzeSignalMutation = useMutation<AnalysisResponse, unknown, Signal>({
     mutationFn: async (signal) => {
-      const response = await apiRequest('/api/ml/analyze-with-transformer', 'POST', { signal });
+      const response = await apiRequest('https://api.unusualwhales.com/api/ml/analyze-with-transformer', 'POST', { signal });
       return response.json() as Promise<AnalysisResponse>;
     },
     onSuccess: () => {
@@ -107,7 +107,7 @@ export default function MachineLearning() {
 
   // Train transformer
   const trainTransformerMutation = useMutation({
-    mutationFn: (marketSequences: any[]) => apiRequest('/api/ml/train-transformer', 'POST', { marketSequences }),
+    mutationFn: (marketSequences: any[]) => apiRequest('https://api.unusualwhales.com/api/ml/train-transformer', 'POST', { marketSequences }),
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/ml/transformer-stats'] });
     }
