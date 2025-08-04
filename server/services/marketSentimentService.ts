@@ -51,6 +51,7 @@ interface OptionsFlowMetrics {
   oiChange: any;
   totalOptionsVolume: any;
   spike: any;
+  sectorGreekFlow: Record<string, any>;
 }
 
 export interface TrumpPost {
@@ -460,6 +461,20 @@ Provide a JSON response with:
   private async getOptionsFlowMetrics(): Promise<OptionsFlowMetrics> {
     try {
       const uw = new UnusualWhalesService();
+      const sectors = [
+        'technology',
+        'healthcare',
+        'financial services',
+        'consumer cyclical',
+        'communication services',
+        'industrials',
+        'consumer defensive',
+        'energy',
+        'utilities',
+        'real estate'
+      ];
+
+      const sectorGreekFlow: Record<string, any> = {};
       const [netFlowExpiry, marketTide, sectorTide, etfTide, oiChange, totalOptionsVolume, spike] = await Promise.all([
         uw.getNetFlowExpiry(),
         uw.getMarketTide(),
@@ -469,10 +484,30 @@ Provide a JSON response with:
         uw.getTotalOptionsVolume(),
         uw.getSpike()
       ]);
-      return { netFlowExpiry, marketTide, sectorTide, etfTide, oiChange, totalOptionsVolume, spike };
+
+      await Promise.all(
+        sectors.map(async sector => {
+          try {
+            sectorGreekFlow[sector] = await uw.getGroupGreekFlow(sector);
+          } catch (err) {
+            sectorGreekFlow[sector] = null;
+          }
+        })
+      );
+
+      return { netFlowExpiry, marketTide, sectorTide, etfTide, oiChange, totalOptionsVolume, spike, sectorGreekFlow };
     } catch (error) {
       console.error('Error fetching options flow metrics:', error);
-      return { netFlowExpiry: null, marketTide: null, sectorTide: null, etfTide: null, oiChange: null, totalOptionsVolume: null, spike: null };
+      return {
+        netFlowExpiry: null,
+        marketTide: null,
+        sectorTide: null,
+        etfTide: null,
+        oiChange: null,
+        totalOptionsVolume: null,
+        spike: null,
+        sectorGreekFlow: {}
+      };
     }
   }
 }
