@@ -628,7 +628,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         issueTypes: ['Common Stock', 'ADR']
       };
 
-      const alerts = await unusualWhales.getFlowAlerts(filters);
+      const alerts = await uwService.getFlowAlerts(filters);
 
       if (!ticker) {
         const { gexTracker } = await import('./services/gexTracker');
@@ -773,7 +773,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/portfolio/allocations", async (req, res) => {
     try {
       // Mock allocation data for demonstration
-      const allocations = [];
+      const allocations: any[] = [];
       res.json(allocations);
     } catch (error) {
       console.error("Failed to get portfolio allocations:", error);
@@ -784,7 +784,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/portfolio/optimization-scenarios", async (req, res) => {
     try {
       // Mock optimization scenarios for demonstration
-      const scenarios = [];
+      const scenarios: any[] = [];
       res.json(scenarios);
     } catch (error) {
       console.error("Failed to get optimization scenarios:", error);
@@ -1254,7 +1254,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const alert = await storage.createAlert(req.body);
       // Broadcast alert to connected clients
-      wsService.broadcast('alert_created', alert);
+      wsService.broadcast({
+        type: 'alert_created',
+        data: alert,
+        timestamp: Date.now(),
+      });
       res.json(alert);
     } catch (error) {
       console.error("Failed to create alert:", error);
@@ -1399,7 +1403,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Broadcast trade creation via WebSocket
       wsService.broadcast({
         type: 'trade_created',
-        data: trade
+        data: trade,
+        timestamp: Date.now(),
       });
       
       res.status(201).json(trade);
@@ -1421,7 +1426,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Broadcast trade update via WebSocket
       wsService.broadcast({
         type: 'trade_updated',
-        data: trade
+        data: trade,
+        timestamp: Date.now(),
       });
       
       res.json(trade);
@@ -2516,7 +2522,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/portfolios/:id/sync", async (req, res) => {
     try {
       const { portfolioManager } = await import('./services/portfolioManager');
-      const result = await portfolioManager.syncPortfolioData(req.params.id);
+      const result = await portfolioManager.syncPortfolioWithIBKR(req.params.id);
       res.json(result);
     } catch (error) {
       console.error("Failed to sync portfolio:", error);
