@@ -16,10 +16,13 @@ export class WatchlistManager {
   private watchlists: Map<string, Watchlist> = new Map();
   private currentWatchlistId: string = 'default';
   private readonly dataDir = path.join(process.cwd(), 'data', 'watchlists');
+  private readonly intelligenceFile = path.join(this.dataDir, 'watchlist-intelligence.json');
 
   constructor() {
     this.ensureDataDir();
     this.loadWatchlists();
+    this.loadMarketIntelligence();
+    this.scheduleWeeklyUpdates();
   }
 
   private ensureDataDir(): void {
@@ -270,6 +273,44 @@ export class WatchlistManager {
     await this.saveWatchlists();
     console.log(`Duplicated watchlist ${sourceId} as ${newWatchlist.id}`);
     return newWatchlist;
+  }
+
+  private loadMarketIntelligence(): void {
+    if (fs.existsSync(this.intelligenceFile)) {
+      const data = JSON.parse(fs.readFileSync(this.intelligenceFile, 'utf8'));
+      console.log('📂 Loaded watchlist market intelligence data from disk.');
+      // Process and store the data as needed
+    }
+  }
+
+  private saveMarketIntelligence(data: any): void {
+    fs.writeFileSync(this.intelligenceFile, JSON.stringify(data, null, 2));
+    console.log('💾 Saved watchlist market intelligence data to disk.');
+  }
+
+  private scheduleWeeklyUpdates(): void {
+    const now = new Date();
+    const nextMonday = new Date(now);
+    nextMonday.setDate(now.getDate() + ((1 + 7 - now.getDay()) % 7));
+    nextMonday.setHours(0, 0, 0, 0);
+
+    const delay = nextMonday.getTime() - now.getTime();
+    setTimeout(() => {
+      this.updateMarketIntelligence();
+      setInterval(() => this.updateMarketIntelligence(), 7 * 24 * 60 * 60 * 1000); // Weekly
+    }, delay);
+  }
+
+  private async updateMarketIntelligence(): Promise<void> {
+    try {
+      console.log('🔄 Updating watchlist market intelligence data...');
+      // Fetch and process market intelligence data
+      const data = {}; // Replace with actual data fetching logic
+      this.saveMarketIntelligence(data);
+      console.log('✅ Watchlist market intelligence data updated.');
+    } catch (error) {
+      console.error('❌ Failed to update watchlist market intelligence data:', error);
+    }
   }
 
   // Legacy compatibility methods for existing GEXTracker

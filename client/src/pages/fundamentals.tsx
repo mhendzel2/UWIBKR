@@ -39,6 +39,14 @@ interface FundamentalData {
     psRatio: number;
     evRevenue: number;
     evEbitda: number;
+    priceToEarnings?: number;
+    priceToBook?: number;
+    priceToSales?: number;
+    priceEarningsGrowth?: number;
+    evToRevenue?: number;
+    evToEbitda?: number;
+    dividendYield?: number;
+    payoutRatio?: number;
   };
   profitability: {
     grossMargin: number;
@@ -63,6 +71,16 @@ interface FundamentalData {
     totalDebt: number;
     cash: number;
     bookValue: number;
+    revenueGrowth?: number;
+    earningsPerShare?: number;
+    grossMargin?: number;
+    operatingMargin?: number;
+    netMargin?: number;
+    returnOnEquity?: number;
+    debtToEquity?: number;
+    currentRatio?: number;
+    freeCashFlow?: number;
+    bookValuePerShare?: number;
   };
   perShare: {
     earnings: number;
@@ -84,6 +102,18 @@ interface FundamentalData {
     strongSell: number;
   };
   lastUpdated: string;
+  risk?: {
+    overallRisk: string;
+    liquidityRisk: number;
+    volatilityRisk: number;
+    fundamentalRisk: number;
+    technicalRisk: number;
+    sentimentRisk: number;
+    concentrationRisk: number;
+  };
+  events?: {
+    lastDividendDate?: string;
+  };
 }
 
 export default function Fundamentals() {
@@ -110,7 +140,7 @@ export default function Fundamentals() {
     explanation: ["Company shows strong fundamentals", "Revenue growth trending upward", "Solid balance sheet position"]
   };
 
-  const news = [];
+  const news: { title: string; source: string; sentiment?: { label: string }; publishedAt: string }[] = [];
   const sentiment = {
     overall_sentiment: 0.3,
     confidence: 0.85,
@@ -347,21 +377,21 @@ export default function Fundamentals() {
                     <div className="space-y-2">
                       <div className="flex justify-between">
                         <span>Revenue:</span>
-                        <span className="font-medium">{formatNumber(fundamentals.financials.revenue)}</span>
+                        <span className="font-medium">{formatNumber(fundamentals.financial.revenue)}</span>
                       </div>
                       <div className="flex justify-between">
                         <span>Revenue Growth:</span>
-                        <span className={`font-medium ${fundamentals.financials.revenueGrowth > 0 ? 'text-green-600' : 'text-red-600'}`}>
-                          {formatPercent(fundamentals.financials.revenueGrowth)}
+                        <span className={`font-medium ${fundamentals.financial.revenueGrowth ? fundamentals.financial.revenueGrowth > 0 ? 'text-green-600' : 'text-red-600' : 'text-gray-600'}`}>
+                          {formatPercent(fundamentals.financial.revenueGrowth ?? 0)}
                         </span>
                       </div>
                       <div className="flex justify-between">
                         <span>Net Income:</span>
-                        <span className="font-medium">{formatNumber(fundamentals.financials.netIncome)}</span>
+                        <span className="font-medium">{formatNumber(fundamentals.financial.netIncome)}</span>
                       </div>
                       <div className="flex justify-between">
                         <span>EPS:</span>
-                        <span className="font-medium">${fundamentals.financials.earningsPerShare.toFixed(2)}</span>
+                        <span className="font-medium">${(fundamentals.financial.earningsPerShare ?? 0).toFixed(2)}</span>
                       </div>
                     </div>
                   </CardContent>
@@ -377,19 +407,19 @@ export default function Fundamentals() {
                     <div className="space-y-2">
                       <div className="flex justify-between">
                         <span>Gross Margin:</span>
-                        <span className="font-medium">{formatPercent(fundamentals.financials.grossMargin)}</span>
+                        <span className="font-medium">{formatPercent(fundamentals.financial.grossMargin ?? 0)}</span>
                       </div>
                       <div className="flex justify-between">
                         <span>Operating Margin:</span>
-                        <span className="font-medium">{formatPercent(fundamentals.financials.operatingMargin)}</span>
+                        <span className="font-medium">{formatPercent(fundamentals.financial.operatingMargin ?? 0)}</span>
                       </div>
                       <div className="flex justify-between">
                         <span>Net Margin:</span>
-                        <span className="font-medium">{formatPercent(fundamentals.financials.netMargin)}</span>
+                        <span className="font-medium">{formatPercent(fundamentals.financial.netMargin ?? 0)}</span>
                       </div>
                       <div className="flex justify-between">
                         <span>ROE:</span>
-                        <span className="font-medium">{formatPercent(fundamentals.financials.returnOnEquity)}</span>
+                        <span className="font-medium">{formatPercent(fundamentals.financial.returnOnEquity ?? 0)}</span>
                       </div>
                     </div>
                   </CardContent>
@@ -405,23 +435,23 @@ export default function Fundamentals() {
                     <div className="space-y-2">
                       <div className="flex justify-between">
                         <span>Debt/Equity:</span>
-                        <span className={`font-medium ${fundamentals.financials.debtToEquity > 1 ? 'text-red-600' : 'text-green-600'}`}>
-                          {fundamentals.financials.debtToEquity.toFixed(2)}
+                        <span className={`font-medium ${fundamentals.financial.debtToEquity ? fundamentals.financial.debtToEquity > 1 ? 'text-red-600' : 'text-green-600' : 'text-gray-600'}`}>
+                          {fundamentals.financial.debtToEquity?.toFixed(2)}
                         </span>
                       </div>
                       <div className="flex justify-between">
                         <span>Current Ratio:</span>
-                        <span className={`font-medium ${fundamentals.financials.currentRatio > 1 ? 'text-green-600' : 'text-red-600'}`}>
-                          {fundamentals.financials.currentRatio.toFixed(2)}
+                        <span className={`font-medium ${fundamentals.financial.currentRatio ? fundamentals.financial.currentRatio > 1 ? 'text-green-600' : 'text-red-600' : 'text-gray-600'}`}>
+                          {fundamentals.financial.currentRatio?.toFixed(2)}
                         </span>
                       </div>
                       <div className="flex justify-between">
                         <span>Free Cash Flow:</span>
-                        <span className="font-medium">{formatNumber(fundamentals.financials.freeCashFlow)}</span>
+                        <span className="font-medium">{formatNumber(fundamentals.financial.freeCashFlow ?? 0)}</span>
                       </div>
                       <div className="flex justify-between">
                         <span>Book Value/Share:</span>
-                        <span className="font-medium">${fundamentals.financials.bookValuePerShare.toFixed(2)}</span>
+                        <span className="font-medium">${(fundamentals.financial.bookValuePerShare ?? 0).toFixed(2) ?? 'N/A'}</span>
                       </div>
                     </div>
                   </CardContent>
@@ -441,19 +471,19 @@ export default function Fundamentals() {
                     <div className="space-y-2">
                       <div className="flex justify-between">
                         <span>P/E Ratio:</span>
-                        <span className="font-medium">{fundamentals.valuation.priceToEarnings.toFixed(2)}</span>
+                        <span className="font-medium">{fundamentals.valuation.priceToEarnings?.toFixed(2)}</span>
                       </div>
                       <div className="flex justify-between">
                         <span>P/B Ratio:</span>
-                        <span className="font-medium">{fundamentals.valuation.priceToBook.toFixed(2)}</span>
+                        <span className="font-medium">{fundamentals.valuation.priceToBook?.toFixed(2)}</span>
                       </div>
                       <div className="flex justify-between">
                         <span>P/S Ratio:</span>
-                        <span className="font-medium">{fundamentals.valuation.priceToSales.toFixed(2)}</span>
+                        <span className="font-medium">{fundamentals.valuation.priceToSales?.toFixed(2)}</span>
                       </div>
                       <div className="flex justify-between">
                         <span>PEG Ratio:</span>
-                        <span className="font-medium">{fundamentals.valuation.priceEarningsGrowth.toFixed(2)}</span>
+                        <span className="font-medium">{fundamentals.valuation.priceEarningsGrowth?.toFixed(2)}</span>
                       </div>
                     </div>
                   </CardContent>
@@ -473,11 +503,11 @@ export default function Fundamentals() {
                       </div>
                       <div className="flex justify-between">
                         <span>EV/Revenue:</span>
-                        <span className="font-medium">{fundamentals.valuation.evToRevenue.toFixed(2)}</span>
+                        <span className="font-medium">{fundamentals.valuation.evToRevenue?.toFixed(2)}</span>
                       </div>
                       <div className="flex justify-between">
                         <span>EV/EBITDA:</span>
-                        <span className="font-medium">{fundamentals.valuation.evToEbitda.toFixed(2)}</span>
+                        <span className="font-medium">{fundamentals.valuation.evToEbitda?.toFixed(2)}</span>
                       </div>
                     </div>
                   </CardContent>
@@ -493,13 +523,13 @@ export default function Fundamentals() {
                     <div className="space-y-2">
                       <div className="flex justify-between">
                         <span>Dividend Yield:</span>
-                        <span className="font-medium">{formatPercent(fundamentals.valuation.dividendYield)}</span>
+                        <span className="font-medium">{formatPercent(fundamentals.valuation.dividendYield ?? 0)}</span>
                       </div>
                       <div className="flex justify-between">
                         <span>Payout Ratio:</span>
-                        <span className="font-medium">{formatPercent(fundamentals.valuation.payoutRatio)}</span>
+                        <span className="font-medium">{formatPercent(fundamentals.valuation.payoutRatio ?? 0)}</span>
                       </div>
-                      {fundamentals.events.lastDividendDate && (
+                      {fundamentals.events?.lastDividendDate && (
                         <div className="flex justify-between">
                           <span>Last Dividend:</span>
                           <span className="font-medium">
@@ -514,58 +544,66 @@ export default function Fundamentals() {
             </TabsContent>
 
             <TabsContent value="risk" className="space-y-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle className="flex items-center">
-                    <Shield className="mr-2 h-5 w-5" />
-                    Risk Assessment
-                  </CardTitle>
-                  <CardDescription>
-                    Overall Risk: <span className={`font-semibold ${getRiskColor(fundamentals.risk.overallRisk)}`}>
-                      {fundamentals.risk.overallRisk}
-                    </span>
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <div>
-                      <h4 className="font-medium mb-3">Liquidity Risk</h4>
-                      <Progress value={fundamentals.risk.liquidityRisk} className="mb-2" />
-                      <p className="text-sm text-muted-foreground">{fundamentals.risk.liquidityRisk.toFixed(0)}% risk level</p>
+              {fundamentals.risk ? (
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center">
+                      <Shield className="mr-2 h-5 w-5" />
+                      Risk Assessment
+                    </CardTitle>
+                    <CardDescription>
+                      Overall Risk: <span className={`font-semibold ${getRiskColor(fundamentals.risk.overallRisk)}`}>
+                        {fundamentals.risk.overallRisk}
+                      </span>
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                      <div>
+                        <h4 className="font-medium mb-3">Liquidity Risk</h4>
+                        <Progress value={fundamentals.risk.liquidityRisk} className="mb-2" />
+                        <p className="text-sm text-muted-foreground">{fundamentals.risk.liquidityRisk.toFixed(0)}% risk level</p>
+                      </div>
+                      
+                      <div>
+                        <h4 className="font-medium mb-3">Volatility Risk</h4>
+                        <Progress value={fundamentals.risk.volatilityRisk} className="mb-2" />
+                        <p className="text-sm text-muted-foreground">{fundamentals.risk.volatilityRisk.toFixed(0)}% risk level</p>
+                      </div>
+                      
+                      <div>
+                        <h4 className="font-medium mb-3">Fundamental Risk</h4>
+                        <Progress value={fundamentals.risk.fundamentalRisk} className="mb-2" />
+                        <p className="text-sm text-muted-foreground">{fundamentals.risk.fundamentalRisk.toFixed(0)}% risk level</p>
+                      </div>
+                      
+                      <div>
+                        <h4 className="font-medium mb-3">Technical Risk</h4>
+                        <Progress value={fundamentals.risk.technicalRisk} className="mb-2" />
+                        <p className="text-sm text-muted-foreground">{fundamentals.risk.technicalRisk.toFixed(0)}% risk level</p>
+                      </div>
+                      
+                      <div>
+                        <h4 className="font-medium mb-3">Sentiment Risk</h4>
+                        <Progress value={fundamentals.risk.sentimentRisk} className="mb-2" />
+                        <p className="text-sm text-muted-foreground">{fundamentals.risk.sentimentRisk.toFixed(0)}% risk level</p>
+                      </div>
+                      
+                      <div>
+                        <h4 className="font-medium mb-3">Concentration Risk</h4>
+                        <Progress value={fundamentals.risk.concentrationRisk} className="mb-2" />
+                        <p className="text-sm text-muted-foreground">{fundamentals.risk.concentrationRisk.toFixed(0)}% risk level</p>
+                      </div>
                     </div>
-                    
-                    <div>
-                      <h4 className="font-medium mb-3">Volatility Risk</h4>
-                      <Progress value={fundamentals.risk.volatilityRisk} className="mb-2" />
-                      <p className="text-sm text-muted-foreground">{fundamentals.risk.volatilityRisk.toFixed(0)}% risk level</p>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-medium mb-3">Fundamental Risk</h4>
-                      <Progress value={fundamentals.risk.fundamentalRisk} className="mb-2" />
-                      <p className="text-sm text-muted-foreground">{fundamentals.risk.fundamentalRisk.toFixed(0)}% risk level</p>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-medium mb-3">Technical Risk</h4>
-                      <Progress value={fundamentals.risk.technicalRisk} className="mb-2" />
-                      <p className="text-sm text-muted-foreground">{fundamentals.risk.technicalRisk.toFixed(0)}% risk level</p>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-medium mb-3">Sentiment Risk</h4>
-                      <Progress value={fundamentals.risk.sentimentRisk} className="mb-2" />
-                      <p className="text-sm text-muted-foreground">{fundamentals.risk.sentimentRisk.toFixed(0)}% risk level</p>
-                    </div>
-                    
-                    <div>
-                      <h4 className="font-medium mb-3">Concentration Risk</h4>
-                      <Progress value={fundamentals.risk.concentrationRisk} className="mb-2" />
-                      <p className="text-sm text-muted-foreground">{fundamentals.risk.concentrationRisk.toFixed(0)}% risk level</p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              ) : (
+                <div className="text-center py-12">
+                  <Shield className="h-12 w-12 mx-auto mb-4 text-muted-foreground" />
+                  <h3 className="text-lg font-medium mb-2">Risk Data Not Available</h3>
+                  <p className="text-muted-foreground">Risk assessment data is not available for this symbol</p>
+                </div>
+              )}
             </TabsContent>
 
             <TabsContent value="news" className="space-y-6">

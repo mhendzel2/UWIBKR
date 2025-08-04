@@ -1,5 +1,7 @@
 import { UnusualWhalesService } from './unusualWhales';
 import { WatchlistManager } from './watchlistManager';
+import fs from 'fs';
+import path from 'path';
 
 interface FundamentalData {
   ticker: string;
@@ -24,6 +26,9 @@ interface WatchlistFundamentals {
   lastBulkUpdate: Date;
 }
 
+const DATA_DIR = path.resolve(__dirname, '../../data');
+const FUNDAMENTALS_FILE = path.join(DATA_DIR, 'fundamentals.json');
+
 export class FundamentalDataManager {
   private unusualWhales: UnusualWhalesService;
   private watchlistManager: WatchlistManager;
@@ -35,7 +40,39 @@ export class FundamentalDataManager {
   constructor() {
     this.unusualWhales = new UnusualWhalesService();
     this.watchlistManager = new WatchlistManager();
-    this.startPeriodicUpdates();
+    this.loadFundamentalCache();
+    this.startWeeklyUpdates();
+  }
+
+  private loadFundamentalCache() {
+    if (fs.existsSync(FUNDAMENTALS_FILE)) {
+      const data = fs.readFileSync(FUNDAMENTALS_FILE, 'utf-8');
+      const parsed = JSON.parse(data);
+      this.fundamentalCache = new Map(parsed.map((item: any) => [item.ticker, item]));
+      console.log('📂 Loaded fundamental data from disk.');
+    }
+  }
+
+  private saveFundamentalCache() {
+    if (!fs.existsSync(DATA_DIR)) {
+      fs.mkdirSync(DATA_DIR, { recursive: true });
+    }
+    const data = Array.from(this.fundamentalCache.values());
+    fs.writeFileSync(FUNDAMENTALS_FILE, JSON.stringify(data, null, 2));
+    console.log('💾 Saved fundamental data to disk.');
+  }
+
+  private startWeeklyUpdates() {
+    const now = new Date();
+    const nextMonday = new Date(now);
+    nextMonday.setDate(now.getDate() + ((1 + 7 - now.getDay()) % 7));
+    nextMonday.setHours(0, 0, 0, 0);
+
+    const delay = nextMonday.getTime() - now.getTime();
+    setTimeout(() => {
+      this.updateActiveWatchlistFundamentals();
+      setInterval(() => this.updateActiveWatchlistFundamentals(), 7 * 24 * 60 * 60 * 1000); // Weekly
+    }, delay);
   }
 
   private startPeriodicUpdates() {
