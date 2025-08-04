@@ -2540,15 +2540,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
       }
 
       const symbols: any[] = [];
-      csv.parseString(csvContent, { headers: true })
+      csv.parseString(csvContent, { headers: false, trim: true })
         .on('data', (row: any) => {
-          if (row.Symbol && row.Symbol !== 'Symbol') {
-            const sector = getSectorForSymbol(row.Symbol);
+          const symbol = row.Symbol || row[0];
+          if (symbol && symbol !== 'Symbol') {
+            const sector = getSectorForSymbol(symbol);
             symbols.push({
-              symbol: row.Symbol,
+              symbol,
               sector,
               enabled: true,
-              gexTracking: !['VIX'].includes(row.Symbol)
+              gexTracking: !['VIX'].includes(symbol)
             });
           }
         })
