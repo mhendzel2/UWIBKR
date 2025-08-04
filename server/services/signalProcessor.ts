@@ -2,6 +2,8 @@ import { EventEmitter } from 'events';
 import { UnusualWhalesService } from './unusualWhales';
 import { alertProcessor, ProcessedAlert } from './alertProcessor';
 import { storage } from '../storage';
+import { trainingModeManager } from './trainingMode';
+import { trainingTradeExecutor } from './trainingTradeExecutor';
 
 export interface SwingLeapSignal {
   id: string;
@@ -15,7 +17,7 @@ export interface SwingLeapSignal {
   expiry: string;
   reasoning: string;
   alertData: ProcessedAlert;
-  status: 'pending' | 'approved' | 'rejected';
+  status: 'pending' | 'approved' | 'rejected' | 'executed';
   createdAt: Date;
 }
 
@@ -147,6 +149,23 @@ export class SignalProcessor extends EventEmitter {
             }
           });
 
+          // Check if training mode should auto-execute
+          if (trainingModeManager.isEnabled()) {
+            console.log(`🎯 Training mode active - processing signal for ${signal.ticker}`);
+            
+            const executionResult = await trainingTradeExecutor.processSignalForTraining(signal);
+            
+            if (executionResult.executed) {
+              console.log(`✅ Training trade executed: ${signal.ticker} - ${executionResult.reason}`);
+              
+              // Update signal status to executed
+              // Note: In production, you'd update the stored signal status
+              signal.status = 'executed';
+            } else {
+              console.log(`❌ Training trade not executed: ${signal.ticker} - ${executionResult.reason}`);
+            }
+          }
+
           // Emit signal for real-time updates
           this.emit('signal_generated', signal);
           console.log(`Generated ${signal.strategy} signal for ${signal.ticker}: ${signal.reasoning}`);
@@ -237,13 +256,11 @@ export class SignalProcessor extends EventEmitter {
     }
 
     // Time horizon
-    if (alert.strategy === 'leap') {
-      reasons.push(`LEAP position (${Math.round(alert.trade_horizon === 'LEAP' ? 365 : alert.dte)} days)`);
-    } else {
-      reasons.push(`swing trade setup (${alert.dte} days to expiry)`);
-    }
-
-    // Moneyness context
+      if (alert.strategy === 'leap') {
+        reasons.push(`LEAP position (${Math.round(alert.trade_horizon === 'LEAP' ? 365 : 90)} days)`);
+      } else {
+        reasons.push(`swing trade setup (90 days to expiry)`);
+      }    // Moneyness context
     const moneyness = Math.abs(alert.moneyness_perc);
     if (moneyness < 0.05) {
       reasons.push('near-the-money positioning');

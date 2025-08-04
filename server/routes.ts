@@ -10,6 +10,7 @@ import fdaRoutes from "./routes/fdaRoutes";
 import optionsScreenerRoutes from "./routes/optionsScreener";
 import earningsScreenerRoutes from "./routes/earningsScreener";
 import watchlistRoutes from "./routes/watchlistRoutes";
+import trainingModeRoutes from "./routes/trainingMode";
 import { 
   insertTradingSignalSchema, 
   insertPositionSchema,
@@ -2315,6 +2316,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // app.use("/api/visual-transformer", visualTransformerRoutes); // Temporarily disabled due to TensorFlow compatibility
   app.use("/api/sentiment", sentimentRoutes);
   app.use("/api/watchlist", watchlistRoutes);
+  app.use("/api/training", trainingModeRoutes);
 
   // Import watchlist from CSV endpoint
   app.post("/api/watchlist/import-csv", async (req, res) => {
