@@ -98,40 +98,195 @@ export class SignalProcessor extends EventEmitter {
     try {
       console.log('Polling for sophisticated swing/LEAP flow alerts...');
       
-      // Fetch alerts with our sophisticated filters
+      // Start with more permissive filters to ensure we get data
       const rawAlerts = await this.unusualWhales.getFlowAlerts({
-        minPremium: 500000, // $500K+ for institutional significance
-        minDte: 45, // 45+ days minimum
+        minPremium: 100000, // Reduced from 500K to 100K
+        minDte: 7, // Reduced from 45 to 7 days to capture more opportunities
         issueTypes: ['Common Stock', 'ADR']
       });
 
       if (rawAlerts.length === 0) {
-        console.log('No sophisticated flow alerts found this cycle');
-        return;
+        console.log('⚠️ No flow alerts found - checking with even lower filters...');
+        
+        // Try with even more permissive filters as fallback
+        const fallbackAlerts = await this.unusualWhales.getFlowAlerts({
+          minPremium: 50000, // $50K minimum
+          minDte: 1, // Any DTE
+        });
+        
+        console.log(`Fallback search found ${fallbackAlerts.length} alerts`);
+        
+        if (fallbackAlerts.length === 0) {
+          console.log('❌ No alerts found even with minimal filters');
+          return;
+        }
+        
+        // Use fallback alerts
+        return this.processRawAlerts(fallbackAlerts);
       }
 
       console.log(`Found ${rawAlerts.length} raw alerts, processing...`);
-
-      // Transform rawAlerts to match expected FlowAlert interface
-      const transformedAlerts = rawAlerts.map(alert => ({
-        ...alert,
-        id: `alert_${Date.now()}_${Math.random()}`,
-        type: (alert.strike > alert.underlying_price ? 'call' : 'put') as 'call' | 'put',
-        strike: alert.strike.toString(),
-        created_at: new Date().toISOString()
-      }));
-
-      // Process through our sophisticated alert processor
-      const processedAlerts = await alertProcessor.processFlowAlerts(transformedAlerts);
-
-      console.log(`Processed ${processedAlerts.length} high-conviction alerts`);
+      return this.processRawAlerts(rawAlerts);
 
     } catch (error) {
-      console.error('Failed to poll flow alerts:', error);
+      console.error('❌ Failed to poll flow alerts:', error);
+      // Log the specific error for debugging
+      if (error instanceof Error) {
+        console.error('Error details:', error.message);
+      }
     }
   }
 
   /**
+   * Process raw alerts from the API
+   */
+  private async processRawAlerts(rawAlerts: any[]): Promise<void> {
+    try {
+      // Transform rawAlerts to match expected FlowAlert interface
+      const transformedAlerts = rawAlerts.map(alert => {
+        // Calculate ask side percentage from premium data
+        const totalPremium = parseFloat(alert.total_premium) || 0;
+        const askSidePremium = parseFloat(alert.total_ask_side_prem) || 0;
+        const bidSidePremium = parseFloat(alert.total_bid_side_prem) || 0;
+        const askSidePercentage = totalPremium > 0 ? askSidePremium / totalPremium : 0;
+        
+        // Calculate DTE from expiry
+        const dte = this.calculateDTE(alert.expiry);
+        
+        // Ensure we have all required fields
+        const transformedAlert = {
+          ...alert,
+          id: alert.id || `alert_${Date.now()}_${Math.random()}`,
+          type: this.determineOptionType(alert),
+          strike: alert.strike?.toString() || '0',
+          created_at: alert.created_at || new Date().toISOString(),
+          total_premium: totalPremium,
+          total_size: alert.total_size || alert.volume || 0,
+          open_interest: alert.open_interest || 0,
+          ask_side_percentage: askSidePercentage,
+          dte: dte,
+          underlying_price: parseFloat(alert.underlying_price) || 0,
+          alert_rule: alert.alert_rule || 'Unknown',
+          volume_oi_ratio: parseFloat(alert.volume_oi_ratio) || 0
+        };
+        
+        console.log(`🔍 Transformed alert: ${alert.ticker} - $${(transformedAlert.total_premium/1000).toFixed(0)}K premium, ${transformedAlert.dte} DTE, ${(transformedAlert.ask_side_percentage*100).toFixed(1)}% ask`);
+        return transformedAlert;
+      });
+
+      // Process through our sophisticated alert processor
+      const processedAlerts = await alertProcessor.processFlowAlerts(transformedAlerts);
+
+      console.log(`✅ Processed ${processedAlerts.length} high-conviction alerts from ${transformedAlerts.length} raw alerts`);
+
+      // Generate trading signals from processed alerts
+      for (const alert of processedAlerts) {
+        try {
+          const signal = await this.createSwingLeapSignal(alert);
+          if (signal) {
+            // Store the signal
+            await storage.createTradingSignal({
+              ticker: signal.ticker,
+              strategy: signal.strategy,
+              sentiment: signal.sentiment,
+              confidence: signal.confidence.toString(),
+              entryPrice: signal.entryPrice.toString(),
+              targetPrice: signal.targetPrice?.toString(),
+              maxRisk: signal.maxRisk.toString(),
+              expiry: signal.expiry,
+              reasoning: signal.reasoning,
+              status: 'pending',
+              aiAnalysis: {
+                alertData: signal.alertData,
+                convictionScore: alert.conviction_score,
+                institutionalConfidence: alert.institutional_confidence
+              }
+            });
+
+            // Check if training mode should auto-execute
+            if (trainingModeManager.isEnabled()) {
+              console.log(`🎯 Training mode active - processing signal for ${signal.ticker}`);
+              
+              const executionResult = await trainingTradeExecutor.processSignalForTraining(signal);
+              
+              if (executionResult.executed) {
+                console.log(`✅ Training trade executed: ${signal.ticker} - ${executionResult.reason}`);
+                
+                // Update signal status to executed
+                // Note: In production, you'd update the stored signal status
+                signal.status = 'executed';
+              } else {
+                console.log(`⏸️ Training trade not executed: ${signal.ticker} - ${executionResult.reason}`);
+              }
+            }
+
+            console.log(`💡 Generated signal: ${signal.ticker} ${signal.strategy} ${signal.sentiment} (confidence: ${signal.confidence})`);
+          }
+        } catch (error) {
+          console.error(`❌ Failed to create signal for ${alert.ticker}:`, error);
+        }
+      }
+
+    } catch (error) {
+      console.error('❌ Failed to process raw alerts:', error);
+    }
+  }
+
+  /**
+   * Determine option type from alert data
+   */
+  private determineOptionType(alert: any): 'call' | 'put' {
+    // Try multiple fields to determine option type
+    if (alert.type) {
+      return alert.type.toLowerCase() === 'call' ? 'call' : 'put';
+    }
+    if (alert.option_type) {
+      return alert.option_type.toLowerCase() === 'call' ? 'call' : 'put';
+    }
+    // Fallback: compare strike to underlying price
+    if (alert.strike && alert.underlying_price) {
+      return alert.strike > alert.underlying_price ? 'call' : 'put';
+    }
+    return 'call'; // Default fallback
+  }
+
+  /**
+   * Calculate days to expiration from expiry date
+   */
+  private calculateDTE(expiry: string | undefined): number {
+    if (!expiry) {
+      console.log('⚠️ No expiry provided, defaulting to 30 DTE');
+      return 30;
+    }
+
+    try {
+      // Handle different date formats
+      let expiryDate: Date;
+      
+      if (expiry.includes('-')) {
+        // Format: "2025-12-19" or "2025-12-19T..."
+        expiryDate = new Date(expiry);
+      } else {
+        // Handle other formats if needed
+        expiryDate = new Date(expiry);
+      }
+      
+      if (isNaN(expiryDate.getTime())) {
+        console.log(`⚠️ Invalid expiry date format: ${expiry}, defaulting to 30 DTE`);
+        return 30;
+      }
+
+      const now = new Date();
+      const diffTime = expiryDate.getTime() - now.getTime();
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      
+      console.log(`📅 Calculated DTE: ${diffDays} days (expiry: ${expiry})`);
+      return Math.max(0, diffDays); // Ensure non-negative
+    } catch (error) {
+      console.error(`❌ Error calculating DTE for expiry ${expiry}:`, error);
+      return 30; // Default fallback
+    }
+  }  /**
    * Generate trading signals from processed alerts
    */
   private async generateSignalsFromAlerts(alerts: ProcessedAlert[]): Promise<void> {

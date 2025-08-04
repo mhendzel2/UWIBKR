@@ -270,13 +270,12 @@ export class UnusualWhalesService {
     try {
       const params = new URLSearchParams();
       
-      // Default filters optimized for swing/LEAP focus
+      // Default filters optimized for swing/LEAP focus but more permissive
       const defaultFilters = {
-        minPremium: filters.minPremium || 500000, // $500K minimum for institutional significance
-        minDte: filters.minDte || 45, // 45+ days for swing trades, 365+ for LEAPs
+        minPremium: filters.minPremium || 50000, // Reduced to $50K for more opportunities
+        minDte: filters.minDte || 7, // Reduced to 7 days for more opportunities
         issueTypes: filters.issueTypes || ['Common Stock', 'ADR'], // Skip ETFs initially
-        ruleNames: ['RepeatedHits', 'RepeatedHitsAscendingFill', 'RepeatedHitsDescendingFill'],
-        minVolumeOiRatio: 1.0 // Focus on potential opening trades
+        minVolumeOiRatio: 0.5 // More permissive volume/OI ratio
       };
 
       // Apply sophisticated filtering parameters
@@ -292,23 +291,33 @@ export class UnusualWhalesService {
       params.append('min_dte', defaultFilters.minDte.toString());
       params.append('min_volume_oi_ratio', defaultFilters.minVolumeOiRatio.toString());
       
-      defaultFilters.issueTypes.forEach(type => {
-        params.append('issue_types[]', type);
-      });
-      
-      defaultFilters.ruleNames.forEach(rule => {
-        params.append('rule_name[]', rule);
-      });
+      // Add issue types if provided
+      if (defaultFilters.issueTypes.length > 0) {
+        defaultFilters.issueTypes.forEach(type => {
+          params.append('issue_types[]', type);
+        });
+      }
 
       const endpoint = `/option-trades/flow-alerts?${params.toString()}`;
-      console.log(`Requesting flow alerts from: ${endpoint}`);
+      console.log(`📡 Requesting flow alerts: ${endpoint}`);
       
       const data = await this.makeRequest<{ data: FlowAlert[] }>(endpoint);
       
-      console.log(`Fetched ${data.data?.length || 0} sophisticated flow alerts`);
+      const alertCount = data.data?.length || 0;
+      console.log(`✅ Fetched ${alertCount} flow alerts`);
+      
+      // Log some sample data for debugging
+      if (alertCount > 0 && data.data) {
+        console.log(`📊 Sample alerts:`);
+        data.data.slice(0, 3).forEach((alert, index) => {
+          console.log(`  ${index + 1}. ${alert.ticker}: $${(alert.total_premium/1000).toFixed(0)}K premium, ${alert.dte} DTE`);
+        });
+      }
+      
       return data.data || [];
     } catch (error) {
-      console.error('Failed to fetch sophisticated flow alerts:', error);
+      console.error('❌ Failed to fetch flow alerts:', error);
+      console.error('Error details:', error instanceof Error ? error.message : String(error));
       return [];
     }
   }

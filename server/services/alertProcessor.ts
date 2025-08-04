@@ -54,22 +54,45 @@ export class AlertProcessor extends EventEmitter {
 
     try {
       // Apply sophisticated filtering using native JavaScript for high-conviction, long-term signals
-      const filteredAlerts = rawAlerts.filter(alert => {
-        // Rule 1: Significant monetary value ($500K+ premium)
-        if (alert.total_premium < 500_000) return false;
+      const filteredAlerts = rawAlerts.filter((alert, index) => {
+        console.log(`🔍 Evaluating alert ${index + 1}: ${alert.ticker}`);
+        console.log(`  - Premium: $${(alert.total_premium/1000).toFixed(0)}K`);
+        console.log(`  - Size: ${alert.total_size}, OI: ${alert.open_interest}`);
+        console.log(`  - Ask%: ${(alert.ask_side_percentage*100).toFixed(1)}%`);
+        console.log(`  - DTE: ${alert.dte}`);
+        console.log(`  - Underlying: $${alert.underlying_price}`);
         
-        // Rule 2: Likely opening trade (size > open interest)
-        if (alert.total_size <= alert.open_interest) return false;
+        // Rule 1: Significant monetary value (reduced from $500K to $50K for more opportunities)
+        if (alert.total_premium < 50_000) {
+          console.log(`  ❌ Failed Rule 1: Premium ${alert.total_premium} < 50K`);
+          return false;
+        }
         
-        // Rule 3: Strong buying aggression (80%+ ask side)
-        if (alert.ask_side_percentage <= 0.80) return false;
+        // Rule 2: Valid underlying price
+        if (alert.underlying_price <= 0) {
+          console.log(`  ❌ Failed Rule 2: Invalid underlying price ${alert.underlying_price}`);
+          return false;
+        }
         
-        // Rule 4: Focus on swing (45+ days) and LEAP (365+ days) timeframes
-        if (alert.dte < 45) return false;
+        // Rule 3: Minimum volume requirements (less restrictive)
+        if (alert.total_size <= 0) {
+          console.log(`  ❌ Failed Rule 3: Invalid total size ${alert.total_size}`);
+          return false;
+        }
         
-        // Rule 5: Filter out obvious hedging (valid underlying price)
-        if (alert.underlying_price <= 0) return false;
+        // Rule 4: Focus on reasonable timeframes (relaxed from 45+ days to 7+ days)
+        if (alert.dte < 7) {
+          console.log(`  ❌ Failed Rule 4: DTE ${alert.dte} < 7 days`);
+          return false;
+        }
         
+        // Rule 5: Strong buying bias (reduced from 80% to 60% for more opportunities)
+        if (alert.ask_side_percentage <= 0.60) {
+          console.log(`  ❌ Failed Rule 5: Ask side ${(alert.ask_side_percentage*100).toFixed(1)}% <= 60%`);
+          return false;
+        }
+        
+        console.log(`  ✅ Alert passed all filters!`);
         return true;
       });
 
@@ -132,7 +155,17 @@ export class AlertProcessor extends EventEmitter {
       });
 
       // Log processing results
-      console.log(`Alert Processor: Filtered ${rawAlerts.length} raw alerts to ${processedAlerts.length} high-conviction opportunities`);
+      console.log(`📊 Alert Processing Results:`);
+      console.log(`  - Input alerts: ${rawAlerts.length}`);
+      console.log(`  - Filtered alerts: ${filteredAlerts.length}`);
+      console.log(`  - Final processed alerts: ${processedAlerts.length}`);
+      
+      if (processedAlerts.length > 0) {
+        console.log(`  - Top alerts:`);
+        processedAlerts.slice(0, 3).forEach((alert, index) => {
+          console.log(`    ${index + 1}. ${alert.ticker}: $${(alert.total_premium/1000).toFixed(0)}K, ${alert.conviction_score}% conviction`);
+        });
+      }
 
       // Emit processed alerts for downstream consumption
       this.emit('alerts_processed', processedAlerts);
