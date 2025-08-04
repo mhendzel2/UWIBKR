@@ -137,21 +137,113 @@ export default function SentimentHeatmap() {
   const [selectedChart, setSelectedChart] = useState('sentiment');
 
   // Real-time comprehensive sentiment data
+  // Enhanced live market sentiment with cache-busting
   const { data: marketSentiment, isLoading, error, refetch, dataUpdatedAt } = useQuery({
-    queryKey: ['/api/sentiment/market'],
-    refetchInterval: autoRefresh ? 60000 : false,
+    queryKey: ['/api/sentiment/market', Date.now()],
+    queryFn: async () => {
+      console.log(`[${new Date().toLocaleTimeString()}] Fetching market sentiment...`);
+      const response = await fetch('/api/sentiment/market');
+      if (!response.ok) throw new Error('Network response was not ok');
+      const data = await response.json();
+      console.log(`[${new Date().toLocaleTimeString()}] Market sentiment updated:`, data);
+      return data;
+    },
+    staleTime: 0,
+    refetchInterval: autoRefresh ? 30000 : false, // Enhanced to 30 seconds
+    refetchOnWindowFocus: true,
+    refetchOnMount: true,
+    refetchOnReconnect: true,
   });
 
-  // Historical sentiment data for charts
+  // Live UnusualWhales market tide data
+  const { data: marketTide } = useQuery({
+    queryKey: ['/api/unusual-whales/market-tide', Date.now()],
+    queryFn: async () => {
+      console.log(`[${new Date().toLocaleTimeString()}] Fetching UnusualWhales market tide...`);
+      const response = await fetch('/api/unusual-whales/market-tide');
+      if (!response.ok) throw new Error('Failed to fetch market tide');
+      const data = await response.json();
+      console.log(`[${new Date().toLocaleTimeString()}] Market tide updated:`, data?.length || 0, 'data points');
+      return data;
+    },
+    staleTime: 0,
+    refetchInterval: autoRefresh ? 30000 : false,
+    refetchOnWindowFocus: true,
+    refetchOnMount: true,
+    refetchOnReconnect: true,
+  });
+
+  // Live sector ETF sentiment data
+  const { data: sectorETFs } = useQuery({
+    queryKey: ['/api/unusual-whales/sector-etfs', Date.now()],
+    queryFn: async () => {
+      console.log(`[${new Date().toLocaleTimeString()}] Fetching sector ETF data...`);
+      const response = await fetch('/api/unusual-whales/sector-etfs');
+      if (!response.ok) throw new Error('Failed to fetch sector ETFs');
+      const data = await response.json();
+      console.log(`[${new Date().toLocaleTimeString()}] Sector ETF data updated:`, data?.length || 0, 'sectors');
+      return data;
+    },
+    staleTime: 0,
+    refetchInterval: autoRefresh ? 30000 : false,
+    refetchOnWindowFocus: true,
+    refetchOnMount: true,
+    refetchOnReconnect: true,
+  });
+
+  // Live total options volume from UnusualWhales
+  const { data: totalOptionsVolume } = useQuery({
+    queryKey: ['/api/unusual-whales/total-options-volume', Date.now()],
+    queryFn: async () => {
+      console.log(`[${new Date().toLocaleTimeString()}] Fetching total options volume...`);
+      const response = await fetch('/api/unusual-whales/total-options-volume');
+      if (!response.ok) throw new Error('Failed to fetch total options volume');
+      const data = await response.json();
+      console.log(`[${new Date().toLocaleTimeString()}] Total options volume updated`);
+      return data;
+    },
+    staleTime: 0,
+    refetchInterval: autoRefresh ? 30000 : false,
+    refetchOnWindowFocus: true,
+    refetchOnMount: true,
+    refetchOnReconnect: true,
+  });
+
+  // Historical sentiment data for charts with enhanced refresh
   const { data: historicalData, isLoading: isLoadingHistorical } = useQuery<HistoricalSentimentData>({
-    queryKey: ['/api/sentiment/historical', selectedTimeframe],
-    refetchInterval: autoRefresh ? 300000 : false, // 5 minutes
+    queryKey: ['/api/sentiment/historical', selectedTimeframe, Date.now()],
+    queryFn: async () => {
+      console.log(`[${new Date().toLocaleTimeString()}] Fetching historical sentiment data...`);
+      const response = await fetch(`/api/sentiment/historical?timeframe=${selectedTimeframe}`);
+      if (!response.ok) throw new Error('Network response was not ok');
+      const data = await response.json();
+      console.log(`[${new Date().toLocaleTimeString()}] Historical sentiment updated`);
+      return data;
+    },
+    staleTime: 0,
+    refetchInterval: autoRefresh ? 120000 : false, // Enhanced to 2 minutes
+    refetchOnWindowFocus: true,
+    refetchOnMount: true,
+    refetchOnReconnect: true,
   });
 
-  // Sentiment statistics and trends
+  // Sentiment statistics and trends with enhanced refresh
   const { data: sentimentStats } = useQuery<SentimentStats>({
-    queryKey: ['/api/sentiment/stats', selectedTimeframe === '1h' || selectedTimeframe === '4h' ? '7d' : '30d'],
-    refetchInterval: autoRefresh ? 600000 : false, // 10 minutes
+    queryKey: ['/api/sentiment/stats', selectedTimeframe === '1h' || selectedTimeframe === '4h' ? '7d' : '30d', Date.now()],
+    queryFn: async () => {
+      console.log(`[${new Date().toLocaleTimeString()}] Fetching sentiment stats...`);
+      const timeframe = selectedTimeframe === '1h' || selectedTimeframe === '4h' ? '7d' : '30d';
+      const response = await fetch(`/api/sentiment/stats?timeframe=${timeframe}`);
+      if (!response.ok) throw new Error('Network response was not ok');
+      const data = await response.json();
+      console.log(`[${new Date().toLocaleTimeString()}] Sentiment stats updated`);
+      return data;
+    },
+    staleTime: 0,
+    refetchInterval: autoRefresh ? 180000 : false, // Enhanced to 3 minutes
+    refetchOnWindowFocus: true,
+    refetchOnMount: true,
+    refetchOnReconnect: true,
   });
 
   const getFearGreedColor = (score: number) => {
@@ -236,8 +328,8 @@ export default function SentimentHeatmap() {
     );
   }
 
-  const sentiment = marketSentiment as MarketSentimentData;
-  const vixData = sentiment ? getVIXLevel(sentiment.vixLevel) : { label: 'N/A', color: 'text-gray-600' };
+  const sentiment = marketSentiment as any; // Use any for flexible property access
+  const vixData = sentiment?.vixLevel ? getVIXLevel(sentiment.vixLevel) : { label: 'N/A', color: 'text-gray-600' };
 
   return (
     <div className="container mx-auto py-8 space-y-6">
@@ -268,47 +360,45 @@ export default function SentimentHeatmap() {
         </div>
       </div>
 
-      {/* Trump Communications Alerts */}
-      {trumpAlerts && trumpAlerts.length > 0 && (
-        <Alert className="border-orange-200 bg-orange-50">
-          <AlertTriangle className="h-4 w-4 text-orange-600" />
-          <AlertDescription>
-            <strong>High-Impact Trump Communications Detected:</strong> {trumpAlerts.length} recent posts with significant market impact potential
-          </AlertDescription>
-        </Alert>
-      )}
-
       {/* Overall Sentiment Summary */}
-      {sentiment && sentiment.overallSentiment && sentiment.overallSentiment.recommendation && (
+      {sentiment && sentiment.overall_sentiment !== undefined && (
         <Card className="border-2">
           <CardHeader>
             <CardTitle className="flex items-center gap-2">
-              {getRecommendationIcon(sentiment.overallSentiment.recommendation)}
-              Overall Market Sentiment: {sentiment.overallSentiment.recommendation.toUpperCase()}
+              {sentiment.overall_sentiment > 0 ? <TrendingUp className="h-5 w-5 text-green-600" /> : <TrendingDown className="h-5 w-5 text-red-600" />}
+              Overall Market Sentiment: {sentiment.overall_sentiment > 0 ? 'BULLISH' : sentiment.overall_sentiment < 0 ? 'BEARISH' : 'NEUTRAL'}
             </CardTitle>
           </CardHeader>
           <CardContent>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div>
                 <div className="text-sm text-gray-600">Sentiment Score</div>
-                <div className={`text-2xl font-bold ${sentiment.overallSentiment.score > 0 ? 'text-green-600' : 'text-red-600'}`}>
-                  {sentiment.overallSentiment.score > 0 ? '+' : ''}{sentiment.overallSentiment.score.toFixed(1)}
+                <div className={`text-2xl font-bold ${sentiment.overall_sentiment > 0 ? 'text-green-600' : 'text-red-600'}`}>
+                  {sentiment.overall_sentiment > 0 ? '+' : ''}{sentiment.overall_sentiment.toFixed(1)}
                 </div>
               </div>
               <div>
                 <div className="text-sm text-gray-600">Confidence</div>
                 <div className="text-2xl font-bold">
-                  {(sentiment.overallSentiment.confidence * 100).toFixed(0)}%
+                  {sentiment.confidence ? (sentiment.confidence * 100).toFixed(0) : '0'}%
                 </div>
               </div>
               <div>
-                <div className="text-sm text-gray-600">Primary Drivers</div>
+                <div className="text-sm text-gray-600">Market Impact</div>
                 <div className="flex flex-wrap gap-1 mt-1">
-                  {sentiment.overallSentiment.primaryDrivers.map((driver, index) => (
-                    <Badge key={index} variant="outline" className="text-xs">
-                      {driver}
+                  <Badge variant="outline" className="text-xs capitalize">
+                    {sentiment.market_impact || 'Unknown'}
+                  </Badge>
+                  {sentiment.bullish_signals && sentiment.bullish_signals.length > 0 && (
+                    <Badge variant="outline" className="text-xs text-green-600">
+                      {sentiment.bullish_signals.length} Bullish
                     </Badge>
-                  ))}
+                  )}
+                  {sentiment.bearish_signals && sentiment.bearish_signals.length > 0 && (
+                    <Badge variant="outline" className="text-xs text-red-600">
+                      {sentiment.bearish_signals.length} Bearish
+                    </Badge>
+                  )}
                 </div>
               </div>
             </div>
@@ -327,81 +417,79 @@ export default function SentimentHeatmap() {
         <TabsContent value="overview" className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
             {/* Fear & Greed Index */}
-            {sentiment && sentiment.fearGreedIndex !== undefined && (
+            {sentiment && sentiment.fear_greed_index !== undefined && (
               <Card>
                 <CardHeader className="pb-2">
                   <CardTitle className="text-sm font-medium">Fear & Greed Index</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">{sentiment.fearGreedIndex}</div>
+                  <div className="text-2xl font-bold">{sentiment.fear_greed_index}</div>
                   <div className="flex items-center gap-2 mt-2">
-                    <div className={`w-3 h-3 rounded-full ${getFearGreedColor(sentiment.fearGreedIndex)}`}></div>
-                    <span className="text-sm">{getFearGreedLabel(sentiment.fearGreedIndex)}</span>
+                    <div className={`w-3 h-3 rounded-full ${getFearGreedColor(sentiment.fear_greed_index)}`}></div>
+                    <span className="text-sm">{getFearGreedLabel(sentiment.fear_greed_index)}</span>
                   </div>
-                  <Progress value={sentiment.fearGreedIndex} className="mt-2" />
+                  <Progress value={sentiment.fear_greed_index} className="mt-2" />
                 </CardContent>
               </Card>
             )}
 
             {/* VIX Level */}
-            {sentiment && sentiment.vixLevel !== undefined && (
+            {sentiment && sentiment.vix_level !== undefined && (
               <Card>
                 <CardHeader className="pb-2">
                   <CardTitle className="text-sm font-medium">VIX Level</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">{sentiment.vixLevel.toFixed(1)}</div>
-                  <div className={`text-sm mt-1 ${vixData.color}`}>
-                    {vixData.label}
+                  <div className="text-2xl font-bold">{sentiment.vix_level.toFixed(1)}</div>
+                  <div className={`text-sm mt-1 ${getVIXLevel(sentiment.vix_level).color}`}>
+                    {getVIXLevel(sentiment.vix_level).label}
                   </div>
                 </CardContent>
               </Card>
             )}
 
-            {/* Bitcoin Sentiment */}
-            {sentiment && sentiment.crypto && sentiment.crypto.btc && (
+            {/* Market Tide Data */}
+            {marketTide && marketTide.length > 0 && (
               <Card>
                 <CardHeader className="pb-2">
                   <CardTitle className="text-sm font-medium flex items-center gap-2">
-                    <Bitcoin className="h-4 w-4" />
-                    Bitcoin
+                    <Activity className="h-4 w-4" />
+                    Market Tide
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">${sentiment.crypto.btc.price.toLocaleString()}</div>
-                  <div className={`text-sm mt-1 ${sentiment.crypto.btc.change24h >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                    {sentiment.crypto.btc.change24h >= 0 ? '+' : ''}{sentiment.crypto.btc.change24h.toFixed(2)}%
+                  <div className="text-2xl font-bold">{marketTide.length}</div>
+                  <div className="text-sm mt-1 text-gray-600">
+                    Data Points
                   </div>
-                  <div className="flex gap-1 mt-2">
-                    <Badge className={`${getSentimentColor(sentiment.crypto.btc.sentiment)} text-xs`}>
-                      {sentiment.crypto.btc.sentiment}
-                    </Badge>
-                    {sentiment.crypto.btc.gexSentiment && (
-                      <Badge variant="outline" className="text-xs">
-                        GEX: {sentiment.crypto.btc.gexSentiment}
-                      </Badge>
-                    )}
-                  </div>
+                  {marketTide[0] && (
+                    <div className="text-xs text-gray-500 mt-1">
+                      Latest: {new Date(marketTide[0].timestamp || marketTide[0].date).toLocaleTimeString()}
+                    </div>
+                  )}
                 </CardContent>
               </Card>
             )}
 
-            {/* Trump Impact */}
-            {sentiment && sentiment.trumpCommunications && (
+            {/* Total Options Volume */}
+            {totalOptionsVolume && (
               <Card>
                 <CardHeader className="pb-2">
                   <CardTitle className="text-sm font-medium flex items-center gap-2">
-                    <Users className="h-4 w-4" />
-                    Trump Impact
+                    <BarChart3 className="h-4 w-4" />
+                    Options Volume
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className="text-2xl font-bold">
-                    {sentiment.trumpCommunications.marketImpactScore.toFixed(1)}/10
+                  <div className="text-lg font-bold">
+                    C: {totalOptionsVolume.call_volume ? (totalOptionsVolume.call_volume / 1000000).toFixed(1) : '0'}M
                   </div>
-                  <div className="flex items-center gap-2 mt-2">
-                    <div className={`w-3 h-3 rounded-full ${getAlertLevelColor(sentiment.trumpCommunications.alertLevel)}`}></div>
-                    <span className="text-sm capitalize">{sentiment.trumpCommunications.alertLevel} Alert</span>
+                  <div className="text-lg font-bold">
+                    P: {totalOptionsVolume.put_volume ? (totalOptionsVolume.put_volume / 1000000).toFixed(1) : '0'}M
+                  </div>
+                  <div className="text-xs text-gray-500 mt-1">
+                    P/C Ratio: {totalOptionsVolume.put_volume && totalOptionsVolume.call_volume ? 
+                      (totalOptionsVolume.put_volume / totalOptionsVolume.call_volume).toFixed(2) : 'N/A'}
                   </div>
                 </CardContent>
               </Card>

@@ -80,8 +80,23 @@ export default function OptionsHeatMap() {
 
   // Fetch heat map data
   const { data: heatMapData = [], isLoading, refetch, dataUpdatedAt } = useQuery<HeatMapCell[]>({
-    queryKey: ['/api/options/heatmap', filters],
-    refetchInterval: autoRefresh ? refreshInterval * 1000 : false,
+    queryKey: ['/api/options/heatmap', filters, Date.now()],
+    queryFn: async () => {
+      const timestamp = new Date().toLocaleTimeString();
+      console.log('🔄 Fetching Options Heatmap at', timestamp);
+      const response = await fetch('/api/options/heatmap');
+      if (!response.ok) {
+        throw new Error(`Failed to fetch heatmap data: ${response.status}`);
+      }
+      const data = await response.json();
+      console.log('✅ Received Options Heatmap at', timestamp, '- Cells:', data.length);
+      return data;
+    },
+    refetchInterval: 30000, // Refresh every 30 seconds
+    staleTime: 0,
+    refetchOnWindowFocus: true,
+    refetchOnMount: true,
+    refetchOnReconnect: true,
   });
 
   // Fetch sector performance for context

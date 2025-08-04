@@ -174,6 +174,8 @@ export default function OptionsScreener() {
   const { data: stringencyMetrics } = useQuery<StringencyMetrics>({
     queryKey: ['/api/options/stringency-metrics', filters.stringencyLevel],
     enabled: filters.trainingMode,
+    refetchInterval: 30000, // Refresh every 30 seconds
+    staleTime: 0,
   });
 
   // Fetch day trading opportunities
@@ -181,7 +183,23 @@ export default function OptionsScreener() {
     success?: boolean;
     opportunities?: DayTradingOpportunity[];
   }>({
-    queryKey: ['/api/options/daytrading-opportunities'],
+    queryKey: ['/api/options/daytrading-opportunities', Date.now()],
+    queryFn: async () => {
+      const timestamp = new Date().toLocaleTimeString();
+      console.log('🔄 Fetching Day Trading Opportunities at', timestamp);
+      const response = await fetch('/api/options/daytrading-opportunities');
+      if (!response.ok) {
+        throw new Error(`Failed to fetch daytrading opportunities: ${response.status}`);
+      }
+      const data = await response.json();
+      console.log('✅ Received Day Trading Opportunities at', timestamp, '- Count:', data.opportunities?.length || 0);
+      return data;
+    },
+    refetchInterval: 30000, // Refresh every 30 seconds
+    staleTime: 0,
+    refetchOnWindowFocus: true,
+    refetchOnMount: true,
+    refetchOnReconnect: true,
   });
   
   const dayTradingOpportunities = dayTradingData?.opportunities || [];
@@ -203,7 +221,23 @@ export default function OptionsScreener() {
       timestamp: string;
     }>;
   }>({
-    queryKey: ['/api/options/enhanced-sentiment'],
+    queryKey: ['/api/options/enhanced-sentiment', Date.now()],
+    queryFn: async () => {
+      const timestamp = new Date().toLocaleTimeString();
+      console.log('🔄 Fetching Market Sentiment at', timestamp);
+      const response = await fetch('/api/options/enhanced-sentiment');
+      if (!response.ok) {
+        throw new Error(`Failed to fetch market sentiment: ${response.status}`);
+      }
+      const data = await response.json();
+      console.log('✅ Received Market Sentiment at', timestamp);
+      return data;
+    },
+    refetchInterval: 30000, // Refresh every 30 seconds
+    staleTime: 0,
+    refetchOnWindowFocus: true,
+    refetchOnMount: true,
+    refetchOnReconnect: true,
   });
 
   // Sector rotation analysis
@@ -216,8 +250,47 @@ export default function OptionsScreener() {
       confidence: number;
     }>;
   }>({
-    queryKey: ['/api/options/sector-rotation'],
+    queryKey: ['/api/options/sector-rotation', Date.now()],
+    queryFn: async () => {
+      const timestamp = new Date().toLocaleTimeString();
+      console.log('🔄 Fetching Sector Rotation at', timestamp);
+      const response = await fetch('/api/options/sector-rotation');
+      if (!response.ok) {
+        throw new Error(`Failed to fetch sector rotation: ${response.status}`);
+      }
+      const data = await response.json();
+      console.log('✅ Received Sector Rotation at', timestamp, '- Sectors:', data.sectors?.length || 0);
+      return data;
+    },
+    refetchInterval: 30000, // Refresh every 30 seconds
+    staleTime: 0,
+    refetchOnWindowFocus: true,
+    refetchOnMount: true,
+    refetchOnReconnect: true,
   });
+
+  // Add automatic screener refresh every 2 minutes
+  useEffect(() => {
+    const autoScreenerInterval = setInterval(() => {
+      if (!isLoading) {
+        console.log('🔄 Auto-refreshing screener data at', new Date().toLocaleTimeString());
+        runScreener();
+      }
+    }, 120000); // 2 minutes
+
+    // Initial run after 5 seconds
+    const initialTimeout = setTimeout(() => {
+      if (!isLoading && screenedOptions.length === 0) {
+        console.log('🚀 Initial screener run at', new Date().toLocaleTimeString());
+        runScreener();
+      }
+    }, 5000);
+
+    return () => {
+      clearInterval(autoScreenerInterval);
+      clearTimeout(initialTimeout);
+    };
+  }, [isLoading, screenedOptions.length]); // Dependencies to prevent infinite loops
 
   const runScreener = async () => {
     setIsLoading(true);

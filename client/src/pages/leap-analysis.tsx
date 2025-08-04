@@ -90,29 +90,32 @@ export default function LEAPAnalysisPage() {
   const [trainingMode, setTrainingMode] = useState(false);
   const queryClient = useQueryClient();
 
-  const { data: leapData, isLoading, error, dataUpdatedAt: leapUpdatedAt } = useQuery<LEAPAnalysisData>({
+  const { data: leapData, isLoading, error, dataUpdatedAt: leapUpdatedAt, refetch } = useQuery<LEAPAnalysisData>({
     queryKey: ['/api/leaps/analyze', stringencyLevel],
     queryFn: async () => {
-      console.log('Fetching LEAP analysis...');
+      const timestamp = new Date().toLocaleTimeString();
+      console.log('🔄 Fetching LEAP analysis at', timestamp, 'for stringency level', stringencyLevel);
       const params = new URLSearchParams();
       if (stringencyLevel !== 3) {
         params.append('stringency', stringencyLevel.toString());
       }
+      // Add timestamp to prevent caching
+      params.append('_t', Date.now().toString());
       const url = `/api/leaps/analyze${params.toString() ? '?' + params.toString() : ''}`;
       const response = await fetch(url);
       if (!response.ok) {
         throw new Error(`Failed to load LEAP analysis: ${response.status}: ${await response.text()}`);
       }
       const data = await response.json();
-      console.log('Received LEAP data:', data);
+      console.log('✅ Received LEAP data at', timestamp, '- Trades:', data.trades?.length, 'Total Premium:', data.summary?.totalPremium);
       return data;
     },
-    refetchInterval: 5 * 60 * 1000, // Refresh every 5 minutes
+    refetchInterval: 30000, // Refresh every 30 seconds instead of 5 minutes
     staleTime: 0, // Always consider data stale
     refetchOnWindowFocus: true,
+    refetchOnMount: true,
+    refetchOnReconnect: true,
   });
-
-  console.log('LEAP data:', leapData, 'Loading:', isLoading, 'Error:', error);
 
   // Fetch stringency metrics for training mode
   const { data: stringencyMetrics } = useQuery<StringencyMetrics>({
@@ -122,6 +125,16 @@ export default function LEAPAnalysisPage() {
 
   const trades = leapData?.trades || [];
   const summary = leapData?.summary || {};
+
+  console.log('🔍 LEAP Analysis Debug:', {
+    isLoading,
+    error: error?.message,
+    tradesCount: trades.length,
+    lastUpdated: leapUpdatedAt ? new Date(leapUpdatedAt).toLocaleTimeString() : 'Never',
+    stringencyLevel,
+    totalPremium: summary.totalPremium,
+    highConviction: summary.highConviction
+  });
 
   const { data: tradeDetails, isLoading: loadingDetails, error: detailsError } = useQuery<TradeDetails>({
     queryKey: ['/api/leaps', selectedTrade?.id, 'details'],

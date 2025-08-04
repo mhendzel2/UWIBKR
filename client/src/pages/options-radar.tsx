@@ -106,12 +106,27 @@ export default function OptionsOpportunityRadar() {
 
   // Fetch real-time opportunities
   const { data: opportunities = [], isLoading, refetch, dataUpdatedAt } = useQuery<OpportunityAlert[]>({
-    queryKey: ['/api/options/radar', settings],
-    refetchInterval: settings.autoRefresh && isActive ? settings.refreshInterval * 1000 : false,
+    queryKey: ['/api/options/radar', settings, Date.now()], // Add timestamp for cache busting
+    queryFn: async () => {
+      const timestamp = new Date().toLocaleTimeString();
+      console.log('🔄 Fetching Options Radar data at', timestamp);
+      const response = await fetch('/api/options/radar');
+      if (!response.ok) {
+        throw new Error(`Failed to fetch radar data: ${response.status}`);
+      }
+      const data = await response.json();
+      console.log('✅ Received Options Radar data at', timestamp, '- Opportunities:', data.length);
+      return data;
+    },
+    refetchInterval: 30000, // Refresh every 30 seconds like LEAP analysis
+    staleTime: 0, // Always consider data stale
+    refetchOnWindowFocus: true,
+    refetchOnMount: true,
+    refetchOnReconnect: true,
     enabled: settings.enabled && isActive,
   });
 
-  // Fetch radar statistics
+  // Fetch radar statistics  
   const { data: radarStats = {} } = useQuery<{
     totalScanned?: number;
     opportunitiesFound?: number;
@@ -119,8 +134,23 @@ export default function OptionsOpportunityRadar() {
     topSector?: string;
     scanRate?: number;
   }>({
-    queryKey: ['/api/options/radar-stats'],
-    refetchInterval: settings.autoRefresh ? 10000 : false,
+    queryKey: ['/api/options/radar-stats', Date.now()], // Add timestamp for cache busting
+    queryFn: async () => {
+      const timestamp = new Date().toLocaleTimeString();
+      console.log('🔄 Fetching Radar Stats at', timestamp);
+      const response = await fetch('/api/options/radar-stats');
+      if (!response.ok) {
+        throw new Error(`Failed to fetch radar stats: ${response.status}`);
+      }
+      const data = await response.json();
+      console.log('✅ Received Radar Stats at', timestamp);
+      return data;
+    },
+    refetchInterval: 30000, // Refresh every 30 seconds
+    staleTime: 0, // Always consider data stale
+    refetchOnWindowFocus: true,
+    refetchOnMount: true,
+    refetchOnReconnect: true,
   });
 
   // Play alert sound for new high-priority opportunities

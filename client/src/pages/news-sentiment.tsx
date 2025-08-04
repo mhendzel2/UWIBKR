@@ -58,16 +58,103 @@ export default function NewsSentimentPage() {
   const [timeframe, setTimeframe] = useState<string>('24h');
   const [sentimentFilter, setSentimentFilter] = useState<string>('all');
 
+  // Enhanced live news data with cache-busting and comprehensive API integration
   const { data: news = [], isLoading: loadingNews } = useQuery<NewsItem[]>({
-    queryKey: ['/api/news', selectedSymbol, timeframe, sentimentFilter],
+    queryKey: ['/api/news', selectedSymbol, timeframe, sentimentFilter, Date.now()],
+    queryFn: async () => {
+      console.log(`[${new Date().toLocaleTimeString()}] Fetching news data...`);
+      const params = new URLSearchParams({
+        ...(selectedSymbol && { symbol: selectedSymbol }),
+        timeframe,
+        ...(sentimentFilter && { sentiment: sentimentFilter })
+      });
+      const response = await fetch(`/api/news?${params}`);
+      if (!response.ok) throw new Error('Failed to fetch news');
+      const data = await response.json();
+      console.log(`[${new Date().toLocaleTimeString()}] News data updated:`, data?.length || 0, 'articles');
+      return data;
+    },
+    staleTime: 0,
+    refetchInterval: 30000, // Live updates every 30 seconds
+    refetchOnWindowFocus: true,
+    refetchOnMount: true,
+    refetchOnReconnect: true,
   });
 
+  // Live sentiment analysis with UnusualWhales integration
   const { data: sentimentAnalysis = [], isLoading: loadingSentiment } = useQuery<SentimentAnalysis[]>({
-    queryKey: ['/api/sentiment/analysis'],
+    queryKey: ['/api/sentiment/analysis', Date.now()],
+    queryFn: async () => {
+      console.log(`[${new Date().toLocaleTimeString()}] Fetching sentiment analysis...`);
+      const response = await fetch('/api/sentiment/analysis');
+      if (!response.ok) throw new Error('Failed to fetch sentiment analysis');
+      const data = await response.json();
+      console.log(`[${new Date().toLocaleTimeString()}] Sentiment analysis updated:`, data?.length || 0, 'analyses');
+      return data;
+    },
+    staleTime: 0,
+    refetchInterval: 30000,
+    refetchOnWindowFocus: true,
+    refetchOnMount: true,
+    refetchOnReconnect: true,
   });
 
+  // Live market mood with enhanced UnusualWhales data
   const { data: marketMood, isLoading: loadingMood } = useQuery<MarketMood>({
-    queryKey: ['/api/sentiment/market-mood'],
+    queryKey: ['/api/sentiment/market-mood', Date.now()],
+    queryFn: async () => {
+      console.log(`[${new Date().toLocaleTimeString()}] Fetching market mood...`);
+      const response = await fetch('/api/sentiment/market-mood');
+      if (!response.ok) throw new Error('Failed to fetch market mood');
+      const data = await response.json();
+      console.log(`[${new Date().toLocaleTimeString()}] Market mood updated:`, data);
+      return data;
+    },
+    staleTime: 0,
+    refetchInterval: 30000,
+    refetchOnWindowFocus: true,
+    refetchOnMount: true,
+    refetchOnReconnect: true,
+  });
+
+  // Live UnusualWhales analyst ratings
+  const { data: analystRatings = [] } = useQuery({
+    queryKey: ['/api/unusual-whales/analyst-ratings', selectedSymbol, Date.now()],
+    queryFn: async () => {
+      if (!selectedSymbol) return [];
+      console.log(`[${new Date().toLocaleTimeString()}] Fetching analyst ratings for ${selectedSymbol}...`);
+      const response = await fetch(`/api/unusual-whales/analyst-ratings/${selectedSymbol}`);
+      if (!response.ok) throw new Error('Failed to fetch analyst ratings');
+      const data = await response.json();
+      console.log(`[${new Date().toLocaleTimeString()}] Analyst ratings updated:`, data?.length || 0, 'ratings');
+      return data;
+    },
+    staleTime: 0,
+    refetchInterval: 60000, // Analyst ratings update less frequently
+    refetchOnWindowFocus: true,
+    refetchOnMount: true,
+    refetchOnReconnect: true,
+    enabled: !!selectedSymbol,
+  });
+
+  // Live UnusualWhales news sentiment for specific ticker
+  const { data: tickerNewsSentiment = [] } = useQuery({
+    queryKey: ['/api/unusual-whales/news-sentiment', selectedSymbol, Date.now()],
+    queryFn: async () => {
+      if (!selectedSymbol) return [];
+      console.log(`[${new Date().toLocaleTimeString()}] Fetching UW news sentiment for ${selectedSymbol}...`);
+      const response = await fetch(`/api/unusual-whales/news-sentiment/${selectedSymbol}`);
+      if (!response.ok) throw new Error('Failed to fetch UW news sentiment');
+      const data = await response.json();
+      console.log(`[${new Date().toLocaleTimeString()}] UW news sentiment updated:`, data?.length || 0, 'items');
+      return data;
+    },
+    staleTime: 0,
+    refetchInterval: 45000, // 45 seconds for news sentiment
+    refetchOnWindowFocus: true,
+    refetchOnMount: true,
+    refetchOnReconnect: true,
+    enabled: !!selectedSymbol,
   });
 
   const formatTime = (timestamp: string) => {

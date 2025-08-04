@@ -1,0 +1,3105 @@
+components:
+  responses: {}
+  schemas:
+    Analyst Rating:
+      description: A rating of an analyst for the given ticker.
+      example:
+        data:
+          action: maintained
+          analyst_name: David Vogt
+          firm: UBS
+          recommendation: Hold
+          target: '190.0'
+          timestamp: '2023-09-08T12:21:10Z'
+          title: >-
+            China news could create demand headwind for Apple in Dec. quarter,
+            says UBS
+      properties:
+        action:
+          description: The action of the recommendation.
+          type: string
+        analyst_name:
+          description: The name of the analyst.
+          type: string
+        firm:
+          description: The firm the analyst is working for.
+          type: string
+        recommendation:
+          description: The recommendation the analyst gave out.
+          type: string
+        target:
+          description: The target price of the rating.
+          type: string
+        title:
+          description: The news title of the rating that went out.
+          type: string
+      title: Analyst Rating
+      type: object
+    Ask Volume:
+      description: |
+        The amount of volume that happened on the ask side.
+
+        Ask side is defined as (ask + bid) / 2 < fill price.
+      title: Ask Volume
+      type: integer
+    Avg:
+      description: The volume weighted average fill price of the contract.
+      title: Avg
+      type: string
+    Bearish Premium:
+      description: >-
+        The bearish premium is defined as (call premium bid side) + (put premium
+        ask side).
+      title: Bearish Premium
+      type: string
+    Bid Volume:
+      description: |
+        The amount of volume that happened on the bid side.
+
+        Bid side is defined as (ask + bid) / 2 > fill price.
+      title: Bid Volume
+      type: integer
+    Bullish Premium:
+      description: >-
+        The bullish premium is defined as (call premium ask side) + (put premium
+        bid side).
+      title: Bullish Premium
+      type: string
+    Call Charm:
+      description: >-
+        The sum of the charm values of all call transactions that executed
+        multiplied by the open interest and the number of shares per contract
+        (typically 100 shares per contract).
+      title: Call Charm
+      type: string
+    Call Delta:
+      description: >-
+        The sum of the delta values of all call transactions that executed
+        multiplied by the open interest and the number of shares per contract
+        (typically 100 shares per contract).
+      title: Call Delta
+      type: string
+    Call Gamma:
+      description: >-
+        The sum of the gamma values of all call transactions that executed
+        multiplied by the open interest and the number of shares per contract
+        (typically 100 shares per contract).
+      title: Call Gamma
+      type: string
+    Call Vanna:
+      description: >-
+        The sum of the vanna values of all call transactions that executed
+        multiplied by the open interest and the number of shares per contract
+        (typically 100 shares per contract).
+      title: Call Vanna
+      type: string
+    Call open interest:
+      description: The sum of open interest of all the call options.
+      title: Call open interest
+      type: integer
+    Call premium:
+      description: The sum of the premium of all the call transactions that executed.
+      title: Call premium
+      type: string
+    Call volume:
+      description: The sum of the size of all the call transactions that executed.
+      title: Call volume
+      type: integer
+    Call volume ask side:
+      description: >-
+        The sum of the size of all the call transactions that executed on the
+        ask side.
+      title: Call volume ask side
+      type: integer
+    Call volume bide side:
+      description: >-
+        The sum of the size of all the call transactions that executed on the
+        bide side.
+      title: Call volume bide side
+      type: integer
+    Candle Size:
+      description: The size of the candles.
+      enum:
+        - 1m
+        - 5m
+        - 10m
+        - 15m
+        - 30m
+        - 1h
+        - 4h
+      title: Candle Size
+      type: string
+    Candle data:
+      description: The candle data for the requested timeframe.
+      example:
+        data:
+          - close: '56.79'
+            end_time: '2023-09-07T20:11:00Z'
+            high: '56.79'
+            low: '56.79'
+            market_time: po
+            open: '56.79'
+            start_time: '2023-09-07T20:10:00Z'
+            total_volume: 13774488
+            volume: 29812
+          - close: '56.79'
+            end_time: '2023-09-07T20:07:00Z'
+            high: '56.79'
+            low: '56.79'
+            market_time: po
+            open: '56.79'
+            start_time: '2023-09-07T20:06:00Z'
+            total_volume: 13744676
+            volume: 10699
+      properties:
+        close:
+          $ref: '#/components/schemas/Close'
+        end_time:
+          $ref: '#/components/schemas/End%20time'
+        high:
+          $ref: '#/components/schemas/High'
+        low:
+          $ref: '#/components/schemas/Low'
+        market_time:
+          $ref: '#/components/schemas/Market%20Time'
+        open:
+          $ref: '#/components/schemas/Open'
+        start_time:
+          $ref: '#/components/schemas/Start%20time'
+        total_volume:
+          $ref: '#/components/schemas/Total%20volume'
+        volume:
+          $ref: '#/components/schemas/Volume'
+      title: Candle data
+      type: object
+    Close:
+      description: The closing price of the candle.
+      title: Close
+      type: string
+    Cross Volume:
+      description: |
+        The amount of cross volume.
+        Cross volume consists of all transaction that have the cross trade code.
+      title: Cross Volume
+      type: integer
+    DTE:
+      description: The number of days until the option expires.
+      title: DTE
+      type: integer
+    Daily Market Tide:
+      description: ''
+      example:
+        data:
+          - date: '2023-09-08'
+            net_call_premium: '660338.0000'
+            net_put_premium: '-547564.0000'
+            net_volume: 23558
+            timestamp: '2023-09-08T09:30:00-04:00'
+          - date: '2023-09-08'
+            net_call_premium: '4907138.0000'
+            net_put_premium: '-1709539.0000'
+            net_volume: 64312
+            timestamp: '2023-09-08T09:31:00-04:00'
+          - date: '2023-09-08'
+            net_call_premium: '4839265.0000'
+            net_put_premium: '-2731793.0000'
+            net_volume: 80029
+            timestamp: '2023-09-08T09:32:00-04:00'
+      properties:
+        net_call_premium:
+          $ref: '#/components/schemas/Net%20Call%20Premium'
+        net_put_premium:
+          $ref: '#/components/schemas/Net%20Put%20Premium'
+        net_volume:
+          $ref: '#/components/schemas/Net%20Volume'
+        timestamp:
+          $ref: '#/components/schemas/Tick%20time'
+      title: Daily Market Tide
+      type: object
+    Earnings time:
+      description: The time when the earnings will be released.
+      enum:
+        - unkown
+        - afterhours
+        - premarket
+      title: Earnings time
+      type: string
+    End time:
+      description: The end time of the candle.
+      title: End time
+      type: date-time
+    Expiry:
+      description: The expiry of an options cycle.
+      title: Expiry
+      type: date
+    ExpiryDates:
+      description: An array of 1 or more expiry dates.
+      title: ExpiryDates
+    Floor Volume:
+      description: |
+        The amount of floor volume.
+        Floor volume consists of all transaction that have the floor trade code.
+      title: Floor Volume
+      type: integer
+    Greek Exposure:
+      description: ''
+      example:
+        data:
+          - call_charm: '102382359.5786'
+            call_delta: '227549667.4651'
+            call_gamma: '9356683.4241'
+            call_vanna: '152099632406.9564'
+            date: '2023-09-08'
+            put_charm: '-943028472.4815'
+            put_delta: '-191893077.7193'
+            put_gamma: '-12337386.0524'
+            put_vanna: '488921784213.1121'
+          - call_charm: '81465130.0002'
+            call_delta: '210202465.3421'
+            call_gamma: '8456599.8505'
+            call_vanna: '161231587973.6811'
+            date: '2023-09-07'
+            put_charm: '-1054548432.6111'
+            put_delta: '-210881557.3003'
+            put_gamma: '-12703877.0243'
+            put_vanna: '488921784213.1121'
+      properties:
+        call_charm:
+          $ref: '#/components/schemas/Call%20Charm'
+        call_delta:
+          $ref: '#/components/schemas/Call%20Delta'
+        call_gamma:
+          $ref: '#/components/schemas/Call%20Gamma'
+        call_vanna:
+          $ref: '#/components/schemas/Call%20Vanna'
+        date:
+          $ref: '#/components/schemas/Trading%20day'
+        put_charm:
+          $ref: '#/components/schemas/Put%20Charm'
+        put_delta:
+          $ref: '#/components/schemas/Put%20Delta'
+        put_gamma:
+          $ref: '#/components/schemas/Put%20Gamma'
+        put_vanna:
+          $ref: '#/components/schemas/Put%20Vanna'
+      title: Greek Exposure
+      type: object
+    High:
+      description: The highest price of the candle.
+      title: High
+      type: string
+    Implied Move:
+      description: >-
+        The implied move of the underlying stock by a given date based on the
+        money option contracts. It is calculated by multiplying the sum of the
+        call and put price by 0.85. If no expiry date is included, then the
+        implied move is for the nearest end of the week expiration (the nearest
+        monthly expiration if there are no weekly contracts).
+      title: Implied Move
+      type: string
+    Implied Move Perc:
+      description: The implied move as a percentage of the underlying stock price.
+      title: Implied Move Perc
+      type: string
+    Implied Volatility Term Structure:
+      description: ''
+      example:
+        data:
+          - date: '2023-09-08'
+            dte: 0
+            expiry: '2023-09-08'
+            implied_move: '3.1025'
+            implied_move_perc: '0.01765'
+            volatility: '0.2319'
+          - date: '2023-09-08'
+            dte: 7
+            expiry: '2023-09-15'
+            implied_move: '4.923'
+            implied_move_perc: '0.02747'
+            volatility: '0.2352'
+      properties:
+        date:
+          $ref: '#/components/schemas/Trading%20day'
+        dte:
+          $ref: '#/components/schemas/DTE'
+        expiry:
+          $ref: '#/components/schemas/Expiry'
+        implied_move:
+          $ref: '#/components/schemas/Implied%20Move'
+        implied_move_perc:
+          $ref: '#/components/schemas/Implied%20Move%20Perc'
+        volatility:
+          $ref: '#/components/schemas/Volatility'
+      title: Implied Volatility Term Structure
+      type: object
+    IsOtmContract:
+      description: Only include contracts which are currently out of the money.
+      title: IsOtmContract
+      type: boolean
+    Issue Type:
+      description: The issue type of the ticker.
+      enum:
+        - Common Stock
+        - ETF
+        - Index
+        - ADR
+      title: Issue Type
+      type: array
+    IssueTypes:
+      description: An array of 1 or more issue types.
+      title: IssueTypes
+    Iv 30d:
+      description: The 30 day implied volatility.
+      title: Iv 30d
+      type: string
+    Iv 30d 1D:
+      description: The previous trading day's 30 day implied volatility.
+      title: Iv 30d 1D
+      type: string
+    Iv 30d 1M:
+      description: >-
+        The implied volatility relative to the implied volatility throughout the
+        previous year. A rank of 0 indicates that the implied volatility is the
+        lowest it has been within the past year. A rank of 100 indicates that
+        the implied volatility is the highest it has been within the past year.
+      title: Iv 30d 1M
+      type: string
+    Iv 30d 1W:
+      description: The 30 day implied volatility from 1 week ago.
+      title: Iv 30d 1W
+      type: string
+    Limit:
+      description: |
+        How many items to return. Default: `1`. Max: `500`.
+      title: Limit
+      type: integer
+    Low:
+      description: The lowest price of the candle.
+      title: Low
+      type: string
+    Market Holidays:
+      description: The days at which the market either closes early or is fully closed.
+      example:
+        data:
+          - data:
+              - '2025-01-01'
+              - '2024-01-01'
+              - '2023-01-02'
+            event: New Years Day
+          - data:
+              - '2025-01-20'
+              - '2024-01-15'
+              - '2023-01-16'
+            event: 'Martin Luther King, Jr. Day'
+          - data:
+              - '2025-02-17'
+              - '2024-02-19'
+              - '2023-02-20'
+            event: Washington's Birthday
+          - data:
+              - '2025-04-18'
+              - '2024-03-29'
+              - '2023-04-07'
+            event: Good Friday
+          - data:
+              - '2025-05-26'
+              - '2024-05-27'
+              - '2023-05-29'
+            event: Memorial Day
+          - data:
+              - '2025-06-19'
+              - '2024-06-19'
+              - '2023-06-19'
+            event: Juneteenth National Independence Day
+          - data:
+              - '2025-07-03'
+              - '2024-07-03'
+              - '2023-07-03'
+            early_close: true
+            event: Independence Day (early close)
+          - data:
+              - '2025-07-04'
+              - '2024-07-04'
+              - '2023-07-04'
+            event: Independence Day
+          - data:
+              - '2025-09-01'
+              - '2024-09-02'
+              - '2023-09-04'
+            event: Labor Day
+          - data:
+              - '2025-11-27'
+              - '2024-11-28'
+              - '2023-11-23'
+            event: Thanksgiving Day
+          - data:
+              - '2025-11-28'
+              - '2024-11-29'
+              - '2023-11-24'
+            early_close: true
+            event: Thanksgiving Day (early close)
+          - data:
+              - '2025-12-24'
+              - '2024-12-24'
+            early_close: true
+            event: Christmas Day (early close)
+          - data:
+              - '2025-12-25'
+              - '2024-12-25'
+              - '2023-12-25'
+            event: Christmas Day
+      properties:
+        data:
+          description: An array of dates.
+          items:
+            type: date
+          type: array
+        early_close:
+          description: >-
+            Boolean flag indicating if the market is open and closes early on
+            the given dates.
+          type: boolean
+        event:
+          description: The event/reason why the market is not open on the given dates.
+          type: string
+      title: Market Holidays
+      type: object
+    Market Options Volume:
+      description: ''
+      example:
+        data:
+          - call_premium: '7306144788.68'
+            call_volume: 22074116
+            date: '2023-09-08'
+            put_premium: '8413594929.65'
+            put_volume: 19941285
+      properties:
+        call_premium:
+          $ref: '#/components/schemas/Call%20premium'
+        call_volume:
+          $ref: '#/components/schemas/Call%20volume'
+        date:
+          $ref: '#/components/schemas/Trading%20day'
+        put_premium:
+          $ref: '#/components/schemas/Put%20premium'
+        put_volume:
+          $ref: '#/components/schemas/Put%20volume'
+      title: Market Options Volume
+      type: object
+    Market Time:
+      description: |
+        The market time:
+        - pr = premarket
+        - r  = regular
+        - po = postmarket
+      enum:
+        - r
+        - po
+        - pr
+      title: Market Time
+      type: string
+    Marketcap AUM:
+      description: >-
+        The marketcap of the underlying ticker. If the issue type of the ticker
+        is ETF then the marketcap represents the AUM.
+      title: Marketcap AUM
+      type: string
+    MaxContractDiff:
+      description: |
+        The minimum OTM diff of a contract.
+        Given a strike price of 120 and an underlying price of 98
+        the diff for a call option would equal to:
+        (120 - 98) / 98 = 0.2245
+
+        The diff for a put option would equal to:
+        -1 * (120 - 98) / 98 = -0.2245.
+      title: MaxContractDiff
+      type: string
+    MaxContractFloorVol:
+      description: The maximum floor volume on that contract.
+      title: MaxContractFloorVol
+      type: integer
+    MaxContractOi:
+      description: The maximum open interest on that contract.
+      title: MaxContractOi
+      type: integer
+    MaxContractPrem:
+      description: The maximum premium on that contract.
+      title: MaxContractPrem
+      type: string
+    MaxContractVol:
+      description: The maximum volume on that contract.
+      title: MaxContractVol
+      type: integer
+    MaxDailyPercChange:
+      description: >
+        The maximum intraday price change for the contract since market open.
+
+
+        If the first traded contract filled at a price of 1.2, and the most
+        recent trade was made at 1.5,
+
+        then the intraday price change is: (1.5 - 1.2) / 1.2 = 0.25.
+      title: MaxDailyPercChange
+      type: string
+    MaxDte:
+      description: The maximum days to expiry.
+      title: MaxDte
+      type: integer
+    MaxFloorVolumeRatio:
+      description: The maximum floor volume to contract volume ratio.
+      title: MaxFloorVolumeRatio
+      type: string
+    MaxMarketcap:
+      description: The maximum marketcap.
+      title: MaxMarketcap
+      type: string
+    MaxMultilegVolumeRatio:
+      description: The maximum multi leg volume to contract volume ratio.
+      title: MaxMultilegVolumeRatio
+      type: string
+    MaxPercChange:
+      description: The maximum price change of the contract to the previous day.
+      title: MaxPercChange
+      type: string
+    MaxStockPrice:
+      description: The maximum stock price.
+      title: MaxStockPrice
+      type: string
+    MaxStrike:
+      description: The maximum strike.
+      title: MaxStrike
+      type: string
+    MaxVolOiRatio:
+      description: The maximum contract volume to open interest ratio.
+      title: MaxVolOiRatio
+      type: string
+    Mid Volume:
+      description: |
+        The amount of volume that happened in the middle of the ask and bid.
+
+        Mid is defined as (ask + bid) / 2 == fill price.
+      title: Mid Volume
+      type: integer
+    MinContractDiff:
+      description: |
+        The minimum OTM diff of a contract.
+        Given a strike price of 120 and an underlying price of 98
+        the diff for a call option would equal to:
+        (120 - 98) / 98 = 0.2245
+
+        The diff for a put option would equal to:
+        -1 * (120 - 98) / 98 = -0.2245.
+      title: MinContractDiff
+      type: string
+    MinContractFloorVol:
+      description: The minimum floor volume on that contract.
+      title: MinContractFloorVol
+      type: integer
+    MinContractOi:
+      description: The minimum open interest on that contract.
+      title: MinContractOi
+      type: integer
+    MinContractPrem:
+      description: The minimum premium on that contract.
+      title: MinContractPrem
+      type: string
+    MinContractVol:
+      description: The minimum volume on that contract.
+      title: MinContractVol
+      type: integer
+    MinDailyPercChange:
+      description: >
+        The minimum intraday price change of the contract from open till now.
+
+
+        If the first traded contract filled at a price of 1.2, and the most
+        recent trade was made at 1.5,
+
+        then the intraday price change is: (1.5 - 1.2) / 1.2 = 0.25.
+      title: MinDailyPercChange
+      type: string
+    MinDte:
+      description: The minimum days to expiry.
+      title: MinDte
+      type: integer
+    MinFloorVolumeRatio:
+      description: The minimum floor volume to contract volume ratio.
+      title: MinFloorVolumeRatio
+      type: string
+    MinMarketcap:
+      description: The minimum marketcap.
+      title: MinMarketcap
+      type: string
+    MinMultilegVolumeRatio:
+      description: The minimum multi leg volume to contract volume ratio.
+      title: MinMultilegVolumeRatio
+      type: string
+    MinPercChange:
+      description: The minimum price change of the contract to the previous day.
+      title: MinPercChange
+      type: string
+    MinStockPrice:
+      description: The minimum stock price.
+      title: MinStockPrice
+      type: string
+    MinStrike:
+      description: The minimum strike.
+      title: MinStrike
+      type: string
+    MinVolOiRatio:
+      description: The minimum contract volume to open interest ratio.
+      title: MinVolOiRatio
+      type: string
+    Net Call Premium:
+      description: Defined as (call premium ask side) - (call premium bid side).
+      title: Net Call Premium
+      type: string
+    Net Call Volume:
+      description: Defined as (call volume ask side) - (call volume bid side).
+      title: Net Call Volume
+      type: integer
+    Net Prem Tick response.:
+      description: The net premium for each trading minute.
+      example:
+        data:
+          - date: '2023-09-07'
+            net_call_premium: '-2075581.0000'
+            net_call_volume: -2259
+            net_put_premium: '-15559.0000'
+            net_put_volume: 95
+            tape_time: '2023-09-07T09:30:00-04:00'
+          - date: '2023-09-07'
+            net_call_premium: '670064.0000'
+            net_call_volume: 754
+            net_put_premium: '-1480020.0000'
+            net_put_volume: -264
+            tape_time: '2023-09-07T09:31:00-04:00'
+          - date: '2023-09-07'
+            net_call_premium: '128926.0000'
+            net_call_volume: 1347
+            net_put_premium: '-644069.0000'
+            net_put_volume: 2181
+            tape_time: '2023-09-07T09:32:00-04:00'
+          - date: '2023-09-07'
+            net_call_premium: '-1095135.0000'
+            net_call_volume: 1049
+            net_put_premium: '135732.0000'
+            net_put_volume: 415
+            tape_time: '2023-09-07T09:33:00-04:00'
+          - date: '2023-09-07'
+            net_call_premium: '165842.0000'
+            net_call_volume: 429
+            net_put_premium: '-379365.0000'
+            net_put_volume: 224
+            tape_time: '2023-09-07T09:34:00-04:00'
+          - date: '2023-09-07'
+            net_call_premium: '376569.0000'
+            net_call_volume: 1002
+            net_put_premium: '408447.0000'
+            net_put_volume: 1313
+            tape_time: '2023-09-07T09:35:00-04:00'
+          - date: '2023-09-07'
+            net_call_premium: '1528190.0000'
+            net_call_volume: 4616
+            net_put_premium: '-1385094.0000'
+            net_put_volume: -3197
+            tape_time: '2023-09-07T09:36:00-04:00'
+          - date: '2023-09-07'
+            net_call_premium: '646507.0000'
+            net_call_volume: 565
+            net_put_premium: '-171857.0000'
+            net_put_volume: -351
+            tape_time: '2023-09-07T09:37:00-04:00'
+      properties:
+        net_call_premium:
+          $ref: '#/components/schemas/Net%20Call%20Premium'
+        net_call_volume:
+          $ref: '#/components/schemas/Net%20Call%20Volume'
+        net_put_premium:
+          $ref: '#/components/schemas/Net%20Put%20Premium'
+        net_put_volume:
+          $ref: '#/components/schemas/Net%20Put%20Volume'
+        tape_time:
+          $ref: '#/components/schemas/Tick%20time'
+      title: Net Prem Tick response.
+      type: object
+    Net Put Premium:
+      description: Defined as (put premium ask side) - (put premium bid side).
+      title: Net Put Premium
+      type: string
+    Net Put Volume:
+      description: Defined as (put volume ask side) - (put volume bid side).
+      title: Net Put Volume
+      type: integer
+    Net Volume:
+      description: >-
+        Defined as (call volume ask side) - (call volume bid side) - ((put
+        volume ask side) - (put volume bid side)).
+      title: Net Volume
+      type: integer
+    Next Dividend Date:
+      description: >-
+        The next dividend date of the ticker. Null if either unknown as of now
+        or the stock does not pay dividends.
+      format: date
+      title: Next Dividend Date
+      type: string
+    Next Earnings Date:
+      description: >-
+        The next earnings date of the ticker. Null if either unknown as of now
+        or if the ticker does not have any earnings such as an ETF
+      format: date
+      title: Next Earnings Date
+      type: string
+    OTM Only:
+      description: |
+        Only include out of the money transactions.
+      title: OTM Only
+      type: boolean
+    Off Lit Price Level:
+      description: ''
+      example:
+        data:
+          - lit_vol: 19941285
+            off_vol: 22074116
+            price: '120.12'
+          - lit_vol: 199415
+            off_vol: 220741
+            price: '123.12'
+      properties:
+        lit_vol:
+          description: >-
+            The lit volume (this only represents stock trades executed on
+            exchanges operated by Nasdaq).
+          type: integer
+        off_vol:
+          description: >-
+            The off lit stock volume (this only represents the FINRA operated
+            exchanges).
+          type: integer
+        price:
+          $ref: '#/components/schemas/Price'
+      title: Off Lit Price Level
+      type: object
+    Open:
+      description: The opening price of the candle.
+      title: Open
+      type: string
+    Open Interest:
+      description: The sum of open interest for all contracts.
+      title: Open Interest
+      type: integer
+    Open interest:
+      description: The open interest for the contract.
+      title: Open interest
+      type: integer
+    Option Chains response:
+      description: All option chains for a given ticker.
+      example:
+        data:
+          - AAPL230908C00175000
+          - AAPL231020C00185000
+          - AAPL230908C00180000
+          - AAPL230908C00182500
+          - AAPL230908C00185000
+          - AAPL230908C00187500
+          - AAPL230908P00172500
+          - AAPL230908P00175000
+          - AAPL230908P00177500
+          - AAPL230908C00177500
+          - AAPL230915C00177500
+          - AAPL230915C00180000
+          - AAPL230915C00185000
+          - AAPL230915C00187500
+          - AAPL230915C00192500
+          - AAPL230915C00195000
+          - AAPL230915C00200000
+      properties: {}
+      title: Option Chains response
+      type: object
+    Option Contract Screener response.:
+      description: ''
+      example:
+        data:
+          - ask_side_volume: 119403
+            avg_price: '1.0465802437910297887119234370'
+            bid_side_volume: 122789
+            chain_prev_close: '1.29'
+            close: '0.03'
+            cross_volume: 0
+            er_time: unkown
+            floor_volume: 142
+            high: '2.95'
+            last_fill: '2023-09-08T17:45:32Z'
+            low: '0.02'
+            mid_volume: 22707
+            multileg_volume: 7486
+            next_earnings_date: '2023-10-18'
+            no_side_volume: 0
+            open: '0.92'
+            open_interest: 18680
+            option_symbol: TSLA230908C00255000
+            premium: '27723806.00'
+            sector: Consumer Cyclical
+            stock_multi_leg_volume: 52
+            stock_price: '247.94'
+            sweep_volume: 18260
+            ticker_vol: 2546773
+            total_ask_changes: 44343
+            total_bid_changes: 43939
+            trades: 39690
+            volume: 264899
+      properties:
+        ask_side_volume:
+          $ref: '#/components/schemas/Ask%20Volume'
+        avg_price:
+          $ref: '#/components/schemas/Avg'
+        bid_side_volume:
+          $ref: '#/components/schemas/Bid%20Volume'
+        chain_prev_close:
+          $ref: '#/components/schemas/Prev%20contract%20price'
+        close:
+          $ref: '#/components/schemas/Close'
+        cross_volume:
+          $ref: '#/components/schemas/Cross%20Volume'
+        er_time:
+          $ref: '#/components/schemas/Earnings%20time'
+        floor_volume:
+          $ref: '#/components/schemas/Floor%20Volume'
+        high:
+          $ref: '#/components/schemas/High'
+        last_fill:
+          description: The last time there was a transaction for the given contract.
+          type: string
+        low:
+          $ref: '#/components/schemas/Low'
+        mid_volume:
+          $ref: '#/components/schemas/Mid%20Volume'
+        multileg_volume:
+          $ref: '#/components/schemas/Bid%20Volume'
+        next_earnings_date:
+          $ref: '#/components/schemas/Next%20Earnings%20Date'
+        no_side_volume:
+          $ref: '#/components/schemas/Bid%20Volume'
+        open:
+          $ref: '#/components/schemas/Open'
+        open_interest:
+          $ref: '#/components/schemas/Open%20interest'
+        option_symbol:
+          $ref: '#/components/schemas/Option%20Symbol'
+        premium:
+          $ref: '#/components/schemas/Option%20premium'
+        sector:
+          $ref: '#/components/schemas/Sector'
+        stock_multi_leg_volume:
+          $ref: '#/components/schemas/Bid%20Volume'
+        stock_price:
+          $ref: '#/components/schemas/Ticker%20stock%20price'
+        sweep_volume:
+          $ref: '#/components/schemas/Sweep%20Volume'
+        ticker_vol:
+          description: The total amount of options volume for the given ticker.
+          type: integer
+        total_ask_changes:
+          description: The amount of time the ask changed for the given contract.
+          type: integer
+        total_bid_changes:
+          description: The amount of time the bid changed for the given contract.
+          type: integer
+        trades:
+          description: The amount of transaction for this contract.
+          type: integer
+        volume:
+          description: The contract volume.
+          type: integer
+      title: Option Contract Screener response.
+      type: object
+    Option Price Level:
+      description: ''
+      example:
+        data:
+          - call_volume: 22074116
+            price: '120.12'
+            put_volume: 19941285
+          - call_volume: 220741
+            price: '123.12'
+            put_volume: 199415
+      properties:
+        call_volume:
+          $ref: '#/components/schemas/Call%20volume'
+        price:
+          $ref: '#/components/schemas/Price'
+        put_volume:
+          $ref: '#/components/schemas/Put%20volume'
+      title: Option Price Level
+      type: object
+    Option Symbol:
+      description: >
+        The option symbol of the contract.
+
+
+        You can use the following regex to extract underlying ticker, option
+        type, expiry & strike:
+
+        `^(?<symbol>[\w]*)(?<expiry>(\d{2})(\d{2})(\d{2}))(?<type>[PC])(?<strike>\d{8})$`
+
+
+        Keep in mind that the strike needs to be divided by 1,000.
+      title: Option Symbol
+      type: string
+    Option premium:
+      description: The total option premium.
+      title: Option premium
+      type: string
+    OptionType:
+      description: The option type to filter by if specified.
+      enum:
+        - call
+        - put
+      title: OptionType
+      type: string
+    Options Volume:
+      description: The sum of volume for all contracts.
+      title: Options Volume
+      type: integer
+    OrderDirection:
+      description: Whether to sort descending or ascending. Descending by default.
+      title: OrderDirection
+    Prev contract price:
+      description: The previous trading day's contract price.
+      title: Prev contract price
+      type: integer
+    Prev stock price:
+      description: The previous trading day's stock price of the ticker.
+      title: Prev stock price
+      type: integer
+    Previous Call Open interest:
+      description: The call open interest of the previous trading day.
+      title: Previous Call Open interest
+      type: integer
+    Previous Put Open interest:
+      description: The put open interest of the previous trading day.
+      title: Previous Put Open interest
+      type: integer
+    Price:
+      description: The price level.
+      title: Price
+      type: string
+    Put Call Ratio:
+      description: The put call ratio which is defined as put volume / call volume.
+      title: Put Call Ratio
+      type: integer
+    Put Charm:
+      description: >-
+        The sum of the charm values of all put transactions that executed
+        multiplied by the open interest and the number of shares per contract
+        (typically 100 shares per contract).
+      title: Put Charm
+      type: string
+    Put Delta:
+      description: >-
+        The sum of the delta values of all put transactions that executed
+        multiplied by the open interest and the number of shares per contract
+        (typically 100 shares per contract).
+      title: Put Delta
+      type: string
+    Put Gamma:
+      description: >-
+        The sum of the gamma values of all put transactions that executed
+        multiplied by the open interest and the number of shares per contract
+        (typically 100 shares per contract).
+      title: Put Gamma
+      type: string
+    Put Vanna:
+      description: >-
+        The sum of the vanna values of all put transactions that executed
+        multiplied by the open interest and the number of shares per contract
+        (typically 100 shares per contract).
+      title: Put Vanna
+      type: string
+    Put open interest:
+      description: The sum of the open interest of all the put options.
+      title: Put open interest
+      type: integer
+    Put premium:
+      description: The sum of the premium of all the put transactions that executed.
+      title: Put premium
+      type: string
+    Put volume:
+      description: The sum of the size of all the put transactions that executed.
+      title: Put volume
+      type: integer
+    Put volume ask side:
+      description: >-
+        The sum of the size of all the put transactions that executed on the ask
+        side.
+      title: Put volume ask side
+      type: integer
+    Put volume bide side:
+      description: >-
+        The sum of the size of all the put transactions that executed on the bid
+        side.
+      title: Put volume bide side
+      type: integer
+    Sector:
+      description: >-
+        The financial sector of the ticker. Empty if unknown or not applicable
+        such as ETF/Index.
+      enum:
+        - Basic Materials
+        - Communication Services
+        - Consumer Cyclical
+        - Consumer Defensive
+        - Energy
+        - Financial Services
+        - Healthcare
+        - Industrials
+        - Real Estate
+        - Technology
+        - Utilities
+      title: Sector
+      type: array
+    Sector ETF:
+      description: ''
+      example:
+        data:
+          - avg30_call_volume: '3636459.000000000000'
+            avg30_put_volume: '4796289.166666666667'
+            avg30_stock_volume: '74402355'
+            avg_30_day_call_volume: '3636459.000000000000'
+            avg_30_day_put_volume: '4796289.166666666667'
+            avg_7_day_call_volume: '3343061.285714285714'
+            avg_7_day_put_volume: '4521616.428571428571'
+            bearish_premium: '258905527'
+            bullish_premium: '238729761'
+            call_premium: '293824502'
+            call_volume: 1844830
+            full_name: S&P 500 Index
+            high: '447.11'
+            last: '446.15'
+            low: '444.8'
+            marketcap: '406517275500'
+            open: '444.93'
+            prev_close: '444.85'
+            prev_date: '2023-09-07'
+            put_premium: '244159205'
+            put_volume: 2009005
+            ticker: SPY
+            volume: 23132119
+            week52_high: '459.44'
+            week52_low: '342.65'
+          - avg30_call_volume: '1574.3333333333333333'
+            avg30_put_volume: '2571.6000000000000000'
+            avg30_stock_volume: '4773693'
+            avg_30_day_call_volume: '1574.3333333333333333'
+            avg_30_day_put_volume: '2571.6000000000000000'
+            avg_7_day_call_volume: '2003.0000000000000000'
+            avg_7_day_put_volume: '1208.2857142857142857'
+            bearish_premium: '25852'
+            bullish_premium: '30558'
+            call_premium: '37618'
+            call_volume: 319
+            full_name: Materials
+            high: '82.145'
+            last: '81.96'
+            low: '81.55'
+            marketcap: '5607626400'
+            open: '81.67'
+            prev_close: '81.72'
+            prev_date: '2023-09-07'
+            put_premium: '27107'
+            put_volume: 250
+            ticker: XLB
+            volume: 1582879
+            week52_high: '85.86'
+            week52_low: '66.13'
+          - avg30_call_volume: '2020.4000000000000000'
+            avg30_put_volume: '1831.2000000000000000'
+            avg30_stock_volume: '5018213'
+            avg_30_day_call_volume: '2020.4000000000000000'
+            avg_30_day_put_volume: '1831.2000000000000000'
+            avg_7_day_call_volume: '1677.2857142857142857'
+            avg_7_day_put_volume: '2283.4285714285714286'
+            bearish_premium: '524756'
+            bullish_premium: '249626'
+            call_premium: '711775'
+            call_volume: 855
+            full_name: Communication Services
+            high: '67.26'
+            last: '67.08'
+            low: '66.78'
+            marketcap: '14026276000'
+            open: '66.78'
+            prev_close: '66.76'
+            prev_date: '2023-09-07'
+            put_premium: '261697'
+            put_volume: 1048
+            ticker: XLC
+            volume: 1435724
+            week52_high: '69.22'
+            week52_low: '44.63'
+          - avg30_call_volume: '49834.200000000000'
+            avg30_put_volume: '56549.033333333333'
+            avg30_stock_volume: '17679327'
+            avg_30_day_call_volume: '49834.200000000000'
+            avg_30_day_put_volume: '56549.033333333333'
+            avg_7_day_call_volume: '51855.857142857143'
+            avg_7_day_put_volume: '74544.000000000000'
+            bearish_premium: '3745047'
+            bullish_premium: '2928917'
+            call_premium: '4391016'
+            call_volume: 26150
+            full_name: Energy
+            high: '92.71'
+            last: '92.42'
+            low: '91.55'
+            marketcap: '38812892400'
+            open: '91.6'
+            prev_close: '91.17'
+            prev_date: '2023-09-07'
+            put_premium: '3173481'
+            put_volume: 37873
+            ticker: XLE
+            volume: 7731133
+            week52_high: '92.78'
+            week52_low: '67.26'
+      properties:
+        avg30_stock_volume:
+          description: Avg 30 day stock volume.
+          type: string
+        avg_30_day_call_volume:
+          description: Avg 30 day call volume.
+          type: string
+        avg_30_day_put_volume:
+          description: Avg 30 day put volume.
+          type: string
+        avg_7_day_call_volume:
+          description: Avg 7 day call volume.
+          type: string
+        avg_7_day_put_volume:
+          description: Avg 7 day put volume.
+          type: string
+        bearish_premium:
+          $ref: '#/components/schemas/Bearish%20Premium'
+        bullish_premium:
+          $ref: '#/components/schemas/Bullish%20Premium'
+        call_premium:
+          $ref: '#/components/schemas/Call%20premium'
+        call_volume:
+          $ref: '#/components/schemas/Call%20volume'
+        close:
+          $ref: '#/components/schemas/Close'
+        full_name:
+          description: The name/sector of the SPDR sector ETF.
+          type: string
+        high:
+          $ref: '#/components/schemas/High'
+        low:
+          $ref: '#/components/schemas/Low'
+        marketcap:
+          $ref: '#/components/schemas/Marketcap%20AUM'
+        open:
+          $ref: '#/components/schemas/Open'
+        prev_close:
+          $ref: '#/components/schemas/Prev%20stock%20price'
+        prev_date:
+          description: The date of the previous trading day.
+          type: date
+        put_premium:
+          $ref: '#/components/schemas/Put%20premium'
+        put_volume:
+          $ref: '#/components/schemas/Put%20volume'
+        ticker:
+          $ref: '#/components/schemas/Ticker'
+        volume:
+          $ref: '#/components/schemas/Stock%20volume'
+        week_52_high:
+          $ref: '#/components/schemas/Week%2052%20High'
+        week_52_low:
+          $ref: '#/components/schemas/Week%2052%20low'
+      title: Sector ETF
+      type: object
+    Sectors:
+      description: An array of 1 or more sectors.
+      title: Sectors
+    Start time:
+      description: The start time of the candle.
+      title: Start time
+      type: date-time
+    Stock Screener response:
+      description: Response schema for stock screener requests.
+      example:
+        data:
+          - avg_30_day_call_volume: '606258.533333333333'
+            avg_30_day_put_volume: '436126.833333333333'
+            avg_3_day_call_volume: '679145.333333333333'
+            avg_3_day_put_volume: '388676.000000000000'
+            avg_7_day_call_volume: '679430.000000000000'
+            avg_7_day_put_volume: '401961.285714285714'
+            bearish_premium: '196261414'
+            bullish_premium: '143198625'
+            call_open_interest: 3975333
+            call_premium: '222941665'
+            call_volume: 990943
+            call_volume_ask_side: 417251
+            call_volume_bid_side: 498271
+            close: '182.91'
+            date: '2023-09-06'
+            er_time: unkown
+            implied_move: '2.2398043036460877'
+            implied_move_perc: '0.012247398860706955'
+            is_index: false
+            issue_type: Common Stock
+            iv30d: '0.2038053572177887'
+            iv30d_1d: '0.18791808187961578'
+            iv30d_1m: '0.2136848270893097'
+            iv30d_1w: '0.18398597836494446'
+            iv_rank: '13.52369891956068210400'
+            marketcap: '2965813810400'
+            net_call_premium: '-29138464'
+            net_put_premium: '23924325'
+            next_dividend_date: null
+            next_earnings_date: '2023-10-26'
+            prev_call_oi: 3994750
+            prev_close: '189.70'
+            prev_put_oi: 3679410
+            put_call_ratio: '0.815713920982337'
+            put_open_interest: 3564153
+            put_premium: '163537151'
+            put_volume: 808326
+            put_volume_ask_side: 431791
+            put_volume_bid_side: 314160
+            sector: Technology
+            ticker: AAPL
+            total_open_interest: 7539486
+            volatility: '0.18338055163621902'
+            week_52_high: '198.23'
+            week_52_low: '124.17'
+      properties:
+        avg_30_day_call_volume:
+          description: Avg 30 day call volume.
+          type: string
+        avg_30_day_put_volume:
+          description: Avg 30 day put volume.
+          type: string
+        avg_3_day_call_volume:
+          description: Avg 3 day call volume.
+          type: string
+        avg_3_day_put_volume:
+          description: Avg 3 day put volume.
+          type: string
+        avg_7_day_call_volume:
+          description: Avg 7 day call volume.
+          type: string
+        avg_7_day_put_volume:
+          description: Avg 7 day put volume.
+          type: string
+        bearish_premium:
+          $ref: '#/components/schemas/Bearish%20Premium'
+        bullish_premium:
+          $ref: '#/components/schemas/Bullish%20Premium'
+        call_open_interest:
+          $ref: '#/components/schemas/Call%20open%20interest'
+        call_premium:
+          $ref: '#/components/schemas/Call%20premium'
+        call_volume:
+          $ref: '#/components/schemas/Call%20volume'
+        call_volume_ask_side:
+          $ref: '#/components/schemas/Call%20volume%20ask%20side'
+        call_volume_bid_side:
+          $ref: '#/components/schemas/Call%20volume%20bide%20side'
+        close:
+          $ref: '#/components/schemas/Ticker%20stock%20price'
+        er_time:
+          $ref: '#/components/schemas/Earnings%20time'
+        implied_move:
+          $ref: '#/components/schemas/Implied%20Move'
+        implied_move_perc:
+          $ref: '#/components/schemas/Implied%20Move%20Perc'
+        is_index:
+          description: Boolean flag whether the ticker is an index.
+          type: string
+        issue_type:
+          $ref: '#/components/schemas/Issue%20Type'
+        iv30d:
+          $ref: '#/components/schemas/Iv%2030d'
+        iv30d_1d:
+          $ref: '#/components/schemas/Iv%2030d%201D'
+        iv30d_1m:
+          $ref: '#/components/schemas/Iv%2030d%201M'
+        iv30d_1w:
+          $ref: '#/components/schemas/Iv%2030d%201W'
+        iv_rank:
+          $ref: '#/components/schemas/Iv%2030d%201M'
+        marketcap:
+          $ref: '#/components/schemas/Marketcap%20AUM'
+        net_call_premium:
+          $ref: '#/components/schemas/Net%20Call%20Premium'
+        net_put_premium:
+          $ref: '#/components/schemas/Net%20Put%20Premium'
+        next_dividend_date:
+          $ref: '#/components/schemas/Next%20Dividend%20Date'
+        next_earnings_date:
+          $ref: '#/components/schemas/Next%20Earnings%20Date'
+        prev_call_oi:
+          $ref: '#/components/schemas/Previous%20Call%20Open%20interest'
+        prev_close:
+          $ref: '#/components/schemas/Prev%20stock%20price'
+        prev_put_oi:
+          $ref: '#/components/schemas/Previous%20Put%20Open%20interest'
+        put_call_ratio:
+          $ref: '#/components/schemas/Put%20Call%20Ratio'
+        put_open_interest:
+          $ref: '#/components/schemas/Put%20open%20interest'
+        put_premium:
+          $ref: '#/components/schemas/Put%20premium'
+        put_volume:
+          $ref: '#/components/schemas/Put%20volume'
+        put_volume_ask_side:
+          $ref: '#/components/schemas/Put%20volume%20ask%20side'
+        put_volume_bid_side:
+          $ref: '#/components/schemas/Put%20volume%20bide%20side'
+        sector:
+          $ref: '#/components/schemas/Sector'
+        ticker:
+          $ref: '#/components/schemas/Ticker'
+        total_open_interest:
+          $ref: '#/components/schemas/Total%20Open%20Interest'
+        volatility:
+          $ref: '#/components/schemas/Volatility'
+        week_52_high:
+          $ref: '#/components/schemas/Week%2052%20High'
+        week_52_low:
+          $ref: '#/components/schemas/Week%2052%20low'
+      title: Stock Screener response
+      type: object
+    Stock volume:
+      description: The volume of the ticker for the trading day.
+      title: Stock volume
+      type: integer
+    Sweep Volume:
+      description: |
+        The amount of sweep volume.
+        Sweep volume consists of all transaction that have the sweep trade code.
+      title: Sweep Volume
+      type: integer
+    Tick time:
+      description: The start time of the tick.
+      title: Tick time
+      type: date-time
+    Ticker:
+      description: The stock ticker.
+      title: Ticker
+      type: string
+    Ticker Info:
+      description: General information about the given ticker.
+      example:
+        data:
+          announce_time: unkown
+          avg30_volume: '55973002'
+          full_name: APPLE
+          has_dividend: true
+          has_earnings_history: true
+          has_investment_arm: false
+          has_options: true
+          issue_type: Common Stock
+          marketcap: '2776014233920'
+          marketcap_size: big
+          next_earnings_date: '2023-10-26'
+          sector: Technology
+          short_description: >-
+            Apple Inc. is an American multinational technology company
+            headquartered in Cupertino, California. Apple is the worlds largest
+            technology company by ...
+          symbol: AAPL
+          uw_tags: []
+      properties:
+        announce_time:
+          $ref: '#/components/schemas/Earnings%20time'
+        avg30_volume:
+          description: The avg stock volume for the stock last 30 days.
+          type: string
+        full_name:
+          description: Full name of the ticker.
+          type: string
+        has_dividend:
+          description: Boolean flag whether the company pays dividends.
+          type: boolean
+        has_earnings_history:
+          description: Boolean flag whether historic earnings data is present.
+          type: boolean
+        has_investment_arm:
+          description: >-
+            Boolean flag whether the given stock is holding stocks of other
+            companies.
+          type: boolean
+        has_options:
+          description: Boolean flag whether the company has options.
+          type: boolean
+        issue_type:
+          $ref: '#/components/schemas/Issue%20Type'
+        marketcap:
+          $ref: '#/components/schemas/Marketcap%20AUM'
+        next_earnings_date:
+          $ref: '#/components/schemas/Next%20Earnings%20Date'
+        sector:
+          $ref: '#/components/schemas/Sector'
+        short_description:
+          description: Short description about what the stock does.
+          type: string
+      title: Ticker Info
+      type: object
+    Ticker Options Volume:
+      description: ''
+      example:
+        data:
+          - avg_30_day_call_volume: '658450.333333333333'
+            avg_30_day_put_volume: '481505.300000000000'
+            avg_3_day_call_volume: '949763.000000000000'
+            avg_3_day_put_volume: '756387.333333333333'
+            avg_7_day_call_volume: '878336.000000000000'
+            avg_7_day_put_volume: '580650.857142857143'
+            bearish_premium: '138449839'
+            bullish_premium: '152015294'
+            call_open_interest: 4358631
+            call_premium: '208699280'
+            call_volume: 1071546
+            call_volume_ask_side: 486985
+            call_volume_bid_side: 514793
+            date: '2023-09-08'
+            net_call_premium: '122015294'
+            net_put_premium: '108449839'
+            put_open_interest: 3771656
+            put_premium: '125472872'
+            put_volume: 666386
+            put_volume_ask_side: 298282
+            put_volume_bid_side: 318834
+      properties:
+        avg_30_day_call_volume:
+          description: Avg 30 day call volume.
+          type: string
+        avg_30_day_put_volume:
+          description: Avg 30 day put volume.
+          type: string
+        avg_3_day_call_volume:
+          description: Avg 3 day call volume.
+          type: string
+        avg_3_day_put_volume:
+          description: Avg 3 day put volume.
+          type: string
+        avg_7_day_call_volume:
+          description: Avg 7 day call volume.
+          type: string
+        avg_7_day_put_volume:
+          description: Avg 7 day put volume.
+          type: string
+        bearish_premium:
+          $ref: '#/components/schemas/Bearish%20Premium'
+        bullish_premium:
+          $ref: '#/components/schemas/Bullish%20Premium'
+        call_open_interest:
+          $ref: '#/components/schemas/Call%20open%20interest'
+        call_premium:
+          $ref: '#/components/schemas/Call%20premium'
+        call_volume:
+          $ref: '#/components/schemas/Call%20volume'
+        call_volume_ask_side:
+          $ref: '#/components/schemas/Call%20volume%20ask%20side'
+        call_volume_bid_side:
+          $ref: '#/components/schemas/Call%20volume%20bide%20side'
+        date:
+          $ref: '#/components/schemas/Trading%20day'
+        net_call_premium:
+          $ref: '#/components/schemas/Net%20Call%20Premium'
+        net_put_premium:
+          $ref: '#/components/schemas/Net%20Put%20Premium'
+        put_open_interest:
+          $ref: '#/components/schemas/Put%20open%20interest'
+        put_premium:
+          $ref: '#/components/schemas/Put%20premium'
+        put_volume:
+          $ref: '#/components/schemas/Put%20volume'
+        put_volume_ask_side:
+          $ref: '#/components/schemas/Put%20volume%20ask%20side'
+        put_volume_bid_side:
+          $ref: '#/components/schemas/Put%20volume%20bide%20side'
+      title: Ticker Options Volume
+      type: object
+    Ticker stock price:
+      description: The latest stock price of the ticker.
+      title: Ticker stock price
+      type: string
+    Tickers:
+      description: List of tickers which are in the sector.
+      example:
+        data:
+          - AMD
+          - INTC
+          - NVDA
+      title: Tickers
+      type: array
+    Total Open Interest:
+      description: The sum of open interest of all chains for the given ticker.
+      title: Total Open Interest
+      type: integer
+    Total volume:
+      description: The total volume of the ticker for the full trading till now.
+      title: Total volume
+      type: integer
+    Trading day:
+      description: |
+        A trading date in the format of YYYY-MM-DD.
+        This is optional and by default the last trading date.
+      title: Trading day
+      type: date
+    VolGreaterOiContract:
+      description: >-
+        Only include contracts where the volume is greater than the open
+        interest.
+      title: VolGreaterOiContract
+      type: boolean
+    Volatility:
+      description: >-
+        The implied volatility average of the at the money put and call option
+        contracts. If no expiry date is included, then the volatility is of the
+        nearest end of the week expiration (the nearest monthly expiration if
+        there are no weekly contracts).
+      title: Volatility
+      type: string
+    Volume:
+      description: The volume of the candle.
+      title: Volume
+      type: string
+    Volume & OI per Expiry:
+      description: The volume and open interest per expiry.
+      example:
+        data:
+          - expires: '2023-09-08'
+            oi: 451630
+            volume: 962332
+          - expires: '2023-09-15'
+            oi: 1422982
+            volume: 631608
+          - expires: '2023-09-22'
+            oi: 144938
+            volume: 111177
+          - expires: '2023-09-29'
+            oi: 144629
+            volume: 78604
+          - expires: '2023-10-06'
+            oi: 38090
+            volume: 42405
+          - expires: '2023-10-13'
+            oi: 14371
+            volume: 18694
+          - expires: '2023-10-20'
+            oi: 837270
+            volume: 244837
+          - expires: '2023-10-27'
+            oi: 0
+            volume: 6004
+          - expires: '2023-11-17'
+            oi: 524204
+            volume: 62599
+          - expires: '2023-12-15'
+            oi: 723533
+            volume: 72616
+          - expires: '2024-01-19'
+            oi: 1658337
+            volume: 98483
+          - expires: '2024-02-16'
+            oi: 34994
+            volume: 8947
+          - expires: '2024-03-15'
+            oi: 304973
+            volume: 22281
+          - expires: '2024-04-19'
+            oi: 21399
+            volume: 5905
+          - expires: '2024-06-21'
+            oi: 560682
+            volume: 23783
+          - expires: '2024-09-20'
+            oi: 122030
+            volume: 17994
+          - expires: '2024-12-20'
+            oi: 63646
+            volume: 5170
+          - expires: '2025-01-17'
+            oi: 472809
+            volume: 9144
+          - expires: '2025-06-20'
+            oi: 89229
+            volume: 3194
+          - expires: '2025-12-19'
+            oi: 116365
+            volume: 5856
+      properties:
+        expires:
+          $ref: '#/components/schemas/Expiry'
+        oi:
+          $ref: '#/components/schemas/Open%20Interest'
+        volume:
+          $ref: '#/components/schemas/Options%20Volume'
+      title: Volume & OI per Expiry
+      type: object
+    Week 52 High:
+      description: The 52 week high stock price of the ticker.
+      title: Week 52 High
+      type: integer
+    Week 52 low:
+      description: The 52 week low stock price of the ticker.
+      title: Week 52 low
+      type: integer
+  securitySchemes:
+    authorization:
+      scheme: bearer
+      type: http
+info:
+  contact:
+    email: support@unusualwhales.com
+    name: API Support
+  description: >
+    Documentation for the official [UnusualWhales](https://unusualwhales.com)
+    api
+
+
+    ## Enterprise/Professional Subscribers
+
+    Prospective Enterprise/Professional subscribers can email
+    [support@unusualwhales.com](mailto:support@unusualwhales.com) for more
+    information.
+
+    Please inquire within regarding redistribution licenses or custom solutions.
+
+
+    ----
+
+    ## Lifetime Subscribers
+
+    API access is included with your lifetime subscription (90 requests per
+    minute).
+
+
+    To receive your API token complete the following:
+
+
+    Download and fill out the [API
+    Acknowledgement](https://storage.googleapis.com/uwassets/Unusual_Whales_Non-Professional_API_Acknowledgement.pdf)
+    form
+
+
+    Email the completed form to
+    [support@unusualwhales.com](mailto:support@unusualwhales.com) along with
+    answers to the following 2 questions:
+
+    a) What data are you looking for?
+
+    b) What is your intended use case?
+
+
+    Please note that the Unusual Whales API is strictly for personal use.
+    Redistribution of any type is forbidden.
+
+    Users who are found to have redistributed any material will have their
+    accounts terminated with no reimbursement.
+  title: UnusualWhales Api
+  version: '1.0'
+openapi: 3.0.0
+paths:
+  /api/market/holidays:
+    get:
+      callbacks: {}
+      description: |
+        Returns the market holidays.
+      operationId: PublicApi.MarketController.holidays
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Market%20Holidays'
+          description: Market Holiday response
+      summary: Market Holidays
+      tags:
+        - market
+  /api/market/market-tide:
+    get:
+      callbacks: {}
+      description: >
+        Market Tide is a proprietary tool that can be viewed from the Market
+        Overview page. The Market Tide chart provides real time data based on a
+        proprietary formula that examines market wide options activity and
+        filters out 'noise'.
+
+
+        For example:
+
+        - $15,000 in calls transacted at the ask has the effect of increasing
+        the daily net call premium by $15,000.
+
+        - $10,000 in calls transacted at the bid has the effect of decreasing
+        the daily net call premium by $10,000.
+
+
+        The resulting net premium from both of these trades would be $5000 (+
+        $15,000 - $10,000).
+
+
+        Transactions taking place at the mid are not accounted for.
+
+
+        In theory:
+
+
+        The sentiment in the options market becomes increasingly bullish if:
+
+        1. The aggregated CALL PREMIUM is increasing at a faster rate.
+
+        2. The aggregated PUT PREMIUM is decreasing at a faster rate.
+
+
+        The sentiment in the options market becomes increasingly bearish if:
+
+        1. The aggregated CALL PREMIUM is decreasing at a faster rate.
+
+        2. The aggregated PUT PREMIUM is increasing at a faster rate.
+
+
+        ----
+
+        This can be used to build a market overview such as:
+
+
+        ![market tide](https://i.imgur.com/tuwTCDc.png)
+      operationId: PublicApi.MarketController.market_tide
+      parameters:
+        - description: ''
+          in: query
+          name: date
+          required: false
+          schema:
+            $ref: '#/components/schemas/Trading%20day'
+        - description: ''
+          in: query
+          name: otm_only
+          required: false
+          schema:
+            description: |
+              Only include out of the money transactions.
+            title: OTM Only
+            type: boolean
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Daily%20Market%20Tide'
+          description: ''
+      summary: Market Tide
+      tags:
+        - market
+  /api/market/sector-etfs:
+    get:
+      callbacks: {}
+      description: |
+        Returns the current trading days statistics for the SPDR sector etfs
+
+        ----
+        This can be used to build a market overview such as:
+
+        ![sectors etf](https://i.imgur.com/yQ5o6rR.png)
+      operationId: PublicApi.MarketController.sector_etfs
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Sector%20ETF'
+          description: ''
+      summary: Sector Etfs
+      tags:
+        - market
+  /api/market/total-options-volume:
+    get:
+      callbacks: {}
+      description: |
+        Returns the total options volume and premium for all trade executions
+        that happened on a given trading date.
+
+        ----
+        This can be used to build a market options overview such as:
+
+        ![Market State](https://i.imgur.com/IioJyq9.png)
+      operationId: PublicApi.MarketController.total_options_volume
+      parameters:
+        - description: ''
+          in: query
+          name: limit
+          required: false
+          schema:
+            description: |
+              How many items to return. Default: `1`. Max: `500`.
+            title: Limit
+            type: integer
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Market%20Options%20Volume'
+          description: ''
+      summary: Total Options Volume
+      tags:
+        - market
+  /api/screener/option-contracts:
+    get:
+      callbacks: {}
+      description: >
+        A contract screener endpoint to screen the market for contracts by a
+        variety of filter options.
+
+
+        For an example of what can be build with this endpoint check out the
+        [Hottest
+        Contracts](https://unusualwhales.com/hottest-contracts?limit=100&hide_index_etf=true)
+
+        on UnusualWhales.
+      operationId: PublicApi.ScreenerController.contract_screener
+      parameters:
+        - description: ''
+          in: query
+          name: ticker_symbol
+          required: false
+          schema:
+            $ref: '#/components/schemas/Ticker'
+        - description: ''
+          in: query
+          name: sectors
+          required: false
+          schema:
+            $ref: '#/components/schemas/Sectors'
+        - description: ''
+          in: query
+          name: min_stock_price
+          required: false
+          schema:
+            $ref: '#/components/schemas/MinStockPrice'
+        - description: ''
+          in: query
+          name: max_stock_price
+          required: false
+          schema:
+            $ref: '#/components/schemas/MaxStockPrice'
+        - description: ''
+          in: query
+          name: is_otm
+          required: false
+          schema:
+            $ref: '#/components/schemas/IsOtmContract'
+        - description: ''
+          in: query
+          name: min_dte
+          required: false
+          schema:
+            $ref: '#/components/schemas/MinDte'
+        - description: ''
+          in: query
+          name: max_dte
+          required: false
+          schema:
+            $ref: '#/components/schemas/MaxDte'
+        - description: ''
+          in: query
+          name: min_diff
+          required: false
+          schema:
+            $ref: '#/components/schemas/MinContractDiff'
+        - description: ''
+          in: query
+          name: max_diff
+          required: false
+          schema:
+            $ref: '#/components/schemas/MaxContractDiff'
+        - description: ''
+          in: query
+          name: min_strike
+          required: false
+          schema:
+            $ref: '#/components/schemas/MinStrike'
+        - description: ''
+          in: query
+          name: max_strike
+          required: false
+          schema:
+            $ref: '#/components/schemas/MaxStrike'
+        - description: ''
+          in: query
+          name: type
+          required: false
+          schema:
+            $ref: '#/components/schemas/OptionType'
+        - description: ''
+          in: query
+          name: expiry_dates
+          required: false
+          schema:
+            $ref: '#/components/schemas/ExpiryDates'
+        - description: ''
+          in: query
+          name: min_marketcap
+          required: false
+          schema:
+            $ref: '#/components/schemas/MinMarketcap'
+        - description: ''
+          in: query
+          name: max_marketcap
+          required: false
+          schema:
+            $ref: '#/components/schemas/MaxMarketcap'
+        - description: ''
+          in: query
+          name: min_volume
+          required: false
+          schema:
+            $ref: '#/components/schemas/MinContractVol'
+        - description: ''
+          in: query
+          name: max_volume
+          required: false
+          schema:
+            $ref: '#/components/schemas/MaxContractVol'
+        - description: ''
+          in: query
+          name: min_multileg_volume_ratio
+          required: false
+          schema:
+            $ref: '#/components/schemas/MinMultilegVolumeRatio'
+        - description: ''
+          in: query
+          name: max_multileg_volume_ratio
+          required: false
+          schema:
+            $ref: '#/components/schemas/MaxMultilegVolumeRatio'
+        - description: ''
+          in: query
+          name: min_floor_volume_ratio
+          required: false
+          schema:
+            $ref: '#/components/schemas/MinFloorVolumeRatio'
+        - description: ''
+          in: query
+          name: max_floor_volume_ratio
+          required: false
+          schema:
+            $ref: '#/components/schemas/MaxFloorVolumeRatio'
+        - description: ''
+          in: query
+          name: min_perc_change
+          required: false
+          schema:
+            $ref: '#/components/schemas/MinPercChange'
+        - description: ''
+          in: query
+          name: max_perc_change
+          required: false
+          schema:
+            $ref: '#/components/schemas/MaxPercChange'
+        - description: ''
+          in: query
+          name: min_daily_perc_change
+          required: false
+          schema:
+            $ref: '#/components/schemas/MinDailyPercChange'
+        - description: ''
+          in: query
+          name: max_daily_perc_change
+          required: false
+          schema:
+            $ref: '#/components/schemas/MaxDailyPercChange'
+        - description: ''
+          in: query
+          name: min_premium
+          required: false
+          schema:
+            $ref: '#/components/schemas/MinContractPrem'
+        - description: ''
+          in: query
+          name: max_premium
+          required: false
+          schema:
+            $ref: '#/components/schemas/MaxContractPrem'
+        - description: ''
+          in: query
+          name: min_volume_oi_ratio
+          required: false
+          schema:
+            $ref: '#/components/schemas/MinVolOiRatio'
+        - description: ''
+          in: query
+          name: max_volume_oi_ratio
+          required: false
+          schema:
+            $ref: '#/components/schemas/MaxVolOiRatio'
+        - description: ''
+          in: query
+          name: min_open_interest
+          required: false
+          schema:
+            $ref: '#/components/schemas/MinContractOi'
+        - description: ''
+          in: query
+          name: max_open_interest
+          required: false
+          schema:
+            $ref: '#/components/schemas/MaxContractOi'
+        - description: ''
+          in: query
+          name: min_floor_volume
+          required: false
+          schema:
+            $ref: '#/components/schemas/MinContractFloorVol'
+        - description: ''
+          in: query
+          name: max_floor_volume
+          required: false
+          schema:
+            $ref: '#/components/schemas/MaxContractFloorVol'
+        - description: ''
+          in: query
+          name: vol_greater_oi
+          required: false
+          schema:
+            $ref: '#/components/schemas/VolGreaterOiContract'
+        - description: ''
+          in: query
+          name: issue_types
+          required: false
+          schema:
+            $ref: '#/components/schemas/IssueTypes'
+        - description: The field to order by.
+          in: query
+          name: order
+          required: false
+          schema:
+            enum:
+              - total_oi_change
+            type: string
+        - description: ''
+          in: query
+          name: order_direction
+          required: false
+          schema:
+            $ref: '#/components/schemas/OrderDirection'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Option%20Contract%20Screener%20response.'
+          description: ''
+      summary: Hottest Chains
+      tags:
+        - screener
+  /api/screener/stocks:
+    get:
+      callbacks: {}
+      description: >
+        A stock screener endpoint to screen the market for stocks by a variety
+        of filter options.
+
+
+        For an example of what can be build with this endpoint check out the
+        [Stock Screener](https://unusualwhales.com/flow/ticker_flows)
+
+        on UnusualWhales.
+      operationId: PublicApi.ScreenerController.stock_screener
+      parameters:
+        - description: ''
+          in: query
+          name: ticker
+          required: false
+          schema:
+            $ref: '#/components/schemas/Ticker'
+        - description: ''
+          in: query
+          name: issue_types
+          required: false
+          schema:
+            $ref: '#/components/schemas/IssueTypes'
+        - description: The minimum % change to the previous trading day.
+          examples:
+            - '0.1'
+            - '-0.05'
+          in: query
+          name: min_change
+          required: false
+          schema:
+            type: string
+        - description: The maximum % change to the previous trading day.
+          examples:
+            - '0.1'
+            - '-0.05'
+          in: query
+          name: max_change
+          required: false
+          schema:
+            type: string
+        - description: ''
+          in: query
+          name: min_underlying_price
+          required: false
+          schema:
+            $ref: '#/components/schemas/MinStockPrice'
+        - description: ''
+          in: query
+          name: max_underlying_price
+          required: false
+          schema:
+            $ref: '#/components/schemas/MaxStockPrice'
+        - description: >-
+            Boolean whether to only include stocks which are part of the S&P
+            500. Setting this to false has no effect.
+          in: query
+          name: is_s_p_500
+          required: false
+          schema:
+            type: boolean
+        - description: >-
+            Boolean wheter to only include stocks which pay dividends. Setting
+            this to false has no effect.
+          in: query
+          name: has_dividends
+          required: false
+          schema:
+            type: boolean
+        - description: ''
+          in: query
+          name: sectors
+          required: false
+          schema:
+            $ref: '#/components/schemas/Sectors'
+        - description: ''
+          in: query
+          name: min_marketcap
+          required: false
+          schema:
+            $ref: '#/components/schemas/MinMarketcap'
+        - description: ''
+          in: query
+          name: max_marketcap
+          required: false
+          schema:
+            $ref: '#/components/schemas/MaxMarketcap'
+        - description: The minimum ratio of options volume vs 3 day avg options volume.
+          examples:
+            - '0.25'
+          in: query
+          name: min_perc_3_day_total
+          required: false
+          schema:
+            type: string
+        - description: The maximum ratio of options volume vs 3 day avg options volume.
+          examples:
+            - '0.25'
+          in: query
+          name: max_perc_3_day_total
+          required: false
+          schema:
+            type: string
+        - description: >-
+            The minimum ratio of call options volume vs 3 day avg call options
+            volume.
+          examples:
+            - '0.25'
+          in: query
+          name: min_perc_3_day_call
+          required: false
+          schema:
+            type: string
+        - description: >-
+            The maximum ratio of call options volume vs 3 day avg call options
+            volume.
+          examples:
+            - '0.25'
+          in: query
+          name: max_perc_3_day_call
+          required: false
+          schema:
+            type: string
+        - description: >-
+            The minimum ratio of put options volume vs 3 day avg put options
+            volume.
+          examples:
+            - '0.25'
+          in: query
+          name: min_perc_3_day_put
+          required: false
+          schema:
+            type: string
+        - description: >-
+            The maximum ratio of put options volume vs 3 day avg put options
+            volume.
+          examples:
+            - '0.25'
+          in: query
+          name: max_perc_3_day_put
+          required: false
+          schema:
+            type: string
+        - description: The minimum ratio of options volume vs 30 day avg options volume.
+          examples:
+            - '0.25'
+          in: query
+          name: min_perc_30_day_total
+          required: false
+          schema:
+            type: string
+        - description: The maximum ratio of options volume vs 30 day avg options volume.
+          examples:
+            - '0.25'
+          in: query
+          name: max_perc_30_day_total
+          required: false
+          schema:
+            type: string
+        - description: >-
+            The minimum ratio of call options volume vs 30 day avg call options
+            volume.
+          examples:
+            - '0.25'
+          in: query
+          name: min_perc_30_day_call
+          required: false
+          schema:
+            type: string
+        - description: >-
+            The maximum ratio of call options volume vs 30 day avg call options
+            volume.
+          examples:
+            - '0.25'
+          in: query
+          name: max_perc_30_day_call
+          required: false
+          schema:
+            type: string
+        - description: >-
+            The minimum ratio of put options volume vs 30 day avg put options
+            volume.
+          examples:
+            - '0.25'
+          in: query
+          name: min_perc_30_day_put
+          required: false
+          schema:
+            type: string
+        - description: >-
+            The maximum ratio of put options volume vs 30 day avg put options
+            volume.
+          examples:
+            - '0.25'
+          in: query
+          name: max_perc_30_day_put
+          required: false
+          schema:
+            type: string
+        - description: The minimum open interest change compared to the previous day.
+          examples:
+            - '0.2'
+          in: query
+          name: min_total_oi_change_perc
+          required: false
+          schema:
+            type: string
+        - description: The maximum open interest change compared to the previous day.
+          examples:
+            - '0.2'
+          in: query
+          name: max_total_oi_change_perc
+          required: false
+          schema:
+            type: string
+        - description: >-
+            The minimum open interest change of call contracts compared to the
+            previous day.
+          examples:
+            - '0.2'
+          in: query
+          name: min_call_oi_change_perc
+          required: false
+          schema:
+            type: string
+        - description: >-
+            The maximum open interest change of call contracts compared to the
+            previous day.
+          examples:
+            - '0.2'
+          in: query
+          name: max_call_oi_change_perc
+          required: false
+          schema:
+            type: string
+        - description: >-
+            The minimum open interest change of put contracts compared to the
+            previous day.
+          examples:
+            - '0.2'
+          in: query
+          name: min_put_oi_change_perc
+          required: false
+          schema:
+            type: string
+        - description: >-
+            The maximum open interest change of put contracts compared to the
+            previous day.
+          examples:
+            - '0.2'
+          in: query
+          name: max_put_oi_change_perc
+          required: false
+          schema:
+            type: string
+        - description: The minimum implied move
+          examples:
+            - '0.5'
+          in: query
+          name: min_implied_move
+          required: false
+          schema:
+            type: string
+        - description: The maximum implied move
+          examples:
+            - '0.5'
+          in: query
+          name: max_implied_move
+          required: false
+          schema:
+            type: string
+        - description: The minimum implied move perc.
+          examples:
+            - '0.5'
+          in: query
+          name: min_implied_move_perc
+          required: false
+          schema:
+            type: string
+        - description: The maximum implied move perc.
+          examples:
+            - '0.5'
+          in: query
+          name: max_implied_move_perc
+          required: false
+          schema:
+            type: string
+        - description: The minimum volatility.
+          examples:
+            - '0.5'
+          in: query
+          name: min_volatility
+          required: false
+          schema:
+            type: string
+        - description: The maximum volatility.
+          examples:
+            - '0.5'
+          in: query
+          name: max_volatility
+          required: false
+          schema:
+            type: string
+        - description: The minimum iv rank.
+          examples:
+            - '20'
+          in: query
+          name: min_iv_rank
+          required: false
+          schema:
+            type: string
+        - description: The maximum iv rank.
+          examples:
+            - '20'
+          in: query
+          name: max_iv_rank
+          required: false
+          schema:
+            type: string
+        - description: The minimum options volume.
+          examples:
+            - '10000'
+          in: query
+          name: min_volume
+          required: false
+          schema:
+            type: string
+        - description: The maximum options volume.
+          examples:
+            - '10000'
+          in: query
+          name: max_volume
+          required: false
+          schema:
+            type: string
+        - description: The minimum call options volume.
+          examples:
+            - '10000'
+          in: query
+          name: min_call_volume
+          required: false
+          schema:
+            type: string
+        - description: The maximum call options volume.
+          examples:
+            - '10000'
+          in: query
+          name: max_call_volume
+          required: false
+          schema:
+            type: string
+        - description: The minimum put options volume.
+          examples:
+            - '10000'
+          in: query
+          name: min_put_volume
+          required: false
+          schema:
+            type: string
+        - description: The maximum put options volume.
+          examples:
+            - '10000'
+          in: query
+          name: max_put_volume
+          required: false
+          schema:
+            type: string
+        - description: The minimum options premium.
+          examples:
+            - '10000'
+          in: query
+          name: min_premium
+          required: false
+          schema:
+            type: string
+        - description: The maximum options premium.
+          examples:
+            - '10000'
+          in: query
+          name: max_premium
+          required: false
+          schema:
+            type: string
+        - description: The minimum call options premium.
+          examples:
+            - '10000'
+          in: query
+          name: min_call_premium
+          required: false
+          schema:
+            type: string
+        - description: The maximum call options premium.
+          examples:
+            - '10000'
+          in: query
+          name: max_call_premium
+          required: false
+          schema:
+            type: string
+        - description: The minimum put options premium.
+          examples:
+            - '10000'
+          in: query
+          name: min_put_premium
+          required: false
+          schema:
+            type: string
+        - description: The maximum put options premium.
+          examples:
+            - '10000'
+          in: query
+          name: max_put_premium
+          required: false
+          schema:
+            type: string
+        - description: The minimum net options premium.
+          examples:
+            - '10000'
+          in: query
+          name: min_net_premium
+          required: false
+          schema:
+            type: string
+        - description: The maximum net options premium.
+          examples:
+            - '10000'
+          in: query
+          name: max_net_premium
+          required: false
+          schema:
+            type: string
+        - description: The minimum open interest.
+          examples:
+            - '10000'
+          in: query
+          name: min_oi
+          required: false
+          schema:
+            type: string
+        - description: The maximum open interest.
+          examples:
+            - '10000'
+          in: query
+          name: max_oi
+          required: false
+          schema:
+            type: string
+        - description: The minimum open interest vs options volume ratio.
+          examples:
+            - '0.5'
+          in: query
+          name: min_oi_vs_vol
+          required: false
+          schema:
+            type: string
+        - description: The maximum open interest vs options volume ratio.
+          examples:
+            - '1.5'
+          in: query
+          name: max_oi_vs_vol
+          required: false
+          schema:
+            type: string
+        - description: The minimum put to call ratio.
+          examples:
+            - '0.5'
+          in: query
+          name: min_put_call_ratio
+          required: false
+          schema:
+            type: string
+        - description: The maximum put to call ratio.
+          examples:
+            - '1.5'
+          in: query
+          name: max_put_call_ratio
+          required: false
+          schema:
+            type: string
+        - description: The field to order by.
+          in: query
+          name: order
+          required: false
+          schema:
+            enum:
+              - total_oi_change
+              - call_oi_change
+              - put_oi_change
+              - total_oi_change_perc
+              - call_oi_change_perc
+              - put_oi_change_perc
+              - implied_move
+              - implied_move_perc
+              - volatility
+              - iv30d
+              - iv30d_1d
+              - iv30d_1w
+              - iv30d_1m
+              - iv_rank
+              - net_premium
+              - net_call_premium
+              - net_put_premium
+              - perc_change
+              - marketcap
+              - next_dividend_date
+              - next_earnings_date
+              - perc_call_vol_ask
+              - perc_call_vol_bid
+              - perc_put_vol_ask
+              - perc_put_vol_bid
+              - call_volume
+              - volume
+              - premium
+              - call_premium
+              - put_premium
+              - put_volume
+              - total_open_interest
+              - call_open_interest
+              - put_open_interest
+              - put_call_ratio
+            type: string
+        - description: ''
+          in: query
+          name: order_direction
+          required: false
+          schema:
+            $ref: '#/components/schemas/OrderDirection'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Stock%20Screener%20response'
+          description: ''
+      summary: Stock Screener
+      tags:
+        - screener
+  '/api/stock/{sector}/tickers':
+    get:
+      callbacks: {}
+      description: |
+        Returns a list of tickers which are in the given sector.
+      operationId: PublicApi.TickerController.companies_in_sector
+      parameters:
+        - description: ''
+          in: path
+          name: sector
+          required: true
+          schema:
+            $ref: '#/components/schemas/Sector'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                description: List of tickers which are in the sector.
+                example:
+                  data:
+                    - AMD
+                    - INTC
+                    - NVDA
+                title: Tickers
+                type: array
+          description: ''
+      summary: Companies in Sector
+      tags:
+        - stock
+  '/api/stock/{ticker}/analysts':
+    get:
+      callbacks: {}
+      description: |
+        Returns the latest analyst rating for the given ticker.
+      operationId: PublicApi.TickerController.analyst_ratings
+      parameters:
+        - description: ''
+          in: path
+          name: ticker
+          required: true
+          schema:
+            $ref: '#/components/schemas/Ticker'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Analyst%20Rating'
+          description: ''
+      summary: Analyst Rating
+      tags:
+        - stock
+  '/api/stock/{ticker}/greek-exposure':
+    get:
+      callbacks: {}
+      description: |
+        The daily sum of the option greeks based on open contracts.
+
+        Popular greek exposure values include gamma (GEX) and delta (DEX).
+      operationId: PublicApi.TickerController.greek_exposure
+      parameters:
+        - description: ''
+          in: path
+          name: ticker
+          required: true
+          schema:
+            $ref: '#/components/schemas/Ticker'
+        - description: ''
+          in: query
+          name: date
+          required: false
+          schema:
+            $ref: '#/components/schemas/Trading%20day'
+        - description: |
+            The timeframe of the data to return. Default 1Y
+            Can be one of the following formats:
+            - YTD
+            - 1D, 2D, etc.
+            - 1W, 2W, etc.
+            - 1M, 2M, etc.
+            - 1Y, 2Y, etc.
+          in: query
+          name: timeframe
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Greek%20Exposure'
+          description: ''
+      summary: Greek Exposure
+      tags:
+        - stock
+  '/api/stock/{ticker}/info':
+    get:
+      callbacks: {}
+      description: |
+        Returns a information about the given ticker.
+      operationId: PublicApi.TickerController.info
+      parameters:
+        - description: ''
+          in: path
+          name: ticker
+          required: true
+          schema:
+            $ref: '#/components/schemas/Ticker'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ticker%20Info'
+          description: ''
+      summary: Information
+      tags:
+        - stock
+  '/api/stock/{ticker}/net-prem-ticks':
+    get:
+      callbacks: {}
+      description: >
+        Returns the net premium ticks for a given ticker which can be used to
+        build the following chart:
+
+        ![Net Prem chart](https://i.imgur.com/Rom1kcB.png)
+
+
+        ----
+
+        Each tick is resembling the data for a single minute tick. To build a
+        daily chart
+
+        you would have to add the previous data to the current tick:
+
+        ```javascript
+
+        const url =
+          'https://api.unusualwhales.com/api/stock/AAPL/net-prem-ticks';
+        const options = {
+          method: 'GET',
+          headers: {
+            Accept: 'application/json',
+            Authorization: 'Bearer YOUR_TOKEN'
+          }
+        };
+
+
+        fetch(url, options)
+
+        .then(r => r.json())
+
+        .then(r => {
+          const {data} = r.data;
+          const fieldsToSum = [
+            "net_call_premium",
+            "net_call_volume",
+            "net_put_premium",
+            "net_put_volume"
+          ];
+
+          let result = [];
+          data.forEach((e, idx) => {
+            e.net_call_premium = parseFloat(e.net_call_premium);
+            e.net_put_premium = parseFloat(e.net_put_premium);
+            if (idx !== 0) {
+              fieldsToSum.forEach((field) => {
+                e[field] = e[field] + result[idx-1][field];
+              })
+            }
+            result.push(e);
+          })
+
+          return result;
+        });
+
+
+        ```
+      operationId: PublicApi.TickerController.net_prem_ticks
+      parameters:
+        - description: ''
+          in: path
+          name: ticker
+          required: true
+          schema:
+            $ref: '#/components/schemas/Ticker'
+        - description: ''
+          in: query
+          name: date
+          required: false
+          schema:
+            $ref: '#/components/schemas/Trading%20day'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Net%20Prem%20Tick%20response.'
+          description: ''
+      summary: Net Prem Ticks
+      tags:
+        - stock
+  '/api/stock/{ticker}/ohlc/{candle_size}':
+    get:
+      callbacks: {}
+      description: |
+        Returns the Open High Low Close (OHLC) candle data for a given ticker.
+
+        Results are limitted to 2,500 elements even if there are more available.
+      operationId: PublicApi.TickerController.ohlc
+      parameters:
+        - description: ''
+          in: path
+          name: ticker
+          required: true
+          schema:
+            $ref: '#/components/schemas/Ticker'
+        - description: The duration of the candle.
+          in: path
+          name: candle_size
+          required: true
+          schema:
+            $ref: '#/components/schemas/Candle%20Size'
+        - description: |
+            The timeframe of the data to return. Default 1Y
+            Can be one of the following formats:
+            - YTD
+            - 1D, 2D, etc.
+            - 1W, 2W, etc.
+            - 1M, 2M, etc.
+            - 1Y, 2Y, etc.
+          in: query
+          name: timeframe
+          required: false
+          schema:
+            type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Candle%20data'
+          description: OHLC Response
+      summary: OHLC
+      tags:
+        - stock
+  '/api/stock/{ticker}/option-chains':
+    get:
+      callbacks: {}
+      description: >
+        Returns all option symbols for the given ticker.
+
+
+        You can use the following regex to extract underlying ticker, option
+        type, expiry & strike:
+
+        `^(?<symbol>[\w]*)(?<expiry>(\d{2})(\d{2})(\d{2}))(?<type>[PC])(?<strike>\d{8})$`
+
+
+        Keep in mind that the strike needs to be divided by 1,000.
+      operationId: PublicApi.TickerController.option_chains
+      parameters:
+        - description: ''
+          in: path
+          name: ticker
+          required: true
+          schema:
+            $ref: '#/components/schemas/Ticker'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Option%20Chains%20response'
+          description: Option chains response
+      summary: Option Chains
+      tags:
+        - stock
+  '/api/stock/{ticker}/option/stock-price-levels':
+    get:
+      callbacks: {}
+      description: |
+        Returns the call and put volume per price level for the given ticker.
+
+        ----
+        Can be used to build a chart such as following:
+        ![Option Price Level chart](https://i.imgur.com/y6BZ4sG.png)
+      operationId: PublicApi.TickerController.option_price_level
+      parameters:
+        - description: ''
+          in: path
+          name: ticker
+          required: true
+          schema:
+            $ref: '#/components/schemas/Ticker'
+        - description: ''
+          in: query
+          name: date
+          required: false
+          schema:
+            $ref: '#/components/schemas/Trading%20day'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Option%20Price%20Level'
+          description: ''
+      summary: Option Price Levels
+      tags:
+        - stock
+  '/api/stock/{ticker}/option/volume-oi-epxiry':
+    get:
+      callbacks: {}
+      description: >
+        Returns the total volume and open interest per expiry for the given
+        ticker.
+      operationId: PublicApi.TickerController.vol_oi_per_expiry
+      parameters:
+        - description: ''
+          in: path
+          name: ticker
+          required: true
+          schema:
+            $ref: '#/components/schemas/Ticker'
+        - description: ''
+          in: query
+          name: date
+          required: false
+          schema:
+            $ref: '#/components/schemas/Trading%20day'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Volume%20&%20OI%20per%20Expiry'
+          description: Vol & OI per expiry response
+      summary: Volume & OI per Expiry
+      tags:
+        - stock
+  '/api/stock/{ticker}/options-volume':
+    get:
+      callbacks: {}
+      description: |
+        Returns the options volume & premium for all trade executions
+        that happened on a given trading date for the given ticker.
+
+        ----
+        This can be used to build a ticker options overview such as:
+
+        ![Table](https://i.imgur.com/7FHyuqc.png)
+
+        ----
+
+        ![Line](https://i.imgur.com/UnVryDK.png)
+      operationId: PublicApi.TickerController.options_volume
+      parameters:
+        - description: ''
+          in: path
+          name: ticker
+          required: true
+          schema:
+            $ref: '#/components/schemas/Ticker'
+        - description: ''
+          in: query
+          name: limit
+          required: false
+          schema:
+            $ref: '#/components/schemas/Limit'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Ticker%20Options%20Volume'
+          description: ''
+      summary: Options Volume
+      tags:
+        - stock
+  '/api/stock/{ticker}/stock-volume-price-levels':
+    get:
+      callbacks: {}
+      description: >
+        Returns the lit & off lit stock volume per price level for the given
+        ticker.
+
+
+        ----
+
+        Important: The volume does **NOT** represent the full market dialy
+        volume. It
+
+        only represents the volume of executed trades on exchanges operated by
+        Nasdaq
+
+        and FINRA off lit exchanges.
+      operationId: PublicApi.TickerController.stock_volume_price_level
+      parameters:
+        - description: ''
+          in: path
+          name: ticker
+          required: true
+          schema:
+            $ref: '#/components/schemas/Ticker'
+        - description: ''
+          in: query
+          name: date
+          required: false
+          schema:
+            $ref: '#/components/schemas/Trading%20day'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Off%20Lit%20Price%20Level'
+          description: ''
+      summary: Off/Lit Price Levels
+      tags:
+        - stock
+  '/api/stock/{ticker}/volatility/term-structure':
+    get:
+      callbacks: {}
+      description: >
+        The average of the latest volatilities for the at the money call and put
+        contracts for every expiry date.
+      operationId: PublicApi.TickerController.implied_volatility_term_structure
+      parameters:
+        - description: ''
+          in: path
+          name: ticker
+          required: true
+          schema:
+            $ref: '#/components/schemas/Ticker'
+        - description: ''
+          in: query
+          name: date
+          required: false
+          schema:
+            $ref: '#/components/schemas/Trading%20day'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Implied%20Volatility%20Term%20Structure'
+          description: ''
+      summary: Implied Volatility Term Structure
+      tags:
+        - stock
+security:
+  - authorization: []
+servers:
+  - url: 'https://api.unusualwhales.com'
+    variables: {}
+tags: []

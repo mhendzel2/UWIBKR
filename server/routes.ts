@@ -2500,6 +2500,226 @@ export async function registerRoutes(app: Express): Promise<Server> {
   const { default: optionsRadarRoutes } = await import('./routes/optionsRadar');
   app.use('/api/options', optionsRadarRoutes);
 
+  // ========================================
+  // UNUSUAL WHALES API ENDPOINTS
+  // ========================================
+  
+  // Market tide data from UnusualWhales API
+  app.get('/api/unusual-whales/market-tide', async (req, res) => {
+    try {
+      console.log('🌊 Fetching UnusualWhales market tide data...');
+      const uwService = new UnusualWhalesService();
+      const marketTideData = await uwService.getMarketTide();
+      
+      console.log('✅ Market tide data retrieved successfully');
+      res.json(marketTideData?.data || []);
+    } catch (error) {
+      console.error('❌ Failed to fetch market tide data:', error);
+      res.status(500).json({ 
+        error: 'Failed to fetch market tide data',
+        message: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
+  // Sector ETF data from UnusualWhales API
+  app.get('/api/unusual-whales/sector-etfs', async (req, res) => {
+    try {
+      console.log('📊 Fetching UnusualWhales sector ETF data...');
+      const uwService = new UnusualWhalesService();
+      const sectorData = await uwService.getSectorETFs();
+      
+      console.log('✅ Sector ETF data retrieved successfully:', sectorData?.length || 0, 'sectors');
+      res.json(sectorData || []);
+    } catch (error) {
+      console.error('❌ Failed to fetch sector ETF data:', error);
+      res.status(500).json({ 
+        error: 'Failed to fetch sector ETF data',
+        message: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
+  // Total options volume from UnusualWhales API
+  app.get('/api/unusual-whales/total-options-volume', async (req, res) => {
+    try {
+      console.log('📈 Fetching UnusualWhales total options volume...');
+      const uwService = new UnusualWhalesService();
+      const volumeData = await uwService.getTotalOptionsVolume();
+      
+      console.log('✅ Total options volume retrieved successfully');
+      res.json(volumeData || []);
+    } catch (error) {
+      console.error('❌ Failed to fetch total options volume:', error);
+      res.status(500).json({ 
+        error: 'Failed to fetch total options volume',
+        message: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
+  // Analyst ratings for specific ticker from UnusualWhales API
+  app.get('/api/unusual-whales/analyst-ratings/:ticker', async (req, res) => {
+    try {
+      const { ticker } = req.params;
+      console.log(`🏢 Fetching UnusualWhales analyst ratings for ${ticker}...`);
+      
+      const uwService = new UnusualWhalesService();
+      const ratingsData = await uwService.getAnalystRatings(ticker);
+      
+      console.log('✅ Analyst ratings retrieved successfully:', ratingsData?.length || 0, 'ratings');
+      res.json(ratingsData || []);
+    } catch (error) {
+      console.error('❌ Failed to fetch analyst ratings:', error);
+      res.status(500).json({ 
+        error: 'Failed to fetch analyst ratings',
+        message: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
+  // News sentiment for specific ticker from UnusualWhales API
+  app.get('/api/unusual-whales/news-sentiment/:ticker', async (req, res) => {
+    try {
+      const { ticker } = req.params;
+      console.log(`📰 Fetching UnusualWhales news sentiment for ${ticker}...`);
+      
+      const uwService = new UnusualWhalesService();
+      const sentimentData = await uwService.getNewsSentiment(ticker);
+      
+      console.log('✅ News sentiment retrieved successfully:', sentimentData?.length || 0, 'items');
+      res.json(sentimentData || []);
+    } catch (error) {
+      console.error('❌ Failed to fetch news sentiment:', error);
+      res.status(500).json({ 
+        error: 'Failed to fetch news sentiment',
+        message: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
+  // Options flow data from UnusualWhales API
+  app.get('/api/unusual-whales/options-flow/:ticker', async (req, res) => {
+    try {
+      const { ticker } = req.params;
+      console.log(`🌊 Fetching UnusualWhales options flow for ${ticker}...`);
+      
+      const uwService = new UnusualWhalesService();
+      const flowData = await uwService.getOptionsFlow(ticker);
+      
+      console.log('✅ Options flow retrieved successfully:', flowData?.length || 0, 'flow items');
+      res.json(flowData || []);
+    } catch (error) {
+      console.error('❌ Failed to fetch options flow:', error);
+      res.status(500).json({ 
+        error: 'Failed to fetch options flow',
+        message: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
+  // Ticker options volume from UnusualWhales API
+  app.get('/api/unusual-whales/ticker-options-volume/:ticker', async (req, res) => {
+    try {
+      const { ticker } = req.params;
+      const limit = parseInt(req.query.limit as string) || 30;
+      console.log(`📊 Fetching UnusualWhales ticker options volume for ${ticker} (limit: ${limit})...`);
+      
+      const uwService = new UnusualWhalesService();
+      const volumeData = await uwService.getTickerOptionsVolume(ticker, limit);
+      
+      console.log('✅ Ticker options volume retrieved successfully:', volumeData?.length || 0, 'data points');
+      res.json(volumeData || []);
+    } catch (error) {
+      console.error('❌ Failed to fetch ticker options volume:', error);
+      res.status(500).json({ 
+        error: 'Failed to fetch ticker options volume',
+        message: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
+  // Net premium ticks from UnusualWhales API
+  app.get('/api/unusual-whales/net-premium-ticks/:ticker', async (req, res) => {
+    try {
+      const { ticker } = req.params;
+      const date = req.query.date as string;
+      console.log(`💰 Fetching UnusualWhales net premium ticks for ${ticker}${date ? ` on ${date}` : ''}...`);
+      
+      const uwService = new UnusualWhalesService();
+      const ticksData = await uwService.getNetPremiumTicks(ticker, date);
+      
+      console.log('✅ Net premium ticks retrieved successfully:', ticksData?.length || 0, 'ticks');
+      res.json(ticksData || []);
+    } catch (error) {
+      console.error('❌ Failed to fetch net premium ticks:', error);
+      res.status(500).json({ 
+        error: 'Failed to fetch net premium ticks',
+        message: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
+  // Implied volatility term structure from UnusualWhales API
+  app.get('/api/unusual-whales/iv-term-structure/:ticker', async (req, res) => {
+    try {
+      const { ticker } = req.params;
+      console.log(`📈 Fetching UnusualWhales IV term structure for ${ticker}...`);
+      
+      const uwService = new UnusualWhalesService();
+      const ivData = await uwService.getImpliedVolatilityTermStructure(ticker);
+      
+      console.log('✅ IV term structure retrieved successfully:', ivData?.length || 0, 'data points');
+      res.json(ivData || []);
+    } catch (error) {
+      console.error('❌ Failed to fetch IV term structure:', error);
+      res.status(500).json({ 
+        error: 'Failed to fetch IV term structure',
+        message: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
+  // Comprehensive market sentiment from UnusualWhales API
+  app.get('/api/unusual-whales/market-sentiment', async (req, res) => {
+    try {
+      console.log('🎯 Fetching comprehensive UnusualWhales market sentiment...');
+      const uwService = new UnusualWhalesService();
+      
+      // Fetch multiple data sources
+      const [marketTide, sectorETFs, totalVolume] = await Promise.all([
+        uwService.getMarketTide(),
+        uwService.getSectorETFs(),
+        uwService.getTotalOptionsVolume()
+      ]);
+      
+      const comprehensiveSentiment = {
+        timestamp: new Date().toISOString(),
+        marketTide: marketTide?.data || [],
+        sectorETFs: sectorETFs || [],
+        totalOptionsVolume: totalVolume || [],
+        summary: {
+          bullishSectors: sectorETFs?.filter((sector: any) => 
+            parseFloat(sector.bullish_premium || '0') > parseFloat(sector.bearish_premium || '0')
+          ).length || 0,
+          bearishSectors: sectorETFs?.filter((sector: any) => 
+            parseFloat(sector.bearish_premium || '0') > parseFloat(sector.bullish_premium || '0')
+          ).length || 0,
+          totalSectors: sectorETFs?.length || 0
+        }
+      };
+      
+      console.log('✅ Comprehensive market sentiment retrieved successfully');
+      res.json(comprehensiveSentiment);
+    } catch (error) {
+      console.error('❌ Failed to fetch comprehensive market sentiment:', error);
+      res.status(500).json({ 
+        error: 'Failed to fetch comprehensive market sentiment',
+        message: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
   return httpServer;
 }
 
