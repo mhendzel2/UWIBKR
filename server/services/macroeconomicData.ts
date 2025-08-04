@@ -3,6 +3,8 @@
 // Create OpenAI instance directly for macroeconomic analysis
 // const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY }); // Removed - using Gemini instead
 
+import { ibkrService } from './ibkr';
+
 export interface MacroeconomicIndicators {
   timestamp: Date;
   
@@ -211,8 +213,6 @@ export class MacroeconomicDataService {
   async fetchSentimentIndicators(): Promise<MacroeconomicIndicators['sentimentIndicators']> {
     try {
       // Get VIX and other market data from TWS
-      const { ibkrService } = await import('./ibkrService');
-      
       const [vixData, dxyData, goldData, oilData] = await Promise.allSettled([
         ibkrService.getMarketData('VIX'),
         ibkrService.getMarketData('DXY'),
@@ -252,8 +252,6 @@ export class MacroeconomicDataService {
   // Calculate Fear & Greed Index components
   async calculateFearGreedComponents(): Promise<MacroeconomicIndicators['fearGreedComponents']> {
     try {
-      const { ibkrService } = await import('./ibkrService');
-      
       // 1. Market Momentum (S&P 500 vs 125-day MA)
       const spyData = await ibkrService.getHistoricalData('SPY', '6M');
       const marketMomentum = this.calculateMarketMomentum(spyData);
@@ -597,7 +595,6 @@ export class MacroeconomicDataService {
   private async calculateSafeHavenDemand(): Promise<number> {
     try {
       // Compare Treasury ETF (TLT) vs SPY performance
-      const { ibkrService } = await import('./ibkrService');
       const [tltData, spyData] = await Promise.all([
         ibkrService.getHistoricalData('TLT', '1M'),
         ibkrService.getHistoricalData('SPY', '1M')

@@ -124,13 +124,18 @@ export default function MorningUpdatePage() {
   const [autoRefresh, setAutoRefresh] = useState(true);
 
   // Get morning update data
-  const { data: morningUpdate, isLoading, error, refetch } = useQuery({
+  const { data: morningUpdate, isLoading, error, refetch } = useQuery<MorningUpdateData | null>({
     queryKey: ['/api/morning-update'],
     refetchInterval: autoRefresh ? 2 * 60 * 1000 : false // Refresh every 2 minutes if auto-refresh enabled
   });
 
   // Get morning update summary
-  const { data: morningUpdateSummary } = useQuery({
+  const { data: morningUpdateSummary } = useQuery<{
+    executiveSummary?: string;
+    tradingPlan?: string;
+    riskConsiderations?: string;
+    keyWatchItems?: string[];
+  } | null>({
     queryKey: ['/api/morning-update/summary'],
     enabled: !!morningUpdate,
     refetchInterval: autoRefresh ? 5 * 60 * 1000 : false
@@ -281,7 +286,7 @@ export default function MorningUpdatePage() {
                   <div>
                     <h4 className="font-medium text-purple-600 mb-2">Key Watch Items</h4>
                     <div className="flex flex-wrap gap-2">
-                      {morningUpdateSummary.keyWatchItems.map((item: string, index: number) => (
+                      {morningUpdateSummary.keyWatchItems?.map((item: string, index: number) => (
                         <Badge key={index} variant="outline" className="text-xs">
                           {item}
                         </Badge>

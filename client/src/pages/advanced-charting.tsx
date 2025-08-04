@@ -82,6 +82,10 @@ export default function AdvancedChartingPage() {
     },
   });
 
+  // Added logging to debug data fetching and processing.
+  console.log('Chart Data:', chartData);
+  console.log('Options Data:', optionsData);
+
   const symbols = ['SPY', 'QQQ', 'NVDA', 'TSLA', 'AAPL', 'MSFT', 'AMZN', 'META'];
   const timeframes = ['1m', '5m', '15m', '1H', '1D', '1W', '1M'];
   const chartTypes = ['candlestick', 'line', 'area', 'heikin-ashi'];
