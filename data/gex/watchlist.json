@@ -32,7 +32,7 @@
     "sector": "Unknown",
     "enabled": true,
     "gexTracking": true,
-    "lastUpdated": "2025-08-04T00:09:22.213Z"
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
   },
   {
     "symbol": "GOOGL",
@@ -67,7 +67,7 @@
     "sector": "Unknown",
     "enabled": true,
     "gexTracking": true,
-    "lastUpdated": "2025-08-04T00:09:22.213Z"
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
   },
   {
     "symbol": "AMD",
@@ -96,5 +96,348 @@
     "enabled": true,
     "gexTracking": true,
     "lastUpdated": "2025-08-02T02:31:00.337Z"
+  },
+  {
+    "symbol": "AEM",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "ALNY",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "AM",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "AMSC",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "ATI",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "AU",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "BE",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "BOOT",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "CAKE",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "CBOE",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "CCJ",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "CDNS",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "CLS",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "CR",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "CVLT",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "CVNA",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "CYBR",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "EBAY",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "EGO",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "ETR",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "FTAI",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "GLW",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "GNRC",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "GRMN",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "GTES",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "HOOD",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "HWM",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "ICE",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "INDV",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "ING",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "INOD",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "IREN",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "ITT",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "JCI",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "KGC",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "KLAC",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "LPLA",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "LRCX",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "MOD",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "MPWR",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "MTZ",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "NET",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "NVT",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "GRRR",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "SOFI",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "MRVL",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "CRWV",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "ELF",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
+  },
+  {
+    "symbol": "UPST",
+    "sector": "Unknown",
+    "enabled": true,
+    "gexTracking": true,
+    "lastUpdated": "2025-08-04T06:59:19.475Z"
   }
 ]
