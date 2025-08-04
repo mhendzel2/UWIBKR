@@ -25,8 +25,12 @@ interface GammaExposure {
 }
 
 interface StockState {
-  price: number;
-  volume: number;
+  close: string;
+  high: string;
+  low: string;
+  open: string;
+  volume: string;
+  price?: number; // Optional for backward compatibility
 }
 
 export class UnusualWhalesService {
@@ -346,6 +350,10 @@ export class UnusualWhalesService {
   async getStockState(ticker: string): Promise<StockState | null> {
     try {
       const data = await this.makeRequest<{ data: StockState }>(`/stock/${ticker}/stock-state`);
+      if (data.data) {
+        // Convert the close price to number and add it as price for backward compatibility
+        data.data.price = parseFloat(data.data.close);
+      }
       return data.data || null;
     } catch (error) {
       console.error(`Failed to fetch stock state for ${ticker}:`, error);
@@ -356,15 +364,37 @@ export class UnusualWhalesService {
   async getCurrentPrice(ticker: string): Promise<number | null> {
     try {
       // Try to get current price from OHLC data (more reliable)
-      const ohlcData = await this.makeRequest<{ data: { close: number } }>(`/stock/${ticker}/ohlc`);
-      if (ohlcData?.data?.close) {
-        return ohlcData.data.close;
+      try {
+        const ohlcData = await this.makeRequest<{ data: { close: number } }>(`/stock/${ticker}/ohlc`);
+        if (ohlcData?.data?.close) {
+          return ohlcData.data.close;
+        }
+      } catch (ohlcError) {
+        console.log(`OHLC endpoint failed for ${ticker}, trying stock-state...`);
       }
       
       // Fallback to stock state if OHLC fails
       const stockState = await this.getStockState(ticker);
       if (stockState?.price) {
         return stockState.price;
+      }
+      
+      // If stockState.price doesn't exist, try to extract from raw response
+      try {
+        const stockStateRaw = await this.makeRequest<{ data: any }>(`/stock/${ticker}/stock-state`);
+        console.log(`Raw stock-state response for ${ticker}:`, JSON.stringify(stockStateRaw, null, 2));
+        
+        if (stockStateRaw?.data) {
+          // Try different possible field names for price
+          const possiblePriceFields = ['close', 'price', 'last', 'current_price', 'last_price'];
+          for (const field of possiblePriceFields) {
+            if (stockStateRaw.data[field] && !isNaN(parseFloat(stockStateRaw.data[field]))) {
+              return parseFloat(stockStateRaw.data[field]);
+            }
+          }
+        }
+      } catch (rawError) {
+        console.error(`Failed to get raw stock-state for ${ticker}:`, rawError);
       }
       
       return null;

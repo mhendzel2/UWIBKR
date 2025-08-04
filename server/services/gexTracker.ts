@@ -446,8 +446,12 @@ export class GEXTracker {
       // First, always try to get the current real stock price
       let currentPrice: number | null = null;
       try {
-        const stockState = await uwService.getStockState(symbol);
-        currentPrice = stockState ? stockState.price : null;
+        currentPrice = await uwService.getCurrentPrice(symbol);
+        if (!currentPrice) {
+          // Fallback to stock state if getCurrentPrice fails
+          const stockState = await uwService.getStockState(symbol);
+          currentPrice = stockState ? stockState.price : null;
+        }
       } catch (priceError) {
         console.log(`Failed to get stock price for ${symbol}:`, priceError);
       }

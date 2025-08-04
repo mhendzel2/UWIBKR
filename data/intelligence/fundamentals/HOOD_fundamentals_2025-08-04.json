@@ -1,0 +1,20 @@
+{
+  "ticker": "HOOD",
+  "timestamp": "2025-08-04T13:35:14.039Z",
+  "data": {
+    "fundamentals": null,
+    "financials": null,
+    "analystEstimates": null,
+    "institutionalOwnership": 0,
+    "insiderActivity": {
+      "recentTrades": 0,
+      "netBuying": 0,
+      "netSelling": 0
+    },
+    "socialMetrics": null,
+    "technicalIndicators": null,
+    "supportResistance": null,
+    "beta": null,
+    "dividendYield": 0
+  }
+}

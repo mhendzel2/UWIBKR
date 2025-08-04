@@ -1,0 +1,20 @@
+{
+  "ticker": "CVNA",
+  "timestamp": "2025-08-04T13:34:16.878Z",
+  "data": {
+    "fundamentals": null,
+    "financials": null,
+    "analystEstimates": null,
+    "institutionalOwnership": 0,
+    "insiderActivity": {
+      "recentTrades": 0,
+      "netBuying": 0,
+      "netSelling": 0
+    },
+    "socialMetrics": null,
+    "technicalIndicators": null,
+    "supportResistance": null,
+    "beta": null,
+    "dividendYield": 0
+  }
+}
