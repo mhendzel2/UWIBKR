@@ -61,6 +61,18 @@ export default function LEAPAnalysisPage() {
 
   const { data: leapData, isLoading, error, dataUpdatedAt: leapUpdatedAt } = useQuery<LEAPAnalysisData>({
     queryKey: ['/api/leaps/analyze', stringencyLevel],
+    queryFn: async () => {
+      const params = new URLSearchParams();
+      if (stringencyLevel !== 3) {
+        params.append('stringency', stringencyLevel.toString());
+      }
+      const url = `/api/leaps/analyze${params.toString() ? '?' + params.toString() : ''}`;
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`Failed to load LEAP analysis: ${response.status}: ${await response.text()}`);
+      }
+      return response.json();
+    },
     refetchInterval: 5 * 60 * 1000, // Refresh every 5 minutes
   });
 

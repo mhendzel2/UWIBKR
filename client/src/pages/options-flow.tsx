@@ -22,7 +22,12 @@ export default function OptionsFlowPage() {
   );
 
   const { data: optionsFlow = [], isLoading: loadingFlow } = useQuery<OptionsFlow[]>({
-    queryKey: ['/api/options-flow'],
+    queryKey: ['/api/flow-alerts'],
+    queryFn: async () => {
+      const response = await fetch('/api/flow-alerts');
+      if (!response.ok) throw new Error('Failed to fetch flow alerts');
+      return response.json();
+    },
   });
 
   const { data: stats } = useQuery({
