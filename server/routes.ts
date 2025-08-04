@@ -547,6 +547,26 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  app.get("/api/unusual-whales/volatility/stats/:symbol", async (req, res) => {
+    try {
+      const data = await uwService.getVolatilityStats(req.params.symbol.toUpperCase());
+      res.json(data);
+    } catch (error) {
+      console.error(`Failed to fetch volatility stats for ${req.params.symbol}:`, error);
+      res.status(500).json({ message: "Failed to fetch volatility stats" });
+    }
+  });
+
+  app.get("/api/unusual-whales/volatility/term-structure/:symbol", async (req, res) => {
+    try {
+      const data = await uwService.getVolatilityTermStructure(req.params.symbol.toUpperCase());
+      res.json(data);
+    } catch (error) {
+      console.error(`Failed to fetch volatility term structure for ${req.params.symbol}:`, error);
+      res.status(500).json({ message: "Failed to fetch volatility term structure" });
+    }
+  });
+
   // LEAP Analysis endpoints
   // Accept optional stringency level as path parameter to match client query structure
   app.get("/api/leaps/analyze/:level?", async (req, res) => {
