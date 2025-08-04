@@ -107,7 +107,10 @@ export default function VisualTransformerPage() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(params)
       });
-      if (!response.ok) throw new Error('Analysis failed');
+      if (!response.ok) {
+        const errorDetails = await response.json();
+        throw new Error(`Analysis failed: ${errorDetails.message || response.statusText}`);
+      }
       return response.json();
     },
     onSuccess: () => {
@@ -362,6 +365,7 @@ export default function VisualTransformerPage() {
                     accept="image/*"
                     onChange={handleFileUpload}
                     className="hidden"
+                    title="Upload a chart image"
                   />
                   <Button 
                     onClick={() => fileInputRef.current?.click()}

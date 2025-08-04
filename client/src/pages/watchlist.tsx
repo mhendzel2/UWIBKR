@@ -157,7 +157,13 @@ export default function WatchlistPage() {
         reader.readAsText(file);
       } catch (error) {
         console.error('File upload failed:', error);
-        alert('Failed to upload file. Please check the format and try again.');
+        if (error instanceof SyntaxError) {
+          alert('Failed to upload file due to a syntax error. Please check the file format and try again.');
+        } else if (error instanceof TypeError) {
+          alert('Failed to upload file due to a type error. Please ensure the file is valid and try again.');
+        } else {
+          alert('Failed to upload file. Please check the format and try again.');
+        }
       }
     }
   };

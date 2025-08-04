@@ -22,52 +22,44 @@ import {
   RefreshCw
 } from 'lucide-react';
 
-interface ShortExpiryContract {
-  id: string;
+type TickerAnalysis = {
   ticker: string;
-  strike: number;
-  expiry: string;
-  dte: number;
-  type: 'call' | 'put';
-  price: number;
-  bid: number;
-  ask: number;
-  volume: number;
-  openInterest: number;
-  delta: number;
-  gamma: number;
-  theta: number;
-  vega: number;
-  impliedVolatility: number;
   probability: number;
-  recommendation: 'strong_buy' | 'buy' | 'neutral' | 'sell' | 'strong_sell';
-  gexSentiment: 'bullish' | 'bearish' | 'neutral';
-  flowSentiment: 'bullish' | 'bearish' | 'neutral';
-  newsSentiment: 'bullish' | 'bearish' | 'neutral';
-  reasoning: string;
-  heat_score: number;
-  underlying_price: number;
-  moneyness: 'ITM' | 'ATM' | 'OTM';
-}
-
-interface TickerAnalysis {
-  ticker: string;
   underlying_price: number;
   gex_exposure: number;
-  flow_sentiment: 'bullish' | 'bearish' | 'neutral';
-  news_sentiment: 'bullish' | 'bearish' | 'neutral';
-  volume_surge: boolean;
-  recommended_action: 'call' | 'put' | 'none';
-  probability: number;
+  flow_sentiment: string;
+  news_sentiment: string;
+  recommended_action: string;
   reasoning: string;
-  top_contracts: ShortExpiryContract[];
-}
+  top_contracts: Array<{ contractId: string; details: string }>;
+};
+
+type HotContracts = Array<{ contractId: string; details: string }>;
+
+type ShortExpiryContract = {
+  contractId: string;
+  ticker: string;
+  strike: number;
+  type: string;
+  expiration: string;
+  details: string;
+  ask: number;
+  bid: number;
+  dte: number;
+  moneyness: string;
+  volume: number;
+  probability: number;
+  recommendation: string;
+  price: number;
+  openInterest: number; // Added missing property
+};
 
 export default function ShortExpiryDashboard() {
   const [ticker, setTicker] = useState('SPY');
   const [probabilityThreshold, setProbabilityThreshold] = useState([70]);
   const [selectedContract, setSelectedContract] = useState<ShortExpiryContract | null>(null);
   const [autoRefresh, setAutoRefresh] = useState(true);
+  const [tickerAnalysis, setTickerAnalysis] = useState<TickerAnalysis | null>(null);
 
   const { data: hotContracts, isLoading: hotLoading, refetch: refetchHot } = useQuery({
     queryKey: ['/api/short-expiry/hot-contracts'],
@@ -79,11 +71,17 @@ export default function ShortExpiryDashboard() {
     refetchInterval: 60000,
   });
 
-  const { data: tickerAnalysis, isLoading: analysisLoading, refetch: refetchAnalysis } = useQuery({
+  const { data: analysisData, isLoading: analysisLoading, refetch: refetchAnalysis } = useQuery({
     queryKey: ['/api/short-expiry/analyze', ticker, probabilityThreshold[0]],
     enabled: !!ticker,
     refetchInterval: autoRefresh ? 60000 : false,
   });
+
+  useEffect(() => {
+    if (analysisData) {
+      setTickerAnalysis(analysisData);
+    }
+  }, [analysisData]);
 
   const handleAnalyzeTicker = () => {
     if (ticker.trim()) {
@@ -99,7 +97,7 @@ export default function ShortExpiryDashboard() {
         body: JSON.stringify({
           ticker: contract.ticker,
           strike: contract.strike,
-          expiry: contract.expiry,
+          expiry: contract.expiration,
           type: contract.type,
           action: 'BUY',
           quantity: 1,
@@ -113,8 +111,11 @@ export default function ShortExpiryDashboard() {
         alert('Failed to submit order');
       }
     } catch (error) {
-      console.error('Trade execution error:', error);
-      alert('Error executing trade');
+      if (error instanceof Error) {
+        alert(`Error executing trade: ${error.message}`);
+      } else {
+        alert('Unknown error occurred during trade execution.');
+      }
     }
   };
 

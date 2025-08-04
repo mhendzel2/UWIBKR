@@ -59,6 +59,18 @@ interface TestOrderResponse {
   };
 }
 
+type AgentStatus = {
+  status: 'active' | 'inactive';
+  agents: Record<string, number>;
+  totalDecisions: number;
+};
+
+const defaultAgentStatus: AgentStatus = {
+  status: 'inactive',
+  agents: {},
+  totalDecisions: 0,
+};
+
 export default function TestOrders() {
   const [orderForm, setOrderForm] = useState<TestOrderRequest>({
     symbol: '',
@@ -76,6 +88,7 @@ export default function TestOrders() {
   // Get agent system status
   const { data: agentStatus } = useQuery({
     queryKey: ['/api/agents/status'],
+    initialData: defaultAgentStatus,
   });
 
   // Submit test order mutation
@@ -88,7 +101,8 @@ export default function TestOrders() {
       });
       
       if (!response.ok) {
-        throw new Error('Failed to submit test order');
+        const errorDetails = await response.json();
+        throw new Error(`Failed to submit test order: ${errorDetails.message || response.statusText}`);
       }
       
       return response.json() as Promise<TestOrderResponse>;
@@ -139,6 +153,9 @@ export default function TestOrders() {
     if (confidence >= 0.4) return "bg-yellow-500";
     return "bg-red-500";
   };
+
+  // Add a dynamic class for width
+  const dynamicWidthClass = (weight: number) => `w-[${weight * 100}%] bg-blue-600 h-2 rounded-full`;
 
   return (
     <div className="container mx-auto p-6 space-y-6">
@@ -287,8 +304,7 @@ export default function TestOrders() {
                       <div className="flex items-center space-x-2">
                         <div className="w-24 bg-gray-200 rounded-full h-2">
                           <div 
-                            className="bg-blue-600 h-2 rounded-full" 
-                            style={{ width: `${weight * 100}%` }}
+                            className={dynamicWidthClass(weight)}
                           ></div>
                         </div>
                         <span className="text-sm text-muted-foreground">
