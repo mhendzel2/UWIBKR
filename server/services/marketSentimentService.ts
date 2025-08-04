@@ -40,6 +40,17 @@ export interface MarketSentimentData {
     primaryDrivers: string[];
     recommendation: 'risk-on' | 'risk-off' | 'neutral';
   };
+  optionsFlow: OptionsFlowMetrics;
+}
+
+interface OptionsFlowMetrics {
+  netFlowExpiry: any;
+  marketTide: any;
+  sectorTide: any;
+  etfTide: any;
+  oiChange: any;
+  totalOptionsVolume: any;
+  spike: any;
 }
 
 export interface TrumpPost {
@@ -64,11 +75,12 @@ class MarketSentimentService {
     }
 
     try {
-      const [fearGreed, crypto, commodities, trump] = await Promise.all([
+      const [fearGreed, crypto, commodities, trump, optionsFlow] = await Promise.all([
         this.getFearGreedIndex(),
         this.getCryptoSentiment(),
         this.getCommoditiesSentiment(),
-        this.getTrumpCommunications()
+        this.getTrumpCommunications(),
+        this.getOptionsFlowMetrics()
       ]);
 
       const vixLevel = await this.getVIXLevel();
@@ -87,7 +99,8 @@ class MarketSentimentService {
         crypto,
         commodities,
         trumpCommunications: trump,
-        overallSentiment
+        overallSentiment,
+        optionsFlow
       };
 
       this.lastUpdate = new Date();
@@ -442,6 +455,25 @@ Provide a JSON response with:
     return data.trumpCommunications.recentPosts.filter(
       post => post.marketImpact >= 6 // High impact posts only
     );
+  }
+
+  private async getOptionsFlowMetrics(): Promise<OptionsFlowMetrics> {
+    try {
+      const uw = new UnusualWhalesService();
+      const [netFlowExpiry, marketTide, sectorTide, etfTide, oiChange, totalOptionsVolume, spike] = await Promise.all([
+        uw.getNetFlowExpiry(),
+        uw.getMarketTide(),
+        uw.getSectorTide('technology'),
+        uw.getEtfTide('SPY'),
+        uw.getOiChange(),
+        uw.getTotalOptionsVolume(),
+        uw.getSpike()
+      ]);
+      return { netFlowExpiry, marketTide, sectorTide, etfTide, oiChange, totalOptionsVolume, spike };
+    } catch (error) {
+      console.error('Error fetching options flow metrics:', error);
+      return { netFlowExpiry: null, marketTide: null, sectorTide: null, etfTide: null, oiChange: null, totalOptionsVolume: null, spike: null };
+    }
   }
 }
 
