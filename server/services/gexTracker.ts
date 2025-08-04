@@ -456,6 +456,7 @@ export class GEXTracker {
     console.log(`Updating GEX data for ${symbols.length} symbols in ${listName} watchlist...`);
     const { marketIntelligence } = await import('./marketIntelligence');
     const results = { success: 0, failed: 0, errors: [] as string[] };
+    const list = this.getWatchlistMap(listName);
 
     for (const symbol of symbols) {
       try {
@@ -467,6 +468,10 @@ export class GEXTracker {
           marketIntelligence.trackNewsAlerts(symbol),
           marketIntelligence.trackFundamentalData(symbol),
         ]);
+        const item = list.get(symbol);
+        if (item) {
+          item.lastUpdated = new Date().toISOString();
+        }
         results.success++;
         console.log(`✅ Updated data for ${symbol}`);
       } catch (error) {
@@ -475,6 +480,8 @@ export class GEXTracker {
         console.error(`Failed to update data for ${symbol}:`, error);
       }
     }
+
+    await this.saveWatchlists();
 
     if (results.errors.length > 0) {
       console.log('Update errors:', results.errors);
