@@ -179,7 +179,7 @@ export class WebSocketService {
     }
   }
 
-  private broadcast(message: WebSocketMessage, channel?: string): void {
+  public broadcast(message: WebSocketMessage, channel?: string): void {
     this.clients.forEach((client, clientId) => {
       if (!channel || client.subscriptions.has(channel)) {
         this.sendToClient(clientId, message);
