@@ -492,11 +492,17 @@ export class GEXTracker {
     try {
       const { UnusualWhalesService } = await import('./unusualWhales');
       const uw = new UnusualWhalesService();
-      const exposures = await uw.getSpotExposures(symbol);
+      let exposures = await uw.getSpotExposures(symbol);
+      let dataDate = new Date();
 
       if (!exposures.length) {
-        console.warn(`No GEX data available for ${symbol}`);
-        return;
+        const lastFriday = this.getLastFriday();
+        exposures = await uw.getSpotExposures(symbol, lastFriday);
+        if (!exposures.length) {
+          console.warn(`No GEX data available for ${symbol}`);
+          return;
+        }
+        dataDate = new Date(lastFriday);
       }
 
       const totalGamma = exposures.reduce(
@@ -520,7 +526,7 @@ export class GEXTracker {
 
       const gexData: GEXData = {
         symbol,
-        date: new Date().toISOString(),
+        date: dataDate.toISOString(),
         totalGamma,
         callGamma,
         putGamma,
@@ -551,14 +557,29 @@ export class GEXTracker {
     }
   }
 
+  private getLastFriday(): string {
+    const date = new Date();
+    const day = date.getDay();
+    const diff = day >= 5 ? day - 5 : day + 2;
+    date.setDate(date.getDate() - diff);
+    return date.toISOString().split('T')[0];
+  }
+
   async getGEXLevels(symbol: string): Promise<GEXLevels | null> {
     try {
       const filePath = path.join(this.dataDir, `${symbol}_gex.json`);
       if (!fs.existsSync(filePath)) {
+        await this.updateSymbolGEX(symbol);
+      }
+      if (!fs.existsSync(filePath)) {
         return null;
       }
 
-      const data: GEXData[] = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+      let data: GEXData[] = JSON.parse(fs.readFileSync(filePath, 'utf8'));
+      if (!data.length) {
+        await this.updateSymbolGEX(symbol);
+        data = fs.existsSync(filePath) ? JSON.parse(fs.readFileSync(filePath, 'utf8')) : [];
+      }
       const latest = data[data.length - 1];
 
       if (!latest) return null;

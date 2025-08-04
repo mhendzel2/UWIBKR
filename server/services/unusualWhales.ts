@@ -174,9 +174,12 @@ export class UnusualWhalesService {
     }
   }
 
-  async getSpotExposures(ticker: string): Promise<GammaExposure[]> {
+  async getSpotExposures(ticker: string, date?: string): Promise<GammaExposure[]> {
     try {
-      const data = await this.makeRequest<{ data: GammaExposure[] }>(`/stock/${ticker}/spot-exposures/strike`);
+      const endpoint = date
+        ? `/stock/${ticker}/spot-exposures/strike?date=${date}`
+        : `/stock/${ticker}/spot-exposures/strike`;
+      const data = await this.makeRequest<{ data: GammaExposure[] }>(endpoint);
       return data.data || [];
     } catch (error) {
       console.error(`Failed to fetch spot exposures for ${ticker}:`, error);
