@@ -22,25 +22,66 @@ import {
   Cpu
 } from "lucide-react";
 
+// Define types for API responses
+interface MLStatus {
+  isModelLoaded: boolean;
+  modelArchitecture: string;
+  parameters: number;
+  trainingDataSize: number;
+  transformerEnabled: boolean;
+  accuracy: number;
+  isTraining: boolean;
+}
+
+interface TransformerStats {
+  parameters: number;
+  layers: number;
+  memoryUsage: string;
+  isTraining: boolean;
+}
+
+interface Signal {
+  id: string;
+  symbol: string;
+  type: string;
+  premiumSize: number;
+}
+
+interface AnalysisResponse {
+  traditional_analysis: {
+    confidence: number;
+    expectedReturn: number;
+    riskScore: number;
+  };
+  transformer_analysis?: {
+    score: number;
+    trend: string;
+    market_regime: string;
+    risk_assessment: string;
+  };
+  combined_score: number;
+  recommendation: string;
+}
+
 export default function MachineLearning() {
   const [selectedSignal, setSelectedSignal] = useState<any>(null);
   const [transformerEnabled, setTransformerEnabled] = useState(false);
   const queryClient = useQueryClient();
 
   // Get ML model status
-  const { data: mlStatus, isLoading: mlLoading } = useQuery({
+  const { data: mlStatus, isLoading: mlLoading } = useQuery<MLStatus>({
     queryKey: ['/api/ml/status'],
     refetchInterval: 5000
   });
 
   // Get transformer stats
-  const { data: transformerStats } = useQuery({
+  const { data: transformerStats } = useQuery<TransformerStats>({
     queryKey: ['/api/ml/transformer-stats'],
     enabled: transformerEnabled
   });
 
   // Get signals for analysis
-  const { data: signals } = useQuery({
+  const { data: signals } = useQuery<Signal[]>({
     queryKey: ['/api/signals'],
     select: (data) => data?.slice(0, 5) // Get first 5 signals for testing
   });
@@ -54,8 +95,11 @@ export default function MachineLearning() {
   });
 
   // Analyze signal with transformer
-  const analyzeSignalMutation = useMutation({
-    mutationFn: (signal: any) => apiRequest('/api/ml/analyze-with-transformer', 'POST', { signal }),
+  const analyzeSignalMutation = useMutation<AnalysisResponse, unknown, Signal>({
+    mutationFn: async (signal) => {
+      const response = await apiRequest('/api/ml/analyze-with-transformer', 'POST', { signal });
+      return response.json() as Promise<AnalysisResponse>;
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/ml/status'] });
     }
