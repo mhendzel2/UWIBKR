@@ -201,9 +201,20 @@ export async function registerRoutes(app: Express): Promise<Server> {
   const ibkrService = new IBKRService();
   const uwService = new UnusualWhalesService();
 
-  // Start services
-  await ibkrService.connect();
-  signalProcessor.startProcessing();
+  // Start services in background (non-blocking)
+  console.log('🚀 Starting services in background...');
+  ibkrService.connect().then(() => {
+    console.log('✅ IBKR service connected');
+  }).catch((error: any) => {
+    console.error('❌ IBKR connection failed:', error?.message || error);
+  });
+  
+  try {
+    signalProcessor.startProcessing();
+    console.log('✅ Signal processor started');
+  } catch (error: any) {
+    console.error('❌ Signal processor failed:', error?.message || error);
+  }
 
   // Trading Signals endpoints
   app.get("/api/signals", async (req, res) => {
