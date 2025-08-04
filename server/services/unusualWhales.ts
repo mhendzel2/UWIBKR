@@ -320,6 +320,17 @@ export class UnusualWhalesService {
     }
   }
 
+  async getGroupGreekFlow(flowGroup: string, date?: string): Promise<any> {
+    try {
+      const encodedGroup = encodeURIComponent(flowGroup.toLowerCase());
+      const query = date ? `?date=${date}` : '';
+      return await this.makeRequest<any>(`/group-flow/${encodedGroup}/greek-flow${query}`);
+    } catch (error) {
+      console.error('Failed to fetch group greek flow data:', error);
+      return null;
+    }
+  }
+
   async getEtfTide(ticker: string, date?: string): Promise<any> {
     try {
       const query = date ? `?date=${date}` : '';
