@@ -10,5 +10,29 @@
     "newTarget": 426.4187148429563,
     "date": "2025-07-29T23:33:08.627Z",
     "reasoning": "Strong management team"
+  },
+  {
+    "symbol": "EGO",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Hold",
+    "newRating": "Buy",
+    "previousTarget": 413.2513593049377,
+    "newTarget": 458.5514230621583,
+    "date": "2025-07-30T10:24:34.206Z",
+    "reasoning": "Compelling growth story"
+  },
+  {
+    "symbol": "EGO",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Hold",
+    "newRating": "Hold",
+    "previousTarget": 500.88902954630896,
+    "newTarget": 485.8655531942235,
+    "date": "2025-08-03T11:02:08.661Z",
+    "reasoning": "Attractive valuation"
   }
 ]

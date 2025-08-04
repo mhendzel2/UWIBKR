@@ -9,5 +9,16 @@
     "category": "guidance",
     "publishedAt": "2025-08-03T10:58:58.979Z",
     "url": "https://example.com/news/gnrc-1754238629633"
+  },
+  {
+    "symbol": "GNRC",
+    "headline": "GNRC announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for GNRC with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.3541067797983899,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-04T00:32:20.166Z",
+    "url": "https://example.com/news/gnrc-1754294915510"
   }
 ]

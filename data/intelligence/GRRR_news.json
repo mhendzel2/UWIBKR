@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "GRRR",
+    "headline": "GRRR announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for GRRR with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.35835526989008726,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-04T02:26:29.917Z",
+    "url": "https://example.com/news/grrr-1754294919916"
+  },
+  {
+    "symbol": "GRRR",
+    "headline": "GRRR announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for GRRR with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.4169836170353989,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T21:30:03.942Z",
+    "url": "https://example.com/news/grrr-1754294919916"
+  },
+  {
+    "symbol": "GRRR",
+    "headline": "GRRR reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for GRRR with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.5008566049257567,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-04T06:35:05.294Z",
+    "url": "https://example.com/news/grrr-1754294919916"
+  }
+]

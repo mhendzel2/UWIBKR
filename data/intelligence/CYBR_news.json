@@ -20,5 +20,16 @@
     "category": "guidance",
     "publishedAt": "2025-08-03T12:36:32.380Z",
     "url": "https://example.com/news/cybr-1754238618321"
+  },
+  {
+    "symbol": "CYBR",
+    "headline": "CYBR announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for CYBR with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.6033078358969323,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-04T03:18:12.514Z",
+    "url": "https://example.com/news/cybr-1754294914255"
   }
 ]

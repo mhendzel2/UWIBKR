@@ -70,5 +70,41 @@
         "timestamp": "2025-08-03T10:41:52.205Z"
       }
     ]
+  },
+  {
+    "symbol": "CRM",
+    "date": "2025-08-04",
+    "darkPoolVolume": 1104579,
+    "totalVolume": 14210193,
+    "darkPoolRatio": 0.07773145656783127,
+    "avgDarkPoolSize": 10662,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 96914,
+        "price": 453.13437667722127,
+        "timestamp": "2025-08-04T05:34:50.010Z"
+      },
+      {
+        "size": 115939,
+        "price": 455.0060184197954,
+        "timestamp": "2025-08-04T02:19:16.986Z"
+      },
+      {
+        "size": 51655,
+        "price": 452.8526093449938,
+        "timestamp": "2025-08-04T02:20:42.280Z"
+      },
+      {
+        "size": 74940,
+        "price": 449.89234621571956,
+        "timestamp": "2025-08-04T04:47:47.891Z"
+      },
+      {
+        "size": 111425,
+        "price": 456.51954157866066,
+        "timestamp": "2025-08-04T07:57:02.086Z"
+      }
+    ]
   }
 ]

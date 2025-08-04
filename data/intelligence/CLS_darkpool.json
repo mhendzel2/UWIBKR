@@ -39,5 +39,26 @@
         "timestamp": "2025-08-03T13:35:01.602Z"
       }
     ]
+  },
+  {
+    "symbol": "CLS",
+    "date": "2025-08-04",
+    "darkPoolVolume": 2382584,
+    "totalVolume": 11155879,
+    "darkPoolRatio": 0.21357205469869295,
+    "avgDarkPoolSize": 5964,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 121311,
+        "price": 454.8778750831185,
+        "timestamp": "2025-08-04T01:44:14.117Z"
+      },
+      {
+        "size": 145218,
+        "price": 453.65611878940143,
+        "timestamp": "2025-08-04T02:25:28.121Z"
+      }
+    ]
   }
 ]

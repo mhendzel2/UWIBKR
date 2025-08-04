@@ -10,5 +10,17 @@
     "newTarget": 359.0016321408235,
     "date": "2025-07-31T02:22:18.411Z",
     "reasoning": "Attractive valuation"
+  },
+  {
+    "symbol": "MTZ",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Hold",
+    "previousTarget": 500.4140125561307,
+    "newTarget": 516.2228376121366,
+    "date": "2025-08-02T00:39:21.332Z",
+    "reasoning": "Competitive headwinds"
   }
 ]

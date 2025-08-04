@@ -22,5 +22,17 @@
     "newTarget": 403.66624423647596,
     "date": "2025-08-01T03:13:12.303Z",
     "reasoning": "Improved market position"
+  },
+  {
+    "symbol": "ICE",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Underperform",
+    "newRating": "Sell",
+    "previousTarget": 471.1619815445831,
+    "newTarget": 511.9321066885938,
+    "date": "2025-08-03T21:37:30.292Z",
+    "reasoning": "Strong management team"
   }
 ]

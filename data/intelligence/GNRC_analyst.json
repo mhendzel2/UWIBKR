@@ -10,5 +10,17 @@
     "newTarget": 347.33940150802977,
     "date": "2025-07-29T22:41:16.894Z",
     "reasoning": "Compelling growth story"
+  },
+  {
+    "symbol": "GNRC",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Hold",
+    "previousTarget": 467.46056019447485,
+    "newTarget": 485.26442228487736,
+    "date": "2025-08-01T04:37:07.753Z",
+    "reasoning": "Attractive valuation"
   }
 ]

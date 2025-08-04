@@ -31,5 +31,38 @@
     "category": "general",
     "publishedAt": "2025-08-03T11:30:07.599Z",
     "url": "https://example.com/news/hood-1754238609305"
+  },
+  {
+    "symbol": "HOOD",
+    "headline": "HOOD reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for HOOD with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.7388885538200523,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T20:44:13.471Z",
+    "url": "https://example.com/news/hood-1754294916127"
+  },
+  {
+    "symbol": "HOOD",
+    "headline": "HOOD announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for HOOD with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.47726016921160763,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T22:12:10.223Z",
+    "url": "https://example.com/news/hood-1754294916128"
+  },
+  {
+    "symbol": "HOOD",
+    "headline": "HOOD reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for HOOD with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.6559395820825662,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T20:45:42.534Z",
+    "url": "https://example.com/news/hood-1754294916128"
   }
 ]

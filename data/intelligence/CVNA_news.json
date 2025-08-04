@@ -20,5 +20,16 @@
     "category": "regulatory",
     "publishedAt": "2025-08-03T10:29:47.417Z",
     "url": "https://example.com/news/cvna-1754238612895"
+  },
+  {
+    "symbol": "CVNA",
+    "headline": "CVNA reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for CVNA with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.6245629503992897,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T23:38:32.187Z",
+    "url": "https://example.com/news/cvna-1754294914047"
   }
 ]

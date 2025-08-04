@@ -1,14 +1,14 @@
 [
   {
     "symbol": "KLAC",
-    "date": "2025-08-03",
-    "totalGamma": 968457.0361762356,
-    "callGamma": 164046.9825598922,
-    "putGamma": 169483.41697785264,
-    "netGamma": -7713.404330553786,
-    "gammaFlip": 400.0177753310666,
-    "supportLevel": 409.642571334521,
-    "resistanceLevel": 439.2130900783526,
-    "gexScore": 15.742959398808543
+    "date": "2025-08-04",
+    "totalGamma": 41807.7337656062,
+    "callGamma": 319124.5382821108,
+    "putGamma": 40094.16609935634,
+    "netGamma": 80245.91125699451,
+    "gammaFlip": 472.35734789348874,
+    "supportLevel": 407.6135772373122,
+    "resistanceLevel": 433.6954807398891,
+    "gexScore": 90.9327942384855
   }
 ]

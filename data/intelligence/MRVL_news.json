@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "MRVL",
+    "headline": "MRVL reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for MRVL with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.6347526573655257,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-04T00:28:38.940Z",
+    "url": "https://example.com/news/mrvl-1754294920337"
+  },
+  {
+    "symbol": "MRVL",
+    "headline": "Analyst upgrades MRVL on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for MRVL with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.7674516135276465,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-04T06:11:46.655Z",
+    "url": "https://example.com/news/mrvl-1754294920338"
+  },
+  {
+    "symbol": "MRVL",
+    "headline": "MRVL raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for MRVL with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.8808319422472368,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T20:18:34.788Z",
+    "url": "https://example.com/news/mrvl-1754294920338"
+  }
+]

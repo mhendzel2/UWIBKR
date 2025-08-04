@@ -22,5 +22,17 @@
     "newTarget": 421.3442024388273,
     "date": "2025-07-31T07:22:25.365Z",
     "reasoning": "Valuation concerns"
+  },
+  {
+    "symbol": "AEM",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Outperform",
+    "newRating": "Hold",
+    "previousTarget": 467.84832314551426,
+    "newTarget": 466.2590453203712,
+    "date": "2025-07-30T20:06:10.819Z",
+    "reasoning": "Strong management team"
   }
 ]

@@ -39,5 +39,41 @@
         "timestamp": "2025-08-03T12:25:13.853Z"
       }
     ]
+  },
+  {
+    "symbol": "CBOE",
+    "date": "2025-08-04",
+    "darkPoolVolume": 2587486,
+    "totalVolume": 11233056,
+    "darkPoolRatio": 0.23034568687274415,
+    "avgDarkPoolSize": 1526,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 136225,
+        "price": 454.7863308029771,
+        "timestamp": "2025-08-04T06:03:03.101Z"
+      },
+      {
+        "size": 121350,
+        "price": 450.8199303526833,
+        "timestamp": "2025-08-04T03:15:50.774Z"
+      },
+      {
+        "size": 136984,
+        "price": 455.3395153120791,
+        "timestamp": "2025-08-04T01:54:13.060Z"
+      },
+      {
+        "size": 130546,
+        "price": 456.6378961734212,
+        "timestamp": "2025-08-04T00:51:05.400Z"
+      },
+      {
+        "size": 96414,
+        "price": 451.68879631810495,
+        "timestamp": "2025-08-04T00:30:51.390Z"
+      }
+    ]
   }
 ]

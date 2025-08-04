@@ -20,5 +20,38 @@
     "category": "earnings",
     "publishedAt": "2025-08-03T08:49:12.018Z",
     "url": "https://example.com/news/itt-1754238643849"
+  },
+  {
+    "symbol": "ITT",
+    "headline": "ITT reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for ITT with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.6548389955358976,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T22:12:06.440Z",
+    "url": "https://example.com/news/itt-1754294917605"
+  },
+  {
+    "symbol": "ITT",
+    "headline": "ITT announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for ITT with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.34112354877417683,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-04T06:22:39.278Z",
+    "url": "https://example.com/news/itt-1754294917606"
+  },
+  {
+    "symbol": "ITT",
+    "headline": "ITT reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for ITT with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.6730678049657706,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-04T01:40:55.029Z",
+    "url": "https://example.com/news/itt-1754294917606"
   }
 ]

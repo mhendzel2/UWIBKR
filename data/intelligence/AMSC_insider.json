@@ -22,5 +22,29 @@
     "date": "2025-07-31T14:52:30.002Z",
     "filingDate": "2025-08-02T14:59:45.109Z",
     "ownershipPercent": 3.2352851028325325
+  },
+  {
+    "symbol": "AMSC",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 5895,
+    "price": 457.31632898860994,
+    "value": 2695879.7593878554,
+    "date": "2025-07-29T06:19:05.947Z",
+    "filingDate": "2025-08-03T00:37:23.091Z",
+    "ownershipPercent": 2.688642338941992
+  },
+  {
+    "symbol": "AMSC",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 7772,
+    "price": 450.084283475024,
+    "value": 3498055.0511678867,
+    "date": "2025-08-02T17:01:53.626Z",
+    "filingDate": "2025-08-02T15:42:11.788Z",
+    "ownershipPercent": 0.1881068055062495
   }
 ]

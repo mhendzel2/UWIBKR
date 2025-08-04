@@ -1,0 +1,33 @@
+[
+  {
+    "symbol": "MRVL",
+    "date": "2025-08-04",
+    "darkPoolVolume": 5777997,
+    "totalVolume": 14493435,
+    "darkPoolRatio": 0.39866304985671097,
+    "avgDarkPoolSize": 7999,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 71337,
+        "price": 447.8214465108827,
+        "timestamp": "2025-08-04T05:20:11.250Z"
+      },
+      {
+        "size": 143169,
+        "price": 450.64852319637964,
+        "timestamp": "2025-08-04T07:06:05.649Z"
+      },
+      {
+        "size": 133658,
+        "price": 448.13276192825526,
+        "timestamp": "2025-08-04T00:23:24.865Z"
+      },
+      {
+        "size": 124440,
+        "price": 450.6803985113769,
+        "timestamp": "2025-08-04T00:57:55.321Z"
+      }
+    ]
+  }
+]

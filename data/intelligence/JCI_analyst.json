@@ -22,5 +22,29 @@
     "newTarget": 405.4861919373094,
     "date": "2025-08-02T01:23:51.508Z",
     "reasoning": "Strong earnings momentum"
+  },
+  {
+    "symbol": "JCI",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Outperform",
+    "previousTarget": 390.51977253889515,
+    "newTarget": 405.0270990012667,
+    "date": "2025-08-02T14:57:15.605Z",
+    "reasoning": "Stable fundamentals"
+  },
+  {
+    "symbol": "JCI",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Underperform",
+    "newRating": "Sell",
+    "previousTarget": 446.7993996497518,
+    "newTarget": 419.00409676116215,
+    "date": "2025-08-02T00:08:27.135Z",
+    "reasoning": "Strong management team"
   }
 ]

@@ -1,5 +1,6 @@
 import { dataImporter, type WatchlistItem, type GEXData } from './dataImporter';
 import { sentimentAnalysisService, type TickerSentimentResult } from './sentimentAnalysis';
+import { UnusualWhalesService } from './unusualWhales';
 import * as fs from 'fs';
 import * as path from 'path';
 
@@ -103,8 +104,12 @@ export class GEXTracker {
   private sentiments: Map<string, TickerSentimentResult> = new Map();
   private updateTimer?: NodeJS.Timeout;
   private readonly dataDir = path.join(process.cwd(), 'data', 'gex');
+  private unusualWhalesService: UnusualWhalesService;
 
   constructor() {
+    // Initialize UnusualWhales service
+    this.unusualWhalesService = new UnusualWhalesService();
+    
     // Ensure data directory exists
     if (!fs.existsSync(this.dataDir)) {
       fs.mkdirSync(this.dataDir, { recursive: true });
@@ -327,40 +332,109 @@ export class GEXTracker {
   }
 
   private async updateSymbolGEX(symbol: string): Promise<void> {
-    // In a real implementation, this would fetch current options data
-    // For now, we'll simulate GEX calculation with placeholder logic
-    
-    const gexData: GEXData = {
-      symbol,
-      date: new Date().toISOString().split('T')[0],
-      totalGamma: Math.random() * 1000000, // Placeholder
-      callGamma: Math.random() * 600000,
-      putGamma: Math.random() * 400000,
-      netGamma: (Math.random() - 0.5) * 200000,
-      gammaFlip: 400 + Math.random() * 100, // Placeholder price level
-      supportLevel: 390 + Math.random() * 20,
-      resistanceLevel: 420 + Math.random() * 20,
-      gexScore: Math.random() * 100
-    };
+    try {
+      // Use real Unusual Whales API to get Greek exposure data
+      const greekExposure = await this.unusualWhalesService.getGammaExposure(symbol);
+      
+      if (!greekExposure || greekExposure.length === 0) {
+        console.warn(`⚠️ No GEX data available for ${symbol}`);
+        return;
+      }
 
-    // Store GEX data
-    if (!this.gexData.has(symbol)) {
-      this.gexData.set(symbol, []);
-    }
-    
-    const symbolData = this.gexData.get(symbol)!;
-    symbolData.push(gexData);
-    
-    // Keep only last 30 days
-    if (symbolData.length > 30) {
-      symbolData.splice(0, symbolData.length - 30);
-    }
+      // Get the most recent data point
+      const latestData = greekExposure[0];
+      
+      // Calculate derived metrics
+      const callGamma = parseFloat(latestData.call_gamma || '0');
+      const putGamma = Math.abs(parseFloat(latestData.put_gamma || '0')); // Make positive for easier reading
+      const totalGamma = callGamma + putGamma;
+      const netGamma = callGamma - putGamma;
+      
+      // For gamma flip level, we'll need to use spot exposures if available
+      let gammaFlip = 0;
+      let supportLevel = 0;
+      let resistanceLevel = 0;
+      
+      try {
+        const spotExposures = await this.unusualWhalesService.getSpotExposures(symbol);
+        if (spotExposures && spotExposures.length > 0) {
+          // Find significant gamma levels from spot exposures
+          const exposureData = spotExposures;
+          
+          // Sort by gamma magnitude to find key levels
+          const sortedByGamma = exposureData
+            .map((item: any) => ({
+              price: parseFloat(item.strike || '0'),
+              gamma: Math.abs(parseFloat(item.gamma || '0'))
+            }))
+            .filter((item: any) => item.price > 0 && item.gamma > 0)
+            .sort((a: any, b: any) => b.gamma - a.gamma);
+          
+          if (sortedByGamma.length > 0) {
+            gammaFlip = sortedByGamma[0].price; // Highest gamma concentration
+            
+            // Find support (lower) and resistance (higher) levels
+            const currentPrice = gammaFlip; // Using gamma flip as reference
+            const lowerLevels = sortedByGamma.filter((item: any) => item.price < currentPrice);
+            const upperLevels = sortedByGamma.filter((item: any) => item.price > currentPrice);
+            
+            if (lowerLevels.length > 0) {
+              supportLevel = lowerLevels[0].price;
+            }
+            if (upperLevels.length > 0) {
+              resistanceLevel = upperLevels[0].price;
+            }
+          }
+        }
+      } catch (spotError) {
+        console.warn(`⚠️ Could not fetch spot exposures for ${symbol}:`, spotError);
+        // Continue with basic GEX data even if spot exposures fail
+      }
 
-    // Save to file
-    const filePath = path.join(this.dataDir, `${symbol}_gex.json`);
-    fs.writeFileSync(filePath, JSON.stringify(symbolData, null, 2));
-    
-    console.log(`Updated GEX data for ${symbol}`);
+      // Calculate GEX score (0-100) based on gamma positioning
+      const gexScore = Math.min(100, Math.max(0, (totalGamma / 10000000) * 100)); // Scale based on total gamma
+
+      const gexData: GEXData = {
+        symbol,
+        date: latestData.date || new Date().toISOString().split('T')[0],
+        totalGamma,
+        callGamma,
+        putGamma,
+        netGamma,
+        gammaFlip,
+        supportLevel,
+        resistanceLevel,
+        gexScore
+      };
+
+      // Store GEX data
+      if (!this.gexData.has(symbol)) {
+        this.gexData.set(symbol, []);
+      }
+      
+      const symbolData = this.gexData.get(symbol)!;
+      symbolData.push(gexData);
+      
+      // Keep only last 30 days of data
+      if (symbolData.length > 30) {
+        symbolData.splice(0, symbolData.length - 30);
+      }
+
+      console.log(`📊 Real GEX updated for ${symbol}:`, {
+        totalGamma: totalGamma.toFixed(0),
+        netGamma: netGamma.toFixed(0),
+        gammaFlip: gammaFlip.toFixed(2),
+        gexScore: gexScore.toFixed(1)
+      });
+
+      // Save to file
+      const filePath = path.join(this.dataDir, `${symbol}_gex.json`);
+      fs.writeFileSync(filePath, JSON.stringify(this.gexData.get(symbol), null, 2));
+      
+    } catch (error) {
+      console.error(`❌ Error updating GEX for ${symbol}:`, error);
+      // Don't throw - continue with other symbols
+    }
   }
 
   async getGEXLevels(symbol: string): Promise<GEXLevels | null> {

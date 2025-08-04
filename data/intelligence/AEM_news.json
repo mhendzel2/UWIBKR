@@ -20,5 +20,27 @@
     "category": "general",
     "publishedAt": "2025-08-03T15:23:36.664Z",
     "url": "https://example.com/news/aem-1754238606109"
+  },
+  {
+    "symbol": "AEM",
+    "headline": "AEM announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for AEM with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.3145412357320951,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-04T05:38:20.861Z",
+    "url": "https://example.com/news/aem-1754294910933"
+  },
+  {
+    "symbol": "AEM",
+    "headline": "Regulatory approval granted for AEM new product",
+    "summary": "Recent developments suggest positive momentum for AEM with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.66157757690227,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T20:19:02.813Z",
+    "url": "https://example.com/news/aem-1754294910933"
   }
 ]

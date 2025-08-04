@@ -42,5 +42,27 @@
     "category": "analyst",
     "publishedAt": "2025-08-03T13:19:41.870Z",
     "url": "https://example.com/news/iwm-1754238602300"
+  },
+  {
+    "symbol": "IWM",
+    "headline": "Analyst upgrades IWM on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for IWM with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.8056565752097732,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-04T06:44:36.443Z",
+    "url": "https://example.com/news/iwm-1754294908529"
+  },
+  {
+    "symbol": "IWM",
+    "headline": "IWM raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for IWM with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.8417910664149213,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T20:55:24.526Z",
+    "url": "https://example.com/news/iwm-1754294908529"
   }
 ]

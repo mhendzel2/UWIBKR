@@ -19,5 +19,31 @@
         "timestamp": "2025-08-03T14:07:40.762Z"
       }
     ]
+  },
+  {
+    "symbol": "JCI",
+    "date": "2025-08-04",
+    "darkPoolVolume": 2086811,
+    "totalVolume": 14923498,
+    "darkPoolRatio": 0.1398339048928073,
+    "avgDarkPoolSize": 3171,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 118608,
+        "price": 448.9901814388508,
+        "timestamp": "2025-08-04T01:00:40.860Z"
+      },
+      {
+        "size": 82792,
+        "price": 454.17779360367194,
+        "timestamp": "2025-08-04T02:23:06.074Z"
+      },
+      {
+        "size": 69908,
+        "price": 447.63612546103064,
+        "timestamp": "2025-08-04T08:02:06.584Z"
+      }
+    ]
   }
 ]

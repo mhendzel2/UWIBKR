@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "UPST",
+    "date": "2025-08-04",
+    "darkPoolVolume": 5757468,
+    "totalVolume": 6276102,
+    "darkPoolRatio": 0.9173636757337595,
+    "avgDarkPoolSize": 7851,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 50874,
+        "price": 455.71132276827876,
+        "timestamp": "2025-08-04T00:26:44.257Z"
+      },
+      {
+        "size": 99289,
+        "price": 453.97192378970055,
+        "timestamp": "2025-08-04T07:31:27.533Z"
+      }
+    ]
+  }
+]

@@ -9,5 +9,27 @@
     "category": "regulatory",
     "publishedAt": "2025-08-03T04:34:21.099Z",
     "url": "https://example.com/news/kgc-1754238609518"
+  },
+  {
+    "symbol": "KGC",
+    "headline": "KGC raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for KGC with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.7653610024429437,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-04T05:28:44.755Z",
+    "url": "https://example.com/news/kgc-1754294918027"
+  },
+  {
+    "symbol": "KGC",
+    "headline": "KGC announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for KGC with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.562979389692184,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-04T01:27:02.684Z",
+    "url": "https://example.com/news/kgc-1754294918028"
   }
 ]

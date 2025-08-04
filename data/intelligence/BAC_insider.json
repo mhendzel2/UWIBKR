@@ -22,5 +22,41 @@
     "date": "2025-07-30T01:19:16.541Z",
     "filingDate": "2025-08-02T13:08:27.503Z",
     "ownershipPercent": 3.419995035066694
+  },
+  {
+    "symbol": "BAC",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 31504,
+    "price": 442.1660445279027,
+    "value": 13929999.066807048,
+    "date": "2025-07-30T06:43:58.025Z",
+    "filingDate": "2025-08-03T19:17:51.036Z",
+    "ownershipPercent": 3.68371266126026
+  },
+  {
+    "symbol": "BAC",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 28020,
+    "price": 457.23636353782933,
+    "value": 12811762.906329978,
+    "date": "2025-07-29T17:34:11.416Z",
+    "filingDate": "2025-08-03T20:39:42.754Z",
+    "ownershipPercent": 5.040530716362358
+  },
+  {
+    "symbol": "BAC",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 28734,
+    "price": 451.1277228126385,
+    "value": 12962703.987298355,
+    "date": "2025-07-31T20:45:40.869Z",
+    "filingDate": "2025-08-02T22:26:03.149Z",
+    "ownershipPercent": 4.362127771356323
   }
 ]

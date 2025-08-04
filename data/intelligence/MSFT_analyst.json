@@ -46,5 +46,17 @@
     "newTarget": 499.04332232302824,
     "date": "2025-08-03T03:12:51.378Z",
     "reasoning": "Positive sector outlook"
+  },
+  {
+    "symbol": "MSFT",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 538.6039614738582,
+    "newTarget": 498.9225046961009,
+    "date": "2025-08-03T22:03:15.997Z",
+    "reasoning": "Margin pressure concerns"
   }
 ]

@@ -20,5 +20,27 @@
     "category": "earnings",
     "publishedAt": "2025-08-03T15:22:20.987Z",
     "url": "https://example.com/news/iren-1754238625596"
+  },
+  {
+    "symbol": "IREN",
+    "headline": "IREN reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for IREN with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.869941459182419,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T20:09:25.367Z",
+    "url": "https://example.com/news/iren-1754294917399"
+  },
+  {
+    "symbol": "IREN",
+    "headline": "Regulatory approval granted for IREN new product",
+    "summary": "Recent developments suggest positive momentum for IREN with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.44942266088438154,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-04T06:31:06.516Z",
+    "url": "https://example.com/news/iren-1754294917401"
   }
 ]

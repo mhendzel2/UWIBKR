@@ -39,5 +39,36 @@
         "timestamp": "2025-08-03T12:31:02.514Z"
       }
     ]
+  },
+  {
+    "symbol": "GLW",
+    "date": "2025-08-04",
+    "darkPoolVolume": 3939742,
+    "totalVolume": 17026716,
+    "darkPoolRatio": 0.23138589966497355,
+    "avgDarkPoolSize": 10833,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 82806,
+        "price": 455.1003178408615,
+        "timestamp": "2025-08-04T00:19:17.549Z"
+      },
+      {
+        "size": 110263,
+        "price": 451.48418873177803,
+        "timestamp": "2025-08-04T05:46:08.640Z"
+      },
+      {
+        "size": 53361,
+        "price": 452.4039803218648,
+        "timestamp": "2025-08-04T04:18:57.097Z"
+      },
+      {
+        "size": 77475,
+        "price": 458.8683059434621,
+        "timestamp": "2025-08-04T02:31:15.527Z"
+      }
+    ]
   }
 ]

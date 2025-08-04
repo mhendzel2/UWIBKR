@@ -22,5 +22,17 @@
     "newTarget": 376.0686164089684,
     "date": "2025-07-31T23:04:50.581Z",
     "reasoning": "Balanced risk/reward"
+  },
+  {
+    "symbol": "CVNA",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Sell",
+    "previousTarget": 523.5571937894839,
+    "newTarget": 534.4882457980566,
+    "date": "2025-08-02T22:46:45.456Z",
+    "reasoning": "Balanced risk/reward"
   }
 ]

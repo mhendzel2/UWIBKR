@@ -20,5 +20,16 @@
     "category": "general",
     "publishedAt": "2025-08-03T12:39:38.622Z",
     "url": "https://example.com/news/ati-1754238635872"
+  },
+  {
+    "symbol": "ATI",
+    "headline": "Analyst upgrades ATI on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for ATI with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.8474094712523808,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T22:06:14.981Z",
+    "url": "https://example.com/news/ati-1754294911756"
   }
 ]

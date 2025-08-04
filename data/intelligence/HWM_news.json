@@ -31,5 +31,38 @@
     "category": "regulatory",
     "publishedAt": "2025-08-03T11:49:13.772Z",
     "url": "https://example.com/news/hwm-1754238613959"
+  },
+  {
+    "symbol": "HWM",
+    "headline": "Analyst upgrades HWM on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for HWM with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5036324233511839,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-04T01:06:32.968Z",
+    "url": "https://example.com/news/hwm-1754294916336"
+  },
+  {
+    "symbol": "HWM",
+    "headline": "Analyst upgrades HWM on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for HWM with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.8884141736784616,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-04T04:07:17.566Z",
+    "url": "https://example.com/news/hwm-1754294916336"
+  },
+  {
+    "symbol": "HWM",
+    "headline": "HWM reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for HWM with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.538383223942895,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-04T07:54:59.294Z",
+    "url": "https://example.com/news/hwm-1754294916336"
   }
 ]

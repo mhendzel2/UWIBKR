@@ -46,5 +46,17 @@
     "date": "2025-08-02T05:28:30.475Z",
     "filingDate": "2025-08-01T15:11:09.615Z",
     "ownershipPercent": 4.440623179936803
+  },
+  {
+    "symbol": "NFLX",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 33191,
+    "price": 443.4279980479775,
+    "value": 14717818.683210421,
+    "date": "2025-07-28T19:43:12.838Z",
+    "filingDate": "2025-08-01T09:11:18.419Z",
+    "ownershipPercent": 1.7551573729013936
   }
 ]

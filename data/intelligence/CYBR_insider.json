@@ -22,5 +22,17 @@
     "date": "2025-07-29T13:10:32.021Z",
     "filingDate": "2025-08-03T14:49:22.359Z",
     "ownershipPercent": 3.7107260147006116
+  },
+  {
+    "symbol": "CYBR",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 11320,
+    "price": 456.1399809485413,
+    "value": 5163504.584337487,
+    "date": "2025-08-03T12:49:19.314Z",
+    "filingDate": "2025-08-01T21:06:28.453Z",
+    "ownershipPercent": 0.183823075663223
   }
 ]

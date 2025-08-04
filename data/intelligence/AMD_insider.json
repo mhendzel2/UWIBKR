@@ -46,5 +46,29 @@
     "date": "2025-07-29T04:28:50.928Z",
     "filingDate": "2025-08-01T15:17:14.025Z",
     "ownershipPercent": 3.6817991586034435
+  },
+  {
+    "symbol": "AMD",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 19330,
+    "price": 445.85973435646645,
+    "value": 8618468.665110497,
+    "date": "2025-07-30T09:09:24.142Z",
+    "filingDate": "2025-08-01T21:39:47.246Z",
+    "ownershipPercent": 4.13480273721645
+  },
+  {
+    "symbol": "AMD",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 17522,
+    "price": 464.75474544423776,
+    "value": 8143432.649673934,
+    "date": "2025-08-02T10:45:08.550Z",
+    "filingDate": "2025-08-02T02:07:01.815Z",
+    "ownershipPercent": 2.6517887054137677
   }
 ]

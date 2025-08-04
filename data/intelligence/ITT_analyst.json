@@ -22,5 +22,17 @@
     "newTarget": 550.786646999752,
     "date": "2025-07-30T22:55:50.299Z",
     "reasoning": "Strong management team"
+  },
+  {
+    "symbol": "ITT",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Outperform",
+    "previousTarget": 388.80706141152064,
+    "newTarget": 348.0065844360438,
+    "date": "2025-08-03T00:35:48.178Z",
+    "reasoning": "Strong management team"
   }
 ]

@@ -22,5 +22,17 @@
     "date": "2025-08-01T11:12:55.703Z",
     "filingDate": "2025-08-01T05:27:07.595Z",
     "ownershipPercent": 2.3173696413773492
+  },
+  {
+    "symbol": "INOD",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 4254,
+    "price": 455.65795351534524,
+    "value": 1938368.9342542787,
+    "date": "2025-08-02T07:03:58.130Z",
+    "filingDate": "2025-08-02T14:17:49.360Z",
+    "ownershipPercent": 4.59291361503826
   }
 ]

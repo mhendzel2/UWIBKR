@@ -22,5 +22,29 @@
     "newTarget": 509.08061230078073,
     "date": "2025-07-30T06:09:43.883Z",
     "reasoning": "Margin pressure concerns"
+  },
+  {
+    "symbol": "HOOD",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Buy",
+    "previousTarget": 389.1435547936207,
+    "newTarget": 396.02101552153647,
+    "date": "2025-07-30T12:45:43.734Z",
+    "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "HOOD",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 444.41868462137677,
+    "newTarget": 466.03688478452665,
+    "date": "2025-07-30T17:09:55.939Z",
+    "reasoning": "Strong earnings momentum"
   }
 ]

@@ -19,5 +19,26 @@
         "timestamp": "2025-08-03T16:12:25.819Z"
       }
     ]
+  },
+  {
+    "symbol": "ATI",
+    "date": "2025-08-04",
+    "darkPoolVolume": 3790399,
+    "totalVolume": 13342341,
+    "darkPoolRatio": 0.2840880022478814,
+    "avgDarkPoolSize": 4410,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 55612,
+        "price": 457.96027722171965,
+        "timestamp": "2025-08-04T07:30:03.359Z"
+      },
+      {
+        "size": 117836,
+        "price": 461.77054482611237,
+        "timestamp": "2025-08-04T06:13:22.797Z"
+      }
+    ]
   }
 ]

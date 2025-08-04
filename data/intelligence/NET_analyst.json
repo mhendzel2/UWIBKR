@@ -22,5 +22,29 @@
     "newTarget": 471.7300438622161,
     "date": "2025-08-02T14:40:25.206Z",
     "reasoning": "Compelling growth story"
+  },
+  {
+    "symbol": "NET",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Hold",
+    "previousTarget": 405.39197676256885,
+    "newTarget": 424.19674922818496,
+    "date": "2025-08-01T14:45:18.868Z",
+    "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "NET",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Underperform",
+    "newRating": "Sell",
+    "previousTarget": 497.2714303409022,
+    "newTarget": 458.1751758566904,
+    "date": "2025-08-02T02:04:52.606Z",
+    "reasoning": "Balanced risk/reward"
   }
 ]

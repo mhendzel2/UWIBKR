@@ -24,5 +24,26 @@
         "timestamp": "2025-08-03T14:56:43.239Z"
       }
     ]
+  },
+  {
+    "symbol": "HWM",
+    "date": "2025-08-04",
+    "darkPoolVolume": 2679605,
+    "totalVolume": 7772608,
+    "darkPoolRatio": 0.34474979311963244,
+    "avgDarkPoolSize": 6999,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 59564,
+        "price": 449.86534811954675,
+        "timestamp": "2025-08-04T06:42:45.578Z"
+      },
+      {
+        "size": 145197,
+        "price": 448.376049108993,
+        "timestamp": "2025-08-04T01:55:13.575Z"
+      }
+    ]
   }
 ]

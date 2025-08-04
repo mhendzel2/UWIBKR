@@ -46,5 +46,29 @@
     "date": "2025-08-02T10:25:17.497Z",
     "filingDate": "2025-08-01T19:09:40.316Z",
     "ownershipPercent": 2.4420852307291665
+  },
+  {
+    "symbol": "META",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 37865,
+    "price": 454.23917509434455,
+    "value": 17199766.364947356,
+    "date": "2025-07-31T01:05:01.470Z",
+    "filingDate": "2025-08-04T06:14:04.697Z",
+    "ownershipPercent": 4.461146251973057
+  },
+  {
+    "symbol": "META",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 10215,
+    "price": 462.8214503852526,
+    "value": 4727721.115685355,
+    "date": "2025-07-30T16:25:43.982Z",
+    "filingDate": "2025-08-02T01:37:16.785Z",
+    "ownershipPercent": 0.26785227572792547
   }
 ]

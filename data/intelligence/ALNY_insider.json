@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "ALNY",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 16124,
+    "price": 458.080899334214,
+    "value": 7386096.420864866,
+    "date": "2025-07-28T20:50:01.369Z",
+    "filingDate": "2025-08-03T01:00:43.920Z",
+    "ownershipPercent": 2.319997615754136
+  },
+  {
+    "symbol": "ALNY",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 10064,
+    "price": 456.6536408242154,
+    "value": 4595762.241254904,
+    "date": "2025-07-29T08:08:44.086Z",
+    "filingDate": "2025-08-04T06:07:35.166Z",
+    "ownershipPercent": 1.3139063383844363
+  },
+  {
+    "symbol": "ALNY",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 23601,
+    "price": 464.08589271039244,
+    "value": 10952891.153857972,
+    "date": "2025-08-04T00:09:41.542Z",
+    "filingDate": "2025-08-01T14:52:27.583Z",
+    "ownershipPercent": 4.400912153099765
+  }
+]

@@ -10,5 +10,29 @@
     "date": "2025-07-29T10:26:50.212Z",
     "filingDate": "2025-08-01T19:47:15.812Z",
     "ownershipPercent": 3.1309419431722953
+  },
+  {
+    "symbol": "BOOT",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 27845,
+    "price": 452.5167891447935,
+    "value": 12600329.993736776,
+    "date": "2025-07-30T08:16:22.612Z",
+    "filingDate": "2025-08-02T05:11:39.454Z",
+    "ownershipPercent": 4.466553938299381
+  },
+  {
+    "symbol": "BOOT",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 11928,
+    "price": 461.74321449810253,
+    "value": 5507673.062533367,
+    "date": "2025-07-31T15:57:16.897Z",
+    "filingDate": "2025-08-02T04:02:00.993Z",
+    "ownershipPercent": 4.597313409557614
   }
 ]

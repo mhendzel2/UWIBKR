@@ -22,5 +22,29 @@
     "date": "2025-07-31T07:01:10.004Z",
     "filingDate": "2025-07-31T23:15:48.478Z",
     "ownershipPercent": 3.0353916961531846
+  },
+  {
+    "symbol": "MPWR",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 31021,
+    "price": 454.9053869092168,
+    "value": 14111620.007310815,
+    "date": "2025-07-30T04:21:09.988Z",
+    "filingDate": "2025-08-02T01:27:19.199Z",
+    "ownershipPercent": 5.064469971592567
+  },
+  {
+    "symbol": "MPWR",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 9141,
+    "price": 461.2395380645899,
+    "value": 4216190.617448417,
+    "date": "2025-08-02T18:25:24.154Z",
+    "filingDate": "2025-08-03T11:58:54.677Z",
+    "ownershipPercent": 1.2318577994254443
   }
 ]

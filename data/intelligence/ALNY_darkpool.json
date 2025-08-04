@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "ALNY",
+    "date": "2025-08-04",
+    "darkPoolVolume": 5799359,
+    "totalVolume": 11999571,
+    "darkPoolRatio": 0.48329719454137154,
+    "avgDarkPoolSize": 10975,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 104837,
+        "price": 451.49062371386555,
+        "timestamp": "2025-08-04T07:28:01.862Z"
+      },
+      {
+        "size": 89715,
+        "price": 452.2647925311591,
+        "timestamp": "2025-08-04T05:25:19.890Z"
+      }
+    ]
+  }
+]

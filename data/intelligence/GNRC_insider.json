@@ -10,5 +10,41 @@
     "date": "2025-07-31T21:55:51.719Z",
     "filingDate": "2025-08-02T08:19:07.045Z",
     "ownershipPercent": 1.304920510517087
+  },
+  {
+    "symbol": "GNRC",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 41247,
+    "price": 459.29120768829955,
+    "value": 18944384.44351929,
+    "date": "2025-07-29T20:54:11.747Z",
+    "filingDate": "2025-08-02T04:22:17.518Z",
+    "ownershipPercent": 0.16863265396951813
+  },
+  {
+    "symbol": "GNRC",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 46107,
+    "price": 453.7968533082238,
+    "value": 20923211.515482273,
+    "date": "2025-08-04T02:27:12.918Z",
+    "filingDate": "2025-08-03T13:45:02.336Z",
+    "ownershipPercent": 3.3602113092684838
+  },
+  {
+    "symbol": "GNRC",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 28352,
+    "price": 448.09633894017503,
+    "value": 12704427.401631843,
+    "date": "2025-07-28T21:57:49.513Z",
+    "filingDate": "2025-08-04T01:15:47.885Z",
+    "ownershipPercent": 2.759164356597991
   }
 ]

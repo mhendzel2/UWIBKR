@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "CCJ",
+    "headline": "CCJ announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for CCJ with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.37073320657325703,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-04T01:57:15.616Z",
+    "url": "https://example.com/news/ccj-1754294913010"
+  },
+  {
+    "symbol": "CCJ",
+    "headline": "CCJ raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for CCJ with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.767779989721435,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-04T05:43:58.634Z",
+    "url": "https://example.com/news/ccj-1754294913010"
+  },
+  {
+    "symbol": "CCJ",
+    "headline": "CCJ raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for CCJ with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.9327145988032313,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-04T06:47:30.440Z",
+    "url": "https://example.com/news/ccj-1754294913011"
+  }
+]

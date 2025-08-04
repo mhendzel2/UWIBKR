@@ -22,5 +22,29 @@
     "newTarget": 486.618835056732,
     "date": "2025-08-02T08:30:14.818Z",
     "reasoning": "Valuation concerns"
+  },
+  {
+    "symbol": "BE",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Hold",
+    "previousTarget": 480.48289944913256,
+    "newTarget": 438.24591782419645,
+    "date": "2025-08-01T15:49:46.305Z",
+    "reasoning": "Strong management team"
+  },
+  {
+    "symbol": "BE",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 446.41297804544666,
+    "newTarget": 412.2552592774999,
+    "date": "2025-08-02T10:10:48.683Z",
+    "reasoning": "Strong earnings momentum"
   }
 ]

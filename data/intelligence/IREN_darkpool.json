@@ -34,5 +34,31 @@
         "timestamp": "2025-08-03T11:20:29.782Z"
       }
     ]
+  },
+  {
+    "symbol": "IREN",
+    "date": "2025-08-04",
+    "darkPoolVolume": 3546556,
+    "totalVolume": 10949074,
+    "darkPoolRatio": 0.3239137848552307,
+    "avgDarkPoolSize": 10176,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 100881,
+        "price": 463.62654094020473,
+        "timestamp": "2025-08-04T04:15:49.241Z"
+      },
+      {
+        "size": 134568,
+        "price": 456.4914969005075,
+        "timestamp": "2025-08-04T01:39:54.976Z"
+      },
+      {
+        "size": 113780,
+        "price": 460.5337650264482,
+        "timestamp": "2025-08-04T01:04:57.913Z"
+      }
+    ]
   }
 ]

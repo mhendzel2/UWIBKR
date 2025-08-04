@@ -31,5 +31,27 @@
     "category": "general",
     "publishedAt": "2025-08-03T11:57:53.923Z",
     "url": "https://example.com/news/mpwr-1754238615095"
+  },
+  {
+    "symbol": "MPWR",
+    "headline": "Analyst upgrades MPWR on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for MPWR with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.7899539475060454,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-04T05:51:09.668Z",
+    "url": "https://example.com/news/mpwr-1754294919085"
+  },
+  {
+    "symbol": "MPWR",
+    "headline": "MPWR raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for MPWR with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.6840528321299253,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-04T04:10:01.260Z",
+    "url": "https://example.com/news/mpwr-1754294919085"
   }
 ]

@@ -10,5 +10,41 @@
     "date": "2025-07-30T21:11:06.359Z",
     "filingDate": "2025-08-03T00:20:21.691Z",
     "ownershipPercent": 2.6980974531925894
+  },
+  {
+    "symbol": "CLS",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 43218,
+    "price": 452.9056418841996,
+    "value": 19573676.03095134,
+    "date": "2025-08-01T14:09:43.196Z",
+    "filingDate": "2025-08-01T23:29:33.860Z",
+    "ownershipPercent": 2.705062221482395
+  },
+  {
+    "symbol": "CLS",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 5204,
+    "price": 450.2742994504831,
+    "value": 2343227.454340314,
+    "date": "2025-08-03T06:33:54.727Z",
+    "filingDate": "2025-08-03T05:38:08.635Z",
+    "ownershipPercent": 1.7192735223607247
+  },
+  {
+    "symbol": "CLS",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 10425,
+    "price": 471.0698349133289,
+    "value": 4910903.028971454,
+    "date": "2025-08-03T12:08:53.088Z",
+    "filingDate": "2025-08-02T08:08:04.517Z",
+    "ownershipPercent": 3.9246586711377818
   }
 ]

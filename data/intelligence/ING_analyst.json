@@ -22,5 +22,17 @@
     "newTarget": 393.587736083679,
     "date": "2025-08-02T13:21:02.921Z",
     "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "ING",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Buy",
+    "newRating": "Hold",
+    "previousTarget": 485.85533103788356,
+    "newTarget": 508.2419822418466,
+    "date": "2025-07-30T11:10:42.950Z",
+    "reasoning": "Strong earnings momentum"
   }
 ]

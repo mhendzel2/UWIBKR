@@ -10,5 +10,17 @@
     "date": "2025-08-01T13:26:18.893Z",
     "filingDate": "2025-08-03T09:55:59.370Z",
     "ownershipPercent": 1.779986148835494
+  },
+  {
+    "symbol": "ETR",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 17055,
+    "price": 457.32145079991716,
+    "value": 7799617.343392587,
+    "date": "2025-07-30T03:45:24.748Z",
+    "filingDate": "2025-08-01T12:26:23.167Z",
+    "ownershipPercent": 3.7292403677584427
   }
 ]

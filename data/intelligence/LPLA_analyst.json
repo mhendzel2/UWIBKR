@@ -10,5 +10,17 @@
     "newTarget": 435.564946377534,
     "date": "2025-07-31T21:20:17.287Z",
     "reasoning": "Positive sector outlook"
+  },
+  {
+    "symbol": "LPLA",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Underperform",
+    "newRating": "Hold",
+    "previousTarget": 511.20882484789627,
+    "newTarget": 533.8879687850293,
+    "date": "2025-08-01T04:13:49.379Z",
+    "reasoning": "Attractive valuation"
   }
 ]

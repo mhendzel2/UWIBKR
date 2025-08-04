@@ -9,5 +9,38 @@
     "category": "general",
     "publishedAt": "2025-08-03T13:50:27.672Z",
     "url": "https://example.com/news/grmn-1754238641336"
+  },
+  {
+    "symbol": "GRMN",
+    "headline": "Regulatory approval granted for GRMN new product",
+    "summary": "Recent developments suggest positive momentum for GRMN with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5742206413615842,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T21:35:40.877Z",
+    "url": "https://example.com/news/grmn-1754294915721"
+  },
+  {
+    "symbol": "GRMN",
+    "headline": "GRMN reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for GRMN with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5516578438073182,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T22:10:34.741Z",
+    "url": "https://example.com/news/grmn-1754294915721"
+  },
+  {
+    "symbol": "GRMN",
+    "headline": "Regulatory approval granted for GRMN new product",
+    "summary": "Recent developments suggest positive momentum for GRMN with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.5501305308697645,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-04T07:06:23.551Z",
+    "url": "https://example.com/news/grmn-1754294915724"
   }
 ]

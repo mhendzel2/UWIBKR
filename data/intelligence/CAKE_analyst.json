@@ -22,5 +22,17 @@
     "newTarget": 412.5480506224485,
     "date": "2025-08-01T23:45:40.053Z",
     "reasoning": "Stable fundamentals"
+  },
+  {
+    "symbol": "CAKE",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 494.0176989033936,
+    "newTarget": 538.5313216360242,
+    "date": "2025-07-31T18:32:52.066Z",
+    "reasoning": "Strong earnings momentum"
   }
 ]

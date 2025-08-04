@@ -9,5 +9,16 @@
     "category": "earnings",
     "publishedAt": "2025-08-03T09:27:51.005Z",
     "url": "https://example.com/news/ego-1754238613315"
+  },
+  {
+    "symbol": "EGO",
+    "headline": "EGO reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for EGO with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.8820485341484335,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T22:26:52.978Z",
+    "url": "https://example.com/news/ego-1754294914672"
   }
 ]

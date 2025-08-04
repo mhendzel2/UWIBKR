@@ -22,5 +22,29 @@
     "newTarget": 475.38695488478635,
     "date": "2025-07-31T16:09:47.489Z",
     "reasoning": "Compelling growth story"
+  },
+  {
+    "symbol": "CLS",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Hold",
+    "previousTarget": 393.5285832581684,
+    "newTarget": 388.9559799056731,
+    "date": "2025-07-30T10:08:29.301Z",
+    "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "CLS",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 511.0389773911138,
+    "newTarget": 475.87256156074017,
+    "date": "2025-08-01T09:16:11.241Z",
+    "reasoning": "Strong earnings momentum"
   }
 ]

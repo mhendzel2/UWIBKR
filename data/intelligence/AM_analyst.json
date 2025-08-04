@@ -22,5 +22,29 @@
     "newTarget": 487.9780387775623,
     "date": "2025-08-01T01:48:37.269Z",
     "reasoning": "Strong management team"
+  },
+  {
+    "symbol": "AM",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Sell",
+    "newRating": "Sell",
+    "previousTarget": 420.0857089072946,
+    "newTarget": 414.3236661844461,
+    "date": "2025-08-03T11:21:56.299Z",
+    "reasoning": "Strong earnings momentum"
+  },
+  {
+    "symbol": "AM",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Buy",
+    "previousTarget": 403.28959994667883,
+    "newTarget": 409.6190894180861,
+    "date": "2025-07-31T03:52:18.389Z",
+    "reasoning": "Balanced risk/reward"
   }
 ]

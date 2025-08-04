@@ -20,5 +20,38 @@
     "category": "analyst",
     "publishedAt": "2025-08-03T05:40:48.767Z",
     "url": "https://example.com/news/boot-1754238643016"
+  },
+  {
+    "symbol": "BOOT",
+    "headline": "BOOT announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for BOOT with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.6389636519697438,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-04T00:46:00.538Z",
+    "url": "https://example.com/news/boot-1754294912380"
+  },
+  {
+    "symbol": "BOOT",
+    "headline": "BOOT announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for BOOT with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.4682038523110742,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-04T01:48:42.192Z",
+    "url": "https://example.com/news/boot-1754294912380"
+  },
+  {
+    "symbol": "BOOT",
+    "headline": "BOOT reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for BOOT with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.5514993826369969,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-04T05:50:18.563Z",
+    "url": "https://example.com/news/boot-1754294912380"
   }
 ]

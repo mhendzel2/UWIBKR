@@ -46,5 +46,29 @@
     "newTarget": 524.8202313309688,
     "date": "2025-08-02T21:02:14.232Z",
     "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "NVDA",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Sell",
+    "previousTarget": 509.9267889738642,
+    "newTarget": 546.2372678916938,
+    "date": "2025-07-30T17:12:59.894Z",
+    "reasoning": "Balanced risk/reward"
+  },
+  {
+    "symbol": "NVDA",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Hold",
+    "newRating": "Outperform",
+    "previousTarget": 403.05789478726444,
+    "newTarget": 404.65951662469234,
+    "date": "2025-08-02T23:25:35.626Z",
+    "reasoning": "Attractive valuation"
   }
 ]

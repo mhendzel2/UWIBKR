@@ -10,5 +10,29 @@
     "newTarget": 460.3836106209788,
     "date": "2025-08-03T15:26:48.653Z",
     "reasoning": "Strong earnings momentum"
+  },
+  {
+    "symbol": "INOD",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Outperform",
+    "newRating": "Hold",
+    "previousTarget": 431.4625282474701,
+    "newTarget": 447.71284248231854,
+    "date": "2025-08-03T01:10:29.938Z",
+    "reasoning": "Stable fundamentals"
+  },
+  {
+    "symbol": "INOD",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Outperform",
+    "previousTarget": 447.31143719914974,
+    "newTarget": 440.9414707467456,
+    "date": "2025-08-02T21:13:19.041Z",
+    "reasoning": "Compelling growth story"
   }
 ]

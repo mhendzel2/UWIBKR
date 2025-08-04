@@ -31,5 +31,27 @@
     "category": "earnings",
     "publishedAt": "2025-08-03T06:09:37.039Z",
     "url": "https://example.com/news/crm-1754238604603"
+  },
+  {
+    "symbol": "CRM",
+    "headline": "CRM raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for CRM with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.9253927391846296,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-04T01:29:59.942Z",
+    "url": "https://example.com/news/crm-1754294910509"
+  },
+  {
+    "symbol": "CRM",
+    "headline": "CRM raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for CRM with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.919974429837457,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T21:42:34.114Z",
+    "url": "https://example.com/news/crm-1754294910510"
   }
 ]

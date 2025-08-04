@@ -31,5 +31,16 @@
     "category": "earnings",
     "publishedAt": "2025-08-03T15:25:06.838Z",
     "url": "https://example.com/news/ice-1754238629839"
+  },
+  {
+    "symbol": "ICE",
+    "headline": "ICE reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for ICE with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7298119147521986,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T23:03:41.926Z",
+    "url": "https://example.com/news/ice-1754294916538"
   }
 ]

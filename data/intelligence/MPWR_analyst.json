@@ -22,5 +22,29 @@
     "newTarget": 428.13052877332024,
     "date": "2025-07-29T23:34:38.214Z",
     "reasoning": "Competitive headwinds"
+  },
+  {
+    "symbol": "MPWR",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Outperform",
+    "newRating": "Hold",
+    "previousTarget": 393.2183452615541,
+    "newTarget": 437.31361478464356,
+    "date": "2025-08-03T17:22:02.925Z",
+    "reasoning": "Valuation concerns"
+  },
+  {
+    "symbol": "MPWR",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Outperform",
+    "previousTarget": 389.12933315438676,
+    "newTarget": 430.56710672874726,
+    "date": "2025-08-04T03:35:22.608Z",
+    "reasoning": "Stable fundamentals"
   }
 ]

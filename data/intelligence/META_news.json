@@ -42,5 +42,27 @@
     "category": "guidance",
     "publishedAt": "2025-08-03T15:20:36.414Z",
     "url": "https://example.com/news/meta-1754238603817"
+  },
+  {
+    "symbol": "META",
+    "headline": "META reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for META with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5949738843894791,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-04T06:01:08.106Z",
+    "url": "https://example.com/news/meta-1754294909763"
+  },
+  {
+    "symbol": "META",
+    "headline": "Analyst upgrades META on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for META with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.7265858148938863,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T23:56:56.955Z",
+    "url": "https://example.com/news/meta-1754294909765"
   }
 ]

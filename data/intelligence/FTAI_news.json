@@ -31,5 +31,16 @@
     "category": "earnings",
     "publishedAt": "2025-08-03T06:55:12.659Z",
     "url": "https://example.com/news/ftai-1754238629429"
+  },
+  {
+    "symbol": "FTAI",
+    "headline": "Regulatory approval granted for FTAI new product",
+    "summary": "Recent developments suggest positive momentum for FTAI with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.7639761943971363,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-04T00:58:39.837Z",
+    "url": "https://example.com/news/ftai-1754294915084"
   }
 ]

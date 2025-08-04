@@ -50,5 +50,36 @@
         "timestamp": "2025-08-03T09:15:12.130Z"
       }
     ]
+  },
+  {
+    "symbol": "AMD",
+    "date": "2025-08-04",
+    "darkPoolVolume": 4235286,
+    "totalVolume": 9021454,
+    "darkPoolRatio": 0.46946822541022765,
+    "avgDarkPoolSize": 5535,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 82250,
+        "price": 449.55705380968965,
+        "timestamp": "2025-08-04T06:21:35.460Z"
+      },
+      {
+        "size": 78746,
+        "price": 451.46238708738355,
+        "timestamp": "2025-08-04T04:53:40.413Z"
+      },
+      {
+        "size": 82790,
+        "price": 454.2004353207442,
+        "timestamp": "2025-08-04T03:06:16.447Z"
+      },
+      {
+        "size": 51584,
+        "price": 450.4529277114374,
+        "timestamp": "2025-08-04T02:26:19.982Z"
+      }
+    ]
   }
 ]

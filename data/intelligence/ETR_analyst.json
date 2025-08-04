@@ -10,5 +10,17 @@
     "newTarget": 490.70136015189917,
     "date": "2025-07-30T17:26:40.739Z",
     "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "ETR",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Outperform",
+    "newRating": "Outperform",
+    "previousTarget": 484.75417668390986,
+    "newTarget": 443.1426064405833,
+    "date": "2025-08-03T20:52:05.742Z",
+    "reasoning": "Positive sector outlook"
   }
 ]

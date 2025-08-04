@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "CCJ",
+    "date": "2025-08-04",
+    "darkPoolVolume": 4393337,
+    "totalVolume": 13976260,
+    "darkPoolRatio": 0.3143428213270217,
+    "avgDarkPoolSize": 8199,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 78536,
+        "price": 455.5467684444021,
+        "timestamp": "2025-08-04T03:20:21.523Z"
+      },
+      {
+        "size": 136252,
+        "price": 458.2864598050874,
+        "timestamp": "2025-08-04T05:44:43.466Z"
+      },
+      {
+        "size": 63782,
+        "price": 454.512101463827,
+        "timestamp": "2025-08-04T04:04:13.119Z"
+      },
+      {
+        "size": 128113,
+        "price": 453.9911314623261,
+        "timestamp": "2025-08-04T07:43:50.653Z"
+      },
+      {
+        "size": 132512,
+        "price": 457.25846713626396,
+        "timestamp": "2025-08-04T01:38:37.472Z"
+      }
+    ]
+  }
+]

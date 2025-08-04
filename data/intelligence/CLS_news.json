@@ -31,5 +31,38 @@
     "category": "analyst",
     "publishedAt": "2025-08-03T13:59:47.606Z",
     "url": "https://example.com/news/cls-1754238607609"
+  },
+  {
+    "symbol": "CLS",
+    "headline": "Regulatory approval granted for CLS new product",
+    "summary": "Recent developments suggest positive momentum for CLS with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.7454405308730101,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-04T02:37:48.986Z",
+    "url": "https://example.com/news/cls-1754294913421"
+  },
+  {
+    "symbol": "CLS",
+    "headline": "CLS raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for CLS with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.810379825443035,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-04T02:45:16.885Z",
+    "url": "https://example.com/news/cls-1754294913421"
+  },
+  {
+    "symbol": "CLS",
+    "headline": "CLS announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for CLS with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.5210542562895422,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-04T06:59:46.964Z",
+    "url": "https://example.com/news/cls-1754294913422"
   }
 ]

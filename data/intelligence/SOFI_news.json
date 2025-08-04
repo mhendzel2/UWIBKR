@@ -9,5 +9,16 @@
     "category": "earnings",
     "publishedAt": "2025-08-03T14:16:35.787Z",
     "url": "https://example.com/news/sofi-1754238610785"
+  },
+  {
+    "symbol": "SOFI",
+    "headline": "Regulatory approval granted for SOFI new product",
+    "summary": "Recent developments suggest positive momentum for SOFI with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5093007365607354,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T23:00:22.344Z",
+    "url": "https://example.com/news/sofi-1754294920129"
   }
 ]

@@ -9,5 +9,27 @@
     "category": "analyst",
     "publishedAt": "2025-08-03T15:42:41.982Z",
     "url": "https://example.com/news/au-1754238606757"
+  },
+  {
+    "symbol": "AU",
+    "headline": "AU announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for AU with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.33486933184771117,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-04T02:11:37.837Z",
+    "url": "https://example.com/news/au-1754294911971"
+  },
+  {
+    "symbol": "AU",
+    "headline": "AU announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for AU with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.4134038914150798,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T20:56:12.946Z",
+    "url": "https://example.com/news/au-1754294911971"
   }
 ]

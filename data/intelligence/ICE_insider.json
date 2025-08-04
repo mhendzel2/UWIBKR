@@ -10,5 +10,17 @@
     "date": "2025-07-31T04:12:24.338Z",
     "filingDate": "2025-08-01T01:24:51.441Z",
     "ownershipPercent": 1.1135306878193907
+  },
+  {
+    "symbol": "ICE",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 27565,
+    "price": 455.0101521704349,
+    "value": 12542354.844578037,
+    "date": "2025-07-30T06:52:53.091Z",
+    "filingDate": "2025-08-03T08:18:39.355Z",
+    "ownershipPercent": 2.556961017311652
   }
 ]

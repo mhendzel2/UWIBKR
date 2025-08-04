@@ -10,5 +10,41 @@
     "date": "2025-08-01T05:44:34.677Z",
     "filingDate": "2025-07-31T23:54:51.822Z",
     "ownershipPercent": 2.3361986673116077
+  },
+  {
+    "symbol": "FTAI",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 47490,
+    "price": 455.3095911532204,
+    "value": 21622652.48386644,
+    "date": "2025-08-03T00:26:58.290Z",
+    "filingDate": "2025-08-02T23:06:30.357Z",
+    "ownershipPercent": 0.983162859904778
+  },
+  {
+    "symbol": "FTAI",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 27479,
+    "price": 443.8111482382396,
+    "value": 12195486.542438585,
+    "date": "2025-08-01T13:15:16.080Z",
+    "filingDate": "2025-08-04T06:02:09.505Z",
+    "ownershipPercent": 1.0662510918306178
+  },
+  {
+    "symbol": "FTAI",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 48060,
+    "price": 441.46559675796885,
+    "value": 21216836.580187984,
+    "date": "2025-07-30T16:17:44.899Z",
+    "filingDate": "2025-08-03T21:06:17.492Z",
+    "ownershipPercent": 0.8640651853473323
   }
 ]

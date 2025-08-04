@@ -10,5 +10,29 @@
     "newTarget": 399.1242439529846,
     "date": "2025-07-30T17:45:47.583Z",
     "reasoning": "Improved market position"
+  },
+  {
+    "symbol": "GRMN",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Underperform",
+    "previousTarget": 465.17738781711046,
+    "newTarget": 455.4565319689911,
+    "date": "2025-07-31T18:06:41.963Z",
+    "reasoning": "Margin pressure concerns"
+  },
+  {
+    "symbol": "GRMN",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Underperform",
+    "previousTarget": 508.1498308075641,
+    "newTarget": 553.0864760396004,
+    "date": "2025-08-02T19:59:38.108Z",
+    "reasoning": "Stable fundamentals"
   }
 ]

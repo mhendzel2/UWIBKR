@@ -10,5 +10,17 @@
     "newTarget": 501.5012772433348,
     "date": "2025-08-03T11:41:02.015Z",
     "reasoning": "Compelling growth story"
+  },
+  {
+    "symbol": "KLAC",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Buy",
+    "newRating": "Hold",
+    "previousTarget": 455.6336151387455,
+    "newTarget": 479.78089130588415,
+    "date": "2025-07-31T09:48:37.930Z",
+    "reasoning": "Balanced risk/reward"
   }
 ]

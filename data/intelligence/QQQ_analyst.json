@@ -46,5 +46,17 @@
     "newTarget": 653.4933141299164,
     "date": "2025-08-02T23:58:03.471Z",
     "reasoning": "Competitive headwinds"
+  },
+  {
+    "symbol": "QQQ",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Outperform",
+    "newRating": "Outperform",
+    "previousTarget": 495.290779677002,
+    "newTarget": 547.0268640033742,
+    "date": "2025-08-03T08:29:45.264Z",
+    "reasoning": "Fair valuation"
   }
 ]

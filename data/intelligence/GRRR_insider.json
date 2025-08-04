@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "GRRR",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 4354,
+    "price": 454.5194920625482,
+    "value": 1978977.8684403347,
+    "date": "2025-07-31T17:57:12.892Z",
+    "filingDate": "2025-08-03T02:25:26.965Z",
+    "ownershipPercent": 1.1456871228303356
+  },
+  {
+    "symbol": "GRRR",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 16369,
+    "price": 440.16095511138064,
+    "value": 7204994.67421819,
+    "date": "2025-08-04T05:54:44.296Z",
+    "filingDate": "2025-08-01T20:50:57.668Z",
+    "ownershipPercent": 1.8579987917943197
+  }
+]

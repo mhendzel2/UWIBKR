@@ -24,5 +24,31 @@
         "timestamp": "2025-08-03T11:17:25.029Z"
       }
     ]
+  },
+  {
+    "symbol": "CDNS",
+    "date": "2025-08-04",
+    "darkPoolVolume": 5707859,
+    "totalVolume": 18140962,
+    "darkPoolRatio": 0.3146392677521732,
+    "avgDarkPoolSize": 7306,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 104659,
+        "price": 451.3811726046268,
+        "timestamp": "2025-08-04T00:43:59.139Z"
+      },
+      {
+        "size": 140130,
+        "price": 455.1910425513479,
+        "timestamp": "2025-08-04T03:20:27.260Z"
+      },
+      {
+        "size": 143812,
+        "price": 455.5914109449589,
+        "timestamp": "2025-08-04T00:28:42.046Z"
+      }
+    ]
   }
 ]

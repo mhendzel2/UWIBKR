@@ -29,5 +29,41 @@
         "timestamp": "2025-08-03T16:18:13.501Z"
       }
     ]
+  },
+  {
+    "symbol": "KGC",
+    "date": "2025-08-04",
+    "darkPoolVolume": 4766008,
+    "totalVolume": 12944231,
+    "darkPoolRatio": 0.3681955305031253,
+    "avgDarkPoolSize": 2453,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 143989,
+        "price": 455.44275245060334,
+        "timestamp": "2025-08-04T00:52:49.892Z"
+      },
+      {
+        "size": 114565,
+        "price": 457.6073073666419,
+        "timestamp": "2025-08-04T05:22:07.301Z"
+      },
+      {
+        "size": 122533,
+        "price": 454.19876264511004,
+        "timestamp": "2025-08-04T04:49:43.544Z"
+      },
+      {
+        "size": 104130,
+        "price": 455.51103884260715,
+        "timestamp": "2025-08-04T05:26:58.819Z"
+      },
+      {
+        "size": 129392,
+        "price": 452.88536915166543,
+        "timestamp": "2025-08-04T06:43:16.444Z"
+      }
+    ]
   }
 ]

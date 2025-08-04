@@ -24,5 +24,26 @@
         "timestamp": "2025-08-03T09:00:21.441Z"
       }
     ]
+  },
+  {
+    "symbol": "ICE",
+    "date": "2025-08-04",
+    "darkPoolVolume": 4602973,
+    "totalVolume": 5267437,
+    "darkPoolRatio": 0.8738544001570403,
+    "avgDarkPoolSize": 4445,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 111197,
+        "price": 460.2211149504439,
+        "timestamp": "2025-08-04T06:14:08.816Z"
+      },
+      {
+        "size": 147713,
+        "price": 456.76840443778343,
+        "timestamp": "2025-08-04T04:06:05.172Z"
+      }
+    ]
   }
 ]

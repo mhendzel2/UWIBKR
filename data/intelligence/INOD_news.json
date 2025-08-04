@@ -20,5 +20,38 @@
     "category": "guidance",
     "publishedAt": "2025-08-03T09:01:02.567Z",
     "url": "https://example.com/news/inod-1754238633739"
+  },
+  {
+    "symbol": "INOD",
+    "headline": "Analyst upgrades INOD on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for INOD with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.8740581600784268,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-04T05:31:53.638Z",
+    "url": "https://example.com/news/inod-1754294917151"
+  },
+  {
+    "symbol": "INOD",
+    "headline": "INOD reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for INOD with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.7164029939352714,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T22:56:54.220Z",
+    "url": "https://example.com/news/inod-1754294917151"
+  },
+  {
+    "symbol": "INOD",
+    "headline": "INOD reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for INOD with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.8772058994941475,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-03T22:36:54.076Z",
+    "url": "https://example.com/news/inod-1754294917153"
   }
 ]

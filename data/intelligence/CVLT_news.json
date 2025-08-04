@@ -31,5 +31,38 @@
     "category": "analyst",
     "publishedAt": "2025-08-03T16:14:01.607Z",
     "url": "https://example.com/news/cvlt-1754238632988"
+  },
+  {
+    "symbol": "CVLT",
+    "headline": "CVLT raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for CVLT with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.8048318724809049,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-04T04:08:14.865Z",
+    "url": "https://example.com/news/cvlt-1754294913838"
+  },
+  {
+    "symbol": "CVLT",
+    "headline": "Analyst upgrades CVLT on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for CVLT with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.6620032021469231,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T21:41:15.099Z",
+    "url": "https://example.com/news/cvlt-1754294913839"
+  },
+  {
+    "symbol": "CVLT",
+    "headline": "Regulatory approval granted for CVLT new product",
+    "summary": "Recent developments suggest positive momentum for CVLT with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.4904098195250977,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-04T02:30:18.220Z",
+    "url": "https://example.com/news/cvlt-1754294913839"
   }
 ]

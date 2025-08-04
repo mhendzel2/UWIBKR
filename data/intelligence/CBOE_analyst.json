@@ -10,5 +10,17 @@
     "newTarget": 469.9464263572132,
     "date": "2025-07-31T23:20:51.564Z",
     "reasoning": "Margin pressure concerns"
+  },
+  {
+    "symbol": "CBOE",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Outperform",
+    "previousTarget": 480.0910956648461,
+    "newTarget": 438.91374438431836,
+    "date": "2025-08-03T23:27:28.798Z",
+    "reasoning": "Valuation concerns"
   }
 ]

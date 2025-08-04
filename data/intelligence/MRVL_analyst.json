@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "MRVL",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Outperform",
+    "newRating": "Outperform",
+    "previousTarget": 488.6375521793091,
+    "newTarget": 521.3424929154482,
+    "date": "2025-08-03T09:45:33.088Z",
+    "reasoning": "Strong earnings momentum"
+  },
+  {
+    "symbol": "MRVL",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Outperform",
+    "previousTarget": 428.4154066577334,
+    "newTarget": 392.8997309366114,
+    "date": "2025-08-02T15:17:25.193Z",
+    "reasoning": "Stable fundamentals"
+  }
+]

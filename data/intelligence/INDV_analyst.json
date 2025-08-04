@@ -10,5 +10,29 @@
     "newTarget": 438.02747970196253,
     "date": "2025-08-02T11:32:24.464Z",
     "reasoning": "Stable fundamentals"
+  },
+  {
+    "symbol": "INDV",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Underperform",
+    "previousTarget": 443.5070940204801,
+    "newTarget": 418.1841143370575,
+    "date": "2025-08-03T00:59:50.881Z",
+    "reasoning": "Stable fundamentals"
+  },
+  {
+    "symbol": "INDV",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 494.522174277648,
+    "newTarget": 534.0843222620114,
+    "date": "2025-07-30T09:20:08.926Z",
+    "reasoning": "Valuation concerns"
   }
 ]

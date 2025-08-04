@@ -29,5 +29,36 @@
         "timestamp": "2025-08-03T11:53:37.529Z"
       }
     ]
+  },
+  {
+    "symbol": "MTZ",
+    "date": "2025-08-04",
+    "darkPoolVolume": 5114588,
+    "totalVolume": 9511180,
+    "darkPoolRatio": 0.5377448434368817,
+    "avgDarkPoolSize": 6805,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 69663,
+        "price": 451.9598979450275,
+        "timestamp": "2025-08-04T01:47:56.507Z"
+      },
+      {
+        "size": 75645,
+        "price": 456.95387481493316,
+        "timestamp": "2025-08-04T02:53:20.166Z"
+      },
+      {
+        "size": 148165,
+        "price": 457.1113652594921,
+        "timestamp": "2025-08-04T05:45:44.709Z"
+      },
+      {
+        "size": 131010,
+        "price": 455.9612041084989,
+        "timestamp": "2025-08-04T02:56:04.152Z"
+      }
+    ]
   }
 ]

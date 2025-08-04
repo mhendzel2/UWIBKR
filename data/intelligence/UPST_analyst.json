@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "UPST",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Outperform",
+    "newRating": "Hold",
+    "previousTarget": 443.7277365161502,
+    "newTarget": 398.73952795630373,
+    "date": "2025-08-02T18:09:45.519Z",
+    "reasoning": "Valuation concerns"
+  }
+]

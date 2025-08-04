@@ -22,5 +22,29 @@
     "newTarget": 396.20246868803514,
     "date": "2025-08-02T23:16:38.009Z",
     "reasoning": "Positive sector outlook"
+  },
+  {
+    "symbol": "IREN",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Underperform",
+    "newRating": "Hold",
+    "previousTarget": 390.38856815537883,
+    "newTarget": 394.82039269669303,
+    "date": "2025-08-03T13:53:48.596Z",
+    "reasoning": "Balanced risk/reward"
+  },
+  {
+    "symbol": "IREN",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Buy",
+    "newRating": "Buy",
+    "previousTarget": 389.32646614758085,
+    "newTarget": 422.19577657785203,
+    "date": "2025-08-01T10:47:44.439Z",
+    "reasoning": "Improved market position"
   }
 ]

@@ -10,5 +10,41 @@
     "date": "2025-08-03T16:01:59.497Z",
     "filingDate": "2025-08-03T13:13:11.003Z",
     "ownershipPercent": 2.2143987201033055
+  },
+  {
+    "symbol": "HOOD",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 6909,
+    "price": 460.54254320646186,
+    "value": 3181888.431013445,
+    "date": "2025-07-29T23:09:02.305Z",
+    "filingDate": "2025-08-03T01:42:55.552Z",
+    "ownershipPercent": 2.8035171604493825
+  },
+  {
+    "symbol": "HOOD",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 9223,
+    "price": 448.56682630795797,
+    "value": 4137131.839038296,
+    "date": "2025-07-30T14:47:51.128Z",
+    "filingDate": "2025-08-02T10:27:31.822Z",
+    "ownershipPercent": 1.9668826327216316
+  },
+  {
+    "symbol": "HOOD",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 19579,
+    "price": 453.04452052629324,
+    "value": 8870158.667384295,
+    "date": "2025-07-31T13:05:08.792Z",
+    "filingDate": "2025-08-03T08:08:47.850Z",
+    "ownershipPercent": 0.5149829099731172
   }
 ]

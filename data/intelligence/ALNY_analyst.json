@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "ALNY",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Buy",
+    "previousTarget": 484.25596037075724,
+    "newTarget": 472.178172587487,
+    "date": "2025-08-03T11:52:31.231Z",
+    "reasoning": "Valuation concerns"
+  },
+  {
+    "symbol": "ALNY",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Hold",
+    "newRating": "Buy",
+    "previousTarget": 505.95898509146053,
+    "newTarget": 496.42977358131435,
+    "date": "2025-07-30T10:34:55.053Z",
+    "reasoning": "Strong earnings momentum"
+  }
+]

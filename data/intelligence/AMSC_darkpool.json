@@ -24,5 +24,46 @@
         "timestamp": "2025-08-03T13:22:31.411Z"
       }
     ]
+  },
+  {
+    "symbol": "AMSC",
+    "date": "2025-08-04",
+    "darkPoolVolume": 5576655,
+    "totalVolume": 15936399,
+    "darkPoolRatio": 0.34993193882758583,
+    "avgDarkPoolSize": 9281,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 147284,
+        "price": 454.00677545661074,
+        "timestamp": "2025-08-04T05:21:11.585Z"
+      },
+      {
+        "size": 99108,
+        "price": 460.3334830205436,
+        "timestamp": "2025-08-04T06:48:26.691Z"
+      },
+      {
+        "size": 90826,
+        "price": 456.6913927923324,
+        "timestamp": "2025-08-04T02:43:13.653Z"
+      },
+      {
+        "size": 107834,
+        "price": 458.715545542455,
+        "timestamp": "2025-08-04T03:24:46.743Z"
+      },
+      {
+        "size": 75086,
+        "price": 455.8604066901316,
+        "timestamp": "2025-08-04T04:29:48.747Z"
+      },
+      {
+        "size": 95882,
+        "price": 453.304656324358,
+        "timestamp": "2025-08-04T04:18:17.389Z"
+      }
+    ]
   }
 ]

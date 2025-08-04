@@ -39,5 +39,31 @@
         "timestamp": "2025-08-03T16:17:11.332Z"
       }
     ]
+  },
+  {
+    "symbol": "AEM",
+    "date": "2025-08-04",
+    "darkPoolVolume": 1738912,
+    "totalVolume": 7951599,
+    "darkPoolRatio": 0.2186870841952669,
+    "avgDarkPoolSize": 1172,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 85439,
+        "price": 463.1510914898697,
+        "timestamp": "2025-08-04T03:21:13.391Z"
+      },
+      {
+        "size": 68976,
+        "price": 459.180546647444,
+        "timestamp": "2025-08-04T07:59:50.252Z"
+      },
+      {
+        "size": 109354,
+        "price": 459.4941702719941,
+        "timestamp": "2025-08-04T03:22:21.165Z"
+      }
+    ]
   }
 ]

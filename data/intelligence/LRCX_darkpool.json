@@ -29,5 +29,31 @@
         "timestamp": "2025-08-03T12:41:36.073Z"
       }
     ]
+  },
+  {
+    "symbol": "LRCX",
+    "date": "2025-08-04",
+    "darkPoolVolume": 5694925,
+    "totalVolume": 17356990,
+    "darkPoolRatio": 0.3281055643864518,
+    "avgDarkPoolSize": 6360,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 102930,
+        "price": 453.153459591989,
+        "timestamp": "2025-08-04T02:49:07.808Z"
+      },
+      {
+        "size": 74345,
+        "price": 455.05743869591186,
+        "timestamp": "2025-08-04T05:33:10.685Z"
+      },
+      {
+        "size": 60352,
+        "price": 453.45120408596296,
+        "timestamp": "2025-08-04T02:57:40.617Z"
+      }
+    ]
   }
 ]

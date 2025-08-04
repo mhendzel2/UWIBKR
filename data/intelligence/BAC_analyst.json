@@ -22,5 +22,29 @@
     "newTarget": 439.6756129410295,
     "date": "2025-08-01T09:53:13.795Z",
     "reasoning": "Valuation concerns"
+  },
+  {
+    "symbol": "BAC",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Outperform",
+    "previousTarget": 492.894708071719,
+    "newTarget": 473.2300921497408,
+    "date": "2025-07-30T09:50:12.883Z",
+    "reasoning": "Strong management team"
+  },
+  {
+    "symbol": "BAC",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Hold",
+    "previousTarget": 423.51214593770123,
+    "newTarget": 429.50415310491485,
+    "date": "2025-08-03T03:05:34.375Z",
+    "reasoning": "Margin pressure concerns"
   }
 ]

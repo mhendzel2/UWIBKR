@@ -20,5 +20,16 @@
     "category": "earnings",
     "publishedAt": "2025-08-03T12:49:43.984Z",
     "url": "https://example.com/news/cr-1754238624033"
+  },
+  {
+    "symbol": "CR",
+    "headline": "Analyst upgrades CR on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for CR with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7446614529356763,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T22:47:02.778Z",
+    "url": "https://example.com/news/cr-1754294913627"
   }
 ]

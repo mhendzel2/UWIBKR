@@ -58,5 +58,29 @@
     "date": "2025-08-01T03:11:48.125Z",
     "filingDate": "2025-07-31T16:40:26.296Z",
     "ownershipPercent": 1.6758359121417299
+  },
+  {
+    "symbol": "AAPL",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 33648,
+    "price": 202.12748256600295,
+    "value": 6801185.533380867,
+    "date": "2025-07-29T18:02:02.232Z",
+    "filingDate": "2025-08-02T06:49:41.487Z",
+    "ownershipPercent": 5.0529979345295235
+  },
+  {
+    "symbol": "AAPL",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 46786,
+    "price": 201.45714245816083,
+    "value": 9425373.867047513,
+    "date": "2025-07-29T01:17:55.216Z",
+    "filingDate": "2025-08-02T14:13:28.095Z",
+    "ownershipPercent": 2.351949318727522
   }
 ]

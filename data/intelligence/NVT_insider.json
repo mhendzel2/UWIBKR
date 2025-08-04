@@ -22,5 +22,17 @@
     "date": "2025-07-30T12:57:09.169Z",
     "filingDate": "2025-08-01T22:31:02.302Z",
     "ownershipPercent": 1.685111217158789
+  },
+  {
+    "symbol": "NVT",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 33544,
+    "price": 445.83975375836826,
+    "value": 14955248.700070705,
+    "date": "2025-08-02T19:00:59.314Z",
+    "filingDate": "2025-08-02T21:09:31.800Z",
+    "ownershipPercent": 4.756573931254133
   }
 ]

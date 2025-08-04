@@ -39,5 +39,31 @@
         "timestamp": "2025-08-03T11:57:59.339Z"
       }
     ]
+  },
+  {
+    "symbol": "EBAY",
+    "date": "2025-08-04",
+    "darkPoolVolume": 1722890,
+    "totalVolume": 12772459,
+    "darkPoolRatio": 0.13489101824480312,
+    "avgDarkPoolSize": 6599,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 57345,
+        "price": 453.5433985331319,
+        "timestamp": "2025-08-04T01:02:44.961Z"
+      },
+      {
+        "size": 53991,
+        "price": 450.0081056769565,
+        "timestamp": "2025-08-04T08:08:15.643Z"
+      },
+      {
+        "size": 121286,
+        "price": 452.5684451919704,
+        "timestamp": "2025-08-04T02:18:22.383Z"
+      }
+    ]
   }
 ]

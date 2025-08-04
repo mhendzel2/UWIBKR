@@ -10,5 +10,29 @@
     "date": "2025-07-30T15:30:24.738Z",
     "filingDate": "2025-08-03T00:06:13.526Z",
     "ownershipPercent": 1.8091727213033537
+  },
+  {
+    "symbol": "CBOE",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 50346,
+    "price": 461.5455812669612,
+    "value": 23236973.83446643,
+    "date": "2025-07-30T06:29:43.471Z",
+    "filingDate": "2025-08-04T05:21:12.795Z",
+    "ownershipPercent": 4.741210653557089
+  },
+  {
+    "symbol": "CBOE",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 8680,
+    "price": 449.9091024742265,
+    "value": 3905211.009476286,
+    "date": "2025-08-02T11:56:12.262Z",
+    "filingDate": "2025-08-02T02:44:51.078Z",
+    "ownershipPercent": 3.08415148234761
   }
 ]

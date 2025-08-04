@@ -20,5 +20,27 @@
     "category": "regulatory",
     "publishedAt": "2025-08-03T11:59:04.685Z",
     "url": "https://example.com/news/etr-1754238628593"
+  },
+  {
+    "symbol": "ETR",
+    "headline": "ETR reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for ETR with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.5535245479216564,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-04T07:45:22.891Z",
+    "url": "https://example.com/news/etr-1754294914873"
+  },
+  {
+    "symbol": "ETR",
+    "headline": "Regulatory approval granted for ETR new product",
+    "summary": "Recent developments suggest positive momentum for ETR with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.7424312840148116,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T20:16:31.039Z",
+    "url": "https://example.com/news/etr-1754294914875"
   }
 ]

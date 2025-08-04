@@ -10,5 +10,29 @@
     "newTarget": 454.1550169924794,
     "date": "2025-08-01T11:40:01.957Z",
     "reasoning": "Valuation concerns"
+  },
+  {
+    "symbol": "ATI",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 434.0836698937096,
+    "newTarget": 402.9037226977919,
+    "date": "2025-07-30T08:28:42.153Z",
+    "reasoning": "Positive sector outlook"
+  },
+  {
+    "symbol": "ATI",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Underperform",
+    "newRating": "Outperform",
+    "previousTarget": 522.0921678048579,
+    "newTarget": 483.44314086404785,
+    "date": "2025-08-02T23:09:37.246Z",
+    "reasoning": "Fair valuation"
   }
 ]

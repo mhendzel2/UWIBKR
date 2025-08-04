@@ -10,5 +10,41 @@
     "date": "2025-07-30T00:58:45.114Z",
     "filingDate": "2025-08-02T17:09:24.775Z",
     "ownershipPercent": 3.7119075168692572
+  },
+  {
+    "symbol": "AEM",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 46133,
+    "price": 452.5541737315699,
+    "value": 20877681.696758516,
+    "date": "2025-07-30T20:37:11.351Z",
+    "filingDate": "2025-08-03T15:20:28.082Z",
+    "ownershipPercent": 4.898253434132865
+  },
+  {
+    "symbol": "AEM",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 4739,
+    "price": 453.4449989357846,
+    "value": 2148875.8499566833,
+    "date": "2025-07-29T22:23:39.936Z",
+    "filingDate": "2025-08-01T09:58:10.030Z",
+    "ownershipPercent": 4.694390520887422
+  },
+  {
+    "symbol": "AEM",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 17619,
+    "price": 445.7497077847801,
+    "value": 7853664.1014600415,
+    "date": "2025-07-30T20:52:33.062Z",
+    "filingDate": "2025-08-01T11:12:39.671Z",
+    "ownershipPercent": 2.3882408725329394
   }
 ]

@@ -75,5 +75,26 @@
         "timestamp": "2025-08-03T11:30:14.387Z"
       }
     ]
+  },
+  {
+    "symbol": "NVDA",
+    "date": "2025-08-04",
+    "darkPoolVolume": 1498019,
+    "totalVolume": 15426256,
+    "darkPoolRatio": 0.09710839752691774,
+    "avgDarkPoolSize": 1130,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 106456,
+        "price": 173.9630023454305,
+        "timestamp": "2025-08-04T00:50:53.379Z"
+      },
+      {
+        "size": 88951,
+        "price": 175.2864649491754,
+        "timestamp": "2025-08-04T01:12:03.696Z"
+      }
+    ]
   }
 ]

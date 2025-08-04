@@ -22,5 +22,29 @@
     "newTarget": 361.57223037731586,
     "date": "2025-07-29T18:30:29.131Z",
     "reasoning": "Attractive valuation"
+  },
+  {
+    "symbol": "AMSC",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Buy",
+    "newRating": "Sell",
+    "previousTarget": 403.35478758435045,
+    "newTarget": 362.97379239765866,
+    "date": "2025-08-02T17:14:04.011Z",
+    "reasoning": "Improved market position"
+  },
+  {
+    "symbol": "AMSC",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 432.0222994989608,
+    "newTarget": 445.63234527103236,
+    "date": "2025-08-02T03:29:20.007Z",
+    "reasoning": "Attractive valuation"
   }
 ]

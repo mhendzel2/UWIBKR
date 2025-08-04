@@ -20,5 +20,27 @@
     "category": "earnings",
     "publishedAt": "2025-08-03T08:50:51.258Z",
     "url": "https://example.com/news/jci-1754238644054"
+  },
+  {
+    "symbol": "JCI",
+    "headline": "JCI announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for JCI with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.5627598042164581,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T21:12:08.078Z",
+    "url": "https://example.com/news/jci-1754294917820"
+  },
+  {
+    "symbol": "JCI",
+    "headline": "Regulatory approval granted for JCI new product",
+    "summary": "Recent developments suggest positive momentum for JCI with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7835610108418353,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-04T05:07:49.956Z",
+    "url": "https://example.com/news/jci-1754294917820"
   }
 ]

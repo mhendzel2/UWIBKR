@@ -22,5 +22,17 @@
     "newTarget": 408.29095259653775,
     "date": "2025-08-02T01:45:55.131Z",
     "reasoning": "Valuation concerns"
+  },
+  {
+    "symbol": "HWM",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Underperform",
+    "previousTarget": 510.84827536483124,
+    "newTarget": 519.7135141638452,
+    "date": "2025-08-01T20:14:19.812Z",
+    "reasoning": "Strong management team"
   }
 ]

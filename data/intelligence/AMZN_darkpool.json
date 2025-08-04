@@ -40,5 +40,36 @@
         "timestamp": "2025-08-03T10:29:03.636Z"
       }
     ]
+  },
+  {
+    "symbol": "AMZN",
+    "date": "2025-08-04",
+    "darkPoolVolume": 1509909,
+    "totalVolume": 11127938,
+    "darkPoolRatio": 0.13568632391733312,
+    "avgDarkPoolSize": 10713,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 72450,
+        "price": 213.60205990144527,
+        "timestamp": "2025-08-04T07:07:45.722Z"
+      },
+      {
+        "size": 93529,
+        "price": 214.14849069017103,
+        "timestamp": "2025-08-04T01:11:30.088Z"
+      },
+      {
+        "size": 69914,
+        "price": 213.57185795180635,
+        "timestamp": "2025-08-04T05:06:21.165Z"
+      },
+      {
+        "size": 62727,
+        "price": 215.60555388112448,
+        "timestamp": "2025-08-04T01:37:16.982Z"
+      }
+    ]
   }
 ]

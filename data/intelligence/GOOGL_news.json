@@ -31,5 +31,16 @@
     "category": "general",
     "publishedAt": "2025-08-03T05:41:59.347Z",
     "url": "https://example.com/news/googl-1754238603042"
+  },
+  {
+    "symbol": "GOOGL",
+    "headline": "Analyst upgrades GOOGL on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for GOOGL with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.5251349722062173,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-04T01:44:37.069Z",
+    "url": "https://example.com/news/googl-1754294909065"
   }
 ]

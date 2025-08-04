@@ -25,6 +25,8 @@ import { SignalProcessor } from "./services/signalProcessor";
 import { RiskManager } from "./services/riskManager";
 import { IBKRService } from "./services/ibkr";
 import { UnusualWhalesService } from "./services/unusualWhales";
+import { fundamentalDataManager } from "./services/fundamentalDataManager";
+import { ComprehensiveMarketSentimentService } from "./services/comprehensiveMarketSentiment";
 
 // Helper function for sector analysis
 function getTopSectors(trades: any[]): any[] {
@@ -812,6 +814,101 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Failed to get market mood:", error);
       res.status(500).json({ message: "Failed to retrieve market mood" });
+    }
+  });
+
+  // Comprehensive Market Sentiment Analysis
+  app.get("/api/sentiment/comprehensive", async (req, res) => {
+    try {
+      console.log('🔍 Fetching comprehensive market sentiment...');
+      const sentimentService = new ComprehensiveMarketSentimentService();
+      const comprehensiveData = await sentimentService.getComprehensiveMarketSentiment();
+      
+      console.log(`✅ Comprehensive sentiment analysis complete with ${comprehensiveData.overallSentiment.toFixed(2)} sentiment score`);
+      res.json(comprehensiveData);
+    } catch (error) {
+      console.error("❌ Failed to get comprehensive market sentiment:", error);
+      res.status(500).json({ 
+        message: "Failed to retrieve comprehensive market sentiment",
+        error: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
+  // Fundamental Data Management endpoints
+  app.get("/api/fundamentals/summary", async (req, res) => {
+    try {
+      console.log('📊 Fetching fundamental data summary...');
+      const summary = await fundamentalDataManager.getFundamentalSummary();
+      res.json(summary);
+    } catch (error) {
+      console.error("❌ Failed to get fundamental summary:", error);
+      res.status(500).json({ 
+        message: "Failed to retrieve fundamental summary",
+        error: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
+  app.get("/api/fundamentals/watchlist", async (req, res) => {
+    try {
+      console.log('📋 Fetching watchlist fundamentals...');
+      const watchlistName = req.query.name as string;
+      const watchlistData = await fundamentalDataManager.getWatchlistFundamentals(watchlistName);
+      
+      if (!watchlistData) {
+        return res.status(404).json({ message: "No fundamental data found for watchlist" });
+      }
+      
+      // Convert Map to object for JSON serialization
+      const responseData = {
+        ...watchlistData,
+        fundamentalData: Object.fromEntries(watchlistData.fundamentalData)
+      };
+      
+      res.json(responseData);
+    } catch (error) {
+      console.error("❌ Failed to get watchlist fundamentals:", error);
+      res.status(500).json({ 
+        message: "Failed to retrieve watchlist fundamentals",
+        error: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
+  app.get("/api/fundamentals/ticker/:ticker", async (req, res) => {
+    try {
+      const ticker = req.params.ticker.toUpperCase();
+      const forceRefresh = req.query.refresh === 'true';
+      
+      console.log(`📈 Fetching fundamental data for ${ticker} (refresh: ${forceRefresh})...`);
+      const fundamentalData = await fundamentalDataManager.getTickerFundamentals(ticker, forceRefresh);
+      
+      if (!fundamentalData) {
+        return res.status(404).json({ message: `No fundamental data found for ${ticker}` });
+      }
+      
+      res.json(fundamentalData);
+    } catch (error) {
+      console.error(`❌ Failed to get fundamental data for ${req.params.ticker}:`, error);
+      res.status(500).json({ 
+        message: "Failed to retrieve fundamental data",
+        error: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
+  app.post("/api/fundamentals/update", async (req, res) => {
+    try {
+      console.log('🔄 Starting manual fundamental data update...');
+      await fundamentalDataManager.updateActiveWatchlistFundamentals();
+      res.json({ message: "Fundamental data update initiated" });
+    } catch (error) {
+      console.error("❌ Failed to update fundamental data:", error);
+      res.status(500).json({ 
+        message: "Failed to update fundamental data",
+        error: error instanceof Error ? error.message : 'Unknown error'
+      });
     }
   });
 

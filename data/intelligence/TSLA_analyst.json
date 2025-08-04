@@ -22,5 +22,29 @@
     "newTarget": 339.00483420497966,
     "date": "2025-07-30T20:09:51.032Z",
     "reasoning": "Strong earnings momentum"
+  },
+  {
+    "symbol": "TSLA",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Sell",
+    "previousTarget": 345.12695436404,
+    "newTarget": 337.0323498902935,
+    "date": "2025-07-31T21:09:38.968Z",
+    "reasoning": "Competitive headwinds"
+  },
+  {
+    "symbol": "TSLA",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Outperform",
+    "newRating": "Outperform",
+    "previousTarget": 304.14235737700034,
+    "newTarget": 317.56932687539614,
+    "date": "2025-08-03T23:18:14.983Z",
+    "reasoning": "Fair valuation"
   }
 ]

@@ -42,5 +42,16 @@
     "category": "regulatory",
     "publishedAt": "2025-08-03T11:57:05.141Z",
     "url": "https://example.com/news/aapl-1754238602623"
+  },
+  {
+    "symbol": "AAPL",
+    "headline": "Regulatory approval granted for AAPL new product",
+    "summary": "Recent developments suggest positive momentum for AAPL with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.7801462986067942,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-04T05:42:49.293Z",
+    "url": "https://example.com/news/aapl-1754294908667"
   }
 ]

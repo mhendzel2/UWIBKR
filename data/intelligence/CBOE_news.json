@@ -9,5 +9,38 @@
     "category": "earnings",
     "publishedAt": "2025-08-03T15:13:08.530Z",
     "url": "https://example.com/news/cboe-1754238623399"
+  },
+  {
+    "symbol": "CBOE",
+    "headline": "CBOE reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for CBOE with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.8301733396720568,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-04T00:21:48.276Z",
+    "url": "https://example.com/news/cboe-1754294912801"
+  },
+  {
+    "symbol": "CBOE",
+    "headline": "Regulatory approval granted for CBOE new product",
+    "summary": "Recent developments suggest positive momentum for CBOE with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.49588288586129614,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-04T01:30:15.982Z",
+    "url": "https://example.com/news/cboe-1754294912803"
+  },
+  {
+    "symbol": "CBOE",
+    "headline": "CBOE announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for CBOE with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.6363458481535671,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-04T01:26:17.783Z",
+    "url": "https://example.com/news/cboe-1754294912803"
   }
 ]

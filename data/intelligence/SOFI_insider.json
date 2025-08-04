@@ -22,5 +22,41 @@
     "date": "2025-08-01T01:56:55.630Z",
     "filingDate": "2025-07-31T23:50:06.459Z",
     "ownershipPercent": 1.390478689323985
+  },
+  {
+    "symbol": "SOFI",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 8815,
+    "price": 452.7464229619078,
+    "value": 3990959.7184092174,
+    "date": "2025-07-31T10:02:03.407Z",
+    "filingDate": "2025-08-02T00:11:33.423Z",
+    "ownershipPercent": 5.079268739473151
+  },
+  {
+    "symbol": "SOFI",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 43582,
+    "price": 447.5311931470994,
+    "value": 19504304.459736884,
+    "date": "2025-07-31T16:22:05.924Z",
+    "filingDate": "2025-08-03T11:21:22.966Z",
+    "ownershipPercent": 3.92276836682128
+  },
+  {
+    "symbol": "SOFI",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 12409,
+    "price": 461.25623692869834,
+    "value": 5723728.644048218,
+    "date": "2025-08-01T18:19:39.679Z",
+    "filingDate": "2025-08-04T00:14:55.374Z",
+    "ownershipPercent": 4.380022739000998
   }
 ]

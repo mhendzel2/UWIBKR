@@ -70,5 +70,26 @@
         "timestamp": "2025-08-03T13:26:32.222Z"
       }
     ]
+  },
+  {
+    "symbol": "IWM",
+    "date": "2025-08-04",
+    "darkPoolVolume": 3224199,
+    "totalVolume": 15805797,
+    "darkPoolRatio": 0.20398838476794307,
+    "avgDarkPoolSize": 5877,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 83004,
+        "price": 216.2627389702365,
+        "timestamp": "2025-08-04T03:03:19.537Z"
+      },
+      {
+        "size": 96175,
+        "price": 216.86686761622738,
+        "timestamp": "2025-08-04T06:20:42.461Z"
+      }
+    ]
   }
 ]

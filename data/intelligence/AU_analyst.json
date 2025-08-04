@@ -22,5 +22,29 @@
     "newTarget": 480.9034078486158,
     "date": "2025-08-02T02:37:53.938Z",
     "reasoning": "Competitive headwinds"
+  },
+  {
+    "symbol": "AU",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Sell",
+    "newRating": "Outperform",
+    "previousTarget": 437.980201438122,
+    "newTarget": 470.2025582251126,
+    "date": "2025-08-01T01:21:33.557Z",
+    "reasoning": "Valuation concerns"
+  },
+  {
+    "symbol": "AU",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Buy",
+    "newRating": "Outperform",
+    "previousTarget": 453.3679334173014,
+    "newTarget": 422.5537753536967,
+    "date": "2025-07-30T12:23:39.987Z",
+    "reasoning": "Strong earnings momentum"
   }
 ]

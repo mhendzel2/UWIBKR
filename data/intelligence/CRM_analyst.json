@@ -34,5 +34,17 @@
     "newTarget": 524.4625403446313,
     "date": "2025-08-03T02:16:13.395Z",
     "reasoning": "Strong earnings momentum"
+  },
+  {
+    "symbol": "CRM",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Buy",
+    "newRating": "Hold",
+    "previousTarget": 448.44719707938657,
+    "newTarget": 483.9584828072781,
+    "date": "2025-07-30T14:27:15.133Z",
+    "reasoning": "Positive sector outlook"
   }
 ]

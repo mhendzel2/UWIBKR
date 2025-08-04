@@ -24,5 +24,36 @@
         "timestamp": "2025-08-03T13:46:08.326Z"
       }
     ]
+  },
+  {
+    "symbol": "CVLT",
+    "date": "2025-08-04",
+    "darkPoolVolume": 3570876,
+    "totalVolume": 14703571,
+    "darkPoolRatio": 0.24285773843646555,
+    "avgDarkPoolSize": 9915,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 117911,
+        "price": 459.11617744880766,
+        "timestamp": "2025-08-04T03:07:16.274Z"
+      },
+      {
+        "size": 59433,
+        "price": 454.934719908562,
+        "timestamp": "2025-08-04T03:01:11.715Z"
+      },
+      {
+        "size": 119841,
+        "price": 460.0786921108617,
+        "timestamp": "2025-08-04T04:09:09.547Z"
+      },
+      {
+        "size": 118026,
+        "price": 456.7756035726879,
+        "timestamp": "2025-08-04T07:04:45.826Z"
+      }
+    ]
   }
 ]

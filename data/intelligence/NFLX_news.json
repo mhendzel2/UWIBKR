@@ -31,5 +31,16 @@
     "category": "analyst",
     "publishedAt": "2025-08-03T04:43:18.494Z",
     "url": "https://example.com/news/nflx-1754238604391"
+  },
+  {
+    "symbol": "NFLX",
+    "headline": "Analyst upgrades NFLX on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for NFLX with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.840340920392805,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T21:11:04.313Z",
+    "url": "https://example.com/news/nflx-1754294910282"
   }
 ]

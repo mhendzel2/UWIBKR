@@ -1,0 +1,23 @@
+[
+  {
+    "symbol": "ELF",
+    "date": "2025-08-04",
+    "darkPoolVolume": 5832853,
+    "totalVolume": 18126722,
+    "darkPoolRatio": 0.32178200780041755,
+    "avgDarkPoolSize": 9902,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 123279,
+        "price": 455.3529978920891,
+        "timestamp": "2025-08-04T04:18:36.345Z"
+      },
+      {
+        "size": 95123,
+        "price": 457.6954009583798,
+        "timestamp": "2025-08-04T01:31:00.523Z"
+      }
+    ]
+  }
+]

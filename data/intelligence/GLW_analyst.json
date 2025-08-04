@@ -22,5 +22,17 @@
     "newTarget": 392.5066083679149,
     "date": "2025-07-30T18:35:01.029Z",
     "reasoning": "Competitive headwinds"
+  },
+  {
+    "symbol": "GLW",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Outperform",
+    "previousTarget": 482.86205613594916,
+    "newTarget": 467.51242272458023,
+    "date": "2025-07-31T19:09:41.177Z",
+    "reasoning": "Strong management team"
   }
 ]

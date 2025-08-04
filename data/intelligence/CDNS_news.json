@@ -20,5 +20,27 @@
     "category": "general",
     "publishedAt": "2025-08-03T12:23:21.571Z",
     "url": "https://example.com/news/cdns-1754238617886"
+  },
+  {
+    "symbol": "CDNS",
+    "headline": "Regulatory approval granted for CDNS new product",
+    "summary": "Recent developments suggest positive momentum for CDNS with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.5734363280393391,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-04T03:22:27.083Z",
+    "url": "https://example.com/news/cdns-1754294913211"
+  },
+  {
+    "symbol": "CDNS",
+    "headline": "CDNS raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for CDNS with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.7758379160005793,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T22:18:09.426Z",
+    "url": "https://example.com/news/cdns-1754294913211"
   }
 ]

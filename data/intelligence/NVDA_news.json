@@ -31,5 +31,27 @@
     "category": "regulatory",
     "publishedAt": "2025-08-03T14:47:12.703Z",
     "url": "https://example.com/news/nvda-1754238603481"
+  },
+  {
+    "symbol": "NVDA",
+    "headline": "NVDA raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for NVDA with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.8020249509780046,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T21:33:01.410Z",
+    "url": "https://example.com/news/nvda-1754294909479"
+  },
+  {
+    "symbol": "NVDA",
+    "headline": "NVDA raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for NVDA with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.6487099238265414,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T20:30:20.771Z",
+    "url": "https://example.com/news/nvda-1754294909481"
   }
 ]

@@ -10,5 +10,17 @@
     "date": "2025-08-03T00:44:32.376Z",
     "filingDate": "2025-08-01T19:09:55.302Z",
     "ownershipPercent": 2.270562050594467
+  },
+  {
+    "symbol": "CAKE",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 43751,
+    "price": 468.9889941613563,
+    "value": 20518737.4835535,
+    "date": "2025-07-28T22:18:00.443Z",
+    "filingDate": "2025-08-03T11:26:51.091Z",
+    "ownershipPercent": 2.049394196768398
   }
 ]

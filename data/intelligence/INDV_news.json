@@ -9,5 +9,38 @@
     "category": "regulatory",
     "publishedAt": "2025-08-03T08:36:25.279Z",
     "url": "https://example.com/news/indv-1754238649652"
+  },
+  {
+    "symbol": "INDV",
+    "headline": "Analyst upgrades INDV on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for INDV with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.6526530747636959,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T21:50:12.156Z",
+    "url": "https://example.com/news/indv-1754294916737"
+  },
+  {
+    "symbol": "INDV",
+    "headline": "Regulatory approval granted for INDV new product",
+    "summary": "Recent developments suggest positive momentum for INDV with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.4686344063131458,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-04T00:19:53.294Z",
+    "url": "https://example.com/news/indv-1754294916737"
+  },
+  {
+    "symbol": "INDV",
+    "headline": "INDV raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for INDV with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.9002512803407177,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-04T02:52:23.238Z",
+    "url": "https://example.com/news/indv-1754294916737"
   }
 ]

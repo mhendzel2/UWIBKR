@@ -22,5 +22,29 @@
     "newTarget": 400.9316165521133,
     "date": "2025-07-30T04:46:05.576Z",
     "reasoning": "Balanced risk/reward"
+  },
+  {
+    "symbol": "NVT",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Outperform",
+    "newRating": "Hold",
+    "previousTarget": 400.52455353325644,
+    "newTarget": 364.96325752264164,
+    "date": "2025-08-01T10:10:13.894Z",
+    "reasoning": "Strong management team"
+  },
+  {
+    "symbol": "NVT",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Buy",
+    "previousTarget": 392.030737504097,
+    "newTarget": 366.37866244181635,
+    "date": "2025-07-30T08:33:58.296Z",
+    "reasoning": "Valuation concerns"
   }
 ]

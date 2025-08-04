@@ -9,5 +9,27 @@
     "category": "analyst",
     "publishedAt": "2025-08-03T13:05:08.184Z",
     "url": "https://example.com/news/cake-1754238632566"
+  },
+  {
+    "symbol": "CAKE",
+    "headline": "Analyst upgrades CAKE on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for CAKE with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.5901061159161206,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-04T00:35:46.847Z",
+    "url": "https://example.com/news/cake-1754294912597"
+  },
+  {
+    "symbol": "CAKE",
+    "headline": "CAKE announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for CAKE with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.3905960304397872,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-04T07:37:38.305Z",
+    "url": "https://example.com/news/cake-1754294912597"
   }
 ]

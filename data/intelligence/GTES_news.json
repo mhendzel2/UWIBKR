@@ -31,5 +31,27 @@
     "category": "guidance",
     "publishedAt": "2025-08-03T09:25:07.163Z",
     "url": "https://example.com/news/gtes-1754238646158"
+  },
+  {
+    "symbol": "GTES",
+    "headline": "GTES announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for GTES with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.3625266618745214,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T21:19:00.942Z",
+    "url": "https://example.com/news/gtes-1754294915930"
+  },
+  {
+    "symbol": "GTES",
+    "headline": "Analyst upgrades GTES on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for GTES with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.7938112245348308,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-04T00:11:38.036Z",
+    "url": "https://example.com/news/gtes-1754294915930"
   }
 ]

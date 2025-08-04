@@ -20,5 +20,27 @@
     "category": "general",
     "publishedAt": "2025-08-03T12:51:19.055Z",
     "url": "https://example.com/news/klac-1754238630256"
+  },
+  {
+    "symbol": "KLAC",
+    "headline": "Analyst upgrades KLAC on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for KLAC with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7122586508589951,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-04T00:52:35.428Z",
+    "url": "https://example.com/news/klac-1754294918234"
+  },
+  {
+    "symbol": "KLAC",
+    "headline": "Analyst upgrades KLAC on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for KLAC with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.6157613495668941,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-04T02:46:22.213Z",
+    "url": "https://example.com/news/klac-1754294918234"
   }
 ]

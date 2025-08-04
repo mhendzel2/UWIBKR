@@ -34,5 +34,17 @@
     "date": "2025-07-31T04:54:05.891Z",
     "filingDate": "2025-08-03T08:52:16.296Z",
     "ownershipPercent": 1.5820892727861913
+  },
+  {
+    "symbol": "CDNS",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 6352,
+    "price": 456.83671785215444,
+    "value": 2901826.831796885,
+    "date": "2025-07-31T11:14:43.880Z",
+    "filingDate": "2025-08-03T23:52:13.267Z",
+    "ownershipPercent": 4.651106975151332
   }
 ]

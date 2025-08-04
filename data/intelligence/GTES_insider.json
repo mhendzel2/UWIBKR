@@ -10,5 +10,17 @@
     "date": "2025-07-28T10:29:52.366Z",
     "filingDate": "2025-08-01T04:04:28.307Z",
     "ownershipPercent": 0.5711050782017179
+  },
+  {
+    "symbol": "GTES",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 15878,
+    "price": 456.8848019436065,
+    "value": 7254416.885260584,
+    "date": "2025-07-30T14:40:16.056Z",
+    "filingDate": "2025-08-03T01:01:23.632Z",
+    "ownershipPercent": 1.7490218558524928
   }
 ]

@@ -10,5 +10,29 @@
     "date": "2025-08-02T17:15:05.778Z",
     "filingDate": "2025-07-31T17:39:45.121Z",
     "ownershipPercent": 4.775263892692306
+  },
+  {
+    "symbol": "BE",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 1278,
+    "price": 445.37864085405124,
+    "value": 569193.9030114774,
+    "date": "2025-08-03T20:30:29.022Z",
+    "filingDate": "2025-08-01T14:05:19.661Z",
+    "ownershipPercent": 1.7889528489999962
+  },
+  {
+    "symbol": "BE",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 13581,
+    "price": 458.63423727674615,
+    "value": 6228711.57645549,
+    "date": "2025-07-31T00:15:44.064Z",
+    "filingDate": "2025-08-02T14:38:40.139Z",
+    "ownershipPercent": 4.806718668055469
   }
 ]

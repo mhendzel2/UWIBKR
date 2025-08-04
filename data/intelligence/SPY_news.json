@@ -42,5 +42,16 @@
     "category": "earnings",
     "publishedAt": "2025-08-03T12:48:09.986Z",
     "url": "https://example.com/news/spy-1754238601209"
+  },
+  {
+    "symbol": "SPY",
+    "headline": "SPY announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for SPY with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.6057005483920219,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-03T23:23:14.426Z",
+    "url": "https://example.com/news/spy-1754294907971"
   }
 ]

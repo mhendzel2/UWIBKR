@@ -58,5 +58,17 @@
     "date": "2025-07-30T01:03:19.088Z",
     "filingDate": "2025-08-01T04:53:31.976Z",
     "ownershipPercent": 2.088687589630609
+  },
+  {
+    "symbol": "TSLA",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "sell",
+    "shares": 14861,
+    "price": 304.1734380531374,
+    "value": 4520321.462907675,
+    "date": "2025-08-03T20:34:33.594Z",
+    "filingDate": "2025-08-01T15:25:05.916Z",
+    "ownershipPercent": 4.23346716229579
   }
 ]

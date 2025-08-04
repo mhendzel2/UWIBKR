@@ -22,5 +22,29 @@
     "newTarget": 539.5560359433055,
     "date": "2025-08-01T06:22:47.521Z",
     "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "SPY",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Sell",
+    "newRating": "Underperform",
+    "previousTarget": 571.081583021157,
+    "newTarget": 538.7572981932584,
+    "date": "2025-08-03T22:59:04.800Z",
+    "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "SPY",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Hold",
+    "previousTarget": 575.1451487927843,
+    "newTarget": 581.2043691199726,
+    "date": "2025-08-04T06:45:37.086Z",
+    "reasoning": "Valuation concerns"
   }
 ]

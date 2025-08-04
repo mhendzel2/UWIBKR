@@ -10,5 +10,29 @@
     "date": "2025-07-30T17:31:43.081Z",
     "filingDate": "2025-08-03T11:48:33.297Z",
     "ownershipPercent": 1.2161379357195312
+  },
+  {
+    "symbol": "CVNA",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 6729,
+    "price": 460.64533857067926,
+    "value": 3099682.4832421006,
+    "date": "2025-07-30T16:55:40.762Z",
+    "filingDate": "2025-08-01T12:08:47.153Z",
+    "ownershipPercent": 3.0866229005149672
+  },
+  {
+    "symbol": "CVNA",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 49601,
+    "price": 458.702704777555,
+    "value": 22752112.859671507,
+    "date": "2025-07-28T15:17:19.911Z",
+    "filingDate": "2025-08-03T09:48:22.043Z",
+    "ownershipPercent": 0.9776519228643809
   }
 ]

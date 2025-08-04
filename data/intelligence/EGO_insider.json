@@ -10,5 +10,41 @@
     "date": "2025-08-02T07:03:16.615Z",
     "filingDate": "2025-08-01T12:29:14.533Z",
     "ownershipPercent": 4.706763948319299
+  },
+  {
+    "symbol": "EGO",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 3296,
+    "price": 448.54867844416884,
+    "value": 1478416.4441519806,
+    "date": "2025-08-03T01:35:07.996Z",
+    "filingDate": "2025-08-01T14:41:56.642Z",
+    "ownershipPercent": 1.6272197315168502
+  },
+  {
+    "symbol": "EGO",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 50334,
+    "price": 458.6069139039822,
+    "value": 23083520.40444304,
+    "date": "2025-07-31T21:18:48.031Z",
+    "filingDate": "2025-08-03T22:08:46.749Z",
+    "ownershipPercent": 0.38363962477526814
+  },
+  {
+    "symbol": "EGO",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 10371,
+    "price": 454.61540669672416,
+    "value": 4714816.382851726,
+    "date": "2025-08-01T06:16:19.412Z",
+    "filingDate": "2025-08-01T14:20:31.858Z",
+    "ownershipPercent": 1.2593774757935994
   }
 ]

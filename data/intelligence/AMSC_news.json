@@ -20,5 +20,16 @@
     "category": "general",
     "publishedAt": "2025-08-03T12:19:07.803Z",
     "url": "https://example.com/news/amsc-1754238606315"
+  },
+  {
+    "symbol": "AMSC",
+    "headline": "Analyst upgrades AMSC on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for AMSC with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.5964690367896858,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T23:34:37.258Z",
+    "url": "https://example.com/news/amsc-1754294911552"
   }
 ]

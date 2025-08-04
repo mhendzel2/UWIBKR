@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "CRWV",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Hold",
+    "previousTarget": 499.2498803506785,
+    "newTarget": 529.4749279174628,
+    "date": "2025-08-02T10:30:17.047Z",
+    "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "CRWV",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Outperform",
+    "newRating": "Buy",
+    "previousTarget": 424.5409558668081,
+    "newTarget": 393.45731808985056,
+    "date": "2025-08-02T14:36:25.931Z",
+    "reasoning": "Improved market position"
+  }
+]

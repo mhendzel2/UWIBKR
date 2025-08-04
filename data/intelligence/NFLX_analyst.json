@@ -34,5 +34,29 @@
     "newTarget": 407.70288539388144,
     "date": "2025-07-30T04:51:56.539Z",
     "reasoning": "Balanced risk/reward"
+  },
+  {
+    "symbol": "NFLX",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Outperform",
+    "previousTarget": 444.8958364441112,
+    "newTarget": 415.93479870129704,
+    "date": "2025-08-02T02:21:40.097Z",
+    "reasoning": "Strong earnings momentum"
+  },
+  {
+    "symbol": "NFLX",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Outperform",
+    "newRating": "Sell",
+    "previousTarget": 475.5772475915495,
+    "newTarget": 513.3080430192502,
+    "date": "2025-08-01T21:13:29.441Z",
+    "reasoning": "Balanced risk/reward"
   }
 ]

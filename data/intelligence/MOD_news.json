@@ -31,5 +31,27 @@
     "category": "earnings",
     "publishedAt": "2025-08-03T16:10:00.962Z",
     "url": "https://example.com/news/mod-1754238630896"
+  },
+  {
+    "symbol": "MOD",
+    "headline": "Regulatory approval granted for MOD new product",
+    "summary": "Recent developments suggest positive momentum for MOD with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.5546026174233383,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T21:21:46.121Z",
+    "url": "https://example.com/news/mod-1754294918877"
+  },
+  {
+    "symbol": "MOD",
+    "headline": "MOD reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for MOD with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.7587314902051641,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-04T06:47:24.343Z",
+    "url": "https://example.com/news/mod-1754294918877"
   }
 ]

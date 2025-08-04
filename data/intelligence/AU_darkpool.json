@@ -39,5 +39,36 @@
         "timestamp": "2025-08-03T13:17:07.114Z"
       }
     ]
+  },
+  {
+    "symbol": "AU",
+    "date": "2025-08-04",
+    "darkPoolVolume": 1464998,
+    "totalVolume": 15253363,
+    "darkPoolRatio": 0.09604426250132511,
+    "avgDarkPoolSize": 7053,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 51968,
+        "price": 457.7172273070334,
+        "timestamp": "2025-08-04T04:28:14.515Z"
+      },
+      {
+        "size": 67772,
+        "price": 458.4121381568495,
+        "timestamp": "2025-08-04T06:34:01.540Z"
+      },
+      {
+        "size": 97661,
+        "price": 453.54430125430144,
+        "timestamp": "2025-08-04T04:16:07.632Z"
+      },
+      {
+        "size": 70405,
+        "price": 456.41805137942526,
+        "timestamp": "2025-08-04T05:35:07.591Z"
+      }
+    ]
   }
 ]

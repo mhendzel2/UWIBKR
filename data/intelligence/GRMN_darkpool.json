@@ -34,5 +34,31 @@
         "timestamp": "2025-08-03T11:17:39.717Z"
       }
     ]
+  },
+  {
+    "symbol": "GRMN",
+    "date": "2025-08-04",
+    "darkPoolVolume": 4987663,
+    "totalVolume": 11568560,
+    "darkPoolRatio": 0.4311394849488614,
+    "avgDarkPoolSize": 1424,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 76428,
+        "price": 455.5914037109234,
+        "timestamp": "2025-08-04T01:56:30.056Z"
+      },
+      {
+        "size": 90211,
+        "price": 453.6785988249914,
+        "timestamp": "2025-08-04T07:44:49.163Z"
+      },
+      {
+        "size": 125141,
+        "price": 456.9770493786914,
+        "timestamp": "2025-08-04T06:15:01.935Z"
+      }
+    ]
   }
 ]

@@ -34,5 +34,36 @@
         "timestamp": "2025-08-03T10:35:07.480Z"
       }
     ]
+  },
+  {
+    "symbol": "INOD",
+    "date": "2025-08-04",
+    "darkPoolVolume": 3539816,
+    "totalVolume": 11348734,
+    "darkPoolRatio": 0.3119128530107411,
+    "avgDarkPoolSize": 5696,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 143885,
+        "price": 453.78721500852214,
+        "timestamp": "2025-08-04T02:10:39.474Z"
+      },
+      {
+        "size": 109585,
+        "price": 460.2617121366426,
+        "timestamp": "2025-08-04T07:55:46.698Z"
+      },
+      {
+        "size": 103274,
+        "price": 453.8421286018328,
+        "timestamp": "2025-08-04T08:01:08.346Z"
+      },
+      {
+        "size": 118455,
+        "price": 453.4205541800206,
+        "timestamp": "2025-08-04T07:37:19.364Z"
+      }
+    ]
   }
 ]

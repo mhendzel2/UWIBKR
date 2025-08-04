@@ -46,5 +46,17 @@
     "newTarget": 232.33673711694317,
     "date": "2025-07-31T02:25:15.058Z",
     "reasoning": "Valuation concerns"
+  },
+  {
+    "symbol": "IWM",
+    "firm": "Goldman Sachs",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Hold",
+    "previousTarget": 191.03546600425668,
+    "newTarget": 170.68317332249677,
+    "date": "2025-07-31T16:20:44.434Z",
+    "reasoning": "Valuation concerns"
   }
 ]

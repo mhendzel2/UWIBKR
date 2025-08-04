@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "CRWV",
+    "insider": "Jane Doe",
+    "title": "CFO",
+    "transactionType": "buy",
+    "shares": 6936,
+    "price": 454.17530001912183,
+    "value": 3150159.880932629,
+    "date": "2025-08-03T17:27:17.575Z",
+    "filingDate": "2025-08-01T20:06:39.463Z",
+    "ownershipPercent": 0.14120514042269208
+  }
+]

@@ -70,5 +70,29 @@
     "date": "2025-08-02T12:07:15.528Z",
     "filingDate": "2025-08-02T09:03:37.725Z",
     "ownershipPercent": 1.8419076660818168
+  },
+  {
+    "symbol": "QQQ",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 34488,
+    "price": 563.8319122544,
+    "value": 19445434.989829745,
+    "date": "2025-07-30T16:23:01.188Z",
+    "filingDate": "2025-08-02T09:14:57.255Z",
+    "ownershipPercent": 3.774719149307647
+  },
+  {
+    "symbol": "QQQ",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 30624,
+    "price": 555.7426455831951,
+    "value": 17019062.778339766,
+    "date": "2025-07-29T09:28:18.411Z",
+    "filingDate": "2025-08-03T13:39:27.475Z",
+    "ownershipPercent": 5.083411673385983
   }
 ]

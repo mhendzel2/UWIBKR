@@ -42,5 +42,27 @@
     "category": "guidance",
     "publishedAt": "2025-08-03T04:36:27.468Z",
     "url": "https://example.com/news/amd-1754238604144"
+  },
+  {
+    "symbol": "AMD",
+    "headline": "AMD reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for AMD with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.7371943412156647,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-04T03:15:03.262Z",
+    "url": "https://example.com/news/amd-1754294910035"
+  },
+  {
+    "symbol": "AMD",
+    "headline": "AMD raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for AMD with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.856862682507614,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-03T22:08:12.291Z",
+    "url": "https://example.com/news/amd-1754294910036"
   }
 ]

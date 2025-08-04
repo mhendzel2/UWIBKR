@@ -45,5 +45,41 @@
         "timestamp": "2025-08-03T15:31:43.429Z"
       }
     ]
+  },
+  {
+    "symbol": "NFLX",
+    "date": "2025-08-04",
+    "darkPoolVolume": 3414247,
+    "totalVolume": 9293214,
+    "darkPoolRatio": 0.36739141054967633,
+    "avgDarkPoolSize": 8756,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 81662,
+        "price": 458.84421690615653,
+        "timestamp": "2025-08-04T07:52:12.775Z"
+      },
+      {
+        "size": 83066,
+        "price": 459.0325878421074,
+        "timestamp": "2025-08-04T02:34:45.391Z"
+      },
+      {
+        "size": 123114,
+        "price": 459.6979803880609,
+        "timestamp": "2025-08-04T06:19:16.392Z"
+      },
+      {
+        "size": 62821,
+        "price": 455.283845917252,
+        "timestamp": "2025-08-04T07:01:27.501Z"
+      },
+      {
+        "size": 118029,
+        "price": 461.0234681095468,
+        "timestamp": "2025-08-04T01:57:21.402Z"
+      }
+    ]
   }
 ]

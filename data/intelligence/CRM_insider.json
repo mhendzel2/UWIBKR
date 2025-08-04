@@ -34,5 +34,29 @@
     "date": "2025-08-01T16:11:30.488Z",
     "filingDate": "2025-08-01T23:08:20.181Z",
     "ownershipPercent": 3.155007026772052
+  },
+  {
+    "symbol": "CRM",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 42127,
+    "price": 449.4997608367453,
+    "value": 18936076.42476957,
+    "date": "2025-07-28T19:08:40.502Z",
+    "filingDate": "2025-08-02T14:31:18.346Z",
+    "ownershipPercent": 2.087267195944005
+  },
+  {
+    "symbol": "CRM",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 6764,
+    "price": 466.13404650182497,
+    "value": 3152930.690538344,
+    "date": "2025-07-29T18:31:02.009Z",
+    "filingDate": "2025-08-03T20:06:03.331Z",
+    "ownershipPercent": 4.761171473482028
   }
 ]

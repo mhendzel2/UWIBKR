@@ -34,5 +34,41 @@
     "date": "2025-07-29T15:08:06.243Z",
     "filingDate": "2025-08-01T12:25:36.505Z",
     "ownershipPercent": 4.924681260657528
+  },
+  {
+    "symbol": "SPY",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 4271,
+    "price": 609.6242502214437,
+    "value": 2603705.172695786,
+    "date": "2025-07-28T20:23:29.551Z",
+    "filingDate": "2025-08-02T23:31:11.993Z",
+    "ownershipPercent": 2.762286215699994
+  },
+  {
+    "symbol": "SPY",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 46781,
+    "price": 608.2046921718552,
+    "value": 28452423.704491556,
+    "date": "2025-08-01T22:26:55.719Z",
+    "filingDate": "2025-08-01T12:02:02.440Z",
+    "ownershipPercent": 1.588290377766547
+  },
+  {
+    "symbol": "SPY",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 35992,
+    "price": 617.8524046019049,
+    "value": 22237743.746431764,
+    "date": "2025-07-30T08:57:38.691Z",
+    "filingDate": "2025-08-03T07:54:28.122Z",
+    "ownershipPercent": 0.8739822661349482
   }
 ]

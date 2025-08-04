@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "CRWV",
+    "date": "2025-08-04",
+    "darkPoolVolume": 2358482,
+    "totalVolume": 8198963,
+    "darkPoolRatio": 0.2876561340745165,
+    "avgDarkPoolSize": 3980,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 121435,
+        "price": 460.1020618934407,
+        "timestamp": "2025-08-04T06:26:40.055Z"
+      },
+      {
+        "size": 119790,
+        "price": 455.61206922764507,
+        "timestamp": "2025-08-04T07:57:47.678Z"
+      },
+      {
+        "size": 81056,
+        "price": 452.0759182107933,
+        "timestamp": "2025-08-04T06:24:52.272Z"
+      },
+      {
+        "size": 125537,
+        "price": 454.50908158090726,
+        "timestamp": "2025-08-04T06:13:55.481Z"
+      },
+      {
+        "size": 91486,
+        "price": 460.26376532589325,
+        "timestamp": "2025-08-04T07:22:19.208Z"
+      }
+    ]
+  }
+]

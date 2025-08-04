@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "CCJ",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 414.17209957784104,
+    "newTarget": 423.60906665321625,
+    "date": "2025-07-31T05:54:22.242Z",
+    "reasoning": "Valuation concerns"
+  },
+  {
+    "symbol": "CCJ",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Outperform",
+    "newRating": "Hold",
+    "previousTarget": 450.42473667250204,
+    "newTarget": 478.2881989767475,
+    "date": "2025-08-03T06:26:16.702Z",
+    "reasoning": "Attractive valuation"
+  }
+]

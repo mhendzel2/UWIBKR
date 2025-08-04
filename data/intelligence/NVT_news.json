@@ -20,5 +20,27 @@
     "category": "guidance",
     "publishedAt": "2025-08-03T08:30:36.053Z",
     "url": "https://example.com/news/nvt-1754238609938"
+  },
+  {
+    "symbol": "NVT",
+    "headline": "NVT raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for NVT with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.6651501516366763,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-04T00:08:53.880Z",
+    "url": "https://example.com/news/nvt-1754294919723"
+  },
+  {
+    "symbol": "NVT",
+    "headline": "NVT raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for NVT with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.8594340943789458,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-04T01:37:26.941Z",
+    "url": "https://example.com/news/nvt-1754294919725"
   }
 ]

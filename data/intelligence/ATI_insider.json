@@ -10,5 +10,41 @@
     "date": "2025-08-01T12:10:40.602Z",
     "filingDate": "2025-08-02T12:42:03.079Z",
     "ownershipPercent": 1.4131466098025713
+  },
+  {
+    "symbol": "ATI",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 1916,
+    "price": 455.1697345935786,
+    "value": 872105.2114812966,
+    "date": "2025-08-01T12:30:00.202Z",
+    "filingDate": "2025-08-04T02:06:58.607Z",
+    "ownershipPercent": 4.43379214167723
+  },
+  {
+    "symbol": "ATI",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 27177,
+    "price": 454.6640019685065,
+    "value": 12356403.581498101,
+    "date": "2025-08-02T21:53:46.984Z",
+    "filingDate": "2025-08-02T09:08:46.726Z",
+    "ownershipPercent": 1.1367063575863512
+  },
+  {
+    "symbol": "ATI",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 45051,
+    "price": 443.25481865652966,
+    "value": 19969072.83529532,
+    "date": "2025-08-03T08:58:45.848Z",
+    "filingDate": "2025-08-01T15:46:18.596Z",
+    "ownershipPercent": 1.2205583782785312
   }
 ]

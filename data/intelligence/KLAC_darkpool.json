@@ -39,5 +39,41 @@
         "timestamp": "2025-08-03T13:34:06.305Z"
       }
     ]
+  },
+  {
+    "symbol": "KLAC",
+    "date": "2025-08-04",
+    "darkPoolVolume": 4463323,
+    "totalVolume": 11717176,
+    "darkPoolRatio": 0.3809213926632151,
+    "avgDarkPoolSize": 7970,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 92705,
+        "price": 449.4745981562295,
+        "timestamp": "2025-08-04T07:15:47.361Z"
+      },
+      {
+        "size": 78428,
+        "price": 448.4086108958754,
+        "timestamp": "2025-08-04T01:36:35.725Z"
+      },
+      {
+        "size": 84738,
+        "price": 448.7885791048886,
+        "timestamp": "2025-08-04T05:36:08.604Z"
+      },
+      {
+        "size": 77579,
+        "price": 451.3131654615214,
+        "timestamp": "2025-08-04T00:12:54.098Z"
+      },
+      {
+        "size": 63778,
+        "price": 454.097356332067,
+        "timestamp": "2025-08-04T07:10:39.775Z"
+      }
+    ]
   }
 ]

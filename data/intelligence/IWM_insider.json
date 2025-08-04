@@ -70,5 +70,17 @@
     "date": "2025-07-28T07:48:54.504Z",
     "filingDate": "2025-08-02T20:14:38.733Z",
     "ownershipPercent": 1.6522497516038037
+  },
+  {
+    "symbol": "IWM",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 13160,
+    "price": 211.40380810008043,
+    "value": 2782074.1145970584,
+    "date": "2025-08-01T00:56:30.324Z",
+    "filingDate": "2025-08-02T10:23:49.961Z",
+    "ownershipPercent": 2.141060744185239
   }
 ]

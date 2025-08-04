@@ -1,0 +1,26 @@
+[
+  {
+    "symbol": "ELF",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Outperform",
+    "newRating": "Underperform",
+    "previousTarget": 511.9597498308428,
+    "newTarget": 469.976256507274,
+    "date": "2025-08-03T12:07:40.677Z",
+    "reasoning": "Valuation concerns"
+  },
+  {
+    "symbol": "ELF",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Buy",
+    "previousTarget": 476.743941672571,
+    "newTarget": 436.959825014854,
+    "date": "2025-08-02T00:18:15.148Z",
+    "reasoning": "Margin pressure concerns"
+  }
+]

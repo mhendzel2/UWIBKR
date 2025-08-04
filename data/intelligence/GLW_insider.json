@@ -34,5 +34,29 @@
     "date": "2025-07-31T12:05:20.705Z",
     "filingDate": "2025-08-02T02:03:51.478Z",
     "ownershipPercent": 1.948672410665525
+  },
+  {
+    "symbol": "GLW",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 17065,
+    "price": 459.15799460169677,
+    "value": 7835531.177877955,
+    "date": "2025-08-02T20:51:10.809Z",
+    "filingDate": "2025-08-02T11:28:21.737Z",
+    "ownershipPercent": 0.6714492274350158
+  },
+  {
+    "symbol": "GLW",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 3830,
+    "price": 460.20572300632966,
+    "value": 1762587.9191142425,
+    "date": "2025-08-03T10:31:33.461Z",
+    "filingDate": "2025-08-03T17:26:07.088Z",
+    "ownershipPercent": 1.021371717914934
   }
 ]

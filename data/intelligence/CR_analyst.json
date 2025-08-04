@@ -22,5 +22,29 @@
     "newTarget": 437.38168678302026,
     "date": "2025-07-30T00:58:20.726Z",
     "reasoning": "Attractive valuation"
+  },
+  {
+    "symbol": "CR",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Outperform",
+    "newRating": "Outperform",
+    "previousTarget": 465.69751037890484,
+    "newTarget": 462.4688194489487,
+    "date": "2025-08-03T20:11:49.518Z",
+    "reasoning": "Balanced risk/reward"
+  },
+  {
+    "symbol": "CR",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Buy",
+    "newRating": "Hold",
+    "previousTarget": 478.84910504916627,
+    "newTarget": 448.5819011493918,
+    "date": "2025-08-01T01:07:23.801Z",
+    "reasoning": "Valuation concerns"
   }
 ]

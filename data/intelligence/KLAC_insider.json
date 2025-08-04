@@ -34,5 +34,29 @@
     "date": "2025-07-30T10:17:02.404Z",
     "filingDate": "2025-08-03T00:21:50.565Z",
     "ownershipPercent": 0.8802888874852498
+  },
+  {
+    "symbol": "KLAC",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "sell",
+    "shares": 14645,
+    "price": 457.5167415788981,
+    "value": 6700332.680422963,
+    "date": "2025-08-01T17:19:20.778Z",
+    "filingDate": "2025-08-02T13:11:26.413Z",
+    "ownershipPercent": 3.5225323242641102
+  },
+  {
+    "symbol": "KLAC",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 31530,
+    "price": 450.73249926921557,
+    "value": 14211595.701958368,
+    "date": "2025-07-29T04:07:59.995Z",
+    "filingDate": "2025-08-01T17:45:06.340Z",
+    "ownershipPercent": 4.976192076969056
   }
 ]

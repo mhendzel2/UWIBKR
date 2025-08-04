@@ -20,5 +20,38 @@
     "category": "regulatory",
     "publishedAt": "2025-08-03T04:41:22.891Z",
     "url": "https://example.com/news/net-1754238625809"
+  },
+  {
+    "symbol": "NET",
+    "headline": "NET reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for NET with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.7519937119034633,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-04T00:11:19.952Z",
+    "url": "https://example.com/news/net-1754294919510"
+  },
+  {
+    "symbol": "NET",
+    "headline": "NET raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for NET with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.6949940017027201,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-04T02:13:50.114Z",
+    "url": "https://example.com/news/net-1754294919511"
+  },
+  {
+    "symbol": "NET",
+    "headline": "Analyst upgrades NET on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for NET with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7914468128921559,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-04T02:48:45.440Z",
+    "url": "https://example.com/news/net-1754294919513"
   }
 ]

@@ -10,5 +10,17 @@
     "newTarget": 532.7440632739515,
     "date": "2025-07-29T18:43:44.831Z",
     "reasoning": "Valuation concerns"
+  },
+  {
+    "symbol": "LRCX",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Buy",
+    "newRating": "Outperform",
+    "previousTarget": 479.1841423019582,
+    "newTarget": 449.5770446865017,
+    "date": "2025-08-03T13:27:24.851Z",
+    "reasoning": "Attractive valuation"
   }
 ]

@@ -9,5 +9,27 @@
     "category": "guidance",
     "publishedAt": "2025-08-03T05:19:29.513Z",
     "url": "https://example.com/news/be-1754238607186"
+  },
+  {
+    "symbol": "BE",
+    "headline": "BE raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for BE with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.7853765770906703,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-04T01:01:40.706Z",
+    "url": "https://example.com/news/be-1754294912177"
+  },
+  {
+    "symbol": "BE",
+    "headline": "Regulatory approval granted for BE new product",
+    "summary": "Recent developments suggest positive momentum for BE with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.5666194726678763,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-03T20:49:09.973Z",
+    "url": "https://example.com/news/be-1754294912178"
   }
 ]

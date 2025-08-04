@@ -9,5 +9,27 @@
     "category": "general",
     "publishedAt": "2025-08-03T09:41:30.147Z",
     "url": "https://example.com/news/mtz-1754238619807"
+  },
+  {
+    "symbol": "MTZ",
+    "headline": "MTZ reports strong Q4 earnings, beats estimates",
+    "summary": "Recent developments suggest positive momentum for MTZ with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.7342094172918324,
+    "importance": "high",
+    "category": "earnings",
+    "publishedAt": "2025-08-04T00:31:59.409Z",
+    "url": "https://example.com/news/mtz-1754294919294"
+  },
+  {
+    "symbol": "MTZ",
+    "headline": "MTZ raises full-year guidance",
+    "summary": "Recent developments suggest positive momentum for MTZ with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.7998323092234112,
+    "importance": "high",
+    "category": "guidance",
+    "publishedAt": "2025-08-04T00:32:40.424Z",
+    "url": "https://example.com/news/mtz-1754294919295"
   }
 ]

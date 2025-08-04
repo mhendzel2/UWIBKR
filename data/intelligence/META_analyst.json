@@ -34,5 +34,17 @@
     "newTarget": 517.5291095095348,
     "date": "2025-07-31T14:20:57.380Z",
     "reasoning": "Compelling growth story"
+  },
+  {
+    "symbol": "META",
+    "firm": "Bank of America",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Buy",
+    "newRating": "Underperform",
+    "previousTarget": 409.7909633361588,
+    "newTarget": 365.50061058030457,
+    "date": "2025-08-01T12:32:01.306Z",
+    "reasoning": "Strong earnings momentum"
   }
 ]

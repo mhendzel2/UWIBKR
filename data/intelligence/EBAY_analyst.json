@@ -22,5 +22,17 @@
     "newTarget": 501.383779579673,
     "date": "2025-08-01T09:05:04.306Z",
     "reasoning": "Strong management team"
+  },
+  {
+    "symbol": "EBAY",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "upgrade",
+    "previousRating": "Underperform",
+    "newRating": "Hold",
+    "previousTarget": 465.25063561431756,
+    "newTarget": 426.8936954715305,
+    "date": "2025-08-02T14:44:06.290Z",
+    "reasoning": "Positive sector outlook"
   }
 ]

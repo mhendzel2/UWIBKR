@@ -22,5 +22,17 @@
     "newTarget": 466.3372645215515,
     "date": "2025-08-01T02:09:39.136Z",
     "reasoning": "Stable fundamentals"
+  },
+  {
+    "symbol": "SOFI",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Outperform",
+    "previousTarget": 405.539991836997,
+    "newTarget": 360.3152901276958,
+    "date": "2025-08-02T20:25:21.096Z",
+    "reasoning": "Margin pressure concerns"
   }
 ]

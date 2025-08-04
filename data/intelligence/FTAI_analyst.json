@@ -22,5 +22,17 @@
     "newTarget": 365.9646788059634,
     "date": "2025-08-03T15:31:25.343Z",
     "reasoning": "Attractive valuation"
+  },
+  {
+    "symbol": "FTAI",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "maintain",
+    "previousRating": "Hold",
+    "newRating": "Sell",
+    "previousTarget": 418.0986363222193,
+    "newTarget": 405.7902055134742,
+    "date": "2025-08-01T07:43:40.064Z",
+    "reasoning": "Balanced risk/reward"
   }
 ]

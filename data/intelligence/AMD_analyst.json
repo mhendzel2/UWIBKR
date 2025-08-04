@@ -22,5 +22,17 @@
     "newTarget": 513.9802199471424,
     "date": "2025-07-29T23:47:18.326Z",
     "reasoning": "Margin pressure concerns"
+  },
+  {
+    "symbol": "AMD",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Sell",
+    "newRating": "Buy",
+    "previousTarget": 510.26744636847275,
+    "newTarget": 503.77443771987873,
+    "date": "2025-08-02T17:12:03.933Z",
+    "reasoning": "Competitive headwinds"
   }
 ]

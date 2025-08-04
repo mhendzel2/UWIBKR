@@ -174,12 +174,12 @@ interface OptionsAlert {
 }
 
 export class ComprehensiveMarketSentimentService {
-  private uwService: UnusualWhalesService;
+  private unusualWhales: UnusualWhalesService;
   private cache: Map<string, { data: any; timestamp: number }> = new Map();
   private cacheTimeout = 5 * 60 * 1000; // 5 minutes
 
   constructor() {
-    this.uwService = new UnusualWhalesService();
+    this.unusualWhales = new UnusualWhalesService();
   }
 
   async getComprehensiveMarketSentiment(): Promise<MarketSentimentData> {
@@ -241,7 +241,7 @@ export class ComprehensiveMarketSentimentService {
       const cached = this.getCachedData('marketTide');
       if (cached) return cached;
 
-      const marketTide = await this.uwService.getMarketTide();
+      const marketTide = await this.unusualWhales.getMarketSentiment();
       this.setCachedData('marketTide', marketTide);
       return marketTide;
     } catch (error) {
@@ -255,21 +255,38 @@ export class ComprehensiveMarketSentimentService {
       const cached = this.getCachedData('optionsFlow');
       if (cached) return cached;
 
-      // Get comprehensive options flow data
-      const majorTickers = ['SPY', 'QQQ', 'IWM', 'VIX'];
-      const flowPromises = majorTickers.map(ticker => 
-        this.uwService.getOptionsFlow(ticker).catch(() => [])
-      );
-      
-      const flowAlerts = await this.uwService.getFlowAlerts({
-        minPremium: 100000,
-        minDte: 1
-      });
+      // Get comprehensive options flow data using enhanced API endpoints
+      const [
+        totalOptionsVolume,
+        netPremiumTicks,
+        flowAlerts,
+        contractScreener
+      ] = await Promise.allSettled([
+        this.unusualWhales.getTotalOptionsVolume(),
+        this.unusualWhales.getNetPremiumTicks('SPY'),
+        this.unusualWhales.getFlowAlerts({
+          minPremium: 250000,
+          minDte: 1
+        }),
+        this.unusualWhales.getOptionContractScreener({
+          minPremium: 500000,
+          minVolumeOiRatio: 2.0,
+          minDte: 7
+        })
+      ]);
 
-      const flowResults = await Promise.all(flowPromises);
+      // Process all flow data comprehensively
+      const allFlowData = [
+        ...(totalOptionsVolume.status === 'fulfilled' ? totalOptionsVolume.value : []),
+        ...(netPremiumTicks.status === 'fulfilled' ? netPremiumTicks.value : [])
+      ];
+      const allAlertData = [
+        ...(flowAlerts.status === 'fulfilled' ? flowAlerts.value : []),
+        ...(contractScreener.status === 'fulfilled' ? contractScreener.value : [])
+      ];
       
-      // Calculate comprehensive flow metrics
-      const optionsFlow = this.analyzeOptionsFlow(flowResults.flat(), flowAlerts);
+      const optionsFlow = this.analyzeOptionsFlow(allFlowData, allAlertData);
+      
       this.setCachedData('optionsFlow', optionsFlow);
       return optionsFlow;
     } catch (error) {
@@ -283,14 +300,20 @@ export class ComprehensiveMarketSentimentService {
       const cached = this.getCachedData('marketBreadth');
       if (cached) return cached;
 
-      // Analyze sector rotation and breadth using flow data
-      const sectorData = await this.analyzeSectorRotation();
+      // Analyze sector rotation using enhanced sector ETF data
+      const sectorETFs = await this.unusualWhales.getSectorETFs().catch(() => []);
+      
       const breadthData = {
         advanceDeclineRatio: this.calculateAdvanceDeclineRatio(),
         newHighsLows: this.calculateNewHighsLows(),
         volumeAnalysis: this.analyzeVolumeProfile(),
-        sectorRotation: sectorData
+        sectorRotation: this.analyzeSectorRotation()
       };
+
+      // Store sector data for enhanced analysis
+      if (sectorETFs.length > 0) {
+        this.setCachedData('sectorETFs', sectorETFs);
+      }
 
       this.setCachedData('marketBreadth', breadthData);
       return breadthData;
@@ -305,16 +328,19 @@ export class ComprehensiveMarketSentimentService {
       const cached = this.getCachedData('volatility');
       if (cached) return cached;
 
-      // Get VIX and volatility data
-      const vixState = await this.uwService.getStockState('VIX');
-      const spyGex = await this.uwService.getGammaExposure('SPY').catch(() => null);
+      // Get comprehensive volatility data using enhanced endpoints
+      const [vixData, spyGex, termStructure] = await Promise.allSettled([
+        this.unusualWhales.getStockState('VIX'),
+        this.unusualWhales.getGammaExposure('SPY'),
+        this.unusualWhales.getImpliedVolatilityTermStructure('SPY')
+      ]);
       
       const volatilityMetrics = {
-        vixLevel: vixState?.price || 20,
-        vixTrend: this.calculateVIXTrend(vixState?.price || 20),
-        termStructure: await this.getVIXTermStructure(),
+        vixLevel: vixData.status === 'fulfilled' && vixData.value?.price || 20,
+        vixTrend: this.calculateVIXTrend(vixData.status === 'fulfilled' && vixData.value?.price || 20),
+        termStructure: termStructure.status === 'fulfilled' ? termStructure.value : [],
         skewMetrics: await this.calculateSkewMetrics(),
-        gexLevels: this.analyzeGEXLevels(spyGex)
+        gexLevels: this.analyzeGEXLevels(spyGex.status === 'fulfilled' ? spyGex.value : null)
       };
 
       this.setCachedData('volatility', volatilityMetrics);
@@ -330,16 +356,18 @@ export class ComprehensiveMarketSentimentService {
       const cached = this.getCachedData('sentiment');
       if (cached) return cached;
 
-      // Get sentiment from multiple sources
-      const majorTickers = ['SPY', 'AAPL', 'MSFT', 'GOOGL', 'AMZN'];
-      const newsPromises = majorTickers.slice(0, 3).map(ticker => 
-        this.uwService.getNewsSentiment(ticker).catch(() => [])
-      );
-      
-      const newsResults = await Promise.all(newsPromises);
+      // Get sentiment from multiple sources using enhanced endpoints
+      const [newsData, screenerData] = await Promise.allSettled([
+        this.unusualWhales.getNewsSentiment('SPY'),
+        this.unusualWhales.getStockScreener({
+          minVolume: 1000000,
+          minImpliedMove: 0.02,
+          sectors: ['Technology', 'Financial Services', 'Healthcare']
+        })
+      ]);
       
       const sentimentIndicators = {
-        newsFlow: this.aggregateNewsFlow(newsResults.flat()),
+        newsFlow: this.aggregateNewsFlow(newsData.status === 'fulfilled' ? newsData.value : []),
         analystSentiment: this.analyzeAnalystSentiment(),
         socialSentiment: this.analyzeSocialSentiment(),
         insiderActivity: this.analyzeInsiderActivity(),
@@ -380,8 +408,8 @@ export class ComprehensiveMarketSentimentService {
       const cached = this.getCachedData('unusual');
       if (cached) return cached;
 
-      // Get unusual activity data
-      const flowAlerts = await this.uwService.getFlowAlerts({
+      // Get unusual activity data using enhanced flow analysis
+      const flowAlerts = await this.unusualWhales.getFlowAlerts({
         minPremium: 1000000, // $1M+ for significant flows
         minDte: 7
       });

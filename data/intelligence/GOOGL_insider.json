@@ -34,5 +34,29 @@
     "date": "2025-08-01T13:21:49.333Z",
     "filingDate": "2025-08-02T20:22:28.258Z",
     "ownershipPercent": 3.535512570493966
+  },
+  {
+    "symbol": "GOOGL",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 23113,
+    "price": 192.65582723884242,
+    "value": 4452854.134971364,
+    "date": "2025-08-02T08:24:57.311Z",
+    "filingDate": "2025-08-02T10:01:16.151Z",
+    "ownershipPercent": 2.7273670368374603
+  },
+  {
+    "symbol": "GOOGL",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 11745,
+    "price": 188.78748181329678,
+    "value": 2217308.9738971707,
+    "date": "2025-08-01T04:46:37.238Z",
+    "filingDate": "2025-08-02T18:42:59.444Z",
+    "ownershipPercent": 0.9301763918233396
   }
 ]

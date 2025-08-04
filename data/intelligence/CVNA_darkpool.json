@@ -39,5 +39,31 @@
         "timestamp": "2025-08-03T16:21:36.145Z"
       }
     ]
+  },
+  {
+    "symbol": "CVNA",
+    "date": "2025-08-04",
+    "darkPoolVolume": 2353407,
+    "totalVolume": 7721786,
+    "darkPoolRatio": 0.3047749575033548,
+    "avgDarkPoolSize": 4394,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 131233,
+        "price": 452.95889245305824,
+        "timestamp": "2025-08-04T05:34:05.567Z"
+      },
+      {
+        "size": 79710,
+        "price": 458.363165760113,
+        "timestamp": "2025-08-04T06:11:30.103Z"
+      },
+      {
+        "size": 141425,
+        "price": 455.9591484662944,
+        "timestamp": "2025-08-04T06:56:09.175Z"
+      }
+    ]
   }
 ]

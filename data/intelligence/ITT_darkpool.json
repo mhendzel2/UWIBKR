@@ -24,5 +24,26 @@
         "timestamp": "2025-08-03T09:35:07.450Z"
       }
     ]
+  },
+  {
+    "symbol": "ITT",
+    "date": "2025-08-04",
+    "darkPoolVolume": 4940193,
+    "totalVolume": 15375023,
+    "darkPoolRatio": 0.3213128851904807,
+    "avgDarkPoolSize": 1055,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 98093,
+        "price": 449.9786164073065,
+        "timestamp": "2025-08-04T00:52:21.697Z"
+      },
+      {
+        "size": 74765,
+        "price": 453.2843596412772,
+        "timestamp": "2025-08-04T05:11:27.313Z"
+      }
+    ]
   }
 ]

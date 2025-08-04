@@ -45,5 +45,31 @@
         "timestamp": "2025-08-03T11:24:38.946Z"
       }
     ]
+  },
+  {
+    "symbol": "TSLA",
+    "date": "2025-08-04",
+    "darkPoolVolume": 4270937,
+    "totalVolume": 15805906,
+    "darkPoolRatio": 0.27021146399326934,
+    "avgDarkPoolSize": 2956,
+    "sentiment": "bullish",
+    "significantTrades": [
+      {
+        "size": 59416,
+        "price": 302.77427420272124,
+        "timestamp": "2025-08-04T02:02:02.838Z"
+      },
+      {
+        "size": 107813,
+        "price": 303.2156215094531,
+        "timestamp": "2025-08-04T01:00:15.936Z"
+      },
+      {
+        "size": 119078,
+        "price": 302.9215729344726,
+        "timestamp": "2025-08-04T05:21:28.821Z"
+      }
+    ]
   }
 ]

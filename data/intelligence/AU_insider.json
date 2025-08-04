@@ -22,5 +22,29 @@
     "date": "2025-08-02T06:20:37.688Z",
     "filingDate": "2025-07-31T21:17:26.490Z",
     "ownershipPercent": 4.81019516667024
+  },
+  {
+    "symbol": "AU",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 13521,
+    "price": 463.2705687795697,
+    "value": 6263881.360468562,
+    "date": "2025-07-29T00:21:01.295Z",
+    "filingDate": "2025-08-02T16:46:48.550Z",
+    "ownershipPercent": 1.9306006142229426
+  },
+  {
+    "symbol": "AU",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "sell",
+    "shares": 37079,
+    "price": 466.37055370316006,
+    "value": 17292553.760759473,
+    "date": "2025-08-01T23:11:13.718Z",
+    "filingDate": "2025-08-02T03:50:35.920Z",
+    "ownershipPercent": 1.2271398294736235
   }
 ]

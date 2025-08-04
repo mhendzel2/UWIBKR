@@ -31,5 +31,16 @@
     "category": "regulatory",
     "publishedAt": "2025-08-03T15:16:22.529Z",
     "url": "https://example.com/news/glw-1754238624870"
+  },
+  {
+    "symbol": "GLW",
+    "headline": "Analyst upgrades GLW on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for GLW with strong market reception.",
+    "source": "Bloomberg",
+    "sentiment": 0.5599316064781442,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-04T03:10:57.252Z",
+    "url": "https://example.com/news/glw-1754294915298"
   }
 ]

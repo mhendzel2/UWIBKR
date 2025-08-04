@@ -22,5 +22,29 @@
     "newTarget": 256.07688286947456,
     "date": "2025-08-02T07:36:22.089Z",
     "reasoning": "Fair valuation"
+  },
+  {
+    "symbol": "AMZN",
+    "firm": "JPMorgan",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Hold",
+    "newRating": "Outperform",
+    "previousTarget": 223.2404012293648,
+    "newTarget": 232.62397494380946,
+    "date": "2025-08-04T01:01:36.215Z",
+    "reasoning": "Margin pressure concerns"
+  },
+  {
+    "symbol": "AMZN",
+    "firm": "Barclays",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Outperform",
+    "newRating": "Underperform",
+    "previousTarget": 231.59932647421834,
+    "newTarget": 218.64131846221082,
+    "date": "2025-08-03T11:30:19.775Z",
+    "reasoning": "Margin pressure concerns"
   }
 ]

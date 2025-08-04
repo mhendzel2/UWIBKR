@@ -20,5 +20,27 @@
     "category": "analyst",
     "publishedAt": "2025-08-03T15:28:55.947Z",
     "url": "https://example.com/news/am-1754238627519"
+  },
+  {
+    "symbol": "AM",
+    "headline": "AM announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for AM with strong market reception.",
+    "source": "CNBC",
+    "sentiment": 0.4204379789640937,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-04T00:28:08.908Z",
+    "url": "https://example.com/news/am-1754294911351"
+  },
+  {
+    "symbol": "AM",
+    "headline": "Analyst upgrades AM on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for AM with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.8113541084702668,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-04T05:59:52.431Z",
+    "url": "https://example.com/news/am-1754294911351"
   }
 ]

@@ -1,0 +1,14 @@
+[
+  {
+    "symbol": "GRRR",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Sell",
+    "newRating": "Underperform",
+    "previousTarget": 486.8746629513337,
+    "newTarget": 455.6537626668229,
+    "date": "2025-08-03T15:09:26.959Z",
+    "reasoning": "Compelling growth story"
+  }
+]

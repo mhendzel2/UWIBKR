@@ -42,5 +42,27 @@
     "category": "analyst",
     "publishedAt": "2025-08-03T13:28:08.893Z",
     "url": "https://example.com/news/bac-1754238605041"
+  },
+  {
+    "symbol": "BAC",
+    "headline": "BAC announces strategic partnership",
+    "summary": "Recent developments suggest positive momentum for BAC with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.5625432399023161,
+    "importance": "medium",
+    "category": "general",
+    "publishedAt": "2025-08-04T00:30:07.487Z",
+    "url": "https://example.com/news/bac-1754294910720"
+  },
+  {
+    "symbol": "BAC",
+    "headline": "Analyst upgrades BAC on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for BAC with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.5993512864896612,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-04T00:50:06.350Z",
+    "url": "https://example.com/news/bac-1754294910720"
   }
 ]

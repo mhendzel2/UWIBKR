@@ -39,5 +39,36 @@
         "timestamp": "2025-08-03T08:34:37.492Z"
       }
     ]
+  },
+  {
+    "symbol": "FTAI",
+    "date": "2025-08-04",
+    "darkPoolVolume": 5914512,
+    "totalVolume": 17346454,
+    "darkPoolRatio": 0.3409637497093066,
+    "avgDarkPoolSize": 6996,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 98867,
+        "price": 454.02067541917694,
+        "timestamp": "2025-08-04T01:54:28.442Z"
+      },
+      {
+        "size": 131759,
+        "price": 452.3686991637337,
+        "timestamp": "2025-08-04T03:34:37.043Z"
+      },
+      {
+        "size": 84636,
+        "price": 456.1767731806888,
+        "timestamp": "2025-08-04T02:37:02.449Z"
+      },
+      {
+        "size": 90766,
+        "price": 447.4673247854693,
+        "timestamp": "2025-08-04T04:08:45.614Z"
+      }
+    ]
   }
 ]

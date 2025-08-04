@@ -34,5 +34,41 @@
         "timestamp": "2025-08-03T09:05:28.248Z"
       }
     ]
+  },
+  {
+    "symbol": "ING",
+    "date": "2025-08-04",
+    "darkPoolVolume": 1071777,
+    "totalVolume": 13597207,
+    "darkPoolRatio": 0.0788233201127261,
+    "avgDarkPoolSize": 8787,
+    "sentiment": "bearish",
+    "significantTrades": [
+      {
+        "size": 83747,
+        "price": 455.5169120019127,
+        "timestamp": "2025-08-04T03:20:29.062Z"
+      },
+      {
+        "size": 57501,
+        "price": 453.30212433606357,
+        "timestamp": "2025-08-04T07:33:34.485Z"
+      },
+      {
+        "size": 62577,
+        "price": 453.7087077178607,
+        "timestamp": "2025-08-04T07:11:44.484Z"
+      },
+      {
+        "size": 109499,
+        "price": 450.1230655522899,
+        "timestamp": "2025-08-04T00:34:52.917Z"
+      },
+      {
+        "size": 67919,
+        "price": 455.62251301525515,
+        "timestamp": "2025-08-04T07:39:41.623Z"
+      }
+    ]
   }
 ]

@@ -60,5 +60,26 @@
         "timestamp": "2025-08-03T14:59:06.321Z"
       }
     ]
+  },
+  {
+    "symbol": "BAC",
+    "date": "2025-08-04",
+    "darkPoolVolume": 4851473,
+    "totalVolume": 5609620,
+    "darkPoolRatio": 0.8648487776355618,
+    "avgDarkPoolSize": 9872,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 140501,
+        "price": 458.9556890791064,
+        "timestamp": "2025-08-04T04:14:28.434Z"
+      },
+      {
+        "size": 96727,
+        "price": 462.8065866578871,
+        "timestamp": "2025-08-04T06:03:09.444Z"
+      }
+    ]
   }
 ]

@@ -22,5 +22,17 @@
     "newTarget": 493.6249926579476,
     "date": "2025-07-30T10:23:38.199Z",
     "reasoning": "Stable fundamentals"
+  },
+  {
+    "symbol": "CYBR",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Underperform",
+    "newRating": "Buy",
+    "previousTarget": 404.1638137952738,
+    "newTarget": 440.84480877798495,
+    "date": "2025-07-30T09:22:22.088Z",
+    "reasoning": "Attractive valuation"
   }
 ]

@@ -22,5 +22,17 @@
     "newTarget": 469.6216367604956,
     "date": "2025-08-02T03:04:30.487Z",
     "reasoning": "Margin pressure concerns"
+  },
+  {
+    "symbol": "BOOT",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Outperform",
+    "newRating": "Outperform",
+    "previousTarget": 502.3892985032547,
+    "newTarget": 545.9148867472228,
+    "date": "2025-08-03T05:35:17.115Z",
+    "reasoning": "Valuation concerns"
   }
 ]

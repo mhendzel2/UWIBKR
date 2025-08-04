@@ -1,0 +1,38 @@
+[
+  {
+    "symbol": "MRVL",
+    "insider": "John Smith",
+    "title": "CEO",
+    "transactionType": "buy",
+    "shares": 41813,
+    "price": 451.62067543600944,
+    "value": 18883615.30200586,
+    "date": "2025-07-31T09:10:19.643Z",
+    "filingDate": "2025-08-01T17:41:31.046Z",
+    "ownershipPercent": 2.8045451216388364
+  },
+  {
+    "symbol": "MRVL",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "buy",
+    "shares": 8483,
+    "price": 468.8790725900281,
+    "value": 3977501.1727812085,
+    "date": "2025-08-03T21:14:54.962Z",
+    "filingDate": "2025-08-02T13:32:59.733Z",
+    "ownershipPercent": 3.483443455276125
+  },
+  {
+    "symbol": "MRVL",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 47383,
+    "price": 463.9093243270327,
+    "value": 21981415.51458779,
+    "date": "2025-08-01T14:55:53.928Z",
+    "filingDate": "2025-08-01T11:36:50.140Z",
+    "ownershipPercent": 3.120815277407337
+  }
+]

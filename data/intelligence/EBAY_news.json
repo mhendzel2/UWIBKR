@@ -9,5 +9,16 @@
     "category": "analyst",
     "publishedAt": "2025-08-03T07:24:46.811Z",
     "url": "https://example.com/news/ebay-1754238628171"
+  },
+  {
+    "symbol": "EBAY",
+    "headline": "Analyst upgrades EBAY on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for EBAY with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.7129170261870537,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T21:36:31.761Z",
+    "url": "https://example.com/news/ebay-1754294914465"
   }
 ]

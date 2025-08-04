@@ -34,5 +34,29 @@
     "date": "2025-08-03T12:08:05.970Z",
     "filingDate": "2025-08-03T05:41:12.603Z",
     "ownershipPercent": 3.9413231924362777
+  },
+  {
+    "symbol": "ING",
+    "insider": "Sarah Wilson",
+    "title": "Director",
+    "transactionType": "buy",
+    "shares": 17392,
+    "price": 455.98044811534453,
+    "value": 7930411.953622072,
+    "date": "2025-07-31T20:37:06.253Z",
+    "filingDate": "2025-08-01T10:21:12.690Z",
+    "ownershipPercent": 0.4034320681325575
+  },
+  {
+    "symbol": "ING",
+    "insider": "Mike Johnson",
+    "title": "CTO",
+    "transactionType": "sell",
+    "shares": 18937,
+    "price": 463.56558970516437,
+    "value": 8778541.572246697,
+    "date": "2025-07-28T13:22:03.552Z",
+    "filingDate": "2025-08-01T23:12:42.963Z",
+    "ownershipPercent": 4.513419262429538
   }
 ]

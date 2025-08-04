@@ -22,5 +22,17 @@
     "newTarget": 462.45192374676515,
     "date": "2025-07-30T19:09:52.701Z",
     "reasoning": "Positive sector outlook"
+  },
+  {
+    "symbol": "CVLT",
+    "firm": "Morgan Stanley",
+    "analyst": "Research Team",
+    "action": "downgrade",
+    "previousRating": "Underperform",
+    "newRating": "Underperform",
+    "previousTarget": 492.93813197237654,
+    "newTarget": 535.1950305795623,
+    "date": "2025-08-02T03:01:27.134Z",
+    "reasoning": "Valuation concerns"
   }
 ]

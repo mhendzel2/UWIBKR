@@ -34,5 +34,26 @@
         "timestamp": "2025-08-03T16:18:35.933Z"
       }
     ]
+  },
+  {
+    "symbol": "CYBR",
+    "date": "2025-08-04",
+    "darkPoolVolume": 1332857,
+    "totalVolume": 5230481,
+    "darkPoolRatio": 0.25482493866242895,
+    "avgDarkPoolSize": 3574,
+    "sentiment": "neutral",
+    "significantTrades": [
+      {
+        "size": 139408,
+        "price": 454.009467450944,
+        "timestamp": "2025-08-04T06:41:55.009Z"
+      },
+      {
+        "size": 80555,
+        "price": 452.817436654543,
+        "timestamp": "2025-08-04T01:26:53.840Z"
+      }
+    ]
   }
 ]

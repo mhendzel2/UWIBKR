@@ -31,5 +31,16 @@
     "category": "earnings",
     "publishedAt": "2025-08-03T10:14:40.281Z",
     "url": "https://example.com/news/lrcx-1754238614604"
+  },
+  {
+    "symbol": "LRCX",
+    "headline": "Regulatory approval granted for LRCX new product",
+    "summary": "Recent developments suggest positive momentum for LRCX with strong market reception.",
+    "source": "MarketWatch",
+    "sentiment": 0.7778694516273716,
+    "importance": "medium",
+    "category": "regulatory",
+    "publishedAt": "2025-08-04T04:36:59.924Z",
+    "url": "https://example.com/news/lrcx-1754294918671"
   }
 ]

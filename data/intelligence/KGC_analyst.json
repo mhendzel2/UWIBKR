@@ -22,5 +22,17 @@
     "newTarget": 454.4552003050642,
     "date": "2025-08-01T11:26:58.807Z",
     "reasoning": "Attractive valuation"
+  },
+  {
+    "symbol": "KGC",
+    "firm": "Wells Fargo",
+    "analyst": "Research Team",
+    "action": "initiate",
+    "previousRating": "Outperform",
+    "newRating": "Buy",
+    "previousTarget": 402.62551261180903,
+    "newTarget": 365.0706711861951,
+    "date": "2025-08-02T16:44:36.545Z",
+    "reasoning": "Strong management team"
   }
 ]

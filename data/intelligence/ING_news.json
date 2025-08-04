@@ -31,5 +31,27 @@
     "category": "general",
     "publishedAt": "2025-08-03T05:28:18.954Z",
     "url": "https://example.com/news/ing-1754238630048"
+  },
+  {
+    "symbol": "ING",
+    "headline": "Analyst upgrades ING on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for ING with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.7859677570274024,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-04T01:20:36.571Z",
+    "url": "https://example.com/news/ing-1754294916945"
+  },
+  {
+    "symbol": "ING",
+    "headline": "Analyst upgrades ING on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for ING with strong market reception.",
+    "source": "Reuters",
+    "sentiment": 0.7591824687722254,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-04T07:09:24.267Z",
+    "url": "https://example.com/news/ing-1754294916945"
   }
 ]

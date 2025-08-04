@@ -64,5 +64,16 @@
     "category": "regulatory",
     "publishedAt": "2025-08-03T11:12:33.894Z",
     "url": "https://example.com/news/amzn-1754238603186"
+  },
+  {
+    "symbol": "AMZN",
+    "headline": "Analyst upgrades AMZN on strong fundamentals",
+    "summary": "Recent developments suggest positive momentum for AMZN with strong market reception.",
+    "source": "Yahoo Finance",
+    "sentiment": 0.646082376236239,
+    "importance": "medium",
+    "category": "analyst",
+    "publishedAt": "2025-08-03T22:45:55.639Z",
+    "url": "https://example.com/news/amzn-1754294909200"
   }
 ]
