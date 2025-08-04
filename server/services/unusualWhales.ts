@@ -1657,7 +1657,7 @@ export class UnusualWhalesService {
         this.makeRequest('/market/market-tide').catch(() => null),
         this.makeRequest('/market/total-options-volume').catch(() => null),
         this.makeRequest('/stock/SPY/net-prem-ticks').catch(() => null),
-        this.getFlowAlerts({ minPremium: 1000000, limit: 10 }).catch(() => [])
+        this.getFlowAlerts({ minPremium: 1000000 }).catch(() => [])
       ]);
 
       // Calculate market sentiment from flow data
@@ -1681,8 +1681,8 @@ export class UnusualWhalesService {
 
       // Calculate put/call ratio from total volume
       let putCallRatio = 0.8;
-      if (totalVolume && totalVolume.put_volume && totalVolume.call_volume) {
-        putCallRatio = parseFloat(totalVolume.put_volume) / parseFloat(totalVolume.call_volume);
+      if (totalVolume && (totalVolume as any).put_volume && (totalVolume as any).call_volume) {
+        putCallRatio = parseFloat((totalVolume as any).put_volume) / parseFloat((totalVolume as any).call_volume);
       }
 
       // Process largest trades from flow alerts
@@ -1711,7 +1711,11 @@ export class UnusualWhalesService {
         });
       }
 
-      const sectorRotation = {
+      const sectorRotation: {
+        inflows: string[];
+        outflows: string[];
+        neutral: string[];
+      } = {
         inflows: [],
         outflows: [],
         neutral: []
@@ -1739,7 +1743,7 @@ export class UnusualWhalesService {
           iwm: { price: 198.40, change: -0.3, changePercent: -0.15 }
         },
         optionsMetrics: {
-          totalVolume: totalVolume?.total_volume || 28500000,
+          totalVolume: (totalVolume as any)?.total_volume || 28500000,
           putCallRatio: Math.round(putCallRatio * 100) / 100,
           unusualActivity: Array.isArray(flowAlerts) ? flowAlerts.length : 0,
           largestTrades

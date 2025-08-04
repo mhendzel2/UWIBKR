@@ -160,12 +160,14 @@ export default function NewsSentimentPage() {
   });
 
   // Sector Performance data for broader context
-  const { data: sectorPerformance = [] } = useQuery({
+  const { data: sectorPerformance = [], isLoading: loadingSectors, error: sectorError } = useQuery({
     queryKey: ['/api/options/sector-performance', Date.now()],
     queryFn: async () => {
       console.log(`[${new Date().toLocaleTimeString()}] Fetching sector performance...`);
       const response = await fetch('/api/options/sector-performance');
-      if (!response.ok) throw new Error('Failed to fetch sector performance');
+      if (!response.ok) {
+        throw new Error(`Failed to fetch sector performance: ${response.status} ${response.statusText}`);
+      }
       const data = await response.json();
       console.log(`[${new Date().toLocaleTimeString()}] Sector performance updated:`, data?.length || 0, 'sectors');
       return data;
@@ -175,15 +177,19 @@ export default function NewsSentimentPage() {
     refetchOnWindowFocus: true,
     refetchOnMount: true,
     refetchOnReconnect: true,
+    retry: 3,
+    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
   });
 
   // Market Overview for broader context
-  const { data: marketOverview } = useQuery({
+  const { data: marketOverview, isLoading: loadingMarket, error: marketError } = useQuery({
     queryKey: ['/api/options/market-overview', Date.now()],
     queryFn: async () => {
       console.log(`[${new Date().toLocaleTimeString()}] Fetching market overview...`);
       const response = await fetch('/api/options/market-overview');
-      if (!response.ok) throw new Error('Failed to fetch market overview');
+      if (!response.ok) {
+        throw new Error(`Failed to fetch market overview: ${response.status} ${response.statusText}`);
+      }
       const data = await response.json();
       console.log(`[${new Date().toLocaleTimeString()}] Market overview updated:`, data);
       return data;
@@ -193,6 +199,8 @@ export default function NewsSentimentPage() {
     refetchOnWindowFocus: true,
     refetchOnMount: true,
     refetchOnReconnect: true,
+    retry: 3,
+    retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
   });
 
   const formatTime = (timestamp: string) => {
@@ -416,7 +424,14 @@ export default function NewsSentimentPage() {
             <Building className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            {sectorPerformance.length > 0 && (
+            {sectorError && (
+              <div className="text-xs text-red-500 mb-2">
+                Error loading sector data
+              </div>
+            )}
+            {loadingSectors ? (
+              <div className="text-sm text-muted-foreground">Loading...</div>
+            ) : sectorPerformance.length > 0 ? (
               <>
                 <div className="text-2xl font-bold text-green-600">
                   {sectorPerformance[0]?.sector || 'Technology'}
@@ -425,8 +440,7 @@ export default function NewsSentimentPage() {
                   {sectorPerformance[0]?.performance?.toFixed(1) || '+2.3'}% today
                 </p>
               </>
-            )}
-            {sectorPerformance.length === 0 && (
+            ) : (
               <>
                 <div className="text-2xl font-bold text-green-600">Technology</div>
                 <p className="text-xs text-muted-foreground">+2.3% today</p>
@@ -442,12 +456,23 @@ export default function NewsSentimentPage() {
             <Activity className="h-4 w-4 text-muted-foreground" />
           </CardHeader>
           <CardContent>
-            <div className="text-2xl font-bold text-yellow-600">
-              {marketOverview?.vixLevel?.toFixed(1) || '18.5'}
-            </div>
-            <p className="text-xs text-muted-foreground">
-              {marketOverview?.vixTrend || 'falling'} trend
-            </p>
+            {marketError && (
+              <div className="text-xs text-red-500 mb-2">
+                Error loading market data
+              </div>
+            )}
+            {loadingMarket ? (
+              <div className="text-sm text-muted-foreground">Loading...</div>
+            ) : (
+              <>
+                <div className="text-2xl font-bold text-yellow-600">
+                  {marketOverview?.vixLevel?.toFixed(1) || '18.5'}
+                </div>
+                <p className="text-xs text-muted-foreground">
+                  {marketOverview?.vixTrend || 'falling'} trend
+                </p>
+              </>
+            )}
           </CardContent>
         </Card>
       </div>
