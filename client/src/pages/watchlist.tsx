@@ -346,12 +346,44 @@ export default function WatchlistPage() {
         </TabsContent>
 
         <TabsContent value="intelligence" className="space-y-4">
+          {/* Symbol Selector */}
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center">
+                <Target className="mr-2 h-5 w-5" />
+                Market Intelligence
+              </CardTitle>
+              <CardDescription>
+                Select a symbol from your watchlist to view detailed market intelligence
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="flex flex-wrap gap-2">
+                {Array.isArray(watchlist) && watchlist.filter(item => item.enabled).map((item) => (
+                  <Button
+                    key={item.symbol}
+                    variant={selectedSymbol === item.symbol ? "default" : "outline"}
+                    size="sm"
+                    onClick={() => setSelectedSymbol(item.symbol)}
+                    className="flex items-center gap-2"
+                  >
+                    {item.symbol}
+                    {item.gexTracking && <Badge variant="outline" className="text-xs">GEX</Badge>}
+                  </Button>
+                ))}
+              </div>
+              {(!watchlist || watchlist.length === 0) && (
+                <p className="text-gray-500 text-sm">No symbols in watchlist. Add symbols to get started.</p>
+              )}
+            </CardContent>
+          </Card>
+
           {selectedSymbol ? (
             <div>
               <div className="flex items-center justify-between mb-4">
                 <h3 className="text-xl font-semibold">{selectedSymbol} Market Intelligence</h3>
                 <Button variant="outline" onClick={() => setSelectedSymbol(null)}>
-                  Back to List
+                  Clear Selection
                 </Button>
               </div>
 
@@ -487,15 +519,7 @@ export default function WatchlistPage() {
                 </div>
               )}
             </div>
-          ) : (
-            <div className="text-center py-8">
-              <Newspaper className="mx-auto h-12 w-12 text-gray-400" />
-              <h3 className="mt-4 text-lg font-medium">Select a Symbol</h3>
-              <p className="text-gray-600 dark:text-gray-400">
-                Choose a symbol from your watchlist to view detailed market intelligence
-              </p>
-            </div>
-          )}
+          ) : null}
         </TabsContent>
 
         <TabsContent value="alerts" className="space-y-4">

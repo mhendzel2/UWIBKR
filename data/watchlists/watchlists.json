@@ -149,57 +149,323 @@
       "description": "IBD",
       "symbols": [
         {
-          "symbol": "ARM",
-          "sector": "Unknown",
+          "symbol": "AEM",
+          "sector": "Technology",
           "enabled": true,
           "gexTracking": true,
-          "lastUpdated": "2025-08-04T07:28:12.332Z"
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
         },
         {
-          "symbol": "AVGO",
-          "sector": "Unknown",
+          "symbol": "ALNY",
+          "sector": "Technology",
           "enabled": true,
           "gexTracking": true,
-          "lastUpdated": "2025-08-04T07:28:12.332Z"
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
         },
         {
-          "symbol": "COIN",
-          "sector": "Unknown",
+          "symbol": "AM",
+          "sector": "Technology",
           "enabled": true,
           "gexTracking": true,
-          "lastUpdated": "2025-08-04T07:28:12.332Z"
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
         },
         {
-          "symbol": "AAPL",
-          "sector": "Unknown",
+          "symbol": "AMSC",
+          "sector": "Technology",
           "enabled": true,
           "gexTracking": true,
-          "lastUpdated": "2025-08-04T07:28:18.450Z"
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
         },
         {
-          "symbol": "AMD",
-          "sector": "Unknown",
+          "symbol": "ATI",
+          "sector": "Technology",
           "enabled": true,
           "gexTracking": true,
-          "lastUpdated": "2025-08-04T07:28:18.450Z"
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
         },
         {
-          "symbol": "AMZN",
-          "sector": "Unknown",
+          "symbol": "AU",
+          "sector": "Technology",
           "enabled": true,
           "gexTracking": true,
-          "lastUpdated": "2025-08-04T07:28:18.450Z"
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
         },
         {
-          "symbol": "BAC",
-          "sector": "Unknown",
+          "symbol": "BE",
+          "sector": "Technology",
           "enabled": true,
           "gexTracking": true,
-          "lastUpdated": "2025-08-04T07:28:18.450Z"
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "BOOT",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "CAKE",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "CBOE",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "CCJ",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "CDNS",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "CLS",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "CR",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "CVLT",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "CVNA",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "CYBR",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "EBAY",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "EGO",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "ETR",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "FTAI",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "GLW",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "GNRC",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "GRMN",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "GTES",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "HOOD",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "HWM",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "ICE",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "INDV",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "ING",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "INOD",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "IREN",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "ITT",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "JCI",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "KGC",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "KLAC",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "LPLA",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "LRCX",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "META",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "MOD",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "MPWR",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "MSFT",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "MTZ",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "NET",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
+        },
+        {
+          "symbol": "NVT",
+          "sector": "Technology",
+          "enabled": true,
+          "gexTracking": true,
+          "lastUpdated": "2025-08-04T07:56:24.759Z"
         }
       ],
       "createdAt": "2025-08-03T15:29:31.697Z",
-      "updatedAt": "2025-08-04T07:28:38.566Z",
+      "updatedAt": "2025-08-04T07:56:24.759Z",
       "isDefault": false
     },
     {
@@ -493,6 +759,6 @@
       "isDefault": false
     }
   ],
-  "currentWatchlistId": "watchlist_1754292526294_t6nlgw0id",
+  "currentWatchlistId": "watchlist_1754234971697_meoz3mzcx",
   "lastUpdated": "2025-08-04T07:51:25.702Z"
 }
