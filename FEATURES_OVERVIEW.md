@@ -73,6 +73,10 @@
 - Commodities tracking (gold and oil prices)
 - Trump communications impact assessment
 - News flow sentiment scoring
+- Options volume and market tide metrics (call-to-put premium ratio)
+- Open-interest change monitoring with watchlist filtering
+- Economic and FDA calendars with sentiment-scored news headlines
+- SPiKE volatility index and correlation metrics for risk management
 
 **Business Value**: Provides comprehensive market sentiment context for better trade timing
 

@@ -753,6 +753,47 @@ export class UnusualWhalesService {
     }
   }
 
+  async getEconomicCalendar(params: { tickers?: string[]; start_date?: string; end_date?: string } = {}): Promise<any> {
+    try {
+      const search = new URLSearchParams();
+      params.tickers?.forEach(t => search.append('tickers', t));
+      if (params.start_date) search.append('start_date', params.start_date);
+      if (params.end_date) search.append('end_date', params.end_date);
+      const endpoint = `/calendar/economic${search.toString() ? `?${search.toString()}` : ''}`;
+      return await this.makeRequest<any>(endpoint);
+    } catch (error) {
+      console.error('Failed to fetch economic calendar:', error);
+      return null;
+    }
+  }
+
+  async getFdaCalendar(params: { tickers?: string[]; start_date?: string; end_date?: string } = {}): Promise<any> {
+    try {
+      const search = new URLSearchParams();
+      params.tickers?.forEach(t => search.append('tickers', t));
+      if (params.start_date) search.append('start_date', params.start_date);
+      if (params.end_date) search.append('end_date', params.end_date);
+      const endpoint = `/calendar/fda${search.toString() ? `?${search.toString()}` : ''}`;
+      return await this.makeRequest<any>(endpoint);
+    } catch (error) {
+      console.error('Failed to fetch FDA calendar:', error);
+      return null;
+    }
+  }
+
+  async getNewsHeadlines(params: { tickers?: string[]; limit?: number } = {}): Promise<any> {
+    try {
+      const search = new URLSearchParams();
+      params.tickers?.forEach(t => search.append('tickers', t));
+      if (params.limit) search.append('limit', params.limit.toString());
+      const endpoint = `/news/headlines${search.toString() ? `?${search.toString()}` : ''}`;
+      return await this.makeRequest<any>(endpoint);
+    } catch (error) {
+      console.error('Failed to fetch news headlines:', error);
+      return null;
+    }
+  }
+
   // Watchlist helpers
 
   async getWatchlistDarkpool(tickers: string[], filters: Parameters<UnusualWhalesService['getDarkpoolForTicker']>[1] = {}) {
