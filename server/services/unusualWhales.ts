@@ -37,10 +37,10 @@ export class UnusualWhalesService {
   private requestQueue: Array<() => Promise<any>> = [];
   private isProcessingQueue = false;
   
-  // Enhanced rate limiting
-  private readonly REQUESTS_PER_MINUTE = 60; // Conservative limit
+  // Enhanced rate limiting based on API documentation
+  private readonly REQUESTS_PER_MINUTE = 120; // API allows 120 requests per minute (90 for lifetime subscribers)
   private readonly CONCURRENT_REQUESTS = 3; // Max concurrent requests
-  private readonly MIN_REQUEST_INTERVAL = 1000; // 1 second between requests
+  private readonly MIN_REQUEST_INTERVAL = 500; // 0.5 second between requests (120/min = 2/sec)
   private readonly DAILY_LIMIT = 10000; // Daily request limit
   
   private activeRequests = 0;
@@ -349,6 +349,27 @@ export class UnusualWhalesService {
       return data.data || null;
     } catch (error) {
       console.error(`Failed to fetch stock state for ${ticker}:`, error);
+      return null;
+    }
+  }
+
+  async getCurrentPrice(ticker: string): Promise<number | null> {
+    try {
+      // Try to get current price from OHLC data (more reliable)
+      const ohlcData = await this.makeRequest<{ data: { close: number } }>(`/stock/${ticker}/ohlc`);
+      if (ohlcData?.data?.close) {
+        return ohlcData.data.close;
+      }
+      
+      // Fallback to stock state if OHLC fails
+      const stockState = await this.getStockState(ticker);
+      if (stockState?.price) {
+        return stockState.price;
+      }
+      
+      return null;
+    } catch (error) {
+      console.error(`Failed to fetch current price for ${ticker}:`, error);
       return null;
     }
   }
