@@ -82,6 +82,37 @@ class NewsService {
         console.error("Failed to fetch MarketAux news:", error);
       }
 
+      // Unusual Whales headlines
+      try {
+        const { UnusualWhalesService } = await import('./unusualWhales');
+        const uwService = new UnusualWhalesService();
+        let uwCount = 0;
+        for (const symbol of symbols.slice(0, 5)) {
+          const uwArticles = await uwService.getNewsSentiment(symbol);
+          for (const item of uwArticles.slice(0, 10)) {
+            news.push({
+              id: `uw-${symbol}-${item.id || Date.now()}`,
+              headline: item.headline || item.title || 'Unusual Whales News',
+              summary: item.summary || item.text || '',
+              source: 'Unusual Whales',
+              timestamp: item.created_at || item.published_at || new Date().toISOString(),
+              sentiment: this.basicSentimentAnalysis(`${item.headline || ''} ${item.summary || ''}`),
+              sentimentScore: typeof item.sentiment_score === 'number' ? item.sentiment_score : 0,
+              symbols: [symbol],
+              impact: 'medium',
+              category: item.category || 'Market News',
+              url: item.url || ''
+            });
+            uwCount++;
+          }
+        }
+        if (uwCount > 0) {
+          console.log(`Retrieved ${uwCount} articles from Unusual Whales`);
+        }
+      } catch (error) {
+        console.error('Failed to fetch Unusual Whales news:', error);
+      }
+
       // If no news was retrieved from external sources, generate simulated news
       if (news.length === 0) {
         news = await this.generateRealisticNews(symbols);
