@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -109,11 +109,31 @@ export default function Fundamentals() {
   const [selectedSymbol, setSelectedSymbol] = useState("AAPL");
   const [searchSymbol, setSearchSymbol] = useState("");
   
-  // Get fundamentals for selected symbol
+  // Get fundamentals for selected symbol from API with JSON fallback
   const { data: fundamentals, isLoading, error } = useQuery<FundamentalData>({
-    queryKey: ['/api/fundamentals', selectedSymbol],
+    queryKey: ["fundamentals", selectedSymbol],
     enabled: !!selectedSymbol,
-    refetchInterval: 5 * 60 * 1000 // Refresh every 5 minutes
+    refetchInterval: 5 * 60 * 1000, // Refresh every 5 minutes
+    queryFn: async ({ queryKey }) => {
+      const [, symbol] = queryKey as [string, string];
+
+      // Try API first
+      try {
+        const res = await fetch(`/api/fundamentals/${symbol}`);
+        if (res.ok) {
+          return await res.json();
+        }
+      } catch {
+        // ignore and try local file
+      }
+
+      // Fallback to local JSON file
+      const localRes = await fetch(`/data/intelligence/${symbol}_fundamentals.json`);
+      if (!localRes.ok) {
+        throw new Error("Failed to load fundamentals data");
+      }
+      return await localRes.json();
+    }
   });
 
   // Mock additional data for now
