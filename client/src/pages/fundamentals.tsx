@@ -34,11 +34,14 @@ interface FundamentalData {
   valuation: {
     marketCap: number;
     enterpriseValue: number;
-    peRatio: number;
-    pbRatio: number;
-    psRatio: number;
-    evRevenue: number;
-    evEbitda: number;
+    priceToEarnings: number;
+    priceToBook: number;
+    priceToSales: number;
+    priceEarningsGrowth: number;
+    evToRevenue: number;
+    evToEbitda: number;
+    dividendYield: number;
+    payoutRatio: number;
   };
   profitability: {
     grossMargin: number;
@@ -54,15 +57,31 @@ interface FundamentalData {
     revenueGrowth5Y: number;
     earningsGrowth5Y: number;
   };
-  financial: {
+  financials: {
     revenue: number;
-    grossProfit: number;
-    operatingIncome: number;
+    revenueGrowth: number;
     netIncome: number;
-    totalAssets: number;
-    totalDebt: number;
-    cash: number;
-    bookValue: number;
+    earningsPerShare: number;
+    grossMargin: number;
+    operatingMargin: number;
+    netMargin: number;
+    returnOnEquity: number;
+    debtToEquity: number;
+    currentRatio: number;
+    freeCashFlow: number;
+    bookValuePerShare: number;
+  };
+  events: {
+    lastDividendDate: string | null;
+  };
+  risk: {
+    overallRisk: string;
+    liquidityRisk: number;
+    volatilityRisk: number;
+    fundamentalRisk: number;
+    technicalRisk: number;
+    sentimentRisk: number;
+    concentrationRisk: number;
   };
   perShare: {
     earnings: number;
