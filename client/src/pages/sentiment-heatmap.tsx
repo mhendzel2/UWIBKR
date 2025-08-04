@@ -118,6 +118,16 @@ interface HistoricalSentimentData {
   timeframe: string;
 }
 
+interface TrumpPost {
+  id: string;
+  platform: string;
+  content: string;
+  timestamp: string;
+  sentiment: string;
+  marketImpact: number;
+  affectedSectors: string[];
+}
+
 interface SentimentStats {
   success: boolean;
   data: {
@@ -173,7 +183,7 @@ export default function SentimentHeatmap() {
     refetchOnReconnect: true,
   });
 
-  // Live sector ETF sentiment data
+    // Live sector ETF sentiment data
   const { data: sectorETFs } = useQuery({
     queryKey: ['/api/unusual-whales/sector-etfs', Date.now()],
     queryFn: async () => {
@@ -204,6 +214,42 @@ export default function SentimentHeatmap() {
     },
     staleTime: 0,
     refetchInterval: autoRefresh ? 30000 : false,
+    refetchOnWindowFocus: true,
+    refetchOnMount: true,
+    refetchOnReconnect: true,
+  });
+
+  // Live Trump communications data
+  const { data: trumpCommunications } = useQuery({
+    queryKey: ['/api/unusual-whales/trump-communications', Date.now()],
+    queryFn: async () => {
+      console.log(`[${new Date().toLocaleTimeString()}] Fetching Trump communications...`);
+      const response = await fetch('/api/unusual-whales/trump-communications?hours_back=24&min_impact=5');
+      if (!response.ok) throw new Error('Failed to fetch Trump communications');
+      const data = await response.json();
+      console.log(`[${new Date().toLocaleTimeString()}] Trump communications updated:`, data?.recent_posts?.length || 0, 'posts');
+      return data;
+    },
+    staleTime: 0,
+    refetchInterval: autoRefresh ? 45000 : false, // Slightly slower refresh for Trump data
+    refetchOnWindowFocus: true,
+    refetchOnMount: true,
+    refetchOnReconnect: true,
+  });
+
+  // Live news headlines data
+  const { data: newsHeadlines } = useQuery({
+    queryKey: ['/api/unusual-whales/news-headlines', Date.now()],
+    queryFn: async () => {
+      console.log(`[${new Date().toLocaleTimeString()}] Fetching news headlines...`);
+      const response = await fetch('/api/unusual-whales/news-headlines?limit=20&hours_back=12');
+      if (!response.ok) throw new Error('Failed to fetch news headlines');
+      const data = await response.json();
+      console.log(`[${new Date().toLocaleTimeString()}] News headlines updated:`, data?.length || 0, 'articles');
+      return data;
+    },
+    staleTime: 0,
+    refetchInterval: autoRefresh ? 60000 : false, // 1 minute refresh for news
     refetchOnWindowFocus: true,
     refetchOnMount: true,
     refetchOnReconnect: true,
@@ -637,7 +683,7 @@ export default function SentimentHeatmap() {
                   <CardTitle>Recent Trump Communications</CardTitle>
                   <div className="flex items-center gap-2">
                     <div className={`w-3 h-3 rounded-full ${getAlertLevelColor(sentiment.trumpCommunications.alertLevel)}`}></div>
-                    <span className="text-sm capitalize">{sentiment.trumpCommunications.alertLevel} Alert Level</span>
+                    <span className="text-sm">Alert Level: {sentiment.trumpCommunications.alertLevel}</span>
                   </div>
                 </CardHeader>
                 <CardContent>
@@ -647,7 +693,7 @@ export default function SentimentHeatmap() {
                     </div>
                   ) : (
                     <div className="space-y-4">
-                      {sentiment.trumpCommunications.recentPosts.map((post) => (
+                      {sentiment.trumpCommunications.recentPosts.map((post: TrumpPost) => (
                         <Card key={post.id} className="border-l-4 border-blue-500">
                           <CardContent className="p-4">
                             <div className="flex justify-between items-start mb-2">

@@ -2720,6 +2720,62 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Trump communications and political market impact
+  app.get('/api/unusual-whales/trump-communications', async (req, res) => {
+    try {
+      console.log('🎯 Analyzing Trump communications market impact...');
+      const uwService = new UnusualWhalesService();
+      
+      const hoursBack = parseInt(req.query.hours_back as string) || 24;
+      const minImpact = parseInt(req.query.min_impact as string) || 5;
+      
+      const trumpData = await uwService.getTrumpCommunications({
+        hours_back: hoursBack,
+        min_impact: minImpact
+      });
+      
+      console.log(`✅ Trump communications analysis complete - Alert Level: ${trumpData.alert_level}`);
+      res.json(trumpData);
+    } catch (error) {
+      console.error('❌ Failed to analyze Trump communications:', error);
+      res.status(500).json({ 
+        error: 'Failed to analyze Trump communications',
+        message: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
+  // Enhanced news headlines with multiple ticker support
+  app.get('/api/unusual-whales/news-headlines', async (req, res) => {
+    try {
+      console.log('📰 Fetching comprehensive news headlines...');
+      const uwService = new UnusualWhalesService();
+      
+      const tickers = req.query.tickers ? 
+        (Array.isArray(req.query.tickers) ? req.query.tickers : [req.query.tickers]) as string[] : 
+        undefined;
+      const ticker = req.query.ticker as string;
+      const limit = parseInt(req.query.limit as string) || 25;
+      const hoursBack = parseInt(req.query.hours_back as string) || 24;
+      
+      const headlines = await uwService.getNewsHeadlines({
+        tickers,
+        ticker,
+        limit,
+        hours_back: hoursBack
+      });
+      
+      console.log(`✅ Fetched ${headlines.length} news headlines`);
+      res.json(headlines);
+    } catch (error) {
+      console.error('❌ Failed to fetch news headlines:', error);
+      res.status(500).json({ 
+        error: 'Failed to fetch news headlines',
+        message: error instanceof Error ? error.message : 'Unknown error'
+      });
+    }
+  });
+
   return httpServer;
 }
 
