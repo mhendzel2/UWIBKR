@@ -42,6 +42,7 @@ function Router() {
       <Route path="/" component={Dashboard} />
       <Route path="/dashboard" component={Dashboard} />
       <Route path="/flow" component={OptionsFlowPage} />
+      <Route path="/options-flow" component={OptionsFlowPage} />
       <Route path="/positions" component={PositionsPage} />
       <Route path="/portfolios" component={PortfolioPage} />
       <Route path="/risk" component={RiskManagementPage} />
@@ -49,6 +50,7 @@ function Router() {
       <Route path="/analytics" component={AnalyticsPage} />
       <Route path="/portfolio" component={PortfolioOptimizationPage} />
       <Route path="/leaps" component={LEAPAnalysisPage} />
+      <Route path="/leap-analysis" component={LEAPAnalysisPage} />
       <Route path="/news" component={NewsSentimentPage} />
       <Route path="/charts" component={AdvancedChartingPage} />
       <Route path="/settings" component={SettingsPage} />

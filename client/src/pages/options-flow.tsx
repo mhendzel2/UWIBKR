@@ -21,14 +21,44 @@ export default function OptionsFlowPage() {
     new Date().toISOString().split('T')[0]
   );
 
-  const { data: optionsFlow = [], isLoading: loadingFlow } = useQuery<OptionsFlow[]>({
+  interface RawFlowAlert {
+    id: string;
+    ticker: string;
+    type: string;
+    volume: number;
+    total_size: number;
+    total_premium: string;
+    price: string;
+    total_ask_side_prem: string;
+    created_at: string;
+  }
+
+  const { data: rawOptionsFlow = [], isLoading: loadingFlow, error } = useQuery<RawFlowAlert[]>({
     queryKey: ['/api/flow-alerts'],
     queryFn: async () => {
       const response = await fetch('/api/flow-alerts');
       if (!response.ok) throw new Error('Failed to fetch flow alerts');
       return response.json();
     },
+    refetchInterval: 30000, // Refetch every 30 seconds
+    staleTime: 0, // Always consider data stale
+    refetchOnWindowFocus: true,
   });
+
+  // Transform UnusualWhales API data to frontend format
+  const optionsFlow = rawOptionsFlow.map((alert) => ({
+    id: alert.id,
+    symbol: alert.ticker,
+    type: alert.type.toUpperCase(),
+    volume: alert.volume || alert.total_size,
+    premium: parseFloat(alert.total_premium) / 100, // Convert cents to dollars
+    price: parseFloat(alert.price),
+    sentiment: alert.type === 'call' ? 'BULLISH' : 'BEARISH',
+    askSidePercentage: alert.total_ask_side_prem && alert.total_premium 
+      ? ((parseFloat(alert.total_ask_side_prem) / parseFloat(alert.total_premium)) * 100).toFixed(2)
+      : null,
+    timestamp: alert.created_at || new Date().toISOString(),
+  }));
 
   const { data: stats } = useQuery({
     queryKey: ['/api/stats'],
@@ -121,7 +151,7 @@ export default function OptionsFlowPage() {
           <CardContent>
             <div className="text-2xl font-bold">
               {formatCurrency(
-                optionsFlow.reduce((sum, flow) => sum + parseFloat(flow.premium), 0)
+                optionsFlow.reduce((sum, flow) => sum + flow.premium, 0)
               )}
             </div>
             <p className="text-xs text-muted-foreground">

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -52,6 +52,37 @@ interface LEAPAnalysisData {
   };
 }
 
+interface StringencyMetrics {
+  successRate: number;
+  avgReturn: number;
+  winRate: number;
+  profitFactor: number;
+  sharpeRatio: number;
+  avgWinDuration: number;
+}
+
+interface TradeAnalysis {
+  timeDecay?: {
+    daysElapsed?: number;
+    daysRemaining?: number;
+    timeDecayRate?: number;
+  };
+  riskReward?: {
+    maxLoss: number;
+    breakeven: number;
+    profitPotential: string;
+  };
+  probabilityAssessment?: {
+    overallScore?: number;
+    factors?: Record<string, string | number>;
+  };
+  recommendedActions?: string[];
+}
+
+interface TradeDetails {
+  analysis?: TradeAnalysis;
+}
+
 export default function LEAPAnalysisPage() {
   const [selectedTrade, setSelectedTrade] = useState<LEAPTrade | null>(null);
   const [selectedLeapIds, setSelectedLeapIds] = useState<string[]>([]);
@@ -62,6 +93,7 @@ export default function LEAPAnalysisPage() {
   const { data: leapData, isLoading, error, dataUpdatedAt: leapUpdatedAt } = useQuery<LEAPAnalysisData>({
     queryKey: ['/api/leaps/analyze', stringencyLevel],
     queryFn: async () => {
+      console.log('Fetching LEAP analysis...');
       const params = new URLSearchParams();
       if (stringencyLevel !== 3) {
         params.append('stringency', stringencyLevel.toString());
@@ -71,13 +103,19 @@ export default function LEAPAnalysisPage() {
       if (!response.ok) {
         throw new Error(`Failed to load LEAP analysis: ${response.status}: ${await response.text()}`);
       }
-      return response.json();
+      const data = await response.json();
+      console.log('Received LEAP data:', data);
+      return data;
     },
     refetchInterval: 5 * 60 * 1000, // Refresh every 5 minutes
+    staleTime: 0, // Always consider data stale
+    refetchOnWindowFocus: true,
   });
 
+  console.log('LEAP data:', leapData, 'Loading:', isLoading, 'Error:', error);
+
   // Fetch stringency metrics for training mode
-  const { data: stringencyMetrics } = useQuery({
+  const { data: stringencyMetrics } = useQuery<StringencyMetrics>({
     queryKey: ['/api/options/stringency-metrics', stringencyLevel],
     enabled: trainingMode,
   });
@@ -85,7 +123,7 @@ export default function LEAPAnalysisPage() {
   const trades = leapData?.trades || [];
   const summary = leapData?.summary || {};
 
-  const { data: tradeDetails, isLoading: loadingDetails, error: detailsError } = useQuery({
+  const { data: tradeDetails, isLoading: loadingDetails, error: detailsError } = useQuery<TradeDetails>({
     queryKey: ['/api/leaps', selectedTrade?.id, 'details'],
     enabled: !!selectedTrade?.id,
     retry: 3,
@@ -175,7 +213,7 @@ export default function LEAPAnalysisPage() {
           <CardContent className="p-6">
             <div className="flex items-center gap-2 text-red-600">
               <AlertTriangle className="h-4 w-4" />
-              <span>Failed to load LEAP analysis: {error.message}</span>
+              <span>Failed to load LEAP analysis: {(error as Error).message}</span>
             </div>
           </CardContent>
         </Card>
@@ -410,6 +448,8 @@ export default function LEAPAnalysisPage() {
                                 setSelectedLeapIds(selectedLeapIds.filter(id => id !== trade.id));
                               }
                             }}
+                            aria-label={`Select ${trade.ticker} LEAP trade`}
+                            title={`Select ${trade.ticker} LEAP trade for price updates`}
                           />
                         </TableCell>
                         <TableCell className="font-medium">{trade.ticker}</TableCell>
@@ -476,7 +516,7 @@ export default function LEAPAnalysisPage() {
                                 <div className="p-8 text-center text-red-600">
                                   Failed to load detailed analysis. Please try again.
                                 </div>
-                              ) : tradeDetails && tradeDetails.analysis ? (
+                              ) : tradeDetails && analysis && Object.keys(analysis).length > 0 ? (
                                 <div className="space-y-6">
                                   {/* Trade Overview */}
                                   <div className="grid gap-4 md:grid-cols-3">
@@ -503,7 +543,7 @@ export default function LEAPAnalysisPage() {
                                           <div className={trade.premiumChangePercent && trade.premiumChangePercent > 0 ? 'text-green-600' : 'text-red-600'}>
                                             Change: {trade.premiumChangePercent ? formatPercent(trade.premiumChangePercent) : 'N/A'}
                                           </div>
-                                          <div>Days Left: {tradeDetails.analysis.timeDecay.daysRemaining}</div>
+                                          <div>Days Left: {analysis.timeDecay?.daysRemaining || trade.daysToExpiry}</div>
                                         </div>
                                       </CardContent>
                                     </Card>
@@ -514,9 +554,9 @@ export default function LEAPAnalysisPage() {
                                       </CardHeader>
                                       <CardContent>
                                         <div className="space-y-1 text-sm">
-                                          <div>Max Loss: {formatCurrency(tradeDetails.analysis.riskReward.maxLoss)}</div>
-                                          <div>Breakeven: ${tradeDetails.analysis.riskReward.breakeven.toFixed(2)}</div>
-                                          <div>Potential: {tradeDetails.analysis.riskReward.profitPotential}</div>
+                                          <div>Max Loss: {analysis.riskReward?.maxLoss ? formatCurrency(analysis.riskReward.maxLoss) : 'N/A'}</div>
+                                          <div>Breakeven: ${analysis.riskReward?.breakeven?.toFixed(2) || 'N/A'}</div>
+                                          <div>Potential: {analysis.riskReward?.profitPotential || 'N/A'}</div>
                                         </div>
                                       </CardContent>
                                     </Card>
@@ -533,16 +573,16 @@ export default function LEAPAnalysisPage() {
                                           <div>
                                             <div className="text-sm font-medium mb-2">Overall Score</div>
                                             <div className="flex items-center gap-2">
-                                              <Progress value={tradeDetails.analysis.probabilityAssessment?.overallScore || trade.probabilityScore} className="flex-1" />
-                                              <span className={`font-semibold ${getProbabilityColor(tradeDetails.analysis.probabilityAssessment?.overallScore || trade.probabilityScore)}`}>
-                                                {tradeDetails.analysis.probabilityAssessment?.overallScore || trade.probabilityScore}%
+                                              <Progress value={analysis.probabilityAssessment?.overallScore || trade.probabilityScore} className="flex-1" />
+                                              <span className={`font-semibold ${getProbabilityColor(analysis.probabilityAssessment?.overallScore || trade.probabilityScore)}`}>
+                                                {analysis.probabilityAssessment?.overallScore || trade.probabilityScore}%
                                               </span>
                                             </div>
                                           </div>
                                           <div>
                                             <div className="text-sm font-medium mb-2">Factors</div>
                                             <div className="space-y-1 text-sm">
-                                              {tradeDetails.analysis.probabilityAssessment?.factors && Object.entries(tradeDetails.analysis.probabilityAssessment.factors).map(([key, value]) => (
+                                              {analysis.probabilityAssessment?.factors && Object.entries(analysis.probabilityAssessment.factors).map(([key, value]) => (
                                                 <div key={key} className="flex justify-between">
                                                   <span className="capitalize">{key.replace(/([A-Z])/g, ' $1')}:</span>
                                                   <span className="font-medium">{value}</span>
@@ -564,29 +604,29 @@ export default function LEAPAnalysisPage() {
                                       <div className="grid gap-4 md:grid-cols-3">
                                         <div>
                                           <div className="text-sm text-gray-600">Days Elapsed</div>
-                                          <div className="text-lg font-semibold">{tradeDetails.analysis.timeDecay?.daysElapsed || 0}</div>
+                                          <div className="text-lg font-semibold">{analysis.timeDecay?.daysElapsed || 0}</div>
                                         </div>
                                         <div>
                                           <div className="text-sm text-gray-600">Days Remaining</div>
-                                          <div className="text-lg font-semibold">{tradeDetails.analysis.timeDecay?.daysRemaining || trade.daysToExpiry}</div>
+                                          <div className="text-lg font-semibold">{analysis.timeDecay?.daysRemaining || trade.daysToExpiry}</div>
                                         </div>
                                         <div>
                                           <div className="text-sm text-gray-600">Time Decay Rate</div>
-                                          <div className="text-lg font-semibold">{tradeDetails.analysis.timeDecay?.timeDecayRate?.toFixed(1) || 0}%</div>
+                                          <div className="text-lg font-semibold">{analysis.timeDecay?.timeDecayRate?.toFixed(1) || 0}%</div>
                                         </div>
                                       </div>
                                     </CardContent>
                                   </Card>
 
                                   {/* Recommendations */}
-                                  {tradeDetails.analysis.recommendedActions && tradeDetails.analysis.recommendedActions.length > 0 && (
+                                  {analysis.recommendedActions && analysis.recommendedActions.length > 0 && (
                                     <Card>
                                       <CardHeader>
                                         <CardTitle>Recommendations</CardTitle>
                                       </CardHeader>
                                       <CardContent>
                                         <div className="space-y-2">
-                                          {tradeDetails.analysis.recommendedActions.map((recommendation: string, index: number) => (
+                                          {analysis.recommendedActions.map((recommendation: string, index: number) => (
                                             <div key={index} className="flex items-start gap-2">
                                               <Target className="h-4 w-4 mt-0.5 text-blue-600" />
                                               <span className="text-sm">{recommendation}</span>
@@ -622,7 +662,7 @@ export default function LEAPAnalysisPage() {
                 <CardDescription>LEAP activity by sector</CardDescription>
               </CardHeader>
               <CardContent>
-                {summary.topSectors?.map((sector: any, index: number) => (
+                {summary.topSectors?.map((sector, index: number) => (
                   <div key={sector.sector} className="flex items-center justify-between py-2">
                     <span className="text-sm">{sector.sector}</span>
                     <Badge variant="outline">{sector.count} trades</Badge>

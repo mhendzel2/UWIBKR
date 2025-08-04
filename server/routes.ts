@@ -2492,9 +2492,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
     });
   });
   
-  // Options heatmap routes - commented out for testing
-  // const { default: optionsHeatmapRoutes } = await import('./routes/optionsHeatmap');
-  // app.use('/api/heatmap', optionsHeatmapRoutes);
+  // Options heatmap routes
+  const { default: optionsHeatmapRoutes } = await import('./routes/optionsHeatmap');
+  app.use('/api/options', optionsHeatmapRoutes);
   
   // Options radar routes
   const { default: optionsRadarRoutes } = await import('./routes/optionsRadar');
