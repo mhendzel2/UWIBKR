@@ -74,11 +74,14 @@ function generateFundamentalData(symbol: string) {
     valuation: {
       marketCap: data.marketCap,
       enterpriseValue: data.marketCap + data.debt - data.cash,
-      peRatio: data.pe,
-      pbRatio: data.pb,
-      psRatio: data.marketCap / data.revenue,
-      evRevenue: (data.marketCap + data.debt - data.cash) / data.revenue,
-      evEbitda: Math.random() * 30 + 5
+      priceToEarnings: data.pe,
+      priceToBook: data.pb,
+      priceToSales: data.marketCap / data.revenue,
+      priceEarningsGrowth: Math.random() * 3 + 0.5,
+      evToRevenue: (data.marketCap + data.debt - data.cash) / data.revenue,
+      evToEbitda: Math.random() * 30 + 5,
+      dividendYield: Math.random() * 0.05,
+      payoutRatio: Math.random() * 0.8
     },
     profitability: {
       grossMargin: Math.random() * 0.5 + 0.2,
@@ -94,15 +97,31 @@ function generateFundamentalData(symbol: string) {
       revenueGrowth5Y: Math.random() * 0.3 + 0.05,
       earningsGrowth5Y: Math.random() * 0.4 + 0.05
     },
-    financial: {
+    financials: {
       revenue: data.revenue,
-      grossProfit: data.revenue * (Math.random() * 0.5 + 0.2),
-      operatingIncome: data.revenue * (Math.random() * 0.3 + 0.1),
+      revenueGrowth: Math.random() * 0.4 - 0.1,
       netIncome: data.netIncome,
-      totalAssets: data.marketCap * 0.8,
-      totalDebt: data.debt,
-      cash: data.cash,
-      bookValue: data.marketCap / data.pb
+      earningsPerShare: data.eps,
+      grossMargin: Math.random() * 0.5 + 0.2,
+      operatingMargin: Math.random() * 0.3 + 0.1,
+      netMargin: data.netIncome / data.revenue,
+      returnOnEquity: data.roe,
+      debtToEquity: data.debt / (data.marketCap - data.debt || 1),
+      currentRatio: Math.random() * 1.5 + 0.5,
+      freeCashFlow: Math.random() * 50000000000,
+      bookValuePerShare: data.marketCap / data.pb / 1000000
+    },
+    events: {
+      lastDividendDate: new Date().toISOString()
+    },
+    risk: {
+      overallRisk: 'Medium',
+      liquidityRisk: Math.random() * 100,
+      volatilityRisk: Math.random() * 100,
+      fundamentalRisk: Math.random() * 100,
+      technicalRisk: Math.random() * 100,
+      sentimentRisk: Math.random() * 100,
+      concentrationRisk: Math.random() * 100
     },
     perShare: {
       earnings: data.eps,
