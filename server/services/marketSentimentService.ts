@@ -1,5 +1,6 @@
 // @ts-nocheck
 import { UnusualWhalesService } from './unusualWhales';
+import { gexTracker } from './gexTracker';
 import geminiService from '../geminiService';
 
 export interface MarketSentimentData {
@@ -41,6 +42,11 @@ export interface MarketSentimentData {
     recommendation: 'risk-on' | 'risk-off' | 'neutral';
   };
   optionsFlow: OptionsFlowMetrics;
+  macroEvents: {
+    economic: any;
+    fda: any;
+    newsHeadlines: any;
+  };
 }
 
 interface OptionsFlowMetrics {
@@ -52,6 +58,8 @@ interface OptionsFlowMetrics {
   totalOptionsVolume: any;
   spike: any;
   sectorGreekFlow: Record<string, any>;
+  callPutRatio?: number | null;
+  correlations?: any;
 }
 
 export interface TrumpPost {
@@ -76,12 +84,14 @@ class MarketSentimentService {
     }
 
     try {
-      const [fearGreed, crypto, commodities, trump, optionsFlow] = await Promise.all([
+      const watchlist = gexTracker.getWatchlist().filter(w => w.enabled).map(w => w.symbol);
+      const [fearGreed, crypto, commodities, trump, optionsFlow, macroEvents] = await Promise.all([
         this.getFearGreedIndex(),
         this.getCryptoSentiment(),
         this.getCommoditiesSentiment(),
         this.getTrumpCommunications(),
-        this.getOptionsFlowMetrics()
+        this.getOptionsFlowMetrics(watchlist),
+        this.getMacroEvents(watchlist)
       ]);
 
       const vixLevel = await this.getVIXLevel();
@@ -101,7 +111,8 @@ class MarketSentimentService {
         commodities,
         trumpCommunications: trump,
         overallSentiment,
-        optionsFlow
+        optionsFlow,
+        macroEvents
       };
 
       this.lastUpdate = new Date();
@@ -458,7 +469,9 @@ Provide a JSON response with:
     );
   }
 
-  private async getOptionsFlowMetrics(): Promise<OptionsFlowMetrics> {
+  private async getOptionsFlowMetrics(watchlist: string[]): Promise<OptionsFlowMetrics> {
+    // Combines total options volume, market tide, open-interest changes, SPiKE and
+    // correlation data to enhance market sentiment analysis as per project specs.
     try {
       const uw = new UnusualWhalesService();
       const sectors = [
@@ -475,14 +488,15 @@ Provide a JSON response with:
       ];
 
       const sectorGreekFlow: Record<string, any> = {};
-      const [netFlowExpiry, marketTide, sectorTide, etfTide, oiChange, totalOptionsVolume, spike] = await Promise.all([
+      const [netFlowExpiry, marketTide, sectorTide, etfTide, oiChangeRaw, totalOptionsVolume, spike, correlations] = await Promise.all([
         uw.getNetFlowExpiry(),
         uw.getMarketTide(),
         uw.getSectorTide('technology'),
         uw.getEtfTide('SPY'),
         uw.getOiChange(),
         uw.getTotalOptionsVolume(),
-        uw.getSpike()
+        uw.getSpike(),
+        uw.getMarketCorrelations(watchlist)
       ]);
 
       await Promise.all(
@@ -495,7 +509,20 @@ Provide a JSON response with:
         })
       );
 
-      return { netFlowExpiry, marketTide, sectorTide, etfTide, oiChange, totalOptionsVolume, spike, sectorGreekFlow };
+      let callPutRatio: number | null = null;
+      if (totalOptionsVolume && Array.isArray(totalOptionsVolume.data) && totalOptionsVolume.data.length > 0) {
+        const latest = totalOptionsVolume.data[0];
+        const callPrem = Number(latest.call_premium ?? latest.total_call_premium ?? 0);
+        const putPrem = Number(latest.put_premium ?? latest.total_put_premium ?? 0);
+        callPutRatio = putPrem === 0 ? null : callPrem / putPrem;
+      }
+
+      const filteredOi = (oiChangeRaw?.data || oiChangeRaw || []).filter((item: any) =>
+        watchlist.includes(String(item.ticker || item.symbol || '').toUpperCase()) &&
+        Math.abs(Number(item.oi_change || item.open_interest_change || 0)) >= 1000
+      );
+
+      return { netFlowExpiry, marketTide, sectorTide, etfTide, oiChange: filteredOi, totalOptionsVolume, spike, sectorGreekFlow, callPutRatio, correlations };
     } catch (error) {
       console.error('Error fetching options flow metrics:', error);
       return {
@@ -506,8 +533,26 @@ Provide a JSON response with:
         oiChange: null,
         totalOptionsVolume: null,
         spike: null,
-        sectorGreekFlow: {}
+        sectorGreekFlow: {},
+        callPutRatio: null,
+        correlations: null
       };
+    }
+  }
+
+  private async getMacroEvents(watchlist: string[]) {
+    // Retrieves economic and FDA calendars plus sentiment-scored headlines.
+    try {
+      const uw = new UnusualWhalesService();
+      const [economic, fda, newsHeadlines] = await Promise.all([
+        uw.getEconomicCalendar({ tickers: watchlist }),
+        uw.getFdaCalendar({ tickers: watchlist }),
+        uw.getNewsHeadlines({ tickers: watchlist })
+      ]);
+      return { economic, fda, newsHeadlines };
+    } catch (error) {
+      console.error('Error fetching macro events:', error);
+      return { economic: null, fda: null, newsHeadlines: null };
     }
   }
 }
