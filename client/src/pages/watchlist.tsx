@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -78,7 +78,10 @@ export default function WatchlistPage() {
       try {
         const msg = JSON.parse(event.data);
         if (msg.type === 'quote_update' && msg.data?.symbol) {
-          setQuotes((prev) => ({ ...prev, [msg.data.symbol]: msg.data }));
+          setQuotes((prev) => ({
+            ...prev,
+            [msg.data.symbol]: { ...msg.data, timestamp: msg.timestamp }
+          }));
         }
       } catch {
         // ignore parse errors
@@ -94,6 +97,18 @@ export default function WatchlistPage() {
     queryKey: [`/api/gex/levels?list=${currentList}`],
     enabled: false,
   });
+
+  useEffect(() => {
+    refetchGex();
+  }, [currentList, refetchGex]);
+
+  const gexMap = useMemo(() => {
+    const map: Record<string, any> = {};
+    (gexLevels || []).forEach((g: any) => {
+      map[g.symbol] = g;
+    });
+    return map;
+  }, [gexLevels]);
 
   // Fetch intelligence for selected symbol
   const { data: intelligence } = useQuery({
@@ -388,6 +403,7 @@ export default function WatchlistPage() {
                 const price = typeof quote.last === 'number' ? quote.last : item.price;
                 const change = typeof quote.change === 'number' ? quote.change : item.change;
                 const changePercent = typeof quote.changePct === 'number' ? quote.changePct : item.changePercent;
+                const gex = gexMap[item.symbol];
                 return (
                   <Card key={item.symbol} className="cursor-pointer hover:shadow-md transition-shadow" onClick={() => setSelectedSymbol(item.symbol)}>
                     <CardHeader className="pb-2">
@@ -417,6 +433,19 @@ export default function WatchlistPage() {
                                 {typeof changePercent === 'number' && ` (${changePercent.toFixed(2)}%)`}
                               </span>
                             )}
+                          </div>
+                        )}
+                        {quote.timestamp && (
+                          <div className="text-xs text-gray-500">
+                            Price updated: {new Date(quote.timestamp).toLocaleTimeString()}
+                          </div>
+                        )}
+                        {gex && (
+                          <div>
+                            Net Gamma: {gex.netGamma?.toFixed(2)}
+                            <div className="text-xs text-gray-500">
+                              GEX updated: {new Date(gex.date).toLocaleDateString()}
+                            </div>
                           </div>
                         )}
                         {expandedSymbols.includes(item.symbol) && (
