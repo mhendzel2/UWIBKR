@@ -511,15 +511,75 @@ export default function MorningUpdatePage() {
             </TabsContent>
 
             <TabsContent value="market" className="space-y-6">
-              {/* Market data content would go here */}
-              <Card>
-                <CardHeader>
-                  <CardTitle>Market Data Analysis</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">Detailed market data analysis will be displayed here.</p>
-                </CardContent>
-              </Card>
+              {/* Market Overview and Sector Performance */}
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center">
+                      <BarChart3 className="mr-2 h-5 w-5" />
+                      Market Overview
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    {marketOverview ? (
+                      <div className="space-y-4">
+                        <div className="flex justify-between items-center">
+                          <span>Market Sentiment:</span>
+                          <Badge variant={marketOverview.marketSentiment === 'bullish' ? 'default' : 
+                                        marketOverview.marketSentiment === 'bearish' ? 'destructive' : 'secondary'}>
+                            {marketOverview.marketSentiment}
+                          </Badge>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span>Fear & Greed Index:</span>
+                          <span className="font-semibold">{marketOverview.fearGreedIndex}</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span>VIX Level:</span>
+                          <span className="font-semibold">{marketOverview.vixLevel}</span>
+                        </div>
+                        <div className="flex justify-between items-center">
+                          <span>Put/Call Ratio:</span>
+                          <span className="font-semibold">{marketOverview.optionsMetrics?.putCallRatio}</span>
+                        </div>
+                      </div>
+                    ) : (
+                      <p className="text-muted-foreground">Loading market overview...</p>
+                    )}
+                  </CardContent>
+                </Card>
+
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="flex items-center">
+                      <Building className="mr-2 h-5 w-5" />
+                      Sector Performance
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    {sectorPerformance.length > 0 ? (
+                      <div className="space-y-3">
+                        {sectorPerformance.slice(0, 4).map((sector: any, index: number) => (
+                          <div key={index} className="flex justify-between items-center">
+                            <span className="font-medium">{sector.sector}</span>
+                            <div className="flex items-center gap-2">
+                              <span className={`font-semibold ${sector.performance > 0 ? 'text-green-600' : 'text-red-600'}`}>
+                                {sector.performance > 0 ? '+' : ''}{sector.performance?.toFixed(1)}%
+                              </span>
+                              <Badge variant={sector.sentiment === 'bullish' ? 'default' : 
+                                           sector.sentiment === 'bearish' ? 'destructive' : 'secondary'}>
+                                {sector.sentiment}
+                              </Badge>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <p className="text-muted-foreground">Loading sector performance...</p>
+                    )}
+                  </CardContent>
+                </Card>
+              </div>
             </TabsContent>
 
             <TabsContent value="signals" className="space-y-6">

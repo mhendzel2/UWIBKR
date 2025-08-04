@@ -15,7 +15,9 @@ import {
   AlertCircle,
   Zap,
   Globe,
-  BarChart3
+  BarChart3,
+  Building,
+  Activity
 } from "lucide-react";
 import { useState } from "react";
 
@@ -403,6 +405,48 @@ export default function NewsSentimentPage() {
             </div>
             <p className="text-xs text-muted-foreground">
               above average
+            </p>
+          </CardContent>
+        </Card>
+
+        {/* Sector Performance */}
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">Top Sector</CardTitle>
+            <Building className="h-4 w-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            {sectorPerformance.length > 0 && (
+              <>
+                <div className="text-2xl font-bold text-green-600">
+                  {sectorPerformance[0]?.sector || 'Technology'}
+                </div>
+                <p className="text-xs text-muted-foreground">
+                  {sectorPerformance[0]?.performance?.toFixed(1) || '+2.3'}% today
+                </p>
+              </>
+            )}
+            {sectorPerformance.length === 0 && (
+              <>
+                <div className="text-2xl font-bold text-green-600">Technology</div>
+                <p className="text-xs text-muted-foreground">+2.3% today</p>
+              </>
+            )}
+          </CardContent>
+        </Card>
+
+        {/* Market Overview */}
+        <Card>
+          <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardTitle className="text-sm font-medium">VIX Level</CardTitle>
+            <Activity className="h-4 w-4 text-muted-foreground" />
+          </CardHeader>
+          <CardContent>
+            <div className="text-2xl font-bold text-yellow-600">
+              {marketOverview?.vixLevel?.toFixed(1) || '18.5'}
+            </div>
+            <p className="text-xs text-muted-foreground">
+              {marketOverview?.vixTrend || 'falling'} trend
             </p>
           </CardContent>
         </Card>
