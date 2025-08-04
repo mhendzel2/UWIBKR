@@ -8,13 +8,13 @@ import { Switch } from "@/components/ui/switch";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { 
-  Brain, 
-  TrendingUp, 
-  Settings, 
-  Play, 
-  Zap, 
-  BarChart3, 
+import {
+  Brain,
+  TrendingUp,
+  Settings,
+  Play,
+  Zap,
+  BarChart3,
   Activity,
   AlertTriangle,
   CheckCircle,
@@ -22,27 +22,60 @@ import {
   Cpu
 } from "lucide-react";
 
+interface MLStatus {
+  isModelLoaded?: boolean;
+  modelArchitecture?: string;
+  parameters?: number;
+  trainingDataSize?: number;
+  transformerEnabled?: boolean;
+  accuracy?: number;
+  isTraining?: boolean;
+}
+
+interface TransformerStats {
+  parameters?: number;
+  layers?: number;
+  memoryUsage?: string | number;
+  isTraining?: boolean;
+}
+
+interface AnalysisResult {
+  traditional_analysis: {
+    confidence: number;
+    expectedReturn: number;
+    riskScore: number;
+  };
+  transformer_analysis?: {
+    score: number;
+    trend: string;
+    market_regime: string;
+    risk_assessment: string;
+  };
+  combined_score: number;
+  recommendation: string;
+}
+
 export default function MachineLearning() {
   const [selectedSignal, setSelectedSignal] = useState<any>(null);
   const [transformerEnabled, setTransformerEnabled] = useState(false);
   const queryClient = useQueryClient();
 
   // Get ML model status
-  const { data: mlStatus, isLoading: mlLoading } = useQuery({
+  const { data: mlStatus, isLoading: mlLoading } = useQuery<MLStatus>({
     queryKey: ['/api/ml/status'],
-    refetchInterval: 5000
+    refetchInterval: 5000,
   });
 
   // Get transformer stats
-  const { data: transformerStats } = useQuery({
+  const { data: transformerStats } = useQuery<TransformerStats>({
     queryKey: ['/api/ml/transformer-stats'],
-    enabled: transformerEnabled
+    enabled: transformerEnabled,
   });
 
   // Get signals for analysis
-  const { data: signals } = useQuery({
+  const { data: signals } = useQuery<any[]>({
     queryKey: ['/api/signals'],
-    select: (data) => data?.slice(0, 5) // Get first 5 signals for testing
+    select: (data) => data?.slice(0, 5), // Get first 5 signals for testing
   });
 
   // Enable/disable transformer
@@ -54,11 +87,14 @@ export default function MachineLearning() {
   });
 
   // Analyze signal with transformer
-  const analyzeSignalMutation = useMutation({
-    mutationFn: (signal: any) => apiRequest('/api/ml/analyze-with-transformer', 'POST', { signal }),
+  const analyzeSignalMutation = useMutation<AnalysisResult, Error, any>({
+    mutationFn: async (signal: any) => {
+      const res = await apiRequest('/api/ml/analyze-with-transformer', 'POST', { signal });
+      return res.json();
+    },
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['/api/ml/status'] });
-    }
+    },
   });
 
   // Train transformer
@@ -268,7 +304,7 @@ export default function MachineLearning() {
               </CardDescription>
             </CardHeader>
             <CardContent className="space-y-6">
-              {transformerStats && (
+              {transformerStats ? (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <h4 className="font-medium mb-3">Model Statistics</h4>
@@ -305,7 +341,7 @@ export default function MachineLearning() {
                     </div>
                   </div>
                 </div>
-              )}
+              ) : null}
 
               <div className="flex space-x-4">
                 <Button 
