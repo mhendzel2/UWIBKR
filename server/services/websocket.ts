@@ -261,6 +261,19 @@ export class WebSocketService {
     }, 'portfolios');
   }
 
+  broadcastTradeUpdate(trade: any): void {
+    this.broadcast({
+      type: 'trade_update',
+      data: trade,
+      timestamp: Date.now(),
+    }, 'trades');
+  }
+
+  // General broadcast method for custom messages
+  public broadcastMessage(message: WebSocketMessage): void {
+    this.broadcast(message);
+  }
+
   private generateClientId(): string {
     return `client_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
   }

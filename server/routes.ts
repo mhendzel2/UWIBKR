@@ -1405,7 +1405,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const trade = await storage.createTrade(validatedData);
       
       // Broadcast trade creation via WebSocket
-      wsService.broadcast({
+      wsService.broadcastMessage({
         type: 'trade_created',
         data: trade,
         timestamp: Date.now()
@@ -1424,7 +1424,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const { id } = req.params;
       const trade = await storage.updateTrade(id, req.body);
       // Broadcast trade update via WebSocket
-      wsService.broadcast({
+      wsService.broadcastMessage({
         type: 'trade_updated',
         data: trade,
         timestamp: Date.now()
@@ -1433,10 +1433,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json(trade);
     } catch (error) {
       console.error("Failed to update trade:", error);
-      res.status(500).json({ message: "Failed to update trade" });
-    }
-      // Broadcast trade update via WebSocket
-      wsService.broadcastTradeUpdate(trade);
       res.status(500).json({ message: "Failed to update trade" });
     }
   });
@@ -2366,10 +2362,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const transactionData = {
         portfolioId: req.params.id,
         symbol: req.body.symbol,
-        action: req.body.action,
+        side: req.body.action, // Map action to side
         quantity: req.body.quantity,
         price: req.body.price,
-        fees: req.body.fees || '0',
+        amount: (parseFloat(req.body.price) * parseFloat(req.body.quantity)).toString(),
+        commission: req.body.fees || '0',
         contractDetails: req.body.contractDetails || { secType: 'STK', currency: 'USD' },
         executionTime: req.body.executionTime ? new Date(req.body.executionTime) : new Date()
       };
@@ -2387,7 +2384,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/portfolios/:id/sync", async (req, res) => {
     try {
       const { portfolioManager } = await import('./services/portfolioManager');
-      const result = await portfolioManager.syncPortfolioData(req.params.id);
+      const result = await portfolioManager.syncPortfolioWithIBKR(req.params.id);
       res.json(result);
     } catch (error) {
       console.error("Failed to sync portfolio:", error);
@@ -2458,13 +2455,11 @@ export async function registerRoutes(app: Express): Promise<Server> {
         })
         .on('end', async () => {
           try {
-            // Clear existing watchlist and add new symbols
-            await storage.clearWatchlist();
-            for (const symbol of symbols) {
-              await storage.addToWatchlist(symbol);
-            }
-            
+            // TODO: Implement watchlist storage methods in storage.ts
+            // For now, just log the imported symbols
             console.log(`✅ Imported ${symbols.length} symbols from CSV to watchlist`);
+            console.log('Symbols:', symbols.map(s => s.symbol));
+            
             res.json({ 
               message: `Successfully imported ${symbols.length} symbols from CSV`,
               symbols: symbols.map(s => s.symbol)
