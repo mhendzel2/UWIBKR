@@ -157,6 +157,42 @@ export default function NewsSentimentPage() {
     enabled: !!selectedSymbol,
   });
 
+  // Sector Performance data for broader context
+  const { data: sectorPerformance = [] } = useQuery({
+    queryKey: ['/api/options/sector-performance', Date.now()],
+    queryFn: async () => {
+      console.log(`[${new Date().toLocaleTimeString()}] Fetching sector performance...`);
+      const response = await fetch('/api/options/sector-performance');
+      if (!response.ok) throw new Error('Failed to fetch sector performance');
+      const data = await response.json();
+      console.log(`[${new Date().toLocaleTimeString()}] Sector performance updated:`, data?.length || 0, 'sectors');
+      return data;
+    },
+    staleTime: 0,
+    refetchInterval: 60000,
+    refetchOnWindowFocus: true,
+    refetchOnMount: true,
+    refetchOnReconnect: true,
+  });
+
+  // Market Overview for broader context
+  const { data: marketOverview } = useQuery({
+    queryKey: ['/api/options/market-overview', Date.now()],
+    queryFn: async () => {
+      console.log(`[${new Date().toLocaleTimeString()}] Fetching market overview...`);
+      const response = await fetch('/api/options/market-overview');
+      if (!response.ok) throw new Error('Failed to fetch market overview');
+      const data = await response.json();
+      console.log(`[${new Date().toLocaleTimeString()}] Market overview updated:`, data);
+      return data;
+    },
+    staleTime: 0,
+    refetchInterval: 60000,
+    refetchOnWindowFocus: true,
+    refetchOnMount: true,
+    refetchOnReconnect: true,
+  });
+
   const formatTime = (timestamp: string) => {
     return new Date(timestamp).toLocaleTimeString();
   };

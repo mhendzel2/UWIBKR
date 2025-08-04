@@ -136,23 +136,117 @@ router.get('/overview', async (req, res) => {
 // WebSocket endpoint for clients to connect
 // This would typically be handled in a separate file (e.g., websocketRoutes.ts)
 // but adding here for simplicity to show integration.
-export const upgradeHeatmapSocket = (ws: any, req: any) => {
-    console.log('Client connected to heatmap updates');
+// Sector Performance endpoint
+router.get('/sector-performance', async (req, res) => {
+  try {
+    // Fetch sector performance data from UnusualWhales or calculate from flow data
+    // const sectorData = await unusualWhales.getSectorPerformance();
+    
+    // Mock data structure for now - replace with real implementation
+    const sectorPerformance = [
+      {
+        sector: 'Technology',
+        performance: 2.3,
+        volume: 1250000,
+        sentiment: 'bullish',
+        topTickers: ['AAPL', 'MSFT', 'GOOGL'],
+        flowStrength: 85
+      },
+      {
+        sector: 'Finance',
+        performance: -0.8,
+        volume: 890000,
+        sentiment: 'bearish',
+        topTickers: ['JPM', 'BAC', 'WFC'],
+        flowStrength: 62
+      },
+      {
+        sector: 'Healthcare',
+        performance: 1.2,
+        volume: 720000,
+        sentiment: 'neutral',
+        topTickers: ['JNJ', 'PFE', 'UNH'],
+        flowStrength: 71
+      },
+      {
+        sector: 'Energy',
+        performance: 3.1,
+        volume: 650000,
+        sentiment: 'bullish',
+        topTickers: ['XOM', 'CVX', 'COP'],
+        flowStrength: 78
+      }
+    ];
 
-    const messageHandler = (data: any) => {
-        // Filter and forward relevant messages to the client
-        if (data.event === 'flow_alert' || data.event === 'options_trade') {
-            ws.send(JSON.stringify(data));
-        }
+    res.json(sectorPerformance);
+  } catch (error) {
+    console.error('❌ Error fetching sector performance:', error);
+    res.status(500).json({ error: 'Failed to fetch sector performance data' });
+  }
+});
+
+// Market Overview endpoint
+router.get('/market-overview', async (req, res) => {
+  try {
+    // Fetch market overview data from multiple sources
+    const marketOverview = {
+      marketSentiment: 'bullish',
+      fearGreedIndex: 72,
+      vixLevel: 18.5,
+      vixTrend: 'falling',
+      majorIndices: {
+        spy: { price: 445.20, change: 1.2, changePercent: 0.27 },
+        qqq: { price: 375.80, change: 2.1, changePercent: 0.56 },
+        iwm: { price: 198.40, change: -0.3, changePercent: -0.15 }
+      },
+      optionsMetrics: {
+        totalVolume: 28500000,
+        putCallRatio: 0.78,
+        unusualActivity: 145,
+        largestTrades: [
+          { symbol: 'AAPL', premium: 2500000, type: 'call', sentiment: 'bullish' },
+          { symbol: 'TSLA', premium: 1800000, type: 'put', sentiment: 'bearish' },
+          { symbol: 'NVDA', premium: 3200000, type: 'call', sentiment: 'bullish' }
+        ]
+      },
+      sectorRotation: {
+        inflows: ['Technology', 'Energy'],
+        outflows: ['Utilities', 'Real Estate'],
+        neutral: ['Healthcare', 'Consumer Staples']
+      },
+      newsFlow: {
+        bullishStories: 12,
+        bearishStories: 7,
+        neutralStories: 15,
+        totalStories: 34
+      }
     };
 
-    webSocketService.onMessage(messageHandler);
+    res.json(marketOverview);
+  } catch (error) {
+    console.error('❌ Error fetching market overview:', error);
+    res.status(500).json({ error: 'Failed to fetch market overview data' });
+  }
+});
+
+export const upgradeHeatmapSocket = (ws: any, req: any) => {
+    console.log('Client connected to heatmap updates');
+    
+    // Set up interval to send updates every 5 seconds
+    const updateInterval = setInterval(() => {
+        if (ws.readyState === ws.OPEN) {
+            ws.send(JSON.stringify({ 
+                type: 'heatmap_update', 
+                timestamp: new Date().toISOString(),
+                data: 'Live heatmap data would go here'
+            }));
+        }
+    }, 5000);
 
     ws.on('close', () => {
         console.log('Client disconnected from heatmap');
-        // Clean up the specific handler if needed, or let the service handle it.
+        clearInterval(updateInterval);
     });
 };
-
 
 export default router;

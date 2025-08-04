@@ -141,6 +141,28 @@ export default function MorningUpdatePage() {
     refetchInterval: autoRefresh ? 5 * 60 * 1000 : false
   });
 
+  // Sector Performance data for broader context
+  const { data: sectorPerformance = [] } = useQuery({
+    queryKey: ['/api/options/sector-performance'],
+    queryFn: async () => {
+      const response = await fetch('/api/options/sector-performance');
+      if (!response.ok) throw new Error('Failed to fetch sector performance');
+      return await response.json();
+    },
+    refetchInterval: autoRefresh ? 5 * 60 * 1000 : false
+  });
+
+  // Market Overview for broader context
+  const { data: marketOverview } = useQuery({
+    queryKey: ['/api/options/market-overview'],
+    queryFn: async () => {
+      const response = await fetch('/api/options/market-overview');
+      if (!response.ok) throw new Error('Failed to fetch market overview');
+      return await response.json();
+    },
+    refetchInterval: autoRefresh ? 5 * 60 * 1000 : false
+  });
+
   const formatPercent = (num: number): string => {
     return `${num.toFixed(2)}%`;
   };
