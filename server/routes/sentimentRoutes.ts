@@ -89,6 +89,20 @@ router.get('/sector/:sector', async (req, res) => {
   }
 });
 
+// Get sector/ETF tide and net flow expiry sentiment
+router.get('/sector/:sector/tide-expiry', async (req, res) => {
+  try {
+    const data = await sentimentAnalysisService.getSectorTideExpirySentiment(req.params.sector);
+    res.json(data);
+  } catch (error) {
+    console.error('Error fetching sector tide expiry sentiment:', error);
+    res.status(500).json({
+      error: 'Failed to fetch sector tide expiry sentiment',
+      message: error instanceof Error ? error.message : 'Unknown error'
+    });
+  }
+});
+
 // Get sentiment for all watchlist tickers
 router.get('/watchlist', async (_req, res) => {
   try {

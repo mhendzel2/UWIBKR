@@ -5,6 +5,7 @@ import Sidebar from "@/components/Sidebar";
 import MetricCard from "@/components/MetricCard";
 import AISignalsPanel from "@/components/AISignalsPanel";
 import OptionsFlowPanel from "@/components/OptionsFlowPanel";
+import SectorSentimentPanel from "@/components/SectorSentimentPanel";
 import TradingViewChart from "@/components/TradingViewChart";
 import ActivePositions from "@/components/ActivePositions";
 import RiskManagement from "@/components/RiskManagement";
@@ -92,10 +93,11 @@ export default function Dashboard() {
             />
           </div>
 
-          {/* Second Row: AI Signals and Options Flow */}
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
+          {/* Second Row: AI Signals, Options Flow, Sector Sentiment */}
+          <div className="grid grid-cols-1 xl:grid-cols-3 gap-6">
             <AISignalsPanel />
             <OptionsFlowPanel />
+            <SectorSentimentPanel />
           </div>
 
           {/* Third Row: Charts and Positions */}
