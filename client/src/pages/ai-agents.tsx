@@ -30,6 +30,23 @@ interface AgentMetrics {
   totalDecisions: number;
 }
 
+interface AgentPerformance {
+  totalDecisions: number;
+  averageConfidence: number;
+  successRate: number;
+}
+
+interface AgentStatus {
+  agents: Record<string, number>;
+  performance: Record<string, AgentPerformance>;
+  totalDecisions: number;
+}
+
+interface AgentHealth {
+  status: string;
+  activeAgents: number;
+}
+
 interface AgentDecision {
   agentId: string;
   symbol: string;
@@ -62,13 +79,13 @@ export default function AIAgentsPage() {
   const [analysisData, setAnalysisData] = useState<any>({});
 
   // Fetch agent system status
-  const { data: agentStatus, isLoading: statusLoading } = useQuery({
+  const { data: agentStatus, isLoading: statusLoading } = useQuery<AgentStatus>({
     queryKey: ['/api/agents/status'],
     refetchInterval: 5000
   });
 
   // Fetch agent health
-  const { data: agentHealth } = useQuery({
+  const { data: agentHealth } = useQuery<AgentHealth>({
     queryKey: ['/api/agents/health'],
     refetchInterval: 10000
   });
@@ -356,7 +373,7 @@ export default function AIAgentsPage() {
                                     {getAgentIcon(agent.agentId)}
                                     <span>{getAgentName(agent.agentId)}</span>
                                   </span>
-                                  <Badge variant="outline" size="sm">
+                                  <Badge variant="outline" className="text-xs">
                                     {(agent.confidence * 100).toFixed(0)}%
                                   </Badge>
                                 </div>
