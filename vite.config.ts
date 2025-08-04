@@ -33,5 +33,12 @@ export default defineConfig({
       strict: true,
       deny: ["**/.*"],
     },
+    // Proxy API requests to the backend server
+    proxy: {
+      '/api': {
+        target: 'http://localhost:5001',
+        changeOrigin: true,
+      },
+    },
   },
 });
