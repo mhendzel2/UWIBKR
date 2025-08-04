@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -29,7 +29,6 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { insertTradeSchema, insertTradeAssessmentSchema, type Trade, type TradeAssessment } from "@shared/schema";
 import { z } from "zod";
-import { apiRequest } from "@/lib/queryClient";
 
 type TradeWithAssessments = Trade & {
   assessments?: TradeAssessment[];
@@ -43,15 +42,21 @@ export default function TradesPage() {
   const [tradeDialogOpen, setTradeDialogOpen] = useState(false);
   const queryClient = useQueryClient();
 
+  const safeJson = async (response: Response) => {
+    const text = await response.text();
+    return text ? JSON.parse(text) : null;
+  };
+
   // Fetch trades with filtering
-  const { data: trades = [], isLoading: tradesLoading } = useQuery<Trade[]>({
+  const { data: trades = [], isLoading: tradesLoading, error: tradesError } = useQuery<Trade[]>({
     queryKey: ['/api/trades', filterStatus, filterTicker],
     queryFn: async () => {
       const params = new URLSearchParams();
       if (filterStatus !== 'all') params.append('status', filterStatus);
       if (filterTicker) params.append('ticker', filterTicker);
       const response = await fetch(`/api/trades?${params.toString()}`);
-      return response.json();
+      if (!response.ok) throw new Error('Failed to fetch trades');
+      return (await safeJson(response)) || [];
     },
   });
 
@@ -60,16 +65,18 @@ export default function TradesPage() {
     queryKey: ['/api/trades/statistics'],
     queryFn: async () => {
       const response = await fetch('/api/trades/statistics');
-      return response.json();
+      if (!response.ok) return null;
+      return safeJson(response);
     },
   });
 
   // Fetch performance metrics
-  const { data: performance = [] } = useQuery({
+  const { data: performance = [], error: performanceError } = useQuery({
     queryKey: ['/api/performance'],
     queryFn: async () => {
       const response = await fetch('/api/performance');
-      return response.json();
+      if (!response.ok) return [];
+      return (await safeJson(response)) || [];
     },
   });
 
@@ -436,7 +443,11 @@ export default function TradesPage() {
                     </TableRow>
                   </TableHeader>
                   <TableBody>
-                    {tradesLoading ? (
+                    {tradesError ? (
+                      <TableRow>
+                        <TableCell colSpan={9} className="text-center text-destructive">Failed to load trades</TableCell>
+                      </TableRow>
+                    ) : tradesLoading ? (
                       <TableRow>
                         <TableCell colSpan={9} className="text-center">Loading trades...</TableCell>
                       </TableRow>
@@ -548,7 +559,9 @@ export default function TradesPage() {
                 <CardTitle>Performance Metrics</CardTitle>
               </CardHeader>
               <CardContent>
-                {(performance as any[]).length > 0 ? (
+                {performanceError ? (
+                  <p className="text-destructive">Failed to load performance data</p>
+                ) : (performance as any[]).length > 0 ? (
                   <div className="space-y-4">
                     {(performance as any[]).map((metric: any, index: number) => (
                       <div key={index} className="p-4 border rounded-lg">

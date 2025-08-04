@@ -290,6 +290,80 @@ export class UnusualWhalesService {
     }
   }
 
+  async getNetFlowExpiry(params: {
+    date?: string;
+    moneyness?: string[];
+    tide_type?: string[];
+    expiration?: string[];
+  } = {}): Promise<any> {
+    try {
+      const search = new URLSearchParams();
+      if (params.date) search.append('date', params.date);
+      params.moneyness?.forEach(m => search.append('moneyness', m));
+      params.tide_type?.forEach(t => search.append('tide_type', t));
+      params.expiration?.forEach(e => search.append('expiration', e));
+      const endpoint = `/net-flow/expiry${search.toString() ? `?${search.toString()}` : ''}`;
+      return await this.makeRequest<any>(endpoint);
+    } catch (error) {
+      console.error('Failed to fetch net flow expiry data:', error);
+      return null;
+    }
+  }
+
+  async getSectorTide(sector: string, date?: string): Promise<any> {
+    try {
+      const query = date ? `?date=${date}` : '';
+      return await this.makeRequest<any>(`/market/${sector}/sector-tide${query}`);
+    } catch (error) {
+      console.error('Failed to fetch sector tide data:', error);
+      return null;
+    }
+  }
+
+  async getEtfTide(ticker: string, date?: string): Promise<any> {
+    try {
+      const query = date ? `?date=${date}` : '';
+      return await this.makeRequest<any>(`/market/${ticker}/etf-tide${query}`);
+    } catch (error) {
+      console.error('Failed to fetch ETF tide data:', error);
+      return null;
+    }
+  }
+
+  async getOiChange(date?: string, limit?: number, order?: string): Promise<any> {
+    try {
+      const search = new URLSearchParams();
+      if (date) search.append('date', date);
+      if (limit) search.append('limit', limit.toString());
+      if (order) search.append('order', order);
+      const endpoint = `/market/oi-change${search.toString() ? `?${search.toString()}` : ''}`;
+      return await this.makeRequest<any>(endpoint);
+    } catch (error) {
+      console.error('Failed to fetch OI change data:', error);
+      return null;
+    }
+  }
+
+  async getTotalOptionsVolume(limit?: number): Promise<any> {
+    try {
+      const query = limit ? `?limit=${limit}` : '';
+      return await this.makeRequest<any>(`/market/total-options-volume${query}`);
+    } catch (error) {
+      console.error('Failed to fetch total options volume:', error);
+      return null;
+    }
+  }
+
+  async getSpike(date?: string): Promise<any> {
+    try {
+      const query = date ? `?date=${date}` : '';
+      return await this.makeRequest<any>(`/market/spike${query}`);
+    } catch (error) {
+      console.error('Failed to fetch SPIKE data:', error);
+      return null;
+    }
+  }
+
   async getCustomAlerts(): Promise<any[]> {
     try {
       const data = await this.makeRequest<{ data: any[] }>('/alerts');
