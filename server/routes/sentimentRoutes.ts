@@ -200,6 +200,36 @@ router.get('/ticker/:symbol', async (req, res) => {
   }
 });
 
+// Get current comprehensive sentiment (legacy endpoint compatibility)
+router.get('/current', async (_req, res) => {
+  try {
+    console.log('📊 Fetching current comprehensive sentiment...');
+    const data = await comprehensiveMarketSentimentService.getComprehensiveMarketSentiment();
+    res.json(data);
+  } catch (error) {
+    console.error('Error fetching current sentiment:', error);
+    res.status(500).json({
+      error: 'Failed to fetch current sentiment',
+      message: error instanceof Error ? error.message : 'Unknown error'
+    });
+  }
+});
+
+// Get comprehensive sentiment (legacy endpoint compatibility)
+router.get('/comprehensive', async (_req, res) => {
+  try {
+    console.log('📊 Fetching comprehensive sentiment...');
+    const data = await comprehensiveMarketSentimentService.getComprehensiveMarketSentiment();
+    res.json(data);
+  } catch (error) {
+    console.error('Error fetching comprehensive sentiment:', error);
+    res.status(500).json({
+      error: 'Failed to fetch comprehensive sentiment',
+      message: error instanceof Error ? error.message : 'Unknown error'
+    });
+  }
+});
+
 // Get market sentiment using SPY as proxy
 router.get('/market-proxy', async (_req, res) => {
   try {
