@@ -112,8 +112,16 @@ export class SignalProcessor extends EventEmitter {
 
       console.log(`Found ${rawAlerts.length} raw alerts, processing...`);
 
+      // Transform rawAlerts to match expected FlowAlert interface
+      const transformedAlerts = rawAlerts.map(alert => ({
+        ...alert,
+        id: alert.id || `alert_${Date.now()}_${Math.random()}`,
+        type: alert.type || (alert.strike > alert.underlying_price ? 'call' : 'put'),
+        created_at: alert.created_at || new Date().toISOString()
+      }));
+
       // Process through our sophisticated alert processor
-      const processedAlerts = await alertProcessor.processFlowAlerts(rawAlerts);
+      const processedAlerts = await alertProcessor.processFlowAlerts(transformedAlerts);
 
       console.log(`Processed ${processedAlerts.length} high-conviction alerts`);
 

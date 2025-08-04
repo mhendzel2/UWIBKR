@@ -313,7 +313,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         action: 'BUY',
         totalQuantity: quantity,
         orderType: 'LMT',
-        lmtPrice: parseFloat(signal.entryPrice),
+        lmtPrice: parseFloat(signal.entryPrice || '0'),
       };
 
       const orderId = await ibkrService.placeOrder(contract, order);
@@ -472,7 +472,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       console.error("Failed to get Friday options flow:", error);
       res.status(500).json({ 
         message: "Failed to retrieve Friday options flow data",
-        error: error.message
+        error: error instanceof Error ? error.message : 'Unknown error'
       });
     }
   });
@@ -499,7 +499,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       });
     } catch (error) {
       console.error("Failed to analyze LEAP trades:", error);
-      res.status(500).json({ message: "Failed to analyze LEAP trades", error: error.message });
+      res.status(500).json({ message: "Failed to analyze LEAP trades", error: error instanceof Error ? error.message : 'Unknown error' });
     }
   });
 
@@ -514,7 +514,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json(analysis);
     } catch (error) {
       console.error("Failed to get LEAP details:", error);
-      res.status(500).json({ message: "Failed to get LEAP details", error: error.message });
+      res.status(500).json({ message: "Failed to get LEAP details", error: error instanceof Error ? error.message : 'Unknown error' });
     }
   });
 
@@ -533,7 +533,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
       res.json({ success: true, updatedCount: leapIds.length });
     } catch (error) {
       console.error("Failed to update LEAP prices:", error);
-      res.status(500).json({ message: "Failed to update LEAP prices", error: error.message });
+      res.status(500).json({ message: "Failed to update LEAP prices", error: error instanceof Error ? error.message : 'Unknown error' });
     }
   });
 
@@ -551,7 +551,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         issueTypes: ['Common Stock', 'ADR']
       };
 
-      const alerts = await unusualWhales.getFlowAlerts(filters);
+      const alerts = await uwService.getFlowAlerts(filters);
       res.json(alerts);
     } catch (error) {
       console.error("Failed to fetch sophisticated flow alerts:", error);
@@ -698,7 +698,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/portfolio/allocations", async (req, res) => {
     try {
       // Mock allocation data for demonstration
-      const allocations = [];
+      const allocations: any[] = [];
       res.json(allocations);
     } catch (error) {
       console.error("Failed to get portfolio allocations:", error);
@@ -709,7 +709,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/portfolio/optimization-scenarios", async (req, res) => {
     try {
       // Mock optimization scenarios for demonstration
-      const scenarios = [];
+      const scenarios: any[] = [];
       res.json(scenarios);
     } catch (error) {
       console.error("Failed to get optimization scenarios:", error);
@@ -1256,7 +1256,13 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const alert = await storage.createAlert(req.body);
       // Broadcast alert to connected clients
-      wsService.broadcast('alert_created', alert);
+      wsService.broadcastRiskAlert({
+        type: 'alert_created',
+        message: 'New alert created',
+        severity: 'info',
+        data: alert,
+        timestamp: Date.now()
+      });
       res.json(alert);
     } catch (error) {
       console.error("Failed to create alert:", error);
@@ -1401,7 +1407,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
       // Broadcast trade creation via WebSocket
       wsService.broadcast({
         type: 'trade_created',
-        data: trade
+        data: trade,
+        timestamp: Date.now()
       });
       
       res.status(201).json(trade);
@@ -1416,19 +1423,20 @@ export async function registerRoutes(app: Express): Promise<Server> {
     try {
       const { id } = req.params;
       const trade = await storage.updateTrade(id, req.body);
-      if (!trade) {
-        return res.status(404).json({ message: "Trade not found" });
-      }
-      
       // Broadcast trade update via WebSocket
       wsService.broadcast({
         type: 'trade_updated',
-        data: trade
+        data: trade,
+        timestamp: Date.now()
       });
       
       res.json(trade);
     } catch (error) {
       console.error("Failed to update trade:", error);
+      res.status(500).json({ message: "Failed to update trade" });
+    }
+      // Broadcast trade update via WebSocket
+      wsService.broadcastTradeUpdate(trade);
       res.status(500).json({ message: "Failed to update trade" });
     }
   });
@@ -2480,9 +2488,18 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.use('/api/options', optionsScreenerRoutes);
   app.use('/api/options', earningsScreenerRoutes);
   
-  // Options heatmap routes
-  const { default: optionsHeatmapRoutes } = await import('./routes/optionsHeatmap');
-  app.use('/api/options', optionsHeatmapRoutes);
+  // Simple test heatmap route inline
+  app.get('/api/heatmap/test', (req, res) => {
+    res.json({
+      success: true,
+      message: 'Inline heatmap test is working!',
+      timestamp: new Date().toISOString()
+    });
+  });
+  
+  // Options heatmap routes - commented out for testing
+  // const { default: optionsHeatmapRoutes } = await import('./routes/optionsHeatmap');
+  // app.use('/api/heatmap', optionsHeatmapRoutes);
   
   // Options radar routes
   const { default: optionsRadarRoutes } = await import('./routes/optionsRadar');

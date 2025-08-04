@@ -99,7 +99,7 @@ router.post('/screen', async (req, res) => {
         }
       }),
       
-      // Analyst ratings for sentiment enhancement
+      // Analyst ratings for sentiment enhancement - CORRECTED ENDPOINT
       fetch('https://api.unusualwhales.com/api/analyst-ratings/recent', {
         headers: {
           'Authorization': `Bearer ${process.env.UNUSUAL_WHALES_API_KEY}`,

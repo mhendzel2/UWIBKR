@@ -31,7 +31,7 @@ type TickerAnalysis = {
   news_sentiment: string;
   recommended_action: string;
   reasoning: string;
-  top_contracts: Array<{ contractId: string; details: string }>;
+  top_contracts: ShortExpiryContract[];
 };
 
 type HotContracts = Array<{ contractId: string; details: string }>;
@@ -77,9 +77,24 @@ export default function ShortExpiryDashboard() {
     refetchInterval: autoRefresh ? 60000 : false,
   });
 
+  // Defensive mapping for hotContracts
+  const validHotContracts: ShortExpiryContract[] = Array.isArray(hotContracts)
+    ? hotContracts.filter((c: any) => c && typeof c === 'object' && 'ticker' in c && 'strike' in c && 'type' in c && 'expiration' in c)
+    : [];
+
+  // Defensive mapping for top contracts in tickerAnalysis
+  const validTopContracts: ShortExpiryContract[] = tickerAnalysis && Array.isArray(tickerAnalysis.top_contracts)
+    ? tickerAnalysis.top_contracts.filter((c: any) => c && typeof c === 'object' && 'ticker' in c && 'strike' in c && 'type' in c && 'expiration' in c)
+    : [];
+
+  // Defensive fallback for FDA alerts
+  const safeFdaAlerts: any[] = Array.isArray(fdaAlerts) ? fdaAlerts : [];
+
   useEffect(() => {
-    if (analysisData) {
-      setTickerAnalysis(analysisData);
+    if (analysisData && typeof analysisData === 'object' && 'ticker' in analysisData) {
+      setTickerAnalysis(analysisData as TickerAnalysis);
+    } else {
+      setTickerAnalysis(null);
     }
   }, [analysisData]);
 
@@ -275,34 +290,34 @@ export default function ShortExpiryDashboard() {
                   )}
 
                   {/* Top Contracts for This Ticker */}
-                  {tickerAnalysis.top_contracts && tickerAnalysis.top_contracts.length > 0 && (
+                  {validTopContracts.length > 0 && (
                     <div className="space-y-2">
                       <h3 className="font-semibold">Recommended Contracts</h3>
                       <div className="grid gap-2">
-                        {tickerAnalysis.top_contracts.map((contract) => (
-                          <Card key={contract.id} className="p-3">
+                        {validTopContracts.map((contract) => (
+                          <Card key={contract.contractId || `${contract.ticker}-${contract.strike}-${contract.type}-${contract.expiration}` } className="p-3">
                             <div className="flex items-center justify-between">
                               <div className="flex items-center gap-4">
                                 <div>
                                   <div className="font-medium">
-                                    {contract.ticker} ${contract.strike} {contract.type.toUpperCase()}
+                                    {contract.ticker} ${contract.strike} {contract.type?.toUpperCase?.()}
                                   </div>
                                   <div className="text-sm text-gray-600">
-                                    {contract.dte} DTE • {contract.moneyness} • Vol: {contract.volume.toLocaleString()}
+                                    {contract.dte ?? '?'} DTE • {contract.moneyness ?? '?'} • Vol: {contract.volume?.toLocaleString?.() ?? '?'}
                                   </div>
                                 </div>
-                                <Badge className={getProbabilityColor(contract.probability)}>
-                                  {contract.probability}%
+                                <Badge className={getProbabilityColor(contract.probability ?? 0)}>
+                                  {contract.probability ?? '?'}%
                                 </Badge>
-                                <Badge className={getRecommendationColor(contract.recommendation)}>
-                                  {contract.recommendation.replace('_', ' ').toUpperCase()}
+                                <Badge className={getRecommendationColor(contract.recommendation ?? 'neutral')}>
+                                  {(contract.recommendation ?? 'neutral').replace('_', ' ').toUpperCase()}
                                 </Badge>
                               </div>
                               <div className="flex items-center gap-2">
                                 <div className="text-right">
-                                  <div className="font-bold">${contract.price.toFixed(2)}</div>
+                                  <div className="font-bold">${contract.price?.toFixed?.(2) ?? '?'}</div>
                                   <div className="text-sm text-gray-600">
-                                    ${contract.bid.toFixed(2)} - ${contract.ask.toFixed(2)}
+                                    ${contract.bid?.toFixed?.(2) ?? '?'} - ${contract.ask?.toFixed?.(2) ?? '?'}
                                   </div>
                                 </div>
                                 <Button
@@ -341,10 +356,10 @@ export default function ShortExpiryDashboard() {
                   <RefreshCw className="h-6 w-6 animate-spin mr-2" />
                   Loading hottest contracts...
                 </div>
-              ) : hotContracts && hotContracts.length > 0 ? (
+              ) : validHotContracts.length > 0 ? (
                 <div className="space-y-3">
-                  {hotContracts.slice(0, 10).map((contract: ShortExpiryContract, index: number) => (
-                    <Card key={contract.id} className="p-4 hover:shadow-md transition-shadow">
+                  {validHotContracts.slice(0, 10).map((contract: ShortExpiryContract, index: number) => (
+                    <Card key={contract.contractId || `${contract.ticker}-${contract.strike}-${contract.type}-${contract.expiration}` } className="p-4 hover:shadow-md transition-shadow">
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-4">
                           <div className="text-lg font-bold text-gray-500">
@@ -352,49 +367,49 @@ export default function ShortExpiryDashboard() {
                           </div>
                           <div>
                             <div className="font-semibold text-lg">
-                              {contract.ticker} ${contract.strike} {contract.type.toUpperCase()}
+                              {contract.ticker} ${contract.strike} {contract.type?.toUpperCase?.()}
                             </div>
                             <div className="text-sm text-gray-600 flex items-center gap-4">
                               <span className="flex items-center gap-1">
                                 <Clock className="h-3 w-3" />
-                                {contract.dte} DTE
+                                {contract.dte ?? '?'} DTE
                               </span>
                               <span className="flex items-center gap-1">
                                 <BarChart3 className="h-3 w-3" />
-                                Vol: {contract.volume.toLocaleString()}
+                                Vol: {contract.volume?.toLocaleString?.() ?? '?'}
                               </span>
                               <span className="flex items-center gap-1">
                                 <Activity className="h-3 w-3" />
-                                OI: {contract.openInterest.toLocaleString()}
+                                OI: {contract.openInterest?.toLocaleString?.() ?? '?'}
                               </span>
-                              <span>{contract.moneyness}</span>
+                              <span>{contract.moneyness ?? '?'}</span>
                             </div>
                           </div>
                           <div className="flex items-center gap-2">
-                            <Badge className={getProbabilityColor(contract.probability)}>
-                              {contract.probability}%
+                            <Badge className={getProbabilityColor(contract.probability ?? 0)}>
+                              {contract.probability ?? '?'}%
                             </Badge>
-                            <Badge className={getRecommendationColor(contract.recommendation)}>
-                              {contract.recommendation.replace('_', ' ').toUpperCase()}
+                            <Badge className={getRecommendationColor(contract.recommendation ?? 'neutral')}>
+                              {(contract.recommendation ?? 'neutral').replace('_', ' ').toUpperCase()}
                             </Badge>
                             <Badge variant="outline" className="flex items-center gap-1">
-                              {getSentimentIcon(contract.gexSentiment)}
+                              {getSentimentIcon((contract as any).gexSentiment ?? 'neutral')}
                               GEX
                             </Badge>
                             <Badge variant="outline" className="flex items-center gap-1">
-                              {getSentimentIcon(contract.flowSentiment)}
+                              {getSentimentIcon((contract as any).flowSentiment ?? 'neutral')}
                               Flow
                             </Badge>
                           </div>
                         </div>
                         <div className="flex items-center gap-4">
                           <div className="text-right">
-                            <div className="font-bold text-lg">${contract.price.toFixed(2)}</div>
+                            <div className="font-bold text-lg">${contract.price?.toFixed?.(2) ?? '?'}</div>
                             <div className="text-sm text-gray-600">
-                              ${contract.bid.toFixed(2)} - ${contract.ask.toFixed(2)}
+                              ${contract.bid?.toFixed?.(2) ?? '?'} - ${contract.ask?.toFixed?.(2) ?? '?'}
                             </div>
                             <div className="text-xs text-gray-500">
-                              Heat: {contract.heat_score.toFixed(1)}
+                              Heat: {(contract as any).heat_score?.toFixed?.(1) ?? '?'}
                             </div>
                           </div>
                           <Button
@@ -407,7 +422,7 @@ export default function ShortExpiryDashboard() {
                         </div>
                       </div>
                       <div className="mt-2 text-sm text-gray-600 italic">
-                        {contract.reasoning}
+                        {(contract as any).reasoning ?? ''}
                       </div>
                     </Card>
                   ))}
@@ -431,9 +446,9 @@ export default function ShortExpiryDashboard() {
               </CardTitle>
             </CardHeader>
             <CardContent>
-              {fdaAlerts && fdaAlerts.length > 0 ? (
+              {safeFdaAlerts.length > 0 ? (
                 <div className="space-y-4">
-                  {fdaAlerts.map((alert: any) => (
+                  {safeFdaAlerts.map((alert: any) => (
                     <Card key={alert.id} className="border-l-4 border-l-orange-500">
                       <CardContent className="p-4">
                         <div className="flex items-start justify-between mb-2">
