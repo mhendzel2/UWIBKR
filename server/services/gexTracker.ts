@@ -317,6 +317,32 @@ export class GEXTracker {
     return Array.from(this.sentiments.values());
   }
 
+  async updateWatchlistPrices(listName: string = 'default'): Promise<void> {
+    const list = this.getWatchlistMap(listName);
+    const { ibkrService } = await import('./ibkr');
+    for (const item of list.values()) {
+      if (!item.enabled) continue;
+      try {
+        const md = await ibkrService.getMarketData(item.symbol);
+        const price =
+          md?.lastPrice ||
+          md?.close ||
+          md?.price ||
+          md?.regularMarketPrice ||
+          md?.c ||
+          null;
+        if (price !== null) {
+          item.lastPrice = price;
+          item.lastUpdated = new Date().toISOString();
+        }
+      } catch (err) {
+        console.error('Failed to update price for', item.symbol, err);
+      }
+      await new Promise(res => setTimeout(res, 100));
+    }
+    await this.saveWatchlists();
+  }
+
   scheduleUpdates(): void {
     // Schedule for 10:30 AM ET (after market open)
     const scheduleTime = this.getNextUpdateTime();
@@ -379,7 +405,7 @@ export class GEXTracker {
 
   async performDailyUpdate(): Promise<void> {
     console.log('Starting daily GEX and market intelligence update...');
-    
+    await this.updateWatchlistPrices();
     const items = this.getWatchlist().filter(w => w.enabled);
     const results = {
       success: 0,

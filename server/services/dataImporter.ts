@@ -53,6 +53,7 @@ export interface WatchlistItem {
   enabled: boolean;
   gexTracking: boolean;
   lastUpdated: string;
+  lastPrice?: number;
 }
 
 export class DataImporter {
