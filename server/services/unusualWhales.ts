@@ -418,6 +418,76 @@ export class UnusualWhalesService {
     }
   }
 
+  /**
+   * Fetch most recent dark pool trades across the market
+   */
+  async getDarkpoolRecent(params: {
+    limit?: number;
+    date?: string;
+    min_premium?: number;
+    max_premium?: number;
+    min_size?: number;
+    max_size?: number;
+    min_volume?: number;
+    max_volume?: number;
+  } = {}): Promise<any[]> {
+    try {
+      const search = new URLSearchParams();
+      if (params.limit) search.append('limit', params.limit.toString());
+      if (params.date) search.append('date', params.date);
+      if (params.min_premium) search.append('min_premium', params.min_premium.toString());
+      if (params.max_premium) search.append('max_premium', params.max_premium.toString());
+      if (params.min_size) search.append('min_size', params.min_size.toString());
+      if (params.max_size) search.append('max_size', params.max_size.toString());
+      if (params.min_volume) search.append('min_volume', params.min_volume.toString());
+      if (params.max_volume) search.append('max_volume', params.max_volume.toString());
+
+      const endpoint = `/darkpool/recent${search.toString() ? `?${search.toString()}` : ''}`;
+      const data = await this.makeRequest<{ data: any[] }>(endpoint);
+      return data.data || [];
+    } catch (error) {
+      console.error('Failed to fetch recent darkpool trades:', error);
+      return [];
+    }
+  }
+
+  /**
+   * Fetch dark pool trades for a specific ticker
+   */
+  async getDarkpoolForTicker(ticker: string, params: {
+    date?: string;
+    newer_than?: string;
+    older_than?: string;
+    min_premium?: number;
+    max_premium?: number;
+    min_size?: number;
+    max_size?: number;
+    min_volume?: number;
+    max_volume?: number;
+    limit?: number;
+  } = {}): Promise<any[]> {
+    try {
+      const search = new URLSearchParams();
+      if (params.date) search.append('date', params.date);
+      if (params.newer_than) search.append('newer_than', params.newer_than);
+      if (params.older_than) search.append('older_than', params.older_than);
+      if (params.min_premium) search.append('min_premium', params.min_premium.toString());
+      if (params.max_premium) search.append('max_premium', params.max_premium.toString());
+      if (params.min_size) search.append('min_size', params.min_size.toString());
+      if (params.max_size) search.append('max_size', params.max_size.toString());
+      if (params.min_volume) search.append('min_volume', params.min_volume.toString());
+      if (params.max_volume) search.append('max_volume', params.max_volume.toString());
+      if (params.limit) search.append('limit', params.limit.toString());
+
+      const endpoint = `/darkpool/${ticker}${search.toString() ? `?${search.toString()}` : ''}`;
+      const data = await this.makeRequest<{ data: any[] }>(endpoint);
+      return data.data || [];
+    } catch (error) {
+      console.error(`Failed to fetch darkpool trades for ${ticker}:`, error);
+      return [];
+    }
+  }
+
   async detectMultiLegStrategies(ticker?: string): Promise<any[]> {
     try {
       const endpoint = ticker ? `/option-trades/multileg/${ticker}` : '/option-trades/multileg';
@@ -427,6 +497,273 @@ export class UnusualWhalesService {
       console.error('Failed to detect multileg strategies:', error);
       return [];
     }
+  }
+
+  // Earnings endpoints
+
+  async getEarningsAfterhours(params: { date?: string; limit?: number; page?: number } = {}): Promise<any[]> {
+    try {
+      const search = new URLSearchParams();
+      if (params.date) search.append('date', params.date);
+      if (params.limit) search.append('limit', params.limit.toString());
+      if (params.page) search.append('page', params.page.toString());
+      const endpoint = `/earnings/afterhours${search.toString() ? `?${search.toString()}` : ''}`;
+      const data = await this.makeRequest<{ data: any[] }>(endpoint);
+      return data.data || [];
+    } catch (error) {
+      console.error('Failed to fetch afterhours earnings:', error);
+      return [];
+    }
+  }
+
+  async getEarningsPremarket(params: { date?: string; limit?: number; page?: number } = {}): Promise<any[]> {
+    try {
+      const search = new URLSearchParams();
+      if (params.date) search.append('date', params.date);
+      if (params.limit) search.append('limit', params.limit.toString());
+      if (params.page) search.append('page', params.page.toString());
+      const endpoint = `/earnings/premarket${search.toString() ? `?${search.toString()}` : ''}`;
+      const data = await this.makeRequest<{ data: any[] }>(endpoint);
+      return data.data || [];
+    } catch (error) {
+      console.error('Failed to fetch premarket earnings:', error);
+      return [];
+    }
+  }
+
+  async getHistoricalEarnings(ticker: string): Promise<any[]> {
+    try {
+      const data = await this.makeRequest<{ data: any[] }>(`/earnings/${ticker}`);
+      return data.data || [];
+    } catch (error) {
+      console.error(`Failed to fetch historical earnings for ${ticker}:`, error);
+      return [];
+    }
+  }
+
+  // Insider endpoints
+
+  async getInsiderTransactions(params: {
+    ticker_symbol?: string;
+    min_value?: string;
+    max_value?: string;
+    min_price?: string;
+    max_price?: string;
+    owner_name?: string;
+    sectors?: string;
+    industries?: string;
+    min_marketcap?: string;
+    max_marketcap?: string;
+    market_cap_size?: string;
+    min_earnings_dte?: string;
+    max_earnings_dte?: string;
+    min_amount?: string;
+    max_amount?: string;
+    is_director?: boolean;
+    is_officer?: boolean;
+    is_ten_percent_owner?: boolean;
+    transaction_codes?: string[];
+    security_ad_codes?: string[];
+    limit?: number;
+    page?: number;
+  } = {}): Promise<any[]> {
+    try {
+      const search = new URLSearchParams();
+      Object.entries(params).forEach(([key, value]) => {
+        if (value === undefined) return;
+        if (Array.isArray(value)) {
+          value.forEach(v => search.append(`${key}[]`, String(v)));
+        } else {
+          search.append(key, String(value));
+        }
+      });
+      const endpoint = `/insider/transactions${search.toString() ? `?${search.toString()}` : ''}`;
+      const data = await this.makeRequest<{ data: any[] }>(endpoint);
+      return data.data || [];
+    } catch (error) {
+      console.error('Failed to fetch insider transactions:', error);
+      return [];
+    }
+  }
+
+  async getInsiderSectorFlow(sector: string): Promise<any[]> {
+    try {
+      const data = await this.makeRequest<{ data: any[] }>(`/insider/${sector}/sector-flow`);
+      return data.data || [];
+    } catch (error) {
+      console.error(`Failed to fetch insider sector flow for ${sector}:`, error);
+      return [];
+    }
+  }
+
+  async getInsiderTickerFlow(ticker: string): Promise<any[]> {
+    try {
+      const data = await this.makeRequest<{ data: any[] }>(`/insider/${ticker}/ticker-flow`);
+      return data.data || [];
+    } catch (error) {
+      console.error(`Failed to fetch insider ticker flow for ${ticker}:`, error);
+      return [];
+    }
+  }
+
+  // Institutional endpoints
+
+  async listInstitutions(params: {
+    name?: string;
+    min_total_value?: number;
+    max_total_value?: number;
+    min_share_value?: number;
+    max_share_value?: number;
+    tags?: string;
+    order?: string;
+    order_direction?: string;
+    limit?: number;
+    page?: number;
+  } = {}): Promise<any[]> {
+    try {
+      const search = new URLSearchParams();
+      Object.entries(params).forEach(([key, value]) => {
+        if (value !== undefined) search.append(key, String(value));
+      });
+      const endpoint = `/institutions${search.toString() ? `?${search.toString()}` : ''}`;
+      const data = await this.makeRequest<{ data: any[] }>(endpoint);
+      return data.data || [];
+    } catch (error) {
+      console.error('Failed to list institutions:', error);
+      return [];
+    }
+  }
+
+  async getInstitutionActivity(name: string, params: { date?: string; limit?: number; page?: number } = {}): Promise<any[]> {
+    try {
+      const search = new URLSearchParams();
+      if (params.date) search.append('date', params.date);
+      if (params.limit) search.append('limit', params.limit.toString());
+      if (params.page) search.append('page', params.page.toString());
+      const endpoint = `/institution/${name}/activity${search.toString() ? `?${search.toString()}` : ''}`;
+      const data = await this.makeRequest<{ data: any[] }>(endpoint);
+      return data.data || [];
+    } catch (error) {
+      console.error(`Failed to fetch institutional activity for ${name}:`, error);
+      return [];
+    }
+  }
+
+  async getInstitutionHoldings(name: string, params: {
+    date?: string;
+    start_date?: string;
+    end_date?: string;
+    security_types?: string;
+    limit?: number;
+    page?: number;
+    order?: string;
+    order_direction?: string;
+  } = {}): Promise<any[]> {
+    try {
+      const search = new URLSearchParams();
+      Object.entries(params).forEach(([key, value]) => {
+        if (value !== undefined) search.append(key, String(value));
+      });
+      const endpoint = `/institution/${name}/holdings${search.toString() ? `?${search.toString()}` : ''}`;
+      const data = await this.makeRequest<{ data: any[] }>(endpoint);
+      return data.data || [];
+    } catch (error) {
+      console.error(`Failed to fetch institutional holdings for ${name}:`, error);
+      return [];
+    }
+  }
+
+  async getInstitutionSectors(name: string, params: { date?: string; limit?: number } = {}): Promise<any[]> {
+    try {
+      const search = new URLSearchParams();
+      if (params.date) search.append('date', params.date);
+      if (params.limit) search.append('limit', params.limit.toString());
+      const endpoint = `/institution/${name}/sectors${search.toString() ? `?${search.toString()}` : ''}`;
+      const data = await this.makeRequest<{ data: any[] }>(endpoint);
+      return data.data || [];
+    } catch (error) {
+      console.error(`Failed to fetch institutional sector exposure for ${name}:`, error);
+      return [];
+    }
+  }
+
+  async getInstitutionOwnership(ticker: string, params: {
+    date?: string;
+    start_date?: string;
+    end_date?: string;
+    tags?: string;
+    order?: string;
+    order_direction?: string;
+    limit?: number;
+    page?: number;
+  } = {}): Promise<any[]> {
+    try {
+      const search = new URLSearchParams();
+      Object.entries(params).forEach(([key, value]) => {
+        if (value !== undefined) search.append(key, String(value));
+      });
+      const endpoint = `/institution/${ticker}/ownership${search.toString() ? `?${search.toString()}` : ''}`;
+      const data = await this.makeRequest<{ data: any[] }>(endpoint);
+      return data.data || [];
+    } catch (error) {
+      console.error(`Failed to fetch institutional ownership for ${ticker}:`, error);
+      return [];
+    }
+  }
+
+  async getLatestInstitutionFilings(params: {
+    name?: string;
+    date?: string;
+    order?: string;
+    order_direction?: string;
+    limit?: number;
+    page?: number;
+  } = {}): Promise<any[]> {
+    try {
+      const search = new URLSearchParams();
+      Object.entries(params).forEach(([key, value]) => {
+        if (value !== undefined) search.append(key, String(value));
+      });
+      const endpoint = `/institutions/latest_filings${search.toString() ? `?${search.toString()}` : ''}`;
+      const data = await this.makeRequest<{ data: any[] }>(endpoint);
+      return data.data || [];
+    } catch (error) {
+      console.error('Failed to fetch latest institutional filings:', error);
+      return [];
+    }
+  }
+
+  // Market metrics
+
+  async getMarketCorrelations(tickers: string[], params: { interval?: string; start_date?: string; end_date?: string } = {}): Promise<any> {
+    try {
+      const search = new URLSearchParams();
+      search.append('tickers', tickers.join(','));
+      if (params.interval) search.append('interval', params.interval);
+      if (params.start_date) search.append('start_date', params.start_date);
+      if (params.end_date) search.append('end_date', params.end_date);
+      const endpoint = `/market/correlations?${search.toString()}`;
+      return await this.makeRequest<any>(endpoint);
+    } catch (error) {
+      console.error('Failed to fetch market correlations:', error);
+      return null;
+    }
+  }
+
+  // Watchlist helpers
+
+  async getWatchlistDarkpool(tickers: string[], filters: Parameters<UnusualWhalesService['getDarkpoolForTicker']>[1] = {}) {
+    const entries = await Promise.all(
+      tickers.map(async t => [t, await this.getDarkpoolForTicker(t, filters)] as const)
+    );
+    return Object.fromEntries(entries);
+  }
+
+  async getWatchlistInsiderFlow(tickers: string[]) {
+    const entries = await Promise.all(
+      tickers.map(async t => [t, await this.getInsiderTickerFlow(t)] as const)
+    );
+    return Object.fromEntries(entries);
   }
 
   async getSectorRotation(): Promise<any[]> {
