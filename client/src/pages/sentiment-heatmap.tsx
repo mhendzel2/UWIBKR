@@ -45,6 +45,11 @@ interface MarketSentimentData {
     primaryDrivers: string[];
     recommendation: 'risk-on' | 'risk-off' | 'neutral';
   };
+  macroEvents: {
+    economic: any;
+    fda: any;
+    newsHeadlines: any;
+  };
 }
 
 interface TrumpPost {
@@ -323,6 +328,51 @@ export default function SentimentHeatmap() {
               </Card>
             )}
           </div>
+
+          {sentiment && sentiment.macroEvents && (
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+              {sentiment.macroEvents.economic && (
+                <Card>
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-sm font-medium">Upcoming Economic Events</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    {Array.isArray(sentiment.macroEvents.economic) && sentiment.macroEvents.economic.length > 0 ? (
+                      <ul className="space-y-1 text-sm">
+                        {sentiment.macroEvents.economic.slice(0,5).map((event: any, idx: number) => (
+                          <li key={idx}>
+                            {event.event || event.title || event.name || 'Event'}
+                            {event.time ? ` - ${event.time}` : event.datetime ? ` - ${event.datetime}` : ''}
+                          </li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-sm text-gray-500">No upcoming economic events</p>
+                    )}
+                  </CardContent>
+                </Card>
+              )}
+
+              {sentiment.macroEvents.newsHeadlines && (
+                <Card>
+                  <CardHeader className="pb-2">
+                    <CardTitle className="text-sm font-medium">Latest News Headlines</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    {Array.isArray(sentiment.macroEvents.newsHeadlines) && sentiment.macroEvents.newsHeadlines.length > 0 ? (
+                      <ul className="space-y-1 text-sm">
+                        {sentiment.macroEvents.newsHeadlines.slice(0,5).map((news: any, idx: number) => (
+                          <li key={idx}>{news.title || news.headline || news.text}</li>
+                        ))}
+                      </ul>
+                    ) : (
+                      <p className="text-sm text-gray-500">No recent headlines</p>
+                    )}
+                  </CardContent>
+                </Card>
+              )}
+            </div>
+          )}
         </TabsContent>
 
         <TabsContent value="crypto" className="space-y-4">
