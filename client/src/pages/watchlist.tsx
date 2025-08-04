@@ -26,46 +26,59 @@ export default function WatchlistPage() {
   const queryClient = useQueryClient();
 
   // Fetch watchlist
-  const { data: watchlist, isLoading: watchlistLoading, dataUpdatedAt: watchlistUpdatedAt } = useQuery<any[]>({
+  const { data: watchlist, isLoading: watchlistLoading, error: watchlistError, dataUpdatedAt: watchlistUpdatedAt } = useQuery<any[]>({
     queryKey: ['/api/watchlist'],
-    refetchInterval: 30000
+    refetchInterval: 30000,
+    select: (data) => Array.isArray(data) ? data : [] // Ensure data is always an array
   });
 
+  useEffect(() => {
+    if (watchlistError) {
+      console.error('Failed to fetch watchlist:', watchlistError);
+    }
+  }, [watchlistError]);
+
   // Fetch market alerts
-  const { data: alertsData } = useQuery<any>({
+  const { data: alertsData, error: alertsError } = useQuery<any>({
     queryKey: ['/api/intelligence/alerts'],
     refetchInterval: 10000
   });
 
-  // Ensure alerts is always an array - handle API response structure
-  const alerts = (() => {
-    if (!alertsData) return [];
-    if (Array.isArray(alertsData)) return alertsData;
-    // Handle case where API returns object with alert arrays
-    if (alertsData.darkPool || alertsData.insiderTrades || alertsData.analystChanges) {
-      const allAlerts = [
-        ...(alertsData.darkPool ? [alertsData.darkPool] : []),
-        ...(Array.isArray(alertsData.insiderTrades) ? alertsData.insiderTrades : []),
-        ...(Array.isArray(alertsData.analystChanges) ? alertsData.analystChanges : []),
-        ...(Array.isArray(alertsData.newsAlerts) ? alertsData.newsAlerts : [])
-      ].filter(Boolean);
-      return allAlerts;
+  useEffect(() => {
+    if (alertsError) {
+      console.error('Failed to fetch alerts:', alertsError);
     }
-    return [];
-  })();
+  }, [alertsError]);
+
+  const alerts = Array.isArray(alertsData)
+    ? alertsData
+    : Object.values(alertsData || {}).flat().filter(Boolean);
 
   // Fetch GEX levels
-  const { data: gexLevels, dataUpdatedAt: gexUpdatedAt } = useQuery<any[]>({
+  const { data: gexLevels, error: gexError, dataUpdatedAt: gexUpdatedAt } = useQuery<any[]>({
     queryKey: ['/api/gex/levels'],
-    refetchInterval: 60000
+    refetchInterval: 60000,
+    select: (data) => Array.isArray(data) ? data : [] // Ensure data is always an array
   });
 
+  useEffect(() => {
+    if (gexError) {
+      console.error('Failed to fetch GEX levels:', gexError);
+    }
+  }, [gexError]);
+
   // Fetch intelligence for selected symbol
-  const { data: intelligence } = useQuery<any>({
+  const { data: intelligence, error: intelligenceError } = useQuery<any>({
     queryKey: ['/api/intelligence', selectedSymbol],
     enabled: !!selectedSymbol,
     refetchInterval: 120000
   });
+
+  useEffect(() => {
+    if (intelligenceError) {
+      console.error(`Failed to fetch intelligence for ${selectedSymbol}:`, intelligenceError);
+    }
+  }, [intelligenceError, selectedSymbol]);
 
   // Add symbols mutation
   const addSymbolsMutation = useMutation({
