@@ -115,9 +115,10 @@ export class SignalProcessor extends EventEmitter {
       // Transform rawAlerts to match expected FlowAlert interface
       const transformedAlerts = rawAlerts.map(alert => ({
         ...alert,
-        id: alert.id || `alert_${Date.now()}_${Math.random()}`,
-        type: alert.type || (alert.strike > alert.underlying_price ? 'call' : 'put'),
-        created_at: alert.created_at || new Date().toISOString()
+        id: `alert_${Date.now()}_${Math.random()}`,
+        type: (alert.strike > alert.underlying_price ? 'call' : 'put') as 'call' | 'put',
+        strike: alert.strike.toString(),
+        created_at: new Date().toISOString()
       }));
 
       // Process through our sophisticated alert processor

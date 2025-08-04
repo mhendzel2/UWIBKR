@@ -450,7 +450,7 @@ export class GEXTracker {
         if (!currentPrice) {
           // Fallback to stock state if getCurrentPrice fails
           const stockState = await uwService.getStockState(symbol);
-          currentPrice = stockState ? stockState.price : null;
+          currentPrice = stockState ? stockState.price ?? null : null;
         }
       } catch (priceError) {
         console.log(`Failed to get stock price for ${symbol}:`, priceError);
