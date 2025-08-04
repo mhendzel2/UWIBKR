@@ -104,7 +104,10 @@ export interface CompanyFundamentals {
     lastDividendDate: Date | null;
     exDividendDate: Date | null;
   };
-  
+
+  // Unusual Whales data
+  unusualWhales?: any;
+
   // Risk Assessment
   risk: {
     overallRisk: 'Low' | 'Medium' | 'High';
@@ -114,6 +117,7 @@ export interface CompanyFundamentals {
     technicalRisk: number;
     sentimentRisk: number;
     concentrationRisk: number;
+    optionsRisk: number;
   };
   
   // Sentiment & News
@@ -165,11 +169,12 @@ export class FundamentalsAnalyzer {
     
     try {
       // Fetch from multiple sources in parallel
-      const [twsData, alphaVantageData, fmpData, newsData] = await Promise.allSettled([
+      const [twsData, alphaVantageData, fmpData, newsData, uwData] = await Promise.allSettled([
         this.fetchTWSFundamentals(symbol),
         this.fetchAlphaVantageFundamentals(symbol),
         this.fetchFMPFundamentals(symbol),
-        this.fetchNewsAndSentiment(symbol)
+        this.fetchNewsAndSentiment(symbol),
+        this.fetchUnusualWhalesStockData(symbol)
       ]);
 
       // Combine all data sources
@@ -178,7 +183,8 @@ export class FundamentalsAnalyzer {
         twsData.status === 'fulfilled' ? twsData.value : null,
         alphaVantageData.status === 'fulfilled' ? alphaVantageData.value : null,
         fmpData.status === 'fulfilled' ? fmpData.value : null,
-        newsData.status === 'fulfilled' ? newsData.value : null
+        newsData.status === 'fulfilled' ? newsData.value : null,
+        uwData.status === 'fulfilled' ? uwData.value : null
       );
 
       // Cache the result
@@ -297,13 +303,25 @@ export class FundamentalsAnalyzer {
     }
   }
 
+  private async fetchUnusualWhalesStockData(symbol: string): Promise<any> {
+    try {
+      const { UnusualWhalesService } = await import('./unusualWhales');
+      const uwService = new UnusualWhalesService();
+      return await uwService.getStockData(symbol);
+    } catch (error) {
+      console.error(`Unusual Whales stock data fetch failed for ${symbol}:`, error);
+      return null;
+    }
+  }
+
   // Combine data from all sources into comprehensive fundamentals
   private async combineFundamentalData(
     symbol: string,
     twsData: any,
     alphaVantageData: any,
     fmpData: any,
-    newsData: any
+    newsData: any,
+    uwData: any
   ): Promise<CompanyFundamentals> {
     
     // Extract company basics
@@ -331,10 +349,11 @@ export class FundamentalsAnalyzer {
       trading: this.extractTrading(alphaVantageData, twsData),
       analyst: this.extractAnalyst(alphaVantageData, twsData),
       technical: this.extractTechnical(twsData),
-      options: this.extractOptions(twsData),
+      options: this.extractOptions(twsData, uwData),
       events: this.extractEvents(alphaVantageData, twsData),
-      risk: this.calculateRisk(alphaVantageData, twsData, newsData),
-      sentiment: this.extractSentiment(newsData, twsData)
+      risk: this.calculateRisk(alphaVantageData, twsData, newsData, uwData),
+      sentiment: this.extractSentiment(newsData, twsData),
+      unusualWhales: uwData
     };
 
     return fundamentals;
@@ -434,15 +453,15 @@ export class FundamentalsAnalyzer {
   }
 
   // Extract options data
-  private extractOptions(twsData: any): CompanyFundamentals['options'] {
+  private extractOptions(twsData: any, uwData: any): CompanyFundamentals['options'] {
     const options = twsData?.options || {};
-    
+
     return {
       impliedVolatility: options.impliedVolatility || 0,
       ivRank: options.ivRank || 0,
       ivPercentile: options.ivPercentile || 0,
       putCallRatio: options.putCallRatio || 0,
-      maxPain: options.maxPain || 0,
+      maxPain: uwData?.maxPain || options.maxPain || 0,
       gammaExposure: options.gammaExposure || 0,
       darkPoolFlow: options.darkPoolFlow || 0,
       unusualActivity: options.unusualActivity || 0
@@ -466,7 +485,7 @@ export class FundamentalsAnalyzer {
   }
 
   // Calculate comprehensive risk assessment
-  private calculateRisk(alphaData: any, twsData: any, newsData: any): CompanyFundamentals['risk'] {
+  private calculateRisk(alphaData: any, twsData: any, newsData: any, uwData: any): CompanyFundamentals['risk'] {
     const overview = alphaData?.overview || {};
     const beta = this.parseNumber(overview.Beta) || 1.0;
     const volatility = this.calculateVolatility(twsData?.historical) || 0.2;
@@ -478,9 +497,10 @@ export class FundamentalsAnalyzer {
     const sentimentRisk = this.calculateSentimentRisk(newsData);
     const concentrationRisk = this.calculateConcentrationRisk(overview);
     
-    const overallRiskScore = (liquidityRisk + volatilityRisk + fundamentalRisk + 
-                             technicalRisk + sentimentRisk + concentrationRisk) / 6;
-    
+    const optionsRisk = this.calculateOptionsRisk(uwData);
+    const overallRiskScore = (liquidityRisk + volatilityRisk + fundamentalRisk +
+                             technicalRisk + sentimentRisk + concentrationRisk + optionsRisk) / 7;
+
     return {
       overallRisk: overallRiskScore > 70 ? 'High' : overallRiskScore > 40 ? 'Medium' : 'Low',
       liquidityRisk,
@@ -488,8 +508,15 @@ export class FundamentalsAnalyzer {
       fundamentalRisk,
       technicalRisk,
       sentimentRisk,
-      concentrationRisk
+      concentrationRisk,
+      optionsRisk
     };
+  }
+
+  private calculateOptionsRisk(uwData: any): number {
+    if (!uwData?.maxPain || !uwData?.stockState?.price) return 50;
+    const distance = Math.abs(uwData.maxPain - uwData.stockState.price) / uwData.stockState.price;
+    return Math.min(100, distance * 1000);
   }
 
   // Extract sentiment data

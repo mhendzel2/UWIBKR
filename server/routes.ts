@@ -517,6 +517,16 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  app.get("/api/unusual-whales/stock/:symbol", async (req, res) => {
+    try {
+      const data = await uwService.getStockData(req.params.symbol.toUpperCase());
+      res.json(data);
+    } catch (error) {
+      console.error(`Failed to fetch stock data for ${req.params.symbol}:`, error);
+      res.status(500).json({ message: "Failed to fetch stock data" });
+    }
+  });
+
   // LEAP Analysis endpoints
   // Accept optional stringency level as path parameter to match client query structure
   app.get("/api/leaps/analyze/:level?", async (req, res) => {

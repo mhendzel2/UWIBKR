@@ -102,6 +102,12 @@ export default function WatchlistPage() {
     refetchInterval: 120000
   });
 
+  const { data: uwStockData } = useQuery({
+    queryKey: ['/api/unusual-whales/stock', selectedSymbol],
+    enabled: !!selectedSymbol,
+    refetchOnMount: true
+  });
+
   // Add symbols mutation
   const addSymbolsMutation = useMutation({
     mutationFn: (data: { symbols: string[], options?: any }) =>
@@ -556,7 +562,7 @@ export default function WatchlistPage() {
                           <div key={index} className="p-3 border rounded-lg">
                             <div className="flex justify-between items-start mb-2">
                               <div className="text-sm font-medium">{news.headline}</div>
-                              <Badge variant={news.importance === 'high' ? 'default' : 
+                              <Badge variant={news.importance === 'high' ? 'default' :
                                             news.importance === 'critical' ? 'destructive' : 'secondary'}>
                                 {news.importance}
                               </Badge>
@@ -571,6 +577,51 @@ export default function WatchlistPage() {
                       </div>
                     </CardContent>
                   </Card>
+
+                  {uwStockData?.news && uwStockData.news.length > 0 && (
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="flex items-center">
+                          <Newspaper className="mr-2 h-5 w-5" />
+                          Unusual Whales Headlines
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="space-y-3">
+                          {uwStockData.news.slice(0, 3).map((n: any, index: number) => (
+                            <div key={index} className="p-3 border rounded-lg">
+                              <div className="text-sm font-medium">{n.headline || n.title}</div>
+                              <div className="text-xs text-gray-500 mt-1">{n.summary}</div>
+                            </div>
+                          ))}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  )}
+
+                  {uwStockData && (
+                    <Card>
+                      <CardHeader>
+                        <CardTitle className="flex items-center">
+                          <TrendingUp className="mr-2 h-5 w-5" />
+                          Unusual Whales Stock Data
+                        </CardTitle>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="space-y-2">
+                          {uwStockData.stockState && (
+                            <div>Price: ${uwStockData.stockState.price?.toFixed(2)}</div>
+                          )}
+                          {uwStockData.maxPain && (
+                            <div>Max Pain: ${uwStockData.maxPain?.toFixed(2)}</div>
+                          )}
+                          {Array.isArray(uwStockData.netPremTicks) && uwStockData.netPremTicks.length > 0 && (
+                            <div>Net Prem Ticks: {uwStockData.netPremTicks[uwStockData.netPremTicks.length-1]?.value}</div>
+                          )}
+                        </div>
+                      </CardContent>
+                    </Card>
+                  )}
                 </div>
               )}
             </div>

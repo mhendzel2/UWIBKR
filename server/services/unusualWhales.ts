@@ -428,6 +428,33 @@ export class UnusualWhalesService {
     }
   }
 
+  async getStockData(ticker: string): Promise<any> {
+    try {
+      const [state, greeks, oiStrike, oiExpiry, maxPain, netPrem, news] = await Promise.allSettled([
+        this.getStockState(ticker),
+        this.getGreeks(ticker),
+        this.makeRequest<{ data: any[] }>(`/stock/${ticker}/oi-per-strike`),
+        this.makeRequest<{ data: any[] }>(`/stock/${ticker}/oi-per-expiry`),
+        this.makeRequest<{ data: number }>(`/stock/${ticker}/max-pain`),
+        this.makeRequest<{ data: any[] }>(`/stock/${ticker}/net-prem-ticks`),
+        this.getNewsSentiment(ticker)
+      ]);
+
+      return {
+        stockState: state.status === 'fulfilled' ? state.value : null,
+        greeks: greeks.status === 'fulfilled' ? greeks.value : null,
+        oiPerStrike: oiStrike.status === 'fulfilled' ? oiStrike.value.data || oiStrike.value : null,
+        oiPerExpiry: oiExpiry.status === 'fulfilled' ? oiExpiry.value.data || oiExpiry.value : null,
+        maxPain: maxPain.status === 'fulfilled' ? maxPain.value.data || maxPain.value : null,
+        netPremTicks: netPrem.status === 'fulfilled' ? netPrem.value.data || netPrem.value : null,
+        news: news.status === 'fulfilled' ? news.value || [] : []
+      };
+    } catch (error) {
+      console.error(`Failed to fetch stock data for ${ticker}:`, error);
+      return null;
+    }
+  }
+
   getRequestStats() {
     return {
       requestCount: this.requestCount,
