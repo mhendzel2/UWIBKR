@@ -6,6 +6,7 @@ const navigationItems = [
   { href: "/morning-update", label: "Morning Update", icon: "fas fa-sun" },
   { href: "/ai-signals", label: "AI Signals", icon: "fas fa-brain" },
   { href: "/ai-agents", label: "AI Agents", icon: "fas fa-users" },
+  { href: "/training-mode", label: "Training Mode", icon: "fas fa-target" },
   { href: "/test-orders", label: "Test Orders", icon: "fas fa-flask" },
   { href: "/machine-learning", label: "ML Engine", icon: "fas fa-cogs" },
   { href: "/macro", label: "Macro Dashboard", icon: "fas fa-globe" },

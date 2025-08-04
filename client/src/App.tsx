@@ -33,6 +33,7 @@ import OptionsScreenerPage from "@/pages/options-screener";
 import OptionsHeatMapPage from "@/pages/options-heatmap";
 import OptionsRadarPage from "@/pages/options-radar";
 import ShortExpiryDashboardPage from "@/pages/short-expiry-dashboard";
+import TrainingModePage from "@/pages/training-mode";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -66,6 +67,7 @@ function Router() {
       <Route path="/options-heatmap" component={OptionsHeatMapPage} />
       <Route path="/options-radar" component={OptionsRadarPage} />
       <Route path="/short-expiry" component={ShortExpiryDashboardPage} />
+      <Route path="/training-mode" component={TrainingModePage} />
       <Route component={NotFound} />
     </Switch>
   );
