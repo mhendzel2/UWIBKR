@@ -820,6 +820,26 @@ export class UnusualWhalesService {
     }
   }
 
+  async getVolatilityStats(ticker: string): Promise<any> {
+    try {
+      const data = await this.makeRequest<{ data: any }>(`/stock/${ticker}/volatility/stats`);
+      return data.data || null;
+    } catch (error) {
+      console.error(`Failed to fetch volatility stats for ${ticker}:`, error);
+      return null;
+    }
+  }
+
+  async getVolatilityTermStructure(ticker: string): Promise<any[]> {
+    try {
+      const data = await this.makeRequest<{ data: any[] }>(`/stock/${ticker}/volatility/term-structure`);
+      return data.data || [];
+    } catch (error) {
+      console.error(`Failed to fetch volatility term structure for ${ticker}:`, error);
+      return [];
+    }
+  }
+
   async getStockData(ticker: string): Promise<any> {
     try {
       const [state, greeks, oiStrike, oiExpiry, maxPain, netPrem, news] = await Promise.allSettled([
