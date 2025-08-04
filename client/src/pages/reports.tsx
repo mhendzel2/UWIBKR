@@ -1,4 +1,3 @@
-// @ts-nocheck
 import { useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -9,20 +8,96 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line, PieChart, Pie, Cell, Area, AreaChart } from 'recharts';
 import { TrendingUp, TrendingDown, DollarSign, Target, Shield, AlertTriangle, Calendar, Download, Filter } from 'lucide-react';
 
+interface PerformanceOverview {
+  totalPnL: number;
+  avgTradeReturn: number;
+  winRate: number;
+  totalTrades: number;
+  profitFactor: number;
+  sharpeRatio: number;
+  maxDrawdown: number;
+}
+
+interface MonthlyPerformance {
+  month: string;
+  pnl: number;
+  trades: number;
+}
+
+interface TopPerformer {
+  ticker: string;
+  trades: number;
+  winRate: number;
+  totalReturn: number;
+  avgReturn: number;
+}
+
+interface RecentActivity {
+  description: string;
+  date: string;
+  impact: number;
+}
+
+interface StrategyPerformance {
+  strategy: string;
+  totalPnL: number;
+  winRate: number;
+  avgReturn: number;
+  trades: number;
+  sharpeRatio: number;
+}
+
+interface SectorAnalysis {
+  sector: string;
+  allocation: number;
+  trades: number;
+  winRate: number;
+  totalPnL: number;
+}
+
+interface RiskMetrics {
+  valueAtRisk: number;
+  expectedShortfall: number;
+  beta: number;
+  volatility: number;
+  informationRatio: number;
+}
+
+interface PerformanceReport {
+  overview: PerformanceOverview;
+  monthlyPerformance: MonthlyPerformance[];
+  topPerformers: TopPerformer[];
+  recentActivity: RecentActivity[];
+  strategyPerformance: StrategyPerformance[];
+  riskMetrics: RiskMetrics;
+  sectorAnalysis: SectorAnalysis[];
+}
+
+interface RiskCompliance {
+  portfolioRiskOk: boolean;
+  positionSizeOk: boolean;
+  sectorConcentrationOk: boolean;
+}
+
+interface RiskReport {
+  concentrationRisk: number;
+  maxPositionSize: number;
+  compliance?: RiskCompliance;
+}
+
 export default function ReportsPage() {
   const [selectedPeriod, setSelectedPeriod] = useState('1M');
-  const [selectedReport, setSelectedReport] = useState('performance');
 
   // Fetch performance report
-  const { data: performanceReport, isLoading: performanceLoading } = useQuery({
+  const { data: performanceReport, isLoading: performanceLoading } = useQuery<PerformanceReport>({
     queryKey: ['/api/reports/performance', selectedPeriod],
-    refetchInterval: 30000
+    refetchInterval: 30000,
   });
 
   // Fetch risk report
-  const { data: riskReport } = useQuery({
+  const { data: riskReport } = useQuery<RiskReport>({
     queryKey: ['/api/reports/risk'],
-    refetchInterval: 60000
+    refetchInterval: 60000,
   });
 
   const exportReport = async (format: string) => {
@@ -193,7 +268,7 @@ export default function ReportsPage() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  {(performanceReport?.topPerformers || []).slice(0, 8).map((performer, index) => (
+                  {(performanceReport?.topPerformers || [] as TopPerformer[]).slice(0, 8).map((performer: TopPerformer, index: number) => (
                     <div key={performer.ticker} className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
                         <div className={`w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium text-white ${
@@ -231,7 +306,7 @@ export default function ReportsPage() {
             </CardHeader>
             <CardContent>
               <div className="space-y-3">
-                {(performanceReport?.recentActivity || []).slice(0, 10).map((activity, index) => (
+                {(performanceReport?.recentActivity || [] as RecentActivity[]).slice(0, 10).map((activity: RecentActivity, index: number) => (
                   <div key={index} className="flex items-center justify-between p-3 border border-gray-200 dark:border-gray-700 rounded-lg">
                     <div className="flex items-center space-x-3">
                       <Calendar className="h-4 w-4 text-gray-500" />
@@ -286,7 +361,7 @@ export default function ReportsPage() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  {(performanceReport?.strategyPerformance || []).map((strategy, index) => (
+                  {(performanceReport?.strategyPerformance || [] as StrategyPerformance[]).map((strategy: StrategyPerformance, index: number) => (
                     <div key={strategy.strategy} className="p-4 border border-gray-200 dark:border-gray-700 rounded-lg">
                       <div className="flex items-center justify-between mb-2">
                         <h4 className="font-medium">{strategy.strategy.toUpperCase()}</h4>
@@ -374,7 +449,7 @@ export default function ReportsPage() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
-                  {riskReport && (
+                  {riskReport ? (
                     <>
                       <div className="flex items-center justify-between p-3 border rounded-lg">
                         <div>
@@ -410,7 +485,7 @@ export default function ReportsPage() {
                         </Badge>
                       </div>
                     </>
-                  )}
+                  ) : null}
                 </div>
               </CardContent>
             </Card>
@@ -438,7 +513,7 @@ export default function ReportsPage() {
                       fill="#8884d8"
                       label={({sector, allocation}) => `${sector}: ${(allocation * 100).toFixed(1)}%`}
                     >
-                      {(performanceReport?.sectorAnalysis || []).map((entry, index) => (
+                      {(performanceReport?.sectorAnalysis || [] as SectorAnalysis[]).map((entry: SectorAnalysis, index: number) => (
                         <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
                       ))}
                     </Pie>
@@ -456,7 +531,7 @@ export default function ReportsPage() {
               </CardHeader>
               <CardContent>
                 <div className="space-y-3">
-                  {(performanceReport?.sectorAnalysis || []).map((sector, index) => (
+                  {(performanceReport?.sectorAnalysis || [] as SectorAnalysis[]).map((sector: SectorAnalysis, index: number) => (
                     <div key={sector.sector} className="p-3 border border-gray-200 dark:border-gray-700 rounded-lg">
                       <div className="flex items-center justify-between mb-2">
                         <h4 className="font-medium">{sector.sector}</h4>
