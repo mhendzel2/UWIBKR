@@ -1551,97 +1551,60 @@ export class UnusualWhalesService {
    */
   async getSectorPerformance(): Promise<any[]> {
     try {
-      console.log('🏢 Fetching sector performance data...');
-      
-      // Get flow alerts for major sectors to calculate performance
-      const flowAlerts = await this.getFlowAlerts({
-        minPremium: 100000
-      });
+        console.log('🏢 Fetching sector performance data...');
 
-      // Group by sector and calculate metrics
-      const sectorMap = new Map();
-      
-      if (Array.isArray(flowAlerts)) {
-        flowAlerts.forEach((alert: any) => {
-          const sector = alert.sector || 'Unknown';
-          if (!sectorMap.has(sector)) {
-            sectorMap.set(sector, {
-              sector,
-              totalPremium: 0,
-              totalVolume: 0,
-              callPremium: 0,
-              putPremium: 0,
-              tickers: new Set(),
-              alerts: []
-            });
-          }
-          
-          const sectorData = sectorMap.get(sector);
-          sectorData.totalPremium += parseFloat(alert.total_premium || '0');
-          sectorData.totalVolume += parseInt(alert.total_size || '0');
-          sectorData.tickers.add(alert.ticker);
-          sectorData.alerts.push(alert);
-          
-          if (alert.type === 'call') {
-            sectorData.callPremium += parseFloat(alert.total_premium || '0');
-          } else {
-            sectorData.putPremium += parseFloat(alert.total_premium || '0');
-          }
+        // Fetch sector performance data from the API
+        const response = await this.makeRequest<{ data: any[] }>(`/market/sector-performance`);
+        const sectorData = response.data || [];
+
+        // Process the data to match the app's requirements
+        const sectorPerformance = sectorData.map((sector: any) => {
+            const callPutRatio = sector.putPremium > 0 ? sector.callPremium / sector.putPremium : 10;
+            const sentiment = callPutRatio > 2 ? 'bullish' : callPutRatio < 0.5 ? 'bearish' : 'neutral';
+            const performance = (callPutRatio - 1) * 2; // Convert to percentage-like metric
+
+            return {
+                sector: sector.sector,
+                performance: Math.round(performance * 100) / 100,
+                volume: sector.totalVolume,
+                sentiment,
+                topTickers: sector.tickers.slice(0, 3),
+                flowStrength: Math.min(100, Math.round((sector.totalPremium / 1000000) * 10))
+            };
         });
-      }
 
-      // Convert to array and calculate performance metrics
-      const sectorPerformance = Array.from(sectorMap.values())
-        .map((sector: any) => {
-          const callPutRatio = sector.putPremium > 0 ? sector.callPremium / sector.putPremium : 10;
-          const sentiment = callPutRatio > 2 ? 'bullish' : callPutRatio < 0.5 ? 'bearish' : 'neutral';
-          const performance = (callPutRatio - 1) * 2; // Convert to percentage-like metric
-          
-          return {
-            sector: sector.sector,
-            performance: Math.round(performance * 100) / 100,
-            volume: sector.totalVolume,
-            sentiment,
-            topTickers: Array.from(sector.tickers).slice(0, 3),
-            flowStrength: Math.min(100, Math.round((sector.totalPremium / 1000000) * 10))
-          };
-        })
-        .filter(sector => sector.sector !== 'Unknown')
-        .sort((a, b) => b.performance - a.performance)
-        .slice(0, 10); // Top 10 sectors
+        console.log(`✅ Fetched sector performance for ${sectorPerformance.length} sectors`);
+        return sectorPerformance;
 
-      console.log(`✅ Fetched sector performance for ${sectorPerformance.length} sectors`);
-      return sectorPerformance;
-      
     } catch (error) {
-      console.error('❌ Error fetching sector performance:', error);
-      // Return mock data as fallback
-      return [
-        {
-          sector: 'Technology',
-          performance: 2.3,
-          volume: 1250000,
-          sentiment: 'bullish',
-          topTickers: ['AAPL', 'MSFT', 'GOOGL'],
-          flowStrength: 85
-        },
-        {
-          sector: 'Finance',
-          performance: -0.8,
-          volume: 890000,
-          sentiment: 'bearish',
-          topTickers: ['JPM', 'BAC', 'WFC'],
-          flowStrength: 62
-        },
-        {
-          sector: 'Healthcare',
-          performance: 1.2,
-          volume: 720000,
-          sentiment: 'neutral',
-          topTickers: ['JNJ', 'PFE', 'UNH'],
-          flowStrength: 71
-        }
-      ];
+        console.error('❌ Error fetching sector performance:', error);
+        // Return mock data as fallback
+        return [
+            {
+                sector: 'Technology',
+                performance: 2.3,
+                volume: 1250000,
+                sentiment: 'bullish',
+                topTickers: ['AAPL', 'MSFT', 'GOOGL'],
+                flowStrength: 85
+            },
+            {
+                sector: 'Finance',
+                performance: -0.8,
+                volume: 890000,
+                sentiment: 'bearish',
+                topTickers: ['JPM', 'BAC', 'WFC'],
+                flowStrength: 62
+            },
+            {
+                sector: 'Healthcare',
+                performance: 1.2,
+                volume: 720000,
+                sentiment: 'neutral',
+                topTickers: ['JNJ', 'PFE', 'UNH'],
+                flowStrength: 71
+            }
+        ];
     }
   }
 
@@ -1650,147 +1613,76 @@ export class UnusualWhalesService {
    */
   async getMarketOverview(): Promise<any> {
     try {
-      console.log('📊 Fetching market overview data...');
-      
-      // Fetch multiple data sources in parallel
-      const [marketTide, totalVolume, spyData, flowAlerts] = await Promise.all([
-        this.makeRequest('/market/market-tide').catch(() => null),
-        this.makeRequest('/market/total-options-volume').catch(() => null),
-        this.makeRequest('/stock/SPY/net-prem-ticks').catch(() => null),
-        this.getFlowAlerts({ minPremium: 1000000 }).catch(() => [])
-      ]);
+        console.log('📊 Fetching market overview data...');
 
-      // Calculate market sentiment from flow data
-      let marketSentiment = 'neutral';
-      let fearGreedIndex = 50;
-      let vixLevel = 20.0;
-      
-      if (marketTide && Array.isArray(marketTide) && marketTide.length > 0) {
-        const recent = marketTide.slice(0, 5);
-        const netCallPremium = recent.reduce((acc, item) => acc + parseFloat(item.net_call_premium || '0'), 0);
-        const netPutPremium = recent.reduce((acc, item) => acc + parseFloat(item.net_put_premium || '0'), 0);
-        
-        if (netCallPremium > netPutPremium * 1.5) {
-          marketSentiment = 'bullish';
-          fearGreedIndex = 70;
-        } else if (netPutPremium > netCallPremium * 1.5) {
-          marketSentiment = 'bearish';
-          fearGreedIndex = 30;
+        // Fetch multiple data sources in parallel
+        const [marketTide, totalVolumeResponse, spyData, flowAlerts] = await Promise.all([
+            this.makeRequest<{ data: any[] }>(`/market/market-tide`).catch(() => null),
+            this.makeRequest<{ data: { put_volume: string; call_volume: string; total_volume: string } }>(`/market/total-options-volume`).catch(() => null),
+            this.makeRequest<{ data: any }>(`/stock/SPY/net-prem-ticks`).catch(() => null),
+            this.getFlowAlerts({ minPremium: 1000000 }).catch(() => [])
+        ]);
+
+        const totalVolume = totalVolumeResponse?.data || { put_volume: '0', call_volume: '0', total_volume: '0' };
+
+        // Calculate market sentiment from flow data
+        let marketSentiment = 'neutral';
+        let fearGreedIndex = 50;
+        let vixLevel = 20.0;
+
+        if (marketTide && Array.isArray(marketTide) && marketTide.length > 0) {
+            const recent = marketTide.slice(0, 5);
+            const netCallPremium = recent.reduce((acc, item) => acc + parseFloat(item.net_call_premium || '0'), 0);
+            const netPutPremium = recent.reduce((acc, item) => acc + parseFloat(item.net_put_premium || '0'), 0);
+
+            if (netCallPremium > netPutPremium * 1.5) {
+                marketSentiment = 'bullish';
+                fearGreedIndex = 70;
+            } else if (netPutPremium > netCallPremium * 1.5) {
+                marketSentiment = 'bearish';
+                fearGreedIndex = 30;
+            }
         }
-      }
 
-      // Calculate put/call ratio from total volume
-      let putCallRatio = 0.8;
-      if (totalVolume && (totalVolume as any).put_volume && (totalVolume as any).call_volume) {
-        putCallRatio = parseFloat((totalVolume as any).put_volume) / parseFloat((totalVolume as any).call_volume);
-      }
-
-      // Process largest trades from flow alerts
-      const largestTrades = Array.isArray(flowAlerts) ? 
-        flowAlerts.slice(0, 3).map((alert: any) => ({
-          symbol: alert.ticker,
-          premium: parseFloat(alert.total_premium || '0'),
-          type: alert.type === 'call' ? 'call' : 'put',
-          sentiment: alert.type === 'call' ? 'bullish' : 'bearish'
-        })) : [];
-
-      // Calculate sector rotation from flow data
-      const sectorFlow = new Map();
-      if (Array.isArray(flowAlerts)) {
-        flowAlerts.forEach((alert: any) => {
-          const sector = alert.sector || 'Other';
-          if (!sectorFlow.has(sector)) {
-            sectorFlow.set(sector, { calls: 0, puts: 0 });
-          }
-          const flow = sectorFlow.get(sector);
-          if (alert.type === 'call') {
-            flow.calls += parseFloat(alert.total_premium || '0');
-          } else {
-            flow.puts += parseFloat(alert.total_premium || '0');
-          }
-        });
-      }
-
-      const sectorRotation: {
-        inflows: string[];
-        outflows: string[];
-        neutral: string[];
-      } = {
-        inflows: [],
-        outflows: [],
-        neutral: []
-      };
-
-      Array.from(sectorFlow.entries()).forEach(([sector, flow]: [string, any]) => {
-        const ratio = flow.puts > 0 ? flow.calls / flow.puts : 10;
-        if (ratio > 2) {
-          sectorRotation.inflows.push(sector);
-        } else if (ratio < 0.5) {
-          sectorRotation.outflows.push(sector);
-        } else {
-          sectorRotation.neutral.push(sector);
+        // Calculate put/call ratio from total volume
+        let putCallRatio = 0.8;
+        if (totalVolume.put_volume && totalVolume.call_volume) {
+            putCallRatio = parseFloat(totalVolume.put_volume) / parseFloat(totalVolume.call_volume);
         }
-      });
 
-      const marketOverview = {
-        marketSentiment,
-        fearGreedIndex,
-        vixLevel,
-        vixTrend: fearGreedIndex > 60 ? 'rising' : fearGreedIndex < 40 ? 'falling' : 'stable',
-        majorIndices: {
-          spy: { price: 445.20, change: 1.2, changePercent: 0.27 },
-          qqq: { price: 375.80, change: 2.1, changePercent: 0.56 },
-          iwm: { price: 198.40, change: -0.3, changePercent: -0.15 }
-        },
-        optionsMetrics: {
-          totalVolume: (totalVolume as any)?.total_volume || 28500000,
-          putCallRatio: Math.round(putCallRatio * 100) / 100,
-          unusualActivity: Array.isArray(flowAlerts) ? flowAlerts.length : 0,
-          largestTrades
-        },
-        sectorRotation,
-        newsFlow: {
-          bullishStories: sectorRotation.inflows.length * 4,
-          bearishStories: sectorRotation.outflows.length * 3,
-          neutralStories: sectorRotation.neutral.length * 2,
-          totalStories: (sectorRotation.inflows.length + sectorRotation.outflows.length + sectorRotation.neutral.length) * 3
-        }
-      };
+        // Process largest trades from flow alerts
+        const largestTrades = Array.isArray(flowAlerts) ? 
+            flowAlerts.slice(0, 3).map((alert: any) => ({
+                symbol: alert.ticker,
+                premium: parseFloat(alert.total_premium || '0'),
+                type: alert.type === 'call' ? 'call' : 'put',
+                sentiment: alert.type === 'call' ? 'bullish' : 'bearish'
+            })) : [];
 
-      console.log('✅ Fetched comprehensive market overview');
-      return marketOverview;
-      
+        const marketOverview = {
+            marketSentiment,
+            fearGreedIndex,
+            vixLevel,
+            vixTrend: fearGreedIndex > 60 ? 'rising' : fearGreedIndex < 40 ? 'falling' : 'stable',
+            majorIndices: {
+                spy: { price: 445.20, change: 1.2, changePercent: 0.27 },
+                qqq: { price: 375.80, change: 2.1, changePercent: 0.56 },
+                iwm: { price: 198.40, change: -0.3, changePercent: -0.15 }
+            },
+            optionsMetrics: {
+                totalVolume: parseFloat(totalVolume.total_volume),
+                putCallRatio: Math.round(putCallRatio * 100) / 100,
+                unusualActivity: Array.isArray(flowAlerts) ? flowAlerts.length : 0,
+                largestTrades
+            }
+        };
+
+        console.log('✅ Market overview data fetched successfully');
+        return marketOverview;
+
     } catch (error) {
-      console.error('❌ Error fetching market overview:', error);
-      // Return mock data as fallback
-      return {
-        marketSentiment: 'neutral',
-        fearGreedIndex: 50,
-        vixLevel: 20.0,
-        vixTrend: 'stable',
-        majorIndices: {
-          spy: { price: 445.20, change: 1.2, changePercent: 0.27 },
-          qqq: { price: 375.80, change: 2.1, changePercent: 0.56 },
-          iwm: { price: 198.40, change: -0.3, changePercent: -0.15 }
-        },
-        optionsMetrics: {
-          totalVolume: 28500000,
-          putCallRatio: 0.8,
-          unusualActivity: 0,
-          largestTrades: []
-        },
-        sectorRotation: {
-          inflows: ['Technology'],
-          outflows: ['Utilities'],
-          neutral: ['Healthcare']
-        },
-        newsFlow: {
-          bullishStories: 4,
-          bearishStories: 3,
-          neutralStories: 2,
-          totalStories: 9
-        }
-      };
+        console.error('❌ Error fetching market overview data:', error);
+        return null;
     }
   }
 }
