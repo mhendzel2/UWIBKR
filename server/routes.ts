@@ -8,6 +8,7 @@ import shortExpiryRoutes from "./routes/shortExpiryRoutes";
 import ordersRoutes from "./routes/orders";
 import fdaRoutes from "./routes/fdaRoutes";
 import optionsScreenerRoutes from "./routes/optionsScreener";
+import callWallRoutes from "./routes/callWall";
 import earningsScreenerRoutes from "./routes/earningsScreener";
 import earningsStatsRoutes from "./routes/earningsStats";
 import { 
@@ -26,6 +27,7 @@ import { ibkrService } from "./services/ibkr";
 import { getChannelSignals } from "./services/channelSignals";
 import { UnusualWhalesService } from "./services/unusualWhales";
 import { gexTracker } from "./services/gexTracker";
+import fs from 'fs';
 
 // Helper function for sector analysis
 function getTopSectors(trades: any[]): any[] {
@@ -1904,9 +1906,9 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Watchlist endpoints
   app.get("/api/watchlist", async (req, res) => {
     try {
-      const list = (req.query.list as string) || 'default';
       const { gexTracker } = await import('./services/gexTracker');
       const { ibkrService } = await import('./services/ibkr');
+      const list = (req.query.list as string) || gexTracker.getActiveWatchlist();
       const watchlist = gexTracker.getWatchlist(list);
       const symbols = watchlist.map((w: any) => w.symbol);
       let prices: any[] = [];
@@ -1935,17 +1937,33 @@ export async function registerRoutes(app: Express): Promise<Server> {
         ])
       );
 
+      const gexMap = new Map<string, any>();
+      for (const sym of symbols) {
+        try {
+          const levels = await gexTracker.getGEXLevels(sym);
+          if (levels) {
+            gexMap.set(sym, levels);
+          }
+        } catch (err) {
+          console.error('Failed to fetch GEX levels for', sym, err);
+        }
+      }
+
       const enriched = watchlist.map((item: any) => ({
         ...item,
         price: priceMap.get(item.symbol)?.price ?? null,
         change: priceMap.get(item.symbol)?.change ?? null,
         changePercent: priceMap.get(item.symbol)?.changePercent ?? null,
+        callWall: gexMap.get(item.symbol)?.callWall ?? null,
+        putWall: gexMap.get(item.symbol)?.putWall ?? null,
+        netGamma: gexMap.get(item.symbol)?.netGamma ?? null,
+        gexScore: gexMap.get(item.symbol)?.gexScore ?? null,
       }));
 
       res.json(enriched);
     } catch (error) {
-      console.error("Failed to get watchlist:", error);
-      res.status(500).json({ message: "Failed to get watchlist" });
+      console.error('Failed to get watchlist:', error);
+      res.status(500).json({ message: 'Failed to get watchlist' });
     }
   });
 
@@ -2000,13 +2018,28 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
-  app.get("/api/watchlist/lists", async (req, res) => {
+  app.get("/api/watchlist/lists", async (_req, res) => {
     try {
       const { gexTracker } = await import('./services/gexTracker');
-      res.json(gexTracker.getWatchlistNames());
+      res.json({
+        lists: gexTracker.getWatchlistNames(),
+        active: gexTracker.getActiveWatchlist(),
+      });
     } catch (error) {
       console.error('Failed to get watchlist names:', error);
       res.status(500).json({ message: 'Failed to get watchlist names' });
+    }
+  });
+
+  app.post("/api/watchlist/active", async (req, res) => {
+    try {
+      const { name } = req.body || {};
+      const { gexTracker } = await import('./services/gexTracker');
+      gexTracker.setActiveWatchlist(name);
+      res.json({ message: `Active watchlist set to ${name}` });
+    } catch (error) {
+      console.error('Failed to set active watchlist:', error);
+      res.status(500).json({ message: 'Failed to set active watchlist' });
     }
   });
 
@@ -2580,13 +2613,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.post("/api/watchlist/import-csv", async (req, res) => {
     try {
       const csv = require('fast-csv');
-      const { list = 'default', csv: csvContent } = req.body || {};
-      if (!csvContent) {
+      const { list = 'default', csv: csvContent, filePath } = req.body || {};
+      let content = csvContent;
+      if (!content && filePath) {
+        content = fs.existsSync(filePath) ? fs.readFileSync(filePath, 'utf8') : null;
+      }
+      if (!content) {
         return res.status(400).json({ message: 'CSV content required' });
       }
 
       const symbols: any[] = [];
-      csv.parseString(csvContent, { headers: false, trim: true })
+      csv.parseString(content, { headers: false, trim: true })
         .on('data', (row: any) => {
           const symbol = row.Symbol || row[0];
           if (symbol && symbol !== 'Symbol') {
@@ -2628,10 +2665,51 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // Import watchlist from Multitasker export
+  app.post("/api/watchlist/import-multitasker", async (req, res) => {
+    try {
+      const { content, list = 'default' } = req.body || {};
+      if (!content) {
+        return res.status(400).json({ message: 'Content required' });
+      }
+
+      const lines = String(content)
+        .split(/\r?\n/)
+        .map((l: string) => l.trim())
+        .filter(Boolean);
+
+      const { gexTracker } = await import('./services/gexTracker');
+      for (const symbol of lines) {
+        const sector = getSectorForSymbol(symbol);
+        await gexTracker.addToWatchlist([symbol], { sector, gexTracking: true, enabled: true }, list);
+      }
+
+      res.json({ message: `Imported ${lines.length} symbols from Multitasker`, symbols: lines });
+    } catch (error) {
+      console.error('Failed to import Multitasker watchlist:', error);
+      res.status(500).json({ message: 'Failed to import Multitasker watchlist' });
+    }
+  });
+
+  // Refresh GEX data for a watchlist
+  app.post("/api/watchlist/refresh", async (req, res) => {
+    try {
+      const { list } = req.body || {};
+      const { gexTracker } = await import('./services/gexTracker');
+      const listName = list || gexTracker.getActiveWatchlist();
+      await gexTracker.refreshWatchlist(listName);
+      res.json({ message: `Refreshed watchlist ${listName}` });
+    } catch (error) {
+      console.error('Failed to refresh watchlist:', error);
+      res.status(500).json({ message: 'Failed to refresh watchlist' });
+    }
+  });
+
   // Initialize routes last
   app.use('/api/options', optionsScreenerRoutes);
   app.use('/api/options', earningsScreenerRoutes);
   app.use('/api/earnings', earningsStatsRoutes);
+  app.use('/api', callWallRoutes);
   
   // Options heatmap routes
   const { default: optionsHeatmapRoutes } = await import('./routes/optionsHeatmap');
