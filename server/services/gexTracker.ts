@@ -101,6 +101,7 @@ export interface WatchlistConfig {
 export class GEXTracker {
   // Support multiple named watchlists
   private watchlists: Map<string, Map<string, WatchlistItem>> = new Map();
+  private activeWatchlist = 'default';
   private gexData: Map<string, GEXData[]> = new Map();
   private sentiments: Map<string, TickerSentimentResult> = new Map();
   private updateTimer?: NodeJS.Timeout;
@@ -130,10 +131,19 @@ export class GEXTracker {
       const legacyPath = path.join(this.dataDir, 'watchlist.json');
       if (fs.existsSync(multiPath)) {
         const raw = JSON.parse(fs.readFileSync(multiPath, 'utf8'));
-        Object.keys(raw).forEach(listName => {
-          const items: WatchlistItem[] = raw[listName] || [];
-          this.watchlists.set(listName, new Map(items.map(item => [item.symbol, item])));
-        });
+        if (raw.lists) {
+          Object.keys(raw.lists).forEach(listName => {
+            const items: WatchlistItem[] = raw.lists[listName] || [];
+            this.watchlists.set(listName, new Map(items.map(item => [item.symbol, item])));
+          });
+          this.activeWatchlist = raw.active || 'default';
+        } else {
+          Object.keys(raw).forEach(listName => {
+            const items: WatchlistItem[] = raw[listName] || [];
+            this.watchlists.set(listName, new Map(items.map(item => [item.symbol, item])));
+          });
+          this.activeWatchlist = 'default';
+        }
         console.log(`Loaded watchlists: ${Array.from(this.watchlists.keys()).join(', ')}`);
       } else if (fs.existsSync(legacyPath)) {
         // Migrate legacy single watchlist
@@ -158,7 +168,8 @@ export class GEXTracker {
       for (const [name, map] of this.watchlists.entries()) {
         data[name] = Array.from(map.values());
       }
-      fs.writeFileSync(watchlistPath, JSON.stringify(data, null, 2));
+      const output = { active: this.activeWatchlist, lists: data };
+      fs.writeFileSync(watchlistPath, JSON.stringify(output, null, 2));
       console.log(`Saved watchlists: ${Object.keys(data).join(', ')}`);
     } catch (error) {
       console.error('Error saving watchlists:', error);
@@ -291,12 +302,23 @@ export class GEXTracker {
     console.log(`Cleared watchlist ${listName}`);
   }
 
-  getWatchlist(listName: string = 'default'): WatchlistItem[] {
+  getWatchlist(listName: string = this.activeWatchlist): WatchlistItem[] {
     return Array.from(this.getWatchlistMap(listName).values());
   }
 
   getWatchlistNames(): string[] {
     return Array.from(this.watchlists.keys());
+  }
+
+  getActiveWatchlist(): string {
+    return this.activeWatchlist;
+  }
+
+  setActiveWatchlist(name: string): void {
+    if (this.watchlists.has(name)) {
+      this.activeWatchlist = name;
+      this.saveWatchlists();
+    }
   }
 
   getGEXEnabledSymbols(listName: string = 'default'): string[] {
@@ -637,6 +659,13 @@ export class GEXTracker {
     }
 
     return results;
+  }
+
+  async refreshWatchlist(listName: string = this.activeWatchlist): Promise<void> {
+    const symbols = this.getWatchlist(listName).map(w => w.symbol);
+    for (const symbol of symbols) {
+      await this.updateSymbolGEX(symbol);
+    }
   }
 
   private async saveUpdateLog(results: any): Promise<void> {

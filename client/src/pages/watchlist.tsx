@@ -32,10 +32,18 @@ export default function WatchlistPage() {
   const [expandedSymbols, setExpandedSymbols] = useState<string[]>([]);
   const queryClient = useQueryClient();
 
-  // Fetch watchlist
-  const { data: watchlists } = useQuery({
+  // Fetch watchlist names and active list
+  const { data: watchlistInfo } = useQuery({
     queryKey: ['/api/watchlist/lists'],
   });
+
+  const watchlists = watchlistInfo?.lists || [];
+
+  useEffect(() => {
+    if (watchlistInfo?.active) {
+      setCurrentList(watchlistInfo.active);
+    }
+  }, [watchlistInfo]);
 
   const { data: watchlist, isLoading: watchlistLoading, dataUpdatedAt: watchlistUpdatedAt } = useQuery({
     queryKey: [`/api/watchlist?list=${currentList}`],
@@ -92,23 +100,7 @@ export default function WatchlistPage() {
     };
   }, [symbolsQuery]);
 
-  // Fetch GEX levels on demand
-  const { data: gexLevels, dataUpdatedAt: gexUpdatedAt, refetch: refetchGex, isFetching: gexLoading } = useQuery({
-    queryKey: [`/api/gex/levels?list=${currentList}`],
-    enabled: false,
-  });
-
-  useEffect(() => {
-    refetchGex();
-  }, [currentList, refetchGex]);
-
-  const gexMap = useMemo(() => {
-    const map: Record<string, any> = {};
-    (gexLevels || []).forEach((g: any) => {
-      map[g.symbol] = g;
-    });
-    return map;
-  }, [gexLevels]);
+  // Removed separate GEX level fetching; included in watchlist data
 
   // Fetch intelligence for selected symbol
   const { data: intelligence } = useQuery({
@@ -192,12 +184,19 @@ export default function WatchlistPage() {
             dataType = 'options';
           } else if (file.name.toLowerCase().includes('watchlist')) {
             dataType = 'watchlist';
+          } else if (file.name.toLowerCase().includes('multitasker')) {
+            dataType = 'multitasker';
           }
 
           let uploadResult;
           if (dataType === 'watchlist') {
             uploadResult = await apiRequest('POST', '/api/watchlist/import-csv', {
               csv: fileContent,
+              list: currentList
+            });
+          } else if (dataType === 'multitasker') {
+            uploadResult = await apiRequest('POST', '/api/watchlist/import-multitasker', {
+              content: fileContent,
               list: currentList
             });
           } else {
@@ -207,14 +206,14 @@ export default function WatchlistPage() {
               dataType
             });
           }
-          
+
           // Refresh data after successful upload
           queryClient.invalidateQueries({ queryKey: [`/api/watchlist?list=${currentList}`] });
           queryClient.invalidateQueries({ queryKey: [`/api/gex/levels?list=${currentList}`] });
-          
-          alert(`Successfully imported ${uploadResult.importResult.imported} records from ${file.name}`);
+
+          alert(`Successfully imported ${uploadResult.importResult?.imported || uploadResult.symbols?.length || 0} records from ${file.name}`);
         };
-        
+
         reader.readAsText(file);
       } catch (error) {
         console.error('File upload failed:', error);
@@ -242,6 +241,11 @@ export default function WatchlistPage() {
       removeSymbolsMutation.mutate({ symbols: selectedSymbols });
       clearSelection();
     }
+  };
+
+  const handleRefresh = async () => {
+    await apiRequest('POST', '/api/watchlist/refresh', { list: currentList });
+    queryClient.invalidateQueries({ queryKey: [`/api/watchlist?list=${currentList}`] });
   };
 
 
@@ -293,7 +297,7 @@ export default function WatchlistPage() {
           )}
         </div>
         <div className="flex items-center space-x-4">
-          <Select value={currentList} onValueChange={setCurrentList}>
+          <Select value={currentList} onValueChange={(val) => { setCurrentList(val); apiRequest('POST', '/api/watchlist/active', { name: val }); }}>
             <SelectTrigger className="w-[180px]">
               <SelectValue placeholder="Watchlist" />
             </SelectTrigger>
@@ -317,7 +321,7 @@ export default function WatchlistPage() {
                 Import CSV
               </span>
             </Button>
-            <input type="file" accept=".csv" onChange={handleFileUpload} className="hidden" />
+            <input type="file" accept=".csv,.txt" onChange={handleFileUpload} className="hidden" />
           </label>
         </div>
       </div>
@@ -367,7 +371,10 @@ export default function WatchlistPage() {
         </TabsList>
 
         <TabsContent value="watchlist" className="space-y-4">
-          <div className="flex justify-end">
+          <div className="flex justify-between">
+            <Button variant="outline" size="sm" onClick={handleRefresh}>
+              <RefreshCw className="mr-2 h-4 w-4" /> Refresh
+            </Button>
             <Button variant="outline" size="sm" onClick={() => setIsEditing(!isEditing)}>
               {isEditing ? 'Done' : 'Edit'}
             </Button>
@@ -397,72 +404,21 @@ export default function WatchlistPage() {
               )}
             </>
           ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {(watchlist || []).map((item: any) => {
-                const quote = quotes[item.symbol] || {};
-                const price = typeof quote.last === 'number' ? quote.last : item.price;
-                const change = typeof quote.change === 'number' ? quote.change : item.change;
-                const changePercent = typeof quote.changePct === 'number' ? quote.changePct : item.changePercent;
-                const gex = gexMap[item.symbol];
-                return (
-                  <Card key={item.symbol} className="cursor-pointer hover:shadow-md transition-shadow" onClick={() => setSelectedSymbol(item.symbol)}>
-                    <CardHeader className="pb-2">
-                      <div className="flex items-center justify-between">
-                        <CardTitle className="text-lg">{item.symbol}</CardTitle>
-                        <Button
-                          variant="outline"
-                          size="sm"
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            toggleDetails(item.symbol);
-                            updateGexMutation.mutate([item.symbol]);
-                          }}
-                        >
-                          {expandedSymbols.includes(item.symbol) ? 'Hide' : 'Update'}
-                        </Button>
-                      </div>
-                    </CardHeader>
-                    <CardContent>
-                      <div className="space-y-2 text-sm">
-                        {typeof price === 'number' && (
-                          <div>
-                            Price: ${price.toFixed(2)}
-                            {typeof change === 'number' && (
-                              <span className={`ml-2 ${change >= 0 ? 'text-green-600' : 'text-red-600'}`}>
-                                {change >= 0 ? '+' : ''}{change.toFixed(2)}
-                                {typeof changePercent === 'number' && ` (${changePercent.toFixed(2)}%)`}
-                              </span>
-                            )}
-                          </div>
-                        )}
-                        {quote.timestamp && (
-                          <div className="text-xs text-gray-500">
-                            Price updated: {new Date(quote.timestamp).toLocaleString()}
-                          </div>
-                        )}
-                        {gex && (
-                          <div>
-                            Net Gamma: {gex.netGamma?.toFixed(2)}
-                            <div className="text-xs text-gray-500">
-                              GEX updated: {new Date(gex.date).toLocaleString()}
-                            </div>
-                          </div>
-                        )}
-                        {expandedSymbols.includes(item.symbol) && (
-                          <>
-                            {item.sector && <div>Sector: {item.sector}</div>}
-                            {item.marketCap && <div>Market Cap: ${(item.marketCap / 1e9).toFixed(1)}B</div>}
-                            {item.avgVolume && <div>Avg Volume: {(item.avgVolume / 1e6).toFixed(1)}M</div>}
-                            <div className="text-xs text-gray-500">
-                              Updated: {new Date(item.lastUpdated || Date.now()).toLocaleString()}
-                            </div>
-                          </>
-                        )}
-                      </div>
-                    </CardContent>
-                  </Card>
-                );
-              })}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+              {(watchlist || []).filter((item: any) => item.enabled).map((item: any) => (
+                <Card key={item.symbol} className="text-center">
+                  <CardHeader className="p-2">
+                    <CardTitle className="text-sm">{item.symbol}</CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-2 text-xs space-y-1">
+                    <div>Price: {item.price ?? 'N/A'}</div>
+                    <div>Tide: {item.gexScore ?? 'N/A'}</div>
+                    <div>GEX: {item.netGamma ?? 'N/A'}</div>
+                    {item.callWall && <div>CW: {item.callWall}</div>}
+                    {item.putWall && <div>PW: {item.putWall}</div>}
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           )}
         </TabsContent>
