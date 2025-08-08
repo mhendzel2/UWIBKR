@@ -78,9 +78,30 @@ export default function OptionsHeatMap() {
   const [refreshInterval, setRefreshInterval] = useState(30); // seconds
   const [autoRefresh, setAutoRefresh] = useState(true);
 
-  // Fetch heat map data
-  const { data: heatMapData = [], isLoading, refetch, dataUpdatedAt } = useQuery<HeatMapCell[]>({
-    queryKey: ['/api/options/heatmap', filters],
+  // Fetch heat map data using live API
+  const {
+    data: heatMapData = [],
+    isLoading,
+    refetch,
+    dataUpdatedAt,
+  } = useQuery<HeatMapCell[]>({
+    queryKey: ["optionsHeatmap", filters],
+    queryFn: async () => {
+      const params = new URLSearchParams();
+      params.set("minPremium", filters.minPremium.toString());
+      params.set("timeframe", filters.timeframe);
+      filters.sectors.forEach((s) => params.append("sectors", s));
+      params.set("showUnusualOnly", String(filters.showUnusualOnly));
+      params.set("showSweepsOnly", String(filters.showSweepsOnly));
+      params.set("showInstitutionalOnly", String(filters.showInstitutionalOnly));
+      params.set("heatMetric", filters.heatMetric);
+      params.set("colorScheme", filters.colorScheme);
+
+      const res = await fetch(`/api/options/heatmap?${params.toString()}`);
+      if (!res.ok) throw new Error("Failed to fetch heat map data");
+      const json = await res.json();
+      return json.data || [];
+    },
     refetchInterval: autoRefresh ? refreshInterval * 1000 : false,
   });
 
