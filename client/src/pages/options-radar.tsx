@@ -104,10 +104,31 @@ export default function OptionsOpportunityRadar() {
   const [isActive, setIsActive] = useState(true);
   const [alertCount, setAlertCount] = useState(0);
 
-  // Fetch real-time opportunities
-  const { data: opportunities = [], isLoading, refetch, dataUpdatedAt } = useQuery<OpportunityAlert[]>({
-    queryKey: ['/api/options/radar', settings],
-    refetchInterval: settings.autoRefresh && isActive ? settings.refreshInterval * 1000 : false,
+  // Fetch real-time opportunities using live API data
+  const {
+    data: opportunities = [],
+    isLoading,
+    refetch,
+    dataUpdatedAt,
+  } = useQuery<OpportunityAlert[]>({
+    queryKey: ["optionsRadar", settings],
+    queryFn: async () => {
+      const params = new URLSearchParams();
+      params.set("sensitivity", settings.sensitivity.toString());
+      params.set("minConfidence", settings.minConfidence.toString());
+      settings.alertTypes.forEach((t) => params.append("alertTypes", t));
+      settings.sectors.forEach((s) => params.append("sectors", s));
+      params.set("minPremium", settings.minPremium.toString());
+      params.set("maxTimeToExpiry", settings.maxTimeToExpiry.toString());
+      params.set("maxAlerts", settings.maxAlerts.toString());
+
+      const res = await fetch(`/api/options/radar?${params.toString()}`);
+      if (!res.ok) throw new Error("Failed to fetch options radar data");
+      const json = await res.json();
+      return json.opportunities || [];
+    },
+    refetchInterval:
+      settings.autoRefresh && isActive ? settings.refreshInterval * 1000 : false,
     enabled: settings.enabled && isActive,
   });
 
